@@ -1,0 +1,9 @@
+2022-07-14 14:07:216 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-14 14:07:419 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-14 14:07:208 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-14 14:07:458 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-14 14:07:470 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-14 14:07:750 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-14 14:07:750 INFO  DriverController :39 - [--->Using chrome browser<---]
+2022-07-14 14:07:744 INFO  Others :97 - Web page url to load is : https://www-master.ci.resume-library.com/
+2022-07-14 14:07:718 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
