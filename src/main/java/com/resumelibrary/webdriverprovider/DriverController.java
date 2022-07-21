@@ -7,6 +7,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,7 +23,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DriverController  extends CloudDriverProvider implements Constants{
+public class DriverController extends CloudDriverProvider implements Constants {
 
     private static final Logger logger = LogManager.getLogger(DriverController.class);
 
@@ -74,7 +75,7 @@ public class DriverController  extends CloudDriverProvider implements Constants{
             case "browserStackFireFox":
                 logger.info("[--->Using browser stack cloud firefox browsers<---]");
                 remoteBrowserStackFireFox(threadMap, testName);
-           break;
+                break;
         }
         manageBrowser();
     }

@@ -926,6 +926,10 @@ public abstract class Utility extends DriverController {
         logger.info("[--->Sorting date name by desc order"+"<---]");
         return list;
     }
+    public List<String> getDataListForDate(List<WebElement> elements) {
+        return elements.stream().map(s -> s.getText().split(" ")[0].toLowerCase()).collect(Collectors.toList());
+    }
+
 
     /* returning the  list of elements in descending order*/
     public List<String> getListByDescOrder(List<WebElement> elements) {
@@ -944,6 +948,12 @@ public abstract class Utility extends DriverController {
 
     public List<Double> getNumberListByAscOrder(List<WebElement> elements) {
         return getNumberDataList(elements).stream().sorted().collect(Collectors.toList());
+    }
+    public List<String> getListByDescOrderForDate(List<WebElement> elements) {
+        return getDataListForDate(elements).stream().map(String::toLowerCase).sorted(Collections.reverseOrder()).collect(Collectors.toList());
+    }
+    public List<String> getListByAscOrderForDate(List<WebElement> elements) {
+        return getDataListForDate(elements).stream().map(String::toLowerCase).sorted().collect(Collectors.toList());
     }
 
     /* returning the actual text by comparing the actual text(from application) and expected text(from feature) */
