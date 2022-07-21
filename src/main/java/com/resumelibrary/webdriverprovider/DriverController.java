@@ -23,7 +23,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DriverController  extends CloudDriverProvider implements Constants{
+public class DriverController extends CloudDriverProvider implements Constants {
 
     private static final Logger logger = LogManager.getLogger(DriverController.class);
 
@@ -75,15 +75,13 @@ public class DriverController  extends CloudDriverProvider implements Constants{
             case "browserStackFireFox":
                 logger.info("[--->Using browser stack cloud firefox browsers<---]");
                 remoteBrowserStackFireFox(threadMap, testName);
-           break;
+                break;
         }
         manageBrowser();
     }
 
     private void manageBrowser() {
-        Dimension newDimension = new Dimension(390, 844);
-        getThreadDriver().manage().window().setSize(newDimension);
-      //  getThreadDriver().manage().window().maximize();
+        getThreadDriver().manage().window().maximize();
         getThreadDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
         getThreadDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(PropertyFileReader.getInstance().getProperty("implicitlyWait"))));
         getThreadDriver().manage().deleteAllCookies();
