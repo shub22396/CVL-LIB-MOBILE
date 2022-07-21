@@ -6,14 +6,15 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import java.util.List;
 
 public class ApplicationPage extends Utility {
 
-    public ApplicationPage()
-    {
-        PageFactory.initElements(getThreadDriver(),this);
+    public ApplicationPage() {
+        PageFactory.initElements(getThreadDriver(), this);
     }
+
     private static final Logger logger = LogManager.getLogger(ApplicationPage.class);
 
     List<String> sortedList;
@@ -36,6 +37,12 @@ public class ApplicationPage extends Utility {
     // @FindBy(xpath = "//div[@class='table-wrap']/table/tbody/tr/td[8]")
     @FindBy(xpath = "//td[@mobile-label='Date applied']")
     List<WebElement> DateApplied;
+    @FindBy(css = ".next")
+    WebElement NextPage;
+    @FindBy(css = ".prev")
+    WebElement PrevPage;
+    @FindBy(id = "client-apps-mobile-sort-select")
+    WebElement ApplicationsMobileSortSelect;
 
     public void clickOnApplicationActions1Btn() {
         logger.info("Clicking on application actions button");
@@ -158,19 +165,36 @@ public class ApplicationPage extends Utility {
     }
 
     public List<String> getListOfDateApplied() {
-        sortedList = getDataList(DateApplied);
+        sortedList = getDataListForDate(DateApplied);
         logger.info("Getting list of date applied " + sortedList);
         return sortedList;
     }
+
     public List<String> dateAppliedByAscendingOrder() {
-        sortedList = getListByAscOrder(DateApplied);
+        sortedList = getDataListForDate(DateApplied);
         logger.info("Sorting date applied by asc order" + sortedList);
         return getSortedDatesAsc(sortedList);
     }
 
     public List<String> dateAppliedByDescendingOrder() {
-        sortedList = getListByDescOrder(DateApplied);
+        sortedList = getDataListForDate(DateApplied);
         logger.info("Sorting date applied by desc order" + sortedList);
         return getSortedDatesDesc(sortedList);
+    }
+
+    public void clickOnNextPageLink() {
+        logger.info("Clicking on next page link");
+        waitFor(1);
+        clickOnElement(NextPage);
+    }
+
+    public void clickOnPrevPageLink() {
+        logger.info("Clicking on prev page link");
+        clickOnElement(PrevPage);
+    }
+
+    public void selectValueToSortOnApplicationsPage(String text) {
+        logger.info("Select sort by from dropdown");
+        selectByVisibleTextFromDropDown(ApplicationsMobileSortSelect, text);
     }
 }
