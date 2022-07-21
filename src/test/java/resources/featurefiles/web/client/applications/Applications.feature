@@ -97,7 +97,7 @@ Feature: Client Applications Applications
   @jobApplicationSortingByDateApplied
   Scenario: Sorting by Date Applied on Job Application page
     Given I login as testers client
-    And   I go to page "/client/job/applications"
+    And   I go to page "Client Job Applications"
     When  I click on value "user_application_time DESC"
     Then  I should see date applied in desc order
     When  I click on value "user_application_time ASC"
