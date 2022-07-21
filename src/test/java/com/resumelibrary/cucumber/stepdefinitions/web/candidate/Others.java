@@ -265,7 +265,7 @@ public class Others extends Utility {
 
     @When("I click on non external job to apply")
     public void iClickOnNonExternalJobToApply() {
-        new JobSearchPage().selectResultsPerPage("250");
+      //  new JobSearchPage().selectResultsPerPage("250");
         new OthersPage().clickOnNonExternalApplyNowButton();
     }
 
