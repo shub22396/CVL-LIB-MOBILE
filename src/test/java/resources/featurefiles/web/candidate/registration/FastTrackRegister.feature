@@ -21,7 +21,8 @@ Feature: Candidate Registration FastTrackRegister
   Scenario: Register as a new candidate from job view page
     And  I Click on Job Title
     And  I switch tab
-    And  I click on Button Apply now
+    Then  I reload the page
+    And  I click on "Apply now"
     And  I fill candidate email field with random EmailId
     And  I Enters Firstname as "Automation"
     And  I Enters Lastname as "Tester"
@@ -31,8 +32,7 @@ Feature: Candidate Registration FastTrackRegister
 
   @fastTrackFormValidation
   Scenario: Validate fast track registration form
-    Then I follow link containing text "More"
-    And  I switch tab
+    Then I click on "View more"
     Then I click on Apply now Link
     And  I should see text "Apply for"
     And  I should see text "Already have an account?"
@@ -52,7 +52,7 @@ Feature: Candidate Registration FastTrackRegister
   Scenario: Register as a new candidate from company profile
     When I am on page "/company/1478/acme-company-no-1728-jobs"
     And  I click on Apply now Link
-    And  I fill candidate email field with random EmailId
+    And  I fill candidate email with random EmailId
     And  I Enters Firstname as "Automation"
     And  I Enters Lastname as "Tester"
     And  I Enters Password "rltest01"
@@ -67,5 +67,6 @@ Feature: Candidate Registration FastTrackRegister
     Given  I set cookie with "ibpid" and "975438"
     And    I reload the page
     And    I click on Apply now Link
-    And    I click Register & apply button
+    #FIXME: The responsive view for mobile popup is not comming
+    And    I click on "Register & Apply"
     Then   I should see text "Upload Resume & Apply"

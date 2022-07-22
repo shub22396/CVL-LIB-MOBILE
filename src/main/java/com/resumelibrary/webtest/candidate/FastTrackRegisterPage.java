@@ -17,17 +17,20 @@ public class FastTrackRegisterPage extends Utility {
 
     private static final Logger logger = LogManager.getLogger(FastTrackRegisterPage.class);
 
+    //FIXME Remove unused elements
     @FindBy(id = "apply_now_1")
     WebElement ApplyNow1;
     @FindBy(id = "job_title_1")
     WebElement JobTitle1;
     @FindBy(id = "more_1")
     WebElement More1;
-    @FindBy(id = "fasttrack-reg-trigger1")
+    //@FindBy(id = "fasttrack-reg-trigger1")
+    @FindBy(xpath = "//button[contains(@id, 'fasttrack-reg-trigger')]")
     WebElement FastTrackRegTrigger1;
     @FindBy(id = "fasttrack-reg-trigger")
     WebElement FastTrackRegTrigger;
-    @FindBy(id = "fast-track-registration-email1")
+    //@FindBy(id = "fast-track-registration-email1")
+    @FindBy(xpath = "//input[contains(@id, 'fast-track-registration-email')]")
     WebElement FTREmail1;
     @FindBy(id = "fast-track-registration-email4")
     WebElement FTREmail4;
@@ -37,11 +40,14 @@ public class FastTrackRegisterPage extends Utility {
     WebElement FTRLastName4;
     @FindBy(id = "fast-track-registration-password4")
     WebElement FTRPassword4;
-    @FindBy(id = "fast-track-registration-first-name1")
+    //@FindBy(id = "fast-track-registration-first-name1")
+    @FindBy(xpath = "//input[contains(@id, 'fast-track-registration-first-name')]")
     WebElement FTRFirstName1;
-    @FindBy(id = "fast-track-registration-last-name1")
+    //@FindBy(id = "fast-track-registration-last-name1")
+    @FindBy(xpath = "//input[contains(@id, 'fast-track-registration-last-name')]")
     WebElement FTRLastName1;
-    @FindBy(id = "fast-track-registration-password1")
+    //@FindBy(id = "fast-track-registration-password1")
+    @FindBy(xpath = "//input[contains(@id, 'fast-track-registration-password')]")
     WebElement FTRPassword1;
     @FindBy(id = "fast-track-registration-first-name")
     WebElement FTRFirstName;
@@ -53,7 +59,8 @@ public class FastTrackRegisterPage extends Utility {
     WebElement FTRLoginLink;
     @FindBy(id = "fasttrack-form-register-link")
     WebElement FTRRegisterLink;
-    @FindBy(id = "resume_check1")
+    //@FindBy(id = "resume_check1")
+    @FindBy(xpath = "//input[contains(@id, 'resume_check')]")
     WebElement ResumeCheck1;
     @FindBy(xpath = "//*[contains(text(),'Apply now')]")
     WebElement ApplyNowLink;
@@ -132,6 +139,7 @@ public class FastTrackRegisterPage extends Utility {
     public void clickOnApplyButton() {
         logger.info("user click on apply now link from new tab" + ApplyNowLink.getText());
         waitUntilElementToBeClickable(ApplyNowLink, 5);
+        logger.info("Is element displayed : " + ApplyNowLink.isDisplayed());
         clickOnElement(ApplyNowLink);
     }
 
