@@ -7,6 +7,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -80,7 +81,7 @@ public class DriverController  extends CloudDriverProvider implements Constants{
     }
 
     private void manageBrowser() {
-        getThreadDriver().manage().window().maximize();
+        getThreadDriver().manage().window().setSize(new Dimension(414,736));
         getThreadDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
         getThreadDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(PropertyFileReader.getInstance().getProperty("implicitlyWait"))));
         getThreadDriver().manage().deleteAllCookies();
