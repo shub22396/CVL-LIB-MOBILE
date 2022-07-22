@@ -13,9 +13,9 @@ Feature: Candidate JobSearch SearchResultsPage
     And   I should see text "Alabama" on the page source
     And   I should see text "Jobs By Category"
     And   I should see text "Sales Account Manager"
-    And   I should see text "More search options"
-    And   I click on "More search options"
-    Then  I should see text "Fewer search options"
+    #And   I should see text "More search options"
+   # And   I click on "More search options"
+    #Then  I should see text "Fewer search options"
 
   @searchResultsPageElements @ReleaseRegression1
   Scenario: Search results page filters
@@ -46,13 +46,13 @@ Feature: Candidate JobSearch SearchResultsPage
     Then  I should be able to see in browser URL "Job View"
     And   I should see text "Apply now"
     And   I should see "Create a new Job Alert to make sure you see the best new jobs first!"
-
-  @viewJobPageRecentSearches
-  Scenario: View Job search results and verify that recent searches are displayed
-    Given I navigate to page "Jobs Sales"
-    When  I navigate to page "Jobs Qa"
-    Then  I should see text "Recent Searches"
-    And   I should see text "Sales jobs"
+# the steps are covered as part of below scenario
+#  @viewJobPageRecentSearches
+#  Scenario: View Job search results and verify that recent searches are displayed
+#    Given I navigate to page "Jobs Sales"
+#    When  I navigate to page "Jobs Qa"
+#    Then  I should see text "Recent Searches"
+#    And   I should see text "Sales jobs"
 
   @viewJobPageClearRecentSearches
   Scenario: View Job search results and verify that recent searches are not displayed if its cleared
@@ -60,7 +60,8 @@ Feature: Candidate JobSearch SearchResultsPage
     Then  I navigate to page "Jobs Qa"
     Then  I should see text "Recent Searches"
     And   I should see text "Sales jobs"
-    And   I scroll down to element "Clear recent searches"
+    And   I scroll down to element "Recent Searches"
+    And   I click on "Recent Searches"
     And   I click on "Clear recent searches"
     And   I confirm browser popup
     Then  I should not see "Recent Searches"
@@ -86,10 +87,11 @@ Feature: Candidate JobSearch SearchResultsPage
   @jobsByCategoryModule @ReleaseRegression1
   Scenario: Jobs By Category module
     Given I navigate to page "Jobs"
-    When  I click on "Healthcare"
+    When  I click on "Jobs By Category"
+    And   I click on "Healthcare"
     Then  I should see text "Healthcare jobs"
     And   the title field should contain "healthcare"
-    Then  I scroll down to element "Nursing"
+    When  I click on "Jobs By Category"
     And   I click on "Nursing"
     And   I should see text "Nursing jobs"
     And   the title field should contain "nursing"
@@ -99,31 +101,32 @@ Feature: Candidate JobSearch SearchResultsPage
   @jobsByLocationModule @ReleaseRegression1
   Scenario: Jobs By Location module
     Given I navigate to page "Jobs"
-    When  I click on "California"
+    When  I click on "Jobs By Location"
+    And  I click on "California"
     Then  I should see text "Jobs in California"
     And   the location field should contain "State Of California"
-    And   I scroll down 0,800
-    Then  I click on "San Francisco" in location module
-    And   I should see text "Jobs in San Francisco, CA"
+    When  I click on "Jobs By Location"
+    And   I click on "San Francisco" in location module
+    Then  I should see text "Jobs in San Francisco, CA"
     And   the location field should contain "San Francisco, CA"
     And   I click on "Back"
     Then  I should see text "Jobs in California"
-
-  @viewMoreTownsModule @ReleaseRegression1
-  Scenario: View more towns module
-    Given I navigate to page "Jobs In Florida"
-    When  I click on "more"
-    Then  I should see text "fewer"
-    And   I should see text "Tampa, FL"
-    And   I should see text "Miami, FL"
-    And   I should see text "Orlando, FL"
-    And   I should see text "Miami, FL"
-    When  I click on "Tampa, FL"
-    Then  I should see text "Jobs in Tampa, FL"
-    And   the location field should contain "Tampa, FL"
-    When  I click on "more"
-    And   I click on "fewer"
-    Then  I should see text "more"
+#Town module is not displayed in mobile view
+#  @viewMoreTownsModule @ReleaseRegression1
+#  Scenario: View more towns module
+#    Given I navigate to page "Jobs In Florida"
+#    When  I click on "more"
+#    Then  I should see text "fewer"
+#    And   I should see text "Tampa, FL"
+#    And   I should see text "Miami, FL"
+#    And   I should see text "Orlando, FL"
+#    And   I should see text "Miami, FL"
+#    When  I click on "Tampa, FL"
+#    Then  I should see text "Jobs in Tampa, FL"
+#    And   the location field should contain "Tampa, FL"
+#    When  I click on "more"
+#    And   I click on "fewer"
+#    Then  I should see text "more"
 
   @viewMoreSearchesModule @ReleaseRegression1
   Scenario: View more searches module
@@ -153,6 +156,7 @@ Feature: Candidate JobSearch SearchResultsPage
     And    I click on find jobs button
     Then   I should be on page "/jobs/test-engineer-in-10001?r=50"
     And    I should see text H one tag "Test Engineer jobs in 10001"
+    #When   I click on id "mobile-search-trigger"
     And    the title field should contain "<Title1>"
     And    the location field should contain "<Location>"
     And    the distance "<Distance>" should be selected
@@ -166,6 +170,7 @@ Feature: Candidate JobSearch SearchResultsPage
     And    I navigate to page "Search Jobs"
     When   I fill in search title field with "<Title>"
     And    I fill in search location with "<Location>"
+    And    I click on link text "More Search Options"
     And    I select the option "<SalMin>" from salary min dropdown
     And    I click on find jobs button
     Then   I should be on page "/jobs/sales-in-10001?annual_salary_from=50000"

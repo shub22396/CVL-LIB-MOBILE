@@ -52,7 +52,7 @@ public class JobSearchPage extends Utility {
     WebElement PostedSince;
     @FindBy(xpath = "//a[text() = \"2\"]")
     WebElement LinkIndexPage;
-    @FindBy(id = "search-results-distance")
+    @FindBy(id = "header_radius")
     WebElement SearchResultDistance;
     @FindBy(id = "posted_date")
     WebElement PostedDate;
@@ -76,7 +76,7 @@ public class JobSearchPage extends Utility {
     WebElement LocationLinkFromModule;
     @FindBy(css = ".reasons-other-input")
     WebElement ReasonsOtherInput;
-    @FindBy(css = ".search-job-title-link")
+    @FindBy(css = ".search-result-info-title")
     WebElement SearchJobTitle;
     @FindBy(id = "order_by")
     WebElement OrderBy;
