@@ -47,4 +47,13 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
+*.png
+test-reports/*
+*.xlsx
+*.docx
+*.logs
+
+src/test/logs/*
+rl_selenium_tests.iml
+
 
