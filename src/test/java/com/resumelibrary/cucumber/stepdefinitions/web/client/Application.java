@@ -18,6 +18,7 @@ public class Application extends Utility {
     public void iClickOnActionViewButtonOne() {
         new ApplicationPage().clickOnApplicationActionsView1Btn();
     }
+
     @And("I click on application reject button")
     public void iClickOnApplicationRejectButton() {
         new ApplicationPage().clickOnApplicationActionsReject1Btn();
@@ -25,61 +26,76 @@ public class Application extends Utility {
 
     @Then("I should see job ids in desc order")
     public void iShouldSeeJobIdsInDescOrder() {
-        Assert.assertEquals(new ApplicationPage().getListOfJobIds(),new ApplicationPage().jobIdsByDescendingOrder());
+        Assert.assertEquals(new ApplicationPage().getListOfJobIds(), new ApplicationPage().jobIdsByDescendingOrder());
     }
 
     @Then("I should see job ids in asc order")
     public void iShouldSeeJobIdsInAscOrder() {
-        Assert.assertEquals(new ApplicationPage().getListOfJobIds(),new ApplicationPage().jobIdsByAscendingOrder());
+        Assert.assertEquals(new ApplicationPage().getListOfJobIds(), new ApplicationPage().jobIdsByAscendingOrder());
     }
 
     @Then("I should see Your Job Ref in desc order")
     public void iShouldSeeYourJobRefInDescOrder() {
-        Assert.assertEquals(new ApplicationPage().getListOfJobRef(),new ApplicationPage().jobRefByDescendingOrder());
+        Assert.assertEquals(new ApplicationPage().getListOfJobRef(), new ApplicationPage().jobRefByDescendingOrder());
     }
 
     @Then("I should see Your Job Ref in asc order")
     public void iShouldSeeYourJobRefInAscOrder() {
-        Assert.assertEquals(new ApplicationPage().getListOfJobRef(),new ApplicationPage().jobRefByAscendingOrder());
+        Assert.assertEquals(new ApplicationPage().getListOfJobRef(), new ApplicationPage().jobRefByAscendingOrder());
     }
 
     @Then("I should see job title in desc order")
     public void iShouldSeeJobTitleInDescOrder() {
-        Assert.assertEquals(new ApplicationPage().getListOfJobTitle(),new ApplicationPage().jobTitleByDescendingOrder());
+        Assert.assertEquals(new ApplicationPage().getListOfJobTitle(), new ApplicationPage().jobTitleByDescendingOrder());
     }
 
     @Then("I should see job title  in asc order")
     public void iShouldSeeJobTitleInAscOrder() {
-        Assert.assertEquals(new ApplicationPage().getListOfJobTitle(),new ApplicationPage().jobTitleByAscendingOrder());
+        Assert.assertEquals(new ApplicationPage().getListOfJobTitle(), new ApplicationPage().jobTitleByAscendingOrder());
     }
 
     @Then("I should see candidate name in desc order")
     public void iShouldSeeCandidateNameInDescOrder() {
-        Assert.assertEquals(new ApplicationPage().getListOfCandidateName(),new ApplicationPage().candidateNamesByDescendingOrder());
+        Assert.assertEquals(new ApplicationPage().getListOfCandidateName(), new ApplicationPage().candidateNamesByDescendingOrder());
     }
 
     @Then("I should see candidate name in asc order")
     public void iShouldSeeCandidateNameInAscOrder() {
-        Assert.assertEquals(new ApplicationPage().getListOfCandidateName(),new ApplicationPage().candidateNamesByAscendingOrder());
+        Assert.assertEquals(new ApplicationPage().getListOfCandidateName(), new ApplicationPage().candidateNamesByAscendingOrder());
     }
 
     @Then("I should see candidate email in desc order")
     public void iShouldSeeCandidateEmailInDescOrder() {
-        Assert.assertEquals(new ApplicationPage().getListOfCandidateEmail(),new ApplicationPage().candidateEmailByDescendingOrder());
+        Assert.assertEquals(new ApplicationPage().getListOfCandidateEmail(), new ApplicationPage().candidateEmailByDescendingOrder());
     }
 
     @Then("I should see candidate email in asc order")
     public void iShouldSeeCandidateEmailInAscOrder() {
-        Assert.assertEquals(new ApplicationPage().getListOfCandidateEmail(),new ApplicationPage().candidateEmailByAscendingOrder());
+        Assert.assertEquals(new ApplicationPage().getListOfCandidateEmail(), new ApplicationPage().candidateEmailByAscendingOrder());
     }
 
     @Then("I should see date applied in desc order")
     public void iShouldSeeDateAppliedInDescOrder() {
-        Assert.assertEquals(new ApplicationPage().getListOfDateApplied(),new ApplicationPage().dateAppliedByDescendingOrder());
+        Assert.assertEquals(new ApplicationPage().getListOfDateApplied(), new ApplicationPage().dateAppliedByDescendingOrder());
     }
 
     @Then("I should see date applied in asc order")
     public void iShouldSeeDateAppliedInAscOrder() {
-        Assert.assertEquals(new ApplicationPage().getListOfDateApplied(),new ApplicationPage().dateAppliedByAscendingOrder());
+        Assert.assertEquals(new ApplicationPage().getListOfDateApplied(), new ApplicationPage().dateAppliedByAscendingOrder());
+    }
+
+    @When("I click on next page link")
+    public void iClickOnNextPageLink() {
+        new ApplicationPage().clickOnNextPageLink();
+    }
+
+    @When("I click on prev page link")
+    public void iClickOnPrevPageLink() {
+        new ApplicationPage().clickOnPrevPageLink();
+    }
+
+    @When("I select {string} from order by dropdown")
+    public void iSelectFromOrderByDropdown(String value) {
+        new ApplicationPage().selectValueToSortOnApplicationsPage(value);
     }
 }

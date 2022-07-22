@@ -23,7 +23,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DriverController  extends CloudDriverProvider implements Constants{
+public class DriverController extends CloudDriverProvider implements Constants {
 
     private static final Logger logger = LogManager.getLogger(DriverController.class);
 
@@ -75,7 +75,7 @@ public class DriverController  extends CloudDriverProvider implements Constants{
             case "browserStackFireFox":
                 logger.info("[--->Using browser stack cloud firefox browsers<---]");
                 remoteBrowserStackFireFox(threadMap, testName);
-           break;
+                break;
         }
         manageBrowser();
     }

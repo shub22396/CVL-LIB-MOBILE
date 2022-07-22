@@ -40,6 +40,7 @@ public class URLConstants implements Constants {
     public final String CLIENT_ACCOUNT = "/client/account";
     public final String FAQ_RECRUITER_EXTEND_POSTING = "/faq?type=recruiter#extend-posting";
     public final String CLIENT_JOB_APPLICATIONS = "/client/job/applications";
+    public final String CLIENT_JOB_APPLICATIONS_20 = "/client/job/applications/20";
     public final String CLIENT_RESUME_ALERT_CREATE = "/client/resume_alert/create";
     public final String CLIENT_RESUME_ALERT = "/client/resume_alerts";
     public final String CLIENT_RESUME_ALERT_LOG_5202 = "/client/resume_alert/log/5202";
@@ -187,13 +188,13 @@ public class URLConstants implements Constants {
     public final String JOBS_IN_ARLINGTON_TX = "/jobs/in-arlington-tx";
     public final String JOBS_IN_BOSSIER_CITY_LA = "/jobs/in-bossier-city-la";
     public final String JOBS_IN_BOSTON_MA = "/jobs/in-boston-ma";
-    public final String JOBS_SALES_PAGE_2= "/jobs/sales?page_number=2";
-    public final String JOBS_SALES_PP75_PAGE_2= "/jobs/sales?pp=75&page_number=2";
+    public final String JOBS_SALES_PAGE_2 = "/jobs/sales?page_number=2";
+    public final String JOBS_SALES_PP75_PAGE_2 = "/jobs/sales?pp=75&page_number=2";
     public final String JOBS_SALES_PP75 = "/jobs/sales?pp=75";
     public final String JOBS_IN_HUNTSVILLE_AL = "/jobs/in-huntsville-al";
     public final String JOBS_SALES_IN_NEW_YORK_CITY_NY = "/jobs/sales-in-new-york-city-ny";
     public final String JOBS_SALES_IN_BROOKLYN_NY = "/jobs/sales-in-brooklyn-ny";
-    public final String JOBS_IN_NEW_YORK_CITY_NY="/jobs/in-new-york-city-ny";
+    public final String JOBS_IN_NEW_YORK_CITY_NY = "/jobs/in-new-york-city-ny";
     public final String MEET_THE_TEAM = "/meet-the-team";
     public final String PRIVACY = "/privacy";
     public final String REGISTER_APPLY = "/register/apply/";
@@ -271,14 +272,14 @@ public class URLConstants implements Constants {
     public final String JOB_VIEW_12572172 = "/job/view/12572172";
     public final String JOB_VIEW_SALES_LEAD_FOR_37890455 = "/job/view/37890455/sales-lead";
     public final String JOB_VIEW_FOR_24146400 = "/job/view/24146400";
-    public final String JOBS_SALES_IN_BROOKLYN_NY_R_250_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_100000 ="/jobs/sales-in-brooklyn-ny?r=250&annual_salary_from=50000&annual_salary_to=100000";
-    public final String JOBS_SALES_IN_BROOKLYN_NY_R_250_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_100000_PAGE_NUMBER_2 ="/jobs/sales-in-brooklyn-ny?r=250&annual_salary_from=50000&annual_salary_to=100000&page_number=2";
-    public final String JOBS_SALES_IN_BROOKLYN_NY_R_250_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_100000_PAGE_NUMBER_3 ="/jobs/sales-in-brooklyn-ny?r=250&annual_salary_from=50000&annual_salary_to=100000&page_number=3";
-    public final String JOBS_SALES_IN_NEW_YORK_CITY_NY_PD_15_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_70000_JOB_TYPE_PERMANENT ="/jobs/sales-in-new-york-city-ny?pd=15&annual_salary_from=50000&annual_salary_to=70000&job_type=Permanent";
-    public final String JOBS_WEB_JOB_IN_90001_PD_1_PAGE_NUMBER_2_PN_20 ="/jobs/web-job-in-90001?pd=1&page_number=2&pn=20";
-    public final String JOBS_WEB_JOB_IN_90001_PD_1 ="/jobs/web-job-in-90001?pd=1";
-    public final String JOBS_SALES_IN_BROOKLYN_NY_PAGE_NUMBER_2 ="/jobs/sales-in-brooklyn-ny?page_number=2";
-    public final String JOBS_NONEXTERNALTESTJOB_IN_90189_R_51 ="/jobs/nonexternaltestjob-in-90189?r=51";
+    public final String JOBS_SALES_IN_BROOKLYN_NY_R_250_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_100000 = "/jobs/sales-in-brooklyn-ny?r=250&annual_salary_from=50000&annual_salary_to=100000";
+    public final String JOBS_SALES_IN_BROOKLYN_NY_R_250_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_100000_PAGE_NUMBER_2 = "/jobs/sales-in-brooklyn-ny?r=250&annual_salary_from=50000&annual_salary_to=100000&page_number=2";
+    public final String JOBS_SALES_IN_BROOKLYN_NY_R_250_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_100000_PAGE_NUMBER_3 = "/jobs/sales-in-brooklyn-ny?r=250&annual_salary_from=50000&annual_salary_to=100000&page_number=3";
+    public final String JOBS_SALES_IN_NEW_YORK_CITY_NY_PD_15_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_70000_JOB_TYPE_PERMANENT = "/jobs/sales-in-new-york-city-ny?pd=15&annual_salary_from=50000&annual_salary_to=70000&job_type=Permanent";
+    public final String JOBS_WEB_JOB_IN_90001_PD_1_PAGE_NUMBER_2_PN_20 = "/jobs/web-job-in-90001?pd=1&page_number=2&pn=20";
+    public final String JOBS_WEB_JOB_IN_90001_PD_1 = "/jobs/web-job-in-90001?pd=1";
+    public final String JOBS_SALES_IN_BROOKLYN_NY_PAGE_NUMBER_2 = "/jobs/sales-in-brooklyn-ny?page_number=2";
+    public final String JOBS_NONEXTERNALTESTJOB_IN_90189_R_51 = "/jobs/nonexternaltestjob-in-90189?r=51";
     public final String JOBS_SALES_IN_10010 = "/jobs/sales-in-10010";
     public final String JOBS_WEB_DEVELOPER = "/jobs/web-developer";
     public final String LOGIN = "/login";
@@ -300,18 +301,18 @@ public class URLConstants implements Constants {
     public final String SEARCH_JOBS_IN_TEXAS_TX_STATE_PAGE_NUMBER_50 = "/jobs/in-texas-tx-state?page_number=50";
     public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_75_PAGE_NUMBER_14_PN_1113 = "/jobs/drummer-in-houston-tx?pp=75&page_number=14&pn=1113";
     public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_75_PAGE_NUMBER_15_PN_1113 = "/jobs/drummer-in-houston-tx?pp=75&page_number=15&pn=1113";
-    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_100_PAGE_NUMBER_11_PN_1050 ="/jobs/drummer-in-houston-tx?pp=100&page_number=11&pn=1050";
-    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_100_PAGE_NUMBER_10_PN_1050 ="/jobs/drummer-in-houston-tx?pp=100&page_number=10&pn=1050";
-    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_250_PAGE_NUMBER_4_PN_1118 ="/jobs/drummer-in-houston-tx?pp=250&page_number=4&pn=1118";
-    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_250_PAGE_NUMBER_5_PN_1118 ="/jobs/drummer-in-houston-tx?pp=250&page_number=5&pn=1118";
-    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX ="/jobs/drummer-in-houston-tx";
-    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_50 ="/jobs/drummer-in-houston-tx?pp=50";
-    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_75 ="/jobs/drummer-in-houston-tx?pp=75";
-    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_100 ="/jobs/drummer-in-houston-tx?pp=100";
-    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_250 ="/jobs/drummer-in-houston-tx?pp=250";
-    public final String SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_50 ="/jobs/sales-in-new-york-city-ny?pp=50";
-    public final String SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_75 ="/jobs/sales-in-new-york-city-ny?pp=75";
-    public final String SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_100 ="/jobs/sales-in-new-york-city-ny?pp=100";
+    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_100_PAGE_NUMBER_11_PN_1050 = "/jobs/drummer-in-houston-tx?pp=100&page_number=11&pn=1050";
+    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_100_PAGE_NUMBER_10_PN_1050 = "/jobs/drummer-in-houston-tx?pp=100&page_number=10&pn=1050";
+    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_250_PAGE_NUMBER_4_PN_1118 = "/jobs/drummer-in-houston-tx?pp=250&page_number=4&pn=1118";
+    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_250_PAGE_NUMBER_5_PN_1118 = "/jobs/drummer-in-houston-tx?pp=250&page_number=5&pn=1118";
+    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX = "/jobs/drummer-in-houston-tx";
+    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_50 = "/jobs/drummer-in-houston-tx?pp=50";
+    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_75 = "/jobs/drummer-in-houston-tx?pp=75";
+    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_100 = "/jobs/drummer-in-houston-tx?pp=100";
+    public final String SEARCH_JOBS_DRUMMER_IN_HOUSTON_TX_PER_PAGE_250 = "/jobs/drummer-in-houston-tx?pp=250";
+    public final String SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_50 = "/jobs/sales-in-new-york-city-ny?pp=50";
+    public final String SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_75 = "/jobs/sales-in-new-york-city-ny?pp=75";
+    public final String SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_100 = "/jobs/sales-in-new-york-city-ny?pp=100";
 
     // ================> Candidate Constants Ended <=========================
 
@@ -349,12 +350,12 @@ public class URLConstants implements Constants {
 
     public String getConstantsURL(String URL) {
         String returnURL = "";
-        logger.info("browser url is : "  + URL);
+        logger.info("browser url is : " + URL);
         try {
             Field field = this.getClass().getDeclaredField(URL);
             field.setAccessible(true);
             returnURL = field.get(this).toString();
-            logger.info("returned url from constants is : "  + returnURL);
+            logger.info("returned url from constants is : " + returnURL);
         } catch (Exception e) {
             Assert.fail("failed while trying to get url from URL constants " + e.getMessage());
         }
