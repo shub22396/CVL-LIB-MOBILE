@@ -17,6 +17,7 @@ Feature: Candidate JobSearch SearchJobsLoggedOut
 
   @searchJobLoggedOutWithAllParameters
   Scenario: Search job page logged out test with all values
+    When  I click on link text "More Search Options"
     And   I select the option "50000" from Salary Min
     And   I select the option "70000" from Salary Max
     And   I select the option "Permanent" from Job Type
@@ -49,8 +50,8 @@ Feature: Candidate JobSearch SearchJobsLoggedOut
     And   I should see link "More" with id "more_15"
     And   I should see link "Apply Now" with id "apply_now_15"
     And   I should see link "Apply Now" with id "apply-now-partner-jobs-5"
-    And   I scroll down to element "2"
-    Then  I click on link "2"
+    And   I should see text "Next"
+    Then  I click on hyper link "Next"
     And   I should not see link "Save" with id "save_toggle_20"
     And   I should see link "Save" with id "save_toggle_15"
     And   I should see link "More" with id "more_15"
@@ -61,38 +62,38 @@ Feature: Candidate JobSearch SearchJobsLoggedOut
   @searchPartnerJobLoggedOutWhenMoreRLJobs50PerPage
   Scenario: Search job page logged in, displaying partner jobs when > 44 RL jobs and 50 per page
     When  I browse the url "Search Jobs Sales In New York City Ny Per Page 50"
-    And   I should see link "save_toggle_45"
-    And   I should see link "more_45"
-    And   I should see link "apply_now_45"
+    And   I should see link "Save" with id "save_toggle_45"
+    And   I should see link "View more" with id "more_45"
+    And   I should see link "Apply now" with id "apply_now_45"
     And   I should not see link "Save" with id "save_toggle_50"
     And   I should see link "Apply now" with id "apply-now-partner-jobs-5"
 
   @searchPartnerJobLoggedOutWhenMoreRLJobs75PerPage
   Scenario: Search job page logged in, displaying partner jobs when > 69 RL jobs and 75 per page
     When  I browse the url "Search Jobs Sales In New York City Ny Per Page 75"
-    And   I should see link "save_toggle_70"
-    And   I should see link "more_70"
-    And   I should see link "apply_now_70"
+    And   I should see link "Save" with id "save_toggle_70"
+    And   I should see link "View more" with id "more_70"
+    And   I should see link "Apply now" with id "apply_now_70"
     And   I should not see link "Save" with id "save_toggle_71"
     And   I should see link "Apply now" with id "apply-now-partner-jobs-5"
 
   @searchPartnerJobLoggedOutWhenMoreRLJobs100PerPage
   Scenario: Search job page logged in, displaying partner jobs when > 94 RL jobs and 100 per page
     When  I browse the url "Search Jobs Sales In New York City Ny Per Page 100"
-    And   I should see link "save_toggle_95"
-    And   I should see link "more_95"
-    And   I should see link "apply_now_95"
+    And   I should see link "Save" with id "save_toggle_95"
+    And   I should see link "View more" with id "more_95"
+    And   I should see link "Apply now" with id "apply_now_95"
     And   I should not see link "Save" with id "save_toggle_96"
     And   I should see link "Apply now" with id "apply-now-partner-jobs-5"
-
-  @featuredJobsLoggedOut
-  Scenario: As a logged out user, verify 'Featured Jobs' section
-    When  I navigate to page "Jobs"
-    And   I should see text "Featured Jobs"
-    Then  I click on Featured jobs one
-    And   I switch tab
-    Then  I should be able to see in browser URL "Job View"
-    And   I should see text "Create a new Job Alert to make sure you see the best new jobs first!"
+# on mobile view featured jobs are not displaying on jobs pag
+#  @featuredJobsLoggedOut
+#  Scenario: As a logged out user, verify 'Featured Jobs' section
+#    When  I navigate to page "Jobs"
+#    And   I should see text "Featured Jobs"
+#    Then  I click on Featured jobs one
+#    And   I switch tab
+#    Then  I should be able to see in browser URL "Job View"
+#    And   I should see text "Create a new Job Alert to make sure you see the best new jobs first!"
 
   @hideJobsLoggedOutReasonOne
   Scenario: As a logged out user, verify 'Hide Jobs' functionality reason one

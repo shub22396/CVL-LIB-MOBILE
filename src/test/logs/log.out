@@ -1553,3 +1553,689 @@ Undo<---]
 2022-07-22 12:07:106 INFO  Utility :300 - [--->Clicking on id starts with  search_hide_undo<---]
 2022-07-22 12:07:124 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (2225dca94b9c696dd78f29d9f9ff148c)] -> css selector: *[id^="search_hide_undo"]]<---]
 2022-07-22 12:07:187 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:716 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:861 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:610 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:839 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:854 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:132 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:132 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:916 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:917 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:917 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:917 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:917 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:441 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:441 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:473 INFO  JobSearchPage :132 - Keyword/title filled with :sales
+2022-07-22 12:07:551 INFO  JobSearchPage :142 - Entered search location is Brooklyn, NY
+2022-07-22 12:07:628 INFO  JobSearchPage :152 - click on Find jobs button
+2022-07-22 12:07:692 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (889cc340c2e19c2c75464247e491d8eb)] -> id: home-search-submit]<---]
+2022-07-22 12:07:790 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_BROOKLYN_NY
+2022-07-22 12:07:790 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-brooklyn-ny
+2022-07-22 12:07:386 INFO  OthersPage :188 - The present URL is --> : https://www-master.ci.resume-library.com/jobs/sales-in-brooklyn-ny
+2022-07-22 12:07:386 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_BROOKLYN_NY
+2022-07-22 12:07:387 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-brooklyn-ny
+2022-07-22 12:07:387 INFO  OthersPage :189 - The URL --> : Jobs Sales In Brooklyn Ny to be verified against : https://www-master.ci.resume-library.com/jobs/sales-in-brooklyn-ny boolean value: true
+2022-07-22 12:07:387 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_BROOKLYN_NY
+2022-07-22 12:07:387 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-brooklyn-ny
+2022-07-22 12:07:390 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:661 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:797 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:470 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:697 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:714 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:977 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:978 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:764 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:765 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:766 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:766 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:766 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:335 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:336 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:363 INFO  JobSearchPage :194 - select the option min salary :50000
+2022-07-22 12:07:858 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:868 INFO  Utility :494 - [--->Initializing for screenshot<---]
+2022-07-22 12:07:767 INFO  Utility :502 - [--->Screenshot taken<---]
+2022-07-22 12:07:876 INFO  RetryAnalyzer :33 - [1;91m[--->[42m[1;97mRetrying [1] for the Scenario ["Search job page logged out test with all values"] as its  status is[0m[0;100m[1;91m [FAILURE][0m[1;91m<---][0m
+2022-07-22 12:07:878 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:936 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:936 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:922 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:922 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:922 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:923 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:923 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:419 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:419 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:429 INFO  JobSearchPage :194 - select the option min salary :50000
+2022-07-22 12:07:701 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:707 INFO  Utility :494 - [--->Initializing for screenshot<---]
+2022-07-22 12:07:622 INFO  Utility :502 - [--->Screenshot taken<---]
+2022-07-22 12:07:623 INFO  ExcelUtil :47 - [--->in addRowsFailedExcel<---]
+2022-07-22 12:07:623 INFO  ExcelUtil :106 - [--->in checkScenarioExist<----]
+2022-07-22 12:07:689 INFO  ExcelUtil :155 - [--->in getVerticalName<---]
+2022-07-22 12:07:691 INFO  ExcelUtil :69 - [--->written into excel file successfully for the failed scenario:Search job page logged out test with all values<-----]
+2022-07-22 12:07:878 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:22 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:680 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:919 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:931 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:182 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:183 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:117 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:118 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:119 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:119 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:119 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:404 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:404 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:428 INFO  JobSearchPage :132 - Keyword/title filled with :sales
+2022-07-22 12:07:510 INFO  JobSearchPage :142 - Entered search location is Brooklyn, NY
+2022-07-22 12:07:569 INFO  JobSearchPage :152 - click on Find jobs button
+2022-07-22 12:07:627 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (f250ae64a7585365916adff9c7d2b4cc)] -> id: home-search-submit]<---]
+2022-07-22 12:07:727 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_BROOKLYN_NY
+2022-07-22 12:07:727 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-brooklyn-ny
+2022-07-22 12:07:758 INFO  OthersPage :188 - The present URL is --> : https://www-master.ci.resume-library.com/jobs/sales-in-brooklyn-ny
+2022-07-22 12:07:758 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_BROOKLYN_NY
+2022-07-22 12:07:759 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-brooklyn-ny
+2022-07-22 12:07:759 INFO  OthersPage :189 - The URL --> : Jobs Sales In Brooklyn Ny to be verified against : https://www-master.ci.resume-library.com/jobs/sales-in-brooklyn-ny boolean value: true
+2022-07-22 12:07:759 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_BROOKLYN_NY
+2022-07-22 12:07:759 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-brooklyn-ny
+2022-07-22 12:07:762 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:999 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:134 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:770 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:966 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:978 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:213 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:214 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:966 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:967 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:968 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:968 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:968 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:330 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:330 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:337 INFO  URLConstants :353 - browser url is : JOBS_WEB_JOB
+2022-07-22 12:07:337 INFO  URLConstants :358 - returned url from constants is : /jobs/web-job-in-90001?pd=1
+2022-07-22 12:07:338 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/jobs/web-job-in-90001?pd=1
+2022-07-22 12:07:338 INFO  URLConstants :353 - browser url is : JOBS_WEB_JOB
+2022-07-22 12:07:339 INFO  URLConstants :358 - returned url from constants is : /jobs/web-job-in-90001?pd=1
+2022-07-22 12:07:660 INFO  URLConstants :353 - browser url is : JOBS_WEB_JOB
+2022-07-22 12:07:660 INFO  URLConstants :358 - returned url from constants is : /jobs/web-job-in-90001?pd=1
+2022-07-22 12:07:717 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_20
+2022-07-22 12:07:821 INFO  JobSearchPage :234 - link/button : More to be verified with element id :more_20
+2022-07-22 12:07:216 INFO  JobSearchPage :234 - link/button : Apply now to be verified with element id :apply_now_20
+2022-07-22 12:07:651 INFO  Utility :846 - [--->found the web element with text : [[ChromeDriver: chrome on LINUX (edd18080d21d8cfe7d81b31147115063)] -> xpath: //*[contains(text(),'Next')]]---Next<---]
+2022-07-22 12:07:741 INFO  Utility :210 - [--->text on the element Next<---]
+2022-07-22 12:07:742 INFO  Utility :254 - [--->found an element with text : Next : [[ChromeDriver: chrome on LINUX (edd18080d21d8cfe7d81b31147115063)] -> xpath: //*[text()="Next"]]<---]
+2022-07-22 12:07:773 INFO  Utility :158 - [--->Element Text : Next<---]
+2022-07-22 12:07:773 INFO  Utility :260 - [--->click on element with text : Next<---]
+2022-07-22 12:07:801 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (edd18080d21d8cfe7d81b31147115063)] -> xpath: //*[text()="Next"]]<---]
+2022-07-22 12:07:654 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_1
+2022-07-22 12:07:67 INFO  JobSearchPage :234 - link/button : More to be verified with element id :more_1
+2022-07-22 12:07:466 INFO  JobSearchPage :234 - link/button : Apply now to be verified with element id :apply-now-partner-jobs-1
+2022-07-22 12:07:485 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:830 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:971 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:647 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:841 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:853 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:111 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:112 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:819 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:820 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:820 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:821 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:821 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:400 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:400 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:406 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:407 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:407 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:407 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:407 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:34 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:34 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:69 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_20
+2022-07-22 12:07:131 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_15
+2022-07-22 12:07:163 INFO  JobSearchPage :234 - link/button : More to be verified with element id :more_15
+2022-07-22 12:07:187 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply_now_15
+2022-07-22 12:07:216 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply-now-partner-jobs-5
+2022-07-22 12:07:271 INFO  Utility :846 - [--->found the web element with text : [[ChromeDriver: chrome on LINUX (02e54ddfff2fdea99fef05401df28eb1)] -> xpath: //*[contains(text(),'2')]]---<---]
+2022-07-22 12:07:287 INFO  JobSearchPage :259 - link/button :2 clicked
+2022-07-22 12:07:356 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:363 INFO  Utility :494 - [--->Initializing for screenshot<---]
+2022-07-22 12:07:342 INFO  Utility :502 - [--->Screenshot taken<---]
+2022-07-22 12:07:449 INFO  RetryAnalyzer :33 - [1;91m[--->[42m[1;97mRetrying [1] for the Scenario ["Search job page logged out, displaying partner jobs when > 19 RL jobs"] as its  status is[0m[0;100m[1;91m [FAILURE][0m[1;91m<---][0m
+2022-07-22 12:07:452 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:491 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:492 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:765 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:765 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:765 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:765 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:766 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:356 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:356 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:360 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:360 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:360 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:361 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:361 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:930 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:930 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:947 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_20
+2022-07-22 12:07:14 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_15
+2022-07-22 12:07:84 INFO  JobSearchPage :234 - link/button : More to be verified with element id :more_15
+2022-07-22 12:07:109 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply_now_15
+2022-07-22 12:07:140 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply-now-partner-jobs-5
+2022-07-22 12:07:184 INFO  Utility :846 - [--->found the web element with text : [[ChromeDriver: chrome on LINUX (c1497de144707cf1a2e713f9b9e0eb04)] -> xpath: //*[contains(text(),'2')]]---<---]
+2022-07-22 12:07:831 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:992 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:685 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:899 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:913 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:194 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:194 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:974 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:975 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:976 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:976 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:976 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:395 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:395 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:402 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:402 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:403 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:403 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:403 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:835 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:835 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:856 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_20
+2022-07-22 12:07:974 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_15
+2022-07-22 12:07:06 INFO  JobSearchPage :234 - link/button : More to be verified with element id :more_15
+2022-07-22 12:07:33 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply_now_15
+2022-07-22 12:07:122 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply-now-partner-jobs-5
+2022-07-22 12:07:220 INFO  Utility :849 - [--->Given text not found : next<---]
+2022-07-22 12:07:235 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:243 INFO  Utility :494 - [--->Initializing for screenshot<---]
+2022-07-22 12:07:394 INFO  Utility :502 - [--->Screenshot taken<---]
+2022-07-22 12:07:502 INFO  RetryAnalyzer :33 - [1;91m[--->[42m[1;97mRetrying [1] for the Scenario ["Search job page logged out, displaying partner jobs when > 19 RL jobs"] as its  status is[0m[0;100m[1;91m [FAILURE][0m[1;91m<---][0m
+2022-07-22 12:07:506 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:555 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:555 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:561 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:562 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:562 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:562 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:562 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:399 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:400 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:404 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:405 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:405 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:405 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:405 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:878 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:878 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:896 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_20
+2022-07-22 12:07:977 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_15
+2022-07-22 12:07:53 INFO  JobSearchPage :234 - link/button : More to be verified with element id :more_15
+2022-07-22 12:07:133 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply_now_15
+2022-07-22 12:07:160 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply-now-partner-jobs-5
+2022-07-22 12:07:261 INFO  Utility :849 - [--->Given text not found : next<---]
+2022-07-22 12:07:270 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:285 INFO  Utility :494 - [--->Initializing for screenshot<---]
+2022-07-22 12:07:540 INFO  Utility :502 - [--->Screenshot taken<---]
+2022-07-22 12:07:541 INFO  ExcelUtil :47 - [--->in addRowsFailedExcel<---]
+2022-07-22 12:07:541 INFO  ExcelUtil :106 - [--->in checkScenarioExist<----]
+2022-07-22 12:07:588 INFO  ExcelUtil :155 - [--->in getVerticalName<---]
+2022-07-22 12:07:590 INFO  ExcelUtil :69 - [--->written into excel file successfully for the failed scenario:Search job page logged out, displaying partner jobs when > 19 RL jobs<-----]
+2022-07-22 12:07:258 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:394 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:52 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:259 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:272 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:545 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:545 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:209 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:210 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:211 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:211 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:211 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:392 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:392 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:399 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:399 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:400 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:400 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:400 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:815 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:815 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:833 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_20
+2022-07-22 12:07:977 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_15
+2022-07-22 12:07:15 INFO  JobSearchPage :234 - link/button : More to be verified with element id :more_15
+2022-07-22 12:07:91 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply_now_15
+2022-07-22 12:07:118 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply-now-partner-jobs-5
+2022-07-22 12:07:147 INFO  JobSearchPage :259 - link/button :next clicked
+2022-07-22 12:07:336 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:349 INFO  Utility :494 - [--->Initializing for screenshot<---]
+2022-07-22 12:07:364 INFO  Utility :502 - [--->Screenshot taken<---]
+2022-07-22 12:07:484 INFO  RetryAnalyzer :33 - [1;91m[--->[42m[1;97mRetrying [1] for the Scenario ["Search job page logged out, displaying partner jobs when > 19 RL jobs"] as its  status is[0m[0;100m[1;91m [FAILURE][0m[1;91m<---][0m
+2022-07-22 12:07:491 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:542 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:543 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:532 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:532 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:532 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:532 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:532 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:366 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:366 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:370 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:370 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:370 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:371 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:371 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:752 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:752 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:791 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_20
+2022-07-22 12:07:844 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_15
+2022-07-22 12:07:930 INFO  JobSearchPage :234 - link/button : More to be verified with element id :more_15
+2022-07-22 12:07:07 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply_now_15
+2022-07-22 12:07:63 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply-now-partner-jobs-5
+2022-07-22 12:07:135 INFO  JobSearchPage :259 - link/button :next clicked
+2022-07-22 12:07:406 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:412 INFO  Utility :494 - [--->Initializing for screenshot<---]
+2022-07-22 12:07:257 INFO  Utility :502 - [--->Screenshot taken<---]
+2022-07-22 12:07:258 INFO  ExcelUtil :47 - [--->in addRowsFailedExcel<---]
+2022-07-22 12:07:259 INFO  ExcelUtil :106 - [--->in checkScenarioExist<----]
+2022-07-22 12:07:310 INFO  ExcelUtil :155 - [--->in getVerticalName<---]
+2022-07-22 12:07:312 INFO  ExcelUtil :69 - [--->written into excel file successfully for the failed scenario:Search job page logged out, displaying partner jobs when > 19 RL jobs<-----]
+2022-07-22 12:07:301 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:468 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:156 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:324 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:338 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:598 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:598 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:382 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:383 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:384 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:384 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:384 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:317 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:317 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:325 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:325 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:326 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:326 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:326 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:736 INFO  URLConstants :353 - browser url is : JOBS_SALES_IN_NEW_YORK
+2022-07-22 12:07:736 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny
+2022-07-22 12:07:764 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_20
+2022-07-22 12:07:853 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_15
+2022-07-22 12:07:876 INFO  JobSearchPage :234 - link/button : More to be verified with element id :more_15
+2022-07-22 12:07:905 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply_now_15
+2022-07-22 12:07:971 INFO  JobSearchPage :234 - link/button : Apply Now to be verified with element id :apply-now-partner-jobs-5
+2022-07-22 12:07:88 INFO  Utility :210 - [--->text on the element Next<---]
+2022-07-22 12:07:98 INFO  OthersPage :258 - Clicking on hyper link Next
+2022-07-22 12:07:537 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_20
+2022-07-22 12:07:590 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_15
+2022-07-22 12:07:616 INFO  JobSearchPage :234 - link/button : More to be verified with element id :more_15
+2022-07-22 12:07:635 INFO  JobSearchPage :234 - link/button : Apply now to be verified with element id :apply_now_15
+2022-07-22 12:07:699 INFO  JobSearchPage :234 - link/button : Apply now to be verified with element id :apply-now-partner-jobs-5
+2022-07-22 12:07:733 INFO  OthersPage :188 - The present URL is --> : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny?page_number=2
+2022-07-22 12:07:734 INFO  OthersPage :189 - The URL --> : /jobs/sales-in-new-york-city-ny?page_number=2 to be verified against : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny?page_number=2 boolean value: true
+2022-07-22 12:07:734 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:758 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:922 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:644 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:835 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:848 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:176 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:177 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:873 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:875 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:875 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:875 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:876 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:312 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:313 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:321 INFO  URLConstants :353 - browser url is : SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_50
+2022-07-22 12:07:321 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny?pp=50
+2022-07-22 12:07:322 INFO  Others :111 - Web page url to load is : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny?pp=50
+2022-07-22 12:07:322 INFO  URLConstants :353 - browser url is : SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_50
+2022-07-22 12:07:322 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny?pp=50
+2022-07-22 12:07:673 INFO  JobSearchPage :253 - link/button :save_toggle_45is to be verified
+2022-07-22 12:07:708 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:718 INFO  Utility :494 - [--->Initializing for screenshot<---]
+2022-07-22 12:07:718 INFO  Utility :502 - [--->Screenshot taken<---]
+2022-07-22 12:07:839 INFO  RetryAnalyzer :33 - [1;91m[--->[42m[1;97mRetrying [1] for the Scenario ["Search job page logged in, displaying partner jobs when > 44 RL jobs and 50 per page"] as its  status is[0m[0;100m[1;91m [FAILURE][0m[1;91m<---][0m
+2022-07-22 12:07:850 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:903 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:904 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:937 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:938 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:938 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:938 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:938 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:303 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:303 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:308 INFO  URLConstants :353 - browser url is : SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_50
+2022-07-22 12:07:309 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny?pp=50
+2022-07-22 12:07:309 INFO  Others :111 - Web page url to load is : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny?pp=50
+2022-07-22 12:07:309 INFO  URLConstants :353 - browser url is : SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_50
+2022-07-22 12:07:309 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny?pp=50
+2022-07-22 12:07:207 INFO  JobSearchPage :253 - link/button :save_toggle_45is to be verified
+2022-07-22 12:07:261 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:268 INFO  Utility :494 - [--->Initializing for screenshot<---]
+2022-07-22 12:07:963 INFO  Utility :502 - [--->Screenshot taken<---]
+2022-07-22 12:07:964 INFO  ExcelUtil :47 - [--->in addRowsFailedExcel<---]
+2022-07-22 12:07:964 INFO  ExcelUtil :106 - [--->in checkScenarioExist<----]
+2022-07-22 12:07:16 INFO  ExcelUtil :155 - [--->in getVerticalName<---]
+2022-07-22 12:07:19 INFO  ExcelUtil :69 - [--->written into excel file successfully for the failed scenario:Search job page logged in, displaying partner jobs when > 44 RL jobs and 50 per page<-----]
+2022-07-22 12:07:572 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:715 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:394 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:603 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:617 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:944 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:945 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:578 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:579 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:580 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:580 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:580 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:335 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:335 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:344 INFO  URLConstants :353 - browser url is : SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_50
+2022-07-22 12:07:344 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny?pp=50
+2022-07-22 12:07:345 INFO  Others :111 - Web page url to load is : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny?pp=50
+2022-07-22 12:07:345 INFO  URLConstants :353 - browser url is : SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_50
+2022-07-22 12:07:345 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny?pp=50
+2022-07-22 12:07:963 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_45
+2022-07-22 12:07:75 INFO  JobSearchPage :234 - link/button : View more to be verified with element id :more_45
+2022-07-22 12:07:143 INFO  JobSearchPage :234 - link/button : Apply now to be verified with element id :apply_now_45
+2022-07-22 12:07:201 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_50
+2022-07-22 12:07:479 INFO  JobSearchPage :234 - link/button : Apply now to be verified with element id :apply-now-partner-jobs-5
+2022-07-22 12:07:502 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:307 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:446 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:151 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:353 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:367 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:631 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:632 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:264 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:266 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:266 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:266 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:266 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:389 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:390 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:398 INFO  URLConstants :353 - browser url is : SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_75
+2022-07-22 12:07:398 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny?pp=75
+2022-07-22 12:07:399 INFO  Others :111 - Web page url to load is : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny?pp=75
+2022-07-22 12:07:399 INFO  URLConstants :353 - browser url is : SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_75
+2022-07-22 12:07:400 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny?pp=75
+2022-07-22 12:07:836 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_70
+2022-07-22 12:07:949 INFO  JobSearchPage :234 - link/button : View more to be verified with element id :more_70
+2022-07-22 12:07:975 INFO  JobSearchPage :234 - link/button : Apply now to be verified with element id :apply_now_70
+2022-07-22 12:07:106 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_71
+2022-07-22 12:07:346 INFO  JobSearchPage :234 - link/button : Apply now to be verified with element id :apply-now-partner-jobs-5
+2022-07-22 12:07:397 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:987 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:126 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:891 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:142 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:155 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:399 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:399 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:229 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:231 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:231 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:231 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:232 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:300 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:300 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:307 INFO  URLConstants :353 - browser url is : SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_100
+2022-07-22 12:07:308 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny?pp=100
+2022-07-22 12:07:308 INFO  Others :111 - Web page url to load is : https://www-master.ci.resume-library.com/jobs/sales-in-new-york-city-ny?pp=100
+2022-07-22 12:07:308 INFO  URLConstants :353 - browser url is : SEARCH_JOBS_SALES_IN_NEW_YORK_CITY_NY_PER_PAGE_100
+2022-07-22 12:07:309 INFO  URLConstants :358 - returned url from constants is : /jobs/sales-in-new-york-city-ny?pp=100
+2022-07-22 12:07:117 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_95
+2022-07-22 12:07:187 INFO  JobSearchPage :234 - link/button : View more to be verified with element id :more_95
+2022-07-22 12:07:275 INFO  JobSearchPage :234 - link/button : Apply now to be verified with element id :apply_now_95
+2022-07-22 12:07:298 INFO  JobSearchPage :234 - link/button : Save to be verified with element id :save_toggle_96
+2022-07-22 12:07:600 INFO  JobSearchPage :234 - link/button : Apply now to be verified with element id :apply-now-partner-jobs-5
+2022-07-22 12:07:677 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:920 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:81 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:764 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:949 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:963 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:253 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:253 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:994 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:995 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:996 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:996 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:996 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:296 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:296 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:303 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:303 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:304 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/jobs
+2022-07-22 12:07:304 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:304 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:622 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:622 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:714 INFO  Utility :210 - [--->text on the element <---]
+2022-07-22 12:07:733 INFO  JobSearchPage :284 - Click on first link form the featured Jobs list 
+2022-07-22 12:07:968 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:976 INFO  Utility :494 - [--->Initializing for screenshot<---]
+2022-07-22 12:07:221 INFO  Utility :502 - [--->Screenshot taken<---]
+2022-07-22 12:07:339 INFO  RetryAnalyzer :33 - [1;91m[--->[42m[1;97mRetrying [1] for the Scenario ["As a logged out user, verify 'Featured Jobs' section"] as its  status is[0m[0;100m[1;91m [FAILURE][0m[1;91m<---][0m
+2022-07-22 12:07:342 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:402 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:402 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:462 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:462 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:462 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:462 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:462 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:293 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:293 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:297 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:297 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:297 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/jobs
+2022-07-22 12:07:297 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:297 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:804 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:805 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:862 INFO  Utility :210 - [--->text on the element <---]
+2022-07-22 12:07:875 INFO  JobSearchPage :284 - Click on first link form the featured Jobs list 
+2022-07-22 12:07:359 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:363 INFO  Utility :494 - [--->Initializing for screenshot<---]
+2022-07-22 12:07:315 INFO  Utility :502 - [--->Screenshot taken<---]
+2022-07-22 12:07:316 INFO  ExcelUtil :47 - [--->in addRowsFailedExcel<---]
+2022-07-22 12:07:316 INFO  ExcelUtil :106 - [--->in checkScenarioExist<----]
+2022-07-22 12:07:367 INFO  ExcelUtil :155 - [--->in getVerticalName<---]
+2022-07-22 12:07:370 INFO  ExcelUtil :69 - [--->written into excel file successfully for the failed scenario:As a logged out user, verify 'Featured Jobs' section<-----]
+2022-07-22 12:07:843 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:983 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:661 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:839 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:853 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:141 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:142 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:893 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:895 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:895 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:895 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:896 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:293 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:294 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:314 INFO  JobSearchPage :132 - Keyword/title filled with :sales
+2022-07-22 12:07:378 INFO  JobSearchPage :142 - Entered search location is Brooklyn, NY
+2022-07-22 12:07:437 INFO  JobSearchPage :152 - click on Find jobs button
+2022-07-22 12:07:493 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (248cb291a131518856c20f63aba2ded6)] -> id: home-search-submit]<---]
+2022-07-22 12:07:563 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:563 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:563 INFO  Others :125 - url to be verified is  : https://www-master.ci.resume-library.com/jobs
+2022-07-22 12:07:564 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:564 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:532 INFO  Others :128 - Current url with page is : https://www-master.ci.resume-library.com/jobs/sales-in-brooklyn-ny
+2022-07-22 12:07:532 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:533 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:665 INFO  Utility :300 - [--->Clicking on id starts with  search_hide_result<---]
+2022-07-22 12:07:685 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (248cb291a131518856c20f63aba2ded6)] -> css selector: *[id^="search_hide_result"]]<---]
+2022-07-22 12:07:860 INFO  Utility :210 - [--->text on the element This job will be hidden from all searches
+Undo<---]
+2022-07-22 12:07:888 INFO  Utility :300 - [--->Clicking on id starts with  search_hide_tell_us<---]
+2022-07-22 12:07:913 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (248cb291a131518856c20f63aba2ded6)] -> css selector: *[id^="search_hide_tell_us"]]<---]
+2022-07-22 12:07:06 INFO  Utility :210 - [--->text on the element I've already applied or viewed this job<---]
+2022-07-22 12:07:70 INFO  Utility :210 - [--->text on the element It's irrelevant<---]
+2022-07-22 12:07:132 INFO  Utility :210 - [--->text on the element Other<---]
+2022-07-22 12:07:158 INFO  Utility :307 - [--->Clicking on id ends with  _0_0<---]
+2022-07-22 12:07:183 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (248cb291a131518856c20f63aba2ded6)] -> css selector: *[id$="_0_0"]]<---]
+2022-07-22 12:07:280 INFO  Utility :587 - [--->Thank you for your feedback : element with text : Thank you for your feedback<---]
+2022-07-22 12:07:311 INFO  Utility :158 - [--->Element Text : Thank you for your feedback<---]
+2022-07-22 12:07:316 INFO  Utility :195 - [--->text on the element Thank you for your feedback<---]
+2022-07-22 12:07:321 INFO  FastTrackRegisterPage :156 - Text message to be verified is :Thank you for your feedback against the text on page is : Thank you for your feedback
+2022-07-22 12:07:322 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:591 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:729 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:377 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:579 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:592 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:845 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:846 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:488 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:489 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:490 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:490 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:491 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:324 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:324 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:347 INFO  JobSearchPage :132 - Keyword/title filled with :sales
+2022-07-22 12:07:411 INFO  JobSearchPage :142 - Entered search location is Brooklyn, NY
+2022-07-22 12:07:470 INFO  JobSearchPage :152 - click on Find jobs button
+2022-07-22 12:07:525 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (7da4c7a9745d58646161856a2319a9a0)] -> id: home-search-submit]<---]
+2022-07-22 12:07:578 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:579 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:579 INFO  Others :125 - url to be verified is  : https://www-master.ci.resume-library.com/jobs
+2022-07-22 12:07:579 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:579 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:347 INFO  Others :128 - Current url with page is : https://www-master.ci.resume-library.com/jobs/sales-in-brooklyn-ny
+2022-07-22 12:07:347 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:347 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:587 INFO  Utility :300 - [--->Clicking on id starts with  search_hide_result<---]
+2022-07-22 12:07:608 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (7da4c7a9745d58646161856a2319a9a0)] -> css selector: *[id^="search_hide_result"]]<---]
+2022-07-22 12:07:734 INFO  Utility :210 - [--->text on the element This job will be hidden from all searches
+Undo<---]
+2022-07-22 12:07:758 INFO  Utility :300 - [--->Clicking on id starts with  search_hide_tell_us<---]
+2022-07-22 12:07:319 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (7da4c7a9745d58646161856a2319a9a0)] -> css selector: *[id^="search_hide_tell_us"]]<---]
+2022-07-22 12:07:417 INFO  Utility :210 - [--->text on the element I've already applied or viewed this job<---]
+2022-07-22 12:07:473 INFO  Utility :210 - [--->text on the element It's irrelevant<---]
+2022-07-22 12:07:531 INFO  Utility :210 - [--->text on the element Other<---]
+2022-07-22 12:07:552 INFO  Utility :307 - [--->Clicking on id ends with  _0_1<---]
+2022-07-22 12:07:576 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (7da4c7a9745d58646161856a2319a9a0)] -> css selector: *[id$="_0_1"]]<---]
+2022-07-22 12:07:712 INFO  Utility :587 - [--->Thank you for your feedback : element with text : Thank you for your feedback<---]
+2022-07-22 12:07:784 INFO  Utility :158 - [--->Element Text : Thank you for your feedback<---]
+2022-07-22 12:07:791 INFO  Utility :195 - [--->text on the element Thank you for your feedback<---]
+2022-07-22 12:07:798 INFO  FastTrackRegisterPage :156 - Text message to be verified is :Thank you for your feedback against the text on page is : Thank you for your feedback
+2022-07-22 12:07:799 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 12:07:285 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 12:07:422 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 12:07:73 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 12:07:272 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 12:07:284 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 12:07:575 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 12:07:576 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 12:07:275 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:276 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:276 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 12:07:276 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:277 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:390 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 12:07:390 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 12:07:417 INFO  JobSearchPage :132 - Keyword/title filled with :sales
+2022-07-22 12:07:484 INFO  JobSearchPage :142 - Entered search location is Brooklyn, NY
+2022-07-22 12:07:556 INFO  JobSearchPage :152 - click on Find jobs button
+2022-07-22 12:07:613 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (47f7e2de8ec54d87d38216eaec76c6bd)] -> id: home-search-submit]<---]
+2022-07-22 12:07:701 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:701 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:702 INFO  Others :125 - url to be verified is  : https://www-master.ci.resume-library.com/jobs
+2022-07-22 12:07:702 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:702 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:421 INFO  Others :128 - Current url with page is : https://www-master.ci.resume-library.com/jobs/sales-in-brooklyn-ny
+2022-07-22 12:07:421 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 12:07:421 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 12:07:575 INFO  Utility :300 - [--->Clicking on id starts with  search_hide_result<---]
+2022-07-22 12:07:595 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (47f7e2de8ec54d87d38216eaec76c6bd)] -> css selector: *[id^="search_hide_result"]]<---]
+2022-07-22 12:07:752 INFO  Utility :210 - [--->text on the element This job will be hidden from all searches
+Undo<---]
+2022-07-22 12:07:771 INFO  Utility :300 - [--->Clicking on id starts with  search_hide_tell_us<---]
+2022-07-22 12:07:342 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (47f7e2de8ec54d87d38216eaec76c6bd)] -> css selector: *[id^="search_hide_tell_us"]]<---]
+2022-07-22 12:07:519 INFO  Utility :210 - [--->text on the element I've already applied or viewed this job<---]
+2022-07-22 12:07:569 INFO  Utility :210 - [--->text on the element It's irrelevant<---]
+2022-07-22 12:07:625 INFO  Utility :210 - [--->text on the element Other<---]
+2022-07-22 12:07:649 INFO  Utility :307 - [--->Clicking on id ends with  _2<---]
+2022-07-22 12:07:679 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (47f7e2de8ec54d87d38216eaec76c6bd)] -> css selector: *[id$="_2"]]<---]
+2022-07-22 12:07:758 INFO  Utility :158 - [--->Element Text : Tell us more about why you don't want to see this job<---]
+2022-07-22 12:07:784 INFO  Utility :158 - [--->Element Text : Tell us more about why you don't want to see this job<---]
+2022-07-22 12:07:794 INFO  Utility :195 - [--->text on the element Tell us more about why you don't want to see this job<---]
+2022-07-22 12:07:803 INFO  JobSearchPage :321 - Entered reasons other input : Regression testing
+2022-07-22 12:07:970 INFO  Utility :210 - [--->text on the element Submit<---]
+2022-07-22 12:07:971 INFO  Utility :254 - [--->found an element with text : Submit : [[ChromeDriver: chrome on LINUX (47f7e2de8ec54d87d38216eaec76c6bd)] -> xpath: //*[text()="Submit"]]<---]
+2022-07-22 13:07:03 INFO  Utility :158 - [--->Element Text : Submit<---]
+2022-07-22 13:07:04 INFO  Utility :260 - [--->click on element with text : Submit<---]
+2022-07-22 13:07:44 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (47f7e2de8ec54d87d38216eaec76c6bd)] -> xpath: //*[text()="Submit"]]<---]
+2022-07-22 13:07:149 INFO  Utility :587 - [--->Thank you for your feedback : element with text : Thank you for your feedback<---]
+2022-07-22 13:07:178 INFO  Utility :158 - [--->Element Text : Thank you for your feedback<---]
+2022-07-22 13:07:184 INFO  Utility :195 - [--->text on the element Thank you for your feedback<---]
+2022-07-22 13:07:190 INFO  FastTrackRegisterPage :156 - Text message to be verified is :Thank you for your feedback against the text on page is : Thank you for your feedback
+2022-07-22 13:07:190 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
+2022-07-22 13:07:138 INFO  ExcelUtil :19 - [--->in createFailedExcel<----]
+2022-07-22 13:07:282 INFO  ExcelUtil :39 - [--->Created excel file successfully for the build:fromLocal-Machine<----]
+2022-07-22 13:07:05 INFO  CustomAbstractTestNGCucumberTests :81 - [--->In CustomAbstractTestNGCucumberTests: Before Class{machine=Local, browser=chrome}<---]
+2022-07-22 13:07:200 INFO  CucumberTestRunner :39 - [--->thread count:1 set for CucumberTestRunner<---]
+2022-07-22 13:07:212 INFO  CustomAbstractTestNGCucumberTests :59 - [--->CustomListener: onStart :chrome:Local<---]
+2022-07-22 13:07:476 INFO  PropertyFileReader :55 - [--->tagNames to skip failure from Scenarios.properties :[nationalJobsBanner, JobViewSchemaValidation]<----]
+2022-07-22 13:07:477 INFO  DriverController :40 - [--->Using chrome browser<---]
+2022-07-22 13:07:259 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 13:07:261 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 13:07:261 INFO  Others :104 - Web page url to load is : https://www-master.ci.resume-library.com/search-jobs
+2022-07-22 13:07:261 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 13:07:262 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 13:07:297 INFO  URLConstants :353 - browser url is : SEARCH_JOBS
+2022-07-22 13:07:297 INFO  URLConstants :358 - returned url from constants is : /search-jobs
+2022-07-22 13:07:317 INFO  JobSearchPage :132 - Keyword/title filled with :sales
+2022-07-22 13:07:383 INFO  JobSearchPage :142 - Entered search location is Brooklyn, NY
+2022-07-22 13:07:443 INFO  JobSearchPage :152 - click on Find jobs button
+2022-07-22 13:07:496 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (c307138dbe001296362ec25b90e1d620)] -> id: home-search-submit]<---]
+2022-07-22 13:07:553 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 13:07:554 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 13:07:554 INFO  Others :125 - url to be verified is  : https://www-master.ci.resume-library.com/jobs
+2022-07-22 13:07:554 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 13:07:554 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 13:07:112 INFO  Others :128 - Current url with page is : https://www-master.ci.resume-library.com/jobs/sales-in-brooklyn-ny
+2022-07-22 13:07:113 INFO  URLConstants :353 - browser url is : JOBS
+2022-07-22 13:07:113 INFO  URLConstants :358 - returned url from constants is : /jobs
+2022-07-22 13:07:333 INFO  Utility :300 - [--->Clicking on id starts with  search_hide_result<---]
+2022-07-22 13:07:372 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (c307138dbe001296362ec25b90e1d620)] -> css selector: *[id^="search_hide_result"]]<---]
+2022-07-22 13:07:519 INFO  Utility :210 - [--->text on the element This job will be hidden from all searches
+Undo<---]
+2022-07-22 13:07:539 INFO  Utility :300 - [--->Clicking on id starts with  search_hide_tell_us<---]
+2022-07-22 13:07:108 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (c307138dbe001296362ec25b90e1d620)] -> css selector: *[id^="search_hide_tell_us"]]<---]
+2022-07-22 13:07:248 INFO  Utility :210 - [--->text on the element I've already applied or viewed this job<---]
+2022-07-22 13:07:310 INFO  Utility :210 - [--->text on the element It's irrelevant<---]
+2022-07-22 13:07:357 INFO  Utility :210 - [--->text on the element Other<---]
+2022-07-22 13:07:380 INFO  Utility :300 - [--->Clicking on id starts with  search_hide_undo<---]
+2022-07-22 13:07:406 INFO  Utility :223 - [--->Clicking on element [[ChromeDriver: chrome on LINUX (c307138dbe001296362ec25b90e1d620)] -> css selector: *[id^="search_hide_undo"]]<---]
+2022-07-22 13:07:461 INFO  Hooks :33 - [--->In Hooks, cucumber after tearDown method ---> <---]
