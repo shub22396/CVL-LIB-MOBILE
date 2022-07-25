@@ -85,15 +85,7 @@ Feature: Candidate JobSearch SearchJobsLoggedOut
     And   I should see link "Apply now" with id "apply_now_95"
     And   I should not see link "Save" with id "save_toggle_96"
     And   I should see link "Apply now" with id "apply-now-partner-jobs-5"
-# on mobile view featured jobs are not displaying on jobs pag
-#  @featuredJobsLoggedOut
-#  Scenario: As a logged out user, verify 'Featured Jobs' section
-#    When  I navigate to page "Jobs"
-#    And   I should see text "Featured Jobs"
-#    Then  I click on Featured jobs one
-#    And   I switch tab
-#    Then  I should be able to see in browser URL "Job View"
-#    And   I should see text "Create a new Job Alert to make sure you see the best new jobs first!"
+
 
   @hideJobsLoggedOutReasonOne
   Scenario: As a logged out user, verify 'Hide Jobs' functionality reason one

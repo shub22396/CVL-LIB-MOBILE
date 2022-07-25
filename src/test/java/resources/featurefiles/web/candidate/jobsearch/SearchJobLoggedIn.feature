@@ -76,7 +76,6 @@ Feature: Candidate JobSearch SearchJobsLoggedIn
     And   I should not see link "Save" with id "save_toggle_20"
     And   I should see link "Save" with id "save_toggle_14"
     And   I should see link "More" with id "more_14"
-    #And   I should see link "Apply now" with id "apply_now_14"
     And   I should see link "Apply now" with id "apply-now-partner-jobs-5"
     Then  I should be able to see in browser URL "Jobs Sales In Brooklyn Ny Page Number 2"
 
@@ -106,15 +105,6 @@ Feature: Candidate JobSearch SearchJobsLoggedIn
     And   I should see link "Apply now" with id "apply_now_95"
     And   I should not see link "Save" with id "save_toggle_96"
     And   I should see link "Apply now" with id "apply-now-partner-jobs-5"
-# on mobile view featured jobs are not displaying on jobs page
-#  @featuredJobsLoggedIn
-#  Scenario: As a logged in user, verify ‘Featured Jobs’ section
-#    When  I navigate to page "Jobs"
-#    And   I should see text H three tag "Featured Jobs"
-#    Then  I click on Featured jobs one
-#    And   I switch tab
-#    Then  I should be able to see in browser URL "Job View"
-#    And   I should see text "Create a new Job Alert to make sure you see the best new jobs first!"
 
   @searchJobLoggedInJobMatches @ReleaseRegression1
   Scenario: As a logged in user, modify profile and verify 'View more job matches'
@@ -144,22 +134,7 @@ Feature: Candidate JobSearch SearchJobsLoggedIn
     Then  I click on "View more job matches"
     And   I should be able to see in browser URL "Jobs Nonexternaltestjob In 90189 R 51"
     And   I should see text "Nonexternaltestjob jobs in 90189"
-# Recent searches link is not there on search-jobs page for mobile view
-#  @searchJobLoggedInRecentSearches
-#  Scenario: As a logged in user verify 'Recent Searches' in 'Search Jobs' page
-#    And   I navigate to page "Search Jobs"
-#    And   I fill in search title field with "Sales"
-#    And   I fill in search location with "New York City, NY"
-#    And   I click on Find Jobs search button
-#    # we need this wait because Find Jobs button takes little longer to click
-#    And   I wait for "2" seconds
-#    When  I navigate to page "Search Jobs"
-#    And   I should see text "Recent Searches"
-#    Then  I click on "Recent Searches"
-#    And   I should see text "Sales jobs in New York City, NY"
-#    Then  I click on "Sales jobs in New York City, NY"
-#    And   I should be able to see in browser URL "Jobs Sales In New York City Ny"
-#    And   I should see text H one tag "Sales jobs in New York City, NY"
+
 
   @hideJobsLoggedInReasonOne @ReleaseRegression1
   Scenario: As a logged in user, verify 'Hide Jobs' functionality

@@ -13,9 +13,7 @@ Feature: Candidate JobSearch SearchResultsPage
     And   I should see text "Alabama" on the page source
     And   I should see text "Jobs By Category"
     And   I should see text "Sales Account Manager"
-    #And   I should see text "More search options"
-   # And   I click on "More search options"
-    #Then  I should see text "Fewer search options"
+
 
   @searchResultsPageElements @ReleaseRegression1
   Scenario: Search results page filters
@@ -46,13 +44,7 @@ Feature: Candidate JobSearch SearchResultsPage
     Then  I should be able to see in browser URL "Job View"
     And   I should see text "Apply now"
     And   I should see "Create a new Job Alert to make sure you see the best new jobs first!"
-# the steps are covered as part of below scenario
-#  @viewJobPageRecentSearches
-#  Scenario: View Job search results and verify that recent searches are displayed
-#    Given I navigate to page "Jobs Sales"
-#    When  I navigate to page "Jobs Qa"
-#    Then  I should see text "Recent Searches"
-#    And   I should see text "Sales jobs"
+
 
   @viewJobPageClearRecentSearches
   Scenario: View Job search results and verify that recent searches are not displayed if its cleared
@@ -111,22 +103,6 @@ Feature: Candidate JobSearch SearchResultsPage
     And   the location field should contain "San Francisco, CA"
     And   I click on "Back"
     Then  I should see text "Jobs in California"
-#Town module is not displayed in mobile view
-#  @viewMoreTownsModule @ReleaseRegression1
-#  Scenario: View more towns module
-#    Given I navigate to page "Jobs In Florida"
-#    When  I click on "more"
-#    Then  I should see text "fewer"
-#    And   I should see text "Tampa, FL"
-#    And   I should see text "Miami, FL"
-#    And   I should see text "Orlando, FL"
-#    And   I should see text "Miami, FL"
-#    When  I click on "Tampa, FL"
-#    Then  I should see text "Jobs in Tampa, FL"
-#    And   the location field should contain "Tampa, FL"
-#    When  I click on "more"
-#    And   I click on "fewer"
-#    Then  I should see text "more"
 
   @viewMoreSearchesModule @ReleaseRegression1
   Scenario: View more searches module
@@ -156,10 +132,10 @@ Feature: Candidate JobSearch SearchResultsPage
     And    I click on find jobs button
     Then   I should be on page "/jobs/test-engineer-in-10001?r=50"
     And    I should see text H one tag "Test Engineer jobs in 10001"
-    #When   I click on id "mobile-search-trigger"
-    And    the title field should contain "<Title1>"
+    When   I click on id "mobile-search-trigger"
+    Then   the title field should contain "<Title1>"
     And    the location field should contain "<Location>"
-    And    the distance "<Distance>" should be selected
+    And    the distance field should contain "50"
     Examples:
       | Title         | Location | Distance | Title1        |
       | Test Engineer | 10001    | 50 Miles | test engineer |
@@ -175,12 +151,14 @@ Feature: Candidate JobSearch SearchResultsPage
     And    I click on find jobs button
     Then   I should be on page "/jobs/sales-in-10001?annual_salary_from=50000"
     And    I should see text "Sales jobs in 10001"
-    And    the title field should contain "<Title>"
+    When   I click on id "mobile-search-trigger"
+    Then   the title field should contain "<Title>"
     And    the location field should contain "<Location>"
-    And    the salary min should be "<SalaryMin>"
+    When   I click on "More Search Options"
+    Then   the salary min field should contain "<SalMin>"
     Examples:
-      | Title | Location | SalMin  | SalaryMin |
-      | sales | 10001    | 50000   | $50,000   |
+      | Title | Location | SalMin  |
+      | sales | 10001    | 50000   |
 
   @jobsSearchSalaryMax
   Scenario Outline: Job search salary max
@@ -188,16 +166,19 @@ Feature: Candidate JobSearch SearchResultsPage
     And    I navigate to page "Search Jobs"
     When   I fill in search title field with "<Title>"
     And    I fill in search location with "<Location>"
+    And    I click on link text "More Search Options"
     And    I select the option "<SalMax>" from salary max dropdown
     And    I click on find jobs button
     Then   I should be on page "/jobs/sales-in-10001?annual_salary_to=70000"
     And    I should see text "Sales jobs in 10001"
+    When   I click on id "mobile-search-trigger"
     And    the title field should contain "<Title>"
     And    the location field should contain "<Location>"
-    And    the salary max should be "<SalaryMax>"
+    When   I click on "More Search Options"
+    Then   the salary max field should contain "<SalMax>"
     Examples:
-      | Title | Location | SalMax  | SalaryMax |
-      | sales | 10001    | 70000   | $70,000   |
+      | Title | Location | SalMax  |
+      | sales | 10001    | 70000   |
 
   @jobsSearchOrderBy
   Scenario Outline: Job search order results
@@ -205,12 +186,12 @@ Feature: Candidate JobSearch SearchResultsPage
     And    I navigate to page "Search Jobs"
     When   I fill in search title field with "<Title>"
     And    I fill in search location with "<Location>"
+    And    I click on link text "More Search Options"
     And    I select the option "<OrderBy>" from order by dropdown
     And    I click on find jobs button
     Then   I should be on page "<URL>"
     And    I should see text "<Message>"
     And    the sort by should be "Date"
-    And    I should see option "20" selected
     Examples:
       | Title | Location | OrderBy     | URL                                | Message             |
       | sales | 10010    | Most recent | /jobs/sales-in-10010?order_by=date | Sales jobs in 10010 |
@@ -221,13 +202,16 @@ Feature: Candidate JobSearch SearchResultsPage
     And    I navigate to page "Search Jobs"
     When   I fill in search title field with "<Title>"
     And    I fill in search location with "<Location>"
+    When   I click on link text "More Search Options"
     And    I select the option "<PostedSince>" from posted since dropdown
     And    I click on find jobs button
     Then   I should be on page "<URL>"
     And    I should see text "<Message>"
+    When   I click on id "mobile-search-trigger"
     And    the title field should contain "<Title>"
     And    the location field should contain "<Location>"
-    And    the posted date should be "<PostedInThe>"
+    When   I click on "More Search Options"
+    Then   the posted date should be "<PostedSince>"
     Examples:
       | Title | Location | PostedSince | URL                        | Message             | PostedInThe  |
       | sales | 20006    | 15 Days Ago | /jobs/sales-in-20006?pd=15 | Sales jobs in 20006 | Last 15 Days |
@@ -238,17 +222,21 @@ Feature: Candidate JobSearch SearchResultsPage
     And    I navigate to page "Search Jobs"
     When   I fill in search title field with "<Title>"
     And    I fill in search location with "<Location>"
+    When   I click on link text "More Search Options"
     And    I select the option "<Type>" from job type dropdown
     And    I click on find jobs button
     Then   I should be on page "<URL>"
     And    I should see text "<Message>"
+    When   I click on id "mobile-search-trigger"
     And    the title field should contain "<Title>"
     And    the location field should contain "<Location>"
-    And    the job type should be "<Type>"
+    When   I click on "More Search Options"
+    Then   the job type field should contain "<jobType>"
+ 
     Examples:
-      | Title        | Location | Type      | URL                                       | Message                              |
-      | sales        | 10001    | Permanent | /jobs/sales-in-10001?job_type=Permanent   | Permanent Sales jobs in 10001        |
-      | test analyst | 20001    | Temporary | /jobs/test-analyst-in-20001?job_type=Temp | Temporary Test Analyst jobs in 20001 |
+      | Title        | Location | Type      | URL                                       | Message                              | jobType   |
+      | sales        | 10001    | Permanent | /jobs/sales-in-10001?job_type=Permanent   | Permanent Sales jobs in 10001        | Permanent |
+      | test analyst | 20001    | Temporary | /jobs/test-analyst-in-20001?job_type=Temp | Temporary Test Analyst jobs in 20001 | Temp      |
 
   @jobSearchSpellingSuggestion
   Scenario: Job Search Spelling Suggestion

@@ -8,24 +8,17 @@ Feature: Candidate JobSearch ResultsPerPage
     And   I click on "Next"
     Then  I should see search results displaying text "Displaying 21 to 40 of 40,000+ jobs"
     When  I click on "50"
-    #Then  I should see option "50" selected
     Then  I should see search results displaying text "Displaying 1 to 50 of 40,000+ jobs"
     When  I click on "75"
-   # Then  I should see option "75" selected
     And   I should see search results displaying text "Displaying 1 to 75 of 40,000+ jobs"
     When  I click on "100"
-    #Then  I should see option "100" selected
     And   I should see search results displaying text "Displaying 1 to 100 of 40,000+ jobs"
     When  I click on "250"
-   # Then  I should see option "250" selected
     And   I should see search results displaying text "Displaying 1 to 250 of 40,000+ jobs"
 
   @searchResultsPageNavigationButtonsPerPageParam @ReleaseRegression1
   Scenario: Search results page modules
     Given I navigate to page "Jobs Sales"
-    #And   I click on "2" pagination
-    #Then  I should see text p tag "Displaying " and verify message "Displaying 21 to 40 of "
-    #And   I should be able to see in browser URL "Jobs Sales Page 2"
     And   I click on "Next" pagination
     Then  I should see text p tag "Displaying " and verify message "Displaying 21 to 40 of "
     And   I should be able to see in browser URL "Jobs Sales Page 2"
