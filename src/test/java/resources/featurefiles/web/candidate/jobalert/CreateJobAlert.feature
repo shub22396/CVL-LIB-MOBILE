@@ -17,9 +17,8 @@ Feature: Candidate JobAlert CreateJobAlert
   @newUserCreateAlert @ReleaseRegression1
   Scenario: New user create alert
     Given I navigate to page "Jobs Sales In Houston"
-    When  I click on link Get the latest Jobs with Job Alert
-    And   I fill search results job alerts email with random email id
-    And   I click on Create Job Alert
+    And   I enter email random address to get latest job alerts
+    And   I press and wait "create_alert_1"
     And   I should see text p tag "To make your job search a little easier we've set up a Job Alert for you. We've also created a Resume-Library profile for you - " and verify message "To make your job search a little easier we've set up a Job Alert for you. We've also created a Resume-Library profile for you - complete your profile and be seen by top recruiters today!"
     When  I navigate to page "Candidate Job Alerts"
     Then  I should see text "We've created a job alert based on your profile so you receive the latest matching jobs direct to your inbox." on the page
@@ -29,7 +28,7 @@ Feature: Candidate JobAlert CreateJobAlert
     Given I navigate to page "Jobs Sales In Houston"
     And   I fill in new user email field with random email id
     When  I click button email me jobs like these
-    And   I should see element with id "resume-upload-btn" to be "visible"
+    #TODO Step not required And   I should see element with id "resume-upload-btn" to be "visible"
     Then  I navigate to page "Candidate Job Alerts"
     Then  I should see text "Create New Job Alert"
     And   I should see text "We've created a job alert based on your profile so you receive the latest matching jobs direct to your inbox." on the page
@@ -41,9 +40,7 @@ Feature: Candidate JobAlert CreateJobAlert
     And   I fill in "email" with random candidate email
     When  I click on Create Job Alerts button
     And   I should be able to see in browser URL "Candidate Job Alerts"
-    #Then  I should see text "We've created a job alert based on your profile so you receive the latest matching jobs direct to your inbox." on the page
     Then  I should see text H one tag "Job Alerts"
-    Then  I should see text H two tag "My Alerts"
     Then  I should see text "Create New Job Alert" on the page
     Then  I click on my cover letters link
     And   I should see text "Dear Sir/Madam,"
@@ -63,7 +60,8 @@ Feature: Candidate JobAlert CreateJobAlert
     And   I click on Create Job Alert button
     Then  I should see text "Job Alert created successfully!"
     And   I reload the page
-    And   I click on Delete Alert link
+    And   I click on Edit Job Alert
+    And   I click on "Delete"
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert on alert popup
 
@@ -93,11 +91,11 @@ Feature: Candidate JobAlert CreateJobAlert
   @jobAlertJobView @ReleaseRegression1
   Scenario: Add a job alert from job view
     Given I navigate to page "Jobs Sales"
-    Then  I click on id "more_2"
+    Then  I click on id "job_title_2"
     And   I switch tab
     Then  I should be able to see in browser URL "Job View"
     And   I should see text p tag replace all "Create a new Job Alert to make sure you see the best new jobs first!"
-    And   I should see label tag "Keywords" and verify "Keywords / job title"
+    And   I should see text "Keywords / job title"
     And   I should see text "Location" on the page source
     And   I should see text "Distance" on the page source
     When  I click on id "jbe-create-btn"
