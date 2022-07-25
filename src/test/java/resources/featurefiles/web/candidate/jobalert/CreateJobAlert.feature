@@ -103,6 +103,7 @@ Feature: Candidate JobAlert CreateJobAlert
     And   I should see text "Email address is required"
     When  I fill in "ja-email" with random candidate email
     And   I click on id "jbe-create-btn"
+    And   I wait for "1" seconds
     Then  I should be able to see in browser as URL "Jobs"
     And   I should see text p tag "To make your job search a little easier we've set up a Job Alert for you. We've also created a Resume-Library profile for you - " and verify message "To make your job search a little easier we've set up a Job Alert for you. We've also created a Resume-Library profile for you - complete your profile and be seen by top recruiters today!"
     And   I should see text "My Dashboard"
@@ -118,7 +119,9 @@ Feature: Candidate JobAlert CreateJobAlert
     And   I click on "Create Alert"
     And   I should see "Job Alert Saved! You will receive job matches"
     And   I navigate to page "Candidate Job Alerts"
-    And   I click on Delete Alert link
+    And   I click on Edit Job Alert
+    And   I click on "Delete"
+    #And   I click on Delete Alert link
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert
 
@@ -138,43 +141,47 @@ Feature: Candidate JobAlert CreateJobAlert
     And   I fill in password with "rltest01"
     And   I click on "Login & Create Job Alert"
     And   I should see message "Job Alert Created Successfully."
-    And   I click on Delete Alert link
+    And   I click on Edit Job Alert
+    And   I click on "Delete"
+    #And   I click on Delete Alert link
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert
 
   @jobAlertLoginTwo
   Scenario: Job search (keyword+loc) and login as existing user via 'Get the latest Jobs with Job Alerts' icon (delete alert after creation)
     Given I navigate to page "Jobs Sales In Houston"
-    And   I click on link Get the latest Jobs with Job Alert
-    And   I fill in jbe email address with "testers+candidate@resume-library.com"
-    And   I click on Create Job Alert
+    And   I fill in jbe email one with "testers+candidate@resume-library.com"
+    And   I press and wait "create_alert_1"
     Then  I should see text "It looks like you are already signed up. Enter your password to login and save this Job Alert:"
-    And   I fill in jbe password with "rltest01"
-    And   I press and wait "search-results-jbe-submit"
+    And   I fill in password one with "rltest01"
+    When  I click button email me jobs like these
     Then  I should be able to see in browser URL "Candidate Job Alerts"
     And   I should see message "Job Alert has been created" in the jbe xpath
-    And   I click on Delete Alert link
+    And   I click on Edit Job Alert
+    And   I click on "Delete"
+    #And   I click on Delete Alert link
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert on alert popup
 
   @jobAlertLoginThree
   Scenario: Job search (keyword+loc) and login as existing user via 'Create Job Alert' banner (delete alert after creation)
     Given I navigate to page "Jobs Sales In Houston"
-    When  I fill in jbe email one with "testers+candidate@resume-library.com"
-    And   I click button email me jobs like these
+    And   I fill in jbe email one with "testers+candidate@resume-library.com"
+    And   I press and wait "create_alert_1"
     And   I should see text "It looks like you are already registered. Enter your password to login and save this Job Alert:"
     And   I fill in password one with "rltest01"
     And   I press and wait "create_alert_1"
     And   I should be able to see in browser URL "Candidate Job Alerts"
     And   I should see message "Job Alert has been created" in the jbe xpath
-    And   I click on Delete Alert link
+    And   I click on Edit Job Alert
+    And   I click on "Delete"
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert on alert popup
 
   @jobAlertLoginFour
   Scenario: Job view and login as existing user on job-alerts banner (delete alert after creation)
     Given I navigate to page "Jobs Sales"
-    Then  I click on More Link
+    Then  I click on id "job_title_2"
     And   I switch tab
     And   I fill in the field where id is "ja-keywords" with random keyword
     And   I click on "Create Alert"
@@ -184,6 +191,7 @@ Feature: Candidate JobAlert CreateJobAlert
     And   I click on "Create Alert"
     And   I should be able to see in browser URL "Candidate Job Alerts"
     And   I should see message "Job Alert Created Successfully"
-    And   I click on Delete Alert link
+    And   I click on Edit Job Alert
+    And   I click on "Delete"
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert on alert popup
