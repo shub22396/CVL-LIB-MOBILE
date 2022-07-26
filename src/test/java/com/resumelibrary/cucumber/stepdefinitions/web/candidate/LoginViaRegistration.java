@@ -1,6 +1,7 @@
 package com.resumelibrary.cucumber.stepdefinitions.web.candidate;
 
 import com.resumelibrary.utilities.Utility;
+import com.resumelibrary.webtest.candidate.FastTrackRegisterPage;
 import com.resumelibrary.webtest.candidate.LoginViaRegistrationPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -30,5 +31,10 @@ public class LoginViaRegistration extends Utility {
     @And("I click on Login as Jobseeker>")
     public void iClickOnLoginAsJobseeker() {
         new LoginViaRegistrationPage().clickLoginApply();
+    }
+
+    @And("I fill candidate email with {string}")
+    public void iFillCandidateEmailWith(String email) {
+        new FastTrackRegisterPage().fillEmail(email);
     }
 }

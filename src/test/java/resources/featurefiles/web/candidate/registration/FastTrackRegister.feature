@@ -67,6 +67,5 @@ Feature: Candidate Registration FastTrackRegister
     Given  I set cookie with "ibpid" and "975438"
     And    I reload the page
     And    I click on Apply now Link
-    #FIXME: The responsive view for mobile popup is not comming
-    And    I click on "Register & Apply"
-    Then   I should see text "Upload Resume & Apply"
+    And    I Click on Link Register & Apply
+    Then   I should see text "Upload Resume"
