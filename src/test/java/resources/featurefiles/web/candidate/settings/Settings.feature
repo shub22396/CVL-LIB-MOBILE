@@ -16,10 +16,12 @@ Feature: Candidate Settings Settings
     And   I fill in confirm new password "rltest01"
     And   I click on save new password button
     Then  I should see "Your password has been successfully updated."
-    When  I click on "Logout" Header Link
+    When  I click on Menu Bar
+    When  I click on "Logout"
     Then  I should be on page "Logout"
     And   I should see text p tag "Thanks for using Resume-Library!" and verify message "You have been logged out successfully. Thanks for using Resume-Library!"
-    When  I click on "Login" Header Link
+    Then  I click on Menu Bar
+    When  I click on "Login"
     Then  I enter registered email address
     And   I enters Changed password as "rltest01"
     When  I click Login as Jobseeker button

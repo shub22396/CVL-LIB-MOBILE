@@ -17,6 +17,8 @@ public class CoverLetterPage extends Utility {
 
     @FindBy(xpath = "//a[@class='c-aside-profile__edit']")
     WebElement EditProfileLink;
+    @FindBy(xpath = "//a[@btn-sm edit-alert behat-element']")
+    WebElement EditAlertLink;
     @FindBy(xpath = "//a[@class='c-aside-stats__icon letters']")
     WebElement ModifyCoverLetterLink;
     @FindBy(xpath = "//a[@class='c-aside-stats__icon jobalerts']")

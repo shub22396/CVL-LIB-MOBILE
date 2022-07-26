@@ -81,4 +81,9 @@ public class Settings extends Utility {
             logger.info("tmp folder is deleted :");
         }
     }
+
+    @When("I click on Menu Bar")
+    public void iClickOnMenuBar() {
+        new SettingsPage().clickOnMenuBar();
+    }
 }
