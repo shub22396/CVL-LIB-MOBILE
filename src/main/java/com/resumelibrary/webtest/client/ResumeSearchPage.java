@@ -241,6 +241,7 @@ public class ResumeSearchPage extends Utility {
     }
 
     public void verifyValueInSearchBuilderKeywords(String text) {
+        waitUntilElementIsLocated(getThreadDriver().findElement(By.id("builder_keywords")),20);
         logger.info("verifying the value in Search Builder Keywords : " + text);
         String InputValue = getThreadDriver().findElement(By.id("builder_keywords")).getAttribute("value");
         logger.info("the value in Search Builder Keywords : " + InputValue);
@@ -391,6 +392,7 @@ public class ResumeSearchPage extends Utility {
 
     public String getTextFromKeywords() {
         logger.info("Getting text from basic search keywords field ");
+        waitUntilElementIsLocated(Keywords,30);
         return getTextFromElement(Keywords);
     }
 
@@ -405,11 +407,13 @@ public class ResumeSearchPage extends Utility {
     }
 
     public void clickOnBasic() {
-        clickOnElement(Basic);
+        waitUntilElementIsLocated(Basic,20);
+        clickOnElementWithJS(Basic);
         logger.info("Clicking on Basic tab ");
     }
 
     public void clickOnBuilder() {
+        waitUntilElementIsLocated(Builder,20);
         clickOnElement(Builder);
         logger.info("Clicking on Builder tab ");
     }
