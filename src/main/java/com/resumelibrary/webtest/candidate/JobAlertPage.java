@@ -46,6 +46,8 @@ public class JobAlertPage extends Utility {
     WebElement RunSearchBtnActive1;
     @FindBy(id = "edit_alert_btn_active_1")
     WebElement EditAlertBtnActive1;
+    @FindBy(id = "edit_alert_btn_snoozed_1")
+    WebElement EditAlertBtnSnooze1;
     @FindBy(id = "edit_alert_q_active_1")
     WebElement EditAlertQActive1;
     @FindBy(id = "edit_alert_save_btn_active_1")
@@ -175,6 +177,14 @@ public class JobAlertPage extends Utility {
             waitFor(2);
         }
         clickOnElement(EditAlertBtnActive1);
+        waitFor(2);
+    }
+    public void clickEditJobAlertSnooze() {
+        logger.info("click on Edit Job Alert Snooze");
+        if (getBrowserName().contains("firefox") || getBrowserName().contains("remoteFirefoxBrowser")) {
+            waitFor(2);
+        }
+        clickOnElement(EditAlertBtnSnooze1);
         waitFor(2);
     }
 

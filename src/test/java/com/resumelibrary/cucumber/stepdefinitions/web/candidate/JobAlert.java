@@ -75,6 +75,11 @@ public class JobAlert extends Utility {
         new JobAlertPage().clickEditJobAlert();
     }
 
+    @And("I click on Edit Job Alert Snooze")
+    public void iClickOnEditJobAlertSnooze() {
+        new JobAlertPage().clickEditJobAlertSnooze();
+    }
+
     @When("I fill in edit alert text with random keyword")
     public void iFillInEditAlertTextWithRandomKeyword() {
         String keyword = "Test Manager";
