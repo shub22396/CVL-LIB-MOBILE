@@ -13,12 +13,14 @@ Feature: Candidate JobAlert ModifyJobAlert
     And   I navigate to page "Candidate Job Alerts"
     And   I fill in Keywords text with "Sales Manager" and location with "Texas City, TX"
     And   I click on Create Job Alert button
+    And   I wait for "2" seconds
     And   I reload the page
     And   I click on Run Search
     And   I should be able to see in browser URL "Jobs"
     Then  I should see text p tag "Displaying " and verify message "Displaying 1 to "
     And   I navigate to page "Candidate Job Alerts"
-    And   I click on Delete Alert link
+    And   I click on Edit Job Alert
+    And   I click on "Delete"
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert
 
@@ -29,13 +31,16 @@ Feature: Candidate JobAlert ModifyJobAlert
     And   I navigate to page "Candidate Job Alerts"
     And   I fill in Keywords text with "Test Manager" and location with "Texas City, TX"
     And   I click on Create Job Alert button
+    And   I wait for "2" seconds
     And   I reload the page
     And   I click on Edit Job Alert
-    Then  I should see label tag "Keywords" and verify "Keywords/ job title"
+    Then  I should see text "Keywords"
+    And   I should see text " / job title"
     When  I fill in edit alert text with random keyword
     And   I click Save Changes button on edit alert page
     Then  I should see text "Job Alert Modified Successfully!"
-    And   I click on Delete Alert link
+    And   I click on Edit Job Alert
+    And   I click on "Delete"
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert
 
@@ -46,6 +51,7 @@ Feature: Candidate JobAlert ModifyJobAlert
     And   I navigate to page "Candidate Job Alerts"
     And   I fill in Keywords text with "Test Manager" and location with "Texas City, TX"
     And   I click on Create Job Alert button
+    And   I wait for "2" seconds
     And   I reload the page
     And   I click on "active" toggle job alert status
     Then  I click on snooze button
@@ -54,7 +60,8 @@ Feature: Candidate JobAlert ModifyJobAlert
     And   I click on snoozed toggle job alert status
     Then  I click on turn off snooze job alert status
     And   I reload the page
-    And   I click on Delete Alert link
+    And   I click on Edit Job Alert Snooze
+    And   I click on "Delete"
     And   I click on Yes, delete this alert
     And   I should see text "My Alerts"
 
@@ -66,10 +73,12 @@ Feature: Candidate JobAlert ModifyJobAlert
     Then  I should see text "Job Alerts"
     And   I fill in Keywords text with "Nonexternaltestjob" and location with "Texas City, TX"
     And   I click on Create Job Alert button
+    And   I wait for "2" seconds
     And   I reload the page
     When  I click on Edit Job Alert
     Then  I Click on "Example Job Matches"
     Then  I should see Example Job Matches the Keyword or Job Title Field otherwise it should display "Sorry, no jobs match your search criteria"
     And   I reload the page
-    And   I click on Delete Alert link
+    And   I click on Edit Job Alert
+    And   I click on "Delete"
     And   I click on Yes, delete this alert
