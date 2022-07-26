@@ -9,9 +9,12 @@
       And   I fill candidate email with "testers+candidate@resume-library.com"
       And   I fill job apply password with "rl" on job apply
       Then  I should see text "This email already exists, please login"
-      When  I click on "Menu"
+      When  I click on Menu Bar
       Then  I click on "Login"
-      And   I fill job apply password with "rltest01" on job apply
-      And   I Click on Link Register & Apply
+      And   I wait for "1" seconds
+      And   I fill in email address with "testers+candidate@resume-library.com"
+      And   I fill in the field where id is "pass" with: "rltest01"
+      When  I click Login as Jobseeker button
+      Then  I click on apply now link
       Then  I should see text p tag replace all "Resume-Library, you're applying for:"
       And   I should be able to see in browser URL "Job Apply"
