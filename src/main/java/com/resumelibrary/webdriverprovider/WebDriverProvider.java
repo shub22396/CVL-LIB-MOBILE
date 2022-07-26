@@ -63,7 +63,7 @@ public class WebDriverProvider implements Constants {
         prefs.put("download.prompt_for_download", false);
         prefs.put("download.default_directory", "/tmp");
         options.setExperimentalOption("prefs", prefs);
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().driverVersion("103.0.5060.114").setup();
         //  driver = new ChromeDriver(options);
         threadMap.put("webdriverObj", new ChromeDriver(options));
         threadLocalMap.set(threadMap);
