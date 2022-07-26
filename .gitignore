@@ -54,6 +54,7 @@ test-reports/*
 *.logs
 
 src/test/logs/*
+src/test/logs/log.out
 rl_selenium_tests.iml
 
 
