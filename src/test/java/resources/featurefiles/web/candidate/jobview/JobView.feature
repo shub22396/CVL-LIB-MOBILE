@@ -7,7 +7,7 @@ Feature: Candidate JobView JobView
     When  I Click on Job Title
     And   I switch tab
     Then  I should be able to see in browser URL "Job View"
-    And   I should see text "Keywords" label tag
+    And   I should see text "Keywords / job title" label tag
     And   I should see text "Location"
     And   I should see text "Create a new Job Alert to make sure you see the best new jobs first!"
     And   I should see Save button
@@ -15,7 +15,7 @@ Feature: Candidate JobView JobView
   @expiredJobView @ReleaseRegression1
   Scenario: Expired job view as a candidate
     Given I navigate to page "Jobs View For 3509582"
-    Then  the response code should be 410
+    #Then  the response code should be 410
     And   I should see text div tags "The position" and verify "The position Experienced Class A CDL Drivers - Flatbed in Chattanooga, Tennessee is no longer available."
     And   I should see link "Posted by" with id "job-details-posted"
 
@@ -36,8 +36,9 @@ Feature: Candidate JobView JobView
     When  I Click on Job Title
     And   I switch to window 3
     When  I navigate to page "Jobs Tester"
-    And   I click on "Automation jobs"
-    Then  I should be able to see in browser URL "Jobs Automation"
+    # below steps not applicable for mibile view
+#    And   I click on "Automation jobs"
+#    Then  I should be able to see in browser URL "Jobs Automation"
 
   @nationalJobsBannerOnJobView
   Scenario: Verify National jobs banner on job view
@@ -62,13 +63,9 @@ Feature: Candidate JobView JobView
     And   I click on post job submit button
     Then  I should be able to see in browser URL "Client Jobs New Job Posted"
     And   I should see text "Job Posted Successfully!"
-    And   I mouse hover to users profile
+    And   I click on Menu Bar
     And   I click "Logout" button
-    When  I navigate to page "Jobs Drummer"
-    And   I Click on Job Title
-    And   I switch tab
-    Then  I should be able to see in browser URL "Job View"
-   #And   I should see text span tags "Featured"
+    When  I navigate to page "hiring"
 
   @premiumJobsHasNoBannerOnJobView
   Scenario: Verify Premium jobs has no banner on job view
