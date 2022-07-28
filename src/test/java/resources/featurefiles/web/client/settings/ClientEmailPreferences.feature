@@ -2,10 +2,10 @@
 Feature: Client Settings ClientEmailPreferences
 
   Background: Navigating to Client Email Preferences
-    Given  I login as a client
-    When  I mouse hover "Hi Resume library"
+    Given I login as a client
+    When  I click on Menu Bar
     Then  I should see text "Email Preferences"
-    When  I click on "Email Preferences"
+    When  I click on "My Email Preferences"
     Then  I should be able to see in browser URL "Client Email Preferences"
 
   @emailPreferencesClient
