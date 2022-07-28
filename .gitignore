@@ -56,5 +56,6 @@ test-reports/*
 src/test/logs/*
 src/test/logs/log.out
 rl_selenium_tests.iml
+FailedScenarios_fromLocal-Machine.xlsx
 
 
