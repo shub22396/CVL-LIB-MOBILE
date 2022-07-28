@@ -38,15 +38,6 @@ Feature: Client ResumeSearch OtherElements
     Then  I click on save search delete btn
     And   I should see text "Search removed successfully"
 
-  @mySearchesRecentSearchesTab
-  Scenario: Verify searches in my recent searches
-    When  I click on My searches and verify below steps
-    #Then  I should see text "Job type"
-    #And   I should see text "Actions"
-    #And   I should see text p tag "Displaying" and verify message "Displaying 1 to "
-    #And   I should see link "Run Search" with id "my-searches-run-btn"
-    #When  I click on Run Search button
-    #Then  I should see text "Instantly contact top candidates"
 
   @popularSearches
   Scenario: Verify Popular Searches
@@ -66,64 +57,3 @@ Feature: Client ResumeSearch OtherElements
     And   I click on Search Resumes
     Then  I should see "No Search Criteria"
 
-  @ResumeSearchInviteToApply @ReleaseRegression2
-  Scenario: Resume Search Invite to Apply
-    When  I fill in basic search keywords with "Sales"
-    And   I enter location with "10010"
-    And   I wait for "2" seconds
-    And   I click on Search Resumes
-    Then  I should see text "Instantly contact top candidates"
-    When  I select email candidate amount from list
-    And   I click on "Invite Candidates"
-    Then  I should see text H three tag "Unlock Resumes"
-    And   I should see "Unlock & Invite" link
-    When  I click on "Unlock & Invite"
-    Then  I should see text H three tag "Invite Candidates"
-    When  I click on "Send Invites"
-    Then  I should see text "Please enter a subject line"
-    And   I should see text "Please enter a message"
-    When  I enter subject as "SubjectTest"
-    And   I enter message in TextArea with 100 characters
-    When  I click on Preview
-    Then  I should see text H three tag "Preview Your Invites"
-    And   I click on "Close Preview"
-    When  I select related job "NonExternalTestJob90001, CA"
-    Then  I should see message text "Hi,  I came across your resume and thought you would be a great fit for our role. I've included some details about the job below for you.  Hopefully this role is of interest to you.  Thanks {Client name}"
-    When  I click on Preview
-    Then  I should see text H three tag "Preview Your Invites"
-    When  I click on "Close Preview"
-    And   I should see element with text "Send Invites" to be "visible"
-    And   I click on "Send Invites"
-    Then  I should see text H three tag "Invite Sent"
-    And   I click on "OK"
-
-  @ResumeSearchInviteToApplyDice
-  Scenario: Resume Search Invite to Apply for Dice candidates
-    When  I fill in basic search keywords with "13935566"
-    And   I click on More Search Options
-    And   I select "Ever" from active within dropdown
-    And   I wait for "2" seconds
-    And   I click on Search Resumes
-    When  I select email candidate amount from list
-    And   I click on "Invite Candidates"
-    Then  I should see text H three tag "Unlock Resumes"
-    And   I should see "Unlock & Invite" link
-    When  I click on "Unlock & Invite"
-    Then  I should see text H three tag "Invite Candidates"
-    When  I click on "Send Invites"
-    Then  I should see text "Please enter a subject line"
-    And   I should see text "Please enter a message"
-    When  I enter subject as "SubjectTest"
-    And   I enter message in TextArea with 100 characters
-    When  I click on Preview
-    Then  I should see text H three tag "Preview Your Invites"
-    And   I click on "Close Preview"
-    When  I select related job "NonExternalTestJob90001, CA"
-    Then  I should see message text "Hi,  I came across your resume and thought you would be a great fit for our role. I've included some details about the job below for you.  Hopefully this role is of interest to you.  Thanks {Client name}"
-    When  I click on Preview
-    Then  I should see text H three tag "Preview Your Invites"
-    When  I click on "Close Preview"
-    And   I should see element with text "Send Invites" to be "visible"
-    And   I click on "Send Invites"
-    Then  I should see text H three tag "Invite Sent"
-    And   I click on "OK"
