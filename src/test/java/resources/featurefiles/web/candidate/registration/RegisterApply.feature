@@ -5,23 +5,21 @@ Feature: Candidate Registration RegisterApply
   Scenario Outline: Register and Apply - Successful registration
     Given I navigate to page "Jobs Non External Test Jobs"
     When  I click on non external job to apply
-    And   I click Register & apply button
-    Then  I should be able to see in browser URL "Register Apply"
-    And   I enter first name "<FirstName>"
-    And   I enter last name "<LastName>"
-    And   I enter email address "<Email>"
-    And   I enter password "<Password>"
+    And   I Enters Firstname as "<FirstName>"
+    And   I Enters Lastname as "<LastName>"
+    And   I fill candidate email with random EmailId
+    And   I fill job apply password with "<Password>" on job apply
     And   I upload resume "<Resume>"
-    And   I uncheck the label Claim my free professional Resume Review
-    And   I click on register button
-    Then  I should be able to see in browser URL "Register Apply"
+    And   I uncheck the label Claim my free professional Resume Review one
+    And   I Click on Link Register & Apply
+    Then  I should be able to see in browser URL "Job Apply"
     When  I enter latest job title "<JobTitle>"
     And   I enter zip code "<ZipCode>"
     And   I enter phone number "<Phone>"
-    Then  I click on register confirm button
+    And   I click on send application button
     And   I should be able to see in browser URL "Job Apply"
-    And   I click on apply send application link
-    And   I should see text "Application sent - the employer will be in touch if you are successful" or "Increase your chances of getting hired"
+    And   I should see text "Application Sent - the employer will be in touch if you are successful."
+    And   I should see text "Increase your chances of getting hired"
 
     Examples:
       | Email                                        | FirstName | LastName | Password | Resume  | JobTitle     | ZipCode | Phone        |
@@ -33,8 +31,7 @@ Feature: Candidate Registration RegisterApply
     Then   I set cookie with "ibpid" and "975438"
     And    I reload the page
     When   I click on non external job to apply
-    And    I click Register & apply button
-    And    I click on register button
+    And    I Click on Link Register & Apply
     Then   I should see text "Resume is required"
 
   @registerApplyResumeNotMandatory
@@ -43,8 +40,7 @@ Feature: Candidate Registration RegisterApply
     Then   I set cookie with "ibpid" and "975155"
     And    I reload the page
     When   I click on non external job to apply
-    And    I click Register & apply button
-    And    I click on register button
+    And    I Click on Link Register & Apply
     And    I should not see "Resume is required" text
 
   @registerApplyNoIbpidSet
@@ -52,6 +48,6 @@ Feature: Candidate Registration RegisterApply
     Given  I navigate to page "Jobs Non External Test Jobs"
     And    I reload the page
     When   I click on non external job to apply
-    And    I click Register & apply button
-    And    I click on register button
+    And    I wait for "1" seconds
+    And    I Click on Link Register & Apply
     And    I should not see "Resume is required" text
