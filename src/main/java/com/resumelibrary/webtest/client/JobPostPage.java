@@ -77,6 +77,8 @@ public class JobPostPage extends Utility {
     List<WebElement> ExpiresDates;
     @FindBy(id = "preview_submit_btn")
     WebElement PreviewSubmitBtn;
+    @FindBy(id = "jobs-sort-select")
+    WebElement JobsMobileSortSelect;
 
     public void enterJobTitle(String jobTitle) {
         logger.info("Entered job title" + jobTitle);
@@ -219,38 +221,42 @@ public class JobPostPage extends Utility {
     }
 
     public List<String> getListOfPostedDates() {
-        sortedList = getDataList(PostedDates);
+        sortedList = getDataListForDate(PostedDates);
         logger.info("Getting list of posted dates ");
         return sortedList;
     }
 
     public List<String> ascendingOrderOnPostedDates() {
-        sortedList = getListByAscOrder(PostedDates);
+        sortedList = getDataListForDate(PostedDates);
         logger.info("Sorting posted date by asc order" + sortedList);
         return getSortedDatesAsc(sortedList);
     }
 
     public List<String> descendingOrderOnPostedDates() {
-        sortedList = getListByDescOrder(PostedDates);
+        sortedList = getDataListForDate(PostedDates);
         logger.info("Sorting  posted date by desc order" + sortedList);
         return getSortedDatesDesc(sortedList);
     }
 
     public List<String> getListOfExpiresDates() {
-        sortedList = getDataList(ExpiresDates);
+        sortedList = getDataListForDate(ExpiresDates);
         logger.info("Getting list of expires dates ");
         return sortedList;
     }
 
     public List<String> ascendingOrderOnExpiresDates() {
-        sortedList = getListByAscOrder(ExpiresDates);
+        sortedList = getDataListForDate(ExpiresDates);
         logger.info("Sorting expires date by asc order" + sortedList);
         return getSortedDatesAsc(sortedList);
     }
 
     public List<String> descendingOrderOnExpiresDates() {
-        sortedList = getListByDescOrder(ExpiresDates);
+        sortedList = getDataListForDate(ExpiresDates);
         logger.info("Sorting expires date by desc order" + sortedList);
         return getSortedDatesDesc(sortedList);
+    }
+    public void selectValueToSortOnClientJobsPage(String text) {
+        logger.info("Select sort by from dropdown");
+        selectByVisibleTextFromDropDown(JobsMobileSortSelect, text);
     }
 }
