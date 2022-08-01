@@ -49,13 +49,13 @@ public class HomePage extends Utility {
     WebElement myProfileHeaderLink;
     @FindBy(id = "nav_jobalerts")
     WebElement jobAlertsHeaderLink;
-    @FindBy(xpath = "//nav[@label='Site Navigation']/ul/li/a[text()='Saved Jobs']")
+    @FindBy(xpath = "(//*[contains(text(),'Saved Jobs')])[3]")
     WebElement savedJobsHeaderLink;
     @FindBy(xpath = "//a[@class='account-link']")
     WebElement profileIconHeaderLink;
     @FindBy(xpath = "//li/a[text()='My Email Preferences']")
     WebElement myEmailPreferencesHeaderLink;
-    @FindBy(xpath = "//li/a[text()='My Applications']")
+    @FindBy(xpath = "//*[contains(text(),'Applications ')]")
     WebElement myApplicationHeaderLink;
     @FindBy(xpath = "//li[@id='user-nav']/ul/li/a[text()='My Settings']")
     WebElement mySettingsHeaderLink;
@@ -159,16 +159,16 @@ public class HomePage extends Utility {
                 clickOnElement(myEmailPreferencesHeaderLink);
                 break;
             case "My Applications":
-                mouseHoverToElement(CandidateDropdownHeaderLink);
+              //  mouseHoverToElement(CandidateDropdownHeaderLink);
                 clickOnElement(myApplicationHeaderLink);
                 break;
             case "My Settings":
-                mouseHoverToElement(CandidateDropdownHeaderLink);
-                clickOnElement(mySettingsHeaderLink);
+              //  mouseHoverToElement(CandidateDropdownHeaderLink);
+                clickOnElementUsingText("My Settings");
                 break;
             case "Logout":
-                mouseHoverToElement(CandidateDropdownHeaderLink);
-                clickOnElement(logOutHeaderLink);
+             //   mouseHoverToElement(CandidateDropdownHeaderLink);
+                clickOnElementUsingText("Logout");
                 break;
             case "Login":
                 clickOnElement(logInHeaderLink);

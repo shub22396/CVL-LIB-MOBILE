@@ -5,6 +5,7 @@ import com.resumelibrary.webtest.candidate.JobSearchPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 
 public class JobSearch extends Utility {
@@ -136,6 +137,7 @@ public class JobSearch extends Utility {
 
     @And("the title field should contain {string}")
     public void theTitleFieldShouldContain(String text) {
+
         Assert.assertEquals(new JobSearchPage().getJobTitleAttributeValue(), text);
     }
 

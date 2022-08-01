@@ -3,6 +3,7 @@ package com.resumelibrary.webtest.candidate;
 import com.resumelibrary.utilities.DataHelper;
 import com.resumelibrary.utilities.WebURLHelper;
 import com.resumelibrary.utilities.Utility;
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -10,6 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+
+import java.util.Set;
 
 public class OthersPage extends Utility {
 
@@ -183,6 +186,9 @@ public class OthersPage extends Utility {
     }
 
     public void verifyURLText(String url) {
+        waitFor(4);
+
+        clickAllowPopUp();
         waitUntil(WebURLHelper.getWebUrl() + getURL(url));
         String presentURL = getPresentURL();
         logger.info("The present URL is --> : " + presentURL);

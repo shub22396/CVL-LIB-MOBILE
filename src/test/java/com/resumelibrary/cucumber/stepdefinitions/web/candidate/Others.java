@@ -133,6 +133,7 @@ public class Others extends Utility {
 
     @Then("I should be able to see in browser URL {string}")
     public void iShouldBeAbleToSeeInBrowserURL(String url) {
+
         new OthersPage().verifyURLText(url);
     }
 
@@ -272,6 +273,11 @@ public class Others extends Utility {
     @And("I move backward one page")
     public void iMoveBackwardOnePage() {
         backwardOnThePage();
+    }
+    @And("I click on mobile header button")
+    public void iClickMobileHeader(){
+        waitFor(3);
+        clickMobileHeader();
     }
 
     @And("I should see text H two tag {string}")
