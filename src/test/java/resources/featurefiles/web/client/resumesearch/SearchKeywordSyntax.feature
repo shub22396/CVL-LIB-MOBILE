@@ -54,7 +54,7 @@ Feature: Client ResumeSearch Keyword Syntax
  Scenario: Resume basic search and builder with keywords using and variants
     And   I navigate to page "Client Resume Search With Keywords Using And"
     And   I click on Builder
-    And   I should see value "strange AND test " in search builder keywords
+    And   I should see value "strange AND test" in search builder keywords
     And   I click on Search Resumes
     And   I click on Basic
     And   I should see "strange AND test" in basic keywords field

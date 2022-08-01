@@ -3,7 +3,8 @@ Feature: Client Others LatestFeatures
 
   Background: Verify page elements in Latest Features page
     Given  I login as a client
-    When   I click on "Latest Features"
+    When   I click on Menu Bar
+    Then   I click on "Latest Features"
 
   @verifyLatestFeaturesPage1 @ReleaseRegression2
   Scenario: Verify post job in Latest Features page

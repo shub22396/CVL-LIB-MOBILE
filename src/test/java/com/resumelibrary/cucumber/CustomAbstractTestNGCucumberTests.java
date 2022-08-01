@@ -61,6 +61,7 @@ public abstract class CustomAbstractTestNGCucumberTests implements Constants {
         this.machine = machineName;
         this.runnerClass=runnerClass;
         System.setProperty("browserName",  browserName);
+        System.setProperty("browserName",  browserName);
         System.setProperty("machineName",  machineName);
         System.setProperty("runnerClass",runnerClass);
          this.testNGCucumberRunner.runScenario(pickleWrapper.getPickle());

@@ -3,10 +3,7 @@ package com.resumelibrary.webtest.candidate;
 import com.resumelibrary.utilities.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -18,6 +15,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.Key;
 import java.util.List;
 
 public class JobSearchPage extends Utility {
@@ -131,9 +129,11 @@ public class JobSearchPage extends Utility {
     public void enterJobTitle(String jobTitle) {
         logger.info("Keyword/title filled with :" + jobTitle);
         JobTitleQ.sendKeys(jobTitle);
+        JobTitleQ.sendKeys(Keys.TAB);
     }
 
     public String getJobTitleAttributeValue() {
+       // System.out.println("Page Source:"+getThreadDriver().getPageSource());
         logger.info("Verifying job title value " + JobTitleQ);
         waitUntilElementIsLocated(JobTitleQ,20);
         return JobTitleQ.getAttribute("value");
@@ -142,6 +142,7 @@ public class JobSearchPage extends Utility {
     public void enterSearchLocation(String location) {
         logger.info("Entered search location is " + location);
         SearchLocation.sendKeys(location);
+        SearchLocation.sendKeys(Keys.TAB);
     }
 
     public String getLocationAttributeValue() {
