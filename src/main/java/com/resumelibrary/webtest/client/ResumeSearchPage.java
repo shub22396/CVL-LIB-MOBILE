@@ -72,7 +72,7 @@ public class ResumeSearchPage extends Utility {
     WebElement UnlockedOnly;
     @FindBy(id = "keywords")
     WebElement Keywords;
-    @FindBy(id = "email_candidates_amount")
+    @FindBy(xpath = "//*[@name='select_all_candidates']/following-sibling::span")
     WebElement EmailCandidatesAmount;
     @FindBy(id = "message")
     WebElement Message;
@@ -355,7 +355,7 @@ public class ResumeSearchPage extends Utility {
 
     public void selectEmailCandidatesAmountFromList() {
         logger.info("Select email candidate amount from list");
-        selectByIndexFromDropDown(EmailCandidatesAmount, 1);
+        clickOnElement(EmailCandidatesAmount);
     }
 
     public void selectRelatedJobsFromList(String text) {
