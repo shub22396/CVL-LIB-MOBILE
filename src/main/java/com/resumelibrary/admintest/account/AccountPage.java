@@ -85,6 +85,8 @@ public class AccountPage extends Utility {
     WebElement AccountHeaderTitle;
     @FindBy(id = "actions-btn")
     WebElement ActionBtn;
+    @FindBy(className = "mobile-menu-trigger")
+    WebElement MobileMenuTrigger;
 
 
     public void clickCreateAccountButton() {
@@ -255,5 +257,9 @@ public class AccountPage extends Utility {
             waitFor(2);
         }
         clickOnElement(ActionBtn);
+    }
+    public void clickOnMenu() {
+        logger.info("Clicking on menu ");
+        clickOnElement(MobileMenuTrigger);
     }
 }

@@ -19,6 +19,7 @@ Feature: Client Ecommerce ValidatedEmailVerifiedClientProducts
     Then  I should be on page "Client Account"
     And   I should see text "Popular Products"
     And   I login as an admin user
+    And   I click on menu
     When  I search for "registration@resume-library.com" in the navigation bar on admin
     And   I scroll up 0,600
     And   I click on product details Edit button
@@ -76,6 +77,7 @@ Feature: Client Ecommerce ValidatedEmailVerifiedClientProducts
     And   I should see text "Order Summary"
     Then  I switch to window 0
     Then  I am on admin page "/"
+    And   I click on menu
     When  I search for "registration@resume-library.com" in the navigation bar on admin
     Then  I click on id "actions-btn"
     And   I click on "Update product balances"

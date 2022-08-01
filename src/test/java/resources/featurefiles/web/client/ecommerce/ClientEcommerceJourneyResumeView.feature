@@ -69,20 +69,6 @@ Feature: Client Ecommerce ClientEcommerceJourneyResumeView
     And   I should see text p tag "Please call our team on " and verify message "Please call our team on 1-857-239-0143 and this will be validated instantly."
     Then  I close account authentication for job dashboard
 
-  @EcommUnvalidatedClientInviteToApply1
-  Scenario: as an unvalidated logged in client with E-commerce enabled verify resume search invite to apply
-    Given I navigate to page "Client Account"
-    Then  I am on page "/client/resume-search/results?keywords=sales+OR+php+OR+test&submt_btn=1"
-    And   I should be able to see in browser URL "Client Resume Search Results"
-    And   I wait for "2" seconds
-    Then  I should see text "Invite Candidates"
-    When  I select all (20) from email candidates amount dropdown
-    And   I click on "Invite Candidates"
-    And   I wait for "1" seconds
-    Then  I should see text "Account Authentication Required"
-    And   I should see text "Before you can make any purchases, we need to validate your account."
-    And   I should see text p tag "Please call our team on " and verify message "Please call our team on 1-857-239-0143 and this will be validated instantly."
-
   @EcommUnvalidatedClientInviteToApply2
   Scenario: as an unvalidated logged in client with E-commerce enabled verify resume search select all checkbox invite to apply
     Given I navigate to page "Client Account"
