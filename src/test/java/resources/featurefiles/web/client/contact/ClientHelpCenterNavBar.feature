@@ -3,18 +3,19 @@ Feature: Client Contact ClientHelpCenterNavBar
 
   Background: Navigating to Client Help Center From Nav Bar
    Given I login as a client
-    And  I click on client contact us btn
 
   @clientHelpText
   Scenario: verify text in recruiters contact page
+    Then I click on Menu Bar
+    And  I click on "Contact Us"
     Then I should see text "Your Customer Success Executive"
-    And  I should see text "Client Help Center"
-    And  I should see text "General Enquiries"
+    And  I should see text "c.briggs@resume-library.com"
+    And  I should see text "1-857-239-0143"
     And  I should not see "centre"
 
   @clientHelpCenter @ReleaseRegression2
   Scenario: verify text in help center
-    Then I click on "Help center"
+    Then I navigate to page "Client Help"
     Then I should be able to see in browser URL "Client Help"
     Then I should see text "Client Help Center"
     And  I should see text "Client FAQs"
@@ -49,15 +50,17 @@ Feature: Client Contact ClientHelpCenterNavBar
     Then I should be able to see in browser URL "Downloads Rl User Manual Pdf"
     Then I switch to window 0
     And  I move backward one page
-    And  I click on client contact us btn
-    And  I click on "Contact form"
-   Then  I should be able to see in browser URL "/client/contact?show_form=1#contact-us-row"
+    And  I click on "Account Options"
+    And  I click on "Contact Us"
+   Then  I should be able to see in browser URL "/client/contact"
     And  I should see text "Our dedicated team is here to help answer any questions, Contact us"
 
   @clientContactFormTextForm
   Scenario: verify text in client contact form1
-    Then I click on "Contact form"
-    And  I should be able to see in browser URL "/client/contact?show_form=1#contact-us-row"
+    Then I navigate to page "Client Help"
+    And  I click on "Account Options"
+    And  I click on "Contact Us"
+    Then  I should be able to see in browser URL "/client/contact"
     Then I should see text "Phone number"
     And  I should see text "Optional"
     And  I should see text "Inquiry type"
@@ -65,8 +68,9 @@ Feature: Client Contact ClientHelpCenterNavBar
 
   @clientContactFormValidationForm
   Scenario: Validation on client contact form
-    Then I click on "Contact form"
-    And  I should be able to see in browser URL "/client/contact?show_form=1#contact-us-row"
+    Then I navigate to page "Client Help"
+    And  I click on "Account Options"
+    And  I click on "Contact Us"
     When I press and wait "register_now"
     Then I should see text "This field is required"
     And  I should see text "Message is required"
@@ -74,10 +78,12 @@ Feature: Client Contact ClientHelpCenterNavBar
 
   @clientContactFormSubmit @ReleaseRegression2
   Scenario: Submitting on client contact form
-    Then I click on "Contact form"
-    And  I should be able to see in browser URL "/client/contact?show_form=1#contact-us-row"
+    Then I navigate to page "Client Help"
+    And  I click on "Account Options"
+    And  I click on "Contact Us"
     Then I select the option "Resume Search" from inquiry type
     Then I fill in inquiry messages text area with "inquiry message for form 1 "
-    Then I click on Submit inquiry
+    And  I wait for "1" seconds
+    Then I click on id "register_now"
     Then I should see text "Thanks for getting in touch. A member of our team will get back to you shortly."
     And  I should see text "inquiry message for form 1"
