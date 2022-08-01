@@ -279,7 +279,17 @@ public class Others extends Utility {
         waitFor(3);
         clickMobileHeader();
     }
+    @And("I click on Hiring")
+    public void iClickonHiring(){
+        waitFor(3);
+        clickOnHiring();
+    }
 
+    @And("I click on Resume Library")
+    public void iClickOnResumeLibrary(){
+        waitFor(3);
+        clickOnResumeLibrary();
+    }
     @And("I should see text H two tag {string}")
     public void iShouldSeeTextHTwoTag(String text) {
         Assert.assertEquals(verifyTextMessageH2Tags(text), text);
