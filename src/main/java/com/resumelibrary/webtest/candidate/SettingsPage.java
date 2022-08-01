@@ -37,6 +37,10 @@ public class SettingsPage extends Utility {
     WebElement HideMyProfileButton;
     @FindBy(id = "comments")
     WebElement CommentsField;
+    @FindBy(id = "mobile-menu-trigger")
+    WebElement MobileMenuBarTrigger;
+
+
 
     public void fillOldPassword(String password) {
         logger.info("Entered old password " + password);
@@ -59,6 +63,11 @@ public class SettingsPage extends Utility {
     public void clickOnSaveNewPasswordButton(){
         logger.info("Clicking on save new password button ");
         clickOnElement(SaveNewPasswordField);
+    }
+
+    public void clickOnMenuBar(){
+        logger.info("Clicking on click On MenuBar ");
+        clickOnElement(MobileMenuBarTrigger);
     }
 
     public void clickOnChangeEmailButton(){

@@ -1,6 +1,8 @@
 package com.resumelibrary.webtest.candidate;
 
 import com.resumelibrary.utilities.Utility;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -11,6 +13,8 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class RegistrationPage extends Utility {
@@ -111,15 +115,18 @@ public class RegistrationPage extends Utility {
         ZipCodeField.sendKeys(zipcode);
     }
 
-    public void upLoadYourResume(String resumePath) {
+    public void upLoadYourResume(String resumePath) throws IOException {
+        ((AndroidDriver)getThreadDriver()).pushFile("/sdcard/download", new File(resumePath));
         String browser = System.getProperty("browserName");
         logger.info("browserName = " + browser);
+       // browser="remoteChromeBrowser";
         waitFor(2);
-        WebElement uploadElement = getThreadDriver().findElement(By.id("resume1"));
+        WebElement uploadElement = getThreadDriver().findElement(By.xpath("//*[text()=Upload your resume]"));
         if (browser.contains("remote") || browser.contains("lambda") || browser.contains("browserStack")) {
             ((RemoteWebElement) uploadElement).setFileDetector(new LocalFileDetector());
         }
-        uploadElement.sendKeys(resumePath);
+        uploadElement.click();
+        uploadElement.sendKeys("/sdcard/download/test-cv.pdf");
         waitFor(2);
 
     }

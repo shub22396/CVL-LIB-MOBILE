@@ -3,10 +3,7 @@ package com.resumelibrary.webtest.candidate;
 import com.resumelibrary.utilities.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -18,6 +15,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.Key;
 import java.util.List;
 
 public class JobSearchPage extends Utility {
@@ -36,9 +34,9 @@ public class JobSearchPage extends Utility {
     WebElement Radius;
     @FindBy(id = "top-search-jobs-btn")
     WebElement SearchJobsButton;
-    @FindBy(id = "search_loc")
+    @FindBy(name = "loc")
     WebElement SearchLocation;
-    @FindBy(id = "q")
+    @FindBy(name = "q")
     WebElement JobTitleQ;
     @FindBy(id = "home-search-submit")
     WebElement FindJobs;
@@ -46,15 +44,15 @@ public class JobSearchPage extends Utility {
     WebElement SalaryMin;
     @FindBy(id = "annual_salary_to")
     WebElement SalaryMax;
-    @FindBy(id = "job_type")
+    @FindBy(name = "job_type")
     WebElement JobType;
     @FindBy(id = "pd")
     WebElement PostedSince;
     @FindBy(xpath = "//a[text() = \"2\"]")
     WebElement LinkIndexPage;
-    @FindBy(id = "search-results-distance")
+    @FindBy(id = "header_radius")
     WebElement SearchResultDistance;
-    @FindBy(id = "posted_date")
+    @FindBy(name = "pd")
     WebElement PostedDate;
     @FindBy(id = "displaying-text")
     WebElement DisplayingText;
@@ -76,7 +74,7 @@ public class JobSearchPage extends Utility {
     WebElement LocationLinkFromModule;
     @FindBy(css = ".reasons-other-input")
     WebElement ReasonsOtherInput;
-    @FindBy(css = ".search-job-title-link")
+    @FindBy(css = ".search-result-info-title")
     WebElement SearchJobTitle;
     @FindBy(id = "order_by")
     WebElement OrderBy;
@@ -109,7 +107,7 @@ public class JobSearchPage extends Utility {
 
     public String getDistanceAttributeValue() {
         logger.info("Verifying distance value " + SearchResultDistance);
-        return SearchResultDistance.getAttribute("data-orig");
+        return SearchResultDistance.getAttribute("value");
     }
 
     public void clickButtonSearchJobs() {
@@ -131,21 +129,25 @@ public class JobSearchPage extends Utility {
     public void enterJobTitle(String jobTitle) {
         logger.info("Keyword/title filled with :" + jobTitle);
         JobTitleQ.sendKeys(jobTitle);
+        JobTitleQ.sendKeys(Keys.TAB);
     }
 
     public String getJobTitleAttributeValue() {
+       // System.out.println("Page Source:"+getThreadDriver().getPageSource());
         logger.info("Verifying job title value " + JobTitleQ);
-        return JobTitleQ.getAttribute("data-orig");
+        waitUntilElementIsLocated(JobTitleQ,20);
+        return JobTitleQ.getAttribute("value");
     }
 
     public void enterSearchLocation(String location) {
         logger.info("Entered search location is " + location);
         SearchLocation.sendKeys(location);
+        SearchLocation.sendKeys(Keys.TAB);
     }
 
     public String getLocationAttributeValue() {
         logger.info("Verifying location value " + SearchLocation);
-        return SearchLocation.getAttribute("data-orig");
+        return SearchLocation.getAttribute("value");
     }
 
     public void clickFindJobs() {
@@ -197,7 +199,7 @@ public class JobSearchPage extends Utility {
 
     public String getSalaryMinAttributeValue() {
         logger.info("Verifying salary min value " + SalaryMin);
-        return SalaryMin.getAttribute("data-orig");
+        return SalaryMin.getAttribute("value");
     }
 
     public void selectMaxSalary(String salMax) {
@@ -207,7 +209,7 @@ public class JobSearchPage extends Utility {
 
     public String getSalaryMaxAttributeValue() {
         logger.info("Verifying salary max value " + SalaryMax);
-        return SalaryMax.getAttribute("data-orig");
+        return SalaryMax.getAttribute("value");
     }
 
     public void selectJobType(String jobType) {
@@ -217,7 +219,7 @@ public class JobSearchPage extends Utility {
 
     public String getJobTypeAttributeValue() {
         logger.info("Verifying job type value " + JobType);
-        return JobType.getAttribute("data-orig");
+        return JobType.getAttribute("value");
     }
 
     public void selectPostedSince(String pd) {
@@ -354,6 +356,7 @@ public class JobSearchPage extends Utility {
 
     public String getPostedInTheIsSelected() {
         logger.info("Verifying posted in the is selected");
+        waitUntilElementIsLocated(PostedDate,20);
         return getFirstSelectedOption(PostedDate);
     }
 

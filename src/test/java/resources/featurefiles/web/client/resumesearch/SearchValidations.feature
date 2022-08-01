@@ -89,21 +89,21 @@ Feature: Client ResumeSearch SearchValidations
     When  I click on "Reset form"
     And   I click on id "keywords_builder_textarea_input"
     When  I enter search builder keywords text area with "java" to autocomplete
-    And   I hover from autocomplete for keywords textarea input for the option "Java Developer"
-    Then  I should see all elements for ".synonyms-popup" class
-    When  I click on "Java Developer" link from keywords search results
-    And   I click on id "builder"
-    Then  I should see text "Java Developer"
-    When  I click on "Reset form"
-    And   I click on id "keywords_builder_textarea_input"
-    When  I enter search builder keywords text area with "java" to autocomplete
-    And   I hover from autocomplete for keywords textarea and select "Java Developer"
-    Then  I should see all elements for ".synonyms-popup" class
-    When  I click on "Add all terms"
-    And   I click on id "builder"
-    Then  I should see text "Java Developer"
-    And   I should see text "java consultant"
-    And   I should see text "java engineer"
+#    And   I hover from autocomplete for keywords textarea input for the option "Java Developer"
+#    Then  I should see all elements for ".synonyms-popup" class
+#    When  I click on "Java Developer" link from keywords search results
+#    And   I click on id "builder"
+#    Then  I should see text "Java Developer"
+#    When  I click on "Reset form"
+#    And   I click on id "keywords_builder_textarea_input"
+#    When  I enter search builder keywords text area with "java" to autocomplete
+#    And   I hover from autocomplete for keywords textarea and select "Java Developer"
+#    Then  I should see all elements for ".synonyms-popup" class
+#    When  I click on "Add all terms"
+#    And   I click on id "builder"
+#    Then  I should see text "Java Developer"
+#    And   I should see text "java consultant"
+#    And   I should see text "java engineer"
     Then  I click on "Reset form"
     When  I enter search builder keywords text area with "Java Developer" with enter key
     Then  I should see text "Add Related Terms"

@@ -7,37 +7,31 @@ Feature: Candidate JobSearch ResultsPerPage
     Then  I should see search results displaying text "Displaying 1 to 20 of 40,000+ jobs"
     And   I click on "Next"
     Then  I should see search results displaying text "Displaying 21 to 40 of 40,000+ jobs"
-    When  I select option "50" from results per page
-    Then  I should see option "50" selected
+    When  I click on "50"
     Then  I should see search results displaying text "Displaying 1 to 50 of 40,000+ jobs"
-    And   I select option "75" from results per page
-    Then  I should see option "75" selected
+    When  I click on "75"
     And   I should see search results displaying text "Displaying 1 to 75 of 40,000+ jobs"
-    And   I select option "100" from results per page
-    Then  I should see option "100" selected
+    When  I click on "100"
     And   I should see search results displaying text "Displaying 1 to 100 of 40,000+ jobs"
-    And   I select option "250" from results per page
-    Then  I should see option "250" selected
+    When  I click on "250"
     And   I should see search results displaying text "Displaying 1 to 250 of 40,000+ jobs"
 
   @searchResultsPageNavigationButtonsPerPageParam @ReleaseRegression1
   Scenario: Search results page modules
     Given I navigate to page "Jobs Sales"
-    And   I click on "2" pagination
+    And   I click on "Next" pagination
     Then  I should see text p tag "Displaying " and verify message "Displaying 21 to 40 of "
     And   I should be able to see in browser URL "Jobs Sales Page 2"
     And   I click on "Prev" pagination
     Then  I should see text p tag "Displaying " and verify message "Displaying 1 to 20 of "
     And   I should be able to see in browser URL "Jobs Sales"
-    And   I click on "Next" pagination
-    Then  I should see text p tag "Displaying " and verify message "Displaying 21 to 40 of "
-    And   I should be able to see in browser URL "Jobs Sales Page 2"
+
 
   @searchResultsPageNavigationButtonsPPParam
   Scenario: Search results page modules
     Given I navigate to page "Jobs Sales"
-    And   I select option "75" from results per page
-    And   I click on "2" pagination
+    And   I click on "75"
+    And   I click on "Next" pagination
     Then  I should see text p tag "Displaying " and verify message "Displaying 76 to 150 of "
     And   I should be able to see in browser URL "Jobs Sales PP75 Page 2"
     And   I click on "Prev" pagination

@@ -75,6 +75,11 @@ public class JobAlert extends Utility {
         new JobAlertPage().clickEditJobAlert();
     }
 
+    @And("I click on Edit Job Alert Snooze")
+    public void iClickOnEditJobAlertSnooze() {
+        new JobAlertPage().clickEditJobAlertSnooze();
+    }
+
     @When("I fill in edit alert text with random keyword")
     public void iFillInEditAlertTextWithRandomKeyword() {
         String keyword = "Test Manager";
@@ -171,5 +176,10 @@ public class JobAlert extends Utility {
     @And("I should see message {string} in the jbe xpath")
     public void iShouldSeeMessageInTheJbeXpath(String text) {
         new JobAlertPage().shouldSeeMessageInJbeXpath(text);
+    }
+
+    @And("I enter email random address to get latest job alerts")
+    public void iEnterEmailRandomAddressToGetLatestJobAlerts() {
+        iFillInNewUserEmailFieldWithRandomEmailId();
     }
 }

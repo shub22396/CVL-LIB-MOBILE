@@ -3,6 +3,10 @@ package com.resumelibrary.webdriverprovider;
 import com.resumelibrary.utilities.Constants;
 import com.resumelibrary.utilities.PropertyFileReader;
 import com.resumelibrary.utilities.WebURLHelper;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.remote.MobileCapabilityType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -195,4 +199,49 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
     public String getConstantsURL(String URL) {
         return null;
     }
+
+
+    void androidMobileWeb(Map threadMap) {
+        try {
+
+
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
+            String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
+            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
+            String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
+
+            System.out.println("jenkinsBuildNumber = " + buildId);
+            String project = "[" + jobBaseName + "-Build:" + buildId + "]";
+            final String driverURL = "http://127.0.0.1:4723/wd/hub";
+            logger.info("[--->driverURL:" + driverURL+"<---]");
+
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+
+            capabilities.setCapability("appium-version", "1.22.3");
+            capabilities.setCapability("platformName", "Android");
+            capabilities.setCapability("deviceName", "Pixel 4 API 30");
+           // capabilities.setCapability("appPackage", "com.example.myapplication");
+            //capabilities.setCapability("appActivity", "MainActivity");
+           // capabilities.setCapability("appPackage", "com.demo.test.demo");
+            //capabilities.setCapability("appActivity", ".RootActivity");
+            capabilities.setCapability("noReset","true");
+           // capabilities.setCapability("browserName","WEBView Browser Tester");
+            capabilities.setCapability("automationName","UiAutomator2");
+           capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
+          // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.android.chrome");
+           // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "org.chromium.my_webview_shell");
+
+          // capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.google.android.apps.chrome.Main");
+          capabilities.setCapability("chromedriverExecutableDir","/home/sguduru/Downloads/Chrome-Driver");
+            capabilities.setCapability("autoGrantPermissions", "true");
+            capabilities.setJavascriptEnabled(true);
+            threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
+            threadLocalMap.set(threadMap);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

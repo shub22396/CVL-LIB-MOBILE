@@ -76,12 +76,17 @@ public class DriverController extends CloudDriverProvider implements Constants {
                 logger.info("[--->Using browser stack cloud firefox browsers<---]");
                 remoteBrowserStackFireFox(threadMap, testName);
                 break;
+            case "androidMobileWeb":
+                logger.info("[--->Using  androidMobileWeb<---]");
+
+                androidMobileWeb(threadMap);
+                break;
         }
         manageBrowser();
     }
 
     private void manageBrowser() {
-        getThreadDriver().manage().window().maximize();
+        //getThreadDriver().manage().window().setSize(new Dimension(414,736));
         getThreadDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
         getThreadDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(PropertyFileReader.getInstance().getProperty("implicitlyWait"))));
         getThreadDriver().manage().deleteAllCookies();

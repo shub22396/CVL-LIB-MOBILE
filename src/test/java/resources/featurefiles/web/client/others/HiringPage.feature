@@ -10,6 +10,7 @@ Feature: Client Others HiringPage
     Then  I should see text "Attracting millions of jobseekers in 2022"
     And   I should see text "We're reaching more jobseekers than ever before with our outdoor advertising campaigns across key states including New York, California, Georgia and Illinois."
     And   I should see text p tag "With clear messaging and a standout format, this advertising can be seen by " and verify message "With clear messaging and a standout format, this advertising can be seen by millions of commuters in hand-picked, high footfall locations across the country."
+    And   I scroll down to element "Atlanta"
     And   I should see text "Atlanta"
     And   I should see text "Heavy, round-the-clock traffic receives head-on exposure to this digital display located on I-75, just south of Roswell Street."
     When  I click on next icon

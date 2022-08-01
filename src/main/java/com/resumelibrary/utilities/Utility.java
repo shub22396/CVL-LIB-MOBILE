@@ -2,6 +2,8 @@ package com.resumelibrary.utilities;
 
 import com.resumelibrary.webdriverprovider.DriverController;
 import com.resumelibrary.webdriverprovider.WebDriverProvider;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.Scenario;
 import io.restassured.RestAssured;
 import org.apache.commons.lang3.RandomUtils;
@@ -26,7 +28,18 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
 import java.util.stream.Collectors;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.Rectangle;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Pause;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.PointerInput.Kind;
+import org.openqa.selenium.interactions.PointerInput.MouseButton;
+import org.openqa.selenium.interactions.PointerInput.Origin;
+import org.openqa.selenium.interactions.Sequence;
 
+import io.appium.java_client.AppiumDriver;
+import com.google.common.collect.ImmutableList;
 public abstract class Utility extends DriverController {
 
     /*   Constructor to initiate the page elements */
@@ -105,6 +118,12 @@ public abstract class Utility extends DriverController {
         getThreadDriver().navigate().back();
     }
 
+
+    public void clickMobileHeader() {
+       clickOnElement(getThreadDriver().findElements(By.xpath("//*[@id='mobile-menu-trigger']")).get(0));
+    }
+
+
     /* Adding cookie along with key and value */
     public void setCookie(String key, String value) {
         getThreadDriver().manage().addCookie(new Cookie(key, value));
@@ -164,6 +183,11 @@ public abstract class Utility extends DriverController {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    public void waitUntilStalenessOf(WebElement element, int timeOut) {
+        WebDriverWait wait = new WebDriverWait(getThreadDriver(), Duration.ofSeconds(timeOut));
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf(element)));
+    }
+
     /*Assertion for exact match of Expected and Actual url*/
     public void externalUrlVerify(String url) {
         String currentUrl = getThreadDriver().getCurrentUrl();
@@ -203,9 +227,9 @@ public abstract class Utility extends DriverController {
         boolean result = getThreadDriver().findElements(By.xpath("//*[text()=\"" + text + "\"]")).size() > 0;
         getThreadDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         if (!result) {
-            elementByText = getThreadDriver().findElement(By.xpath("//*[contains(text(),\"" + text + "\")]"));
+            elementByText = getThreadDriver().findElements(By.xpath("//*[contains(text(),\"" + text + "\")]")).get(0);
         } else {
-            elementByText = getThreadDriver().findElement(By.xpath("//*[text()=\"" + text + "\"]"));
+            elementByText = getThreadDriver().findElements(By.xpath("//*[text()=\"" + text + "\"]")).get(0);
         }
         logger.info("[--->text on the element " + elementByText.getText()+"<---]");
         return elementByText;
@@ -219,6 +243,7 @@ public abstract class Utility extends DriverController {
 
     /* Clicking on  a specified web element by handling element click intercepted exception */
     public void clickOnElement(WebElement element) {
+
         waitUntilElementToBeClickable(element, 10);
         logger.info("[--->Clicking on element " + element.toString()+"<---]");
         try {
@@ -251,6 +276,7 @@ public abstract class Utility extends DriverController {
         // we need this wait because we are trying to get the element by text, sometimes text is not ready to get the element
         waitFor(1);
         WebElement result = getElementByText(text);
+        mouseHoverToElement(result);
         logger.info("[--->found an element with text : " + text + " : " + result.toString()+"<---]");
         if (!result.isDisplayed()) {
             result = getDisplayedElement(text);
@@ -262,11 +288,36 @@ public abstract class Utility extends DriverController {
             clickOnElement(result);
         } catch (StaleElementReferenceException e) {
             logger.info("[--->stale element exception : " + text +"<---]");
-            JavascriptExecutor jse = (JavascriptExecutor) getThreadDriver();
-            jse.executeScript("arguments[0].click();", result);
+            waitFor(4);
+            clickOnElement(result);
+
         }
+        waitFor(4);
     }
 
+    protected void tapAtPoint(Point point) {
+        AppiumDriver d = (AppiumDriver)getThreadDriver();
+        PointerInput input = new PointerInput(Kind.TOUCH, "finger1");
+        Sequence tap = new Sequence(input, 0);
+        tap.addAction(input.createPointerMove(Duration.ZERO, Origin.viewport(), point.x, point.y));
+        tap.addAction(input.createPointerDown(MouseButton.LEFT.asArg()));
+        tap.addAction(new Pause(input, Duration.ofMillis(200)));
+        tap.addAction(input.createPointerUp(MouseButton.LEFT.asArg()));
+        d.perform(ImmutableList.of(tap));
+    }
+
+    protected void tapElement(WebElement el) {
+        tapElementAt(el, 0.5, 0.5);
+    }
+
+    protected void tapElementAt(WebElement el, double xPct, double yPct) {
+        Rectangle elRect = el.getRect();
+        Point point = new Point(
+                elRect.x + (int)(elRect.getWidth() * xPct),
+                elRect.y + (int)(elRect.getHeight() * yPct)
+        );
+        tapAtPoint(point);
+    }
     /* Clicking on  element by inputting the element text with out wait */
     public void clickOnElementUsingLinkText(String text) {
         logger.info("[--->Clicking on link text " + text+"<---]");
@@ -339,7 +390,7 @@ public abstract class Utility extends DriverController {
     public void mouseHoverToElement(WebElement element) {
         Actions actions = new Actions(getThreadDriver());
         ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
-        actions.moveToElement(element).perform();
+     //   actions.moveToElement(element).perform();
         waitFor(1);
     }
 
@@ -493,7 +544,9 @@ public abstract class Utility extends DriverController {
         try {
             logger.info("[--->Initializing for screenshot<---]");
             moveToCurrentTAB();
-            Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(getThreadDriver());
+            //Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(getThreadDriver());
+            Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.scaling(2)) .takeScreenshot(getThreadDriver());
+
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ImageIO.write(screenshot.getImage(), "jpg", baos);
             byte[] bytes = baos.toByteArray();
@@ -1043,5 +1096,20 @@ public abstract class Utility extends DriverController {
             }
         }
         return false;
+    }
+
+    public void clickAllowPopUp(){
+        try {
+            System.out.println("context-->" + ((AndroidDriver) getThreadDriver()).getContext());
+            ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//android.widget.Button[@text='Allow']")))) {
+                getThreadDriver().findElement(By.xpath("//android.widget.Button[@text='Allow']")).click();
+            }
+            //  ((AndroidDriver)getThreadDriver()).context("WEBVIEW_com.dayizhihui.dayishi.hpv");
+            ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
+
+        }catch (Exception e){
+
+        }
     }
 }

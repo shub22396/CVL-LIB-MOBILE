@@ -52,6 +52,7 @@ Background: On resume search page
     Then  I should see text "New Boston, NH"
     And   I should see text "South Boston, VA"
     When  I click on "View fewer locations"
+    And   I wait for "2" seconds
     Then  I should not see "New Boston, NH" text
     And   I should not see "South Boston, VA" text
     And   I click on "Bossier Parish, LA"

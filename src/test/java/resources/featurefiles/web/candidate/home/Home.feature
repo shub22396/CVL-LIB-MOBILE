@@ -10,13 +10,13 @@ Feature: Candidate Home Home
     And   I should see text H one tag "Find a job"
     And   I fill in search title field with "<Title>"
     And   I fill in search location with "<Location>"
-    And   I select "<Distance>" from search distance
+    #And   I select "<Distance>" from search distance
     And   I click on find jobs button
-    Then  I should be able to see in browser URL "Jobs Sales In 10001"
+   Then  I should be able to see in browser URL "Jobs Sales In 10001"
     And   I should see text H one tag "Sales jobs in 10001"
-    And   the title field should contain "<Title1>"
-    And   the location field should contain "<Location>"
-    And   the distance field should contain "<Distance1>"
+    #And   the title field should contain "<Title1>"
+    #And   the location field should contain "<Location>"
+    #And   the distance field should contain "<Distance1>"
 
     Examples:
       | Title | Location | Distance | Distance1 |   Title1 |
@@ -27,7 +27,8 @@ Feature: Candidate Home Home
     When  I navigate to page "Jobs Sales"
     Then  I am on page "/"
     And   I should see text "Recent Searches"
-    And   I click on recent searches link
+    And   I click on "Recent Searches"
+   # And   I click on recent searches link
     And   I should see text "Sales jobs"
     And   I click on "Sales jobs"
     And   I should be able to see in browser URL "Jobs Sales"
@@ -42,9 +43,11 @@ Feature: Candidate Home Home
     When  I navigate to page "Jobs Sales"
     Then  I am on page "/"
     And   I should see text "Recent Searches"
-    And   I click on recent searches link
+   # And   I click on recent searches link
+    And   I click on "Recent Searches"
     And   I should see text "Sales jobs"
-    And   I click on clear recent searches link
+ #   And   I click on clear recent searches link
+    And   I click on "Clear recent searches"
     And   I confirm browser popup
     Then  I should not see "Recent Searches"
 
@@ -59,6 +62,7 @@ Feature: Candidate Home Home
     Then  I should be able to see in browser URL "/hiring"
     Then  I move backward one page
     And   I should see text "Jobs by Industry"
+    And   I click on "Jobs by Industry"
     And   I click on "Accounting"
     Then  I should be on page "Jobs Accounting"
     And   I should see text H one tag "Accounting jobs"
@@ -88,6 +92,8 @@ Feature: Candidate Home Home
 
   @homePageOtherLinksPart2
   Scenario: Validate other links and buttons on home page part2
+
+
     And   I should see text H two tag "Featured Companies"
     And   I click on "View all companies"
     Then  I should be on page "Companies"
@@ -108,6 +114,7 @@ Feature: Candidate Home Home
     Then  I should be on page "Search Jobs"
     And   I should see text H one tag "Advanced Job Search"
     Then  I move backward one page
+    And   I click on mobile header button
     And   I click on "Career Advice"
     Then  I should be on page "Career Advice"
     And   I should see text H one tag "Career Advice"
@@ -135,6 +142,7 @@ Feature: Candidate Home Home
     And   I should see text H three tag "FREE Resume Review"
     Then  I move backward one page
     And   I should see "Find career tips, salary guides, interview advice and cover letter templates to help you reach your career goals."
+    And   I click on mobile header button
     And   I click on "Career Advice"
     Then  I should be able to see in browser http URL "Career Advice"
     And   I should see text H one tag "Career Advice"
@@ -153,6 +161,7 @@ Feature: Candidate Home Home
   @homePageDropdowns
   Scenario Outline: Validate the link Text under Jobs by Industry, Jobs by State, Jobs by City and Popular Jobs tabs on HomePage
     And   I should see text "Jobs by Industry"
+    And   I click on "Jobs by Industry"
     Then  I should see linkText "<JobsByIndustry>" under Jobs by Industry tab
     And   I click on "Jobs by State"
     Then  I should see linkText "<JobsByState>" under Jobs by State tab
@@ -167,27 +176,35 @@ Feature: Candidate Home Home
   @homePageHeaderAndDropdownLinksAndProfileIcon
   Scenario: Home Page Header Links and Candidate Dropdown links and also Profile Icon navigations
     Given I login as a candidate
+    And   I click on mobile header button
     When  I click on "My Dashboard" Header Link
     Then  I should be on page "Candidate My Dashboard"
     And   I should see text H one tag "My Dashboard"
-    When  I click on "My Profile" Header Link
-    Then  I should be on page "Candidate My Profile"
-    And   I should see text H one tag "My Profile"
-    When  I click on "Job Alerts" Header Link
-    Then  I should be on page "Candidate Job Alerts"
-    And   I should see text H one tag "Job Alerts"
     And   I click on "Saved Jobs" Header Link
     Then  I should be on page "/candidate/saved-jobs"
     And   I should see text H one tag "My Saved Jobs"
     When  I click on "My Applications" Header Link
     Then  I should be on page "Candidate Myapplications"
     And   I should see text H one tag "My Applications"
+    And   I click on mobile header button
+    When  I click on "My Profile" Header Link
+    Then  I should be on page "Candidate My Profile"
+    And   I should see text H one tag "My Profile"
+
+    And   I click on mobile header button
+    When  I click on "Job Alerts" Header Link
+    Then  I should be on page "Candidate Job Alerts"
+    And   I should see text H one tag "Job Alerts"
+
+
+    And   I click on mobile header button
     When  I click on "My Settings" Header Link
     Then  I should be on page "Candidate Settings"
     And   I should see text H one tag "My Settings"
-    When  I click on "My Email Preferences" Header Link
-    Then  I should be on page "Candidate Email Preferences"
-    And   I should see text H one tag "My Email Preferences"
+    #When  I click on "My Email Preferences" Header Link
+    #hen  I should be on page "Candidate Email Preferences"
+   # And   I should see text H one tag "My Email Preferences"
+    And   I click on mobile header button
     When  I click on "Logout" Header Link
     Then  I should be on page "Logout"
     And  I should see text p tag " Thanks for using Resume-Library!" and verify message "You have been logged out successfully. Thanks for using Resume-Library!"
