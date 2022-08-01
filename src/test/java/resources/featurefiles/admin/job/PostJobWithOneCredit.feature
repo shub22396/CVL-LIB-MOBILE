@@ -19,6 +19,7 @@ Feature: Admin Job PostJobWithOneCredit
     And   I should be on page "Client Account"
     And   I should see text "Popular Products"
     And   I login as an admin user
+    And   I click on menu
     And   I search for "registration@resume-library.com" in the navigation bar on admin
     And   I get account name and number
     And   I click on actions btn
