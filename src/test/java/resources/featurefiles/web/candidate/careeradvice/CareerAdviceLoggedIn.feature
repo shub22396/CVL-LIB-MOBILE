@@ -75,42 +75,53 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
   Scenario:As a logged in user I see the career-advice drop navigation has links
     Given I navigate to page "Career Advice"
     Then  I should see text "Home"
+    And I click on "View Categories"
+
     When  I click on "Getting Started" career advice links
     Then  I should be on page "Career Advice Getting Started"
 
     When I navigate to page "Career Advice"
+    And I click on "View Categories"
     And   I click on "Resume Tips" career advice links
     Then  I should be on page "Career Advice Resume Tips"
 
     When  I navigate to page "Career Advice"
+    And I click on "View Categories"
     And   I click on "Cover Letters" career advice links
     Then  I should be on page "Career Advice Cover Letters"
 
     When  I navigate to page "Career Advice"
+    And I click on "View Categories"
     And   I click on "Interviews" career advice links
     Then  I should be on page "Career Advice Interviews"
 
     When  I navigate to page "Career Advice"
+    And I click on "View Categories"
     And   I click on "At Work" career advice links
     Then  I should be on page "Career Advice At Work"
 
     When  I navigate to page "Career Advice"
+    And I click on "View Categories"
     And   I click on "Career Development" career advice links
     Then  I should be on page "Career Advice Career Development"
 
     When  I navigate to page "Career Advice"
+    And I click on "View Categories"
     And   I click on "Location Guides" career advice links
     Then  I should be on page "Career Advice Location Guides"
 
     When  I navigate to page "Career Advice"
+    And I click on "View Categories"
     And   I click on "Grads" career advice links
     Then  I should be on page "Career Advice Grads"
 
     When  I navigate to page "Career Advice"
+    And I click on "View Categories"
     And   I click on "Gig Jobs" career advice links
     Then  I should be on page "Career Advice Gig Jobs"
 
     When  I navigate to page "Career Advice"
+    And I click on "View Categories"
     And   I click on "COVID-19 Advice" career advice links
     Then  I should be on page "Career Advice Covid 19 Advice"
 
@@ -134,24 +145,27 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
   Scenario: As a logged in user I see the career-advice page has 3 adverts
     Given I navigate to page "Career Advice"
     Then  I should see RL Career Advice Dyn Banner
-    And   I should see RL Career Advice 160x600
+   # And   I should see RL Career Advice 160x600
     And   I should see blog-fb-banner
 
-  @CareerAdviceResumeReviewLoggedIn
+  @CareerAdviceResumeReviewLoggedIn  #need to fix upload in android
   Scenario:As a logged in user who has uploaded a resume but not had it reviewed
     When  I navigate to page "Candidate My Profile"
     And   I upload resume "Test Cv"
     Then  I should be able to see in browser URL "Candidate My Profile"
     Then  I should see text "Your resume is currently processing, you will be able to apply for jobs in just a few moments."
+    And   I click on "Jobseeker Tools"
     When  I click on link "Career Advice" jobseeker tools menu
+    And   I click on "Jobseeker Tools"
     And   I click on FREE Resume Review
     Then  I should see text H three tag "Your resume has been sent for review"
     And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
     And   I click on "OK, Thanks"
 
-  @CareerAdviceSearchJobsNavigationBarLoggedIn
+  @CareerAdviceSearchJobsNavigationBarLoggedIn #this scenario wont available in mobile view
   Scenario: As a logged in user I see the career-advice page has search jobs navigation bar
     Given I navigate to page "Career Advice"
+    And  I Click on Mobile Search
     And   The search jobs navigation bar button has text "Find jobs"
     And   I fill in search jobs nav bar keywords search with "Sales"
     And   I fill in search jobs nav bar location search with "10001"
