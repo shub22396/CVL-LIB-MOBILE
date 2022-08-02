@@ -171,26 +171,20 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
-
             logger.info("[--->jenkinsBuildNumber : " + buildId+"<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
-
             String username = PropertyFileReader.getInstance().getProperty("browserStackUsername");
             String accessKey = PropertyFileReader.getInstance().getProperty("browserStackAccessKey");
             final String driverURL = "https://" + username + ":" + accessKey + "@hub-scale.browserstack.com/wd/hub";
-
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("browserName", "Firefox");
             caps.setCapability("browserVersion", "100.0");
-
             HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
             browserstackOptions.put("os", "Windows");
             browserstackOptions.put("osVersion", "10");
-
             //for Firefox + Mac
             //browserstackOptions.put("os", "OS X");
             //browserstackOptions.put("osVersion", "Big Sur");
-
             browserStackCommonCapblts(threadMap, project, driverURL, caps, browserstackOptions);
         } catch (Exception e) {
             e.printStackTrace();
@@ -203,20 +197,15 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
     void androidMobileWeb(Map threadMap) {
         try {
-
-
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
-
             System.out.println("jenkinsBuildNumber = " + buildId);
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
             final String driverURL = "http://127.0.0.1:4723/wd/hub";
             logger.info("[--->driverURL:" + driverURL+"<---]");
-
             DesiredCapabilities capabilities = new DesiredCapabilities();
-
             capabilities.setCapability("appium-version", "1.22.3");
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("deviceName", "Pixel 4 API 30");
@@ -230,16 +219,13 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
            capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
           // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.android.chrome");
            // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "org.chromium.my_webview_shell");
-
           // capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.google.android.apps.chrome.Main");
           capabilities.setCapability("chromedriverExecutableDir","/home/sguduru/Downloads/Chrome-Driver");
             capabilities.setCapability("autoGrantPermissions", "true");
             capabilities.setJavascriptEnabled(true);
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
-
-
-        } catch (Exception e) {
+     } catch (Exception e) {
             e.printStackTrace();
         }
     }

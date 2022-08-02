@@ -104,6 +104,7 @@ public class Others extends Utility {
         logger.info("Web page url to load is : " + WebURLHelper.getWebUrl() + getURL(url));
         getDriverWithUrl(WebURLHelper.getWebUrl(), getURL(url));
         webDriverWaitContainsUrl(getURL(url));
+
     }
 
     @Given("I browse the url {string}")
@@ -261,6 +262,7 @@ public class Others extends Utility {
 
     @And("I click on {string}")
     public void iClickOn(String text) {
+        clickAllowPopUp();
         clickOnElementUsingText(text);
     }
 
@@ -279,7 +281,17 @@ public class Others extends Utility {
         waitFor(3);
         clickMobileHeader();
     }
+    @And("I click on Hiring")
+    public void iClickonHiring(){
+        waitFor(3);
+        clickOnHiring();
+    }
 
+    @And("I click on Resume Library")
+    public void iClickOnResumeLibrary(){
+        waitFor(3);
+        clickOnResumeLibrary();
+    }
     @And("I should see text H two tag {string}")
     public void iShouldSeeTextHTwoTag(String text) {
         Assert.assertEquals(verifyTextMessageH2Tags(text), text);

@@ -26,7 +26,7 @@ public class JobSearchPage extends Utility {
 
     private static final Logger logger = LogManager.getLogger(JobSearchPage.class);
 
-    @FindBy(id = "top-search-q")
+    @FindBy(name = "top-search-q")
     WebElement SearchKeyword;
     @FindBy(id = "top-search-loc")
     WebElement TopSearchLocation;
