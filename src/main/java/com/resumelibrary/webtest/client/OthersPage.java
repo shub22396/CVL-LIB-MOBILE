@@ -169,6 +169,7 @@ public class OthersPage extends Utility {
         waitFor(2);
         KeywordsBuilderTextareaInput.sendKeys(Keys.ESCAPE);
     }
+
     public void enterSearchBuilderKeywordsTextAreaWithEnterKey(String keywords) {
         logger.info("Entered search builder keywords : " + keywords);
         clearTextFromField(KeywordsBuilderTextareaInput);
@@ -276,7 +277,7 @@ public class OthersPage extends Utility {
             //waitUntilElementToBeClickable(VideoPlayButton, 5);
         }
         waitFor(1);
-          clickOnElement(VideoPlayButton);
+        clickOnElement(VideoPlayButton);
         waitUntilElementIsLocated(VideoPauseButton, 10);
     }
 
@@ -291,5 +292,10 @@ public class OthersPage extends Utility {
         String durationPlayed = getThreadDriver().findElement(By.xpath(xpathDuration)).getText();
         logger.info("duration of the time video played is : " + durationPlayed);
         return durationPlayed;
+    }
+
+    public void moveBackToParentFrame() {
+        logger.info("Move back to parent frame");
+        getThreadDriver().switchTo().defaultContent();
     }
 }
