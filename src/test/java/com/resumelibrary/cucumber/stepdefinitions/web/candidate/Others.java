@@ -417,4 +417,10 @@ public class Others extends Utility {
     public void iClickOnLinkText(String text) {
         clickOnElementUsingLinkText(text);
     }
+
+    @And("I fill in input with {string} where the the element id is {string}")
+    public void iFillInInputWhereTheTheElementIdIs(String text , String id) {
+        new OthersPage().fillInInput(text,id);
+    }
+
 }
