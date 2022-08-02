@@ -65,7 +65,7 @@ Feature: Client ManageUsers ManageUsers
     And  I should see text "Deactivate User"
     And  I should see "Are you sure you want to deactivate this user?"
     And  I click on "Yes, deactivate"
-    Then I should be able to see in browser URL "Client Account Users"
+ #   Then I should be able to see in browser URL "Client Account Users"
     And  I should see message "aaaaautomation client has been deactivated." in the manage users xpath
 
   @reactivateUser
