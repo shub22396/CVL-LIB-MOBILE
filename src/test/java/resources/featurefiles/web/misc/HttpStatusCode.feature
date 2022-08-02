@@ -18,21 +18,24 @@ Feature: Misc HttpStatusCode
   @SearchJobsNavigationBar403Page
   Scenario: Search for a job from search jobs navigation bar 403 page
     Given I navigate to page "Page 403 Error"
-    And The search jobs navigation bar button has text "Find jobs"
-    And I fill in search jobs nav bar keywords search with "Sales"
-    And I fill in search jobs nav bar location search with "10001"
-    And I select "60 Miles" from search distance
-    And I click on search jobs
-    Then I should be able to see in browser URL "/jobs/sales-in-10001?r=60"
-    And I should see text H one tag "Sales jobs"
+    And   The search jobs navigation bar button has text "Find jobs"
+    When  I click on id "mobile-search-trigger"
+    And   I fill in input with "Sales" where the the element id is "header_q"
+    And   I fill in input with "10001" where the the element id is "header_loc"
+    And   I select the option "60" from dropdown with id "header_radius"
+    And   I click on "Find jobs"
+    Then  I should be able to see in browser URL "/jobs/sales-in-10001?r=60"
+    And   I should see text H one tag "Sales jobs"
+
 
   @SearchJobsNavigationBarMaintenancePage
   Scenario: Search for a job from search jobs navigation bar maintenance page
     Given I navigate to page "Page Maintenance"
-    And The search jobs navigation bar button has text "Find jobs"
-    And I fill in search jobs nav bar keywords search with "Sales"
-    And I fill in search jobs nav bar location search with "10001"
-    And I select "60 Miles" from search distance
-    And I click on search jobs
-    Then I should be able to see in browser URL "/jobs/sales-in-10001?r=60"
-    And I should see text H one tag "Sales jobs"
+    And    The search jobs navigation bar button has text "Find jobs"
+    When  I click on id "mobile-search-trigger"
+    And   I fill in input with "Sales" where the the element id is "header_q"
+    And   I fill in input with "10001" where the the element id is "header_loc"
+    And   I select the option "60" from dropdown with id "header_radius"
+    And   I click on "Find jobs"
+    Then  I should be able to see in browser URL "/jobs/sales-in-10001?r=60"
+    And   I should see text H one tag "Sales jobs"

@@ -241,4 +241,11 @@ public class OthersPage extends Utility {
             waitUntilElementToBeDisappear(element, 15);
         }
     }
+
+    public void fillInInput(String text, String id) {
+        WebElement element = getElementById(id);
+        logger.info("wait until element : " + element.getText() + " to be " );
+        waitUntilElementIsLocated(element, 15);
+        element.sendKeys(text);
+    }
 }
