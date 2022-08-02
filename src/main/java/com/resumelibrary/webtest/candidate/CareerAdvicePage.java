@@ -4,6 +4,7 @@ import com.resumelibrary.utilities.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -243,6 +244,7 @@ public class CareerAdvicePage extends Utility {
     }
 
     public void clickOnCompaniesLink() {
+
         logger.info("Clicking Companies link");
         clickOnElement(SubHeaderCompaniesLink);
     }
@@ -252,6 +254,7 @@ public class CareerAdvicePage extends Utility {
         if (getBrowserName().contains("firefox") || getBrowserName().contains("remoteFirefoxBrowser")) {
             waitUntilElementIsLocated(BackToTopButton, 15);
         }
+        ((JavascriptExecutor) getThreadDriver()).executeScript("window.scrollBy(0,-350)", "");
         clickOnElementWithJS(BackToTopButton);
     }
 }

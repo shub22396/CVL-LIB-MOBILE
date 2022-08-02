@@ -28,25 +28,30 @@ Feature: Candidate CareerAdvice CareerAdvice
   Scenario: Career Advice Companies Count is not zero in sub nav bar
     Given  I am on page "/career-advice"
     Then   I should not see the companies count is zero
-    When   I click on "Companies"
-    Then   I should be on page "/companies"
+    And   I click on "Jobseekers"
+    When   I click on "Search Companies"
+     Then   I should be on page "/companies"
     And    I should see text "Search Companies"
 
   @CareerAdviceFreeResumeReview @ReleaseRegression1
   Scenario: Verify resume review banner on career Advice page
     Given  I am on page "/career-advice"
-    And    I click on FREE Resume Review
+    #And    I click on FREE Resume Review
+    And   I click on "Jobseekers"
+    When   I click on "Free Resume Review"
     Then   I should be on page "/resume-review"
     And    I should see text "FREE Resume Review"
 
   @CareerAdviceSavedJobs
   Scenario: Career Advice Saved Jobs
     Given  I am on page "/career-advice"
-    When   I click on saved job button
+    And   I click on mobile header button
+  #  When   I click on saved job button
+    When   I click on "Saved Jobs"
     Then   I should be on page "/saved-jobs"
     And    I should see text H one tag "My Saved Jobs"
 
-  @CareerAdviceHiddenProfile
+  @CareerAdviceHiddenProfile #upload resume has to fix
   Scenario: As a logged in user who has hidden their profile
     Given  I navigate to page "Candidate Registration"
     When   I register as a new candidate resume check
