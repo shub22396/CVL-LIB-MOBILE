@@ -4,8 +4,9 @@ Feature: Client Settings ChangeClientPassword
   @resetClientPassword
   Scenario: Reset client password
     Given I login as a client
-    When  I mouse hover "Hi Resume library"
+    When  I click on "Account Options"
     And   I should see text "Change Password"
+    And   I wait for "1" seconds
     When  I click on "Change Password"
     Then  I should be able to see in browser URL "User Change Password"
     Then  I should see text "Change My Password"

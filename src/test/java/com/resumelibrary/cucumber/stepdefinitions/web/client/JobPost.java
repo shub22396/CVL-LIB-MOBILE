@@ -212,4 +212,9 @@ public class JobPost extends Utility {
     public void iClickOnUpdateTemplateBtn() {
         new JobTemplatePage().clickOnUpdateTemplateButton();
     }
+
+    @When("I select {string} on client jobs page")
+    public void iSelectOnClientJobsPage(String value) {
+        new JobPostPage().selectValueToSortOnClientJobsPage(value);
+    }
 }

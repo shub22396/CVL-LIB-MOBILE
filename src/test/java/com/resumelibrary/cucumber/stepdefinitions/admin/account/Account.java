@@ -167,4 +167,9 @@ public class Account extends Utility {
     public void iClickOnActionsBtn() {
         new AccountPage().clickOnActionButton();
     }
+
+    @And("I click on menu")
+    public void iClickOnMenu() {
+        new AccountPage().clickOnMenu();
+    }
 }

@@ -24,7 +24,8 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
   Scenario: as an unvalidated logged in client I expect to see Contact credit products that I can purchase
     Given I navigate to page "Client Account"
     And   I should see text "Products"
-    When  I mouse hover "Products"
+    When  I click on id "mobile-menu-trigger"
+    And   I click on "Products"
     Then  I should see text "Contact Credits"
     When  I click on "Contact Credits"
     Then  I should be able to see in browser URL "Client Products Contact Credits"
@@ -56,7 +57,8 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
   Scenario: as an unvalidated logged in client I expect to see job posting products that I can purchase
     Given I navigate to page "Client Account"
     And   I should see text "Products"
-    When  I mouse hover "Products"
+    When  I click on id "mobile-menu-trigger"
+    And   I click on "Products"
     Then  I should see text "Job Postings"
     When  I click on "Job Postings"
     Then  I should be able to see in browser URL "Client Products Jobs"
@@ -85,28 +87,6 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
     When  I click on "Go to dashboard"
     Then  I should be able to see in browser URL "Client Account"
 
-  @EcomUnValidatedClientPurchaseHistory
-  Scenario: verify as an unvalidated logged in client with ecommerce enabled purchase history
-    Given I navigate to page "Client Account"
-    When  I mouse hover "Hi Stephanie"
-    Then  I should see text "Purchase History"
-    When  I click on "Purchase History"
-    Then  I should see text "Account Authentication Required"
-    And   I should see text "Before you can make any purchases, we need to validate your account."
-    And   I should see text p tag "Please call our team on " and verify message "Please call our team on 1-857-239-0143 and this will be validated instantly."
-
-  @EcommUnvalidatedClientPostJobsNow
-  Scenario: as an unvalidated logged in client with E-commerce enabled verify post jobs now
-    Given I navigate to page "Client Account"
-    Then I navigate to page "Client Resume Search With Keywords"
-    And   I should be able to see in browser URL "Client Resume Search Results"
-    And   I wait for "2" seconds
-    And   I should see text "Post Jobs Now"
-    When  I click on "Post Jobs Now"
-    Then  I should see text "Account Authentication Required"
-    And   I should see text "Before you can make any purchases, we need to validate your account."
-    And   I should see text p tag "Please call our team on " and verify message "Please call our team on 1-857-239-0143 and this will be validated instantly."
-
   @EcommUnvalidatedLoggedInClientPosJobResumeSearch
   Scenario: as an unvalidated logged in client with E-commerce enabled verify gif that alternately displays 30-Day resume search and Post Your Job
     Given I navigate to page "Resources"
@@ -117,7 +97,6 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
     Then  I scroll down 0,600
     And   I should see resources-switch-banner "Post A Job"
     Then  I should be able to see in browser http URL "Hiring Post Jobs"
-
 
   @EcommUnvalidatedLoggedInClientLimit10ResumeView
   Scenario: as an unvalidated client I should be limited to 10 resume views from  /client/resume-search

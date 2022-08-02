@@ -6,7 +6,6 @@ Feature: Client JobPosting PostJobs
 
   @clientLogoutPostJobs
   Scenario: As a logged out client verify headers text in 'Post Jobs' page
-
     And   I should see text H one tag "Flexible Pricing to Suit Your Needs"
     And   I should see "Trusted with jobs from the Fortune 500"
     And   I should see text H three tag "30-day Job Posting"
@@ -22,7 +21,6 @@ Feature: Client JobPosting PostJobs
 
   @clientLogoutPostJobs
   Scenario: As a logged out client verify text messages in 'Post Jobs' page
-
     And   I should see text H three tag "Pay for Performance"
     And   I should see "Set your own budgets with our Pay for Performance jobs."
     And   I should see "10+ Jobs"
@@ -36,7 +34,6 @@ Feature: Client JobPosting PostJobs
 
   @clientLogoutPostJobs
   Scenario: As a logged out client verify hiring text messages in 'Post Jobs' page
-
     And   I should see text h two tag "Advertise Your Jobs and Hire Fast with " and verify message "Advertise Your Jobs and Hire Fast with Resume-Library"
     And   I should see text p tag "Here are just some of the reasons thousands of businesses post their jobs on " and verify message "Here are just some of the reasons thousands of businesses post their jobs on Resume-Library:"
     And   I should see text H two tag "Guaranteed Exposure for Your Jobs"
@@ -59,7 +56,6 @@ Feature: Client JobPosting PostJobs
 
   @clientLogoutPostJobs
   Scenario: As a logged out client verify client contact text messages in 'Post Jobs' page
-
     And   I should see text H two tag "Enhance Your Hiring Process"
     And   I should see text "Fill your jobs faster"
     And   I should see "Post your jobs on Resume-Library to receive the best applications straight to your inbox."
@@ -73,7 +69,6 @@ Feature: Client JobPosting PostJobs
 
   @clientLogoutPostJobs
   Scenario: As a logged out client verify request trail text messages in 'Post Jobs' page
-
     And   I should see text p tag "Try " and verify message "Try Resume-Library for Free Today"
     And   I click on "Request Free Trial"
     Then  I should be on page "Hiring Request A Trial"
