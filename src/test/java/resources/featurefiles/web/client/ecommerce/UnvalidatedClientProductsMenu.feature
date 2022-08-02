@@ -24,7 +24,7 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
   Scenario: as an unvalidated logged in client I expect to see Contact credit products that I can purchase
     Given I navigate to page "Client Account"
     And   I should see text "Products"
-    When  I click on id "mobile-menu-trigger"
+    When  I click on Menu Bar
     And   I click on "Products"
     Then  I should see text "Contact Credits"
     When  I click on "Contact Credits"
@@ -57,7 +57,7 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
   Scenario: as an unvalidated logged in client I expect to see job posting products that I can purchase
     Given I navigate to page "Client Account"
     And   I should see text "Products"
-    When  I click on id "mobile-menu-trigger"
+    When  I click on Menu Bar
     And   I click on "Products"
     Then  I should see text "Job Postings"
     When  I click on "Job Postings"

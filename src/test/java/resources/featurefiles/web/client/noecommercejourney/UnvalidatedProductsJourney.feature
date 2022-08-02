@@ -24,14 +24,15 @@ Feature: Client NoEcommerceJourney UnValidatedProductsJourney
     And   I click on product details Edit button
     And   I should see element with id "disable_ecomm" to be "visible"
     And   I scroll down 0,700
+    And   I wait for "2" seconds
     And   I select Disable Ecomm "Yes"
     And   I click on update account
 
   @NoEcomUnvalidatedClientPurchaseProducts
   Scenario: As an unvalidated logged in client with E-commerce disabled I do not want to see products option
     When  I navigate to page "Client Account"
+    And   I click on Menu Bar
     And   I should see text "Products"
-    When  I mouse hover "Products"
     Then  I should not see text "Contact Credits"
     And   I should not see text "Job postings"
     When  I click on "Products"
@@ -40,23 +41,12 @@ Feature: Client NoEcommerceJourney UnValidatedProductsJourney
 
     #XT-1487  logged In Headers -Unvalidated ecomm disabled
     When  I navigate to page "Resources"
+    And   I click on Menu Bar
     And   I should see text "Products"
-    When  I mouse hover "Products"
     Then  I should not see text "Contact Credits"
     And   I should not see text "Job postings"
     When  I click on "Products"
     #Then  I should be able to see in browser URL "Hiring Products"
-
-  @NoEcommerceUnvalidatedProductsPurchaseHistory
-  Scenario: verify as an unvalidated logged in client purchase history
-    When  I navigate to page "Client Account"
-    When  I mouse hover "Hi Automation"
-    Then  I should see text "Purchase History"
-    When  I click on "Purchase History"
-    Then  I should see text "To purchase this product, contact your account manager on:"
-    Then  I should see text "1-800-672-6706"
-    And   I should see text "sales@resume-library.com"
-    Then  I close account authentication required popup
 
   @NoEcommUnvalidatedClientVerifyEmployersLogo
   Scenario: as an unvalidated logged in client with E-commerce disabled verify employers logo
@@ -64,20 +54,9 @@ Feature: Client NoEcommerceJourney UnValidatedProductsJourney
     When  I click on the RL Employers header logo
     Then  I should be on page "Hiring"
 
-  @NoEcommUnvalidatedClientInviteToApply1
-  Scenario: as an unvalidated logged in client with E-commerce disabled verify resume search invite to apply
-    When  I navigate to page "Client Resume Search With Keywords"
-    Then  I should see text "Invite Candidates"
-    Then  I select email candidate amount from list
-    And   I click on "Invite Candidates"
-    Then  I should see text "To purchase this product, contact your account manager on:"
-    Then  I should see text "1-800-672-6706"
-    And   I should see text "sales@resume-library.com"
-
   @NoEcommUnvalidatedClientInviteToApply2
   Scenario: as an unvalidated logged in client with E-commerce disabled verify resume search select all checkbox invite to apply
-    When  I navigate to page "Client Account"
-    Then  I navigate to page "Client Resume Search With Keywords"
+    When  I navigate to page "Client Resume Search With Keywords"
     And   I should be able to see in browser URL "Client Resume Search Results"
     Then  I should see text "Invite Candidates"
     And   I should see text "Select all " on the page source

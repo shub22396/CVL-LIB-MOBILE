@@ -34,14 +34,3 @@ Feature: Client NoEcommerceJourney ValidatedLoggedInManageJobs
     Then  I should see text "1-800-672-6706"
     And   I should see text "sales@resume-library.com"
     Then  I close post a job popup
-
-  @NoEcommValidatedClientPostJobsNow @ReleaseRegression2
-  Scenario: as an validated logged in client with E-commerce disabled verify post jobs now
-    Given I navigate to page "Client Account"
-    Then  I navigate to page "Client Resume Search With Keywords"
-    And   I should be able to see in browser URL "Client Resume Search Results"
-    And   I should see text "Post Jobs Now"
-    When  I click on "Post Jobs Now"
-    Then  I should see text "To purchase this product, contact your account manager on:"
-    Then  I should see text "1-800-672-6706"
-    And   I should see text "sales@resume-library.com"
