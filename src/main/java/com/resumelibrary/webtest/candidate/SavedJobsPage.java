@@ -41,6 +41,8 @@ public class SavedJobsPage extends Utility {
     public void clickOnSaveToggle1() {
         logger.info("Clicking on save button " );
         clickOnElement(SaveToggle1);
+        waitFor(4);
+        clickAllowPopUp();
         String text = getThreadDriver().findElement(By.id("saved-jobs-btn")).getText();
         waitUntilTextToBePresent(SavedJobsButton,"Saved Jobs (1)");
         logger.info("After clicking save button, saved jobs basket text: " + text );

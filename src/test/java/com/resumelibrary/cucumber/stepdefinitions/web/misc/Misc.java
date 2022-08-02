@@ -141,7 +141,7 @@ public class Misc extends Utility {
 
     @Then("I should see hyperlink {string}")
     public void iShouldSeeHyperlink(String text) {
-        Assert.assertEquals(verifyTextMessageATags(text), text);
+        Assert.assertTrue(verifyTextMessageATags(text));
     }
 
     @And("I should not see {string} text")
