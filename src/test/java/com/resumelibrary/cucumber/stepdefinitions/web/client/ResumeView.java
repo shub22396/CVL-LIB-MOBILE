@@ -94,6 +94,10 @@ public class ResumeView extends Utility {
     public void iClickOnFREEResumeReview() {
         new ResumeViewPage().clickOnFreeResumeReviewBtn();
     }
+    @And("I Click on Mobile Search")
+    public void iClickOnMobileSearch() {
+        new ResumeViewPage().clickOnMobileSearch();
+    }
 
     @When("I click on {string} on view resume page")
     public void iClickOnOnViewResumePage(String text) {

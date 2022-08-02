@@ -43,6 +43,9 @@ public class ResumeViewPage extends Utility {
     WebElement ResultsPerPage;
     @FindBy(id = "resume-critique-btn")
     WebElement FreeResumeReviewButton;
+    @FindBy(id = "mobile-search-trigger")
+    WebElement mobileSearchButton;
+
     @FindBy(id = "unlock-resume")
     WebElement UnlockResume;
 
@@ -192,6 +195,11 @@ public class ResumeViewPage extends Utility {
         logger.info("Clicking on free resume review button");
         waitUntilElementIsLocated(FreeResumeReviewButton,5);
         clickOnElement(FreeResumeReviewButton);
+    }
+    public void clickOnMobileSearch() {
+        logger.info("Clicking on Mobile Search button");
+        waitUntilElementIsLocated(mobileSearchButton,5);
+        clickOnElement(mobileSearchButton);
     }
 
     public void clickOncViewResumeOptions(String text) {

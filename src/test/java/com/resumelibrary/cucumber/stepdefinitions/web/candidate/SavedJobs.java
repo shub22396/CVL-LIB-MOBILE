@@ -11,6 +11,7 @@ public class SavedJobs extends Utility {
     @And("I click on save toggle one")
     public void iClickOnSaveToggleOne() {
         new SavedJobsPage().clickOnSaveToggle1();
+
     }
 
     @Then("I click on saved job link on saved jobs page")

@@ -104,6 +104,7 @@ public class Others extends Utility {
         logger.info("Web page url to load is : " + WebURLHelper.getWebUrl() + getURL(url));
         getDriverWithUrl(WebURLHelper.getWebUrl(), getURL(url));
         webDriverWaitContainsUrl(getURL(url));
+
     }
 
     @Given("I browse the url {string}")
@@ -261,6 +262,7 @@ public class Others extends Utility {
 
     @And("I click on {string}")
     public void iClickOn(String text) {
+        clickAllowPopUp();
         clickOnElementUsingText(text);
     }
 

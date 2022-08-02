@@ -286,7 +286,7 @@ public abstract class Utility extends DriverController {
         if (!result.isDisplayed()) {
             result = getDisplayedElement(text);
         }
-        waitUntilTextToBePresent(result, text);
+       waitUntilTextToBePresent(result, text);
         try {
             logger.info("[--->click on element with text : " + text +"<---]");
             waitUntilElementIsLocated(result,5);
