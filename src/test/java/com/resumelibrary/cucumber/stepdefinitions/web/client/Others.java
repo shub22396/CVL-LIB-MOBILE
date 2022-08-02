@@ -286,4 +286,8 @@ public class Others extends Utility {
             new com.resumelibrary.cucumber.stepdefinitions.web.candidate.Others().iClickOn("Saved searches");
         }
     }
+    @When("I switch to back to parent frame")
+    public void iSwitchToBackToParentFrame() {
+        new OthersPage().moveBackToParentFrame();
+    }
 }

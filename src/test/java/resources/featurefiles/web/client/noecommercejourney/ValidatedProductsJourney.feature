@@ -19,6 +19,7 @@ Feature: Client NoEcommerceJourney ValidatedProductsJourney
     Then  I should be on page "Client Account"
     And   I should see text "Popular Products"
     And   I login as an admin user
+    And   I click on menu
     When  I search for "registration@resume-library.com" in the navigation bar on admin
     And   I should see element with text "Product Details" to be "visible"
     And   I click on product details Edit button
