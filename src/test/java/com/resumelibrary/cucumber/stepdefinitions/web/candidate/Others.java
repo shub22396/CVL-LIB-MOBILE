@@ -134,7 +134,6 @@ public class Others extends Utility {
 
     @Then("I should be able to see in browser URL {string}")
     public void iShouldBeAbleToSeeInBrowserURL(String url) {
-
         new OthersPage().verifyURLText(url);
     }
 
