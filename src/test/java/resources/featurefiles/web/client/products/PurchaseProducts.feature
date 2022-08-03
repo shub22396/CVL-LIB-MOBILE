@@ -112,10 +112,7 @@ Feature: Client Products PurchaseProducts
 
   @verifyPurchaseHistory
   Scenario: Verify Purchase History
-    When    I mouse hover "Hi Resume library"
-    And     I should see text "Purchase History"
-    When    I click on "Purchase History"
-    Then    I should be able to see in browser URL "Client Purchase History"
+    When    I navigate to page "Client Purchase History"
     Then    I should see text "Purchase History"
     And     I should see text p tag "Bank transfers and failed transactions will not be displayed" and verify message "Bank transfers and failed transactions will not be displayed. For more information or help with your purchase history please contact your Client Response Coordinator."
     And     I should see text "Date"
@@ -142,9 +139,11 @@ Feature: Client Products PurchaseProducts
 
   @PurchaseProductsValidateCartCount
   Scenario: As a logged In user validating the Product menu headers and shopping cart count
-    When   I navigate to page "Resources"
-    Then   I should see text "Products"
-    When   I mouse hover Products Navigation menu
+    When   I click on link text "Resources"
+    And    I click on Menu Bar
+    And    I move backward one page
+    And    I click on Menu Bar
+    When   I click on "Products"
     Then   I should see text "Contact Credits"
     Then   I should see text "Job Postings"
     And    I click on "Contact Credits"
@@ -154,50 +153,23 @@ Feature: Client Products PurchaseProducts
     Then   I should be able to see in browser URL "Client Purchase"
     And    I should see text "Your cart is empty" if Cart Is Empty otherwise Remove the Existing Products
     When   I navigate to page "Resources"
-    Then   I mouse hover Products Navigation menu
+    And    I click on Menu Bar
+    And    I move backward one page
+    And    I click on Menu Bar
+    When   I click on "Products"
     And    I click on "Contact Credits"
     Then   I should be able to see in browser URL "Client Products Contact Credits"
     When   I click Buy online button
     Then   I should be on page "Client Purchase"
     And    I should see “1” in the shopping cart
-    Then   I mouse hover Products Navigation menu
+    And    I click on Menu Bar
+    When   I click on link text "Products"
     And    I click on "Job Postings"
     When   I click Buy online button
     Then   I should be on page "Client Purchase"
     And    I should see “2” in the shopping cart
     Then   I click on Remove link in Your cart page
-    Then   I mouse hover Products Navigation menu
+    And    I click on Menu Bar
+    When   I click on link text "Products"
     And    I click on "Job Postings"
     And    I should see “1” in the shopping cart
-
-  @PurchasedSortingByDateSaved @ReleaseRegression2
-  Scenario: Sorting by Date Purchased
-    And   I navigate to page "Client Purchase History"
-    When  I click on dates purchased descending order
-    Then  I should see purchased dates in desc order
-    When  I click on dates purchased ascending order
-    Then  I should see in purchased dates in asc order
-
-  @PurchasedSortingByInvoiceNo
-  Scenario: Sorting by Invoice number
-    And   I navigate to page "Client Purchase History"
-    When  I click on Invoice No descending order
-    Then  I should see Invoice No in desc order
-    When  I click on Invoice No ascending order
-    Then  I should see Invoice No in asc order
-
-  @sortingByProduct
-  Scenario: Sorting by Product Name
-    And   I navigate to page "Client Purchase History"
-    When  I click on Product Name descending order
-    Then  I should see in Product name in desc order
-    When  I click on Product name ascending order
-    Then  I should see in Product name in asc order
-
-  @sortingByPurchasePrice
-  Scenario: Sorting by Purchased Price
-    And   I navigate to page "Client Purchase History"
-    When  I click on Price descending order
-    Then  I should see Purchase Price in desc order
-    When  I click on Price ascending order
-    Then  I should see in Purchase Price asc order
