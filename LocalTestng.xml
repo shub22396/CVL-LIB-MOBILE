@@ -8,7 +8,7 @@
     </listeners>
     <test name="Test1">
         <parameter name="machine" value="Local"/>
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="androidMobileWeb"/>
         <!--        <parameter name="browser" value="remoteChromeBrowser"/>-->
         <!--        <parameter name="browser" value="remoteFirefoxBrowser"/>-->
         <!--        <parameter name="browser" value="firefox"/>-->
