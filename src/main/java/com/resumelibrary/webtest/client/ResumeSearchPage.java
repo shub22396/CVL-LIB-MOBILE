@@ -68,7 +68,7 @@ public class ResumeSearchPage extends Utility {
     WebElement PintResume;
     @FindBy(id = "report-this-resume")
     WebElement ReportResume;
-    @FindBy(id = "unlocked_only")
+    @FindBy(id = "unlocked-only-mobile")
     WebElement UnlockedOnly;
     @FindBy(id = "keywords")
     WebElement Keywords;
@@ -104,7 +104,6 @@ public class ResumeSearchPage extends Utility {
     WebElement ActionsButtonOne;
     @FindBy(xpath = "//*[@id=\"search\"]/div/div[1]/table/tbody/tr[@class=\" \"]")
     List<WebElement> ActiveInAlertTable;
-
 
     public void enterSubject(String Subject) {
         logger.info("entering the Subject name : " + Subject);
@@ -241,7 +240,7 @@ public class ResumeSearchPage extends Utility {
     }
 
     public void verifyValueInSearchBuilderKeywords(String text) {
-        waitUntilElementIsLocated(getThreadDriver().findElement(By.id("builder_keywords")),20);
+        waitUntilElementIsLocated(getThreadDriver().findElement(By.id("builder_keywords")), 20);
         logger.info("verifying the value in Search Builder Keywords : " + text);
         String InputValue = getThreadDriver().findElement(By.id("builder_keywords")).getAttribute("value");
         logger.info("the value in Search Builder Keywords : " + InputValue);
@@ -392,7 +391,7 @@ public class ResumeSearchPage extends Utility {
 
     public String getTextFromKeywords() {
         logger.info("Getting text from basic search keywords field ");
-        waitUntilElementIsLocated(Keywords,30);
+        waitUntilElementIsLocated(Keywords, 30);
         return getTextFromElement(Keywords);
     }
 
@@ -407,13 +406,13 @@ public class ResumeSearchPage extends Utility {
     }
 
     public void clickOnBasic() {
-        waitUntilElementIsLocated(Basic,20);
+        waitUntilElementIsLocated(Basic, 20);
         clickOnElementWithJS(Basic);
         logger.info("Clicking on Basic tab ");
     }
 
     public void clickOnBuilder() {
-        waitUntilElementIsLocated(Builder,20);
+        waitUntilElementIsLocated(Builder, 20);
         clickOnElement(Builder);
         logger.info("Clicking on Builder tab ");
     }
@@ -457,8 +456,14 @@ public class ResumeSearchPage extends Utility {
         logger.info("text to be verified :" + displayingText + "against text :" + textOnElement);
         Assert.assertTrue(displayingText.contains(textOnElement));
     }
-    public void clickOnLinkFromKeywordsSearchResults(String linkName)
-    {
-        clickOnElement(By.xpath("//ul[@id='ui-id-3']/li/a[contains(.,'"+ linkName +"')]"));
+
+    public void clickOnLinkFromKeywordsSearchResults(String linkName) {
+        clickOnElement(By.xpath("//ul[@id='ui-id-3']/li/a[contains(.,'" + linkName + "')]"));
+    }
+
+    public void clickOnResumeAlertSendButton(String text) {
+        logger.info("Clicking on resume a good match to your alert " + text);
+        WebElement ele = getThreadDriver().findElement(By.xpath("//*[@id='rate-resume-form']/button[text()=\"" + text + "\"]"));
+        clickOnElement(ele);
     }
 }
