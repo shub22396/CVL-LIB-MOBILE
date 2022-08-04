@@ -208,7 +208,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("appium-version", "1.22.3");
             capabilities.setCapability("platformName", "Android");
-            capabilities.setCapability("deviceName", "Pixel 4 API 30");
+            capabilities.setCapability("deviceName", "localhost:5555");
            // capabilities.setCapability("appPackage", "com.example.myapplication");
             //capabilities.setCapability("appActivity", "MainActivity");
            // capabilities.setCapability("appPackage", "com.demo.test.demo");

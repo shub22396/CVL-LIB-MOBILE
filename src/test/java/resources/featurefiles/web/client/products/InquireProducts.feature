@@ -6,9 +6,13 @@ Feature: Client Products InquireProducts
 
   @InquireProductContactCredits
   Scenario: As a logged In user validating the Inquire Now link for Contact Credits Product
-    When   I navigate to page "Resources"
+    When   I click on link text "Resources"
+    And    I click on Menu Bar
     Then   I should see text "Products"
-    When   I mouse hover Products Navigation menu
+    And    I move backward one page
+    And    I click on Menu Bar
+    When   I click on "Products"
+    Then   I should see text "Buy Products"
     Then   I should see text "Contact Credits"
     Then   I should see text "Job Postings"
     And    I click on "Contact Credits"
