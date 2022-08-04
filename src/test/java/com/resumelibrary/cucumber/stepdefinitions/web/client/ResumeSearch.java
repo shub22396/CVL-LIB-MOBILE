@@ -279,4 +279,9 @@ public class ResumeSearch extends Utility {
     public void iClickOnLinkFromKeywordsSearchResults(String linkName) {
         new ResumeSearchPage().clickOnLinkFromKeywordsSearchResults(linkName);
     }
+
+    @And("I click on resume good match to your alert {string}")
+    public void iClickOnResumeGoodMatchToYourAlert(String text) {
+        new ResumeSearchPage().clickOnResumeAlertSendButton(text);
+    }
 }
