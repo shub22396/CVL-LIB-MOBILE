@@ -69,11 +69,9 @@ public class ProductsPage extends Utility {
     WebElement BuyOnlineLink;
     @FindBy(xpath = "//span[@class='remove-product']")
     List<WebElement> RemoveLinkList;
-    @FindBy(xpath = "//nav[@label='Site Navigation']/ul/li[12]/a[@class='cart-link']")
+    @FindBy(xpath = "//*[@class='mobile-header-btn nav-cart-icon']")
     WebElement ShoppingCartLink;
-    @FindBy(xpath = "//div[@id='product-table-vue']//section")
-    WebElement CartProductSection;
-    @FindBy(xpath = "//nav[@label='Site Navigation']/ul/li[12]/a[@class='cart-link']/span")
+    @FindBy(xpath = "//a[starts-with(@class,'mobile-header-btn nav-cart-icon')]/span")
     WebElement CartItemCount;
     @FindBy(xpath = "//input[@value='payment.created DESC']")
     WebElement datePurchasedDesc;
