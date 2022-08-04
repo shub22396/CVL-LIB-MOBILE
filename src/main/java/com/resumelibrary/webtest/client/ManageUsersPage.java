@@ -12,10 +12,10 @@ import org.testng.Assert;
 
 public class ManageUsersPage extends Utility {
 
-    public ManageUsersPage()
-    {
-        PageFactory.initElements(getThreadDriver(),this);
+    public ManageUsersPage() {
+        PageFactory.initElements(getThreadDriver(), this);
     }
+
     private static final Logger logger = LogManager.getLogger(ManageUsersPage.class);
 
     @FindBy(id = "manage-users-active-action-1")
@@ -36,7 +36,7 @@ public class ManageUsersPage extends Utility {
     WebElement ResetEmailAddress;
     @FindBy(id = "signin-as-jobseeker")
     WebElement SigninAsJobseeker;
-    @FindBy(xpath = "//*[@class='success-div mt20 mb20']")
+    @FindBy(xpath = "//*[@class='success-div mt20 mb20']/p")
     WebElement SuccessMessage;
     @FindBy(xpath = "//*[@id=\"main\"]/div/form/button")
     WebElement addUserBtn;
@@ -85,7 +85,7 @@ public class ManageUsersPage extends Utility {
 
     public void selectToClient(String toValue) {
         logger.info("select value to client : " + toValue);
-       selectByValueFromDropDown(ToClient, toValue);
+        selectByValueFromDropDown(ToClient, toValue);
     }
 
     public void enterAmount(String amount) {
@@ -116,10 +116,9 @@ public class ManageUsersPage extends Utility {
     }
 
     public void shouldSeeMessageInTheManageUsersXpath(String text) {
-        waitUntilElementIsLocated(SuccessMessage,5);
-        String successMessageText = SuccessMessage.getText();
-        logger.info("success message " + successMessageText);
-        Assert.assertEquals(successMessageText,text);
+         waitUntilElementIsLocated(SuccessMessage,5);
+        logger.info("success message " + SuccessMessage.getText());
+        Assert.assertEquals(SuccessMessage.getText(), text);
     }
 
     public void clickOnAddUserBtn() {

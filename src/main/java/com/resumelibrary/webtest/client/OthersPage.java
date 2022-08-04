@@ -264,7 +264,6 @@ public class OthersPage extends Utility {
     public void clickOnVideoPlayButton(String iframe) {
         waitFor(1);
         if (iframe.contains("No")) {
-            scrollDown(1500, 1500);
             WebElement element = getThreadDriver().findElement(By.xpath("//*[text()='Search Builder Tips']/..//iframe"));
             getThreadDriver().switchTo().frame(element);
             logger.info("moving to iframe ");
@@ -277,14 +276,14 @@ public class OthersPage extends Utility {
             //waitUntilElementToBeClickable(VideoPlayButton, 5);
         }
         waitFor(1);
-        clickOnElement(VideoPlayButton);
-        waitUntilElementIsLocated(VideoPauseButton, 10);
+        clickOnElementWithJS(VideoPlayButton);
     }
 
     public void clickOnVideoPauseButton(String iframe) {
         String iframeId = "iframe-" + iframe;
         logger.info("moving to iframe " + iframeId);
-        clickOnElement(VideoPauseButton);
+        waitFor(1);
+       VideoPauseButton.click();
     }
 
     public String getTheDurationVideoPlayed() {
