@@ -68,6 +68,7 @@ public class SettingsPage extends Utility {
     public void clickOnMenuBar(){
         logger.info("Clicking on click On MenuBar ");
         clickOnElement(MobileMenuBarTrigger);
+        waitFor(2);
     }
 
     public void clickOnChangeEmailButton(){
