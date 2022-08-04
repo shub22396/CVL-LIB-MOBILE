@@ -122,7 +122,12 @@ public abstract class Utility extends DriverController {
     public void clickMobileHeader() {
        clickOnElement(getThreadDriver().findElements(By.xpath("//*[@id='mobile-menu-trigger']")).get(0));
     }
-
+    public void clickOnHiring() {
+        clickOnElement(getThreadDriver().findElements(By.xpath(" //*[@aria-controls='footer-hiring']")).get(0));
+    }
+    public void clickOnResumeLibrary() {
+        clickOnElement(getThreadDriver().findElements(By.xpath(" //*[@aria-controls='footer-resume-library']")).get(0));
+    }
 
     /* Adding cookie along with key and value */
     public void setCookie(String key, String value) {
@@ -281,7 +286,7 @@ public abstract class Utility extends DriverController {
         if (!result.isDisplayed()) {
             result = getDisplayedElement(text);
         }
-        waitUntilTextToBePresent(result, text);
+       waitUntilTextToBePresent(result, text);
         try {
             logger.info("[--->click on element with text : " + text +"<---]");
             waitUntilElementIsLocated(result,5);
@@ -497,10 +502,10 @@ public abstract class Utility extends DriverController {
     }
 
     /* Returning the web element actual text by passing the  expected text with A tag*/
-    public String verifyTextMessageATags(String text) {
-        WebElement result = getThreadDriver().findElement(By.xpath("//a[contains(text(),'" + text + "')]"));
+    public boolean verifyTextMessageATags(String text) {
+      int linkSize=   getThreadDriver().findElements(By.xpath("//a[contains(text(),'" + text + "')]")).size();
         logger.info("[--->Element fount with text " + text+"<---]");
-        return getTextFromElement(result).replaceAll("\n", " ");
+        return (linkSize>0)?true:false;
     }
 
     /* Returning the web element actual text by passing the  expected text and by replacing all the '/n' characters*/

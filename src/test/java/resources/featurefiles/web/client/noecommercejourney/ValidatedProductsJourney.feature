@@ -34,39 +34,19 @@ Feature: Client NoEcommerceJourney ValidatedProductsJourney
   @NoEcomValidatedClientPurchaseProducts @ReleaseRegression2
   Scenario: as an validated logged in client with E-commerce disabled I do not want to see products that I can purchase
     Given I navigate to page "Client Account"
+    When  I click on Menu Bar
     And   I should see text "Products"
-    When  I mouse hover "Products"
     Then  I should not see text "Contact Credits"
     And   I should not see text "Job postings"
     When  I click on "Products"
     Then  I should be able to see in browser URL "Hiring Products"
     And   I should see text H one tag "Our Hiring Products"
 
-  @NoEcommerceValidatedProductsPurchaseHistory
-  Scenario: verify as an validated logged in client purchase history
-    Given I navigate to page "Client Account"
-    When  I mouse hover "Hi Automation"
-    Then  I should see text "Purchase History"
-    When  I click on "Purchase History"
-    Then  I should see text "To purchase this product, contact your account manager on:"
-    Then  I should see text "1-800-672-6706"
-    And   I should see text "sales@resume-library.com"
-
   @NoEcommValidatedClientVerifyEmployersLogo
   Scenario: as an validated logged in client with E-commerce disabled verify employers logo
     Given I navigate to page "Client Account"
     When  I click on the RL Employers header logo
     Then  I am on page "Hiring"
-
-  @NoEcommValidatedClientInviteToApply1
-  Scenario: as an validated logged in client with E-commerce disabled verify resume search invite to apply
-    Given I navigate to page "Client Resume Search With Keywords"
-    Then  I should see text "Invite Candidates"
-    Then  I select email candidate amount from list
-    And   I click on "Invite Candidates"
-    Then  I should see text "To purchase this product, contact your account manager on:"
-    Then  I should see text "1-800-672-6706"
-    And   I should see text "sales@resume-library.com"
 
   @NoEcommValidatedClientInviteToApply2
   Scenario: as an validated logged in client with E-commerce disabled verify resume search select all checkbox invite to apply

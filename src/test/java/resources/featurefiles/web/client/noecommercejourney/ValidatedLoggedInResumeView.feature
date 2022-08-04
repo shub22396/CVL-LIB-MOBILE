@@ -30,7 +30,6 @@ Feature: Client NoEcommerceJourney ValidatedLoggedInResumeView
 
   @NoEcommerceValidatedLoggedInClientResumeView
   Scenario: As a validated logged in client with E-commerce disabled I do not want to see products on resume view page
-    Given  I navigate to page "Client Account"
     Then   I navigate to page "Client Resume Search With Keywords"
     And    I should be able to see in browser URL "Client Resume Search Results"
     And    I find a locked candidate and click on unlock resume

@@ -10,16 +10,24 @@ Feature: Candidate CoverLetter CoverLetter
     And    I should see text "Tips to write the perfect Cover Letter…"
     Then   I click on edit profile link
     And    I should be on page "Candidate My Profile"
-    Then   I click on my cover letters link
+    #Then   I click on my cover letters link
+    And I click on "Account Options"
+    And I click on "My Cover Letter"
     Then   I click on job alert link
     And    I should be on page "Candidate Job Alerts"
-    Then   I click on my cover letters link
+    And I click on "Account Options"
+    And I click on "My Cover Letter"
+    #Then   I click on my cover letters link
     Then   I click on application link
     And    I should be on page "Candidate MyApplications"
-    Then   I click on my cover letters link
+    And I click on "Account Options"
+    And I click on "My Cover Letter"
+   # Then   I click on my cover letters link
     Then   I click on saved job link
     And    I should be on page "Candidate Saved Jobs"
-    Then   I click on my cover letters link
+    And I click on "Account Options"
+    And I click on "My Cover Letter"
+    #Then   I click on my cover letters link
     Then   I click on edit profile link
     And    I should be on page "Candidate My Profile"
 
@@ -34,7 +42,7 @@ Feature: Candidate CoverLetter CoverLetter
     Then   I click on save changes button
     And    I should see text "Cover letter saved successfully"
 
-  @jobApplyAddCoverLetter @ReleaseRegression1
+  @jobApplyAddCoverLetter @ReleaseRegression1 #need fix Candidate Registration
   Scenario: Add cover letter when applying for email type job
     Given  I navigate to page "Candidate Registration"
     And    I register as a new candidate resume check
