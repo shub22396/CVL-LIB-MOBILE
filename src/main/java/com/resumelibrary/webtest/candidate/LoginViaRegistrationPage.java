@@ -1,5 +1,6 @@
 package com.resumelibrary.webtest.candidate;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import com.resumelibrary.utilities.Utility;
@@ -17,11 +18,11 @@ public class LoginViaRegistrationPage extends Utility {
 
     @FindBy(id = "reg_apply_register_btn")
     WebElement RegApplyRegisterBtn;
-    @FindBy(id = "password")
+    @FindBy(xpath = "//input[@id=\"fast-track-registration-password1\"] | //input[@id=\"password\"]")
     WebElement Password;
-    @FindBy(id = "register_now_button")
+    @FindBy(xpath = "//*[@id=\"fasttrack-reg-trigger1\"] |  //input[@id=\"register_now_button\"]")
     WebElement RegisterNowButton;
-    @FindBy(id = "email")
+    @FindBy(name = "email")
     WebElement Email;
 
     public void clickOnRegisterApply() {
@@ -33,6 +34,7 @@ public class LoginViaRegistrationPage extends Utility {
         logger.info("Entered password is :" + password);
         Password.clear();
         Password.sendKeys(password);
+        Password.sendKeys(Keys.ESCAPE);
         //waitFor(2);
     }
 

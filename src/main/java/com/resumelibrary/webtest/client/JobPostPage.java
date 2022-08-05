@@ -3,6 +3,7 @@ package com.resumelibrary.webtest.client;
 import com.resumelibrary.utilities.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -112,6 +113,7 @@ public class JobPostPage extends Utility {
         logger.info("Entered description" + description);
         clearTextFromField(DescriptionField);
         DescriptionField.sendKeys(description);
+        DescriptionField.sendKeys(Keys.ESCAPE);
     }
 
     public void clickONQuickApplyToggle() {
