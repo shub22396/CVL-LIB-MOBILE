@@ -23,12 +23,12 @@ Feature: Client ResumeAlert ResumeAlertValidation
     And   I navigate to page "Client Resume Alert"
     And   I should see text p tag "Displaying" and verify message "Displaying 1 to 20 of"
     And   I scroll down 0,2000
-    And   I click on "2"
+    And   I click on next page link
     Then  I should be on page "Client Resume Alerts 2"
     And   I should see text p tag "Displaying" and verify message "Displaying 21 to 40 of"
     And   I should see "Prev" link
     And   I scroll down 0,2000
-    When  I click on "Prev"
+    When  I click on prev page link
     Then  I should be on page "Client Resume Alerts 1"
     And   I should not see "Prev" link
 

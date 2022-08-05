@@ -27,7 +27,7 @@ Feature: Client ResumeAlert ResumeAlertsSent
     #And   I should be able to see in browser URL "Client Resume Alert 5202"
     And   I should see text "Candidate ID:"
     And   I should see text "Resume-library, is this resume a good match to your alert?"
-    And   I click on "Yes"
+    And   I click on resume good match to your alert "Yes"
     And   I should see text "Resume Alert rating received - Thank you!"
     When  I am on page "Client Resume Alert Log 5202"
     And   I check show me unlocked candidates only
@@ -44,12 +44,12 @@ Feature: Client ResumeAlert ResumeAlertsSent
     Then  I should be able to see in browser URL "Client Resume Alert Log"
     And   I should see text p tag "Displaying" and verify message "Displaying 1 to 50 of"
     And   I scroll down 0,3000
-    And   I click on "2"
+    And   I click on next page link
     Then  I should be on page "Client Resume Alert Log 5202 2"
     And   I should see text p tag "Displaying" and verify message "Displaying 51 to 100 of"
     And   I should see "Prev" link
     And   I scroll down 0,3000
-    When  I click on "Prev"
+    When  I click on prev page link
     Then  I should be on page "Client Resume Alert Log 5202 1"
     And   I should not see "Prev" link
     And   I should see text p tag "Displaying" and verify message "Displaying 1 to 50 of"
