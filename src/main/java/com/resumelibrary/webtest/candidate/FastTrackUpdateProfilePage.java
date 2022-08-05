@@ -5,6 +5,7 @@ import com.resumelibrary.utilities.WebURLHelper;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -47,9 +48,9 @@ public class FastTrackUpdateProfilePage extends Utility {
     WebElement EducationLevel;
     @FindBy(id = "eligibility_status")
     WebElement EligibilityStatus;
-    @FindBy(id = "first_name")
+    @FindBy(name = "first_name")
     WebElement FirstName;
-    @FindBy(id = "last_name")
+    @FindBy(name = "last_name")
     WebElement LastName;
     @FindBy(id = "relocate")
     WebElement Relocate;
@@ -156,6 +157,7 @@ public class FastTrackUpdateProfilePage extends Utility {
     public void enterLastName(String lastName) {
         logger.info("entered last name is : " + lastName);
         LastName.sendKeys(lastName);
+        LastName.sendKeys(Keys.ESCAPE);
     }
 
     public void enterSkills(String value) {

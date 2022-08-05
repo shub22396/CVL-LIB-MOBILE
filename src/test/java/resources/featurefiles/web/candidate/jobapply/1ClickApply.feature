@@ -1,7 +1,7 @@
 @1ClickApply @Regression @Web @Candidate2 @Candidate
 Feature: Candidate JobApply 1ClickApply
 
-  @jobView1ClickApply
+  @jobView1ClickApply #need to fix Candidate Registration
   Scenario: 1-click apply on job view page
     Given I navigate to page "Candidate Registration"
     Then  I register as a new candidate resume check
@@ -15,7 +15,7 @@ Feature: Candidate JobApply 1ClickApply
     When  I navigate to page "Candidate Myapplications"
     And   I should see text "1-Click Apply"
 
-  @jobSearch1ClickApply @ReleaseRegression1
+  @jobSearch1ClickApply @ReleaseRegression1 #need to fix Candidate Registration
   Scenario: 1-click apply on job search page
     Given I navigate to page "Candidate Registration"
     Then  I register as a new candidate resume check

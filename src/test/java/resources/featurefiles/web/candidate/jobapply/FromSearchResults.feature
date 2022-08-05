@@ -5,10 +5,10 @@ Feature: Candidate JobApply FromSearchResults
   Scenario: Job apply popup as logged out
     Given   I navigate to page "Jobs Non External Test Jobs"
     When    I click on apply now
-    Then    I should see "Not registered"
+    Then    I should see "Apply for"
 
   #Scenario: Apply for job after registering a new candidate profile
-  @jobApplySearchResultsRegister @ReleaseRegression1
+  @jobApplySearchResultsRegister @ReleaseRegression1 # need fix Candidate Registration
   Scenario: Job apply after registering a new candidate
     Given   I navigate to page "Candidate Registration"
     When    I register as a new candidate resume check
