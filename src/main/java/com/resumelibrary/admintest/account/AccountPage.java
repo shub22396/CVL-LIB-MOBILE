@@ -127,7 +127,7 @@ public class AccountPage extends Utility {
         NavigationBarSearchField.sendKeys(text);
         logger.info("Searched email address --> : " + text);
         selectByValueFromDropDown(NavigationBarSearchTypeField, "accounts");
-        clickOnElement(NavigationBarSearchButton);
+        clickOnElementWithJS(NavigationBarSearchButton);
     }
 
     public void clickOnModifyAccountBtn1() {
@@ -260,6 +260,7 @@ public class AccountPage extends Utility {
     }
     public void clickOnMenu() {
         logger.info("Clicking on menu ");
-        clickOnElement(MobileMenuTrigger);
+        clickOnElementWithJS(MobileMenuTrigger);
+        waitFor(2);
     }
 }
