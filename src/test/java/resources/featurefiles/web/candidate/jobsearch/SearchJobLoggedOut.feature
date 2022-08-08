@@ -132,7 +132,7 @@ Feature: Candidate JobSearch SearchJobsLoggedOut
     When  I click on id ends with "_2"
     Then  I should see text "Tell us more about why you don't want to see this job" on the page
     When  I enter reasons other input "Regression testing"
-    And   I click on "Submit"
+    And   I click on "Submit" button
     Then  I should see "Thank you for your feedback"
 
   @hideJobsLoggedOutUndo

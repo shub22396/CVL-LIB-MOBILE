@@ -44,7 +44,10 @@ public class JobSearch extends Utility {
     public void iClickOnFindJobsSearchButton() {
         new JobSearchPage().clickFindJobs();
     }
-
+    @And("I click on {string} button")
+    public void iClickOnSubmitFeedBack(String text) {
+        new JobSearchPage().clickOnSubmitFeedBack(text);
+    }
     @And("I verify that http code is 200 and not 301")
     public void iVerifyRedirectURL() {
         new JobSearchPage().verifyRedirectURL();
