@@ -132,11 +132,11 @@ public class MiscPage extends Utility {
     }
 
     public void clickAddPartnerAllianceButton() {
-        clickOnElement(AddPartnerAllianceButton);
+        clickOnElementWithJS(AddPartnerAllianceButton);
     }
 
     public void clickAddJobButton() {
-        clickOnElement(AddJobButton);
+        clickOnElementWithJS(AddJobButton);
     }
 
     public void fillIn(String field) {
