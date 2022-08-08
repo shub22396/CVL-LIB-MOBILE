@@ -115,7 +115,7 @@ public class MiscPage extends Utility {
         loadAdminHomePage();
         UserName.sendKeys(DataHelper.getAdminUsername());
         Password.sendKeys(DataHelper.getAdminPassword());
-        clickOnElement(LoginButton);
+        clickOnElementWithJS(LoginButton);
     }
 
     public void shouldBeOnDashBoard() {
