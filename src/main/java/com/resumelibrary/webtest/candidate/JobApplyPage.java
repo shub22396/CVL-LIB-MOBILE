@@ -3,6 +3,7 @@ package com.resumelibrary.webtest.candidate;
 import com.resumelibrary.utilities.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -55,6 +56,7 @@ public class JobApplyPage extends Utility {
     public void enterEmail(String email) {
         logger.info("The entered email is : " + email);
         Email1.sendKeys(email);
+        Email1.sendKeys(Keys.ESCAPE);
     }
 
     public void enterPassword(String password) {

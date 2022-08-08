@@ -32,10 +32,10 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
 
     public CloudDriverProvider() {
-       PropertyConfigurator.configure(System.getProperty("user.dir") + LOG_PROPERTY_FILE_PATH);
+        PropertyConfigurator.configure(System.getProperty("user.dir") + LOG_PROPERTY_FILE_PATH);
     }
 
-       void remoteLambdaTestinChrome(Map threadMap, String testName) {
+    void remoteLambdaTestinChrome(Map threadMap, String testName) {
         try {
             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
@@ -45,10 +45,10 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
 
-            logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");
+            logger.info("[--->jenkinsBuildNumber = " + buildId + "<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
             final String driverURL = "https://" + username + ":" + accessKey + "@hub.lambdatest.com/wd/hub";
-            logger.info("[--->driverURL:" + driverURL+"<---]");
+            logger.info("[--->driverURL:" + driverURL + "<---]");
 
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("browserName", "Chrome");
@@ -76,7 +76,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         }
     }
 
-     void remoteLambdaTestinFirefox(Map threadMap, String testName) {
+    void remoteLambdaTestinFirefox(Map threadMap, String testName) {
         try {
             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
@@ -89,7 +89,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             System.out.println("jenkinsBuildNumber = " + buildId);
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
             final String driverURL = "https://" + username + ":" + accessKey + "@hub.lambdatest.com/wd/hub";
-            logger.info("[--->driverURL:" + driverURL+"<---]");
+            logger.info("[--->driverURL:" + driverURL + "<---]");
 
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("browserName", "Firefox");
@@ -117,14 +117,14 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         }
     }
 
-     void remoteBrowserStackChrome(Map threadMap, String testName) {
+    void remoteBrowserStackChrome(Map threadMap, String testName) {
         try {
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
 
-            logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");
+            logger.info("[--->jenkinsBuildNumber = " + buildId + "<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
 
             String username = PropertyFileReader.getInstance().getProperty("browserStackUsername");
@@ -149,7 +149,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         }
     }
 
-      void browserStackCommonCapblts(Map threadMap, String buildId, String driverURL, DesiredCapabilities caps, HashMap<String, Object> browserstackOptions) throws MalformedURLException {
+    void browserStackCommonCapblts(Map threadMap, String buildId, String driverURL, DesiredCapabilities caps, HashMap<String, Object> browserstackOptions) throws MalformedURLException {
 
         browserstackOptions.put("debug", "true");  // for enabling visual logs
         browserstackOptions.put("consoleLogs", "info");  // to enable console logs at the info level. You can also use other log levels here
@@ -165,13 +165,13 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         threadLocalMap.set(threadMap);
     }
 
-     void remoteBrowserStackFireFox(Map threadMap, String testName) {
+    void remoteBrowserStackFireFox(Map threadMap, String testName) {
         try {
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
-            logger.info("[--->jenkinsBuildNumber : " + buildId+"<---]");
+            logger.info("[--->jenkinsBuildNumber : " + buildId + "<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
             String username = PropertyFileReader.getInstance().getProperty("browserStackUsername");
             String accessKey = PropertyFileReader.getInstance().getProperty("browserStackAccessKey");
@@ -190,6 +190,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             e.printStackTrace();
         }
     }
+
     public String getConstantsURL(String URL) {
         return null;
     }
@@ -204,28 +205,29 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             System.out.println("jenkinsBuildNumber = " + buildId);
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
             final String driverURL = "http://127.0.0.1:4723/wd/hub";
-            logger.info("[--->driverURL:" + driverURL+"<---]");
+            logger.info("[--->driverURL:" + driverURL + "<---]");
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("appium-version", "1.22.3");
             capabilities.setCapability("platformName", "Android");
-            capabilities.setCapability("deviceName", "localhost:5555");
-           // capabilities.setCapability("appPackage", "com.example.myapplication");
+            capabilities.setCapability("deviceName", "Pixel 4 API 30");
+            // capabilities.setCapability("udid", "emulator-5554");
+            // capabilities.setCapability("appPackage", "com.example.myapplication");
             //capabilities.setCapability("appActivity", "MainActivity");
-           // capabilities.setCapability("appPackage", "com.demo.test.demo");
+            // capabilities.setCapability("appPackage", "com.demo.test.demo");
             //capabilities.setCapability("appActivity", ".RootActivity");
-            capabilities.setCapability("noReset","true");
-           // capabilities.setCapability("browserName","WEBView Browser Tester");
-            capabilities.setCapability("automationName","UiAutomator2");
-           capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
-          // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.android.chrome");
-           // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "org.chromium.my_webview_shell");
-          // capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.google.android.apps.chrome.Main");
-          capabilities.setCapability("chromedriverExecutableDir","/home/sguduru/Downloads/Chrome-Driver");
+            capabilities.setCapability("noReset", "true");
+            // capabilities.setCapability("browserName","WEBView Browser Tester");
+            capabilities.setCapability("automationName", "UiAutomator2");
+            capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
+            // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.android.chrome");
+            // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "org.chromium.my_webview_shell");
+            // capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.google.android.apps.chrome.Main");
+            capabilities.setCapability("chromedriverExecutableDir", "/home/sguduru/Downloads/Chrome-Driver");
             capabilities.setCapability("autoGrantPermissions", "true");
             capabilities.setJavascriptEnabled(true);
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
-     } catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

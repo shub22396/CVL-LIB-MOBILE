@@ -286,7 +286,7 @@ public class MiscPage extends Utility {
         LoginPageEmail.sendKeys(DataHelper.getTestCandidateEmail());
         waitUntilElementIsLocated(LoginPagePassword, 10);
         LoginPagePassword.sendKeys(DataHelper.getCandidatePassword());
-        clickOnElement(CandidateLoginPageSubmit);
+        clickOnElementWithJS(CandidateLoginPageSubmit);
         waitUntil(WebURLHelper.getCandidateAccountUrl());
     }
 
@@ -294,7 +294,7 @@ public class MiscPage extends Utility {
         loadWebUrl(WebURLHelper.getClientLoginUrl());
         LoginPageEmail.sendKeys(DataHelper.getTestClientEmail());
         LoginPagePassword.sendKeys(DataHelper.getTestClientPassword());
-        clickOnElement(ClientLoginPageSubmit);
+        clickOnElementWithJS(ClientLoginPageSubmit);
         waitUntil(WebURLHelper.getClientAccountUrl());
     }
 
@@ -302,7 +302,7 @@ public class MiscPage extends Utility {
         loadWebUrl(WebURLHelper.getClientLoginUrl());
         LoginPageEmail.sendKeys(DataHelper.getTestClientEmailWithNoCredits());
         LoginPagePassword.sendKeys(DataHelper.getTestClientPassword());
-        clickOnElement(ClientLoginPageSubmit);
+        clickOnElementWithJS(ClientLoginPageSubmit);
         waitUntil(WebURLHelper.getClientAccountUrl());
 
         if (!CreditsRemainingText.getText().equals("0")) {
@@ -341,7 +341,7 @@ public class MiscPage extends Utility {
         loadWebUrl(WebURLHelper.getClientLoginUrl());
         LoginPageEmail.sendKeys((DataHelper.getAdminUsername()));
         LoginPagePassword.sendKeys(DataHelper.getAdminPassword());
-        clickOnElement(ClientLoginPageSubmit);
+        clickOnElementWithJS(ClientLoginPageSubmit);
         waitUntil(WebURLHelper.getClientAccountUrl());
     }
     public void createFolderAndDelete(String folderName) {
