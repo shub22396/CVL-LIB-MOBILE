@@ -394,6 +394,7 @@ public class Others extends Utility {
         clickOnIdEndsWith(id);
     }
 
+
     @And("I scroll to an element {string}")
     public void iScrollToAnElement(String text) {
         scrollToAnElement(text);
