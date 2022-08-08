@@ -18,7 +18,7 @@ Feature: Account Account validation
     Then   I click on Submit inquiry
     And    I should be on page "Client Account"
     And    I login as an admin user
-    And   I click on menu
+    And    I click on menu
     When   I search for "registration@resume-library.com" in the navigation bar on admin
     And    I click Account Users
     Then   I click on "Edit" button to activate user in admin page

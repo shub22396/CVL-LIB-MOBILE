@@ -31,10 +31,8 @@ Feature: Create Account
     And   I click Create Account button
     Then  I should be on Account View page
     And   I should see text "successfully created"
-    And   I click View more button
     And   the ATS Apply field should contain "None"
     Then  I click Edit button
     And   I select the option "BigBiller" from "ATS Apply" field
     When  I click Save Changes button
-    And   I click View more button
     And   the ATS Apply field should contain "BigBiller"
