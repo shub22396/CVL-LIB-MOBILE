@@ -208,7 +208,8 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("appium-version", "1.22.3");
             capabilities.setCapability("platformName", "Android");
-            capabilities.setCapability("deviceName", "Pixel 4 API 30 2");
+            capabilities.setCapability("deviceName", "Pixel 4 API 30");
+            // capabilities.setCapability("udid", "emulator-5554");
            // capabilities.setCapability("appPackage", "com.example.myapplication");
             //capabilities.setCapability("appActivity", "MainActivity");
            // capabilities.setCapability("appPackage", "com.demo.test.demo");
@@ -220,7 +221,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
           // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.android.chrome");
            // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "org.chromium.my_webview_shell");
           // capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.google.android.apps.chrome.Main");
-          capabilities.setCapability("chromedriverExecutableDir","/home/vpatel/Downloads/Chrome-Driver");
+          capabilities.setCapability("chromedriverExecutableDir","/home/sguduru/Downloads/Chrome-Driver");
             capabilities.setCapability("autoGrantPermissions", "true");
             capabilities.setJavascriptEnabled(true);
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
