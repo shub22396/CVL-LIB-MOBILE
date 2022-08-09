@@ -4,6 +4,10 @@ Feature: Candidate Login Login
   @loginAsExistingCandidate @login @ReleaseRegression1
   Scenario: Login in as an existing Candidate
     Given  I am on home page
+
+   Then   I should see resume library logo
+    And    I click on Menu Bar
+    Then   I should see text "Login"
     When   I click Login button
     And    I fill in Email address
     And    I fill in Password
@@ -15,6 +19,8 @@ Feature: Candidate Login Login
   @loginPageErrorMessage
   Scenario: Verify error message on login page
     Given  I am on home page
+    Then   I should see resume library logo
+        And    I click on Menu Bar
     When   I click Login button
     And    I click Login as Jobseeker button
     Then   I should see text "Email is required"
@@ -23,6 +29,10 @@ Feature: Candidate Login Login
   @loginPageResetPassword @ReleaseRegression1
   Scenario: Reset candidate password
     Given  I am on home page
+
+    Then   I should see resume library logo
+
+    And    I click on Menu Bar
     When   I click Login button
     And    I click Forgot password?
     Then   I should see text "Enter your email address below and we will send you an email to reset your password."
@@ -51,5 +61,5 @@ Feature: Candidate Login Login
     When   I navigate to page "Candidate My Profile"
     And    I upload resume "Test Cv"
     Then   I should be on page "Candidate My Profile"
-    And    I should see "Your resume is currently processing, you will be able to apply for jobs in just a few moments."
+    Then I should see "Your resume is currently processing, you will be able to apply for jobs in just a few moments."
     And    I should see "FREE Resume Review" link

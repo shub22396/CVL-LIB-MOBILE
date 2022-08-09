@@ -5,6 +5,7 @@ Background: Navigating to Add A Job page
     Given   I login as an admin user
     When    I go to add jobs page
  
+ @AdminAddJobValidation
   Scenario: Validations on add job page
     Then    I should see text "Add A Job"
     When    I click Add Job button
@@ -21,6 +22,7 @@ Background: Navigating to Add A Job page
     Then    I should see text "The Apply Type field is required."
     And     I should see text "An Account Is required."
 
+ @AdminAddJobCreate
   Scenario: Create a job successfully
     Then    I fill in "Job Title"
     And     I fill in "Minimum Salary"
