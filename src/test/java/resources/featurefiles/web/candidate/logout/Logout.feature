@@ -4,7 +4,8 @@ Feature: Candidate Logout Logout
   Scenario: Logout and verify elements
     Given  I login as a candidate
     Then   I should be on "My Dashboard" page
-    When   I mouse hover "Hi Resume-Library"
+    And    I click on Menu Bar
+    Then   I should see text "Logout"
     And    I click Logout
     Then   I should be on "Logged out" page
     And    I should see text "You have been logged out successfully."
