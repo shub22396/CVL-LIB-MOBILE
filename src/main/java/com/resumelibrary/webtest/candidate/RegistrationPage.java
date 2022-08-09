@@ -116,7 +116,7 @@ public class RegistrationPage extends Utility {
     }
 
     public void upLoadYourResume(String resumePath) throws IOException {
-        ((AndroidDriver)getThreadDriver()).pushFile("/sdcard/download", new File(resumePath));
+       // ((AndroidDriver)getThreadDriver()).pushFile("/sdcard/download", new File(resumePath));
         String browser = System.getProperty("browserName");
         logger.info("browserName = " + browser);
        // browser="remoteChromeBrowser";
@@ -126,7 +126,7 @@ public class RegistrationPage extends Utility {
             ((RemoteWebElement) uploadElement).setFileDetector(new LocalFileDetector());
         }
         uploadElement.click();
-        uploadElement.sendKeys("/sdcard/download/test-cv.pdf");
+        //uploadElement.sendKeys("/sdcard/download/test-cv.pdf");
         waitFor(2);
 
     }

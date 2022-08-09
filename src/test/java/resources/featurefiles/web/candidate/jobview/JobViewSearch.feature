@@ -1,7 +1,7 @@
 @JobSearchViewOptions @Regression @Web @Candidate4 @Search
 Feature: Candidate JobView JobViewSearch
 
-  @candidateJobViewOptions @ReleaseRegression1
+  @candidateJobViewOptions @ReleaseRegression1 #failing in desktop as well
   Scenario: Verify the more, save, print, email and share buttons on job view
     Given I am on page "/"
     When  I fill in search title field with "Nonexternaltestjobs"
@@ -41,6 +41,7 @@ Feature: Candidate JobView JobViewSearch
   @JobViewSimilarJobsModule
   Scenario: Similar jobs module for external jobs should not cause a 404
     And    I am on page "Job View Sales Lead For 37890455"
-    Then   I should see text "Similar Jobs"
+   # Then   I should see text "Similar Jobs"
+    Then   I click on "Similar Jobs"
     When   I click on title of the job on similar jobs module and verify url
     
