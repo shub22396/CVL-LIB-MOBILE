@@ -154,6 +154,10 @@ public class JobSearchPage extends Utility {
         logger.info("click on Find jobs button");
         clickOnElement(FindJobs);
     }
+    public void clickOnSubmitFeedBack(String text) {
+        logger.info("click on feedb back request");
+        clickOnElement(getThreadDriver().findElement(By.xpath("( //*[text()=\"Submit\"])[1]")));
+    }
 
     public void verifyRedirectURL() {
         try {
@@ -322,6 +326,8 @@ public class JobSearchPage extends Utility {
     public void enterReasonsOtherInput(String input) {
         logger.info("Entered reasons other input : " + input);
         ReasonsOtherInput.sendKeys(input);
+        ReasonsOtherInput.sendKeys(Keys.ESCAPE);
+        waitFor( 2);
     }
 
     public void clickOnSearchJobTitle() {

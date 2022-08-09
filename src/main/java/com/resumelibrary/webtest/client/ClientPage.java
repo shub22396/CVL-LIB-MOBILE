@@ -51,7 +51,7 @@ public class ClientPage extends Utility {
     }
 
     public  void clickOnSubmitInquiry() {
-        clickOnElement(SubmitInquiry);
+        clickOnElementWithJS(SubmitInquiry);
     }
 
     public void enterCompanyName(String companyName) {
