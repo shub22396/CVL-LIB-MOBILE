@@ -50,5 +50,8 @@ public class Client extends Utility {
         Assert.assertTrue(verifyTextMessage(phoneNumber));
     }
 
-
+    @When("I click on Contact Us")
+    public void iClickOnContactUs() {
+        new ClientPage().clickOnContactUs();
+    }
 }

@@ -15,6 +15,7 @@ Feature: Client Others IntegratedServices
     And   I should see text "Account Key"
     And   I should see text "ATS Import"
     And   I should see text "Actions"
+    And   I click on Menu Bar
     When  I click on "Dashboard"
     Then  I should be on page "Client Account"
 

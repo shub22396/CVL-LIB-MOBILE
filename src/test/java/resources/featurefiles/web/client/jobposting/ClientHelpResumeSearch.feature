@@ -9,7 +9,7 @@ Feature: Client JobPosting ClientHelpResumeSearch
     And   I should see text "Advanced Search Techniques"
     And   I should see bread crumbs "Client Help Center > Resume Search Tips" with class name: "breadcrumbs"
     And   I should see image is displayed
-    And   I scroll down 0,500
+    And   I scroll down 0,2000
     When  I switch to frame and play the video
     #We need this wait because, we are playing video for 4 seconds and pausing
     Then  I wait for "4" seconds

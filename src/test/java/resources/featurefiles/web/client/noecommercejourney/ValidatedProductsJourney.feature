@@ -39,8 +39,8 @@ Feature: Client NoEcommerceJourney ValidatedProductsJourney
     Then  I should not see text "Contact Credits"
     And   I should not see text "Job postings"
     When  I click on "Products"
-    Then  I should be able to see in browser URL "Hiring Products"
-    And   I should see text H one tag "Our Hiring Products"
+#    Then  I should be able to see in browser URL "Hiring Products"
+#    And   I should see text H one tag "Our Hiring Products"
 
   @NoEcommValidatedClientVerifyEmployersLogo
   Scenario: as an validated logged in client with E-commerce disabled verify employers logo

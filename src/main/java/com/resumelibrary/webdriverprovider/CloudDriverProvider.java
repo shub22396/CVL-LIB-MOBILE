@@ -222,7 +222,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.android.chrome");
             // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "org.chromium.my_webview_shell");
             // capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.google.android.apps.chrome.Main");
-            capabilities.setCapability("chromedriverExecutableDir", "/home/sguduru/Downloads/Chrome-Driver");
+            capabilities.setCapability("chromedriverExecutableDir", "/home/vpatel/Downloads/Chrome-Driver");
             capabilities.setCapability("autoGrantPermissions", "true");
             capabilities.setJavascriptEnabled(true);
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));

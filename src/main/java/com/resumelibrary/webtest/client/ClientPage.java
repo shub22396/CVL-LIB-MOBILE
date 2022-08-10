@@ -12,10 +12,10 @@ import org.testng.Assert;
 
 public class ClientPage extends Utility {
 
-    public ClientPage()
-    {
-        PageFactory.initElements(getThreadDriver(),this);
+    public ClientPage() {
+        PageFactory.initElements(getThreadDriver(), this);
     }
+
     private static final Logger logger = LogManager.getLogger(ClientPage.class);
 
     @FindBy(id = "inquiry_type")
@@ -30,6 +30,8 @@ public class ClientPage extends Utility {
     WebElement PostAJob;
     @FindBy(xpath = "(//div[@class='card card--shadow article-module']//following::img)[1]")
     WebElement advanceImage;
+    @FindBy(xpath = "//*[@id='main']//div/ul/li[9]/a")
+    WebElement ContactUs;
 
     public boolean isImageDisplayed() {
         if (advanceImage.isDisplayed()) {
@@ -42,7 +44,7 @@ public class ClientPage extends Utility {
     }
 
     public void selectInquiryType(String inquiryType) {
-      selectByVisibleTextFromDropDown(InquiryType, inquiryType);
+        selectByVisibleTextFromDropDown(InquiryType, inquiryType);
     }
 
     public void enterMessage(String value) {
@@ -50,7 +52,7 @@ public class ClientPage extends Utility {
         Message.sendKeys(Keys.ENTER);
     }
 
-    public  void clickOnSubmitInquiry() {
+    public void clickOnSubmitInquiry() {
         clickOnElementWithJS(SubmitInquiry);
     }
 
@@ -59,7 +61,7 @@ public class ClientPage extends Utility {
     }
 
     public void verifyUrls(String url1, String url2) {
-        getDriverWithUrl(WebURLHelper.getWebUrl() , getURL(url1));
+        getDriverWithUrl(WebURLHelper.getWebUrl(), getURL(url1));
         String presentURL = getPresentURL();
         waitUntil(WebURLHelper.getWebUrl() + getURL(url2));
         Assert.assertTrue(presentURL.contains(getURL(url2)));
@@ -69,5 +71,10 @@ public class ClientPage extends Utility {
     public void clickOnPostAJob() {
         logger.info("click on the button Post a Job --> ");
         clickOnElement(PostAJob);
+    }
+
+    public void clickOnContactUs() {
+        logger.info("click on contact us --> ");
+        clickOnElement(ContactUs);
     }
 }

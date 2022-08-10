@@ -257,6 +257,7 @@ public class JobPostPage extends Utility {
         logger.info("Sorting expires date by desc order" + sortedList);
         return getSortedDatesDesc(sortedList);
     }
+
     public void selectValueToSortOnClientJobsPage(String text) {
         logger.info("Select sort by from dropdown");
         selectByVisibleTextFromDropDown(JobsMobileSortSelect, text);

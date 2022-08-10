@@ -3,10 +3,7 @@ Feature: Client ResumeAlert ResumeAlertsSent
 
   @resumeAlertsSent @ReleaseRegression2
   Scenario: Verify Resume Alerts sent page
-    Given I navigate to page "Hiring Login"
-    Then  I fill in email address with "testers@resume-library.com"
-    And   I fill in the field where id is "pass" with: "rltest01"
-    And   I click on "Login as Employer"
+    Given I login as a client
     When  I navigate to page "Client Resume Alert"
     And   I click on link text "583"
     And   I should see element with text "Resume Alerts Sent (Ref: IWTest)" to be "visible"

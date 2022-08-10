@@ -74,6 +74,6 @@ Feature: Client JobPosting VacancyEnhancements
 
   @ClientHelpContactUsVacancyEnhancement
   Scenario: Verify client Contact Us help links job posting Vacancy Enhancements
-    Then  I click on "Contact Us"
-    And   I should be able to see in browser URL "Client Contact"
+    When  I click on Contact Us
+    Then  I should be able to see in browser URL "Client Contact"
     And   I should see text H one tag "Contact us"
