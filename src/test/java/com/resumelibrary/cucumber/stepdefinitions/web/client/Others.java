@@ -294,8 +294,9 @@ public class Others extends Utility {
         new OthersPage().moveBackToParentFrame();
     }
 
-    @And("I should see {string} on download file")
-    public void iShouldSeeOnDownloadFile(String text) {
-       Assert.assertEquals(new OthersPage().verifyPdfFile(),text);
+
+    @And("I should see download file with class name {string}")
+    public void iShouldSeeDownloadFileWithClassName(String text) {
+        Assert.assertTrue(new OthersPage().verifyPdfFile(text));
     }
 }

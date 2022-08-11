@@ -54,4 +54,14 @@ public class Client extends Utility {
     public void iClickOnContactUs() {
         new ClientPage().clickOnContactUs();
     }
+
+    @Then("I click on Download User Manual")
+    public void iClickOnDownloadUserManual() {
+        new ClientPage().clickOnDownloadUserManual();
+    }
+
+    @And("I click on Download")
+    public void iClickOnDownload() {
+        new ClientPage().clickOnDownload();
+    }
 }

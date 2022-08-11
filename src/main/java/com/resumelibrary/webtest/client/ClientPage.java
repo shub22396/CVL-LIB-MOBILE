@@ -32,6 +32,10 @@ public class ClientPage extends Utility {
     WebElement advanceImage;
     @FindBy(xpath = "//*[@id='main']//div/ul/li[9]/a")
     WebElement ContactUs;
+    @FindBy(xpath = "//*[@id='main']//div/ul/li[8]/a")
+    WebElement DownloadUserManual;
+    @FindBy(xpath = "//*[contains(text(),'Download')]")
+    WebElement Download;
 
     public boolean isImageDisplayed() {
         if (advanceImage.isDisplayed()) {
@@ -76,5 +80,14 @@ public class ClientPage extends Utility {
     public void clickOnContactUs() {
         logger.info("click on contact us --> ");
         clickOnElement(ContactUs);
+    }
+    public void clickOnDownloadUserManual() {
+        logger.info("click on Download User Manual --> ");
+        clickOnElement(DownloadUserManual);
+    }
+
+    public void clickOnDownload() {
+        logger.info("click on Download --> ");
+        clickOnElement(Download);
     }
 }
