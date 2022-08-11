@@ -401,14 +401,14 @@ public class ResumeSearchPage extends Utility {
     }
 
     public void clickOnSearchResumes() {
-        clickOnElement(SearchResumeBtn);
         logger.info("Clicking on Search Resumes button ");
+        clickOnElementWithJS(SearchResumeBtn);
     }
 
     public void clickOnBasic() {
         waitUntilElementIsLocated(Basic, 20);
-        clickOnElementWithJS(Basic);
         logger.info("Clicking on Basic tab ");
+        clickOnElementWithJS(Basic);
     }
 
     public void clickOnBuilder() {

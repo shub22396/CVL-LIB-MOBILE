@@ -3,6 +3,7 @@ package com.resumelibrary.webtest.client;
 import com.resumelibrary.utilities.DataHelper;
 import com.resumelibrary.utilities.Utility;
 import com.resumelibrary.utilities.WebURLHelper;
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -283,7 +284,7 @@ public class OthersPage extends Utility {
         String iframeId = "iframe-" + iframe;
         logger.info("moving to iframe " + iframeId);
         waitFor(1);
-       VideoPauseButton.click();
+        VideoPauseButton.click();
     }
 
     public String getTheDurationVideoPlayed() {
@@ -296,5 +297,13 @@ public class OthersPage extends Utility {
     public void moveBackToParentFrame() {
         logger.info("Move back to parent frame");
         getThreadDriver().switchTo().defaultContent();
+    }
+
+    public String verifyPdfFile() {
+        System.out.println("context"+((AndroidDriver) getThreadDriver()).context("NATIVE_APP"));
+        ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
+        String text= getThreadDriver().findElement(By.xpath("//*[contains(text(),'rl-user-manual')]")).getText();
+        ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
+        return text;
     }
 }

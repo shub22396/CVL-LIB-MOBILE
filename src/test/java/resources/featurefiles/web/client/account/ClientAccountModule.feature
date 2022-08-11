@@ -157,25 +157,25 @@ Feature: Client Account ClientAccountModule
 
   @clientAccountVerificationFaq2
   Scenario: Verify the faq module content on account page part 2
-    Given  I navigate to page "Client Account"
-    When   I click on "How do I create a Resume Alert?"
-    Then   I should be able to see in browser URL "Faq Recruiter Resume Search"
-    And    I should see text "Log in to Resume-Library to view the 'Resume Alerts' menu. Click this, enter your criteria to the form and save your alert."
-
-    Given  I navigate to page "Client Account"
-    When   I click on "How can I post a job without a salary?"
-    Then   I should be able to see in browser URL "Faq Recruiter Job Length"
-    And    I should see text "In the 'Salary' fields, enter '0' and then select 'No' on the 'Display Salary' dropdown option."
-
-    Given  I navigate to page "Client Account"
-    When   I click on "Additional FAQs"
-    Then   I should be able to see in browser URL "Faq Recruiter"
-    And    I should see text H one tag "How Can We Help You?"
-
-    Given  I navigate to page "Client Account"
-    When   I click on "Client Help Center"
-    Then   I should be able to see in browser URL "Client Help"
-    And    I should see text H one tag "Client Help Center"
+#    Given  I navigate to page "Client Account"
+#    When   I click on "How do I create a Resume Alert?"
+#    Then   I should be able to see in browser URL "Faq Recruiter Resume Search"
+#    And    I should see text "Log in to Resume-Library to view the 'Resume Alerts' menu. Click this, enter your criteria to the form and save your alert."
+#
+#    Given  I navigate to page "Client Account"
+#    When   I click on "How can I post a job without a salary?"
+#    Then   I should be able to see in browser URL "Faq Recruiter Job Length"
+#    And    I should see text "In the 'Salary' fields, enter '0' and then select 'No' on the 'Display Salary' dropdown option."
+#
+#    Given  I navigate to page "Client Account"
+#    When   I click on "Additional FAQs"
+#    Then   I should be able to see in browser URL "Faq Recruiter"
+#    And    I should see text H one tag "How Can We Help You?"
+#
+#    Given  I navigate to page "Client Account"
+#    When   I click on "Client Help Center"
+#    Then   I should be able to see in browser URL "Client Help"
+#    And    I should see text H one tag "Client Help Center"
 
     Given  I navigate to page "Client Account"
     And    I click on "Download our user manual"

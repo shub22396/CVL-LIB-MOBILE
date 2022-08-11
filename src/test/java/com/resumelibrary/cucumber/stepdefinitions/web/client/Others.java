@@ -16,6 +16,7 @@ import io.cucumber.java.en.When;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -175,7 +176,7 @@ public class Others extends Utility {
         boolean urlFound = false;
         if (presentURL.contains(getURL(url1)) || presentURL.contains(getURL(url2))) {
             urlFound = true;
-            logger.info("[--->iurlFound---->" + urlFound+"<---]");
+            logger.info("[--->iurlFound---->" + urlFound + "<---]");
         }
         Assert.assertTrue(urlFound);
     }
@@ -187,7 +188,7 @@ public class Others extends Utility {
 
     @When("I click on My searches and verify below steps")
     public void iClickOnMySearchesAndVerifyBelowSteps() {
-       new ResumeSearch().iClickOnMySearchesLink();
+        new ResumeSearch().iClickOnMySearchesLink();
         try {
             new Misc().iShouldSeeText("Job type");
             new Misc().iShouldSeeText("Actions");
@@ -234,7 +235,7 @@ public class Others extends Utility {
     @And("I should see the video played up to {string} seconds")
     public void iShouldSeeTheVideoPlayedUpToSeconds(String duration) {
         waitFor(1);
-        List<String>  timeToVerify = Arrays.asList("00:01","00:02","00:03", "00:04", "00:05", "00:06", "00:07","00:08", "00:09");
+        List<String> timeToVerify = Arrays.asList("00:01", "00:02", "00:03", "00:04", "00:05", "00:06", "00:07", "00:08", "00:09");
         logger.info("time to verify " + timeToVerify);
         logger.info("current duration played " + new OthersPage().getTheDurationVideoPlayed());
         Assert.assertTrue(timeToVerify.contains(new OthersPage().getTheDurationVideoPlayed()));
@@ -242,12 +243,12 @@ public class Others extends Utility {
 
     @When("I switch to frame and play the video")
     public void iSwitchToFrameAndPlayTheVideo() {
-        new  OthersPage().clickOnVideoPlayButton("No iframe Id");
+        new OthersPage().clickOnVideoPlayButton("No iframe Id");
     }
 
     @Then("I click on video pause button")
     public void iClickOnVideoPauseButton() {
-      new OthersPage().clickOnVideoPauseButton("No iframe Id");
+        new OthersPage().clickOnVideoPauseButton("No iframe Id");
     }
 
     @And("I close current tab")
@@ -256,12 +257,12 @@ public class Others extends Utility {
     }
 
     @And("I Verify {string} and update account details in {string}")
-    public void iVerifyAndUpdate(String text,String adminUrl) {
-        if(new ManageUsersPage().verifyAndUpdate(text)==null){
+    public void iVerifyAndUpdate(String text, String adminUrl) {
+        if (new ManageUsersPage().verifyAndUpdate(text) == null) {
             new MiscPage().loginAsAdminUser();
             getDriverWithUrl(AdminURLHelper.getAdminUrl(), adminUrl);
             new MiscPage().updateCandidateUnlock();
-            getDriverWithUrl(WebURLHelper.getWebUrl(),WebURLHelper.getClientAccountUsersUrlUserUrl());
+            getDriverWithUrl(WebURLHelper.getWebUrl(), WebURLHelper.getClientAccountUsersUrlUserUrl());
         }
     }
 
@@ -287,8 +288,14 @@ public class Others extends Utility {
             new com.resumelibrary.cucumber.stepdefinitions.web.candidate.Others().iClickOn("Saved searches");
         }
     }
+
     @When("I switch to back to parent frame")
     public void iSwitchToBackToParentFrame() {
         new OthersPage().moveBackToParentFrame();
+    }
+
+    @And("I should see {string} on download file")
+    public void iShouldSeeOnDownloadFile(String text) {
+       Assert.assertEquals(new OthersPage().verifyPdfFile(),text);
     }
 }

@@ -953,13 +953,16 @@ public abstract class Utility extends DriverController {
                 }
             }
         });
-        logger.info("[--->Sorting date name by asc order"+"<---]");
+        logger.info("[--->Sorting date name by asc order" + "<---]");
         return list;
     }
 
     /* returning Collection of String Stream Items into List*/
     public List<String> getDataList(List<WebElement> elements) {
         return elements.stream().map(s -> s.getText().toLowerCase()).collect(Collectors.toList());
+    }
+    public List<String> getDataListForDate(List<WebElement> elements) {
+        return elements.stream().map(s -> s.getText().split(" ")[0].toLowerCase()).collect(Collectors.toList());
     }
 
     /* returning Collection of double Stream Items into List*/
@@ -981,17 +984,16 @@ public abstract class Utility extends DriverController {
                 }
             }
         });
-        logger.info("[--->Sorting date name by desc order"+"<---]");
+        logger.info("[--->Sorting date name by desc order" + "<---]");
         return list;
     }
-    public List<String> getDataListForDate(List<WebElement> elements) {
-        return elements.stream().map(s -> s.getText().split(" ")[0].toLowerCase()).collect(Collectors.toList());
-    }
-
 
     /* returning the  list of elements in descending order*/
     public List<String> getListByDescOrder(List<WebElement> elements) {
         return getDataList(elements).stream().map(String::toLowerCase).sorted(Collections.reverseOrder()).collect(Collectors.toList());
+    }
+    public List<String> getListByDescOrderForDate(List<WebElement> elements) {
+        return getDataListForDate(elements).stream().map(String::toLowerCase).sorted(Collections.reverseOrder()).collect(Collectors.toList());
     }
 
     /* returning the  number list of elements in descending order*/
@@ -1004,15 +1006,14 @@ public abstract class Utility extends DriverController {
         return getDataList(elements).stream().map(String::toLowerCase).sorted().collect(Collectors.toList());
     }
 
-    public List<Double> getNumberListByAscOrder(List<WebElement> elements) {
-        return getNumberDataList(elements).stream().sorted().collect(Collectors.toList());
-    }
-    public List<String> getListByDescOrderForDate(List<WebElement> elements) {
-        return getDataListForDate(elements).stream().map(String::toLowerCase).sorted(Collections.reverseOrder()).collect(Collectors.toList());
-    }
     public List<String> getListByAscOrderForDate(List<WebElement> elements) {
         return getDataListForDate(elements).stream().map(String::toLowerCase).sorted().collect(Collectors.toList());
     }
+
+    public List<Double> getNumberListByAscOrder(List<WebElement> elements) {
+        return getNumberDataList(elements).stream().sorted().collect(Collectors.toList());
+    }
+
 
     /* returning the actual text by comparing the actual text(from application) and expected text(from feature) */
     public String getTextFromElementUsingXpath(String text, String xpath) {
