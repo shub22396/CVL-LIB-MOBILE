@@ -4,6 +4,7 @@ import com.resumelibrary.utilities.*;
 import com.resumelibrary.webtest.candidate.FastTrackRegisterPage;
 import com.resumelibrary.webtest.candidate.JobSearchPage;
 import com.resumelibrary.webtest.candidate.OthersPage;
+import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,6 +16,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 public class Others extends Utility {
@@ -100,12 +103,10 @@ public class Others extends Utility {
     }
 
     @Given("I navigate to page {string}")
-    public void iNavigateToPage(String url) {
-        logger.info("Web page url to load is : " + WebURLHelper.getWebUrl() + getURL(url));
-        getDriverWithUrl(WebURLHelper.getWebUrl(), getURL(url));
-        webDriverWaitContainsUrl(getURL(url));
-
-    }
+    public void iNavigateToPage(String url)  {
+         getDriverWithUrl(WebURLHelper.getWebUrl(), getURL(url));
+            webDriverWaitContainsUrl(getURL(url));
+       }
 
     @Given("I browse the url {string}")
     public void iBrowseTheUrl(String url) {
@@ -264,6 +265,18 @@ public class Others extends Utility {
         clickAllowPopUp();
         clickOnElementUsingText(text);
     }
+
+    @And("I click on {string} with native")
+    public void iClickOnwithNative(String text) {
+
+        clickOnElementUsingTextwithNAtive(text);
+    }
+    @And("I click on {string} with JS")
+    public void iClickOnwithJS(String text) {
+                    clickOnElementUsingTextWithJS(text);
+
+    }
+
 
     @When("I click on non external job to apply")
     public void iClickOnNonExternalJobToApply() {

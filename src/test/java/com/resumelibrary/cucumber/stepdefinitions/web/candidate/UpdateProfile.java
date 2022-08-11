@@ -13,7 +13,8 @@ public class UpdateProfile extends Utility {
     @And("I click on Save Changes Button on Update Profile Page")
     public void iClickOnSaveChangesButtonOnUpdateProfilePage() {
         //Disabled this line because after entering text, we are already pressing the button somehow
-        //new UpdateProfilePage().SaveChangesButton();
+        new UpdateProfilePage().SaveChangesButton();
+        waitFor(2);
     }
 
     @And("I click on Save Changes Button on Modify Profile Page")
@@ -50,7 +51,10 @@ public class UpdateProfile extends Utility {
     public void iFillInSkillsInputWithOnModifyProfilePage(String skills) {
         new UpdateProfilePage().enterSkills(skills);
     }
-
+    @When("I click on Save changes button")
+    public void iClickOnSaveChanges() {
+        new UpdateProfilePage().clickOnSaveChanges();
+    }
     @And("I click on Set Password button")
     public void iClickOnSetPasswordButton() {
         new UpdateProfilePage().clickOnSetPassword();
@@ -124,6 +128,11 @@ public class UpdateProfile extends Utility {
     @And("I select the field authorization to work in the U.S with {string} on modify profile page")
     public void iSelectTheFieldAuthorizationToWorkInTheUSWithOnModifyProfilePage(String authorizationToWorkInTheUS) {
         new UpdateProfilePage().selectTheFieldAuthorizationToWorkInTheUSWithOnModifyProfilePage(authorizationToWorkInTheUS);
+    }
+
+    @And("I select the field authorization to work in the U.S with {string} on modify profile page for mobile")
+    public void iSelectTheFieldAuthorizationToWorkInTheUSWithOnModifyProfilePageforMobile(String authorizationToWorkInTheUS) {
+        new UpdateProfilePage().selectTheFieldAuthorizationToWorkInTheUSWithOnModifyProfilePageForMobile(authorizationToWorkInTheUS);
     }
     @And("I click on View Resume close popup button")
     public void iClickOnViewResumeClosePopupButton() {

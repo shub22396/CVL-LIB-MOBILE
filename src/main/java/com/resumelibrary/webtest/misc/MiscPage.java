@@ -247,8 +247,14 @@ public class MiscPage extends Utility {
     }
 
     public boolean shouldSeeText(String textMessage) {
-        String textToVerify = getElementByText(textMessage).getText();
-        return textToVerify.contains(textMessage);
+        boolean flag =false;
+        try {
+            String textToVerify = getElementByText(textMessage).getText();
+            flag=  textToVerify.contains(textMessage);
+        }catch (Exception e){
+            flag =false;
+        }
+        return  flag;
     }
 
     public void acceptGDPRPopUpOnCvLibrary() {

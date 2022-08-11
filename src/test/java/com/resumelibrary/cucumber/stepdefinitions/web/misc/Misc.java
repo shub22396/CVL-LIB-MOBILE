@@ -33,7 +33,7 @@ public class Misc extends Utility {
 
     @And("I should see text {string}")
     public void iShouldSeeText(String textMessage) {
-        new MiscPage().shouldSeeText(textMessage);
+        Assert.assertTrue(new MiscPage().shouldSeeText(textMessage));
     }
 
     @And("I should see a text message \"([^\"]*)\"$")

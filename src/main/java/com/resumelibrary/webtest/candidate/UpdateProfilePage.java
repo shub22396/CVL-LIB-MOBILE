@@ -1,12 +1,14 @@
 package com.resumelibrary.webtest.candidate;
 
 import com.resumelibrary.utilities.Utility;
+import com.resumelibrary.webtest.misc.MiscPage;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -29,6 +31,8 @@ public class UpdateProfilePage extends Utility {
     WebElement LatestJobTitle;
     @FindBy(id = "desired_job_title")
     WebElement DesiredJobTitle;
+    @FindBy(xpath = "//button[text()='Save changes']")
+    WebElement saveChangesButton;
     @FindBy(id = "first_name")
     WebElement FirstName;
     @FindBy(id = "last_name")
@@ -59,6 +63,8 @@ public class UpdateProfilePage extends Utility {
     WebElement DesiredSalaryTo;
     @FindBy(id = "eligibility_status")
     WebElement AuthorizationToWorkInTheUS;
+    @FindBy(id = "eligibility_status_radio.3")
+    WebElement AuthorizationToWorkInTheUSMobile;
     @FindBy(xpath="(//button[@class='popup-close popup-x'])[1]")
     WebElement viewResumePopup;
 
@@ -91,25 +97,47 @@ public class UpdateProfilePage extends Utility {
 
     public void enterDesiredJobTitle(String desiredJobTitle) {
         logger.info("desired job tile entered is : " + desiredJobTitle);
-        fillWebElement(DesiredJobTitle, desiredJobTitle);
-        waitFor(2);
+        DesiredJobTitle.sendKeys(desiredJobTitle);
+        DesiredJobTitle.sendKeys(Keys.TAB);
+        DesiredJobTitle.sendKeys(Keys.TAB);
+        DesiredJobTitle.sendKeys(Keys.TAB);
+       // fillWebElement(DesiredJobTitle, desiredJobTitle);
+        waitFor(4);
     }
+    public void clickOnSaveChanges() {
+        logger.info("clicking on save changes button");
+        int i=0;
+        do  {
+            //saveChangesButton.sendKeys(Keys.TAB);
+            Actions action=new Actions(getThreadDriver());
+            action.moveToElement(saveChangesButton).click().build().perform();
+
+          //  clickOnElementWithJS(saveChangesButton);
+            waitFor(2);
+            i++;
+        }while(!new MiscPage().shouldSeeText("Your details have been successfully updated") && i<4);
+    }
+
 
     public void enterSkills(String skills) {
         logger.info("skills entered  is : " + skills);
-        String javaScript = "document.getElementById('skills-input').value='" + skills + "'";
-        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) getThreadDriver();
-        javascriptExecutor.executeScript(javaScript);
-        javascriptExecutor.executeScript("document.getElementById('skills-input').click()");
+      //  String javaScript = "document.getElementById('skills-input').value='" + skills + "'";
+        //JavascriptExecutor javascriptExecutor = (JavascriptExecutor) getThreadDriver();
+        //javascriptExecutor.executeScript(javaScript);
+     //   javascriptExecutor.executeScript("document.getElementById('skills-input').click()");
+        ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].scrollIntoView(true);",  getThreadDriver().findElement(By.id("skills-input")));
+        getThreadDriver().findElement(By.id("skills-input")).sendKeys(skills);
+        waitFor(4);
         getThreadDriver().findElement(By.id("skills-input")).sendKeys(Keys.TAB);
-        waitFor(1);
+        getThreadDriver().findElement(By.id("skills-input")).sendKeys(Keys.TAB);
     }
 
     protected void fillWebElement(WebElement webElement, String filedValue) {
         waitUntilElementIsLocated(webElement,15);
         webElement.clear();
         webElement.sendKeys(filedValue);
-        webElement.sendKeys(Keys.ENTER);
+        webElement.sendKeys(Keys.TAB);
+        webElement.sendKeys(Keys.ESCAPE);
     }
 
     public void clickOnSetPassword() {
@@ -187,6 +215,11 @@ public class UpdateProfilePage extends Utility {
     public void selectTheFieldAuthorizationToWorkInTheUSWithOnModifyProfilePage(String authorizationToWorkInTheUS) {
         selectByVisibleTextFromDropDown(AuthorizationToWorkInTheUS, authorizationToWorkInTheUS);
     }
+    public void selectTheFieldAuthorizationToWorkInTheUSWithOnModifyProfilePageForMobile(String authorizationToWorkInTheUS) {
+        clickOnElementUsingActions(AuthorizationToWorkInTheUSMobile);
+      //  AuthorizationToWorkInTheUSMobile.click();
+    }
+
     public void clickOnViewResumeClosePopupButton()
     {
         viewResumePopup.click();
