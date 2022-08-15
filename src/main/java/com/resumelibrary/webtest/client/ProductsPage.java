@@ -149,11 +149,14 @@ public class ProductsPage extends Utility {
 
         logger.info("Filling in card number");
         if (cardType.equals("valid")) {
-            CardNumberTextBox.sendKeys(DataHelper.getValidCardNumber());
+            for (int i = 0; i < DataHelper.getValidCardNumber().length(); i++) {
+                CardNumberTextBox.sendKeys(DataHelper.getValidCardNumber().substring(i, i+1));
+            }
         } else {
-            CardNumberTextBox.sendKeys(DataHelper.getInvalidCardNumber());
+            for (int i = 0; i < DataHelper.getInvalidCardNumber().length(); i++) {
+                CardNumberTextBox.sendKeys(DataHelper.getInvalidCardNumber().substring(i, i+1));
+            }
         }
-
         logger.info("Switching out of iframe");
         getThreadDriver().switchTo().defaultContent();
         waitFor(2);
