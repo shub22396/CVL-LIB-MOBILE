@@ -143,7 +143,7 @@ public class ProductsPage extends Utility {
 
     public void fillInCardNumber(String cardType) {
         logger.info("Switching into iframe to fill in card number");
-        waitUntilElementIsLocated(CardNumberIframe,15);
+        waitUntilElementIsLocated(CardNumberIframe, 15);
         getThreadDriver().switchTo().frame(CardNumberIframe);
         waitUntilElementToBeClickable(CardNumberTextBox, 5);
 
@@ -281,7 +281,6 @@ public class ProductsPage extends Utility {
     }
 
     public List<Double> descendingOrderInvoiceNo() {
-
         sortedInvoiceNoList = getNumberListByDescOrder(invoiceNo);
         logger.info("Sorting Invoice No by desc order" + sortedInvoiceNoList);
         return sortedInvoiceNoList;

@@ -187,7 +187,7 @@ public class OthersPage extends Utility {
 
     public void verifyURLText(String url) {
         waitFor(4);
-        clickAllowPopUp();
+        //clickAllowPopUp();
         waitUntil(WebURLHelper.getWebUrl() + getURL(url));
         String presentURL = getPresentURL();
         logger.info("The present URL is --> : " + presentURL);
