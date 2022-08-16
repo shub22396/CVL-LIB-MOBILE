@@ -180,7 +180,7 @@ Feature: Client Account ClientAccountModule
     Given  I navigate to page "Client Account"
     Then   I click on "Download our user manual"
     And    I click on Download
-    And    I should see download file with class name "android.widget.FrameLayout"
+    And    I should see download file "rl-user-manual"
 
   @clientAccountVerificationFaq3
   Scenario: Verify the faq module content on account page part 3

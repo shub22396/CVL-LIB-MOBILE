@@ -295,8 +295,8 @@ public class Others extends Utility {
     }
 
 
-    @And("I should see download file with class name {string}")
-    public void iShouldSeeDownloadFileWithClassName(String text) {
+    @And("I should see download file {string}")
+    public void iShouldSeeDownloadFile(String text) {
         Assert.assertTrue(new OthersPage().verifyPdfFile(text));
     }
 }

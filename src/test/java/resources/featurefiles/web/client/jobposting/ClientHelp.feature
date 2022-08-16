@@ -61,4 +61,4 @@ Feature: Client JobPosting ClientHelp
     When  I navigate to page "Client Help Job Posting"
     Then  I click on Download User Manual
     And   I click on Download
-    And   I should see download file with class name "android.widget.FrameLayout"
+    And   I should see download file "rl-user-manual"

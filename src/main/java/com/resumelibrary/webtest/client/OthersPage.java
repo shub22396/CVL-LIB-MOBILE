@@ -299,13 +299,14 @@ public class OthersPage extends Utility {
         getThreadDriver().switchTo().defaultContent();
     }
 
-    public boolean verifyPdfFile(String className) {
+    public boolean verifyPdfFile(String text) {
         logger.info("context" + ((AndroidDriver) getThreadDriver()).context("NATIVE_APP"));
         ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
-        WebElement ele = getThreadDriver().findElement(By.xpath(("//*[@class=\'" + className + "\']")));
+        WebElement ele = getThreadDriver().findElement(By.xpath(("//*[contains(@text,\'" + text + "\')]")));
         if (ele.isDisplayed()) {
             return true;
         }
+        Assert.assertTrue(ele.getText().contains(".pdf"));
         ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
         return false;
     }

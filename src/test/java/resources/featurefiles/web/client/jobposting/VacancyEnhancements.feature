@@ -71,7 +71,7 @@ Feature: Client JobPosting VacancyEnhancements
   Scenario: Verify client Download User Manual for job posting Vacancy Enhancements
     Then  I click on "Download User Manual"
     And   I click on Download
-    And   I should see download file with class name "android.widget.FrameLayout"
+    And   I should see download file "rl-user-manual"
 
   @ClientHelpContactUsVacancyEnhancement
   Scenario: Verify client Contact Us help links job posting Vacancy Enhancements

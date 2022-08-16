@@ -261,7 +261,6 @@ public class Others extends Utility {
 
     @And("I click on {string}")
     public void iClickOn(String text) {
-      //  clickAllowPopUp();
         clickOnElementUsingText(text);
     }
 
