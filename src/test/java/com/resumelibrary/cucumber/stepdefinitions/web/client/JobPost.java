@@ -175,7 +175,7 @@ public class JobPost extends Utility {
 
     @Then("I should see posted dates in desc order")
     public void iShouldSeePostedDatesInDescOrder() {
-        waitFor(2);
+        waitFor(1);
         Assert.assertEquals(new JobPostPage().getListOfPostedDates(), new JobPostPage().descendingOrderOnPostedDates());
     }
 
@@ -186,7 +186,7 @@ public class JobPost extends Utility {
 
     @Then("I should see posted dates in asc order")
     public void iShouldSeePostedDatesInAscOrder() {
-        waitFor(2);
+        waitFor(1);
         Assert.assertEquals(new JobPostPage().getListOfPostedDates(), new JobPostPage().ascendingOrderOnPostedDates());
     }
 
@@ -197,7 +197,7 @@ public class JobPost extends Utility {
 
     @Then("I should see expires dates in desc order")
     public void iShouldSeeExpiresDatesInDescOrder() {
-        waitFor(2);
+        waitFor(1);
         Assert.assertEquals(new JobPostPage().getListOfExpiresDates(), new JobPostPage().descendingOrderOnExpiresDates());
     }
 
@@ -208,7 +208,7 @@ public class JobPost extends Utility {
 
     @Then("I should see expires dates in asc order")
     public void iShouldSeeExpiresDatesInAscOrder() {
-        waitFor(2);
+        waitFor(1);
         Assert.assertEquals(new JobPostPage().getListOfExpiresDates(), new JobPostPage().ascendingOrderOnExpiresDates());
     }
 

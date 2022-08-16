@@ -160,6 +160,7 @@ Feature: Client JobPosting ManageJobs
     When  I select "Sort by Date Posted DESC" on client jobs page
     Then  I should see posted dates in desc order
     When  I select "Sort by Date Posted ASC" on client jobs page
+    And   I wait for "10" seconds
     Then  I should see posted dates in asc order
 
   @manageInActiveJobsSortingByExpires
