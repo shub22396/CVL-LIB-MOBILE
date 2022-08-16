@@ -26,73 +26,61 @@ public class Application extends Utility {
 
     @Then("I should see job ids in desc order")
     public void iShouldSeeJobIdsInDescOrder() {
-        waitFor(2);
         Assert.assertEquals(new ApplicationPage().getListOfJobIds(), new ApplicationPage().jobIdsByDescendingOrder());
     }
 
     @Then("I should see job ids in asc order")
     public void iShouldSeeJobIdsInAscOrder() {
-        waitFor(2);
         Assert.assertEquals(new ApplicationPage().getListOfJobIds(), new ApplicationPage().jobIdsByAscendingOrder());
     }
 
     @Then("I should see Your Job Ref in desc order")
     public void iShouldSeeYourJobRefInDescOrder() {
-        waitFor(2);
         Assert.assertEquals(new ApplicationPage().getListOfJobRef(), new ApplicationPage().jobRefByDescendingOrder());
     }
 
     @Then("I should see Your Job Ref in asc order")
     public void iShouldSeeYourJobRefInAscOrder() {
-        waitFor(2);
         Assert.assertEquals(new ApplicationPage().getListOfJobRef(), new ApplicationPage().jobRefByAscendingOrder());
     }
 
     @Then("I should see job title in desc order")
     public void iShouldSeeJobTitleInDescOrder() {
-        waitFor(2);
         Assert.assertEquals(new ApplicationPage().getListOfJobTitle(), new ApplicationPage().jobTitleByDescendingOrder());
     }
 
     @Then("I should see job title  in asc order")
     public void iShouldSeeJobTitleInAscOrder() {
-        waitFor(2);
         Assert.assertEquals(new ApplicationPage().getListOfJobTitle(), new ApplicationPage().jobTitleByAscendingOrder());
     }
 
     @Then("I should see candidate name in desc order")
     public void iShouldSeeCandidateNameInDescOrder() {
-        waitFor(2);
         Assert.assertEquals(new ApplicationPage().getListOfCandidateName(), new ApplicationPage().candidateNamesByDescendingOrder());
     }
 
     @Then("I should see candidate name in asc order")
     public void iShouldSeeCandidateNameInAscOrder() {
-        waitFor(2);
         Assert.assertEquals(new ApplicationPage().getListOfCandidateName(), new ApplicationPage().candidateNamesByAscendingOrder());
     }
 
     @Then("I should see candidate email in desc order")
     public void iShouldSeeCandidateEmailInDescOrder() {
-        waitFor(2);
         Assert.assertEquals(new ApplicationPage().getListOfCandidateEmail(), new ApplicationPage().candidateEmailByDescendingOrder());
     }
 
     @Then("I should see candidate email in asc order")
     public void iShouldSeeCandidateEmailInAscOrder() {
-        waitFor(2);
         Assert.assertEquals(new ApplicationPage().getListOfCandidateEmail(), new ApplicationPage().candidateEmailByAscendingOrder());
     }
 
     @Then("I should see date applied in desc order")
     public void iShouldSeeDateAppliedInDescOrder() {
-        waitFor(2);
         Assert.assertEquals(new ApplicationPage().getListOfDateApplied(), new ApplicationPage().dateAppliedByDescendingOrder());
     }
 
     @Then("I should see date applied in asc order")
     public void iShouldSeeDateAppliedInAscOrder() {
-        waitFor(2);
         Assert.assertEquals(new ApplicationPage().getListOfDateApplied(), new ApplicationPage().dateAppliedByAscendingOrder());
     }
 
