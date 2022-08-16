@@ -5,6 +5,7 @@ import com.resumelibrary.utilities.WebURLHelper;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -107,6 +108,7 @@ public class MyDashboardPage extends Utility {
     public void clickOnEditButton(String editDetails) {
         logger.info("Click on " + editDetails + " edit details ");
         WebElement editButton = getThreadDriver().findElement(By.xpath("//h2[text()='" + editDetails + "']/following-sibling::button[1]"));
+        ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].scrollIntoView(true);", editButton);
         if (editButton.getText().equals("Edit")){
             clickOnElement(editButton);
         }
