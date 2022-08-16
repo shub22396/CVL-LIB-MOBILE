@@ -151,20 +151,21 @@ public class ExcelUtil {
             e.printStackTrace();
         }
     }
-public String getVerticalName(String tags){
-    logger.info("[--->in getVerticalName<---]");
-        if(tags.contains("@Recruiters")){
-            return "Recruiters";
-        }else if(tags.contains("@Partnerships")){
+    public String getVerticalName(String tags){
+        logger.info("[--->in getVerticalName<---]");
+        if(tags.contains("@Search")) {
+            return "Search";
+        } else if(tags.contains("@Partnerships")){
             return "Partnerships";
         }else if(tags.contains("@Traffic")) {
             return "Traffic";
         }else if(tags.contains("@Candidate")) {
             return "Candidate";
-        }else if(tags.contains("@Search")) {
-            return "Search";
-        }else{
+        }else if(tags.contains("@Recruiters")){
+            return "Recruiters";
+        }
+        else{
             return "Not matching with any vertical";
         }
-}
+    }
 }
