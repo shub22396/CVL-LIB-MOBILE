@@ -304,10 +304,10 @@ public abstract class Utility extends DriverController {
         try {
             System.out.println("context-->" + ((AndroidDriver) getThreadDriver()).getContext());
             ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
-//            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text="+text+"']")))) {
-//                getThreadDriver().findElement(By.xpath("//*[@text="+text+"']")).click();
-//            }
-            clickOnElementWithJS(getThreadDriver().findElement(By.xpath("//*[@text="+text+"']")));
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text="+text+"']")))) {
+                getThreadDriver().findElement(By.xpath("//*[@text="+text+"']")).click();
+            }
+
             ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
 
         }catch (Exception e){
