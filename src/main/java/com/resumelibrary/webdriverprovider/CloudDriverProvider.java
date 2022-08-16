@@ -225,7 +225,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("chromedriverExecutableDir", "/home/sguduru/Downloads/Chrome-Driver");
             capabilities.setCapability("autoGrantPermissions", "true");
             capabilities.setJavascriptEnabled(true);
-            threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
+            threadMap.put("webdriverObj", new AndroidDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
         } catch (Exception e) {
             e.printStackTrace();

@@ -7,6 +7,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -113,24 +114,47 @@ public class RegistrationPage extends Utility {
     public void enterZipcode(String zipcode) {
         logger.info("Entered zipcode" + zipcode);
         ZipCodeField.sendKeys(zipcode);
+        ZipCodeField.sendKeys(Keys.ESCAPE);
+        ZipCodeField.sendKeys(Keys.TAB);
     }
 
-    public void upLoadYourResume(String resumePath) throws IOException {
-       // ((AndroidDriver)getThreadDriver()).pushFile("/sdcard/download", new File(resumePath));
+    public void upLoadYourResume(String resumePath) {
         String browser = System.getProperty("browserName");
         logger.info("browserName = " + browser);
-       // browser="remoteChromeBrowser";
         waitFor(2);
-        WebElement uploadElement = getThreadDriver().findElement(By.xpath("//*[text()=Upload your resume]"));
-        if (browser.contains("remote") || browser.contains("lambda") || browser.contains("browserStack")) {
+        WebElement uploadElement = getThreadDriver().findElement(By.id("resume1"));
+        if (browser.contains("remote") || browser.contains("lambda") || browser.contains("browserStack") || browser.contains("android")) {
             ((RemoteWebElement) uploadElement).setFileDetector(new LocalFileDetector());
         }
-        uploadElement.click();
-        //uploadElement.sendKeys("/sdcard/download/test-cv.pdf");
+        uploadElement.sendKeys(resumePath);
         waitFor(2);
 
     }
 
+    public void selectFile(){
+        try {
+
+            System.out.println("context-->" + ((AndroidDriver) getThreadDriver()).getContext());
+            ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
+
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Upload your resume']")))) {
+                getThreadDriver().findElement(By.xpath("//*[@text='Upload your resume']")).click();
+            }
+            waitFor(2);
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='from this computer']")))) {
+                getThreadDriver().findElement(By.xpath("//*[@text='from this computer']")).click();
+            }
+            waitFor(2);
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='test123.pdf']")))) {
+                getThreadDriver().findElement(By.xpath("//*[@text='test123.pdf']")).click();
+            }
+            //  ((AndroidDriver)getThreadDriver()).context("WEBVIEW_com.dayizhihui.dayishi.hpv");
+            ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
+
+        }catch (Exception e){
+
+        }
+    }
     public void clickOnResumeCheckbox() {
         try {
             waitUntilElementIsLocated(ResumeCheckCheckbox, 10);

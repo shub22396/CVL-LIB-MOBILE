@@ -87,6 +87,7 @@ public class DriverController extends CloudDriverProvider implements Constants {
 
     private void manageBrowser() {
         //getThreadDriver().manage().window().setSize(new Dimension(414,736));
+        getThreadDriver().manage().window().maximize();
         getThreadDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
         getThreadDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(PropertyFileReader.getInstance().getProperty("implicitlyWait"))));
         getThreadDriver().manage().deleteAllCookies();

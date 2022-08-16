@@ -229,12 +229,12 @@ public abstract class Utility extends DriverController {
     public WebElement getElementByText(String text) {
         WebElement elementByText = null;
         getThreadDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
-        boolean result = getThreadDriver().findElements(By.xpath("//*[text()=\"" + text + "\"]")).size() > 0;
+        boolean result = ((RemoteWebDriver) getThreadDriver()).findElements(By.xpath("//*[text()=\"" + text + "\"]")).size() > 0;
         getThreadDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         if (!result) {
-            elementByText = getThreadDriver().findElements(By.xpath("//*[contains(text(),\"" + text + "\")]")).get(0);
+            elementByText =((RemoteWebDriver) getThreadDriver()).findElements(By.xpath("//*[contains(text(),\"" + text + "\")]")).get(0);
         } else {
-            elementByText = getThreadDriver().findElements(By.xpath("//*[text()=\"" + text + "\"]")).get(0);
+            elementByText = ((RemoteWebDriver)getThreadDriver()).findElements(By.xpath("//*[text()=\"" + text + "\"]")).get(0);
         }
         logger.info("[--->text on the element " + elementByText.getText()+"<---]");
         return elementByText;
@@ -248,7 +248,7 @@ public abstract class Utility extends DriverController {
 
     /* Clicking on  a specified web element by handling element click intercepted exception */
     public void clickOnElement(WebElement element) {
-
+        ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
         waitUntilElementToBeClickable(element, 10);
         logger.info("[--->Clicking on element " + element.toString()+"<---]");
         try {
@@ -273,7 +273,7 @@ public abstract class Utility extends DriverController {
     public void clickOnElementWithJS(WebElement element) {
         waitUntilElementToBeClickable(element, 15);
         logger.info("[--->Clicking on element " + element.toString()+"<---]");
-        ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].click();", element);
+        ((JavascriptExecutor)((RemoteWebDriver) getThreadDriver())).executeScript("arguments[0].click();", element);
     }
 
     /* Clicking on  element by inputting the element text using explicit wait condition and stale element exception is handled */
@@ -299,6 +299,45 @@ public abstract class Utility extends DriverController {
         }
         waitFor(4);
     }
+    public void clickOnElementUsingTextwithNAtive(String text) {
+        // we need this wait because we are trying to get the element by text, sometimes text is not ready to get the element
+        try {
+            System.out.println("context-->" + ((AndroidDriver) getThreadDriver()).getContext());
+            ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text="+text+"']")))) {
+                getThreadDriver().findElement(By.xpath("//*[@text="+text+"']")).click();
+            }
+
+            ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
+
+        }catch (Exception e){
+
+        }
+    }
+    public void clickOnElementUsingTextWithJS(String text) {
+        // we need this wait because we are trying to get the element by text, sometimes text is not ready to get the element
+        waitFor(1);
+        WebElement result = getElementByText(text);
+        mouseHoverToElement(result);
+        logger.info("[--->found an element with text : " + text + " : " + result.toString()+"<---]");
+        if (!result.isDisplayed()) {
+            result = getDisplayedElement(text);
+        }
+        waitUntilTextToBePresent(result, text);
+        try {
+            logger.info("[--->click on element with text : " + text +"<---]");
+            waitUntilElementIsLocated(result,5);
+            clickOnElementWithJS(result);
+        } catch (StaleElementReferenceException e) {
+            logger.info("[--->stale element exception : " + text +"<---]");
+            waitFor(4);
+            clickOnElementWithJS(result);
+
+        }
+        waitFor(4);
+    }
+
+
 
     protected void tapAtPoint(Point point) {
         AppiumDriver d = (AppiumDriver)getThreadDriver();
@@ -1118,4 +1157,6 @@ public abstract class Utility extends DriverController {
 
         }
     }
+
+
 }

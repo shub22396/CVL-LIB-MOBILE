@@ -25,7 +25,7 @@ Feature: Candidate mydashboard MyDashboard
     And   I should be able to see in browser URL "/jobs/nonexternaltestjob-in-90189?r=51"
     And   I should see text H one tag "Nonexternaltestjob jobs in 90189"
 
-  @verifyBannersAndLinks
+  @verifyBannersAndLinks #failing in desktop as well
   Scenario: Verify Job matches, Recently applied & Banner
     When  I navigate to page "Candidate My Profile"
     And   I upload resume "Test CV"
@@ -76,7 +76,7 @@ Feature: Candidate mydashboard MyDashboard
     And  I should see text H one tag "My Profile"
     And  I should see bread crumbs "My Dashboard > My Profile" with class name: "breadcrumbs"
 
-  @VerifyHeaderBannerLinks
+  @VerifyHeaderBannerLinks #failing in desktop as well
   Scenario: Verify the Site Navigation links on Header Banner on Dashboard page
     When I click "My Dashboard" link on Header Banner
     Then I should be on page "/candidate/my-dashboard"
