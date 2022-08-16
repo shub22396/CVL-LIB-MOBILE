@@ -178,10 +178,9 @@ Feature: Client Account ClientAccountModule
     And    I should see text H one tag "Client Help Center"
 
     Given  I navigate to page "Client Account"
-    And    I click on "Download our user manual"
-    Then   I switch to window 1
-    Then   I should be able to see in browser URL "Downloads Rl User Manual Pdf"
-    Then   I switch to window 0
+    Then   I click on "Download our user manual"
+    And    I click on Download
+    And    I should see download file "rl-user-manual"
 
   @clientAccountVerificationFaq3
   Scenario: Verify the faq module content on account page part 3

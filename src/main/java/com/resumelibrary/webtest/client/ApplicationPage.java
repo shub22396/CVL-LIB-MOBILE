@@ -171,13 +171,13 @@ public class ApplicationPage extends Utility {
     }
 
     public List<String> dateAppliedByAscendingOrder() {
-        sortedList = getDataListForDate(DateApplied);
+        sortedList = getListByAscOrderForDate(DateApplied);
         logger.info("Sorting date applied by asc order" + sortedList);
         return getSortedDatesAsc(sortedList);
     }
 
     public List<String> dateAppliedByDescendingOrder() {
-        sortedList = getDataListForDate(DateApplied);
+        sortedList = getListByDescOrderForDate(DateApplied);
         logger.info("Sorting date applied by desc order" + sortedList);
         return getSortedDatesDesc(sortedList);
     }
