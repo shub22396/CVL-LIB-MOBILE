@@ -30,12 +30,11 @@ Feature: Candidate JobAlert ModifyJobAlert
     And   I register as a new candidate
     And   I navigate to page "Candidate Job Alerts"
     And   I fill in Keywords text with "Test Manager" and location with "Texas City, TX"
-    And   I click on Create Job Alert button
+    And   I click on "Create Job Alert" with JS
     And   I wait for "2" seconds
     And   I reload the page
     And   I click on Edit Job Alert
-    Then  I should see text "Keywords"
-    And   I should see text " / job title"
+    Then  I should see text Keywords job title "Keywords / job title"
     When  I fill in edit alert text with random keyword
     And   I click Save Changes button on edit alert page
     Then  I should see text "Job Alert Modified Successfully!"
@@ -60,10 +59,10 @@ Feature: Candidate JobAlert ModifyJobAlert
     And   I click on snoozed toggle job alert status
     Then  I click on turn off snooze job alert status
     And   I reload the page
-    And   I click on Edit Job Alert Snooze
+    And   I click on "Edit"
     And   I click on "Delete"
     And   I click on Yes, delete this alert
-    And   I should see text "My Alerts"
+    And   I should see text "Job Alerts"
 
   @JobAlertsMatchingJobs @ReleaseRegression1
   Scenario: Edit Job Alert and Check for Matching Jobs

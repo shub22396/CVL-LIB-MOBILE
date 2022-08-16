@@ -262,7 +262,7 @@ public class Others extends Utility {
 
     @And("I click on {string}")
     public void iClickOn(String text) {
-        clickAllowPopUp();
+        //clickAllowPopUp();
         clickOnElementUsingText(text);
     }
 
@@ -436,4 +436,8 @@ public class Others extends Utility {
         new OthersPage().fillInInput(text,id);
     }
 
+    @Then("I should see text Keywords job title {string}")
+    public void iShouldSeeTextKeywordsJobTitle(String textToBeVerified) {
+       Assert.assertEquals(textToBeVerified, new OthersPage().iShouldSeeTextKeywordsJobTitle());
+    }
 }

@@ -140,9 +140,17 @@ public class RegistrationPage extends Utility {
             if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Upload your resume']")))) {
                 getThreadDriver().findElement(By.xpath("//*[@text='Upload your resume']")).click();
             }
-            waitFor(2);
+            waitFor(1);
             if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='from this computer']")))) {
                 getThreadDriver().findElement(By.xpath("//*[@text='from this computer']")).click();
+            }
+            waitFor(1);
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='While using the app']")))) {
+                getThreadDriver().findElement(By.xpath("//*[@text='While using the app']")).click();
+            }
+            waitFor(1);
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Files']")))) {
+                getThreadDriver().findElement(By.xpath("//*[@text='Files']")).click();
             }
             waitFor(2);
             if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='test123.pdf']")))) {

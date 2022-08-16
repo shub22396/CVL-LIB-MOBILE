@@ -7,8 +7,8 @@ Feature: Candidate JobView JobView
     When  I Click on Job Title
     And   I switch tab
     Then  I should be able to see in browser URL "Job View"
-    And   I should see text "Keywords / job title" label tag
-    And   I should see text "Location"
+    And   I should see text "Keywords / job title"
+    And   I should see text "Location" label tag
     And   I should see text "Create a new Job Alert to make sure you see the best new jobs first!"
     And   I should see Save button
 
@@ -29,6 +29,7 @@ Feature: Candidate JobView JobView
     And   I Click on Job Title
     And   I switch to window 2
     Then  I should see text "Recently viewed jobs"
+    And   I wait for "1" seconds
     And   I click on recent job title
     Then  I should be able to see in browser URL "Job View"
     And   I should see Save button
