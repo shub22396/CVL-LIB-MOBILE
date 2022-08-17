@@ -116,7 +116,7 @@ Feature: Candidate JobAlert CreateJobAlert
     And   I should see text "Be alerted when jobs like these are posted!"
     And   I reload the page
     And   I fill the fields keywords with "Test Analyst" and location with "Texas City, TX"
-    And   I click on "Create Alert"
+    And   I click on "Create Alert" with JS
     And   I should see "Job Alert Saved! You will receive job matches"
     And   I navigate to page "Candidate Job Alerts"
     And   I click on Edit Job Alert
@@ -165,10 +165,10 @@ Feature: Candidate JobAlert CreateJobAlert
   Scenario: Job search (keyword+loc) and login as existing user via 'Create Job Alert' banner (delete alert after creation)
     Given I navigate to page "Jobs Sales In Houston"
     And   I fill in jbe email one with "testers+candidate@resume-library.com"
-    And   I press and wait "create_alert_1"
+    And   I click on "Email me jobs like these" with JS
     And   I should see text "It looks like you are already registered. Enter your password to login and save this Job Alert:"
     And   I fill in password one with "rltest01"
-    And   I press and wait "create_alert_1"
+    And   I click on "Email me jobs like these" with JS
     And   I should be able to see in browser URL "Candidate Job Alerts"
     And   I should see message "Job Alert has been created" in the jbe xpath
     And   I click on Edit Job Alert
