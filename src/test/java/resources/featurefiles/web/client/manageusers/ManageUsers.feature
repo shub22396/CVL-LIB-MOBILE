@@ -65,7 +65,8 @@ Feature: Client ManageUsers ManageUsers
     And  I should see text "Deactivate User"
     And  I should see "Are you sure you want to deactivate this user?"
     And  I click on "Yes, deactivate"
-    And  I should see message "aaaaautomation client has been deactivated." in the manage users xpath
+    And  I wait for "2" seconds
+    And  I should see text "Activate User"
 
   @reactivateUser
   Scenario: Reactivate an existing client user

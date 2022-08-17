@@ -122,8 +122,7 @@ Feature: Client Products PurchaseProducts
     And     I should see text "Price"
     And     I should see text "Actions"
     When    I click View button to see invoice
-    And     I switch tab
-    Then    the url should match "Client Purchase History View"
+    And     I should see download file "rl-user-manual"
 
   @PurchaseHistoryPagination
   Scenario:My Purchase History Page Pagination

@@ -36,8 +36,8 @@ Feature: Client NoEcommerceJourney UnValidatedProductsJourney
     Then  I should not see text "Contact Credits"
     And   I should not see text "Job postings"
     When  I click on "Products"
-    Then  I should be able to see in browser URL "Hiring Products"
-    And   I should see text H one tag "Our Hiring Products"
+#    Then  I should be able to see in browser URL "Hiring Products"
+#    And   I should see text H one tag "Our Hiring Products"
 
     #XT-1487  logged In Headers -Unvalidated ecomm disabled
     When  I navigate to page "Resources"

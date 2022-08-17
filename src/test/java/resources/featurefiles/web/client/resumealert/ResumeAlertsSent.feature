@@ -1,14 +1,13 @@
 @ResumeAlertSent @Regression @Web @Client5 @Recruiters
 Feature: Client ResumeAlert ResumeAlertsSent
 
-  @resumeAlertsSent @ReleaseRegression2
-  Scenario: Verify Resume Alerts sent page
-    Given I navigate to page "Hiring Login"
-    Then  I fill in email address with "testers@resume-library.com"
-    And   I fill in the field where id is "pass" with: "rltest01"
-    And   I click on "Login as Employer"
+  Background:
+    Given I login as testers client
     When  I navigate to page "Client Resume Alert"
     And   I click on link text "583"
+
+  @resumeAlertsSent @ReleaseRegression2
+  Scenario: Verify Resume Alerts sent page
     And   I should see element with text "Resume Alerts Sent (Ref: IWTest)" to be "visible"
     Then  I should be on page "Client Resume Alert Log 5202"
     And   I should see text p tag "Displaying" and verify message "Displaying 1 to 50 of 582"
@@ -38,9 +37,6 @@ Feature: Client ResumeAlert ResumeAlertsSent
 
   @resumeAlertSentPagination
   Scenario:Create Alert Sent Page Pagination
-    Given I login as testers client
-    And   I navigate to page "Client Resume Alert"
-    And   I click on "583"
     Then  I should be able to see in browser URL "Client Resume Alert Log"
     And   I should see text p tag "Displaying" and verify message "Displaying 1 to 50 of"
     And   I scroll down 0,3000

@@ -50,6 +50,7 @@ public class ContactPage extends Utility {
 
     public void enterName(String name) {
         logger.info("Entered name to field" + NameField.toString());
+        clearTextFromField(NameField);
         NameField.sendKeys(name);
     }
 

@@ -50,5 +50,18 @@ public class Client extends Utility {
         Assert.assertTrue(verifyTextMessage(phoneNumber));
     }
 
+    @When("I click on Contact Us")
+    public void iClickOnContactUs() {
+        new ClientPage().clickOnContactUs();
+    }
 
+    @Then("I click on Download User Manual")
+    public void iClickOnDownloadUserManual() {
+        new ClientPage().clickOnDownloadUserManual();
+    }
+
+    @And("I click on Download")
+    public void iClickOnDownload() {
+        new ClientPage().clickOnDownload();
+    }
 }
