@@ -9,5 +9,6 @@ Feature: Candidate ModifyProfile UpdateResume
   @modifyProfileChangeResume
   Scenario: Modify profile change resume
     And I upload resume "Test Cv"
-    Then I should be able to see in browser URL "Candidate My Profile"
-    Then I should see text "Your resume is currently processing, you will be able to apply for jobs in just a few moments."
+    And I wait for "4" seconds
+    Then I should see message "Save changes"
+    #Then I should see text "Your resume is currently processing, you will be able to apply for jobs in just a few moments."
