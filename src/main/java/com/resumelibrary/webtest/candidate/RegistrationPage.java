@@ -2,6 +2,8 @@ package com.resumelibrary.webtest.candidate;
 
 import com.resumelibrary.utilities.Utility;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileCommand;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -136,9 +138,14 @@ public class RegistrationPage extends Utility {
 
             System.out.println("context-->" + ((AndroidDriver) getThreadDriver()).getContext());
             ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
-
-            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Upload your resume']")))) {
-                getThreadDriver().findElement(By.xpath("//*[@text='Upload your resume']")).click();
+            try {
+                if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Upload your resume']")))) {
+                    getThreadDriver().findElement(By.xpath("//*[@text='Upload your resume']")).click();
+                }
+            } catch (Exception ex) {
+                if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Upload resumeOptional']")))) {
+                    getThreadDriver().findElement(By.xpath("//*[@text='Upload resumeOptional']")).click();
+                }
             }
             waitFor(1);
             if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='from this computer']")))) {

@@ -14,7 +14,7 @@ Feature: Candidate Settings Settings
     And   I fill in old password "123456"
     And   I fill in new password "rltest01"
     And   I fill in confirm new password "rltest01"
-    And   I click on save new password button
+    And   I click on "Save new password" with JS
     Then  I should see "Your password has been successfully updated."
     When  I click on Menu Bar
     When  I click on "Logout"
@@ -24,7 +24,7 @@ Feature: Candidate Settings Settings
     When  I click on "Login"
     Then  I enter registered email address
     And   I enters Changed password as "rltest01"
-    When  I click Login as Jobseeker button
+    When  I click on "Login as Jobseeker" with JS
     Then  I should be able to see in browser URL "Candidate My Dashboard"
 
   @candidateEmailChange
