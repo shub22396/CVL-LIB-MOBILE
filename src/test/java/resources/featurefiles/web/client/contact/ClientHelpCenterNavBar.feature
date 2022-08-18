@@ -17,7 +17,7 @@ Feature: Client Contact ClientHelpCenterNavBar
   Scenario: verify text in help center
     Then I navigate to page "Client Help"
     Then I should be able to see in browser URL "Client Help"
-    Then I should see text "Client Help Center"
+    Then I should see text H one tag "Client Help Center"
     And  I should see text "Client FAQs"
     And  I should see text "Job Posting Tips"
     And  I should see text "Job Enhancement Tips"
@@ -46,12 +46,14 @@ Feature: Client Contact ClientHelpCenterNavBar
     And  I should see text "Modify, Delete or Reactivate a Resume Alert"
     And  I move backward one page
     And  I click on "Download User Manual"
+    And  I wait for "1" seconds
+    Then I click on "Download" with native
     Then I switch to window 1
     Then I should be able to see in browser URL "Downloads Rl User Manual Pdf"
     Then I switch to window 0
     And  I move backward one page
     And  I click on "Account Options"
-    And  I click on "Contact Us"
+    And  I click on link "Contact Us" account options menu
    Then  I should be able to see in browser URL "/client/contact"
     And  I should see text "Our dedicated team is here to help answer any questions, Contact us"
 
@@ -59,8 +61,8 @@ Feature: Client Contact ClientHelpCenterNavBar
   Scenario: verify text in client contact form1
     Then I navigate to page "Client Help"
     And  I click on "Account Options"
-    And  I click on "Contact Us"
-    Then  I should be able to see in browser URL "/client/contact"
+    And  I click on link "Contact Us" account options menu
+    Then I should be able to see in browser URL "/client/contact"
     Then I should see text "Phone number"
     And  I should see text "Optional"
     And  I should see text "Inquiry type"
@@ -70,7 +72,7 @@ Feature: Client Contact ClientHelpCenterNavBar
   Scenario: Validation on client contact form
     Then I navigate to page "Client Help"
     And  I click on "Account Options"
-    And  I click on "Contact Us"
+    And  I click on link "Contact Us" account options menu
     When I press and wait "register_now"
     Then I should see text "This field is required"
     And  I should see text "Message is required"
@@ -80,7 +82,7 @@ Feature: Client Contact ClientHelpCenterNavBar
   Scenario: Submitting on client contact form
     Then I navigate to page "Client Help"
     And  I click on "Account Options"
-    And  I click on "Contact Us"
+    And  I click on link "Contact Us" account options menu
     Then I select the option "Resume Search" from inquiry type
     Then I fill in inquiry messages text area with "inquiry message for form 1 "
     And  I wait for "1" seconds
