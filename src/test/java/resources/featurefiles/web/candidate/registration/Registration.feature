@@ -4,6 +4,7 @@ Feature: Candidate Registration Registration
   @candidateValidRegistration @ReleaseRegression1
   Scenario Outline: Register a new candidate with all valid details
     Given I am on home page
+    And I click on mobile header button
     When  I click on Register button
     Then  I should be on page "Candidate Registration"
     When  I enter email address "<Email>"
@@ -13,6 +14,7 @@ Feature: Candidate Registration Registration
     And   I enter latest job title "<JobTitle>"
     And   I enter zip code "<ZipCode>"
     And   I upload resume "<Resume>"
+    And I wait for "4" seconds
     And   I click on register button
     Then  I should be on page "Candidate Registration"
     When  I enter phone number "<Phone>"

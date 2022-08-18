@@ -213,7 +213,13 @@ public class RegistrationPage extends Utility {
 
     public void clickOnCompleteButton() {
         logger.info("Clicking on complete button");
-        clickOnElement(CompleteButton);
+                ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
+        if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@resource-id='register-stage2-submit']")))) {
+            getThreadDriver().findElement(By.xpath("//*[@resource-id='register-stage2-submit']")).click();
+        }
+
+        ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
+
         waitFor(2);
     }
 
