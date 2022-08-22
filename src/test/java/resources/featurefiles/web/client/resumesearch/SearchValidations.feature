@@ -82,9 +82,8 @@ Feature: Client ResumeSearch SearchValidations
     And   I click on id "builder"
     When  I enter search builder keywords text area with "strange"
     And   I enter location with "10010"
-    When  I enter search builder keywords text area with "manager"
-    Then  I should see text "strange"
-    And   I should see text "manager"
+    When  I enter search builder keywords text area with "manager" with enter key
+    Then  I should see value "strange OR manager " in search builder keywords
     And   I click on id "builder"
     When  I click on "Reset form"
     And   I click on id "keywords_builder_textarea_input"
@@ -106,4 +105,5 @@ Feature: Client ResumeSearch SearchValidations
 #    And   I should see text "java engineer"
     Then  I click on "Reset form"
     When  I enter search builder keywords text area with "Java Developer" with enter key
+    And   I wait for "2" seconds
     Then  I should see text "Add Related Terms"
