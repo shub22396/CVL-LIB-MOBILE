@@ -15,17 +15,19 @@ Feature: Client ResumeSearch SearchBuilder
     And   I click on Search Resumes
     Then  I should be able to see in browser URL "Client Resume Search Results"
     And   I should see text "Preview Resume"
-    And   I should see text "Invite Candidates"
-    And   I should see text "Post Jobs Now"
 
   @resumeSearchBuilderSuccessByCandidateId
   Scenario: Searching for resume on builder tab by candidate id
     And   I enter search builder keywords text area with candidate id
+    And   I click on Search Resumes
+    And   I click on "Close"
     And   I click on Search Resumes
     And   I should see resume search results displaying text "Displaying 1 to 1 of 1 Resumes matched"
 
   @resumeSearchBuilderNoneFoundByCandidateId
   Scenario: Searching for resume on builder tab none found by candidate id
     And   I enter search builder keywords text area with invalid candidate id
+    And   I click on Search Resumes
+    And   I click on "Close"
     And   I click on Search Resumes
     And   I should see resume search results displaying text "Displaying 0 Resumes matched"

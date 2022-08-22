@@ -131,7 +131,7 @@ public class ResumeSearch extends Utility {
 
     @Then("I deactivate all active alerts")
     public void iDeactivateAllActiveAlerts() {
-       new ResumeSearchPage().deactivateAllActiveAlerts();
+        new ResumeSearchPage().deactivateAllActiveAlerts();
     }
 
     @And("I click on actions button one")
@@ -283,5 +283,10 @@ public class ResumeSearch extends Utility {
     @And("I click on resume good match to your alert {string}")
     public void iClickOnResumeGoodMatchToYourAlert(String text) {
         new ResumeSearchPage().clickOnResumeAlertSendButton(text);
+    }
+
+    @Then("the keyword field contains {string} and {string}")
+    public void theKeywordFieldContainsAnd(String text1, String text2) {
+        Assert.assertTrue(new ResumeSearchPage().keywordFieldValue(text1, text2));
     }
 }
