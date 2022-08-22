@@ -229,12 +229,14 @@ public class JobPostPage extends Utility {
     }
 
     public List<String> ascendingOrderOnPostedDates() {
+        waitFor(1);
         sortedList = getListByAscOrder(PostedDates);
         logger.info("Sorting posted date by asc order" + sortedList);
         return getSortedDatesAsc(sortedList);
     }
 
     public List<String> descendingOrderOnPostedDates() {
+        waitFor(1);
         sortedList = getListByDescOrder(PostedDates);
         logger.info("Sorting  posted date by desc order" + sortedList);
         return getSortedDatesDesc(sortedList);

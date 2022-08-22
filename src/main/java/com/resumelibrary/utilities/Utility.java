@@ -980,6 +980,7 @@ public abstract class Utility extends DriverController {
 
     /* returning the sorted date name list in ascending order*/
     public List<String> getSortedDatesAsc(List<String> list) {
+        waitFor(1);
         Collections.sort(list, new Comparator<String>() {
             DateFormat f = new SimpleDateFormat("MM/dd/yyyy");
 
@@ -998,19 +999,23 @@ public abstract class Utility extends DriverController {
 
     /* returning Collection of String Stream Items into List*/
     public List<String> getDataList(List<WebElement> elements) {
+        waitFor(1);
         return elements.stream().map(s -> s.getText().toLowerCase()).collect(Collectors.toList());
     }
     public List<String> getDataListForDate(List<WebElement> elements) {
+        waitFor(1);
         return elements.stream().map(s -> s.getText().split(" ")[0].toLowerCase()).collect(Collectors.toList());
     }
 
     /* returning Collection of double Stream Items into List*/
     public List<Double> getNumberDataList(List<WebElement> elements) {
+        waitFor(1);
         return elements.stream().map(s -> Double.parseDouble(s.getText())).collect(Collectors.toList());
     }
 
     /* returning the sorted date name list in descending order*/
     public List<String> getSortedDatesDesc(List<String> list) {
+        waitFor(2);
         Collections.sort(list, new Comparator<String>() {
             DateFormat f = new SimpleDateFormat("MM/dd/yyyy");
 
@@ -1029,27 +1034,33 @@ public abstract class Utility extends DriverController {
 
     /* returning the  list of elements in descending order*/
     public List<String> getListByDescOrder(List<WebElement> elements) {
+        waitFor(2);
         return getDataList(elements).stream().map(String::toLowerCase).sorted(Collections.reverseOrder()).collect(Collectors.toList());
     }
     public List<String> getListByDescOrderForDate(List<WebElement> elements) {
+        waitFor(2);
         return getDataListForDate(elements).stream().map(String::toLowerCase).sorted(Collections.reverseOrder()).collect(Collectors.toList());
     }
 
     /* returning the  number list of elements in descending order*/
     public List<Double> getNumberListByDescOrder(List<WebElement> elements) {
+        waitFor(2);
         return getNumberDataList(elements).stream().sorted(Collections.reverseOrder()).collect(Collectors.toList());
     }
 
     /* returning the  list of elements in ascending order*/
     public List<String> getListByAscOrder(List<WebElement> elements) {
+        waitFor(2);
         return getDataList(elements).stream().map(String::toLowerCase).sorted().collect(Collectors.toList());
     }
 
     public List<String> getListByAscOrderForDate(List<WebElement> elements) {
+        waitFor(2);
         return getDataListForDate(elements).stream().map(String::toLowerCase).sorted().collect(Collectors.toList());
     }
 
     public List<Double> getNumberListByAscOrder(List<WebElement> elements) {
+        waitFor(2);
         return getNumberDataList(elements).stream().sorted().collect(Collectors.toList());
     }
 
