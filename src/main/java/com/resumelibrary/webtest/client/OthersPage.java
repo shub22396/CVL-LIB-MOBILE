@@ -3,6 +3,7 @@ package com.resumelibrary.webtest.client;
 import com.resumelibrary.utilities.DataHelper;
 import com.resumelibrary.utilities.Utility;
 import com.resumelibrary.utilities.WebURLHelper;
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -65,7 +66,7 @@ public class OthersPage extends Utility {
     WebElement State;
     @FindBy(id = "recruiter_type")
     WebElement RecruiterType;
-    @FindBy(xpath = "//button[@id='rs-more-toggle']/span")
+    @FindBy(id = "rs-more-toggle")
     WebElement MoreSearchOptions;
     @FindBy(xpath = "//*[@id=\"main\"]/section[4]/div/div/div[2]/div[12]/a")
     WebElement PostJobsButton;
@@ -202,9 +203,7 @@ public class OthersPage extends Utility {
     }
 
     public void clickOnMoreSearchOptions() {
-        JavascriptExecutor js = (JavascriptExecutor) getThreadDriver();
-        js.executeScript("window.scrollBy(0,-250)", "");
-        clickOnElement(MoreSearchOptions);
+        clickOnElementWithJS(MoreSearchOptions);
     }
 
     public String verifySearchTextI() {
@@ -283,7 +282,7 @@ public class OthersPage extends Utility {
         String iframeId = "iframe-" + iframe;
         logger.info("moving to iframe " + iframeId);
         waitFor(1);
-       VideoPauseButton.click();
+        VideoPauseButton.click();
     }
 
     public String getTheDurationVideoPlayed() {
@@ -296,5 +295,17 @@ public class OthersPage extends Utility {
     public void moveBackToParentFrame() {
         logger.info("Move back to parent frame");
         getThreadDriver().switchTo().defaultContent();
+    }
+
+    public boolean verifyPdfFile(String text) {
+        logger.info("context" + ((AndroidDriver) getThreadDriver()).context("NATIVE_APP"));
+        ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
+        WebElement ele = getThreadDriver().findElement(By.xpath(("//*[contains(@text,\'" + text + "\')]")));
+        if (ele.isDisplayed()) {
+            return true;
+        }
+        Assert.assertTrue(ele.getText().contains(".pdf"));
+        ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
+        return false;
     }
 }

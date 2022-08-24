@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import java.util.Arrays;
@@ -104,6 +105,8 @@ public class ResumeSearchPage extends Utility {
     WebElement ActionsButtonOne;
     @FindBy(xpath = "//*[@id=\"search\"]/div/div[1]/table/tbody/tr[@class=\" \"]")
     List<WebElement> ActiveInAlertTable;
+    @FindBy(xpath = "//*[@id='builder_keywords']")
+    WebElement SearchBuilderKeywordField;
 
     public void enterSubject(String Subject) {
         logger.info("entering the Subject name : " + Subject);
@@ -181,10 +184,8 @@ public class ResumeSearchPage extends Utility {
 
     public void clickOnTabSavedSearches() {
         logger.info("click on  Tab Saved Searches : ");
-        if (getBrowserName().contains("firefox") || getBrowserName().contains("remoteFirefoxBrowser")) {
-            waitFor(2);
-        }
-        clickOnElement(TabSavedSearches);
+        waitFor(2);
+        clickOnElementWithJS(TabSavedSearches);
     }
 
     public void clickOnRunSearch() {
@@ -240,11 +241,10 @@ public class ResumeSearchPage extends Utility {
     }
 
     public void verifyValueInSearchBuilderKeywords(String text) {
-        waitUntilElementIsLocated(getThreadDriver().findElement(By.id("builder_keywords")), 20);
         logger.info("verifying the value in Search Builder Keywords : " + text);
-        String InputValue = getThreadDriver().findElement(By.id("builder_keywords")).getAttribute("value");
+        String InputValue = SearchBuilderKeywordField.getAttribute("value");
         logger.info("the value in Search Builder Keywords : " + InputValue);
-        Assert.assertTrue(text.equals(InputValue));
+        Assert.assertEquals(text,InputValue);
     }
 
     public void verifyElementIsDisabled(String text) {
@@ -401,14 +401,14 @@ public class ResumeSearchPage extends Utility {
     }
 
     public void clickOnSearchResumes() {
-        clickOnElement(SearchResumeBtn);
         logger.info("Clicking on Search Resumes button ");
+        clickOnElementWithJS(SearchResumeBtn);
     }
 
     public void clickOnBasic() {
         waitUntilElementIsLocated(Basic, 20);
-        clickOnElementWithJS(Basic);
         logger.info("Clicking on Basic tab ");
+        clickOnElementWithJS(Basic);
     }
 
     public void clickOnBuilder() {
@@ -465,5 +465,14 @@ public class ResumeSearchPage extends Utility {
         logger.info("Clicking on resume a good match to your alert " + text);
         WebElement ele = getThreadDriver().findElement(By.xpath("//*[@id='rate-resume-form']/button[text()=\"" + text + "\"]"));
         clickOnElement(ele);
+    }
+
+    public boolean keywordFieldValue(String text1, String text2) {
+        logger.info("Verifying keyword field contains " + text1 + text2);
+        String result = getThreadDriver().findElement(By.id("builder_keywords")).getAttribute("value");
+        if (result.contains(text1) || result.contains(text2)) {
+            return true;
+        }
+        return false;
     }
 }

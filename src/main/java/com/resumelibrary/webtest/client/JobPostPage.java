@@ -223,40 +223,41 @@ public class JobPostPage extends Utility {
     }
 
     public List<String> getListOfPostedDates() {
-        sortedList = getDataListForDate(PostedDates);
+        sortedList = getDataList(PostedDates);
         logger.info("Getting list of posted dates ");
         return sortedList;
     }
 
     public List<String> ascendingOrderOnPostedDates() {
-        sortedList = getDataListForDate(PostedDates);
+        sortedList = getListByAscOrder(PostedDates);
         logger.info("Sorting posted date by asc order" + sortedList);
         return getSortedDatesAsc(sortedList);
     }
 
     public List<String> descendingOrderOnPostedDates() {
-        sortedList = getDataListForDate(PostedDates);
+        sortedList = getListByDescOrder(PostedDates);
         logger.info("Sorting  posted date by desc order" + sortedList);
         return getSortedDatesDesc(sortedList);
     }
 
     public List<String> getListOfExpiresDates() {
-        sortedList = getDataListForDate(ExpiresDates);
+        sortedList = getDataList(ExpiresDates);
         logger.info("Getting list of expires dates ");
         return sortedList;
     }
 
     public List<String> ascendingOrderOnExpiresDates() {
-        sortedList = getDataListForDate(ExpiresDates);
+        sortedList = getListByAscOrder(ExpiresDates);
         logger.info("Sorting expires date by asc order" + sortedList);
         return getSortedDatesAsc(sortedList);
     }
 
     public List<String> descendingOrderOnExpiresDates() {
-        sortedList = getDataListForDate(ExpiresDates);
+        sortedList = getListByDescOrder(ExpiresDates);
         logger.info("Sorting expires date by desc order" + sortedList);
         return getSortedDatesDesc(sortedList);
     }
+
     public void selectValueToSortOnClientJobsPage(String text) {
         logger.info("Select sort by from dropdown");
         selectByVisibleTextFromDropDown(JobsMobileSortSelect, text);

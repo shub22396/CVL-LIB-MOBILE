@@ -68,11 +68,11 @@ Feature: Client ResumeSearch SavedSearches
   @sortAccountSavedSearches
   Scenario: Sort Saved Resume Searches
     Given I navigate to page "Client Saved Search Account"
-    And   I sort the saved searches names in ascending order
+    When  I select "Name (ASC)" from order by drop down
     Then  I should see text ""
-    And   I sort the saved searches names in descending order
+    When  I select "Name (DESC)" from order by drop down
     Then  I should see text "Wordpress"
-    And   I sort the saved searches keywords in descending order
+    When  I select "Keywords (DESC)" from order by drop down
     Then  I should see text "wordpress"
-    And   I sort the saved searches keywords in ascending order
+    When  I select "Keywords (ASC)" from order by drop down
     Then  I should see text "accounts"

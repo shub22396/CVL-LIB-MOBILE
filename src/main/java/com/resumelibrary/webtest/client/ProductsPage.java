@@ -143,18 +143,23 @@ public class ProductsPage extends Utility {
 
     public void fillInCardNumber(String cardType) {
         logger.info("Switching into iframe to fill in card number");
+        waitUntilElementIsLocated(CardNumberIframe, 15);
         getThreadDriver().switchTo().frame(CardNumberIframe);
         waitUntilElementToBeClickable(CardNumberTextBox, 5);
 
         logger.info("Filling in card number");
         if (cardType.equals("valid")) {
-            CardNumberTextBox.sendKeys(DataHelper.getValidCardNumber());
+            for (int i = 0; i < DataHelper.getValidCardNumber().length(); i++) {
+                CardNumberTextBox.sendKeys(DataHelper.getValidCardNumber().substring(i, i+1));
+            }
         } else {
-            CardNumberTextBox.sendKeys(DataHelper.getInvalidCardNumber());
+            for (int i = 0; i < DataHelper.getInvalidCardNumber().length(); i++) {
+                CardNumberTextBox.sendKeys(DataHelper.getInvalidCardNumber().substring(i, i+1));
+            }
         }
-
         logger.info("Switching out of iframe");
         getThreadDriver().switchTo().defaultContent();
+        waitFor(2);
     }
 
     public void fillInCvv(String cvvType) {
@@ -279,7 +284,6 @@ public class ProductsPage extends Utility {
     }
 
     public List<Double> descendingOrderInvoiceNo() {
-
         sortedInvoiceNoList = getNumberListByDescOrder(invoiceNo);
         logger.info("Sorting Invoice No by desc order" + sortedInvoiceNoList);
         return sortedInvoiceNoList;

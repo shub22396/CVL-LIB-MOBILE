@@ -45,7 +45,8 @@ Feature: Client ResumeAlert ResumeAlert
     And  I enter name "test alert2"
     And  I enter location with "10002"
     And  I enter basic search keywords with "sales manager"
-    And  I click on "Update Resume Alert"
+    And  I wait for "2" seconds
+    And  I click on Search Resumes
     Then I should be able to see in browser as URL "Client Resume Alerts Msg Saved"
     And  I should see text "Your Resume Alert has been modified successfully"
     When I click on actions button one
@@ -94,4 +95,4 @@ Feature: Client ResumeAlert ResumeAlert
     Then I click on actions button one
     Then I toggle action button status
     #and again to check toggle both ways
-    Then I toggle action button status
+  #  Then I toggle action button status

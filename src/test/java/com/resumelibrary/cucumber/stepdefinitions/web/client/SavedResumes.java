@@ -50,4 +50,9 @@ public class SavedResumes extends Utility {
     public void iShouldSeeSavedByInDescOrderOnAccountSavedResumePage() {
         Assert.assertEquals(new SavedResumesPage().getListOfSavedByNames(), new SavedResumesPage().descendingOrderSavedByNames());
     }
+
+    @When("I select {string} from order by drop down")
+    public void iSelectFromOrderByDropDown(String list) {
+        new SavedResumesPage().selectValueToOrderByOnSavedSearchPage(list);
+    }
 }

@@ -115,10 +115,9 @@ public class ManageUsersPage extends Utility {
         return getElementByText(text);
     }
 
-    public void shouldSeeMessageInTheManageUsersXpath(String text) {
-         waitUntilElementIsLocated(SuccessMessage,5);
+    public String shouldSeeMessageInTheManageUsersXpath() {
         logger.info("success message " + SuccessMessage.getText());
-        Assert.assertEquals(SuccessMessage.getText(), text);
+        return SuccessMessage.getText();
     }
 
     public void clickOnAddUserBtn() {

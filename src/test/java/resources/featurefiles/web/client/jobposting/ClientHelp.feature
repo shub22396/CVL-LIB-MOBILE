@@ -1,7 +1,7 @@
 @ClientHelpJobPosting @Regression @Web @Client2 @Recruiters
 Feature: Client JobPosting ClientHelp
 
-    @ClientHelpJobPosting
+  @ClientHelpJobPosting
   Scenario: Verify client help links and texts for job posting
     Given I login as a client
     When  I navigate to page "Client Help Job Posting"
@@ -54,10 +54,11 @@ Feature: Client JobPosting ClientHelp
     And   I should see text H one tag "Video Guides"
 
     When  I navigate to page "Client Help Job Posting"
-    Then  I click on "Download User Manual"
-    And   I should be able to see in browser URL "Downloads Rl User Manual"
-
-    When  I navigate to page "Client Help Job Posting"
-    Then  I click on "Contact Us"
+    Then  I click on Contact Us
     And   I should be able to see in browser URL "Client Contact"
     And   I should see text H one tag "Contact us"
+
+    When  I navigate to page "Client Help Job Posting"
+    Then  I click on Download User Manual
+    And   I click on Download
+    And   I should see download file "rl-user-manual"

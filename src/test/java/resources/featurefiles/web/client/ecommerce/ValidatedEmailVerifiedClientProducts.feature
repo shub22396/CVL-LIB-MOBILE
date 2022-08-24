@@ -81,6 +81,7 @@ Feature: Client Ecommerce ValidatedEmailVerifiedClientProducts
     When  I search for "registration@resume-library.com" in the navigation bar on admin
     Then  I click on id "actions-btn"
     And   I click on "Update product balances"
+    And   I wait for "2" seconds
     And   I enter new balance "0" for contact credits
     Then  I click on "Update Balance"
     And   I am on page "/client/resume-search/results?keywords=sales+OR+php+OR+test&submt_btn=1&updated_on=2+years"
