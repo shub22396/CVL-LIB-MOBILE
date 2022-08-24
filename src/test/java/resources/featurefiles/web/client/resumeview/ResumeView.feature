@@ -64,7 +64,7 @@ Feature: Client ResumeView ResumeView
     When I click on saved action one
     And  I click on saved action delete one
     And  I wait for "1" seconds
-    And  I click on saved action delete one
+    And  I click on saved delete
     Then I should be able to see in browser URL "Client My Saved Resumes"
     And  I should see text "Candidate has been successfully deleted"
 
