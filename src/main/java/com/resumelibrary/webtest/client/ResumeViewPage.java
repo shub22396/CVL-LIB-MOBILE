@@ -45,9 +45,10 @@ public class ResumeViewPage extends Utility {
     WebElement FreeResumeReviewButton;
     @FindBy(id = "mobile-search-trigger")
     WebElement mobileSearchButton;
-
     @FindBy(id = "unlock-resume")
     WebElement UnlockResume;
+    @FindBy(id = "sd-mobile-sort-select")
+    WebElement MobileOrderBySortSelect;
 
     public void clickOnSaveResumeBtn() {
         logger.info("Clicking on save resume ");
@@ -230,5 +231,12 @@ public class ResumeViewPage extends Utility {
             }
         }
         return isTextPresent;
+    }
+
+    public void selectValueFromOrderByDropdownOnMyUnlockedResumePage(String text) {
+        logger.info("Select order by from dropdown" + text);
+        selectByVisibleTextFromDropDown(MobileOrderBySortSelect, text);
+        waitFor(4);
+
     }
 }

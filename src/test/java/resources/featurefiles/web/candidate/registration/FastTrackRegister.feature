@@ -14,7 +14,7 @@ Feature: Candidate Registration FastTrackRegister
     And  I Enters Firstname as "Mike"
     And  I Enters Lastname as "Bob"
     And  I Enters Password "Passw0rd"
-    And  I Click on Link Register & Apply
+    And  I click on "Register & Apply" with JS
     Then I should be able to see in browser URL "Job Apply"
 
   @fastTrackFromJobView @ReleaseRegression1
@@ -27,7 +27,8 @@ Feature: Candidate Registration FastTrackRegister
     And  I Enters Firstname as "Automation"
     And  I Enters Lastname as "Tester"
     And  I Enters Password "rltest01"
-    And  I Click on Link Register & Apply
+    And  I click on "Register & Apply" with JS
+    And  I wait for "1" seconds
     Then I should be able to see in browser URL "Job Apply"
 
   @fastTrackFormValidation

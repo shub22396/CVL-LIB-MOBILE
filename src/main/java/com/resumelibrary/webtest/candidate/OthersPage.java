@@ -62,7 +62,8 @@ public class OthersPage extends Utility {
     WebElement ViewApplicationButton;
     @FindBy(id = "job_title_applied_1")
     WebElement JobTitleAppliedLink;
-
+    @FindBy(xpath = "//*[@id=\"alert_form_active_1\"]/div[1]/div[2]/label")
+    WebElement KeywordsJobTitle;
     public void clickSendRequestButton() {
         logger.info("Clicking on send request button ");
         clickOnElement(SendRequestButton);
@@ -245,5 +246,10 @@ public class OthersPage extends Utility {
         logger.info("wait until element : " + element.getText() + " to be " );
         waitUntilElementIsLocated(element, 15);
         element.sendKeys(text);
+    }
+
+    public String iShouldSeeTextKeywordsJobTitle() {
+        logger.info("element text  : " + KeywordsJobTitle.getText() );
+        return KeywordsJobTitle.getText();
     }
 }

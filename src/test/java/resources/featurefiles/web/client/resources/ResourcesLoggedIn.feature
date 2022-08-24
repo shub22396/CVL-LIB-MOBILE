@@ -19,30 +19,35 @@ Feature: Client Resources ResourcesLoggedIn
     Then  I should see text "Search Resumes"
     When  I click on link text "Search Resumes"
     Then  I reload the page
+    And   I wait for "1" seconds
     Then  I should see element with text "Resume Search" to be "visible"
     Then  I should be able to see in browser URL "Client Resume Search"
 
     When  I mouse hover to link "Resume Search"
     Then  I should see text "Saved Searches"
-    When  I click on link text "Saved Searches"
+    And   I click on Menu Bar
+    When  I click on "Saved Searches"
     And   I should see element with text "Saved Resume Searches" to be "visible"
     Then  I should be able to see in browser URL "Client Saved Search"
 
     When  I mouse hover to link "Resume Search"
     Then  I should see text "Saved Resumes"
-    When  I click on link text "Saved Resumes"
+    And   I click on Menu Bar
+    When  I click on "Saved Resumes"
     And   I should see element with text "My Saved Resumes" to be "visible"
     Then  I should be able to see in browser URL "Client My Saved Resumes"
 
     When  I mouse hover to link "Resume Search"
     And   I should see text "Unlocked Resumes"
-    When  I click on link text "Unlocked Resumes"
+    And   I click on Menu Bar
+    When  I click on "Unlocked Resumes"
     And   I should see element with text "My Unlocked Resumes" to be "visible"
     Then  I should be able to see in browser URL "Client My Unlocked Resumes"
 
     When  I mouse hover to link "Resume Search"
     And   I should see text "Popular Searches"
-    When  I click on link text "Popular Searches"
+    And   I click on Menu Bar
+    When  I click on "Popular Searches"
     And   I should see element with text "Select your industry" to be "visible"
     Then  I should be able to see in browser URL "Client Resume Search"
 
@@ -52,40 +57,49 @@ Feature: Client Resources ResourcesLoggedIn
 
     When  I mouse hover to link "Manage Jobs"
     Then  I should see text "Manage Jobs"
-    When  I click on link text "Manage Jobs"
+    And   I click on Menu Bar
+    When  I click on "Manage Jobs"
     Then  I should be able to see in browser URL "Client Jobs"
 
     When  I mouse hover to link "Manage Jobs"
     And   I should see text "Post a Job Now"
-    When  I click on link text "Post a Job Now"
+    And   I click on Menu Bar
+    When  I click on "Post a Job Now"
     Then  I should be on page "Job Post"
 
     When  I mouse hover to link "Manage Jobs"
     And   I should see text "Job Applications"
-    When  I click on link text "Job Applications"
+    And   I click on Menu Bar
+    When  I click on "Job Applications"
     Then  I should be able to see in browser URL "Client Job Applications"
 
     When  I mouse hover to link "Manage Jobs"
     And   I should see text "Manage Job Templates"
-    When  I click on link text "Manage Job Templates"
+    And   I click on Menu Bar
+    When  I click on "Manage Job Templates"
     Then  I should be able to see in browser URL "Client Jobs Templates"
 
   @ResourcesPageLoggedInHeaders3
   Scenario: As a registered user logged in and verify manage jobs menu
-    When  I navigate to page "Resources"
-
+    #When  I navigate to page "Resources"
+    And   I click on Menu Bar
     When  I mouse hover to link "Resume Alerts"
     Then  I should see text "Resume Alerts"
+    #And   I click on Menu Bar
     When  I click on "Resume Alerts"
     Then  I should be able to see in browser URL "Client Resume Alerts"
 
+    And   I click on Menu Bar
     When  I mouse hover to link "Resume Alerts"
     And   I should see text "Create New Alert"
+    #And   I click on Menu Bar
     When  I click on "Create New Alert"
     Then  I should be able to see in browser URL "Client Resume Alert Create"
 
+    And   I click on Menu Bar
     When  I mouse hover to link "Resume Alerts"
     And   I should see text "View Sent Alerts"
+    #And   I click on Menu Bar
     When  I click on "View Sent Alerts"
     Then  I should be able to see in browser URL "Client Resume Alerts Log"
 
@@ -95,11 +109,13 @@ Feature: Client Resources ResourcesLoggedIn
 
     When  I mouse hover Products Navigation menu
     Then  I should see text "Contact Credits"
+    And   I click on Menu Bar
     When  I click on "Contact Credits"
     Then  I should be able to see in browser URL "Client Products Contact Credits"
 
     When  I mouse hover Products Navigation menu
     And   I should see text "Job Postings"
+    And   I click on Menu Bar
     When  I click on "Job Postings"
     Then  I should be able to see in browser URL "Client Products Jobs"
 
@@ -109,16 +125,19 @@ Feature: Client Resources ResourcesLoggedIn
 
     When  I click on "Hi Resume library"
     Then  I should see text "Edit Company Profile"
+    And   I click on Menu Bar
     When  I click on "Edit Company Profile"
     Then  I should be able to see in browser URL "Client Company Profile"
 
     When  I mouse hover "Hi Resume library"
     And   I should see text "Integrated Services"
+    And   I click on Menu Bar
     When  I click on "Integrated Services"
     Then  I should be able to see in browser URL "Client Account Integrated Services"
 
     When  I mouse hover "Hi Resume library"
     Then  I should see text "Client Help Center"
+    And   I click on Menu Bar
     When  I click on "Client Help Center"
     Then  I should be able to see in browser URL "Client Help"
 
