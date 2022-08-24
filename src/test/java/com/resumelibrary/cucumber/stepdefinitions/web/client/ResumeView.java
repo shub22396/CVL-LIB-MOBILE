@@ -103,4 +103,9 @@ public class ResumeView extends Utility {
     public void iClickOnOnViewResumePage(String text) {
         new ResumeViewPage().clickOncViewResumeOptions(text);
     }
+
+    @When("I select the option {string} from order by dropdown on my unlocked resume page")
+    public void iSelectTheOptionFromOrderByDropdownOnMyUnlockedResumePage(String orderBy) {
+        new ResumeViewPage().selectValueFromOrderByDropdownOnMyUnlockedResumePage(orderBy);
+    }
 }

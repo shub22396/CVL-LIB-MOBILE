@@ -35,7 +35,6 @@ public class SavedResumesPage extends Utility {
         sortedList = getDataList(listOfCandidate);
         logger.info("Getting list of candidates ");
         return sortedList;
-
     }
 
     public List<String> ascendingOrderCandidateName() {
