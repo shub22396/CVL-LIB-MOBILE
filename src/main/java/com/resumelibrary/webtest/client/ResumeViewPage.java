@@ -223,5 +223,6 @@ public class ResumeViewPage extends Utility {
     public void selectValueFromOrderByDropdownOnMyUnlockedResumePage(String text) {
         logger.info("Select order by from dropdown" +text);
         selectByVisibleTextFromDropDown(MobileOrderBySortSelect, text);
+        waitFor(4);
     }
 }
