@@ -18,12 +18,11 @@ Feature: Client ResumeView ResumeViewOptions
     And   I click on "View"
     Then  I switch tab
     Then  I should be able to see in browser URL "Client Resume View Candidate Profile"
-    And   I go to page "/client/resume/view_candidate_profile/11018283/1/0335c0ef22e5"
-    And   I click on "Video Interview"
+    And   I go to page "Client Resume View Candidate Profile1"
+    And   I click on "Video Interview" on view resume page
     Then  I should see text H three tag "Set Up Video Interview"
     And   I click on id "close-video-interview-btn"
-    And   I click on "Email Resume"
-    Then  I should see text "Would you like to email"
+    And   I click on "Email Resume" on view resume page
     And   I should see "You will receive an email containing the candidate's information with their resume attached."
     And   I click on "Email Resume"
     Then  I should see text "Resume has been emailed to testers+client@resume-library.com"
@@ -34,8 +33,7 @@ Feature: Client ResumeView ResumeViewOptions
 #    And   I click on "Report Resume"
 #    Then  I should see text "Resume has been successfully reported."
 #    And   I click on "Request Resume to be Updated" and verify below steps
-    And   I click on "Request Resume to be Updated"
-    Then  I should see text "Request Candidate Action"
+    And   I click on "Request Resume to be Updated" on view resume page
     And   I select "Request updated Resume" from requested action
     And   I enter email "testers@resume-library.com" to your email field
     And   I click on "Send Request"

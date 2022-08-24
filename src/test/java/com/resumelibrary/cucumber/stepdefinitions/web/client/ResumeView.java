@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.testng.Assert;
 
 public class ResumeView extends Utility {
 
@@ -107,5 +108,10 @@ public class ResumeView extends Utility {
     @When("I select the option {string} from order by dropdown on my unlocked resume page")
     public void iSelectTheOptionFromOrderByDropdownOnMyUnlockedResumePage(String orderBy) {
         new ResumeViewPage().selectValueFromOrderByDropdownOnMyUnlockedResumePage(orderBy);
+    }
+
+    @And("I should see {string} on view resume options top")
+    public void iShouldSeeOnViewResumeOptionsTop(String text) {
+        Assert.assertEquals(new ResumeViewPage().viewResumeTopOptions(text),text);
     }
 }

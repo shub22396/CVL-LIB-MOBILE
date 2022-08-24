@@ -101,6 +101,7 @@ public class SavedResumesPage extends Utility {
     public void selectValueToOrderByOnSavedSearchPage(String text) {
         logger.info("Select order by from dropdown");
         selectByVisibleTextFromDropDown(SavedSearchMobileSortSelect, text);
+        waitFor(4);
     }
 }
 
