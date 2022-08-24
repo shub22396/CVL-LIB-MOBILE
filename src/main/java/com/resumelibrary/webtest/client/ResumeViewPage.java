@@ -86,7 +86,7 @@ public class ResumeViewPage extends Utility {
 
     public void clickOnContactApplicantBtn() {
         logger.info("Clicking on contact applicant button ");
-        clickOnElementWithJS(ContactApplicantBtn);
+        clickOnElement(ContactApplicantBtn);
     }
 
     public void clickOnPreviewResume() {
@@ -194,13 +194,12 @@ public class ResumeViewPage extends Utility {
 
     public void clickOnFreeResumeReviewBtn() {
         logger.info("Clicking on free resume review button");
-        waitUntilElementIsLocated(FreeResumeReviewButton, 5);
+        waitUntilElementIsLocated(FreeResumeReviewButton,5);
         clickOnElement(FreeResumeReviewButton);
     }
-
     public void clickOnMobileSearch() {
         logger.info("Clicking on Mobile Search button");
-        waitUntilElementIsLocated(mobileSearchButton, 5);
+        waitUntilElementIsLocated(mobileSearchButton,5);
         clickOnElement(mobileSearchButton);
     }
 
@@ -210,11 +209,11 @@ public class ResumeViewPage extends Utility {
         for (WebElement ele : list) {
             if (ele.getText().equals(text)) {
                 try {
-                    waitUntilElementToBeClickable(ele, 10);
+                    waitUntilElementToBeClickable(ele,10);
                     ele.click();
-                } catch (ElementClickInterceptedException e) {
+                }catch (ElementClickInterceptedException e){
                     waitFor(2);
-                    waitUntilElementToBeClickable(ele, 10);
+                    waitUntilElementToBeClickable(ele,10);
                     ele.click();
                 }
             }
@@ -222,20 +221,7 @@ public class ResumeViewPage extends Utility {
     }
 
     public void selectValueFromOrderByDropdownOnMyUnlockedResumePage(String text) {
-        logger.info("Select order by from dropdown" + text);
+        logger.info("Select order by from dropdown" +text);
         selectByVisibleTextFromDropDown(MobileOrderBySortSelect, text);
-        waitFor(4);
-    }
-
-    public String viewResumeTopOptions(String text) {
-        String isTextPresent = "";
-        logger.info("Clicking on view resume options " + text);
-        List<WebElement> list = getThreadDriver().findElements(By.xpath("//div[@class='view-resume-options top-options']//span"));
-        for (WebElement ele : list) {
-            if (ele.getText().equals(text)) {
-                isTextPresent = text;
-            }
-        }
-        return isTextPresent;
     }
 }

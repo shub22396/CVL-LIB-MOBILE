@@ -196,6 +196,5 @@ public class ApplicationPage extends Utility {
     public void selectValueToSortOnApplicationsPage(String text) {
         logger.info("Select sort by from dropdown");
         selectByVisibleTextFromDropDown(ApplicationsMobileSortSelect, text);
-        waitFor(4);
     }
 }

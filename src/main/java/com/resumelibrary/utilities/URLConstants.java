@@ -22,7 +22,6 @@ public class URLConstants implements Constants {
     public final String CLIENT_RESUME_VIEW_CANDIDATE_APPLICATION = "/client/resume/view-candidate-application/";
     public final String CLIENT_RESUME_VIEW_CANDIDATE_PROFILE = "/client/resume/view_candidate_profile/";
     public final String CLIENT_RESUME_VIEW_CANDIDATE_PROFILE3 = "/client/resume/view_candidate_profile/1629326/1/3fc3a8c24323";
-    public final String CLIENT_RESUME_VIEW_CANDIDATE_PROFILE4 = "/client/resume/view_candidate_profile/13935566/1/1ddb9b974463";
     public final String CLIENT_RESUME_VIEW_CANDIDATE_PROFILE1 = "/client/resume/view_candidate_profile/11018283/1/0335c0ef22e5";
     public final String CLIENT_RESUME_VIEW_CANDIDATE_PROFILE2A = "/client/resume/view_candidate_profile/7900717";
     public final String CLIENT_RESUME_VIEW_CANDIDATE_PROFILE2 = "/client/resume/view_candidate_profile/7900717/1/ed6c0a015df6";

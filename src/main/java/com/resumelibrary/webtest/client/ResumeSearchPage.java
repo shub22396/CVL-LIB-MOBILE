@@ -376,7 +376,7 @@ public class ResumeSearchPage extends Utility {
 
     public void clickOnPreviewBtn() {
         logger.info("clicking on preview button ");
-        clickOnElementWithJS(PreviewButton);
+        clickOnElement(PreviewButton);
     }
 
     public void selectActiveWithinFromList(String text) {
