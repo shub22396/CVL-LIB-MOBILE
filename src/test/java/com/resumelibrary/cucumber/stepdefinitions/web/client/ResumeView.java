@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.testng.Assert;
 
 public class ResumeView extends Utility {
 
@@ -62,6 +63,7 @@ public class ResumeView extends Utility {
         new ResumeViewPage().findLockedCandidate();
         new ResumeViewPage().clickOnPreviewResume();
     }
+
     @And("I find a locked candidate")
     public void iFindALockedCandidate() {
         new ResumeViewPage().findLockedCandidate();
@@ -75,7 +77,7 @@ public class ResumeView extends Utility {
             iSelectFromRequestedAction("Request updated Resume");
             iEnterEmailToYourEmailField("testers@resume-library.com");
             new com.resumelibrary.cucumber.stepdefinitions.web.candidate.Others().iClickOn("Send Request");
-            } catch (Exception e) {
+        } catch (Exception e) {
             logger.info("No request resume to be updated");
         }
     }
@@ -94,6 +96,7 @@ public class ResumeView extends Utility {
     public void iClickOnFREEResumeReview() {
         new ResumeViewPage().clickOnFreeResumeReviewBtn();
     }
+
     @And("I Click on Mobile Search")
     public void iClickOnMobileSearch() {
         new ResumeViewPage().clickOnMobileSearch();
@@ -102,6 +105,12 @@ public class ResumeView extends Utility {
     @When("I click on {string} on view resume page")
     public void iClickOnOnViewResumePage(String text) {
         new ResumeViewPage().clickOncViewResumeOptions(text);
+    }
+
+    @And("I should see {string} on view resume options top")
+
+    public void iShouldSeeOnViewResumeOptionsTop(String text) {
+        Assert.assertEquals(new ResumeViewPage().viewResumeTopOptions(text), text);
     }
 
     @When("I select the option {string} from order by dropdown on my unlocked resume page")
