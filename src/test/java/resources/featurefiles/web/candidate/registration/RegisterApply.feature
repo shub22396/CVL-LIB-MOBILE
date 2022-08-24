@@ -10,7 +10,9 @@ Feature: Candidate Registration RegisterApply
     And   I fill candidate email with random EmailId
     And   I fill job apply password with "<Password>" on job apply
     And   I upload resume "<Resume>"
+    And   I wait for "1" seconds
     And   I uncheck the label Claim my free professional Resume Review one
+    And   I wait for "1" seconds
     And   I Click on Link Register & Apply
     Then  I should be able to see in browser URL "Job Apply"
     When  I enter latest job title "<JobTitle>"

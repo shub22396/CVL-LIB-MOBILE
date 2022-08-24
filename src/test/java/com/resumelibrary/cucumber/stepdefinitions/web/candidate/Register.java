@@ -267,4 +267,9 @@ public class Register extends Utility {
     public void iEnterRegisteredEmailAddress() {
         new RegistrationPage().enterEmailAddress(emailAddress);
     }
+
+    @And("I enter candidate email address {string}")
+    public void iEnterCandidateEmailAddress(String email) {
+        new RegistrationPage().enterEmailAddress(email);
+    }
 }

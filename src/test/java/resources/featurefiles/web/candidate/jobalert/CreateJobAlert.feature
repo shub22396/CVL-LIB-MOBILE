@@ -116,12 +116,11 @@ Feature: Candidate JobAlert CreateJobAlert
     And   I should see text "Be alerted when jobs like these are posted!"
     And   I reload the page
     And   I fill the fields keywords with "Test Analyst" and location with "Texas City, TX"
-    And   I click on "Create Alert"
+    And   I click on "Create Alert" with JS
     And   I should see "Job Alert Saved! You will receive job matches"
     And   I navigate to page "Candidate Job Alerts"
     And   I click on Edit Job Alert
     And   I click on "Delete"
-    #And   I click on Delete Alert link
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert
 
@@ -136,14 +135,14 @@ Feature: Candidate JobAlert CreateJobAlert
     And   I click on id "jbe-form"
     Then  I should see "Your password must be at least 6 characters long"
     And   I fill in password with "rltes02"
-    And   I click on "Login & Create Job Alert"
+    And   I wait for "1" seconds
+    And   I click on "Login & Create Job Alert" with JS
     Then  I should see "invalid password"
     And   I fill in password with "rltest01"
-    And   I click on "Login & Create Job Alert"
+    And   I click on "Login & Create Job Alert" with JS
     And   I should see message "Job Alert Created Successfully."
     And   I click on Edit Job Alert
     And   I click on "Delete"
-    #And   I click on Delete Alert link
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert
 
@@ -151,15 +150,14 @@ Feature: Candidate JobAlert CreateJobAlert
   Scenario: Job search (keyword+loc) and login as existing user via 'Get the latest Jobs with Job Alerts' icon (delete alert after creation)
     Given I navigate to page "Jobs Sales In Houston"
     And   I fill in jbe email one with "testers+candidate@resume-library.com"
-    And   I press and wait "create_alert_1"
-    Then  I should see text "It looks like you are already signed up. Enter your password to login and save this Job Alert:"
+    And   I click on "Email me jobs like these" with JS
+    Then  I should see text "It looks like you are already registered. Enter your password to login and save this Job Alert:"
     And   I fill in password one with "rltest01"
-    When  I click button email me jobs like these
+    And   I click on "Email me jobs like these" with JS
     Then  I should be able to see in browser URL "Candidate Job Alerts"
     And   I should see message "Job Alert has been created" in the jbe xpath
     And   I click on Edit Job Alert
     And   I click on "Delete"
-    #And   I click on Delete Alert link
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert on alert popup
 
@@ -167,10 +165,10 @@ Feature: Candidate JobAlert CreateJobAlert
   Scenario: Job search (keyword+loc) and login as existing user via 'Create Job Alert' banner (delete alert after creation)
     Given I navigate to page "Jobs Sales In Houston"
     And   I fill in jbe email one with "testers+candidate@resume-library.com"
-    And   I press and wait "create_alert_1"
+    And   I click on "Email me jobs like these" with JS
     And   I should see text "It looks like you are already registered. Enter your password to login and save this Job Alert:"
     And   I fill in password one with "rltest01"
-    And   I press and wait "create_alert_1"
+    And   I click on "Email me jobs like these" with JS
     And   I should be able to see in browser URL "Candidate Job Alerts"
     And   I should see message "Job Alert has been created" in the jbe xpath
     And   I click on Edit Job Alert
@@ -184,11 +182,12 @@ Feature: Candidate JobAlert CreateJobAlert
     Then  I click on id "job_title_2"
     And   I switch tab
     And   I fill in the field where id is "ja-keywords" with random keyword
-    And   I click on "Create Alert"
+    And   I click on "Create Alert" with JS
     When  I fill in ja email with "testers+candidate@resume-library.com"
+    And   I wait for "1" seconds
     And   I should see text "This email already exists. Enter your password to login and save this Job Alert"
     And   I fill in ja password with "rltest01"
-    And   I click on "Create Alert"
+    And   I click on "Create Alert" with JS
     And   I should be able to see in browser URL "Candidate Job Alerts"
     And   I should see message "Job Alert Created Successfully"
     And   I click on Edit Job Alert
