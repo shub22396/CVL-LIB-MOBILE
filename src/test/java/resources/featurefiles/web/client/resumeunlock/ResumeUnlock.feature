@@ -56,34 +56,34 @@ Feature: Client ResumeUnlock ResumeUnlock
   Scenario:Sorting By Date Unlocked on My Unlock Resume page
     Given I login as testers client
     When  I navigate to page "Client My Unlocked Resumes"
-    When  I select the option "Date Unlocked (DESC)" from order by dropdown on my unlocked resume page
+    When  I select the option "Date Unlocked (DESC)" from order by dropdown on client resume page
     Then  I should see saved dates in desc order
-    When  I select the option "Date Unlocked (ASC)" from order by dropdown on my unlocked resume page
+    When  I select the option "Date Unlocked (ASC)" from order by dropdown on client resume page
     Then  I should see in saved dates in asc order
 
   @unlockResumeSortingByCandidateName
   Scenario: Sorting By Candidate Name on My Unlock Resume page
     Given I login as testers client
     When  I navigate to page "Client My Unlocked Resumes"
-    And   I select the option "Candidate Name (ASC)" from order by dropdown on my unlocked resume page
+    And   I select the option "Candidate Name (ASC)" from order by dropdown on client resume page
     Then  I should see in Candidate name in asc order
-    When  I select the option "Candidate Name (DESC)" from order by dropdown on my unlocked resume page
+    When  I select the option "Candidate Name (DESC)" from order by dropdown on client resume page
     Then  I should see in Candidate name in desc order
 
   @accountUnlockResumeSortingByDate
   Scenario:Sorting By Date Unlocked on Account Unlock Resume page
     Given I login as testers client
     When  I navigate to page "Client Account Unlocked Resumes"
-    And   I select the option "Date Unlocked (DESC)" from order by dropdown on my unlocked resume page
+    And   I select the option "Date Unlocked (DESC)" from order by dropdown on client resume page
     Then  I should see saved dates in desc order
-    When  I select the option "Date Unlocked (ASC)" from order by dropdown on my unlocked resume page
+    When  I select the option "Date Unlocked (ASC)" from order by dropdown on client resume page
     Then  I should see in saved dates in asc order
 
   @accountUnlockResumeSortingByCandidateName
   Scenario: Sorting By Candidate Name on Account Unlock Resume page
     Given I login as testers client
     When  I navigate to page "Client Account Unlocked Resumes"
-    And   I select the option "Candidate Name (ASC)" from order by dropdown on my unlocked resume page
+    And   I select the option "Candidate Name (ASC)" from order by dropdown on client resume page
     Then  I should see in Candidate name in asc order
-    When  I select the option "Candidate Name (DESC)" from order by dropdown on my unlocked resume page
+    When  I select the option "Candidate Name (DESC)" from order by dropdown on client resume page
     Then  I should see in Candidate name in desc order

@@ -113,8 +113,8 @@ public class ResumeView extends Utility {
         Assert.assertEquals(new ResumeViewPage().viewResumeTopOptions(text), text);
     }
 
-    @When("I select the option {string} from order by dropdown on my unlocked resume page")
-    public void iSelectTheOptionFromOrderByDropdownOnMyUnlockedResumePage(String orderBy) {
-        new ResumeViewPage().selectValueFromOrderByDropdownOnMyUnlockedResumePage(orderBy);
+    @When("I select the option {string} from order by dropdown on client resume page")
+    public void iSelectTheOptionFromOrderByDropdownOnClientResumePage(String orderBy) {
+        new ResumeViewPage().selectValueFromOrderByDropdownOnClientResumePage(orderBy);
     }
 }

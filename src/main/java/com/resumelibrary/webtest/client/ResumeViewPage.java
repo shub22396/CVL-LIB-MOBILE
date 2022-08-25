@@ -54,7 +54,7 @@ public class ResumeViewPage extends Utility {
         logger.info("Clicking on save resume ");
         waitFor(1);
         if (SaveResume.getText().equals("Save")) {
-            clickOnElement(SaveResume);
+            clickOnElementWithJS(SaveResume);
         }
         waitFor(1);
     }
@@ -233,7 +233,7 @@ public class ResumeViewPage extends Utility {
         return isTextPresent;
     }
 
-    public void selectValueFromOrderByDropdownOnMyUnlockedResumePage(String text) {
+    public void selectValueFromOrderByDropdownOnClientResumePage(String text) {
         logger.info("Select order by from dropdown" + text);
         selectByVisibleTextFromDropDown(MobileOrderBySortSelect, text);
         waitFor(4);
