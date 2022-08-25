@@ -6,13 +6,10 @@ Feature: Client SavedResumes MySavedResumes
     Given I login as testers client
     And   I navigate to page "Client My Saved Resumes"
     And   I should see text p tag "Displaying" and verify message "Displaying 1 to 20 of"
-    And   I scroll down 0,2000
-    And   I click on "2"
+    And   I click on next page link
     Then  I should be on page "Client My Saved Resumes 20"
     And   I should see text p tag "Displaying" and verify message "Displaying 21 to 40 of"
-    And   I should see "Prev" link
-    And   I scroll down 0,2000
-    When  I click on "Prev"
+    When  I click on prev page link
     Then  I should be on page "Client My Saved Resumes 0"
     And   I should not see "Prev" link
 
@@ -20,28 +17,25 @@ Feature: Client SavedResumes MySavedResumes
   Scenario: Sorting by Date Saved
     Given I login as testers client
     And   I navigate to page "Client My Saved Resumes"
-    When  I click on dates saved descending order
+    When  I select the option "Date Saved (DESC)" from order by dropdown on client resume page
     Then  I should see saved dates in desc order
-    When  I click on dates saved ascending order
+    When  I select the option "Date Saved (ASC)" from order by dropdown on client resume page
     Then  I should see in saved dates in asc order
 
   @sortingByCandidateName
   Scenario: Sorting by Candidate Name or Job Title
     Given I login as testers client
     When  I navigate to page "Client My Saved Resumes"
-    And   I click on id "saved-unlocked-resume-name-asc"
+    And   I select the option "Candidate Name (ASC)" from order by dropdown on client resume page
     Then  I should see in Candidate name in asc order
-    When  I click on id "saved-unlocked-resume-name-desc"
+    When  I select the option "Candidate Name (DESC)" from order by dropdown on client resume page
     Then  I should see in Candidate name in desc order
 
   @mySavedResumesAssertAndActions
   Scenario: Verify elements in my saved resumes and check 'Actions'
     Given I login as testers client
     When  I go to page "Client My Saved Resumes"
-    Then  I should see text "Date saved"
-    And   I should see text "Candidate name / Job title"
-    And   I should see text "Expected salary"
-    When  I click on saved action one
+    And   I click on saved action one
     And   I click on "View"
     And   I switch tab
     Then  I should be able to see in browser URL "Client Resume View Candidate Profile"
@@ -62,10 +56,9 @@ Feature: Client SavedResumes MySavedResumes
     And   I am on page "Client Resume Search With Keywords"
     And   I find a locked candidate and verify text "Unlock Resume"
     Then  I should be able to see in browser URL "Client Resume View Candidate Profile"
-    And   I click on id "save-resume"
+    And   I click on save resume
     Then  I go to page "Client My Saved Resumes"
     When  I click on saved action one
-    And   I should see element "Email" is disabled
     And   I click on "Email"
     Then  I should see text "Resume is locked"
     And   I should see text "You may only contact a candidate once they have been unlocked. Please unlock this candidate to continue."
