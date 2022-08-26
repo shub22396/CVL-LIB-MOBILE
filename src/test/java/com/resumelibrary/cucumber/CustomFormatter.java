@@ -89,84 +89,95 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
     The details like pass, fail and error conditions are collected into a map object and writing to an excel sheet using POJO (simple class with getters and setters)
      */
     private void scenarioFinishedHandler(TestCaseFinished event) {
-        System.out.println("[Test Case]:[" + event.getTestCase().getName() + "]::[Status][" + event.getResult().getStatus() + "]");
-        LOGGER.info("[--->in scenarioFinishedHandler<---]");
+        try {
+            System.out.println("[Test Case]:[" + event.getTestCase().getName() + "]::[Status][" + event.getResult().getStatus() + "]");
+            LOGGER.info("[--->in scenarioFinishedHandler<---]");
 
-        scenarioStepResultList = scenarioStepResultsMap.get(event.getTestCase().getName());
-        String createDocs = PropertyFileReader.getInstance().getProperty("createDocs");
-        String resultText = "";
-        Result result = event.getResult();
+            scenarioStepResultList = scenarioStepResultsMap.get(event.getTestCase().getName());
+            String createDocs = PropertyFileReader.getInstance().getProperty("createDocs");
+            String resultText = "";
+            Result result = event.getResult();
 
-        String retryCountStr = WebURLHelper.getParameterFromEnvOrSysParam("RETRYCOUNT", PropertyFileReader.getInstance().getProperty("retryCount"));
-        int givenRetryCount = Integer.parseInt(retryCountStr);
-        if (result.getStatus().equals(Status.FAILED)) {
+            String retryCountStr = WebURLHelper.getParameterFromEnvOrSysParam("RETRYCOUNT", PropertyFileReader.getInstance().getProperty("retryCount"));
+            int givenRetryCount = Integer.parseInt(retryCountStr);
+            if (result.getStatus().equals(Status.FAILED)) {
 
-            if ((Integer) scenarioRetryMap.get(event.getTestCase().getName()) == givenRetryCount) {
-                resultText = BLACK_BACKGROUND_BRIGHT + RED_BOLD_BRIGHT + "FAILED" + ANSI_RESET;
-                String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
-                String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
-                ExcelUtil excelUtil = new ExcelUtil();
-                if(!alreadyFileCreated) {
-                    excelUtil.createFailedExcel(buildId);
-                    alreadyFileCreated=true;
-                }
-                FailedScenarioPojo failedScenarioPojo = new FailedScenarioPojo();
-                failedScenarioPojo.setScenarioName(event.getTestCase().getName());
-                failedScenarioPojo.setTagDetails(event.getTestCase().getTags().toString());
-                for (int i = 0; i < scenarioStepResultList.size(); i++) {
-                    if (scenarioStepResultList.get(i).getScenarioName().equalsIgnoreCase(event.getTestCase().getName())) {
-                        if (scenarioStepResultList.get(i).getStepResult().contains("FAILED")) {
-                            failedScenarioPojo.setStepDescription(scenarioStepResultList.get(i).getStepDescription());
-                            failedScenarioPojo.setFailedReason(scenarioStepResultList.get(i).getFailedReason());
-                            failedScenarioPojo.setBaos(scenarioStepResultList.get(i).getBaos());
-                            excelUtil.addRowsFailedExcel(failedScenarioPojo, isSkipTest());
-                            setFailedCountSummary(event.getTestCase().getTags().toString());
-                            scenarioRetryMap.remove(event.getTestCase().getName());
+                if ((Integer) scenarioRetryMap.get(event.getTestCase().getName()) == givenRetryCount) {
+                    resultText = BLACK_BACKGROUND_BRIGHT + RED_BOLD_BRIGHT + "FAILED" + ANSI_RESET;
+                    String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
+                    String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
+                    ExcelUtil excelUtil = new ExcelUtil();
+                    if (!alreadyFileCreated) {
+                        excelUtil.createFailedExcel(buildId);
+                        alreadyFileCreated = true;
+                    }
+                    FailedScenarioPojo failedScenarioPojo = new FailedScenarioPojo();
+                    failedScenarioPojo.setScenarioName(event.getTestCase().getName());
+                    failedScenarioPojo.setTagDetails(event.getTestCase().getTags().toString());
+                    for (int i = 0; i < scenarioStepResultList.size(); i++) {
+                        if (scenarioStepResultList.get(i).getScenarioName().equalsIgnoreCase(event.getTestCase().getName())) {
+                            if (scenarioStepResultList.get(i).getStepResult().contains("FAILED")) {
+                                failedScenarioPojo.setStepDescription(scenarioStepResultList.get(i).getStepDescription());
+                                failedScenarioPojo.setFailedReason(scenarioStepResultList.get(i).getFailedReason());
+                                failedScenarioPojo.setBaos(scenarioStepResultList.get(i).getBaos());
+                                excelUtil.addRowsFailedExcel(failedScenarioPojo, isSkipTest());
+                                setFailedCountSummary(event.getTestCase().getTags().toString());
+                                scenarioRetryMap.remove(event.getTestCase().getName());
+                            }
                         }
                     }
+                    LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
+                    LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "     scenario " + resultText + "   :  " + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + event.getTestCase().getName() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
+                    LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
+                    for (int i = 0; i < scenarioStepResultList.size(); i++) {
+                        if (scenarioStepResultList.get(i).getScenarioName().equalsIgnoreCase(event.getTestCase().getName())) {
+                            String steDetails = RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "Step " + (i + 1) + ": " + scenarioStepResultList.get(i).getStepResult() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET;
+                            LOGGER.info(steDetails);
+                            if (scenarioStepResultList.get(i).getStepResult().contains("FAILED")) {
+                                steDetails = RED_BOLD_BRIGHT + "[--->" + "Failed Reason:\r\n" + scenarioStepResultList.get(i).getFailedReason() + "\r\n\n" + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET;
+                                LOGGER.error(steDetails);
+                            }
+                        }
+                    }
+                    if (createDocs.equalsIgnoreCase("yes")) {
+                        WebDocUtil webDocUtil = new WebDocUtil();
+                        webDocUtil.createFolder(buildId);
+                        webDocUtil.writeFailedScenarioInDoc(scenarioStepResultList, event.getTestCase().getName());
+                    }
+                } else {
+                    int retryCount = ((Integer) scenarioRetryMap.get(event.getTestCase().getName()));
+                    scenarioRetryMap.put(event.getTestCase().getName(), retryCount + 1);
                 }
+            } else if (result.getStatus().equals(Status.PASSED)) {
+                resultText = BLACK_BACKGROUND_BRIGHT + GREEN_BOLD_BRIGHT + "PASSED" + ANSI_RESET;
                 LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
                 LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "     scenario " + resultText + "   :  " + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + event.getTestCase().getName() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
                 LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
-                for (int i = 0; i < scenarioStepResultList.size(); i++) {
-                    if (scenarioStepResultList.get(i).getScenarioName().equalsIgnoreCase(event.getTestCase().getName())) {
-                        String steDetails = RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "Step " + (i + 1) + ": " + scenarioStepResultList.get(i).getStepResult() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET;
-                        LOGGER.info(steDetails);
-                        if (scenarioStepResultList.get(i).getStepResult().contains("FAILED")) {
-                            steDetails = RED_BOLD_BRIGHT + "[--->" + "Failed Reason:\r\n" + scenarioStepResultList.get(i).getFailedReason() + "\r\n\n" + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET;
-                            LOGGER.error(steDetails);
+                String showPassedStepsInConsole = PropertyFileReader.getInstance().getProperty("showPassedStepsInConsole");
+                if (showPassedStepsInConsole.equalsIgnoreCase("yes")) {
+                    for (int i = 0; i < scenarioStepResultList.size(); i++) {
+                        if (scenarioStepResultList.get(i).getScenarioName().equalsIgnoreCase(event.getTestCase().getName())) {
+                            LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "Step " + (i + 1) + ": " + scenarioStepResultList.get(i).getStepResult() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
                         }
                     }
                 }
-                if (createDocs.equalsIgnoreCase("yes")) {
-                    WebDocUtil webDocUtil = new WebDocUtil();
-                    webDocUtil.createFolder(buildId);
-                    webDocUtil.writeFailedScenarioInDoc(scenarioStepResultList, event.getTestCase().getName());
-                }
-            } else {
-                int retryCount = ((Integer) scenarioRetryMap.get(event.getTestCase().getName()));
-                scenarioRetryMap.put(event.getTestCase().getName(), retryCount + 1);
+                setPassedCountSummary(event.getTestCase().getTags().toString());
             }
-        } else if (result.getStatus().equals(Status.PASSED)) {
-            resultText = BLACK_BACKGROUND_BRIGHT + GREEN_BOLD_BRIGHT + "PASSED" + ANSI_RESET;
-            LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
-            LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "     scenario " + resultText + "   :  " + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + event.getTestCase().getName() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
-            LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
-            String showPassedStepsInConsole = PropertyFileReader.getInstance().getProperty("showPassedStepsInConsole");
-            if (showPassedStepsInConsole.equalsIgnoreCase("yes")) {
-                for (int i = 0; i < scenarioStepResultList.size(); i++) {
-                    if (scenarioStepResultList.get(i).getScenarioName().equalsIgnoreCase(event.getTestCase().getName())) {
-                        LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "Step " + (i + 1) + ": " + scenarioStepResultList.get(i).getStepResult() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
-                    }
-                }
+            if (getThreadDriver() != null) {
+                LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
+                LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + " browser closed for scenario : " + event.getTestCase().getName() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
+
+                getThreadDriver().quit();
+                LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
             }
-            setPassedCountSummary(event.getTestCase().getTags().toString());
-        }
-        if (getThreadDriver() != null) {
-            LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
-            LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + " browser closed for scenario : " + event.getTestCase().getName() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
+        }catch (Exception e){
+
             getThreadDriver().quit();
             LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
+            LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + " browser closed for scenario with error message: " + event.getTestCase().getName() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
+            LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "error message is: " + e.getMessage() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
+            LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
+
         }
     }
 

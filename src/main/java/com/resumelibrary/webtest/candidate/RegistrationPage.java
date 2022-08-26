@@ -7,6 +7,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.LocalFileDetector;
@@ -145,14 +146,34 @@ public class RegistrationPage extends Utility {
                 getThreadDriver().findElement(By.xpath("//*[@text='from this computer']")).click();
             }
             waitFor(2);
-            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='test123.pdf']")))) {
-                getThreadDriver().findElement(By.xpath("//*[@text='test123.pdf']")).click();
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='While using the app']")))) {
+                getThreadDriver().findElement(By.xpath("//*[@text='While using the app']")).click();
             }
+
+
+            waitFor(2);
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Files']")))) {
+                getThreadDriver().findElement(By.xpath("//*[@text='Files']")).click();
+            }
+           waitFor(2);
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@content-desc='Show roots']"))) && !isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Test123.pdf']")))) {
+               getThreadDriver().findElement(By.xpath("//*[@content-desc='Show roots']")).click();
+            waitFor(2);
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Downloads']")))) {
+                getThreadDriver().findElement(By.xpath("//*[@text='Downloads']")).click();
+            }
+          }
+
+            waitFor(2);
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Test123.pdf']")))) {
+                getThreadDriver().findElement(By.xpath("//*[@text='Test123.pdf']")).click();
+            }
+            waitFor(2);
             //  ((AndroidDriver)getThreadDriver()).context("WEBVIEW_com.dayizhihui.dayishi.hpv");
             ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
 
         }catch (Exception e){
-
+            ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
         }
     }
     public void clickOnResumeCheckbox() {
@@ -182,6 +203,8 @@ public class RegistrationPage extends Utility {
     public void enterDesiredJobTitle(String desiredJobTitle) {
         logger.info("Entered desired job title" + desiredJobTitle);
         DesiredJobTitle.sendKeys(desiredJobTitle);
+        DesiredJobTitle.sendKeys(Keys.TAB);
+        DesiredJobTitle.sendKeys(Keys.TAB);
     }
 
     public void jobTypeCheckBox(String checkBox) {
@@ -209,16 +232,22 @@ public class RegistrationPage extends Utility {
     public void enterAddJobTitle(String jobTitle) {
         logger.info("Entered add job title");
         JobTitleField.sendKeys(jobTitle);
-    }
+        DesiredJobTitle.sendKeys(Keys.TAB);
+      }
 
     public void clickOnCompleteButton() {
         logger.info("Clicking on complete button");
-                ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
-        if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@resource-id='register-stage2-submit']")))) {
-            getThreadDriver().findElement(By.xpath("//*[@resource-id='register-stage2-submit']")).click();
-        }
+        ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].scrollIntoView(true);", getThreadDriver().findElement(By.xpath("//*[@id='register-stage2-submit']")));
+        waitFor(2);
+        ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].click();", getThreadDriver().findElement(By.xpath("//*[@id='register-stage2-submit']")));
 
-        ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
+//
+//        ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
+//        if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@resource-id='register-stage2-submit']")))) {
+//            getThreadDriver().findElement(By.xpath("//*[@resource-id='register-stage2-submit']")).click();
+//        }
+//
+//        ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
 
         waitFor(2);
     }

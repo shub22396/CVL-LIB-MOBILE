@@ -214,8 +214,8 @@ public abstract class Utility extends DriverController {
     public String getBrowserName() {
         Capabilities cap = ((RemoteWebDriver) getThreadDriver()).getCapabilities();
         String browserName = cap.getBrowserName();
-        String browserVersion = (String) cap.getCapability("browserVersion");
-        return browserName + "-" + browserVersion;
+        String browserVersion = cap.getBrowserVersion();
+        return browserName + "-" + browserVersion+"-"+cap.getPlatformName();
     }
 
     /* Returning the text of specified web element */
@@ -1243,12 +1243,11 @@ public abstract class Utility extends DriverController {
         try {
             logger.info("[--->Initializing for screenshot<---]");
             moveToCurrentTAB();
-            Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(getThreadDriver());
-            baos = new ByteArrayOutputStream();
-            ImageIO.write(screenshot.getImage(), "png", baos);
-            byte[] bytes = baos.toByteArray();
-            //scenario.attach(bytes, "image/jpg", scenario.getName());
-            baos.close();
+           // Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(getThreadDriver());
+           Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.scaling(2)) .takeScreenshot(getThreadDriver());
+      baos = new ByteArrayOutputStream();
+            ImageIO.write(screenshot.getImage(),"PNG",baos);
+                     baos.close();
             logger.info("[--->Screenshot taken<---]");
         } catch (Exception e) {
             logger.info("[--->Unable to take screenshot, with error message: " + e.getMessage() + "<---]");

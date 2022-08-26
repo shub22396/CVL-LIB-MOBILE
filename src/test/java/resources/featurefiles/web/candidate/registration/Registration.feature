@@ -34,6 +34,7 @@ Feature: Candidate Registration Registration
   @CandidateInvalidRegistration1
   Scenario Outline: Register page 1 field validation
     Given I am on home page
+    And  I click on mobile header button
     When  I click on Register button
     Then  I should be on page "Candidate Registration"
     When  I enter email address "<Email>"
@@ -56,6 +57,7 @@ Feature: Candidate Registration Registration
   @CandidateInvalidRegistration2
   Scenario Outline: Register page 2 field validation
     Given I am on home page
+    And  I click on mobile header button
     When  I click on Register button
     Then  I should be on page "Candidate Registration"
     When  I enter email address "<Email>"
@@ -107,6 +109,7 @@ Feature: Candidate Registration Registration
     Then  I should be on page "Candidate Registration Confirm"
     When  I enter phone number "<Phone>"
     And   I enter desired job title "<DesiredJobTitle>"
+
     And   I click on complete button
     Then  I should be on page "Candidate My Dashboard"
     And   I should see text "My Dashboard"
@@ -115,9 +118,9 @@ Feature: Candidate Registration Registration
     When  I navigate to page "Jobs"
     And   I should see text p tag "Unfortunately, you can't apply for jobs on this page as you don't have a permanent US address. " and verify message "Unfortunately, you can't apply for jobs on this page as you don't have a permanent US address. What does this mean?"
     And   I should not see text "Apply now"
-    When  I follow link containing text "More"
-    And   I switch to window 1
-    Then  I should see text p tag "Unfortunately, you can't apply for this job because you don't have a permanent US address. " and verify message "Unfortunately, you can't apply for this job because you don't have a permanent US address. What does this mean?"
+   # When  I follow link containing text "More"
+   # And   I switch to window 1
+   # Then  I should see text p tag "Unfortunately, you can't apply for this job because you don't have a permanent US address. " and verify message "Unfortunately, you can't apply for this job because you don't have a permanent US address. What does this mean?"
     Examples:
       | Email          | FirstName | LastName | Password | Resume  | JobTitle     | Country  | City    | ZipCode | Phone        | DesiredJobTitle |
       | test@gmail.com | Bob       | Russel   | 123456   | Test Cv | Test Analyst | Thailand | Lampang | 52160   | 012345678912 | QA Analyst      |

@@ -3,6 +3,9 @@ package com.resumelibrary.webtest.candidate;
 import com.resumelibrary.utilities.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -88,7 +91,12 @@ public class CoverLetterPage extends Utility {
 
     public void clickOnSaveChangesButton(){
         logger.info("Clicking on save changes button"+SaveChangesButton.toString());
-        clickOnElement(SaveChangesButton);
+//        ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].scrollIntoView(true);", getThreadDriver().findElement(By.xpath("//*[text()='Save changes']")));
+//        waitFor(2);
+       ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].click();", getThreadDriver().findElement(By.xpath("//*[text()='Save changes']")));
+//       getElementByText("Save changes").submit();
+      //  getElementByText("Save changes").sendKeys(Keys.ENTER);
+        //clickOnElement(SaveChangesButton);
     }
 
     public void clickOnAddCoverLetterToggle(){

@@ -57,6 +57,11 @@ public class MiscPage extends Utility {
     WebElement YouTubeIcon;
     @FindBy(id = "footer-do-not-sell-info-link")
     WebElement DoNotSellInfo;
+    @FindBy(xpath = "//*[@aria-controls='footer-hiring']")
+    WebElement hiringTab;
+
+    @FindBy(xpath = "//*[@aria-controls='footer-resume-library']")
+    WebElement resumeLibrary;
     @FindBy(id = "email")
     WebElement LoginPageEmail;
     @FindBy(id = "pass")
@@ -194,6 +199,13 @@ public class MiscPage extends Utility {
             case "Do Not Sell My Info":
                 clickOnElement(DoNotSellInfo);
                 break;
+            case "Hiring":
+                clickOnElement(hiringTab);
+                break;
+            case "Resume-Library":
+                clickOnElement(resumeLibrary);
+                break;
+
         }
     }
 
@@ -249,9 +261,10 @@ public class MiscPage extends Utility {
     public boolean shouldSeeText(String textMessage) {
         boolean flag =false;
         try {
-            String textToVerify = getElementByText(textMessage).getText();
-            flag=  textToVerify.contains(textMessage);
-        }catch (Exception e){
+             getElementByText(textMessage).getText();
+            flag=true;
+         }catch (Exception e){
+            e.printStackTrace();
             flag =false;
         }
         return  flag;
