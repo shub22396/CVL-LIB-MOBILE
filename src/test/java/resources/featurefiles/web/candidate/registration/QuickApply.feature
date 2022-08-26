@@ -32,6 +32,7 @@ Feature: Candidate Registration QuickApply
     And   I Enters Lastname as "<LastName>"
     And   I Enters Password "<Password>"
     And   I upload resume "Test Cv"
+    And   I wait for "1" seconds
     And   I uncheck the label Claim my free professional Resume Review one
     When  I Click on Link Register & Apply
     Then  I should be able to see in browser URL "Job Apply"
@@ -50,6 +51,7 @@ Feature: Candidate Registration QuickApply
     And   I Enters Lastname as "<LastName>"
     And   I Enters Password "<Password>"
     And   I upload resume "Test Cv"
+    And   I wait for "1" seconds
     And   I uncheck the label Claim my free professional Resume Review one
     When  I Click on Link Register & Apply
     Then  I should be able to see in browser URL "Job Apply"

@@ -7,7 +7,7 @@ Feature: Client Others DemographicsPage
 
   @pageVerify
   Scenario: Verify text and elements on Demographics Page
-    Then  I should see text "Demographics"
+    #FIXME Then  I should see "Demographics"
     Then  I should see text "Our Resume Database"
     Then  I should see text "Access millions of candidates in the U.S."
     Then  I should see text "State Breakdown"

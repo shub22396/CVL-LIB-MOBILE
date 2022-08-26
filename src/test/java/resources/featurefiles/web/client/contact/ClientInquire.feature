@@ -8,6 +8,7 @@ Feature: Client Contact ClientInquire
   Scenario: text shown on the client inquiry page.
     Then I should see text "Inquire now"
     And  I should see text "Our dedicated team is here to help answer your questions."
+    And  I wait for "1" seconds
     And  I should see text "sales@resume-library.com"
     And  I should see text H two tag "Start Hiring with Resume-Library Today"
 

@@ -66,7 +66,7 @@ public class OthersPage extends Utility {
     WebElement State;
     @FindBy(id = "recruiter_type")
     WebElement RecruiterType;
-    @FindBy(xpath = "//button[@id='rs-more-toggle']/span")
+    @FindBy(id = "rs-more-toggle")
     WebElement MoreSearchOptions;
     @FindBy(xpath = "//*[@id=\"main\"]/section[4]/div/div/div[2]/div[12]/a")
     WebElement PostJobsButton;
@@ -203,9 +203,7 @@ public class OthersPage extends Utility {
     }
 
     public void clickOnMoreSearchOptions() {
-        JavascriptExecutor js = (JavascriptExecutor) getThreadDriver();
-        js.executeScript("window.scrollBy(0,-250)", "");
-        clickOnElement(MoreSearchOptions);
+        clickOnElementWithJS(MoreSearchOptions);
     }
 
     public String verifySearchTextI() {

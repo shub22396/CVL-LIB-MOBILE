@@ -812,7 +812,7 @@ public abstract class Utility extends DriverController {
 
     /* Returning label tag actual text by inputting the expected text*/
     public String verifyTextLabelTag(String text) {
-        WebElement result = getThreadDriver().findElement(By.xpath("//label[text() = '" + text + "']"));
+        WebElement result = getDisplayedElement(text);
         waitUntilTextToBePresent(result, text);
         return getTextFromElement(result);
     }

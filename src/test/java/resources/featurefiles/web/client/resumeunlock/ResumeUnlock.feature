@@ -28,12 +28,12 @@ Feature: Client ResumeUnlock ResumeUnlock
     When  I navigate to page "Client My Unlocked Resumes"
     And   I should see text p tag "Displaying" and verify message "Displaying 1 to 20 of"
     And   I scroll down 0,2000
-    And   I click on "2"
+    And   I click on next page link
     Then  I should be on page "Client My Unlocked Resumes 20"
     And   I should see text p tag "Displaying" and verify message "Displaying 21 to 40 of"
     And   I should see "Prev" link
     And   I scroll down 0,2000
-    When  I click on "Prev"
+    When  I click on prev page link
     Then  I should be able to see in browser URL "Client My Unlocked Resumes 0"
     And   I should not see "Prev" link
 
@@ -43,47 +43,47 @@ Feature: Client ResumeUnlock ResumeUnlock
     And   I navigate to page "Client Account Unlocked Resumes"
     And   I should see text p tag "Displaying" and verify message "Displaying 1 to 20 of"
     And   I scroll down 0,2000
-    And   I click on "2"
+    And   I click on next page link
     Then  I should be on page "Client Account Unlocked Resumes 20"
     And   I should see text p tag "Displaying" and verify message "Displaying 21 to 40 of"
     And   I should see "Prev" link
     And   I scroll down 0,2000
-    When  I click on "Prev"
+    When  I click on prev page link
     Then  I should be able to see in browser URL "Client Account Unlocked Resumes 0"
     And   I should not see "Prev" link
 
   @unlockResumeSortingByDate @ReleaseRegression2
   Scenario:Sorting By Date Unlocked on My Unlock Resume page
     Given I login as testers client
-    When   I navigate to page "Client My Unlocked Resumes"
-    When  I click on dates saved descending order
+    When  I navigate to page "Client My Unlocked Resumes"
+    When  I select the option "Date Unlocked (DESC)" from order by dropdown on client resume page
     Then  I should see saved dates in desc order
-    When  I click on dates saved ascending order
+    When  I select the option "Date Unlocked (ASC)" from order by dropdown on client resume page
     Then  I should see in saved dates in asc order
 
   @unlockResumeSortingByCandidateName
   Scenario: Sorting By Candidate Name on My Unlock Resume page
     Given I login as testers client
-    When   I navigate to page "Client My Unlocked Resumes"
-    And   I click on id "saved-unlocked-resume-name-asc"
+    When  I navigate to page "Client My Unlocked Resumes"
+    And   I select the option "Candidate Name (ASC)" from order by dropdown on client resume page
     Then  I should see in Candidate name in asc order
-    When  I click on id "saved-unlocked-resume-name-desc"
+    When  I select the option "Candidate Name (DESC)" from order by dropdown on client resume page
     Then  I should see in Candidate name in desc order
 
   @accountUnlockResumeSortingByDate
   Scenario:Sorting By Date Unlocked on Account Unlock Resume page
     Given I login as testers client
-    When  I navigate to page "Client My Unlocked Resumes"
-    When  I click on dates saved descending order
+    When  I navigate to page "Client Account Unlocked Resumes"
+    And   I select the option "Date Unlocked (DESC)" from order by dropdown on client resume page
     Then  I should see saved dates in desc order
-    When  I click on dates saved ascending order
+    When  I select the option "Date Unlocked (ASC)" from order by dropdown on client resume page
     Then  I should see in saved dates in asc order
 
   @accountUnlockResumeSortingByCandidateName
   Scenario: Sorting By Candidate Name on Account Unlock Resume page
     Given I login as testers client
-    When  I navigate to page "Client My Unlocked Resumes"
-    And   I click on id "saved-unlocked-resume-name-asc"
+    When  I navigate to page "Client Account Unlocked Resumes"
+    And   I select the option "Candidate Name (ASC)" from order by dropdown on client resume page
     Then  I should see in Candidate name in asc order
-    When  I click on id "saved-unlocked-resume-name-desc"
+    When  I select the option "Candidate Name (DESC)" from order by dropdown on client resume page
     Then  I should see in Candidate name in desc order

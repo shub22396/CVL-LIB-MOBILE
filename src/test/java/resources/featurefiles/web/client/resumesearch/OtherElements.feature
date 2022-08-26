@@ -38,7 +38,6 @@ Feature: Client ResumeSearch OtherElements
     Then  I click on save search delete btn
     And   I should see text "Search removed successfully"
 
-
   @popularSearches
   Scenario: Verify Popular Searches
     When  I click on Popular searches link
@@ -46,8 +45,7 @@ Feature: Client ResumeSearch OtherElements
     When  I click on "Farm Worker"
     Then  I click on "Add to search"
     And   I should be able to see in browser URL "Client Resume Search"
-    Then  I should see text "farm worker"
-    Then  I should see text "farm assistant"
+    Then  the keyword field contains "farm worker" and "farm assistant"
 
   @resetForm
   Scenario: Verify Reset form

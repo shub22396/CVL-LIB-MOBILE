@@ -7,11 +7,7 @@ Feature: Client SavedResumes AccountSavedResumes
   @accountSavedResumesAssertAndActions
   Scenario: Verify elements in account saved resumes and check 'Actions'
     When  I navigate to page "Client Account Saved Resumes"
-    Then  I should see text "Date saved"
-    And   I should see text "Candidate name / Job title"
-    And   I should see text "Expected salary"
-    And   I should see text "Saved by"
-    When  I click on saved action one
+    And   I click on saved action one
     And   I click on "View"
     And   I switch tab
     Then  I should be able to see in browser URL "Client Resume View Candidate Profile"
@@ -21,13 +17,13 @@ Feature: Client SavedResumes AccountSavedResumes
   @accountSavedResumesSorting @ReleaseRegression2
   Scenario: Verify sorting based on 'Candidate name/Job title' and 'Saved by'
     When  I navigate to page "Client Account Saved Resumes"
-    When  I press candidate name by asc order
+    And   I select the option "Candidate Name (ASC)" from order by dropdown on client resume page
     Then  I should see in Candidate name in asc order
-    When  I press candidate name by desc order
+    And   I select the option "Candidate Name (DESC)" from order by dropdown on client resume page
     Then  I should see in Candidate name in desc order
-    When  I press saved by asc order
+    And   I select the option "Saved By (ASC)" from order by dropdown on client resume page
     Then  I should see saved by in asc order on account saved resume page
-    When  I press saved by desc order
+    And   I select the option "Saved By (DESC)" from order by dropdown on client resume page
     Then  I should see saved by in desc order on account saved resume page
 
   @emailDisabledForLockedResume1
@@ -39,7 +35,7 @@ Feature: Client SavedResumes AccountSavedResumes
     And   I click on id "save-resume"
     When  I go to page "Client Account Saved Resumes"
     And   I click on saved action one
-    And   I should see element "Email" is disabled
+   #   And   I should see element "Email" is disabled
     And   I click on "Email"
     Then  I should see text "Resume is locked"
     And   I should see text "You may only contact a candidate once they have been unlocked. Please unlock this candidate to continue."

@@ -28,12 +28,13 @@ public class SavedResumesPage extends Utility {
     WebElement dateSavedAsc;
     @FindBy(xpath = "//div[@class='table-wrap']/table/tbody/tr/td[6]")
     List<WebElement> SavedBy;
+    @FindBy(id = "mobile-sort-select")
+    WebElement SavedSearchMobileSortSelect;
 
     public List<String> getListOfCandidates() {
         sortedList = getDataList(listOfCandidate);
         logger.info("Getting list of candidates ");
         return sortedList;
-
     }
 
     public List<String> ascendingOrderCandidateName() {
@@ -96,4 +97,11 @@ public class SavedResumesPage extends Utility {
         logger.info("Sorting Saved by desc order" + sortedList);
         return sortedList;
     }
+
+    public void selectValueToOrderByOnSavedSearchPage(String text) {
+        logger.info("Select order by from dropdown");
+        selectByVisibleTextFromDropDown(SavedSearchMobileSortSelect, text);
+        waitFor(4);
+    }
 }
+
