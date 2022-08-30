@@ -2,6 +2,7 @@ package com.resumelibrary.webtest.candidate;
 
 import com.resumelibrary.utilities.Utility;
 import com.resumelibrary.webtest.misc.MiscPage;
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -106,16 +107,16 @@ public class UpdateProfilePage extends Utility {
     }
     public void clickOnSaveChanges() {
         logger.info("clicking on save changes button");
-        int i=0;
-        do  {
-            //saveChangesButton.sendKeys(Keys.TAB);
-            Actions action=new Actions(getThreadDriver());
-            action.moveToElement(saveChangesButton).click().build().perform();
+       // System.out.println("page source ------->"+((AndroidDriver) getThreadDriver()).getPageSource());
 
-          //  clickOnElementWithJS(saveChangesButton);
-            waitFor(2);
-            i++;
-        }while(!new MiscPage().shouldSeeText("Your details have been successfully updated") && i<4);
+        ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
+        if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@class='btn']")))) {
+            getThreadDriver().findElement(By.xpath("//*[@class='btn']")).click();
+        }
+
+        ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
+
+
     }
 
 

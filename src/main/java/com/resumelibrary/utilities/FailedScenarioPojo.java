@@ -1,5 +1,7 @@
 package com.resumelibrary.utilities;
 
+import java.io.ByteArrayOutputStream;
+
 public class FailedScenarioPojo {
 
     public String getScenarioName() {
@@ -40,4 +42,13 @@ public class FailedScenarioPojo {
 
     private String stepDescription;
 
+    public void setBaos(ByteArrayOutputStream baos) {
+        this.baos = baos;
+    }
+
+    private ByteArrayOutputStream baos;
+
+    public ByteArrayOutputStream getBaos() {
+        return baos;
+    }
 }
