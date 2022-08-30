@@ -397,7 +397,8 @@ public class ResumeSearchPage extends Utility {
 
     public void clickOnMySearchesLink() {
         logger.info("Clicking on my searches link ");
-        clickOnElement(MySearchesLink);
+        clickOnElementWithJS(MySearchesLink);
+        waitFor(1);
     }
 
     public void clickOnSearchResumes() {
@@ -420,8 +421,8 @@ public class ResumeSearchPage extends Utility {
     public void deleteSavedSearch() {
         if (isElementOrTextDisplayed("Keywords")) {
             PSavedSearchAction1.click();
-            clickOnElement(DeleteSavedSearch);
-            clickOnElement(SavedSearchDeleteBtn);
+            clickOnElementWithJS(DeleteSavedSearch);
+            clickOnElementWithJS(SavedSearchDeleteBtn);
             waitFor(1);
         }
     }

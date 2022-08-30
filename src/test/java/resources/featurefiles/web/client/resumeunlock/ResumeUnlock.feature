@@ -86,4 +86,5 @@ Feature: Client ResumeUnlock ResumeUnlock
     And   I select the option "Candidate Name (ASC)" from order by dropdown on client resume page
     Then  I should see in Candidate name in asc order
     When  I select the option "Candidate Name (DESC)" from order by dropdown on client resume page
+    And   I wait for "2" seconds
     Then  I should see in Candidate name in desc order
