@@ -33,7 +33,7 @@ public class Hooks extends Utility {
             logger.info("[--->In Hooks, cucumber after tearDown method ---> "+"<---]");
             if (scenario.isFailed()) {
                 scenario.log("[--->--------------------------------------------"+"<---]");;
-                scenario.log("[--->CURRENT URL IS ----> " + getPresentURL()+"<---]");;
+             //   scenario.log("[--->CURRENT URL IS ----> " + getPresentURL()+"<---]");;
                 scenario.log("[--->BROWSER NAME   ----> " + getBrowserName()+"<---]");
                 scenario.log("[--->CURRENT TAG IS : " + scenario.getSourceTagNames()+"<---]");
                 scenario.log("[--->--------------------------------------------"+"<---]");;

@@ -25,8 +25,8 @@ Feature: Candidate Home Home
   @homePageRecentSearches
   Scenario: Search for a job and verify that recent searches are displayed on home page
     When  I navigate to page "Jobs Sales"
-    Then  I am on page "/"
-    And   I should see text "Recent Searches"
+    #Then  I am on page "/"
+    And   I should see text H four tag "Recent Searches"
     And   I click on "Recent Searches"
    # And   I click on recent searches link
     And   I should see text "Sales jobs"
@@ -41,7 +41,7 @@ Feature: Candidate Home Home
   @homeClearRecentSearches
   Scenario: Search for a job and verify clear recent searches
     When  I navigate to page "Jobs Sales"
-    Then  I am on page "/"
+    #Then  I am on page "/"
     And   I should see text "Recent Searches"
    # And   I click on recent searches link
     And   I click on "Recent Searches"

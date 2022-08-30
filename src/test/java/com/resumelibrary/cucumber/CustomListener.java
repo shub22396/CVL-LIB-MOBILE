@@ -122,8 +122,10 @@ public class CustomListener extends Utility implements ITestListener, IExecution
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
+        String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
         ExcelUtil excelUtil = new ExcelUtil();
-        excelUtil.createFailedExcel();
+        excelUtil.createFailedExcel(buildId);
     }
 
     @Override
@@ -135,6 +137,8 @@ public class CustomListener extends Utility implements ITestListener, IExecution
         } catch (Exception e) {
             e.printStackTrace();
         }*/
+        ExcelUtil excelUtil=new ExcelUtil();
+        excelUtil.createSummarySheet(verticalScenarioCountPojo);
         ASCIIArtGenerator artGen = new ASCIIArtGenerator();
         try {
             artGen.printText("RL Regression Finished");

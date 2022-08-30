@@ -29,7 +29,7 @@ public class WebURLHelper  {
     static String candidateRegisterConfirmationUrl = "/candidate/registration/confirm";
     static String CVLibraryUrl = "https://www.cv-library.co.uk/search-jobs";
     static String facebookUrl = "https://www.facebook.com/";
-    static String twitterUrl = "https://twitter.com/ResumeLibrary";
+    static String twitterUrl = "https://mobile.twitter.com/ResumeLibrary";
     static String instagramUrl = "https://www.instagram.com/";
     static String googlePlayUrl = "https://play.google.com/store/apps/details?id=com.resumelibrary.app";
     static String appStoreUrl = "https://apps.apple.com/us/app/resume-library/id1095745879?ls=1";

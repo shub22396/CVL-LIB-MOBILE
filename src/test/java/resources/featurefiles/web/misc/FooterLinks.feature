@@ -23,12 +23,14 @@ Feature: Misc FooterLinks
     And     I should see text "Browse industry job titles and locations"
 
   Scenario: Footer link employers
+    And     I click "Hiring" in the footer
     Then    I should see text "Employers"
     And     I click "Employers" in the footer
     Then    I should be on "Hiring" page
     Then    I should see text "America's Fastest-Growing Job Board" on the page
 
   Scenario: Footer link post jobs
+    And     I click "Hiring" in the footer
     Then    I should see text "Post Jobs"
     And     I click "Post Jobs" in the footer
     Then    I should be on "Hiring Post Jobs" page
@@ -36,12 +38,14 @@ Feature: Misc FooterLinks
     And     I should see text "Pay for Performance"
 
   Scenario: Footer link partner network
+    And     I click "Hiring" in the footer
     Then    I should see text "Partner Network"
     And     I click "Partner Network" in the footer
     Then    I should be on "Partner Network" page
     And     I should see text "Become part of our network"
 
   Scenario: Footer link about us
+    And     I click "Resume-Library" in the footer
     Then    I should see text "About Us"
     And     I click "About Us" in the footer
     Then    I should be on "About Us" page
@@ -49,14 +53,16 @@ Feature: Misc FooterLinks
     And     I should see text "Our CEO: Lee Biggins"
 
   Scenario: Footer link meet the team
+    And     I click "Resume-Library" in the footer
     Then    I should see text "Meet the Team"
     And     I click "Meet the Team" in the footer
     Then    I should be on "Meet the Team" page
     And     I should see text "Meet the Resume-Library Team"
-    And     I should see text "About Resume-Library"
+    #And     I should see text "About Resume-Library"
     And     I should see text "The Whole Resume-Library Team"
 
   Scenario: Footer link work for us
+    And     I click "Resume-Library" in the footer
     Then    I should see text "Work For Us"
     And     I click "Work For Us" in the footer
     Then    I should be on "Work For Us" page

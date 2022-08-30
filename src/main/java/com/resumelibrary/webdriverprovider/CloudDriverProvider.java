@@ -17,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -209,8 +210,8 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("appium-version", "1.22.3");
             capabilities.setCapability("platformName", "Android");
-            capabilities.setCapability("deviceName", "Pixel 4 API 30");
-            // capabilities.setCapability("udid", "emulator-5554");
+            capabilities.setCapability("deviceName", "Nexus 5 API 33");
+             capabilities.setCapability("udid", "emulator-5554");
             // capabilities.setCapability("appPackage", "com.example.myapplication");
             //capabilities.setCapability("appActivity", "MainActivity");
             // capabilities.setCapability("appPackage", "com.demo.test.demo");
@@ -221,7 +222,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
             // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.android.chrome");
             // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "org.chromium.my_webview_shell");
-            // capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.google.android.apps.chrome.Main");
+         //    capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.google.android.apps.chrome.Main");
             capabilities.setCapability("chromedriverExecutableDir", "/home/sguduru/Downloads/Chrome-Driver");
             capabilities.setCapability("autoGrantPermissions", "true");
             capabilities.setJavascriptEnabled(true);

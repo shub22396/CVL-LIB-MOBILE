@@ -41,7 +41,7 @@ import org.openqa.selenium.interactions.Sequence;
 import io.appium.java_client.AppiumDriver;
 import com.google.common.collect.ImmutableList;
 public abstract class Utility extends DriverController {
-
+    public static VerticalScenarioCountPojo verticalScenarioCountPojo = new VerticalScenarioCountPojo();
     /*   Constructor to initiate the page elements */
     public Utility() {
         PageFactory.initElements(getThreadDriver(), this);
@@ -207,15 +207,15 @@ public abstract class Utility extends DriverController {
 
     /* Returning the current page url */
     public String getPresentURL() {
-        return getThreadDriver().getCurrentUrl();
+        return ((RemoteWebDriver)getThreadDriver()).getCurrentUrl();
     }
 
     /* Returning the current browser name and version */
     public String getBrowserName() {
         Capabilities cap = ((RemoteWebDriver) getThreadDriver()).getCapabilities();
         String browserName = cap.getBrowserName();
-        String browserVersion = (String) cap.getCapability("browserVersion");
-        return browserName + "-" + browserVersion;
+        String browserVersion = cap.getBrowserVersion();
+        return browserName + "-" + browserVersion+"-"+cap.getPlatformName();
     }
 
     /* Returning the text of specified web element */
@@ -1157,6 +1157,101 @@ public abstract class Utility extends DriverController {
 
         }
     }
+    public void setFailedCountSummary(String tagName) {
+        int count ;
+        logger.info("[--->setFailedCountSummary<---]=====>"+tagName);
+        ExcelUtil excelUtil = new ExcelUtil();
+        String verticalName = excelUtil.getVerticalName(tagName);
+
+        switch (verticalName) {
+            case "Recruiters":
+                count = verticalScenarioCountPojo.getFailedRecruitersCount();
+                logger.info("[--->Failed:before  Recruiters :"+count+"<---]");
+                verticalScenarioCountPojo.setFailedRecruitersCount(count+1);
+                logger.info("[--->Failed:after  Recruiters :"+verticalScenarioCountPojo.getFailedRecruitersCount()+"<---]");
+                break;
+            case "Partnerships":
+                count = verticalScenarioCountPojo.getFailedPartnershipsCount();
+                logger.info("[--->Failed:before  Partnerships :"+count+"<---]");
+                verticalScenarioCountPojo.setFailedPartnershipsCount(count+1);
+                logger.info("[--->Failed:after  Partnerships :"+verticalScenarioCountPojo.getFailedPartnershipsCount()+"<---]");
+                break;
+            case "Traffic":
+                count = verticalScenarioCountPojo.getFailedTrafficCount();
+                logger.info("[--->Failed:before  Traffic :"+count+"<---]");
+                verticalScenarioCountPojo.setFailedTrafficCount(count+1);
+                logger.info("[--->Failed:after  Traffic :"+verticalScenarioCountPojo.getFailedTrafficCount()+"<---]");
+                break;
+            case "Candidate":
+                count = verticalScenarioCountPojo.getFailedCandidateCount();
+                logger.info("[--->Failed:before  Candidate :"+count+"<---]");
+                verticalScenarioCountPojo.setFailedCandidateCount(count+1);
+                logger.info("[--->Failed:after  Candidate :"+verticalScenarioCountPojo.getFailedCandidateCount()+"<---]");
+                break;
+            case "Search":
+                count = verticalScenarioCountPojo.getFailedSearchCount();
+                logger.info("[--->Failed:before  Search :"+count+"<---]");
+                verticalScenarioCountPojo.setFailedSearchCount(count+1);
+                logger.info("[--->Failed:after  Search :"+verticalScenarioCountPojo.getFailedCandidateCount()+"<---]");
+                break;
+        }
 
 
+    }
+    public void setPassedCountSummary(String tagName) {
+        int count;
+        logger.info("[--->setPassedCountSummary<---]=====>"+tagName);
+        ExcelUtil excelUtil = new ExcelUtil();
+        String verticalName = excelUtil.getVerticalName(tagName);
+
+        switch (verticalName) {
+
+            case "Recruiters":
+                count = verticalScenarioCountPojo.getPassedRecruitersCount();
+                logger.info("[--->Passed:before  Recruiters :"+count+"<---]");
+                verticalScenarioCountPojo.setPassedRecruitersCount(count+1);
+                logger.info("[--->Passed:after  Recruiters :"+verticalScenarioCountPojo.getPassedRecruitersCount()+"<---]");
+                break;
+            case "Partnerships":
+                count = verticalScenarioCountPojo.getPassedPartnershipsCount();
+                logger.info("[--->Passed:before  Partnerships :"+count+"<---]");
+                verticalScenarioCountPojo.setPassedPartnershipsCount(count+1);
+                logger.info("[--->Passed:after  Partnerships :"+verticalScenarioCountPojo.getPassedPartnershipsCount()+"<---]");
+                break;
+            case "Traffic":
+                count = verticalScenarioCountPojo.getPassedTrafficCount();
+                logger.info("[--->Passed:before  Traffic :"+count+"<---]");
+                verticalScenarioCountPojo.setPassedTrafficCount(count+1);
+                logger.info("[--->Passed:after  Traffic :"+verticalScenarioCountPojo.getPassedTrafficCount()+"<---]");
+                break;
+            case "Candidate":
+                count = verticalScenarioCountPojo.getPassedCandidateCount();
+                logger.info("[--->Passed:before  Candidate :"+count+"<---]");
+                verticalScenarioCountPojo.setPassedCandidateCount(count+1);
+                logger.info("[--->Passed:after  Candidate :"+verticalScenarioCountPojo.getPassedCandidateCount()+"<---]");
+                break;
+            case "Search":
+                count = verticalScenarioCountPojo.getPassedSearchCount();
+                logger.info("[--->Passed:before  Search :"+count+"<---]");
+                verticalScenarioCountPojo.setPassedSearchCount(count+1);
+                logger.info("[--->Passed:after  Search :"+verticalScenarioCountPojo.getPassedSearchCount()+"<---]");
+                break;
+        }
+    }
+    public ByteArrayOutputStream getScreenshotAsBaos() {
+        ByteArrayOutputStream baos = null;
+        try {
+            logger.info("[--->Initializing for screenshot<---]");
+            moveToCurrentTAB();
+           // Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(getThreadDriver());
+           Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.scaling(2)) .takeScreenshot(getThreadDriver());
+      baos = new ByteArrayOutputStream();
+            ImageIO.write(screenshot.getImage(),"PNG",baos);
+                     baos.close();
+            logger.info("[--->Screenshot taken<---]");
+        } catch (Exception e) {
+            logger.info("[--->Unable to take screenshot, with error message: " + e.getMessage() + "<---]");
+        }
+        return baos;
+    }
 }
