@@ -152,11 +152,11 @@ public class JobSearchPage extends Utility {
 
     public void clickFindJobs() {
         logger.info("click on Find jobs button");
-        clickOnElement(FindJobs);
+        clickOnElementWithJS(FindJobs);
     }
     public void clickOnSubmitFeedBack(String text) {
         logger.info("click on feedb back request");
-        clickOnElement(getThreadDriver().findElement(By.xpath("( //*[text()=\"Submit\"])[1]")));
+        clickOnElementWithJS(getThreadDriver().findElement(By.xpath("( //*[text()=\"Submit\"])[1]")));
     }
 
     public void verifyRedirectURL() {

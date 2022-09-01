@@ -36,7 +36,7 @@ Feature: Candidate JobSearch SearchResultsPage
     When  I am on page "Jobs Sales"
     And   I should see text "Recently Viewed Jobs"
 
-  @searchResultsAlsoInOtherLocations #faiiing in desk top as well
+  @searchResultsAlsoInOtherLocations
   Scenario: Verify 'Also in other locations' link on /jobs page
     Given I navigate to page "Jobs Amazon"
     When  I click on "Also in other locations" and see link "View all locations"
@@ -44,7 +44,6 @@ Feature: Candidate JobSearch SearchResultsPage
     Then  I should be able to see in browser URL "Job View"
     And   I should see text "Apply now"
     And   I should see "Create a new Job Alert to make sure you see the best new jobs first!"
-
 
   @viewJobPageClearRecentSearches
   Scenario: View Job search results and verify that recent searches are not displayed if its cleared
@@ -94,7 +93,7 @@ Feature: Candidate JobSearch SearchResultsPage
   Scenario: Jobs By Location module
     Given I navigate to page "Jobs"
     When  I click on "Jobs By Location"
-    And  I click on "California"
+    And   I click on "California"
     Then  I should see text "Jobs in California"
     And   the location field should contain "State Of California"
     When  I click on "Jobs By Location"
@@ -157,8 +156,8 @@ Feature: Candidate JobSearch SearchResultsPage
     When   I click on "More Search Options"
     Then   the salary min field should contain "<SalMin>"
     Examples:
-      | Title | Location | SalMin  |
-      | sales | 10001    | 50000   |
+      | Title | Location | SalMin |
+      | sales | 10001    | 50000  |
 
   @jobsSearchSalaryMax
   Scenario Outline: Job search salary max
@@ -177,8 +176,8 @@ Feature: Candidate JobSearch SearchResultsPage
     When   I click on "More Search Options"
     Then   the salary max field should contain "<SalMax>"
     Examples:
-      | Title | Location | SalMax  |
-      | sales | 10001    | 70000   |
+      | Title | Location | SalMax |
+      | sales | 10001    | 70000  |
 
   @jobsSearchOrderBy
   Scenario Outline: Job search order results
@@ -232,7 +231,7 @@ Feature: Candidate JobSearch SearchResultsPage
     And    the location field should contain "<Location>"
     When   I click on "More Search Options"
     Then   the job type field should contain "<jobType>"
- 
+
     Examples:
       | Title        | Location | Type      | URL                                       | Message                              | jobType   |
       | sales        | 10001    | Permanent | /jobs/sales-in-10001?job_type=Permanent   | Permanent Sales jobs in 10001        | Permanent |
