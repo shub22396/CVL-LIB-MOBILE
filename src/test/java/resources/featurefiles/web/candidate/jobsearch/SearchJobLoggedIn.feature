@@ -132,7 +132,7 @@ Feature: Candidate JobSearch SearchJobsLoggedIn
     And   I should see text "Your details have been successfully updated"
     And   I navigate to page "Search Jobs"
     Then  I click on "View more job matches"
-    And   I should be able to see in browser URL "Jobs Nonexternaltestjob In 90189 R 51"
+    #And   I should be able to see in browser URL "Jobs Nonexternaltestjob In 90189 R 51"
     And   I should see text "Nonexternaltestjob jobs in 90189"
 
 

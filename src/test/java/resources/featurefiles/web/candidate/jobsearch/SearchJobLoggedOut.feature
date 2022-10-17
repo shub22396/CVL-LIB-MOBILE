@@ -56,7 +56,7 @@ Feature: Candidate JobSearch SearchJobsLoggedOut
     And   I should see link "Save" with id "save_toggle_15"
     And   I should see link "More" with id "more_15"
     And   I should see link "Apply now" with id "apply_now_15"
-    And   I should see link "Apply now" with id "apply-now-partner-jobs-5"
+    #And   I should see link "Apply now" with id "apply-now-partner-jobs-15"
     Then  I should be able to see in browser URL "/jobs/sales-in-new-york-city-ny?page_number=2"
 
   @searchPartnerJobLoggedOutWhenMoreRLJobs50PerPage
