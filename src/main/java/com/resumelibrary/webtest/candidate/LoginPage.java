@@ -25,9 +25,11 @@ public class LoginPage extends Utility {
     WebElement Password;
     @FindBy(id = "signin-as-jobseeker")
     WebElement LoginAsJobseekerButton;
-    @FindBy(id = "password-reset-link")
+   // @FindBy(id = "password-reset-link")
+    @FindBy(xpath = "//*[@id='password-reset-link']")
     WebElement ForgotPasswordLink;
-    @FindBy(id = "reset-email")
+   // @FindBy(id = "reset-email")
+    @FindBy(xpath = "//*[@id='reset-email']")
     WebElement ResetEmailAddress;
     @FindBy(id = "login-reset-submit-btn")
     WebElement ResetPasswordButton;
@@ -65,11 +67,13 @@ public class LoginPage extends Utility {
             waitFor(1);
         }
         clickOnElement(LoginAsJobseekerButton);
+        clickOnElement(LoginAsJobseekerButton); //double click for Android Execution
     }
 
     public void clickForgotPassword() {
         logger.info("clicking on forgot password link ");
         clickOnElement(ForgotPasswordLink);
+        clickOnElement(ForgotPasswordLink); //double click for android execution
     }
 
     public void fillInEmailAddressToResetPassword() {
@@ -101,5 +105,6 @@ public class LoginPage extends Utility {
     public void clickOnLoginAndReviewMyResume() {
         logger.info("Clicking on login and review my resume button ");
         clickOnElement(LoginAndReviewMyResumeButton);
+        clickOnElement(LoginAndReviewMyResumeButton); //double click for Android execution
     }
 }
