@@ -4,7 +4,6 @@ Feature: Candidate Login Login
   @loginAsExistingCandidate @login @ReleaseRegression1
   Scenario: Login in as an existing Candidate
     Given  I am on home page
-
    Then   I should see resume library logo
     And    I click on Menu Bar
     Then   I should see text "Login"
@@ -20,11 +19,12 @@ Feature: Candidate Login Login
   Scenario: Verify error message on login page
     Given  I am on home page
     Then   I should see resume library logo
-        And    I click on Menu Bar
+    And    I click on Menu Bar
     When   I click Login button
     And    I click Login as Jobseeker button
-    Then   I should see text "Email is required"
-    And    I should see text "Password is required"
+    Then   I should see text "An email and password is required to continue."
+#    Then   I should see text "Email is required"
+#    And    I should see text "Password is required"
 
   @loginPageResetPassword @ReleaseRegression1
   Scenario: Reset candidate password
