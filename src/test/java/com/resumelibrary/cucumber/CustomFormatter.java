@@ -4,6 +4,7 @@ import com.resumelibrary.utilities.*;
 import io.cucumber.plugin.ConcurrentEventListener;
 import io.cucumber.plugin.event.*;
 import org.apache.commons.collections.map.HashedMap;
+import org.openqa.selenium.JavascriptExecutor;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -102,7 +103,11 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
             int givenRetryCount = Integer.parseInt(retryCountStr);
             if (result.getStatus().equals(Status.FAILED)) {
 
-                if ((Integer) scenarioRetryMap.get(event.getTestCase().getName()) == givenRetryCount) {
+
+
+
+                    if ((Integer) scenarioRetryMap.get(event.getTestCase().getName()) == givenRetryCount) {
+                        ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=failed");
                     resultText = BLACK_BACKGROUND_BRIGHT + RED_BOLD_BRIGHT + "FAILED" + ANSI_RESET;
                     String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
                     String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
@@ -147,8 +152,10 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
                 } else {
                     int retryCount = ((Integer) scenarioRetryMap.get(event.getTestCase().getName()));
                     scenarioRetryMap.put(event.getTestCase().getName(), retryCount + 1);
+                        ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=skipped");
                 }
             } else if (result.getStatus().equals(Status.PASSED)) {
+                ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=passed");
                 resultText = BLACK_BACKGROUND_BRIGHT + GREEN_BOLD_BRIGHT + "PASSED" + ANSI_RESET;
                 LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
                 LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "     scenario " + resultText + "   :  " + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + event.getTestCase().getName() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);

@@ -56,11 +56,10 @@ public abstract class CustomAbstractTestNGCucumberTests implements Constants {
         String browserName= context.getCurrentXmlTest().getAllParameters().get("browser");
         String machineName=   context.getCurrentXmlTest().getAllParameters().get("machine");
         String runnerClass = context.getCurrentXmlTest().getClasses().get(0).getName();
-        logger.info("[--->CustomListener: onStart :" + browserName + ":" + machineName + "<---]");
+        logger.info("[--->CustomAbstractTestNGCucumberTests: runScenario :" + browserName + ":" + machineName + "<---]");
         this.browser = browserName;
         this.machine = machineName;
         this.runnerClass=runnerClass;
-        System.setProperty("browserName",  browserName);
         System.setProperty("browserName",  browserName);
         System.setProperty("machineName",  machineName);
         System.setProperty("runnerClass",runnerClass);
