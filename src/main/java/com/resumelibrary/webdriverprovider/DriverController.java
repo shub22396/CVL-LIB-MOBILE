@@ -76,10 +76,10 @@ public class DriverController extends CloudDriverProvider implements Constants {
                 logger.info("[--->Using browser stack cloud firefox browsers<---]");
                 remoteBrowserStackFireFox(threadMap, testName);
                 break;
-            case "androidMobileWeb":
-                logger.info("[--->Using  androidMobileWeb<---]");
+            case "lambdaMobileWeb":
+                logger.info("[--->Using  lambdaMobileWeb<---]");
 
-                androidMobileWeb(threadMap);
+                androidMobileWeb(threadMap,testName);
                 break;
         }
         manageBrowser();
@@ -96,7 +96,7 @@ public class DriverController extends CloudDriverProvider implements Constants {
     public WebDriver getThreadDriver() {
         WebDriver webdriverObj = null;
         try {
-            webdriverObj = (WebDriver) ((Map) threadLocalMap.get()).get("webdriverObj");
+            webdriverObj = (RemoteWebDriver) ((Map) threadLocalMap.get()).get("webdriverObj");
         } catch (Exception e) {
 
         }
