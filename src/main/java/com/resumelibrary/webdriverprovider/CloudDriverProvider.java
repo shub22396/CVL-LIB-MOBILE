@@ -236,6 +236,45 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         }
     }
 
+    void iosMobileWeb(Map threadMap,String testName) {
+        try {
+            String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
+            String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
+            String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
+            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
+            String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
+
+            logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");
+            String project = "[" + jobBaseName + "-Build:" + buildId + "]";
+            final String driverURL = "https://" + username + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub";
+            logger.info("[--->driverURL:" + driverURL+"<---]");
+
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("build","RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
+            capabilities.setCapability("name",testName);
+            capabilities.setCapability("project", project);
+            capabilities.setCapability("platformName", "ios");
+            capabilities.setCapability("deviceName", "iPhone 11 Pro");
+            capabilities.setCapability("platformVersion", "13");
+            capabilities.setCapability("isRealMobile", true);
+            capabilities.setCapability("console", true);
+            capabilities.setCapability("network", true);
+            capabilities.setCapability("visual", true);
+            capabilities.setCapability("devicelog", true);
+            capabilities.setCapability("video", true);
+            capabilities.setCapability("tunnel", true);
+            capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Safari");
+            capabilities.setCapability("autoGrantPermissions", true);
+            capabilities.setCapability("autoAcceptAlerts", true);
+            capabilities.setCapability("tunnelName", "RLRegressionTunnel");
+            threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
+            threadLocalMap.set(threadMap);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     void androidMobileWeb2(Map threadMap) {
         try {
