@@ -84,7 +84,7 @@ public class DriverController extends CloudDriverProvider implements Constants {
             case "lambdaIosMobileWeb":
                 logger.info("[--->Using  lambdaMobileWeb<---]");
 
-                iosMobgitileWeb(threadMap,testName);
+                iosMobileWeb(threadMap,testName);
                 break;
         }
         manageBrowser();
