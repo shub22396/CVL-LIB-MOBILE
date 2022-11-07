@@ -8,7 +8,9 @@
     </listeners>
     <test name="Test1">
         <parameter name="machine" value="Local"/>
-        <parameter name="browser" value="lambdaMobileWeb"/>
+<!--        <parameter name="browser" value="lambdaMobileWeb"/>-->
+        <parameter name="browser" value="lambdaIosMobileWeb"/>
+
         <!--        <parameter name="browser" value="remoteChromeBrowser"/>-->
         <!--        <parameter name="browser" value="remoteFirefoxBrowser"/>-->
         <!--        <parameter name="browser" value="firefox"/>-->
