@@ -26,7 +26,7 @@ public class CustomListener extends Utility implements ITestListener, IExecution
         options1.put("user", username);
         options1.put("key", accessKey);
         options1.put("load-balanced","true");
-        options1.put("tunnelName", "RLRegressionTunnel");
+        options1.put("tunnelName", "RLRegressionTunnel1");
         int i=0;
         do{
             flag= startTunnel(options1);
@@ -43,16 +43,16 @@ public class CustomListener extends Utility implements ITestListener, IExecution
             flag= startTunnel(options2);
             i++;
         }while(!flag && i<2);
-//        HashMap<String, String> options3 = new HashMap<String, String>();
-//        options3.put("user", username);
-//        options3.put("key", accessKey);
-//        options3.put("load-balanced","true");
-//        options3.put("tunnelName", "RLRegressionTunnel");
-//        i=0;
-//        do{
-//            flag= startTunnel(options3);
-//            i++;
-//        }while(!flag && i<2);
+        HashMap<String, String> options3 = new HashMap<String, String>();
+        options3.put("user", username);
+        options3.put("key", accessKey);
+        options3.put("load-balanced","true");
+        options3.put("tunnelName", "RLRegressionTunnel");
+        i=0;
+        do{
+            flag= startTunnel(options3);
+            i++;
+        }while(!flag && i<2);
 //        HashMap<String, String> options4 = new HashMap<String, String>();
 //        options4.put("user", username);
 //        options4.put("key", accessKey);
@@ -124,7 +124,7 @@ public class CustomListener extends Utility implements ITestListener, IExecution
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
+        String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
         String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
         ExcelUtil excelUtil = new ExcelUtil();
         excelUtil.createFailedExcel(buildId);

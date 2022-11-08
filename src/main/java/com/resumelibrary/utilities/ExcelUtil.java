@@ -54,7 +54,7 @@ public class ExcelUtil {
         logger.info("[--->in addRowsFailedExcel<---]");
         try {
 
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             FileInputStream myxls = new FileInputStream("FailedScenarios_" + buildId + fileType);
             HSSFWorkbook studentsSheet = new HSSFWorkbook(myxls);
@@ -86,7 +86,7 @@ public class ExcelUtil {
     public synchronized void addRowsFailedExcelWithRetry(FailedScenarioPojo failedScenario) {
         logger.info("[--->in addRowsFailedExcelWithRetry<----]");
         try {
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             FileInputStream myxls = new FileInputStream("FailedScenarios_" + buildId + fileType);
 
@@ -119,7 +119,7 @@ public class ExcelUtil {
     public boolean checkScenarioExist(String scenarioName) throws IOException {
         logger.info("[--->in checkScenarioExist<----]");
         boolean existScenario = false;
-        String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
+        String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
         String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
         FileInputStream myxls = new FileInputStream("FailedScenarios_" + buildId + fileType);
 
@@ -144,7 +144,7 @@ public class ExcelUtil {
     public synchronized void removePassedScenario(String scenarioName) {
         logger.info("[--->in removePassedScenario<----]");
         try {
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             FileInputStream myxls = new FileInputStream("FailedScenarios_" + buildId + fileType);
             HSSFWorkbook rlRgressionheet = new HSSFWorkbook(myxls);
@@ -222,7 +222,7 @@ public class ExcelUtil {
 
         try {
             DefaultCategoryDataset my_pie_chart_data = new DefaultCategoryDataset();
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("browserStackBuildId");
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             HSSFWorkbook rlRegressionSheet = new HSSFWorkbook();
             HSSFSheet rlExecutionSummarySheet = rlRegressionSheet.createSheet("RLExecutionSummary");

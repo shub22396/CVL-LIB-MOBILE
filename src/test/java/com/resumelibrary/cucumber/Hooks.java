@@ -39,22 +39,17 @@ public class Hooks extends Utility {
                 scenario.log("[--->--------------------------------------------"+"<---]");;
                 getScreenshot(scenario);
 
-//                if(System.getProperty("browserName").contains("lambda")) {
-//                    scenario.log("inside lambda failed"+"<---]"+System.getProperty("browserName"));;
-//                    ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=failed");
-//                }
+              if(System.getProperty("browserName").contains("lambda")) {
+                   scenario.log("inside lambda failed"+"<---]"+System.getProperty("browserName"));;
+                    ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=failed");
+              }
             }else{
                 if(System.getProperty("browserName").contains("lambda")) {
                     ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=passed");
                 }
             }
         }
-                if (System.getProperty("browserName").contains("browserStack")) {
-                    logBrowserStackError(status, scenario.getName());
-                }
-                if(System.getProperty("browserName").contains("lambda")) {
-                    ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=passed");
-                }
+
             }
 
     public void logBrowserStackError(boolean status, String scenarioName) {
