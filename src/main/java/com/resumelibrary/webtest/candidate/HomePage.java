@@ -49,7 +49,7 @@ public class HomePage extends Utility {
     WebElement myProfileHeaderLink;
     @FindBy(id = "nav_jobalerts")
     WebElement jobAlertsHeaderLink;
-    @FindBy(xpath = "(//*[contains(text(),'Saved Jobs')])[3]")
+    @FindBy(xpath = "//*[@data-mobile-label='My Saved Jobs']")
     WebElement savedJobsHeaderLink;
     @FindBy(xpath = "//a[@class='account-link']")
     WebElement profileIconHeaderLink;
