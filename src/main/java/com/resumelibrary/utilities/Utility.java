@@ -634,6 +634,20 @@ public abstract class Utility extends DriverController {
     public void selectByVisibleTextFromDropDown(WebElement element, String str) {
         try {
             waitUntilElementToBeClickable(element, 4);
+            Select select = new Select(element);
+            select.selectByVisibleText(str);
+        } catch (ElementClickInterceptedException e) {
+            waitFor(1);
+            ((JavascriptExecutor) getThreadDriver()).executeScript("window.scrollBy(0,-350)", "");
+            waitUntilElementToBeClickable(element, 4);
+            Select select = new Select(element);
+            select.selectByVisibleText(str);
+        }
+    }
+
+    public void selectByVisibleTextFromDropDownUsingJS(WebElement element, String str) {
+        try {
+            waitUntilElementToBeClickable(element, 4);
             ((JavascriptExecutor) getThreadDriver()).executeScript("var select = arguments[0]; for(var i = 0; i < select.options.length; i++){ if(select.options[i].text == arguments[1]){ select.options[i].selected = true; } }", element, str);
         } catch (ElementClickInterceptedException e) {
             waitFor(1);
