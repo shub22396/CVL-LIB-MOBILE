@@ -92,8 +92,6 @@ Feature: Candidate Home Home
 
   @homePageOtherLinksPart2
   Scenario: Validate other links and buttons on home page part2
-
-
     And   I should see text H two tag "Featured Companies"
     And   I click on "View all companies"
     Then  I should be on page "Companies"
@@ -180,9 +178,9 @@ Feature: Candidate Home Home
     When  I click on "My Dashboard" Header Link
     Then  I should be on page "Candidate My Dashboard"
     And   I should see text H one tag "My Dashboard"
-    And   I click on "Saved Jobs" Header Link
-    Then  I should be on page "/candidate/saved-jobs"
-    And   I should see text H one tag "My Saved Jobs"
+#    And   I click on "Saved Jobs" Header Link
+#    Then  I should be on page "/candidate/saved-jobs"
+#    And   I should see text H one tag "My Saved Jobs"
     When  I click on "My Applications" Header Link
     Then  I should be on page "Candidate Myapplications"
     And   I should see text H one tag "My Applications"
