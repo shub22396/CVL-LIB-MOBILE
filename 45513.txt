@@ -1,1 +1,0 @@
-{"status":"SUCCESS","data":{"id":2566179,"localProxyPort":"34131","tunnelName":"RLRegressionTunnel","environment":"prod","version":"3.1.25","mode":"ssh","sshConnType":"over_22"}}
