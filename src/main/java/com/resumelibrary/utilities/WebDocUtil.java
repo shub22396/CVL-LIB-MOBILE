@@ -30,7 +30,7 @@ public class WebDocUtil {
     public void writeFailedScenarioInDoc(List<ScenarioStepResults> resultLis, String testName) {
         if (failureDocs <= 20) {
             XWPFDocument document = new XWPFDocument();
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId ");
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId ");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             try {
 

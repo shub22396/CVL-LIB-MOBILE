@@ -41,7 +41,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
 
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
@@ -82,7 +82,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
 
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
@@ -120,7 +120,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
     void remoteBrowserStackChrome(Map threadMap, String testName) {
         try {
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
@@ -168,7 +168,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
     void remoteBrowserStackFireFox(Map threadMap, String testName) {
         try {
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
@@ -201,7 +201,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
 
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
@@ -215,7 +215,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("build","RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
             capabilities.setCapability("name",testName);
             capabilities.setCapability("project", project);
-            capabilities.setCapability("deviceName", "Galaxy S20+");
+            capabilities.setCapability("deviceName", "Galaxy M31");
             capabilities.setCapability("platformVersion", "11");
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("isRealMobile", true);
@@ -225,10 +225,12 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("devicelog", true);
             capabilities.setCapability("video", true);
             capabilities.setCapability("tunnel", true);
+            //capabilities.setCapability("lambda:userFiles",["cv2.pdf","test-cv.pdf"]);
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
             capabilities.setCapability("autoGrantPermissions", true);
             capabilities.setCapability("autoAcceptAlerts", true);
             capabilities.setCapability("tunnelName", "RLRegressionTunnel");
+
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
         } catch (Exception e) {
@@ -241,7 +243,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
 
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
@@ -278,7 +280,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
     void androidMobileWeb2(Map threadMap) {
         try {
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);

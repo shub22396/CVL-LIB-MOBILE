@@ -5,7 +5,7 @@ Feature: Candidate Contact Contact
     Given I login as a candidate
     When  I navigate to page "Contact"
 
-  @validateAndSubmitContactForm @ReleaseRegression1
+  @validateAndSubmitContactForm @ReleaseRegression1 @MobileChrome
   Scenario Outline: Validate the Contact form and submit
     When   I should see text H one tag "How can we help you?"
     And    I click on id "send"
@@ -26,13 +26,14 @@ Feature: Candidate Contact Contact
       | Email                                          | ConfirmEmail                                   | Name       | Phone        | Message    |
       | automation-selenium-contact@resume-library.com | automation-selenium-contact@resume-library.com | Automation | 012345678912 | Trial only |
 
-  @verifyOtherLinks
+  @verifyOtherLinks @MobileChrome
   Scenario: Verifying other links on the Contact form
     When   I click on contact page "Visit help center" links
     Then   I should be on page "/faq?type=candidate"
     And    I should see text "Job Seeker Help"
     When   I navigate to page "Contact"
-    And    I click on "Upload your Resume"
+#    And    I click on "Upload your Resume"
+    And    I click on link text "Upload your Resume"
     And    I should be on page "Candidate My Profile"
     And    I should see text H one tag "My Profile"
     When   I navigate to page "Contact"

@@ -5,7 +5,7 @@
     Scenario: Login as an existing candidate via Register and Apply
      Given  I navigate to page "Jobs Non External Test Jobs"
       And   I click on non external job to apply
-      And   I Click on Link Register & Apply
+      And   I click on "Register & Apply" with JS
       And   I fill candidate email with "testers+candidate@resume-library.com"
       And   I fill job apply password with "rl" on job apply
       Then  I should see text "This email already exists, please login"

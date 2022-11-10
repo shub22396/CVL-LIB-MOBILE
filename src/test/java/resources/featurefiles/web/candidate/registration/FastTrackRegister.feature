@@ -68,5 +68,5 @@ Feature: Candidate Registration FastTrackRegister
     Given  I set cookie with "ibpid" and "975438"
     And    I reload the page
     And    I click on Apply now Link
-    And    I Click on Link Register & Apply
+    And    I click on "Register & apply" with JS
     Then   I should see text "Upload Resume"
