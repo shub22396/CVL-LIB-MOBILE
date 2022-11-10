@@ -89,7 +89,7 @@ public class JobPostPage extends Utility {
 
     public void selectStateFromDropdown(String state) {
         logger.info("Selected state from dropdown" + state);
-        selectByVisibleText(StateDropdown, state);
+        selectByVisibleTextFromDropDownUsingJS(StateDropdown, state);
     }
 
     public void enterTown(String town) {

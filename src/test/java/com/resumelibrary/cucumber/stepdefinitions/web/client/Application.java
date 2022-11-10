@@ -26,6 +26,7 @@ public class Application extends Utility {
 
     @Then("I should see job ids in desc order")
     public void iShouldSeeJobIdsInDescOrder() {
+        waitFor(4);
         Assert.assertEquals(new ApplicationPage().getListOfJobIds(), new ApplicationPage().jobIdsByDescendingOrder());
     }
 

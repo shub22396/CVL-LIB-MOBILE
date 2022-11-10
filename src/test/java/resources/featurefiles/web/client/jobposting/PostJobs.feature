@@ -1,4 +1,4 @@
-@PostJobs @Regression @Web @Client2 @ReleaseRegression2 @Recruiters
+@PostJobs @Regression @Web @Client2 @ReleaseRegression2 @Recruiters @MobileChrome
 Feature: Client JobPosting PostJobs
 
   Background:
