@@ -67,13 +67,13 @@ public class LoginPage extends Utility {
             waitFor(1);
         }
         clickOnElement(LoginAsJobseekerButton);
-        clickOnElement(LoginAsJobseekerButton); //double click for Android Execution
+//        clickOnElement(LoginAsJobseekerButton); //double click for Android Execution
     }
 
     public void clickForgotPassword() {
         logger.info("clicking on forgot password link ");
         clickOnElement(ForgotPasswordLink);
-        clickOnElement(ForgotPasswordLink); //double click for android execution
+       // clickOnElement(ForgotPasswordLink); //double click for android execution
     }
 
     public void fillInEmailAddressToResetPassword() {
@@ -105,6 +105,6 @@ public class LoginPage extends Utility {
     public void clickOnLoginAndReviewMyResume() {
         logger.info("Clicking on login and review my resume button ");
         clickOnElement(LoginAndReviewMyResumeButton);
-        clickOnElement(LoginAndReviewMyResumeButton); //double click for Android execution
+//        clickOnElement(LoginAndReviewMyResumeButton); //double click for Android execution
     }
 }
