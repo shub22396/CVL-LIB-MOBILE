@@ -124,7 +124,7 @@ public class CustomListener extends Utility implements ITestListener, IExecution
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
+        String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
         String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
         ExcelUtil excelUtil = new ExcelUtil();
         excelUtil.createFailedExcel(buildId);

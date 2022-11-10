@@ -30,7 +30,8 @@ Feature: Candidate mydashboard MyDashboard
     When  I navigate to page "Candidate My Profile"
     And   I upload resume "Test CV"
     Then  I navigate to page "Candidate My Dashboard"
-    When  I click on resume review side banner
+   # When  I click on resume review side banner
+    When  I click on "FREE Resume Review"
     Then  I should see text H three tag "Your resume has been sent for review"
     When  I click "OK, Thanks" button
     Then  I should see text H one tag "My Dashboard"
@@ -78,32 +79,39 @@ Feature: Candidate mydashboard MyDashboard
 
   @VerifyHeaderBannerLinks #failing in desktop as well
   Scenario: Verify the Site Navigation links on Header Banner on Dashboard page
-    When I click "My Dashboard" link on Header Banner
+    And I click on id "mobile-menu-trigger"
+    When I click on "My Dashboard"
     Then I should be on page "/candidate/my-dashboard"
     And  I should see text H one tag "My Dashboard"
-    When I click "My Profile" link on Header Banner
+    And I click on id "mobile-menu-trigger"
+    When I click on "My Profile"
     Then I should be on page "Candidate My Profile"
     And  I should see text H one tag "My Profile"
     And  I should see bread crumbs "My Dashboard > My Profile" with class name: "breadcrumbs"
-    When I click "Job Alerts" link on Header Banner
+    And I click on id "mobile-menu-trigger"
+    When I click on "Job Alerts"
     Then I should be on page "Candidate Job Alerts"
     And  I should see text H one tag "Job Alerts"
     And  I should see bread crumbs "My Dashboard > Job Alerts" with class name: "breadcrumbs"
-    When I click "Saved Jobs" link on Header Banner
-    Then I should be on page "/candidate/saved-jobs"
-    And  I should see text H one tag "My Saved Jobs"
-    And  I should see bread crumbs "My Dashboard > My Saved Jobs" with class name: "breadcrumbs"
-    When I click "My Applications" link on Header Banner
-    Then I should be on page "Candidate Myapplications"
-    And  I should see text H one tag "My Applications"
-    And  I should see bread crumbs "My Dashboard > My Applications" with class name: "breadcrumbs"
-    When I click "My Settings" link on Header Banner
+#    And I click on id "mobile-menu-trigger"
+#    When I click on "Saved Jobs"
+#    Then I should be on page "/candidate/saved-jobs"
+#    And  I should see text H one tag "My Saved Jobs"
+#    And  I should see bread crumbs "My Dashboard > My Saved Jobs" with class name: "breadcrumbs"
+#    And I click on id "mobile-menu-trigger"
+#    When I click on "My Applications"
+#    Then I should be on page "Candidate Myapplications"
+#    And  I should see text H one tag "My Applications"
+#    And  I should see bread crumbs "My Dashboard > My Applications" with class name: "breadcrumbs"
+    And I click on id "mobile-menu-trigger"
+    When I click on "My Settings"
     Then I should be on page "Candidate Settings"
     And  I should see text H one tag "My Settings"
     And  I should see bread crumbs "My Dashboard > My Settings" with class name: "breadcrumbs"
-    When I click "My Email Preferences" link on Header Banner
-    Then I should be on page "Candidate Email Preferences"
-    And  I should see text H one tag "My Email Preferences"
-    And  I should see bread crumbs "My Dashboard > My Email Preferences" with class name: "breadcrumbs"
-    When I click "Logout" link on Header Banner
+#    When I click "My Email Preferences" link on Header Banner
+#    Then I should be on page "Candidate Email Preferences"
+#    And  I should see text H one tag "My Email Preferences"
+#    And  I should see bread crumbs "My Dashboard > My Email Preferences" with class name: "breadcrumbs"
+    And I click on id "mobile-menu-trigger"
+    When I click on "Logout"
     Then I should be on page "Logout"

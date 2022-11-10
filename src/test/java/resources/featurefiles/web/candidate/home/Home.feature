@@ -4,7 +4,7 @@ Feature: Candidate Home Home
   Background: Navigate to  page
     Given  I am on page "/"
 
-  @jobSearchFromHomePage
+  @jobSearchFromHomePage @MobileChrome
   Scenario Outline: Verify Home Page
     Then  I should not see search jobs navigation bar button
     And   I should see text H one tag "Find a job"
