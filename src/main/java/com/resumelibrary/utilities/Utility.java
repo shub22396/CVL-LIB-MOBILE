@@ -651,8 +651,10 @@ public abstract class Utility extends DriverController {
     /* selecting dropdown value by using value */
     public void selectByValueFromDropDown(WebElement element, String value) {
         waitUntilElementToBeClickable(element, 5);
-        Select select = new Select(element);
-        select.selectByValue(value);
+       // Select select = new Select(element);
+        //select.selectByValue(value);
+        JavascriptExecutor jse = (JavascriptExecutor) getThreadDriver();
+        jse.executeScript("arguments[0].value="+value, element);
     }
 
     /* scroll down to element by passing x and y co-ordinates of elements using javascript executor*/
