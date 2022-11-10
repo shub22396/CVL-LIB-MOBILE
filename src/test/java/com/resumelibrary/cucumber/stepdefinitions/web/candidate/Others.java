@@ -103,10 +103,10 @@ public class Others extends Utility {
     }
 
     @Given("I navigate to page {string}")
-    public void iNavigateToPage(String url)  {
-         getDriverWithUrl(WebURLHelper.getWebUrl(), getURL(url));
-            webDriverWaitContainsUrl(getURL(url));
-       }
+    public void iNavigateToPage(String url) {
+        getDriverWithUrl(WebURLHelper.getWebUrl(), getURL(url));
+        webDriverWaitContainsUrl(getURL(url));
+    }
 
     @Given("I browse the url {string}")
     public void iBrowseTheUrl(String url) {
@@ -270,16 +270,17 @@ public class Others extends Utility {
 
         clickOnElementUsingTextwithNAtive(text);
     }
+
     @And("I click on {string} with JS")
     public void iClickOnwithJS(String text) {
-                    clickOnElementUsingTextWithJS(text);
+        clickOnElementUsingTextWithJS(text);
 
     }
 
 
     @When("I click on non external job to apply")
     public void iClickOnNonExternalJobToApply() {
-      //  new JobSearchPage().selectResultsPerPage("250");
+        //  new JobSearchPage().selectResultsPerPage("250");
         new OthersPage().clickOnNonExternalApplyNowButton();
     }
 
@@ -287,22 +288,25 @@ public class Others extends Utility {
     public void iMoveBackwardOnePage() {
         backwardOnThePage();
     }
+
     @And("I click on mobile header button")
-    public void iClickMobileHeader(){
+    public void iClickMobileHeader() {
         waitFor(3);
         clickMobileHeader();
     }
+
     @And("I click on Hiring")
-    public void iClickonHiring(){
+    public void iClickonHiring() {
         waitFor(3);
         clickOnHiring();
     }
 
     @And("I click on Resume Library")
-    public void iClickOnResumeLibrary(){
+    public void iClickOnResumeLibrary() {
         waitFor(3);
         clickOnResumeLibrary();
     }
+
     @And("I should see text H two tag {string}")
     public void iShouldSeeTextHTwoTag(String text) {
         Assert.assertEquals(verifyTextMessageH2Tags(text), text);
@@ -421,22 +425,24 @@ public class Others extends Utility {
     public void iShouldSeeElementWithTextVisibleOrInvisible(String elementText, String condition) {
         new OthersPage().iShouldSeeElementWithTextVisibleOrInvisible(elementText, condition);
     }
+
     @And("I should see element with id {string} to be {string}")
     public void iShouldSeeElementWithIdVisibleOrInvisible(String elementId, String condition) {
         new OthersPage().iShouldSeeElementWithIdVisibleOrInvisible(elementId, condition);
     }
+
     @Then("I click on link text {string}")
     public void iClickOnLinkText(String text) {
         clickOnElementUsingLinkText(text);
     }
 
     @And("I fill in input with {string} where the the element id is {string}")
-    public void iFillInInputWhereTheTheElementIdIs(String text , String id) {
-        new OthersPage().fillInInput(text,id);
+    public void iFillInInputWhereTheTheElementIdIs(String text, String id) {
+        new OthersPage().fillInInput(text, id);
     }
 
     @Then("I should see text Keywords job title {string}")
     public void iShouldSeeTextKeywordsJobTitle(String textToBeVerified) {
-       Assert.assertEquals(textToBeVerified, new OthersPage().iShouldSeeTextKeywordsJobTitle());
+        Assert.assertEquals(textToBeVerified, new OthersPage().iShouldSeeTextKeywordsJobTitle());
     }
 }
