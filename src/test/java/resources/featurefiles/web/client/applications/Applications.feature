@@ -1,7 +1,7 @@
 @ClientApplications @Regression @Web @Client1 @Recruiters
 Feature: Client Applications Applications
 
-  @contentVerification
+  @contentVerification @MobileChrome
   Scenario: Verify the content on job application page
     Given I login as a client
     When  I navigate to page "Client Job Applications"
@@ -15,7 +15,7 @@ Feature: Client Applications Applications
     And   I should see text "Apply type"
     And   I should see text "Actions"
 
-  @viewApplication @ReleaseRegression2
+  @viewApplication @ReleaseRegression2 @MobileChrome
   Scenario: View a job application
     Given I login as a client
     When  I navigate to page "Client Job Applications"
@@ -25,7 +25,7 @@ Feature: Client Applications Applications
     And   I should be able to see in browser URL "Client Resume View Candidate Application"
     And   I should see "Date Applied:"
 
-  @rejectApplication @ReleaseRegression2
+  @rejectApplication @ReleaseRegression2 @MobileChrome
   Scenario: Reject a job application
     Given I login as a client
     When  I navigate to page "Client Job Applications"
@@ -35,7 +35,7 @@ Feature: Client Applications Applications
     And   I click on "Cancel"
     And   I should see text "Job Applications"
 
-  @jobApplicationPagination
+  @jobApplicationPagination @MobileChrome
   Scenario: Job Application Pagination
     Given I login as testers client
     When  I navigate to page "Client Job Applications"

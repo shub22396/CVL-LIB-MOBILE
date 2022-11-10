@@ -28,6 +28,7 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
 import java.util.stream.Collectors;
+
 import org.openqa.selenium.Point;
 import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebElement;
@@ -40,8 +41,10 @@ import org.openqa.selenium.interactions.Sequence;
 
 import io.appium.java_client.AppiumDriver;
 import com.google.common.collect.ImmutableList;
+
 public abstract class Utility extends DriverController {
     public static VerticalScenarioCountPojo verticalScenarioCountPojo = new VerticalScenarioCountPojo();
+
     /*   Constructor to initiate the page elements */
     public Utility() {
         PageFactory.initElements(getThreadDriver(), this);
@@ -120,11 +123,13 @@ public abstract class Utility extends DriverController {
 
 
     public void clickMobileHeader() {
-       clickOnElement(getThreadDriver().findElements(By.xpath("//*[@id='mobile-menu-trigger']")).get(0));
+        clickOnElement(getThreadDriver().findElements(By.xpath("//*[@id='mobile-menu-trigger']")).get(0));
     }
+
     public void clickOnHiring() {
         clickOnElement(getThreadDriver().findElements(By.xpath(" //*[@aria-controls='footer-hiring']")).get(0));
     }
+
     public void clickOnResumeLibrary() {
         clickOnElement(getThreadDriver().findElements(By.xpath(" //*[@aria-controls='footer-resume-library']")).get(0));
     }
@@ -179,7 +184,7 @@ public abstract class Utility extends DriverController {
     public void waitUntilTextToBePresent(WebElement element, String text) {
         WebDriverWait wait = new WebDriverWait(getThreadDriver(), Duration.ofSeconds(15));
         wait.until(ExpectedConditions.textToBePresentInElement(element, text));
-        logger.info("[--->Element Text : " + element.getText()+"<---]");
+        logger.info("[--->Element Text : " + element.getText() + "<---]");
     }
 
     /* Explicit wait for a specified amount of time and until the visibility of specified Web Element */
@@ -207,7 +212,7 @@ public abstract class Utility extends DriverController {
 
     /* Returning the current page url */
     public String getPresentURL() {
-        return ((RemoteWebDriver)getThreadDriver()).getCurrentUrl();
+        return ((RemoteWebDriver) getThreadDriver()).getCurrentUrl();
     }
 
     /* Returning the current browser name and version */
@@ -215,13 +220,13 @@ public abstract class Utility extends DriverController {
         Capabilities cap = ((RemoteWebDriver) getThreadDriver()).getCapabilities();
         String browserName = cap.getBrowserName();
         String browserVersion = cap.getBrowserVersion();
-        return browserName + "-" + browserVersion+"-"+cap.getPlatformName();
+        return browserName + "-" + browserVersion + "-" + cap.getPlatformName();
     }
 
     /* Returning the text of specified web element */
     public String getTextFromElement(WebElement element) {
         waitUntilTextToBePresent(element, element.getText());
-        logger.info("[--->text on the element " +  element.getText() +"<---]");
+        logger.info("[--->text on the element " + element.getText() + "<---]");
         return element.getText();
     }
 
@@ -232,11 +237,11 @@ public abstract class Utility extends DriverController {
         boolean result = ((RemoteWebDriver) getThreadDriver()).findElements(By.xpath("//*[text()=\"" + text + "\"]")).size() > 0;
         getThreadDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         if (!result) {
-            elementByText =((RemoteWebDriver) getThreadDriver()).findElements(By.xpath("//*[contains(text(),\"" + text + "\")]")).get(0);
+            elementByText = ((RemoteWebDriver) getThreadDriver()).findElements(By.xpath("//*[contains(text(),\"" + text + "\")]")).get(0);
         } else {
-            elementByText = ((RemoteWebDriver)getThreadDriver()).findElements(By.xpath("//*[text()=\"" + text + "\"]")).get(0);
+            elementByText = ((RemoteWebDriver) getThreadDriver()).findElements(By.xpath("//*[text()=\"" + text + "\"]")).get(0);
         }
-        logger.info("[--->text on the element " + elementByText.getText()+"<---]");
+        logger.info("[--->text on the element " + elementByText.getText() + "<---]");
         return elementByText;
     }
 
@@ -250,7 +255,7 @@ public abstract class Utility extends DriverController {
     public void clickOnElement(WebElement element) {
         ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
         waitUntilElementToBeClickable(element, 10);
-        logger.info("[--->Clicking on element " + element.toString()+"<---]");
+        logger.info("[--->Clicking on element " + element.toString() + "<---]");
         try {
             element.click();
         } catch (ElementClickInterceptedException e) {
@@ -263,7 +268,7 @@ public abstract class Utility extends DriverController {
     /* Wait until the specified element is clickable ,scrolling to element and click using action class */
     public void clickOnElementUsingActions(WebElement element) {
         waitUntilElementToBeClickable(element, 10);
-        logger.info("[--->Clicking on element " + element.toString()+"<---]");
+        logger.info("[--->Clicking on element " + element.toString() + "<---]");
         Actions actions = new Actions(getThreadDriver());
         ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
         actions.moveToElement(element).click().build().perform();
@@ -272,8 +277,8 @@ public abstract class Utility extends DriverController {
     /* Clicking on specified web element using javascript executor */
     public void clickOnElementWithJS(WebElement element) {
         waitUntilElementToBeClickable(element, 15);
-        logger.info("[--->Clicking on element " + element.toString()+"<---]");
-        ((JavascriptExecutor)((RemoteWebDriver) getThreadDriver())).executeScript("arguments[0].click();", element);
+        logger.info("[--->Clicking on element " + element.toString() + "<---]");
+        ((JavascriptExecutor) ((RemoteWebDriver) getThreadDriver())).executeScript("arguments[0].click();", element);
     }
 
     /* Clicking on  element by inputting the element text using explicit wait condition and stale element exception is handled */
@@ -282,54 +287,56 @@ public abstract class Utility extends DriverController {
         waitFor(1);
         WebElement result = getElementByText(text);
         mouseHoverToElement(result);
-        logger.info("[--->found an element with text : " + text + " : " + result.toString()+"<---]");
-        if (!result.isDisplayed()) {
-            result = getDisplayedElement(text);
-        }
-       waitUntilTextToBePresent(result, text);
-        try {
-            logger.info("[--->click on element with text : " + text +"<---]");
-            waitUntilElementIsLocated(result,5);
-            clickOnElement(result);
-        } catch (StaleElementReferenceException e) {
-            logger.info("[--->stale element exception : " + text +"<---]");
-            waitFor(4);
-            clickOnElement(result);
-
-        }
-        waitFor(4);
-    }
-    public void clickOnElementUsingTextwithNAtive(String text) {
-        // we need this wait because we are trying to get the element by text, sometimes text is not ready to get the element
-        try {
-            System.out.println("context-->" + ((AndroidDriver) getThreadDriver()).getContext());
-            ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
-            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text="+text+"']")))) {
-                getThreadDriver().findElement(By.xpath("//*[@text="+text+"']")).click();
-            }
-
-            ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
-
-        }catch (Exception e){
-
-        }
-    }
-    public void clickOnElementUsingTextWithJS(String text) {
-        // we need this wait because we are trying to get the element by text, sometimes text is not ready to get the element
-        waitFor(1);
-        WebElement result = getElementByText(text);
-        mouseHoverToElement(result);
-        logger.info("[--->found an element with text : " + text + " : " + result.toString()+"<---]");
+        logger.info("[--->found an element with text : " + text + " : " + result.toString() + "<---]");
         if (!result.isDisplayed()) {
             result = getDisplayedElement(text);
         }
         waitUntilTextToBePresent(result, text);
         try {
-            logger.info("[--->click on element with text : " + text +"<---]");
-            waitUntilElementIsLocated(result,5);
+            logger.info("[--->click on element with text : " + text + "<---]");
+            waitUntilElementIsLocated(result, 5);
+            clickOnElement(result);
+        } catch (StaleElementReferenceException e) {
+            logger.info("[--->stale element exception : " + text + "<---]");
+            waitFor(4);
+            clickOnElement(result);
+
+        }
+        waitFor(4);
+    }
+
+    public void clickOnElementUsingTextwithNAtive(String text) {
+        // we need this wait because we are trying to get the element by text, sometimes text is not ready to get the element
+        try {
+            System.out.println("context-->" + ((AndroidDriver) getThreadDriver()).getContext());
+            ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
+            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text=" + text + "']")))) {
+                getThreadDriver().findElement(By.xpath("//*[@text=" + text + "']")).click();
+            }
+
+            ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
+
+        } catch (Exception e) {
+
+        }
+    }
+
+    public void clickOnElementUsingTextWithJS(String text) {
+        // we need this wait because we are trying to get the element by text, sometimes text is not ready to get the element
+        waitFor(1);
+        WebElement result = getElementByText(text);
+        mouseHoverToElement(result);
+        logger.info("[--->found an element with text : " + text + " : " + result.toString() + "<---]");
+        if (!result.isDisplayed()) {
+            result = getDisplayedElement(text);
+        }
+        waitUntilTextToBePresent(result, text);
+        try {
+            logger.info("[--->click on element with text : " + text + "<---]");
+            waitUntilElementIsLocated(result, 5);
             clickOnElementWithJS(result);
         } catch (StaleElementReferenceException e) {
-            logger.info("[--->stale element exception : " + text +"<---]");
+            logger.info("[--->stale element exception : " + text + "<---]");
             waitFor(4);
             clickOnElementWithJS(result);
 
@@ -338,9 +345,8 @@ public abstract class Utility extends DriverController {
     }
 
 
-
     protected void tapAtPoint(Point point) {
-        AppiumDriver d = (AppiumDriver)getThreadDriver();
+        AppiumDriver d = (AppiumDriver) getThreadDriver();
         PointerInput input = new PointerInput(Kind.TOUCH, "finger1");
         Sequence tap = new Sequence(input, 0);
         tap.addAction(input.createPointerMove(Duration.ZERO, Origin.viewport(), point.x, point.y));
@@ -357,14 +363,15 @@ public abstract class Utility extends DriverController {
     protected void tapElementAt(WebElement el, double xPct, double yPct) {
         Rectangle elRect = el.getRect();
         Point point = new Point(
-                elRect.x + (int)(elRect.getWidth() * xPct),
-                elRect.y + (int)(elRect.getHeight() * yPct)
+                elRect.x + (int) (elRect.getWidth() * xPct),
+                elRect.y + (int) (elRect.getHeight() * yPct)
         );
         tapAtPoint(point);
     }
+
     /* Clicking on  element by inputting the element text with out wait */
     public void clickOnElementUsingLinkText(String text) {
-        logger.info("[--->Clicking on link text " + text+"<---]");
+        logger.info("[--->Clicking on link text " + text + "<---]");
         WebElement element = getThreadDriver().findElement(By.linkText(text));
         clickOnElement(element);
     }
@@ -392,14 +399,14 @@ public abstract class Utility extends DriverController {
     /* Clicking on element by using id with out wait*/
     public void clickOnIdStartsWith(String id) {
         WebElement result = getThreadDriver().findElement(By.cssSelector("*[id^=\"" + id + "\"]"));
-        logger.info("[--->Clicking on id starts with  " + id+"<---]");
+        logger.info("[--->Clicking on id starts with  " + id + "<---]");
         clickOnElement(result);
     }
 
     /* Clicking on element starts with id and with out wait */
     public void clickOnIdEndsWith(String id) {
         WebElement result = getThreadDriver().findElement(By.cssSelector("*[id$=\"" + id + "\"]"));
-        logger.info("[--->Clicking on id ends with  " + id+"<---]");
+        logger.info("[--->Clicking on id ends with  " + id + "<---]");
         clickOnElement(result);
     }
 
@@ -434,7 +441,7 @@ public abstract class Utility extends DriverController {
     public void mouseHoverToElement(WebElement element) {
         Actions actions = new Actions(getThreadDriver());
         ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
-     //   actions.moveToElement(element).perform();
+        //   actions.moveToElement(element).perform();
         waitFor(1);
     }
 
@@ -443,7 +450,7 @@ public abstract class Utility extends DriverController {
         List<WebElement> linkList = getThreadDriver().findElements(By.xpath("//a[contains(text(),'" + link + "')]"));
         for (WebElement element : linkList) {
             if (element.getText().equals(link)) {
-                logger.info("[--->Hovering on element contains text :" + link+"<---]");
+                logger.info("[--->Hovering on element contains text :" + link + "<---]");
                 waitUntilTextToBePresent(element, link);
                 Actions actions = new Actions(getThreadDriver());
                 actions.moveToElement(element).perform();
@@ -461,9 +468,9 @@ public abstract class Utility extends DriverController {
 
         try {
             result = getThreadDriver().findElement(By.xpath("//*[contains(text(),\"" + text + "\")]"));
-            logger.info("[--->Element : " + result.toString() + "found with text " + result.getText()+"<---]");
+            logger.info("[--->Element : " + result.toString() + "found with text " + result.getText() + "<---]");
         } catch (NoSuchElementException nse) {
-            logger.info("[--->No Element found with text " + text+"<---]");
+            logger.info("[--->No Element found with text " + text + "<---]");
         }
         assert result != null;
         if (!result.isDisplayed()) {
@@ -475,13 +482,13 @@ public abstract class Utility extends DriverController {
 
     /* Returning the element text by passing the different text's */
     public boolean verifyEitherTextMessage(String text1, String text2) {
-        logger.info("[--->Verifying text message " + text1+"<---]");
+        logger.info("[--->Verifying text message " + text1 + "<---]");
         waitFor(1);
         try {
             WebElement result1 = null;
 
             result1 = getThreadDriver().findElement(By.xpath("//*[contains(text(),\"" + text1 + "\")]"));
-            logger.info("[--->Element : " + result1.toString() + "found with text " + result1.getText()+"<---]");
+            logger.info("[--->Element : " + result1.toString() + "found with text " + result1.getText() + "<---]");
             if (!result1.isDisplayed()) {
                 return getTextFromElement(getDisplayedElement(text1)).contains(text1);
             }
@@ -491,9 +498,9 @@ public abstract class Utility extends DriverController {
         } catch (NoSuchElementException nse) {
             WebElement result2 = null;
 
-            logger.info("[--->No Element found with text " + text2+"<---]");
+            logger.info("[--->No Element found with text " + text2 + "<---]");
             result2 = getThreadDriver().findElement(By.xpath("//*[contains(text(),\"" + text2 + "\")]"));
-            logger.info("[--->Element : " + result2.toString() + "found with text " + result2.getText()+"<---]");
+            logger.info("[--->Element : " + result2.toString() + "found with text " + result2.getText() + "<---]");
             if (!result2.isDisplayed()) {
                 return getTextFromElement(getDisplayedElement(text2)).contains(text2);
             }
@@ -511,12 +518,12 @@ public abstract class Utility extends DriverController {
             elements = getThreadDriver().findElements(By.xpath("//*[contains(text(),'" + text + "')]"));
             for (WebElement webElement : elements) {
                 if (webElement.isDisplayed() && text.equalsIgnoreCase(webElement.getText())) {
-                    logger.info("[--->Element found with text : " + text+"<---]");
+                    logger.info("[--->Element found with text : " + text + "<---]");
                     we = webElement;
                 }
             }
         } catch (Exception e) {
-            logger.info("[--->No element found with text : " + text+"<---]");
+            logger.info("[--->No element found with text : " + text + "<---]");
         }
         return we;
     }
@@ -542,9 +549,9 @@ public abstract class Utility extends DriverController {
 
     /* Returning the web element actual text by passing the  expected text with A tag*/
     public boolean verifyTextMessageATags(String text) {
-      int linkSize=   getThreadDriver().findElements(By.xpath("//a[contains(text(),'" + text + "')]")).size();
-        logger.info("[--->Element fount with text " + text+"<---]");
-        return (linkSize>0)?true:false;
+        int linkSize = getThreadDriver().findElements(By.xpath("//a[contains(text(),'" + text + "')]")).size();
+        logger.info("[--->Element fount with text " + text + "<---]");
+        return (linkSize > 0) ? true : false;
     }
 
     /* Returning the web element actual text by passing the  expected text and by replacing all the '/n' characters*/
@@ -589,7 +596,7 @@ public abstract class Utility extends DriverController {
             logger.info("[--->Initializing for screenshot<---]");
             moveToCurrentTAB();
             //Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(getThreadDriver());
-            Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.scaling(2)) .takeScreenshot(getThreadDriver());
+            Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.scaling(2)).takeScreenshot(getThreadDriver());
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ImageIO.write(screenshot.getImage(), "jpg", baos);
@@ -598,7 +605,7 @@ public abstract class Utility extends DriverController {
             baos.close();
             logger.info("[--->Screenshot taken<---]");
         } catch (Exception e) {
-            logger.info("[--->Unable to take screenshot, with error message: " + e.getMessage()+"<---]");
+            logger.info("[--->Unable to take screenshot, with error message: " + e.getMessage() + "<---]");
         }
     }
 
@@ -635,6 +642,18 @@ public abstract class Utility extends DriverController {
             waitUntilElementToBeClickable(element, 4);
             Select select = new Select(element);
             select.selectByVisibleText(str);
+        }
+    }
+
+    public void selectByVisibleTextFromDropDownUsingJS(WebElement element, String str) {
+        try {
+            waitUntilElementToBeClickable(element, 4);
+            ((JavascriptExecutor) getThreadDriver()).executeScript("var select = arguments[0]; for(var i = 0; i < select.options.length; i++){ if(select.options[i].text == arguments[1]){ select.options[i].selected = true; } }", element, str);
+        } catch (ElementClickInterceptedException e) {
+            waitFor(1);
+            ((JavascriptExecutor) getThreadDriver()).executeScript("window.scrollBy(0,-350)", "");
+            waitUntilElementToBeClickable(element, 4);
+            ((JavascriptExecutor) getThreadDriver()).executeScript("var select = arguments[0]; for(var i = 0; i < select.options.length; i++){ if(select.options[i].text == arguments[1]){ select.options[i].selected = true; } }", element, str);
         }
     }
 
@@ -681,7 +700,7 @@ public abstract class Utility extends DriverController {
     public String verifyTextMessagePTags(String ptagText, String textTobeVerified) {
         waitFor(1);
         WebElement result = getThreadDriver().findElement(By.xpath("//p[contains(text(),\"" + ptagText + "\")]"));
-        logger.info("[--->"+result.getText() + " : element with text : " + ptagText+"<---]");
+        logger.info("[--->" + result.getText() + " : element with text : " + ptagText + "<---]");
         if (result.isDisplayed() && result.getText().equals(textTobeVerified)) {
             return getTextFromElement(result);
         } else {
@@ -693,7 +712,7 @@ public abstract class Utility extends DriverController {
                     }
                 }
             } catch (Exception e) {
-                logger.info("[--->No element found with text : " + ptagText+"<---]");
+                logger.info("[--->No element found with text : " + ptagText + "<---]");
             }
         }
         waitUntilTextToBePresent(result, ptagText);
@@ -713,14 +732,14 @@ public abstract class Utility extends DriverController {
         String textOnPage = null;
         try {
             result = getThreadDriver().findElement(By.xpath("//h2[contains(text(),'" + text + "')]"));
-            logger.info("[--->text found on the page is : " + result.getText()+"<---]");
+            logger.info("[--->text found on the page is : " + result.getText() + "<---]");
             textOnPage = result.getText();
         } catch (NoSuchElementException nse) {
-            logger.info("[--->element not found with full text : " + text + "now trying to find with any of the word in a given string "+"<---]");
+            logger.info("[--->element not found with full text : " + text + "now trying to find with any of the word in a given string " + "<---]");
             for (String word : text.split(" ")) {
-                logger.info("[--->finding an element with word " + word+"<---]");
+                logger.info("[--->finding an element with word " + word + "<---]");
                 result = getThreadDriver().findElement(By.xpath("//h2[contains(text(),'" + word + "')]"));
-                logger.info("[--->text on page : " + result.getText()+"<---]");
+                logger.info("[--->text on page : " + result.getText() + "<---]");
                 if (result.getText().equals(text)) {
                     textOnPage = result.getText();
                     break;
@@ -863,11 +882,11 @@ public abstract class Utility extends DriverController {
         boolean elementFound = false;
         try {
             if (element.isDisplayed()) {
-                logger.info("[--->the element is displayed  : "+"<---]");
+                logger.info("[--->the element is displayed  : " + "<---]");
                 elementFound = true;
             }
         } catch (Exception e) {
-            logger.info("[--->the element is not displayed  : "+"<---]");
+            logger.info("[--->the element is not displayed  : " + "<---]");
             elementFound = false;
         }
         return elementFound;
@@ -907,19 +926,19 @@ public abstract class Utility extends DriverController {
     /* returning boolean value by checking the element presence and inputting the web element locator(id)*/
     public boolean verifyElementWithId(String link, String elementId) {
         boolean elementPresent = false;
-        logger.info("[--->Checking for the Web Element :" + link + " with elementId :  " + elementId+"<---]");
+        logger.info("[--->Checking for the Web Element :" + link + " with elementId :  " + elementId + "<---]");
         getThreadDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         if (getThreadDriver().findElements(By.id(elementId)).size() != 0) {
             getThreadDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
             elementPresent = true;
-            logger.info("[--->element found with id " + elementId + " and text : " + getThreadDriver().findElement(By.id(elementId)).getText()+"<---]");
+            logger.info("[--->element found with id " + elementId + " and text : " + getThreadDriver().findElement(By.id(elementId)).getText() + "<---]");
         }
         return elementPresent;
     }
 
     /*Accepting the web alerts*/
     public void acceptAlertPopUp() {
-        logger.info("[--->click on Alert popup : " + getThreadDriver().switchTo().alert().getText()+"<---]");
+        logger.info("[--->click on Alert popup : " + getThreadDriver().switchTo().alert().getText() + "<---]");
         String MainWindow = getThreadDriver().getWindowHandle();
         logger.info("[--->on main window handle : " + MainWindow);
         getThreadDriver().switchTo().alert().accept();
@@ -931,7 +950,7 @@ public abstract class Utility extends DriverController {
         String locator = "//*[@class='" + className + "']";
         String breadCrumbsOnPage = getTextFromElement(getThreadDriver().findElement(By.xpath(locator)));
         String cleanString = breadCrumbsOnPage.replaceAll("\r", " ").replaceAll("\n", " ");
-        logger.info("[--->Bread crumbs on the page : <" + cleanString + ">"+"<---]");
+        logger.info("[--->Bread crumbs on the page : <" + cleanString + ">" + "<---]");
         return cleanString;
     }
 
@@ -940,10 +959,10 @@ public abstract class Utility extends DriverController {
         Point location = null;
         try {
             WebElement webElement = getThreadDriver().findElement(By.xpath("//*[contains(text(),'" + text + "')]"));
-            logger.info("[--->found the web element with text : " + webElement.toString() + "---" + webElement.getText()+"<---]");
+            logger.info("[--->found the web element with text : " + webElement.toString() + "---" + webElement.getText() + "<---]");
             location = webElement.getLocation();
         } catch (org.openqa.selenium.NoSuchElementException nse) {
-            logger.info("[--->Given text not found : " + text+"<---]");
+            logger.info("[--->Given text not found : " + text + "<---]");
         }
         return location;
     }
@@ -951,7 +970,7 @@ public abstract class Utility extends DriverController {
     /*returning the boolean value by checking element presence and inputting the id of element */
     public boolean verifyPageContainsElement(String id) {
         boolean found = false;
-        logger.info("[--->Checking for the Web Element with elementId :  " + id+"<---]");
+        logger.info("[--->Checking for the Web Element with elementId :  " + id + "<---]");
         getThreadDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         if (getThreadDriver().findElements(By.id(id)).size() != 0) {
             getThreadDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
@@ -1000,6 +1019,7 @@ public abstract class Utility extends DriverController {
     public List<String> getDataList(List<WebElement> elements) {
         return elements.stream().map(s -> s.getText().toLowerCase()).collect(Collectors.toList());
     }
+
     public List<String> getDataListForDate(List<WebElement> elements) {
         return elements.stream().map(s -> s.getText().split(" ")[0].toLowerCase()).collect(Collectors.toList());
     }
@@ -1031,6 +1051,7 @@ public abstract class Utility extends DriverController {
     public List<String> getListByDescOrder(List<WebElement> elements) {
         return getDataList(elements).stream().map(String::toLowerCase).sorted(Collections.reverseOrder()).collect(Collectors.toList());
     }
+
     public List<String> getListByDescOrderForDate(List<WebElement> elements) {
         return getDataListForDate(elements).stream().map(String::toLowerCase).sorted(Collections.reverseOrder()).collect(Collectors.toList());
     }
@@ -1060,7 +1081,7 @@ public abstract class Utility extends DriverController {
         String textFromElement = "";
         for (WebElement element : we) {
             String s = getTextFromElement(element);
-            logger.info("[--->element found with text : " + s+"<---]");
+            logger.info("[--->element found with text : " + s + "<---]");
             if (s.trim().equalsIgnoreCase(text)) {
                 textFromElement = s.trim();
                 break;
@@ -1071,12 +1092,12 @@ public abstract class Utility extends DriverController {
 
     /* returning the boolean value(true/false) by comparing the actual text(from application) and expected text(from feature) */
     public boolean compareTextFromElementUsingXpath(String xpath, String text) {
-        logger.info("[--->xpath is" + xpath+"<---]");
+        logger.info("[--->xpath is" + xpath + "<---]");
         List<WebElement> we = getThreadDriver().findElements(By.xpath(xpath));
         boolean textFromElement = false;
         for (WebElement element : we) {
             String s = getTextFromElement(element);
-            logger.info("[--->element found with text : " + s+"<---]");
+            logger.info("[--->element found with text : " + s + "<---]");
             if (s.trim().equals(text.trim())) {
                 textFromElement = true;
                 break;
@@ -1088,14 +1109,14 @@ public abstract class Utility extends DriverController {
     /* clicking on element using atrribute "attribute name : value" text for input tag*/
     public void clickOnAttributeValueOnInputTag(String text) {
         WebElement result = getThreadDriver().findElement(By.xpath("//input[@value='" + text + "']"));
-        logger.info("[--->Clicking on value contains" + text+"<---]");
+        logger.info("[--->Clicking on value contains" + text + "<---]");
         result.click();
 
     }
 
     /* Verifying the Element presence using the xpath and size ofe element */
     public boolean checkElementPresence(String xpath) {
-        logger.info("[--->check the element presence"+"<---]");
+        logger.info("[--->check the element presence" + "<---]");
         boolean elementPresence = false;
         if (getThreadDriver().findElements(By.xpath(xpath)).size() > 0) {
             elementPresence = true;
@@ -1124,7 +1145,7 @@ public abstract class Utility extends DriverController {
 
     /* returning the title of page */
     public String getTitleOfThePage() {
-        logger.info("[--->Getting title of the page "+"<---]");
+        logger.info("[--->Getting title of the page " + "<---]");
         return getThreadDriver().getTitle();
     }
 
@@ -1143,7 +1164,7 @@ public abstract class Utility extends DriverController {
         return false;
     }
 
-    public void clickAllowPopUp(){
+    public void clickAllowPopUp() {
         try {
             System.out.println("context-->" + ((AndroidDriver) getThreadDriver()).getContext());
             ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
@@ -1153,54 +1174,56 @@ public abstract class Utility extends DriverController {
             //  ((AndroidDriver)getThreadDriver()).context("WEBVIEW_com.dayizhihui.dayishi.hpv");
             ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
 
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
     }
+
     public void setFailedCountSummary(String tagName) {
-        int count ;
-        logger.info("[--->setFailedCountSummary<---]=====>"+tagName);
+        int count;
+        logger.info("[--->setFailedCountSummary<---]=====>" + tagName);
         ExcelUtil excelUtil = new ExcelUtil();
         String verticalName = excelUtil.getVerticalName(tagName);
 
         switch (verticalName) {
             case "Recruiters":
                 count = verticalScenarioCountPojo.getFailedRecruitersCount();
-                logger.info("[--->Failed:before  Recruiters :"+count+"<---]");
-                verticalScenarioCountPojo.setFailedRecruitersCount(count+1);
-                logger.info("[--->Failed:after  Recruiters :"+verticalScenarioCountPojo.getFailedRecruitersCount()+"<---]");
+                logger.info("[--->Failed:before  Recruiters :" + count + "<---]");
+                verticalScenarioCountPojo.setFailedRecruitersCount(count + 1);
+                logger.info("[--->Failed:after  Recruiters :" + verticalScenarioCountPojo.getFailedRecruitersCount() + "<---]");
                 break;
             case "Partnerships":
                 count = verticalScenarioCountPojo.getFailedPartnershipsCount();
-                logger.info("[--->Failed:before  Partnerships :"+count+"<---]");
-                verticalScenarioCountPojo.setFailedPartnershipsCount(count+1);
-                logger.info("[--->Failed:after  Partnerships :"+verticalScenarioCountPojo.getFailedPartnershipsCount()+"<---]");
+                logger.info("[--->Failed:before  Partnerships :" + count + "<---]");
+                verticalScenarioCountPojo.setFailedPartnershipsCount(count + 1);
+                logger.info("[--->Failed:after  Partnerships :" + verticalScenarioCountPojo.getFailedPartnershipsCount() + "<---]");
                 break;
             case "Traffic":
                 count = verticalScenarioCountPojo.getFailedTrafficCount();
-                logger.info("[--->Failed:before  Traffic :"+count+"<---]");
-                verticalScenarioCountPojo.setFailedTrafficCount(count+1);
-                logger.info("[--->Failed:after  Traffic :"+verticalScenarioCountPojo.getFailedTrafficCount()+"<---]");
+                logger.info("[--->Failed:before  Traffic :" + count + "<---]");
+                verticalScenarioCountPojo.setFailedTrafficCount(count + 1);
+                logger.info("[--->Failed:after  Traffic :" + verticalScenarioCountPojo.getFailedTrafficCount() + "<---]");
                 break;
             case "Candidate":
                 count = verticalScenarioCountPojo.getFailedCandidateCount();
-                logger.info("[--->Failed:before  Candidate :"+count+"<---]");
-                verticalScenarioCountPojo.setFailedCandidateCount(count+1);
-                logger.info("[--->Failed:after  Candidate :"+verticalScenarioCountPojo.getFailedCandidateCount()+"<---]");
+                logger.info("[--->Failed:before  Candidate :" + count + "<---]");
+                verticalScenarioCountPojo.setFailedCandidateCount(count + 1);
+                logger.info("[--->Failed:after  Candidate :" + verticalScenarioCountPojo.getFailedCandidateCount() + "<---]");
                 break;
             case "Search":
                 count = verticalScenarioCountPojo.getFailedSearchCount();
-                logger.info("[--->Failed:before  Search :"+count+"<---]");
-                verticalScenarioCountPojo.setFailedSearchCount(count+1);
-                logger.info("[--->Failed:after  Search :"+verticalScenarioCountPojo.getFailedCandidateCount()+"<---]");
+                logger.info("[--->Failed:before  Search :" + count + "<---]");
+                verticalScenarioCountPojo.setFailedSearchCount(count + 1);
+                logger.info("[--->Failed:after  Search :" + verticalScenarioCountPojo.getFailedCandidateCount() + "<---]");
                 break;
         }
 
 
     }
+
     public void setPassedCountSummary(String tagName) {
         int count;
-        logger.info("[--->setPassedCountSummary<---]=====>"+tagName);
+        logger.info("[--->setPassedCountSummary<---]=====>" + tagName);
         ExcelUtil excelUtil = new ExcelUtil();
         String verticalName = excelUtil.getVerticalName(tagName);
 
@@ -1208,46 +1231,47 @@ public abstract class Utility extends DriverController {
 
             case "Recruiters":
                 count = verticalScenarioCountPojo.getPassedRecruitersCount();
-                logger.info("[--->Passed:before  Recruiters :"+count+"<---]");
-                verticalScenarioCountPojo.setPassedRecruitersCount(count+1);
-                logger.info("[--->Passed:after  Recruiters :"+verticalScenarioCountPojo.getPassedRecruitersCount()+"<---]");
+                logger.info("[--->Passed:before  Recruiters :" + count + "<---]");
+                verticalScenarioCountPojo.setPassedRecruitersCount(count + 1);
+                logger.info("[--->Passed:after  Recruiters :" + verticalScenarioCountPojo.getPassedRecruitersCount() + "<---]");
                 break;
             case "Partnerships":
                 count = verticalScenarioCountPojo.getPassedPartnershipsCount();
-                logger.info("[--->Passed:before  Partnerships :"+count+"<---]");
-                verticalScenarioCountPojo.setPassedPartnershipsCount(count+1);
-                logger.info("[--->Passed:after  Partnerships :"+verticalScenarioCountPojo.getPassedPartnershipsCount()+"<---]");
+                logger.info("[--->Passed:before  Partnerships :" + count + "<---]");
+                verticalScenarioCountPojo.setPassedPartnershipsCount(count + 1);
+                logger.info("[--->Passed:after  Partnerships :" + verticalScenarioCountPojo.getPassedPartnershipsCount() + "<---]");
                 break;
             case "Traffic":
                 count = verticalScenarioCountPojo.getPassedTrafficCount();
-                logger.info("[--->Passed:before  Traffic :"+count+"<---]");
-                verticalScenarioCountPojo.setPassedTrafficCount(count+1);
-                logger.info("[--->Passed:after  Traffic :"+verticalScenarioCountPojo.getPassedTrafficCount()+"<---]");
+                logger.info("[--->Passed:before  Traffic :" + count + "<---]");
+                verticalScenarioCountPojo.setPassedTrafficCount(count + 1);
+                logger.info("[--->Passed:after  Traffic :" + verticalScenarioCountPojo.getPassedTrafficCount() + "<---]");
                 break;
             case "Candidate":
                 count = verticalScenarioCountPojo.getPassedCandidateCount();
-                logger.info("[--->Passed:before  Candidate :"+count+"<---]");
-                verticalScenarioCountPojo.setPassedCandidateCount(count+1);
-                logger.info("[--->Passed:after  Candidate :"+verticalScenarioCountPojo.getPassedCandidateCount()+"<---]");
+                logger.info("[--->Passed:before  Candidate :" + count + "<---]");
+                verticalScenarioCountPojo.setPassedCandidateCount(count + 1);
+                logger.info("[--->Passed:after  Candidate :" + verticalScenarioCountPojo.getPassedCandidateCount() + "<---]");
                 break;
             case "Search":
                 count = verticalScenarioCountPojo.getPassedSearchCount();
-                logger.info("[--->Passed:before  Search :"+count+"<---]");
-                verticalScenarioCountPojo.setPassedSearchCount(count+1);
-                logger.info("[--->Passed:after  Search :"+verticalScenarioCountPojo.getPassedSearchCount()+"<---]");
+                logger.info("[--->Passed:before  Search :" + count + "<---]");
+                verticalScenarioCountPojo.setPassedSearchCount(count + 1);
+                logger.info("[--->Passed:after  Search :" + verticalScenarioCountPojo.getPassedSearchCount() + "<---]");
                 break;
         }
     }
+
     public ByteArrayOutputStream getScreenshotAsBaos() {
         ByteArrayOutputStream baos = null;
         try {
             logger.info("[--->Initializing for screenshot<---]");
             moveToCurrentTAB();
-           // Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(getThreadDriver());
-           Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.scaling(2)) .takeScreenshot(getThreadDriver());
-      baos = new ByteArrayOutputStream();
-            ImageIO.write(screenshot.getImage(),"PNG",baos);
-                     baos.close();
+            // Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(getThreadDriver());
+            Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.scaling(2)).takeScreenshot(getThreadDriver());
+            baos = new ByteArrayOutputStream();
+            ImageIO.write(screenshot.getImage(), "PNG", baos);
+            baos.close();
             logger.info("[--->Screenshot taken<---]");
         } catch (Exception e) {
             logger.info("[--->Unable to take screenshot, with error message: " + e.getMessage() + "<---]");
