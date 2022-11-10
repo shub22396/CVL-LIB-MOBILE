@@ -22,9 +22,9 @@ Feature: Candidate Login Login
     And    I click on Menu Bar
     When   I click Login button
     And    I click Login as Jobseeker button
-    Then   I should see text "An email and password is required to continue."
-#    Then   I should see text "Email is required"
-#    And    I should see text "Password is required"
+#    Then   I should see text "An email and password is required to continue."
+    Then   I should see text "Email is required"
+   And    I should see text "Password is required"
 
   @loginPageResetPassword @ReleaseRegression1
   Scenario: Reset candidate password
