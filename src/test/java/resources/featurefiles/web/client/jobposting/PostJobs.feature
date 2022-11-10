@@ -32,7 +32,7 @@ Feature: Client JobPosting PostJobs
     Then  I should be on page "Hiring Pay For Performance Job Advertising"
     And   I should see text h one tags "Achieve Total Control with " and verify message "Achieve Total Control with Pay for Performance Advertising"
 
-  @clientLogoutPostJobs @Varsha
+  @clientLogoutPostJobs
   Scenario: As a logged out client verify hiring text messages in 'Post Jobs' page
     And   I should see text h two tag "Advertise Your Jobs and Hire Fast with " and verify message "Advertise Your Jobs and Hire Fast with Resume-Library"
     And   I should see text p tag "Here are just some of the reasons thousands of businesses post their jobs on " and verify message "Here are just some of the reasons thousands of businesses post their jobs on Resume-Library:"
