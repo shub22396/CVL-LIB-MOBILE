@@ -13,7 +13,7 @@ Feature: Candidate Registration RegisterApply
     And   I wait for "1" seconds
     And   I uncheck the label Claim my free professional Resume Review one
     And   I wait for "1" seconds
-    And   I Click on Link Register & Apply
+    And   I click on "Register & apply" with JS
     Then  I should be able to see in browser URL "Job Apply"
     When  I enter latest job title "<JobTitle>"
     And   I enter zip code "<ZipCode>"
@@ -42,7 +42,7 @@ Feature: Candidate Registration RegisterApply
     Then   I set cookie with "ibpid" and "975155"
     And    I reload the page
     When   I click on non external job to apply
-    And    I Click on Link Register & Apply
+    And    I click on "Register & Apply" with JS
     And    I should not see "Resume is required" text
 
   @registerApplyNoIbpidSet
