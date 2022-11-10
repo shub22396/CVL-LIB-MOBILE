@@ -176,11 +176,11 @@ Feature: Client Account ClientAccountModule
     When   I click on "Client Help Center"
     Then   I should be able to see in browser URL "Client Help"
     And    I should see text H one tag "Client Help Center"
-
-    Given  I navigate to page "Client Account"
-    Then   I click on "Download our user manual"
-    And    I click on Download
-    And    I should see download file "rl-user-manual"
+   ###TBC with Lamda team
+#    Given  I navigate to page "Client Account"
+#    Then   I click on "Download our user manual"
+#    And    I click on Download
+#    And    I should see download file "rl-user-manual"
 
   @clientAccountVerificationFaq3
   Scenario: Verify the faq module content on account page part 3
@@ -188,11 +188,6 @@ Feature: Client Account ClientAccountModule
     And    I click on "Resume Alert Tips"
     Then   I should be able to see in browser URL "Client Help Alert Tips"
     And    I should see text H one tag "Resume Alert Tips"
-
-    Given  I navigate to page "Client Account"
-    And    I click on "Resume Search Tips"
-    Then   I should be able to see in browser URL "Client Help Search Tips"
-    And    I should see text H one tag "Resume Search Tips"
 
     Given  I navigate to page "Client Account"
     And    I click on "Resume Search Tips"
@@ -209,14 +204,14 @@ Feature: Client Account ClientAccountModule
     Then   I should be able to see in browser URL "Client Help Vacancy Enhancements"
     And    I should see text H one tag "Job Enhancement Tips"
 
-  @clientAccountVerificationLatestFeatures
-  Scenario: Verify the Latest Features module content on account page
+  @clientAccountVerificationVideoGuides
+  Scenario: Verify the Video Guides Features module content on account page
     Given  I navigate to page "Client Account"
-    Then   I should see text "Latest Features" in "Latest Features" module
-    And    I should see text "View Latest Features" in "Latest Features" module
-    When   I click on "View Latest Features"
-    Then   I should be able to see in browser URL "Client Latest Features"
-    And    I should see text H one tag "Latest Features"
+    Then   I should see text "Video Guides" in "Video Guides" module
+    And    I should see text "View Video Guides" in "Video Guides" module
+    When   I click on "View Video Guides"
+    Then   I should be able to see in browser URL "Client Help Videos"
+    And    I should see text H one tag "Video Guides"
 
   @clientAccountVerificationHiringInsights
   Scenario: Verify the hiring insights module content on account page
