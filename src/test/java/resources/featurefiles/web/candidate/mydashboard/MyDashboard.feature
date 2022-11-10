@@ -4,7 +4,7 @@ Feature: Candidate mydashboard MyDashboard
   Background: Login and my dashboard page
     Given  I login as a candidate
 
-  @jobMatches @ReleaseRegression1
+  @jobMatches @ReleaseRegression1 @MobileChrome
   Scenario: Verify Job matches tab
     Then  I should see text H one tag "My Dashboard"
     And   I should see text "Job Matches"
@@ -25,7 +25,7 @@ Feature: Candidate mydashboard MyDashboard
     And   I should be able to see in browser URL "/jobs/nonexternaltestjob-in-90189?r=51"
     And   I should see text H one tag "Nonexternaltestjob jobs in 90189"
 
-  @verifyBannersAndLinks #failing in desktop as well
+  @verifyBannersAndLinks #Penidng due to upload resume issue
   Scenario: Verify Job matches, Recently applied & Banner
     When  I navigate to page "Candidate My Profile"
     And   I upload resume "Test CV"
@@ -42,7 +42,7 @@ Feature: Candidate mydashboard MyDashboard
     Then  I should be on page "Candidate My Profile"
     And   I should see text p tag replace all "Your resume is currently processing, you will be able to apply for jobs in just a few moments."
 
-  @VerifyLinksUnderMyAccountSection
+  @VerifyLinksUnderMyAccountSection @MobileChrome
   Scenario: Verify the Link Navigation's under my Dashboard page
     When I click on job alert link
     Then I should be on page "Candidate Job Alerts"
@@ -70,14 +70,14 @@ Feature: Candidate mydashboard MyDashboard
     And  I should see bread crumbs "My Dashboard > My Profile" with class name: "breadcrumbs"
     Then I navigate to page "Candidate My Dashboard"
 
-  @VerifyEditProfileLink
+  @VerifyEditProfileLink @MobileChrome
   Scenario: Verify the Edit Profile Link Navigation on Dashboard page
     When I click on "Edit Profile"
     Then I should be on page "Candidate My Profile"
     And  I should see text H one tag "My Profile"
     And  I should see bread crumbs "My Dashboard > My Profile" with class name: "breadcrumbs"
 
-  @VerifyHeaderBannerLinks #failing in desktop as well
+  @VerifyHeaderBannerLinks  @MobileChrome
   Scenario: Verify the Site Navigation links on Header Banner on Dashboard page
     And I click on id "mobile-menu-trigger"
     When I click on "My Dashboard"
