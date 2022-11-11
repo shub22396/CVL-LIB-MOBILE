@@ -1,7 +1,7 @@
 @BrowseJobsByLocation @Regression @Web @Candidate3 @ReleaseRegression1 @Traffic
 Feature: Candidate JobSearch BrowseJobsByLocation
 
-  @browseJobs
+  @browseJobs @MobileChrome
   Scenario: Verify browse jobs on home page
     Given I navigate to page "Search Jobs Locations"
     Then I should see text "Browse Jobs By Location"

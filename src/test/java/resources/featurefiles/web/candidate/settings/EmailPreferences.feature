@@ -1,14 +1,14 @@
 @CandidateEmailPreferences @Regression @Web @Candidate5 @Traffic
 Feature: Candidate Settings EmailPreferences
 
-  @emailPreferences @ReleaseRegression1
+  @emailPreferences @ReleaseRegression1 @MobileChrome
   Scenario: Login as an existing candidate and check email preferences
     Given I login as a candidate
     When  I navigate to page "Candidate Email Preferences"
     Then  I should see job alerts is ticked
     And   I should see updates is ticked
 
-  @emailPreferencesUnsubscribeJobAlerts
+  @emailPreferencesUnsubscribeJobAlerts @MobileChrome
   Scenario: Candidate unsubscribes from Job Alert emails
     Given I login as a candidate
     And   I navigate to page "Candidate Email Preferences"
@@ -18,7 +18,7 @@ Feature: Candidate Settings EmailPreferences
     And   I tick Job alerts
     And   I Click on Save changes
 
-  @emailPreferencesUnsubscribeUpdates @ReleaseRegression1
+  @emailPreferencesUnsubscribeUpdates @ReleaseRegression1 @MobileChrome
   Scenario: Candidate unsubscribes from Job Alert emails
     Given I login as a candidate
     And   I navigate to page "Candidate Email Preferences"
@@ -28,7 +28,7 @@ Feature: Candidate Settings EmailPreferences
     And   I tick updates
     And   I Click on Save changes
 
-  @emailPreferencesUnsubscribeAllEmails
+  @emailPreferencesUnsubscribeAllEmails @MobileChrome
   Scenario: Candidate unsubscribes from all emails
     Given I login as a candidate
     And   I navigate to page "Candidate Email Preferences"
@@ -41,7 +41,7 @@ Feature: Candidate Settings EmailPreferences
     And   I tick Job alerts
     And   I Click on Save changes
 
-  @emailPreferencesCombineEmails
+  @emailPreferencesCombineEmails @MobileChrome
   Scenario: Candidate Email Preferences Combine emails
     Given I login as a candidate
     And   I navigate to page "Candidate Email Preferences"

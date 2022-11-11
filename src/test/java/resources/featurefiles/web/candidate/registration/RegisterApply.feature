@@ -1,7 +1,7 @@
 @RegisterAndApply  @Regression @Web @Candidate5 @Traffic
 Feature: Candidate Registration RegisterApply
 
-  @candidateRegisterApply @ReleaseRegression1
+  @candidateRegisterApply @ReleaseRegression1 @MobileChrome
   Scenario Outline: Register and Apply - Successful registration
     Given I navigate to page "Jobs Non External Test Jobs"
     When  I click on non external job to apply
@@ -27,7 +27,7 @@ Feature: Candidate Registration RegisterApply
       | Email                                        | FirstName | LastName | Password | Resume  | JobTitle     | ZipCode | Phone        |
       | automation-register-apply@resume-library.com | Bob       | Russel   | 123456   | Test Cv | Test Analyst | 50001   | 012345678912 |
 
-  @registerApplyResumeMandatory
+  @registerApplyResumeMandatory @MobileChrome
   Scenario: Register and Apply - Resume mandatory when 'Resume required on registration' partner setting is turned on
     Given  I navigate to page "Jobs Non External Test Jobs"
     Then   I set cookie with "ibpid" and "975438"
@@ -36,7 +36,7 @@ Feature: Candidate Registration RegisterApply
     And    I Click on Link Register & Apply
     Then   I should see text "Resume is required"
 
-  @registerApplyResumeNotMandatory
+  @registerApplyResumeNotMandatory @MobileChrome
   Scenario: Register and Apply - Resume NOT mandatory when 'Resume required on registration' partner setting is turned off
     Given  I navigate to page "Jobs Non External Test Jobs"
     Then   I set cookie with "ibpid" and "975155"
@@ -45,7 +45,7 @@ Feature: Candidate Registration RegisterApply
     And    I click on "Register & Apply" with JS
     And    I should not see "Resume is required" text
 
-  @registerApplyNoIbpidSet
+  @registerApplyNoIbpidSet @MobileChrome
   Scenario: Register and Apply where IBPID cookie is not set
     Given  I navigate to page "Jobs Non External Test Jobs"
     And    I reload the page
