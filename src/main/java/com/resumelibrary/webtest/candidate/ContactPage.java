@@ -35,8 +35,9 @@ public class ContactPage extends Utility {
 
     public void selectFaqSearchTypeFromDropdown(String text) {
         logger.info("Selected faq search type from dropdown" + FaqSearchTypeDropdown.toString());
-        selectByVisibleTextFromDropDown(FaqSearchTypeDropdown, text);
-    }
+//        selectByVisibleTextFromDropDown(FaqSearchTypeDropdown, text);
+        selectByVisibleTextFromDropDownUsingJS(FaqSearchTypeDropdown,text);
+   }
 
     public void EnterFaqSearchInInputField(String input) {
         logger.info("Entered faq search in to input field" + FaqSearchInputField.toString());
