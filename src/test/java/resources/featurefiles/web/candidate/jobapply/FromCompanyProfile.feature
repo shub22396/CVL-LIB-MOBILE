@@ -3,7 +3,7 @@ Feature: Candidate JobApply FromCompanyProfile
 
   #Scenario: A user navigates to a company profile while not logged into an account. The user clicks to apply for the
   #job and is asked to log-in or register
-  @jobApplyCompanyProfileLoggedOut #currently its failing on web also
+  @jobApplyCompanyProfileLoggedOut   @MobileChrome   #currently its failing on web also
   Scenario: Job apply popup from company profile page
     Given I am on page "/company/14732/acme-company-no-576874-jobs"
     When I click on apply now
@@ -23,7 +23,7 @@ Feature: Candidate JobApply FromCompanyProfile
 
   #Scenario: Logs a candidate into their account, navigates to a company profile and applies for a job they have not
   #already applied for
-  @jobApplyCompanyProfileLoggedIn @ReleaseRegression1
+  @jobApplyCompanyProfileLoggedIn @ReleaseRegression1   @MobileChrome
   Scenario: Job apply from company profile page after logging into an account
     Given I login as a candidate
     And I am on page "/company/1478/acme-company-no-1728-jobs"
