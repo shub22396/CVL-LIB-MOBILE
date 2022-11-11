@@ -22,102 +22,22 @@ public class CustomListener extends Utility implements ITestListener, IExecution
         boolean flag=false;
         String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
         String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
-        HashMap<String, String> options1 = new HashMap<String, String>();
-        options1.put("user", username);
-        options1.put("key", accessKey);
-        options1.put("load-balanced","true");
-        options1.put("tunnelName", "RLRegressionTunnel1");
-        int i=0;
-        do{
-            flag= startTunnel(options1);
-            i++;
-        }while(!flag && i<2);
+        String noOfTunnels = Integer.parseInt(WebURLHelper.getParameterFromEnvOrSysParam("TUNNELS", PropertyFileReader.getInstance().getProperty("nooftunnels")));
+        for(int j=0;j<noOfTunnels;j++){
 
-        HashMap<String, String> options2 = new HashMap<String, String>();
-        options2.put("user", username);
-        options2.put("key", accessKey);
-        options2.put("load-balanced","true");
-        options2.put("tunnelName", "RLRegressionTunnel");
-        i=0;
-        do{
-            flag= startTunnel(options2);
-            i++;
-        }while(!flag && i<2);
-        HashMap<String, String> options3 = new HashMap<String, String>();
-        options3.put("user", username);
-        options3.put("key", accessKey);
-        options3.put("load-balanced","true");
-        options3.put("tunnelName", "RLRegressionTunnel");
-        i=0;
-        do{
-            flag= startTunnel(options3);
-            i++;
-        }while(!flag && i<2);
-//        HashMap<String, String> options4 = new HashMap<String, String>();
-//        options4.put("user", username);
-//        options4.put("key", accessKey);
-//        options4.put("load-balanced","true");
-//        options4.put("tunnelName", "RLRegressionTunnel");
-//        i=0;
-//        do{
-//            flag= startTunnel(options4);
-//            i++;
-//        }while(!flag && i<2);
-//        HashMap<String, String> options5 = new HashMap<String, String>();
-//        options5.put("user", username);
-//        options5.put("key", accessKey);
-//        options5.put("load-balanced","true");
-//        options5.put("tunnelName", "RLRegressionTunnel");
-//
-//        i=0;
-//        do{
-//            flag= startTunnel(options5);
-//            i++;
-//        }while(!flag && i<2);
-//        HashMap<String, String> options6 = new HashMap<String, String>();
-//        options6.put("user", username);
-//        options6.put("key", accessKey);
-//        options6.put("load-balanced","true");
-//        options6.put("tunnelName", "RLRegressionTunnel");
-//        i=0;
-//        do{
-//
-//            flag= startTunnel(options6);
-//            i++;
-//        }while(!flag && i<2);
-//        HashMap<String, String> options7 = new HashMap<String, String>();
-//        options7.put("user", username);
-//        options7.put("key", accessKey);
-//        options7.put("load-balanced","true");
-//        options7.put("tunnelName", "RLRegressionTunnel");
-//        i=0;
-//        do{
-//
-//            flag= startTunnel(options7);
-//            i++;
-//        }while(!flag && i<2);
-//        HashMap<String, String> options8 = new HashMap<String, String>();
-//        options8.put("user", username);
-//        options8.put("key", accessKey);
-//        options8.put("load-balanced","true");
-//        options8.put("tunnelName", "RLRegressionTunnel");
-//        i=0;
-//        do{
-//
-//            flag= startTunnel(options8);
-//            i++;
-//        }while(!flag && i<2);
-//        HashMap<String, String> options9 = new HashMap<String, String>();
-//        options9.put("user", username);
-//        options9.put("key", accessKey);
-//        options9.put("load-balanced","true");
-//        options9.put("tunnelName", "RLRegressionTunnel");
-//        i=0;
-//        do{
-//
-//            flag= startTunnel(options9);
-//            i++;
-//        }while(!flag && i<2);
+            HashMap<String, String> option = new HashMap<String, String>();
+            option.put("user", username);
+            option.put("key", accessKey);
+            option.put("load-balanced","true");
+            option.put("tunnelName", "RLRegressionTunnel");
+            int i=0;
+            do{
+                  flag= startTunnel(option);
+                i++;
+            }while(!flag && i<2);
+        }
+
+
         ASCIIArtGenerator artGen = new ASCIIArtGenerator();
         try {
             artGen.printText("RL Regression started");
