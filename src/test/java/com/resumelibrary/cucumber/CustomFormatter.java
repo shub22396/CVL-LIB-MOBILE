@@ -104,7 +104,7 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
             if (result.getStatus().equals(Status.FAILED)) {
            if ((Integer) scenarioRetryMap.get(event.getTestCase().getName()) == givenRetryCount) {
                     resultText = BLACK_BACKGROUND_BRIGHT + RED_BOLD_BRIGHT + "FAILED" + ANSI_RESET;
-                    String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaStackBuildId");
+                    String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
                     String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
                     ExcelUtil excelUtil = new ExcelUtil();
                     if (!alreadyFileCreated) {

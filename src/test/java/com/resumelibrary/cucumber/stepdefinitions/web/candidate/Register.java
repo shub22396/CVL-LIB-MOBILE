@@ -183,9 +183,11 @@ public class Register extends Utility {
             resumePath="/SDCARD/Download/test123.pdf";
             waitFor(3);
             new RegistrationPage().selectFile();
+            System.out.println("---After select file ---");
 
         } catch (Exception e) {
-            e.getMessage();
+            System.out.println("---in the exception ---");
+            e.printStackTrace();
         }
     }
 

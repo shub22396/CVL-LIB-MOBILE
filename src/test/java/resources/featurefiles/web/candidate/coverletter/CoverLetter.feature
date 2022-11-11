@@ -1,7 +1,7 @@
 @CoverLetter @Regression @Web @Candidate2 @Candidate
 Feature: Candidate CoverLetter CoverLetter
 
-  @verifyCoverLetterPage
+  @verifyCoverLetterPage @MobileChrome
   Scenario: Verify some elements
     Given  I login as a candidate
     When   I navigate to page "Candidate Cover Letter"
@@ -31,7 +31,7 @@ Feature: Candidate CoverLetter CoverLetter
     Then   I click on edit profile link
     And    I should be on page "Candidate My Profile"
 
-  @updateCoverLetter @ReleaseRegression1
+  @updateCoverLetter @ReleaseRegression1 @MobileChrome
   Scenario: Update cover letter and verify success message
     Given  I login as a candidate
     When   I navigate to page "Candidate Cover Letter"
