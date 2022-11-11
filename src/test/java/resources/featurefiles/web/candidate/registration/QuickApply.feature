@@ -60,7 +60,7 @@ Feature: Candidate Registration QuickApply
       | FirstName  | LastName | Password |
       | Automation | Tester   | rltest01 |
 
-  @quickApplyResumeMandatory
+  @quickApplyResumeMandatory @MobileChrome
   Scenario: Quick apply registration - Resume mandatory when 'Resume required on registration' partner setting is turned on
     Given  I set cookie with "ibpid" and "975438"
     Then   I reload the page
@@ -69,7 +69,7 @@ Feature: Candidate Registration QuickApply
     When   I Click on Link Register & Apply
     And    I should see "Resume is required"
 
-  @quickApplyResumeNotMandatory
+  @quickApplyResumeNotMandatory @MobileChrome
   Scenario: Register and Apply - Resume NOT mandatory when 'Resume required on registration' partner setting is turned off
     Given  I set cookie with "ibpid" and "975155"
     And    I reload the page

@@ -1,7 +1,7 @@
   @LoginViaRegistration @Regression @Web @Candidate5 @Traffic
   Feature: Candidate Registration LoginViaRegistration
 
-    @registerApplyLogin
+    @registerApplyLogin @MobileChrome
     Scenario: Login as an existing candidate via Register and Apply
      Given  I navigate to page "Jobs Non External Test Jobs"
       And   I click on non external job to apply
