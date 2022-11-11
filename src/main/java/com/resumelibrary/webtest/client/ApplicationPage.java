@@ -196,14 +196,9 @@ public class ApplicationPage extends Utility {
 
     public void selectValueToSortOnApplicationsPage(String text) {
         logger.info("Select sort by from dropdown");
-
-            WebElement orderBySelect = getThreadDriver().findElement(By.id("client-apps-mobile-sort-select"));
-            orderBySelect.click();
-            WebElement jobIdAsc = getThreadDriver().findElement(By.xpath("//*[text()='"+text+"']"));
-            waitUntilElementIsLocated(jobIdAsc, 30);
-            jobIdAsc.click();
-            // selectByVisibleTextFromDropDownUsingJS(ApplicationsMobileSortSelect, text);
-            waitFor(4);
-        }
+        clickOnElement(ApplicationsMobileSortSelect);
+        clickOnElementUsingText(text);
+        waitFor(4);
+    }
 
 }

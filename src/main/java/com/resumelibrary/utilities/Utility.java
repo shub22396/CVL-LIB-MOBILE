@@ -396,6 +396,11 @@ public abstract class Utility extends DriverController {
         }
     }
 
+    public void enabledIdUsingJS(String id) {
+        WebElement result = getThreadDriver().findElement(By.id(id));
+        ((JavascriptExecutor) ((RemoteWebDriver) getThreadDriver())).executeScript("arguments[0].disabled = false;", result);
+    }
+
     /* Clicking on element by using id with out wait*/
     public void clickOnIdStartsWith(String id) {
         WebElement result = getThreadDriver().findElement(By.cssSelector("*[id^=\"" + id + "\"]"));
@@ -634,14 +639,14 @@ public abstract class Utility extends DriverController {
     public void selectByVisibleTextFromDropDown(WebElement element, String str) {
         try {
             waitUntilElementToBeClickable(element, 4);
-            Select select = new Select(element);
-            select.selectByVisibleText(str);
+            clickOnElement(element);
+            clickOnElementUsingText(str);
         } catch (ElementClickInterceptedException e) {
             waitFor(1);
             ((JavascriptExecutor) getThreadDriver()).executeScript("window.scrollBy(0,-350)", "");
             waitUntilElementToBeClickable(element, 4);
-            Select select = new Select(element);
-            select.selectByVisibleText(str);
+            clickOnElement(element);
+            clickOnElementUsingText(str);
         }
     }
 

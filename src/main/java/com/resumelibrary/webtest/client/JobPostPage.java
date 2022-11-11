@@ -89,7 +89,7 @@ public class JobPostPage extends Utility {
 
     public void selectStateFromDropdown(String state) {
         logger.info("Selected state from dropdown" + state);
-        selectByVisibleTextFromDropDownUsingJS(StateDropdown, state);
+        selectByVisibleTextFromDropDown(StateDropdown, state);
     }
 
     public void enterTown(String town) {
@@ -223,19 +223,19 @@ public class JobPostPage extends Utility {
     }
 
     public List<String> getListOfPostedDates() {
-        sortedList = getDataList(PostedDates);
+        sortedList = getDataListForDate(PostedDates);
         logger.info("Getting list of posted dates ");
         return sortedList;
     }
 
     public List<String> ascendingOrderOnPostedDates() {
-        sortedList = getListByAscOrder(PostedDates);
+        sortedList = getListByAscOrderForDate(PostedDates);
         logger.info("Sorting posted date by asc order" + sortedList);
         return getSortedDatesAsc(sortedList);
     }
 
     public List<String> descendingOrderOnPostedDates() {
-        sortedList = getListByDescOrder(PostedDates);
+        sortedList = getListByDescOrderForDate(PostedDates);
         logger.info("Sorting  posted date by desc order" + sortedList);
         return getSortedDatesDesc(sortedList);
     }
@@ -260,6 +260,7 @@ public class JobPostPage extends Utility {
 
     public void selectValueToSortOnClientJobsPage(String text) {
         logger.info("Select sort by from dropdown");
-        selectByVisibleTextFromDropDown(JobsMobileSortSelect, text);
+       selectByVisibleTextFromDropDown(JobsMobileSortSelect,text);
+        waitFor(4);
     }
 }
