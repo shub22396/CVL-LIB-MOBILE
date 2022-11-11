@@ -144,10 +144,16 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
                         webDocUtil.createFolder(buildId);
                         webDocUtil.writeFailedScenarioInDoc(scenarioStepResultList, event.getTestCase().getName());
                     }
+               if(System.getProperty("browserName").contains("lambda")) {
+                   ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=failed");
+               }
                 } else {
                     int retryCount = ((Integer) scenarioRetryMap.get(event.getTestCase().getName()));
                     scenarioRetryMap.put(event.getTestCase().getName(), retryCount + 1);
-//                        ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=skipped");
+                if(System.getProperty("browserName").contains("lambda")) {
+                    ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-name=(Failed at attempt:-"+(retryCount+1)+")"+event.getTestCase().getName());
+                   // ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=cancelled");
+               }
                 }
             } else if (result.getStatus().equals(Status.PASSED)) {
                 resultText = BLACK_BACKGROUND_BRIGHT + GREEN_BOLD_BRIGHT + "PASSED" + ANSI_RESET;
