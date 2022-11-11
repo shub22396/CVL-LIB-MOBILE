@@ -41,7 +41,7 @@ public class Home extends Utility {
 
     @Then("I should see resume library logo")
     public void iShouldSeeResumeLibraryLogo() {
-        Assert.assertFalse(new HomePage().homePageLogoIsVisible());
+        Assert.assertTrue(new HomePage().homePageLogoIsVisible());
     }
 
     @And("I click on recent searches link")
