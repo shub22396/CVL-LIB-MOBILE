@@ -14,7 +14,7 @@
 @CreateJobAlert @Regression @Web @Candidate2 @Traffic
 Feature: Candidate JobAlert CreateJobAlert
 
-  @newUserCreateAlert @ReleaseRegression1
+  @newUserCreateAlert @ReleaseRegression1 @MobileChrome
   Scenario: New user create alert
     Given I navigate to page "Jobs Sales In Houston"
     And   I enter email random address to get latest job alerts
@@ -23,7 +23,7 @@ Feature: Candidate JobAlert CreateJobAlert
     When  I navigate to page "Candidate Job Alerts"
     Then  I should see text "We've created a job alert based on your profile so you receive the latest matching jobs direct to your inbox." on the page
 
-  @newUserCreateAlertOne @ReleaseRegression1
+  @newUserCreateAlertOne @ReleaseRegression1 @MobileChrome
   Scenario: New user create alert banner 1
     Given I navigate to page "Jobs Sales In Houston"
     And   I fill in new user email field with random email id
@@ -65,7 +65,7 @@ Feature: Candidate JobAlert CreateJobAlert
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert on alert popup
 
-  @newUserFormValidation
+  @newUserFormValidation @MobileChrome
   Scenario: New User form Validation
     Given I navigate to page "Job Alerts"
     And   I click on Create Job Alerts button
@@ -88,7 +88,7 @@ Feature: Candidate JobAlert CreateJobAlert
     Then  I should be able to see in browser URL "Search Jobs On The Go"
     And   I should see text H one tag "Search and Apply to Jobs On-the-Go!"
 
-  @jobAlertJobView @ReleaseRegression1
+  @jobAlertJobView @ReleaseRegression1 @MobileChrome
   Scenario: Add a job alert from job view
     Given I navigate to page "Jobs Sales"
     Then  I click on id "job_title_2"
@@ -124,7 +124,7 @@ Feature: Candidate JobAlert CreateJobAlert
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert
 
-  @jobAlertLoginOne
+  @jobAlertLoginOne @MobileChrome
   Scenario: Login as existing user on /job-alerts page, create alert, delete alert
     Given I navigate to page "Job Alerts"
     And   I fill the fields keywords with "Test Analyst" and location with "Texas City, TX"
@@ -161,7 +161,7 @@ Feature: Candidate JobAlert CreateJobAlert
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert on alert popup
 
-  @jobAlertLoginThree
+  @jobAlertLoginThree @MobileChrome
   Scenario: Job search (keyword+loc) and login as existing user via 'Create Job Alert' banner (delete alert after creation)
     Given I navigate to page "Jobs Sales In Houston"
     And   I fill in jbe email one with "testers+candidate@resume-library.com"
@@ -176,7 +176,7 @@ Feature: Candidate JobAlert CreateJobAlert
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert on alert popup
 
-  @jobAlertLoginFour
+  @jobAlertLoginFour @MobileChrome
   Scenario: Job view and login as existing user on job-alerts banner (delete alert after creation)
     Given I navigate to page "Jobs Sales"
     Then  I click on id "job_title_2"

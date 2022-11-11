@@ -98,10 +98,11 @@ public class UpdateProfilePage extends Utility {
 
     public void enterDesiredJobTitle(String desiredJobTitle) {
         logger.info("desired job tile entered is : " + desiredJobTitle);
+        DesiredJobTitle.clear();
         DesiredJobTitle.sendKeys(desiredJobTitle);
-        DesiredJobTitle.sendKeys(Keys.TAB);
-        DesiredJobTitle.sendKeys(Keys.TAB);
-        DesiredJobTitle.sendKeys(Keys.TAB);
+        //DesiredJobTitle.sendKeys(Keys.TAB);
+       // DesiredJobTitle.sendKeys(Keys.TAB);
+       // DesiredJobTitle.sendKeys(Keys.TAB);
        // fillWebElement(DesiredJobTitle, desiredJobTitle);
         waitFor(4);
     }
