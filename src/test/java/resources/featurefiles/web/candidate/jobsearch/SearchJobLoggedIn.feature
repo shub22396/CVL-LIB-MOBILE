@@ -22,7 +22,7 @@ Feature: Candidate JobSearch SearchJobsLoggedIn
   Scenario: Search job page logged in test with all values
     And   I navigate to page "Search Jobs"
     And   I fill in search location with "Brooklyn, NY"
-    And   I select "250 Miles" from search distance
+    And   I select "250" from search distance
     When  I click on link text "More Search Options"
     And   I select the option "50000" from Salary Min
     And   I select the option "100000" from Salary Max
@@ -132,7 +132,7 @@ Feature: Candidate JobSearch SearchJobsLoggedIn
     And   I should see text "Your details have been successfully updated"
     And   I navigate to page "Search Jobs"
     Then  I click on "View more job matches"
-    #And   I should be able to see in browser URL "Jobs Nonexternaltestjob In 90189 R 51"
+    And   I should be able to see in browser URL "Jobs Nonexternaltestjob In 90189 R 51"
     And   I should see text "Nonexternaltestjob jobs in 90189"
 
 
