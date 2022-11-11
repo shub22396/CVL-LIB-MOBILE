@@ -4,7 +4,7 @@ Feature: Candidate Account RecentlyApplied
   Background: Login as a new candidate
     Given I login as a candidate
 
-  @recentlyApplied
+  @recentlyApplied  @MobileChrome
   Scenario: Verify Recently applied tab
     And   I click on recently applied link
     And   I should see text p tag "Some jobs listed above require you to complete your application directly on a " and verify message "Some jobs listed above require you to complete your application directly on a third party website. Please note: this list may include jobs that you have viewed but have NOT applied for. External applications are not tracked by Resume-Library, therefore we are unable to track whether you have made an application after you have left Resume-Library.com."
