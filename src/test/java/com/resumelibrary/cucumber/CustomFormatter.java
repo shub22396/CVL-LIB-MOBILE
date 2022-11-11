@@ -151,7 +151,7 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
                     int retryCount = ((Integer) scenarioRetryMap.get(event.getTestCase().getName()));
                     scenarioRetryMap.put(event.getTestCase().getName(), retryCount + 1);
                 if(System.getProperty("browserName").contains("lambda")) {
-                    ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-name=(Failed at attempt:"+(retryCount+1)+")"+event.getTestCase().getName());
+                    ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-name=(Failed at attempt:-"+(retryCount+1)+")"+event.getTestCase().getName());
                    // ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=cancelled");
                }
                 }
