@@ -22,7 +22,7 @@ public class CustomListener extends Utility implements ITestListener, IExecution
         boolean flag=false;
         String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
         String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
-        String noOfTunnels = Integer.parseInt(WebURLHelper.getParameterFromEnvOrSysParam("TUNNELS", PropertyFileReader.getInstance().getProperty("nooftunnels")));
+        int noOfTunnels = Integer.parseInt(WebURLHelper.getParameterFromEnvOrSysParam("TUNNELS", PropertyFileReader.getInstance().getProperty("nooftunnels")));
         for(int j=0;j<noOfTunnels;j++){
 
             HashMap<String, String> option = new HashMap<String, String>();
