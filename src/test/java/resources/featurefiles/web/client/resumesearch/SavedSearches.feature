@@ -2,7 +2,7 @@
 # 1. Save a search from resume search
 # 2. Assert on saved search page
 # 3. Confirm saved search actions Run, Modify, Delete
-@savedResumeSearches @Regression @Web @Client5 @Search
+@savedResumeSearches @Regression @Web @Client5 @Search @MobileChrome
 Feature: Client ResumeSearch SavedSearches
 
   Background: Client Login

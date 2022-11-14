@@ -3,7 +3,7 @@
             # Elements are: Jobs by category, Jobs by location, more and fewer button
     # 2. Displaying page, upload resume banner, location and job type field on Job card
 
-@JobSearchResults @Regression @Web @Candidate3 @Search
+@JobSearchResults @Regression @Web @Candidate3 @Search @MobileChrome
 Feature: Candidate JobSearch SearchResultsPage
 
   @searchResultsPageModules
