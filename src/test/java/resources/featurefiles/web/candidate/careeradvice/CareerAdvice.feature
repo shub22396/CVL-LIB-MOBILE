@@ -1,7 +1,7 @@
 @CareerAdvice @Regression @Web @Candidate1 @Candidate
 Feature: Candidate CareerAdvice CareerAdvice
 
-  @loadCareerAdvice @ReleaseRegression1
+  @loadCareerAdvice @ReleaseRegression1 @MobileChrome
   Scenario: Load Career Advice
     Given  I am on page "/career-advice"
     Then   I should see "Career Advice" on the page
@@ -11,7 +11,7 @@ Feature: Candidate CareerAdvice CareerAdvice
     And    I should see text H three tag "Jobs By Location"
     And    I should see text H three tag "Popular jobs"
 
-  @careerAdviceCategories @ReleaseRegression1
+  @careerAdviceCategories @ReleaseRegression1 @MobileChrome
   Scenario: Career advice categories are shown
     Given  I am on page "/career-advice/getting-started/"
     And    I should see text "At Work"
@@ -24,7 +24,7 @@ Feature: Candidate CareerAdvice CareerAdvice
     And    I should see text "Location Guides"
     And    I should see text "Resume Tips"
 
-  @CareerAdviceCompaniesCount @ReleaseRegression1
+  @CareerAdviceCompaniesCount @ReleaseRegression1 @MobileChrome
   Scenario: Career Advice Companies Count is not zero in sub nav bar
     Given  I am on page "/career-advice"
     Then   I should not see the companies count is zero
@@ -33,7 +33,7 @@ Feature: Candidate CareerAdvice CareerAdvice
      Then   I should be on page "/companies"
     And    I should see text "Search Companies"
 
-  @CareerAdviceFreeResumeReview @ReleaseRegression1
+  @CareerAdviceFreeResumeReview @ReleaseRegression1 @MobileChrome
   Scenario: Verify resume review banner on career Advice page
     Given  I am on page "/career-advice"
     #And    I click on FREE Resume Review
@@ -42,7 +42,7 @@ Feature: Candidate CareerAdvice CareerAdvice
     Then   I should be on page "/resume-review"
     And    I should see text "FREE Resume Review"
 
-  @CareerAdviceSavedJobs
+  @CareerAdviceSavedJobs @MobileChrome
   Scenario: Career Advice Saved Jobs
     Given  I am on page "/career-advice"
     And   I click on mobile header button
