@@ -1,4 +1,4 @@
-@ClientHelpVacancyEnhancement @Regression @Web @Client2 @Recruiters
+@ClientHelpVacancyEnhancement @Regression @Web @Client2 @Recruiters @MobileChrome
 Feature: Client JobPosting VacancyEnhancements
 
   Background: Client Help Vacancy Enhancement
@@ -66,12 +66,12 @@ Feature: Client JobPosting VacancyEnhancements
     Then  I click on "Video Guides"
     And   I should be able to see in browser URL "Client Help Videos"
     And   I should see text H one tag "Video Guides"
-
-  @ClientHelpClientDownloadVacancyEnhancement
-  Scenario: Verify client Download User Manual for job posting Vacancy Enhancements
-    Then  I click on "Download User Manual"
-    And   I click on Download
-    And   I should see download file "rl-user-manual"
+#####TCB with Lamda team
+#  @ClientHelpClientDownloadVacancyEnhancement
+#  Scenario: Verify client Download User Manual for job posting Vacancy Enhancements
+#    Then  I click on "Download User Manual"
+#    And   I click on Download
+#    And   I should see download file "rl-user-manual"
 
   @ClientHelpContactUsVacancyEnhancement
   Scenario: Verify client Contact Us help links job posting Vacancy Enhancements

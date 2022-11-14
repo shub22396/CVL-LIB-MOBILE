@@ -6,7 +6,6 @@ import com.resumelibrary.utilities.Utility;
 import com.resumelibrary.utilities.WebURLHelper;
 import com.resumelibrary.webtest.candidate.LogoutPage;
 import com.resumelibrary.webtest.candidate.RegistrationPage;
-import com.resumelibrary.webtest.candidate.SavedJobsPage;
 import com.resumelibrary.webtest.client.JobPostPage;
 import com.resumelibrary.webtest.client.JobTemplatePage;
 import com.resumelibrary.webtest.misc.MiscPage;
@@ -216,5 +215,10 @@ public class JobPost extends Utility {
     @When("I select {string} on client jobs page")
     public void iSelectOnClientJobsPage(String value) {
         new JobPostPage().selectValueToSortOnClientJobsPage(value);
+    }
+
+    @And("I enabled using ID {string} with JS")
+    public void iEnabledUsingIDWithJS(String id) {
+       enabledIdUsingJS(id);
     }
 }
