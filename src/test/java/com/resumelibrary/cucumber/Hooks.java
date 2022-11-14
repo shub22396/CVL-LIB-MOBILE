@@ -38,12 +38,7 @@ public class Hooks extends Utility {
                 scenario.log("[--->CURRENT TAG IS : " + scenario.getSourceTagNames()+"<---]");
                 scenario.log("[--->--------------------------------------------"+"<---]");;
                 getScreenshot(scenario);
-
-              if(System.getProperty("browserName").contains("lambda")) {
-                   scenario.log("inside lambda failed"+"<---]"+System.getProperty("browserName"));;
-                    ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=failed");
-              }
-            }else{
+           }else{
                 if(System.getProperty("browserName").contains("lambda")) {
                     ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=passed");
                 }
