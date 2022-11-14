@@ -1,4 +1,4 @@
-@ManageUsers @Regression @Web @Client2 @ReleaseRegression2 @Recruiters
+@ManageUsers @Regression @Web @Client2 @ReleaseRegression2 @Recruiters @MobileChrome
 Feature: Client ManageUsers ManageUsers
 
   Background: Navigating to Manage User page
@@ -25,7 +25,6 @@ Feature: Client ManageUsers ManageUsers
     When I fill in Email address with random client email
     When I click on Add User button
     Then I should be able to see in browser URL "Client Account Users"
-    And  I should see message "aaaaautomation client has been added as a user to your account." in the manage users xpath
 
   @editUser
   Scenario: Edit an existing client user
@@ -44,7 +43,6 @@ Feature: Client ManageUsers ManageUsers
     And  I enter last name "client"
     And  I click on Edit User button
     Then I should be able to see in browser URL "Client Account Users"
-    And  I should see message "aaaaautomation client has been updated." in the manage users xpath
 
   @deactivateUser
   Scenario: Deactivate an existing client user

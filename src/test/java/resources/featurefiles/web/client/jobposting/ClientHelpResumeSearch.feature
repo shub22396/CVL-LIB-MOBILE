@@ -12,7 +12,7 @@ Feature: Client JobPosting ClientHelpResumeSearch
     And   I scroll down 0,2000
     When  I switch to frame and play the video
     #We need this wait because, we are playing video for 4 seconds and pausing
-    Then  I wait for "4" seconds
+    Then  I wait for "8" seconds
     And   I click on video pause button
     Then  I should see the video played up to "00:03" seconds
     When  I switch to back to parent frame
