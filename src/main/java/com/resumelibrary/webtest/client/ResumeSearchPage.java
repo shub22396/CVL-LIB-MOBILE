@@ -381,7 +381,13 @@ public class ResumeSearchPage extends Utility {
 
     public void selectActiveWithinFromList(String text) {
         logger.info("Select active within  from list");
-        selectByVisibleText(ActiveWithin, text);
+        //selectByVisibleText(ActiveWithin, text);
+        //selectByValueFromDropDown(ActiveWithin, text);
+        WebElement activeWithin = getThreadDriver().findElement(By.id("updated_on"));
+        activeWithin.click();
+        WebElement jobIdAsc = getThreadDriver().findElement(By.xpath("//*[text()='"+text+"']"));
+        waitUntilElementIsLocated(jobIdAsc, 30);
+        jobIdAsc.click();
     }
 
     public String getTextFromKeywordsBuilderTextArea() {
@@ -465,7 +471,7 @@ public class ResumeSearchPage extends Utility {
     public void clickOnResumeAlertSendButton(String text) {
         logger.info("Clicking on resume a good match to your alert " + text);
         WebElement ele = getThreadDriver().findElement(By.xpath("//*[@id='rate-resume-form']/button[text()=\"" + text + "\"]"));
-        clickOnElement(ele);
+        clickOnElementWithJS(ele);
     }
 
     public boolean keywordFieldValue(String text1, String text2) {

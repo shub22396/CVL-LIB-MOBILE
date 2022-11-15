@@ -3,6 +3,7 @@ package com.resumelibrary.webtest.client;
 import com.resumelibrary.utilities.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -100,7 +101,12 @@ public class SavedResumesPage extends Utility {
 
     public void selectValueToOrderByOnSavedSearchPage(String text) {
         logger.info("Select order by from dropdown");
-        selectByVisibleTextFromDropDown(SavedSearchMobileSortSelect, text);
+        //selectByVisibleTextFromDropDown(SavedSearchMobileSortSelect, text);
+        WebElement sorting = getThreadDriver().findElement(By.id("mobile-sort-select"));
+        sorting.click();
+        WebElement jobIdAsc = getThreadDriver().findElement(By.xpath("//*[text()='"+text+"']"));
+        waitUntilElementIsLocated(jobIdAsc, 30);
+        jobIdAsc.click();
         waitFor(4);
     }
 }

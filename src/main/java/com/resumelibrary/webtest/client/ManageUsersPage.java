@@ -117,7 +117,7 @@ public class ManageUsersPage extends Utility {
 
     public String shouldSeeMessageInTheManageUsersXpath() {
         logger.info("success message " + SuccessMessage.getText());
-        return SuccessMessage.getText();
+        return getTextFromElement(SuccessMessage);
     }
 
     public void clickOnAddUserBtn() {

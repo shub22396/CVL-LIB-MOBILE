@@ -1,4 +1,4 @@
-@ClientHelpCentre @Regression @Web @Client3 @ReleaseRegression2 @Recruiters
+@ClientHelpCentre @Regression @Web @Client3 @ReleaseRegression2 @Recruiters @MobileChrome
 Feature: Client Others HelpCentre
 
   Background: Client Login
@@ -16,7 +16,7 @@ Feature: Client Others HelpCentre
     And   I scroll down 0,300
     When  I click on video play button in the frame "search-builder"
     #We need this wait because, we are playing video for 5 seconds and pausing
-    And   I wait for "5" seconds
+    And   I wait for "7" seconds
     And   I click on video pause button in the frame "search-builder"
     And   I should see the video played up to "00:05" seconds
 
@@ -42,7 +42,7 @@ Feature: Client Others HelpCentre
     And   I scroll down 0,300
     When  I click on video play button in the frame "video-interviews"
     #We need this wait because, we are playing video for 5 seconds and pausing
-    And   I wait for "5" seconds
+    And   I wait for "7" seconds
     And   I click on video pause button in the frame "video-interviews"
     And   I should see the video played up to "00:05" seconds
 
@@ -55,6 +55,6 @@ Feature: Client Others HelpCentre
     And   I scroll down 0,300
     When  I click on video play button in the frame "ita"
     #We need this wait because, we are playing video for 5 seconds and pausing
-    And   I wait for "5" seconds
+    And   I wait for "7" seconds
     And   I click on video pause button in the frame "ita"
     And   I should see the video played up to "00:05" seconds

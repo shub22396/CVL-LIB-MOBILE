@@ -1,4 +1,4 @@
-@ResumeSearchOtherElements @Regression @Web @Client5 @Search
+@ResumeSearchOtherElements @Regression @Web @Client5 @Search @MobileChrome
 Feature: Client ResumeSearch OtherElements
 
   Background: On resume search page

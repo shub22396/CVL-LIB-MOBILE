@@ -5,7 +5,7 @@
   # the outcomes are under review by the search team and the tests
   # will need amending if the current outcomes are considered bugs
 
-@ResumeSearchKeywordSyntax @Regression @Web @Client5 @Search
+@ResumeSearchKeywordSyntax @Regression @Web @Client5 @Search @MobileChrome
 Feature: Client ResumeSearch Keyword Syntax
 
   Background: On resume search page

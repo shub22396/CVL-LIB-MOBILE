@@ -6,7 +6,7 @@
  #5. View a saved resume by Action link
  #6. Delete a saved resume by Action link
 
-@ResumeView @Regression @Web @Client6 @Search
+@ResumeView @Regression @Web @Client6 @Search @MobileChrome
 Feature: Client ResumeView ResumeView
 
   Background: Login as client
