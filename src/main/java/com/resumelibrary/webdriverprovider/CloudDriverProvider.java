@@ -195,6 +195,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
+            String isRealDevice = WebURLHelper.getParameterFromEnvOrSysParam("ISREALDEVICE", PropertyFileReader.getInstance().getProperty("isRealDevice"));
 
             logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
@@ -208,14 +209,17 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("deviceName", "Galaxy M31");
             capabilities.setCapability("platformVersion", "11");
             capabilities.setCapability("platformName", "Android");
-            capabilities.setCapability("isRealMobile", true);
+            if(isRealDevice.equalsIgnoreCase("yes")) {
+                capabilities.setCapability("isRealMobile", true);
+            }else {
+                capabilities.setCapability("isRealMobile", false);
+            }
             capabilities.setCapability("console", true);
-            capabilities.setCapability("network", true);
+            capabilities.setCapability("network", false);
             capabilities.setCapability("visual", true);
             capabilities.setCapability("devicelog", true);
             capabilities.setCapability("video", true);
             capabilities.setCapability("tunnel", true);
-            //capabilities.setCapability("lambda:userFiles",["cv2.pdf","test-cv.pdf"]);
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
             capabilities.setCapability("autoGrantPermissions", true);
             capabilities.setCapability("autoAcceptAlerts", true);
