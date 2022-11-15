@@ -2,7 +2,7 @@
     # 1. Advanced Search job page with keyword and location, then asserting URL
     # 2. Advanced Search job page with all filters, then asserting URL
 
-@SearchJobLoggedOut @Regression @Web @Candidate3 @Search
+@SearchJobLoggedOut @Regression @Web @Candidate3 @Search @MobileChrome
 Feature: Candidate JobSearch SearchJobsLoggedOut
 
   Background: On search page with keyword sales

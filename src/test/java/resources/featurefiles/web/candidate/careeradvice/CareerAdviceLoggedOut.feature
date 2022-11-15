@@ -1,7 +1,7 @@
 @CareerAdviceLoggedOut @Regression @Web @Candidate2 @Candidate
 Feature: Candidate CareerAdvice CareerAdviceLoggedOut
 
-  @loadCareerAdviceLoggedOut
+  @loadCareerAdviceLoggedOut     @MobileChrome
   Scenario: Load Career Advice
     Given  I navigate to page "Career Advice"
     Then   I should see "Career Advice" on the page
@@ -11,7 +11,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedOut
     And    I should see text H three tag "Jobs By Location"
     And    I should see text H three tag "Popular jobs"
 
-  @careerAdviceCategoriesLoggedOut
+  @careerAdviceCategoriesLoggedOut      @MobileChrome
   Scenario: Career advice categories are shown
     Given  I navigate to page "Career Advice Getting Started"
     And    I should see text "At Work"
@@ -24,7 +24,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedOut
     And    I should see text "Location Guides"
     And    I should see text "Resume Tips"
 
-  @CareerAdviceCompaniesCountLoggedOut
+  @CareerAdviceCompaniesCountLoggedOut       @MobileChrome
   Scenario: Career Advice Companies Count is not zero in sub nav bar
     Given  I navigate to page "Career Advice"
     Then   I should not see the companies count is zero
@@ -34,7 +34,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedOut
     Then   I should be on page "Companies"
     And    I should see text "Search Companies"
 
-  @CareerAdviceFreeResumeReviewLoggedOut
+  @CareerAdviceFreeResumeReviewLoggedOut        @MobileChrome
   Scenario: Verify resume review banner on logged out career advice page
     Given  I navigate to page "Career Advice"
     And   I click on "Jobseekers"
@@ -43,7 +43,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedOut
     Then   I should be on page "Resume Review"
     And    I should see text "FREE Resume Review"
 
-  @CareerAdviceSavedJobsLoggedOut
+  @CareerAdviceSavedJobsLoggedOut          @MobileChrome
   Scenario: Career Advice logged out saved Jobs
     Given  I navigate to page "Career Advice"
     And   I click on mobile header button
@@ -61,7 +61,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedOut
     And   I should be on page "Career Advice"
     Then  I should see text a tags "Saved Jobs (" and verify "Saved Jobs (1)"
 
-  @CareerAdviceSearchJobsLinkLoggedOut
+  @CareerAdviceSearchJobsLinkLoggedOut       @MobileChrome
   Scenario: As a logged out user I see the career-advice navigation bar has  search jobs link
     Given  I navigate to page "Career Advice"
     And   I click on mobile header button
@@ -70,7 +70,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedOut
     And   I click on "Search Jobs"
     Then   I should be on page "Search Jobs"
 
-  @CareerAdviceNavigationLinksLoggedOut
+  @CareerAdviceNavigationLinksLoggedOut      @MobileChrome
   Scenario:As a logged out user I see the career-advice drop navigation has links
     Given I navigate to page "Career Advice"
     Then  I should see text "Home"
@@ -123,7 +123,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedOut
     And   I click on "COVID-19 Advice" career advice links
     Then  I should be on page "Career Advice Covid 19 Advice"
 
-  @CareerAdvice3AdvertsLoggedOut
+  @CareerAdvice3AdvertsLoggedOut        @MobileChrome
   Scenario: As a logged out user I see the career-advice page has 3 adverts
     Given I navigate to page "Career Advice"
     Then  I should see RL Career Advice Dyn Banner
