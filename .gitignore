@@ -52,6 +52,7 @@ test-reports/*
 *.xlsx
 *.docx
 *.logs
+*..lambdatest/
 
 src/test/logs/*
 src/test/logs/log.out

@@ -3,8 +3,6 @@ package com.resumelibrary.cucumber;
 import com.resumelibrary.utilities.*;
 import org.testng.*;
 
-import java.io.*;
-
 import com.lambdatest.tunnel.Tunnel;
 
 import java.util.ArrayList;
@@ -22,7 +20,7 @@ public class CustomListener extends Utility implements ITestListener, IExecution
         boolean flag=false;
         String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
         String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
-        int noOfTunnels = Integer.parseInt(WebURLHelper.getParameterFromEnvOrSysParam("TUNNELS", PropertyFileReader.getInstance().getProperty("nooftunnels")));
+        int noOfTunnels = Integer.parseInt(WebURLHelper.getParameterFromEnvOrSysParam("TUNNELS", PropertyFileReader.getInstance().getProperty("noOfTunnels")));
         for(int j=0;j<noOfTunnels;j++){
 
             HashMap<String, String> option = new HashMap<String, String>();

@@ -56,7 +56,7 @@ public class ManageUsers extends Utility {
 
     @And("I should see message {string} in the manage users xpath")
     public void iShouldSeeMessageInTheManageUsersXpath(String text) {
-        Assert.assertEquals( new ManageUsersPage().shouldSeeMessageInTheManageUsersXpath(), text);
+        Assert.assertEquals( verifyTextMessagePTags(text, text), text);
     }
 
     @When("I click on Add User button")

@@ -7,7 +7,7 @@ Feature: Candidate Registration FastTrackRegister
     And    I reload the page
     #we need the below wait, it was failing so do not remove
 
-  @fastTrackFromSearchResults @ReleaseRegression1
+  @fastTrackFromSearchResults @ReleaseRegression1 @MobileChrome
   Scenario: Register as a new candidate from search results
     When I click on Apply now Link
     And  I fill candidate email field with random EmailId
@@ -17,7 +17,7 @@ Feature: Candidate Registration FastTrackRegister
     And  I click on "Register & Apply" with JS
     Then I should be able to see in browser URL "Job Apply"
 
-  @fastTrackFromJobView @ReleaseRegression1
+  @fastTrackFromJobView @ReleaseRegression1 @MobileChrome
   Scenario: Register as a new candidate from job view page
     And  I Click on Job Title
     And  I switch tab
@@ -31,7 +31,7 @@ Feature: Candidate Registration FastTrackRegister
     And  I wait for "1" seconds
     Then I should be able to see in browser URL "Job Apply"
 
-  @fastTrackFormValidation
+  @fastTrackFormValidation @MobileChrome
   Scenario: Validate fast track registration form
     Then I click on "View more"
     Then I click on Apply now Link
@@ -63,7 +63,7 @@ Feature: Candidate Registration FastTrackRegister
     Then I should be able to see in browser URL "Job Apply"
     And  I should not see element with id "apply_view_more" on the page
 
-  @fastTrackRegistrationResumeMandatory
+  @fastTrackRegistrationResumeMandatory @MobileChrome
   Scenario: Fast track register - Resume mandatory when 'Resume required on registration' partner setting is turned on
     Given  I set cookie with "ibpid" and "975438"
     And    I reload the page

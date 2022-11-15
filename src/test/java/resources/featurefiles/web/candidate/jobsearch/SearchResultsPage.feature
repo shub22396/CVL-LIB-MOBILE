@@ -137,7 +137,7 @@ Feature: Candidate JobSearch SearchResultsPage
     And    the distance field should contain "50"
     Examples:
       | Title         | Location | Distance | Title1        |
-      | Test Engineer | 10001    | 50 Miles | test engineer |
+      | Test Engineer | 10001    | 50       | test engineer |
 
   @jobsSearchSalaryMin
   Scenario Outline: Job search salary min

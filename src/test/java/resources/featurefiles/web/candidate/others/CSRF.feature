@@ -1,4 +1,4 @@
-@CSRFToken @Regression @Web @Candidate4 @Traffic
+@CSRFToken @Regression @Web @Candidate4 @Traffic @MobileChrome
 Feature: Candidate Others CSRF
 
   Scenario: Testing CSRF token session validation on candidate login

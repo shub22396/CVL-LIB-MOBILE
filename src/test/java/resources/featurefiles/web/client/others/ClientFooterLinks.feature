@@ -1,4 +1,4 @@
-@ClientFooterOnlyLinks @Regression @Web @Client3 @ReleaseRegression2 @Recruiters
+@ClientFooterOnlyLinks @Regression @Web @Client3 @ReleaseRegression2 @Recruiters @MobileChrome
 Feature: Client Others ClientFooterLinks
 
 @ClientFooterOnlyLinksLoggedInAndLoggedOut

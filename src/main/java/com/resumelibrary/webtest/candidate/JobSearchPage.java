@@ -102,7 +102,7 @@ public class JobSearchPage extends Utility {
 
     public void selectDistance(String distance) {
         logger.info("Select the radius from dropdown is : " + distance);
-        selectByVisibleTextFromDropDown(Radius, distance);
+        selectByValueFromDropDown(Radius, distance);
     }
 
     public String getDistanceAttributeValue() {

@@ -3,27 +3,17 @@ package com.resumelibrary.webdriverprovider;
 import com.resumelibrary.utilities.Constants;
 import com.resumelibrary.utilities.PropertyFileReader;
 import com.resumelibrary.utilities.WebURLHelper;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.PageFactory;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,7 +33,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
-            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
+            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
 
             logger.info("[--->jenkinsBuildNumber = " + buildId + "<---]");
@@ -84,7 +74,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
-            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
+            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
 
             System.out.println("jenkinsBuildNumber = " + buildId);
@@ -122,7 +112,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         try {
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
-            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
+            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
 
             logger.info("[--->jenkinsBuildNumber = " + buildId + "<---]");
@@ -170,7 +160,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         try {
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
-            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
+            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
             logger.info("[--->jenkinsBuildNumber : " + buildId + "<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
@@ -203,7 +193,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
-            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
+            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
 
             logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");
@@ -245,7 +235,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
-            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
+            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
 
             logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");
@@ -282,7 +272,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         try {
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
-            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobname");
+            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
             System.out.println("jenkinsBuildNumber = " + buildId);
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
