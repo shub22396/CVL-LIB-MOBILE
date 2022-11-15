@@ -675,10 +675,10 @@ public abstract class Utility extends DriverController {
     /* selecting dropdown value by using value */
     public void selectByValueFromDropDown(WebElement element, String value) {
         waitUntilElementToBeClickable(element, 5);
-        //Select select = new Select(element);
-        //select.selectByValue(value);
-        JavascriptExecutor jse = (JavascriptExecutor) getThreadDriver();
-        jse.executeScript("arguments[0].value="+value, element);
+        clickOnElement(element);
+        clickOnAttributeValueOnInputTag(value);
+//        JavascriptExecutor jse = (JavascriptExecutor) getThreadDriver();
+//        jse.executeScript("arguments[0].value="+value, element);
     }
 
     /* scroll down to element by passing x and y co-ordinates of elements using javascript executor*/
@@ -1115,7 +1115,7 @@ public abstract class Utility extends DriverController {
 
     /* clicking on element using atrribute "attribute name : value" text for input tag*/
     public void clickOnAttributeValueOnInputTag(String text) {
-        WebElement result = getThreadDriver().findElement(By.xpath("//input[@value='" + text + "']"));
+        WebElement result = getThreadDriver().findElement(By.xpath("//*[@value='" + text + "']"));
         logger.info("[--->Clicking on value contains" + text + "<---]");
         result.click();
 

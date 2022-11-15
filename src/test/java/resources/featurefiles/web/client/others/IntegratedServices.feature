@@ -1,4 +1,4 @@
-@IntegratedServices @Regression @Web @Client4 @Recruiters
+@IntegratedServices @Regression @Web @Client4 @Recruiters @MobileChrome
 Feature: Client Others IntegratedServices
 
   Background: Navigating to Integrated Services page
@@ -32,4 +32,4 @@ Feature: Client Others IntegratedServices
     And   I click on action toggle btn one
     When  I click on view guide zoho
     Then  I should be able to see in browser URL "Partner Integrations Zoho"
-    And   I should see text "Zoho Recruit Integrations"
+    And   I should see text "Zoho Recruit"
