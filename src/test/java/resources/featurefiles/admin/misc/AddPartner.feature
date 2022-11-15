@@ -1,4 +1,4 @@
-@AddPartner @Regression @Admin @ReleaseRegression1 @Partnerships
+@AddPartner @Regression @Admin @ReleaseRegression1 @Partnerships @MobileChrome
 Feature: Add Partner through Admin
 
   Background: Login to Admin
@@ -19,7 +19,7 @@ Feature: Add Partner through Admin
     And     I fill in "Contact First Name"
     And     I fill in "Contact Last Name"
     And     I fill in "Contact Email"
-    And     I select the option "backfill_partner" from "Partner Type" field
+    And     I select the Partner Type option: "backfill_partner"
     Then    I click Add PartnerAlliance button
     Then    I should see text "has been successfully created"
     And     I should see text "View Partner"

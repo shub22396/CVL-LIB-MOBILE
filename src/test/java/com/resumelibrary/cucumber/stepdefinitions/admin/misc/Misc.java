@@ -1,16 +1,15 @@
 package com.resumelibrary.cucumber.stepdefinitions.admin.misc;
 
 import com.resumelibrary.admintest.misc.MiscPage;
-import com.resumelibrary.cucumber.stepdefinitions.web.candidate.Others;
 import com.resumelibrary.utilities.AdminURLHelper;
 import com.resumelibrary.utilities.Utility;
-import com.resumelibrary.utilities.WebURLHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
@@ -49,6 +48,16 @@ public class Misc extends Utility {
     @And("I select the option {string} from {string} field")
     public void iSelectTheOptionFromField(String option, String field) {
         new MiscPage().selectOptionFromField(option, field);
+    }
+
+    @And("I select the Partner Type option: {string}")
+    public void iSelectTheOptionFromPartnerType(String option) {
+        switch (option) {
+            case "backfill_partner":
+                clickOnElement(getThreadDriver().findElement(By.xpath("//*[@id=\"partner-type\"]/option[2]")));
+                break;
+
+        }
     }
 
     @When("I go to add jobs page")
