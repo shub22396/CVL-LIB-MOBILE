@@ -27,6 +27,7 @@ public class CustomListener extends Utility implements ITestListener, IExecution
             option.put("user", username);
             option.put("key", accessKey);
             option.put("load-balanced","true");
+            option.put("mitm", "true");
             option.put("tunnelName", "RLRegressionTunnel");
             int i=0;
             do{
