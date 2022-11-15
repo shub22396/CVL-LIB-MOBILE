@@ -1,4 +1,4 @@
-@PartnersTraffic @Regression @Web @Partner @ReleaseRegression2 @Partnerships
+@PartnersTraffic @Regression @Web @Partner @ReleaseRegression2 @Partnerships @MobileChrome
 Feature: Partner PartnersTraffic
 
   Scenario: Partner Traffic - Validate the form and submit

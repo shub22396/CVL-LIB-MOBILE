@@ -1,4 +1,4 @@
-@PartnersIntegrations @Regression @Web @Partner @ReleaseRegression2 @Partnerships
+@PartnersIntegrations @Regression @Web @Partner @ReleaseRegression2 @Partnerships @MobileChrome
 Feature: Partner PartnersIntegrations
 
   Scenario: Partner Integrations - Validate the page links
