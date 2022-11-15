@@ -381,7 +381,13 @@ public class ResumeSearchPage extends Utility {
 
     public void selectActiveWithinFromList(String text) {
         logger.info("Select active within  from list");
-        selectByVisibleText(ActiveWithin, text);
+        //selectByVisibleText(ActiveWithin, text);
+        //selectByValueFromDropDown(ActiveWithin, text);
+        WebElement activeWithin = getThreadDriver().findElement(By.id("updated_on"));
+        activeWithin.click();
+        WebElement jobIdAsc = getThreadDriver().findElement(By.xpath("//*[text()='"+text+"']"));
+        waitUntilElementIsLocated(jobIdAsc, 30);
+        jobIdAsc.click();
     }
 
     public String getTextFromKeywordsBuilderTextArea() {

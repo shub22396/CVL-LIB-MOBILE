@@ -1,4 +1,4 @@
-@ResultsPerPage @Regression @Web @Candidate3 @Search
+@ResultsPerPage @Regression @Web @Candidate3 @Search @MobileChrome
 Feature: Candidate JobSearch ResultsPerPage
 
   @verifyResultsPerPage @ReleaseRegression1
