@@ -213,7 +213,8 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
                 logger.info("[--->isRealDevice: i if " + isRealDevice+"<---]");
                 capabilities.setCapability("isRealMobile", true);
             }else {
-                capabilities.setCapability("isRealMobile in else", false);
+                logger.info("[--->isRealDevice: in else" + isRealDevice+"<---]");
+                capabilities.setCapability("isRealMobile", false);
             }
             capabilities.setCapability("console", true);
             capabilities.setCapability("network", false);
