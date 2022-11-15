@@ -206,13 +206,15 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("build","RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
             capabilities.setCapability("name",testName);
             capabilities.setCapability("project", project);
-            capabilities.setCapability("deviceName", "Galaxy M31");
+
             capabilities.setCapability("platformVersion", "11");
             capabilities.setCapability("platformName", "Android");
             if(isRealDevice.equalsIgnoreCase("yes")) {
                 logger.info("[--->isRealDevice: i if " + isRealDevice+"<---]");
+                capabilities.setCapability("deviceName", "Galaxy M31");
                 capabilities.setCapability("isRealMobile", true);
             }else {
+                capabilities.setCapability("deviceName", "Galaxy Note 10");
                 logger.info("[--->isRealDevice: in else" + isRealDevice+"<---]");
             }
             capabilities.setCapability("console", true);
