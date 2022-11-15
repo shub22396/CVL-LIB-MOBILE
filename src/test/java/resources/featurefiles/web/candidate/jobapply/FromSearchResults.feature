@@ -1,7 +1,7 @@
 @JobApplySearchResults @Regression @Web @Candidate3 @Candidate
 Feature: Candidate JobApply FromSearchResults
 
-  @jobApplySearchResultsLoggedOut
+  @jobApplySearchResultsLoggedOut  @MobileChrome
   Scenario: Job apply popup as logged out
     Given   I navigate to page "Jobs Non External Test Jobs"
     When    I click on apply now
@@ -23,7 +23,7 @@ Feature: Candidate JobApply FromSearchResults
     And     I reload the page
     And     I should see text "Application sent - the employer will be in touch if you are successful"
 
-  @jobApplySearchResultsLoggedIn
+  @jobApplySearchResultsLoggedIn  @MobileChrome
   Scenario: Job apply from search results page after logging into an account
     Given   I login as a candidate
     And     I navigate to page "Jobs Non External Test Jobs"

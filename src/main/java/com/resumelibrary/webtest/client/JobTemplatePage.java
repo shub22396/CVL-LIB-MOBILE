@@ -46,7 +46,7 @@ public class JobTemplatePage extends Utility {
 
     public void selectJobTemplate(String template) {
         logger.info("select the option job template as  :" + template);
-        selectByVisibleText(SelectTemplate, template);
+        selectByVisibleTextFromDropDown(SelectTemplate, template);
     }
 
     public void clickDeleteButton() {

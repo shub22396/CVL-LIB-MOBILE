@@ -1,4 +1,4 @@
-@ClientHelpJobPosting @Regression @Web @Client2 @Recruiters
+@ClientHelpJobPosting @Regression @Web @Client2 @Recruiters @MobileChrome
 Feature: Client JobPosting ClientHelp
 
   @ClientHelpJobPosting
@@ -58,7 +58,7 @@ Feature: Client JobPosting ClientHelp
     And   I should be able to see in browser URL "Client Contact"
     And   I should see text H one tag "Contact us"
 
-    When  I navigate to page "Client Help Job Posting"
-    Then  I click on Download User Manual
-    And   I click on Download
-    And   I should see download file "rl-user-manual"
+#    When  I navigate to page "Client Help Job Posting"
+#    Then  I click on Download User Manual
+#    And   I click on Download
+#    And   I should see download file "rl-user-manual"

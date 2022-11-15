@@ -1,4 +1,4 @@
-@ResumeAlertValidation @Regression @Web @Client5 @Recruiters
+@ResumeAlertValidation @Regression @Web @Client5 @Recruiters  @MobileChrome
 Feature: Client ResumeAlert ResumeAlertValidation
 
   @resumeAlertFieldValidation

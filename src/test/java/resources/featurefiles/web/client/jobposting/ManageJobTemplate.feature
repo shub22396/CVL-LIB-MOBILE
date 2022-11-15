@@ -1,7 +1,7 @@
 # Test Coverage
 # 1. Verify that create, view, edit, Post job and delete job template https://cv-library.atlassian.net/browse/XT-1379
 
-@ManageJobTemplate @Regression @Web @Client2 @ReleaseRegression2 @Recruiters
+@ManageJobTemplate @Regression @Web @Client2 @ReleaseRegression2 @Recruiters @MobileChrome
 Feature: Client JobPosting ManageJobTemplate
 
   @EditJobTemplate
@@ -55,8 +55,10 @@ Feature: Client JobPosting ManageJobTemplate
     When  I navigate to page "Client Jobs Templates"
     When  I click on Actions
     And   I click on "Post Job"
+    And   I scroll down to element "Job template"
     Then  I select the option "Test Template 100" from Job template
-    And   I click on "Load Job Template"
+ ##   And   I enabled using ID "load-template-submit" with JS
+    And   I click on "Load Job Template" with JS
     And   I should see element with text "Save as Template" to be "visible"
     Then  I click on preview button
     And   I should see element with text "Close Preview" to be "visible"
