@@ -465,7 +465,7 @@ public class ResumeSearchPage extends Utility {
     public void clickOnResumeAlertSendButton(String text) {
         logger.info("Clicking on resume a good match to your alert " + text);
         WebElement ele = getThreadDriver().findElement(By.xpath("//*[@id='rate-resume-form']/button[text()=\"" + text + "\"]"));
-        clickOnElement(ele);
+        clickOnElementWithJS(ele);
     }
 
     public boolean keywordFieldValue(String text1, String text2) {
