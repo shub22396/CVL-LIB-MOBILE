@@ -27,9 +27,9 @@ public class PartnersPage extends Utility {
     @FindBy(id = "checkbox-ats-import")
     WebElement ATSImportCheckbox;
 
-    @FindBy(xpath = "//*[@id=\"player\"]/div[*]/div[3]/button/div[2]")
+    @FindBy(xpath = "//*[@id=\"player\"]/div[7]/div[7]/div[1]/button")
     WebElement VideoIntegrationsPage;
-    @FindBy(xpath = "//*[@id=\"player\"]/div[*]/div[3]/button/div[3]")
+    @FindBy(xpath = "//*[@id=\"player\"]/div[7]/div[7]/div[1]/button")
     WebElement VideoPauseBtn;
 
 

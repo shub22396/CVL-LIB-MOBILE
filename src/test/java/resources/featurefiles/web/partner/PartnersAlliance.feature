@@ -1,4 +1,4 @@
-@PartnersAlliance @Regression @Web @Partner @ReleaseRegression2 @Partnerships
+@PartnersAlliance @Regression @Web @Partner @ReleaseRegression2 @Partnerships @MobileChrome
 Feature: Partner PartnersAlliance
 
   Scenario: Partner Alliance - Validate the form and submit
