@@ -214,7 +214,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
                 capabilities.setCapability("deviceName", "Galaxy M31");
                 capabilities.setCapability("isRealMobile", true);
             }else {
-                capabilities.setCapability("deviceName", "Galaxy Note 10");
+                capabilities.setCapability("deviceName", "Galaxy M30s");
                 logger.info("[--->isRealDevice: in else" + isRealDevice+"<---]");
             }
             capabilities.setCapability("console", true);
