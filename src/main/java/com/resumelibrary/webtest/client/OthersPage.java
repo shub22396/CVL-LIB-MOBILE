@@ -70,13 +70,13 @@ public class OthersPage extends Utility {
     WebElement MoreSearchOptions;
     @FindBy(xpath = "//*[@id=\"main\"]/section[4]/div/div/div[2]/div[12]/a")
     WebElement PostJobsButton;
-  //  @FindBy(xpath = "//*[@id=\"player\"]/div[*]/div[*]/div[*]/button")
+    //  @FindBy(xpath = "//*[@id=\"player\"]/div[*]/div[*]/div[*]/button")
     @FindBy(xpath = "//*[@aria-label='Play']")
     WebElement VideoPlayButton;
-    //@FindBy(xpath = "//*[@id=\"player\"]/div[*]/div[*]/div[*]/button")
-    @FindBy(xpath = "//*[@aria-label='Pause']")
+    @FindBy(xpath = "//*[@id=\"player\"]/div[*]/div[*]/div[*]/button")
+    //@FindBy(xpath = "//*[@aria-label='Pause']")
     WebElement VideoPauseButton;
-    @FindBy(xpath = "//*[@id=\"player\"]/div[7]/div[7]/div[2]/div/div[1]/div/div[5]/div")
+    @FindBy(css = "*[class^='Timecode_module_timecode_']")
     WebElement DurationPlayedBtn;
 
     public void clickOnSavedAction1() {
@@ -285,14 +285,12 @@ public class OthersPage extends Utility {
     public void clickOnVideoPauseButton(String iframe) {
         String iframeId = "iframe-" + iframe;
         logger.info("moving to iframe " + iframeId);
-        waitFor(1);
-        waitUntilElementIsLocated(DurationPlayedBtn, 30);
-        clickOnElementWithJS(VideoPauseButton);
+        waitFor(2);
+        VideoPauseButton.click();
     }
 
     public String getTheDurationVideoPlayed() {
-       // String DurationPlayedText = getTextFromElement(DurationPlayedBtn);
-        String DurationPlayedText = getThreadDriver().findElement(By.cssSelector("*[class^='Timecode_module_timecode_']")).getText();
+        String DurationPlayedText = DurationPlayedBtn.getText();
         logger.info("duration of the time video played is : " + DurationPlayedText);
         return DurationPlayedText;
     }

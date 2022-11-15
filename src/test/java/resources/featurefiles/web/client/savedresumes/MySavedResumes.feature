@@ -1,4 +1,4 @@
-@MySavedResumes @Regression @Web @Client6 @Search
+@MySavedResumes @Regression @Web @Client6 @Search @MobileChrome
 Feature: Client SavedResumes MySavedResumes
 
   @mySavedResumesPagination

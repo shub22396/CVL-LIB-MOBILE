@@ -235,7 +235,12 @@ public class ResumeViewPage extends Utility {
 
     public void selectValueFromOrderByDropdownOnClientResumePage(String text) {
         logger.info("Select order by from dropdown" + text);
-        selectByVisibleTextFromDropDown(MobileOrderBySortSelect, text);
+       // selectByVisibleTextFromDropDown(MobileOrderBySortSelect, text);
+        WebElement orderBySelect = getThreadDriver().findElement(By.id("sd-mobile-sort-select"));
+        orderBySelect.click();
+        WebElement jobIdAsc = getThreadDriver().findElement(By.xpath("//*[text()='"+text+"']"));
+        waitUntilElementIsLocated(jobIdAsc, 30);
+        jobIdAsc.click();
         waitFor(4);
 
     }

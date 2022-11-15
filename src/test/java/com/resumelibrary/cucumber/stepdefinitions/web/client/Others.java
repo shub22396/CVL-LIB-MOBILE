@@ -235,7 +235,7 @@ public class Others extends Utility {
     @And("I should see the video played up to {string} seconds")
     public void iShouldSeeTheVideoPlayedUpToSeconds(String duration) {
         waitFor(1);
-        List<String> timeToVerify = Arrays.asList("00:01", "00:02", "00:03", "00:04", "00:05", "00:06", "00:07", "00:08", "00:09");
+        List<String> timeToVerify = Arrays.asList("00:00","00:01", "00:02", "00:03", "00:04", "00:05", "00:06", "00:07", "00:08", "00:09");
         logger.info("time to verify " + timeToVerify);
         logger.info("current duration played " + new OthersPage().getTheDurationVideoPlayed());
         Assert.assertTrue(timeToVerify.contains(new OthersPage().getTheDurationVideoPlayed()));
