@@ -5,7 +5,7 @@ Background: Navigating to Request a Trial page
     Given  I navigate to page "Hiring Resume Search"
     When   I click on "Request Free Trial"
 
-  @requestATrialValidation
+  @requestATrialValidation @MobileChrome
   Scenario: Validation of trial page
     Then  I should see text "Activate Your Free Trial Today"
     When  I click on Submit inquiry
@@ -24,7 +24,7 @@ Background: Navigating to Request a Trial page
     Then  I click on Submit inquiry
     Then  I should see text "Please enter a valid US zip code"
 
-  @requestATrialSubmit @ReleaseRegression2
+  @requestATrialSubmit @ReleaseRegression2 @MobileChrome
   Scenario: Submit the trial form
     When  I enter email address "testers+client@resume-library.com"
     And   I enter name "automation demo"
