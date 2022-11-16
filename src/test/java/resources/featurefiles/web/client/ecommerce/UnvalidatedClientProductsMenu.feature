@@ -20,7 +20,7 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
     And   I should see text "Welcome to Resume-Library!"
     And   I should see text "Before you can make any purchases we need to validate your account. Please call our team on 1-857-239-0143 to validate your account instantly."
 
-  @EcommerceProductsContactCredits
+  @EcommerceProductsContactCredits @MobileChrome
   Scenario: as an unvalidated logged in client I expect to see Contact credit products that I can purchase
     Given I navigate to page "Client Account"
     And   I should see text "Products"
@@ -53,7 +53,7 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
     When  I click on "Go to dashboard"
     Then  I should be able to see in browser URL "Client Account"
 
-  @EcommerceProductsJobPostings
+  @EcommerceProductsJobPostings  @MobileChrome
   Scenario: as an unvalidated logged in client I expect to see job posting products that I can purchase
     Given I navigate to page "Client Account"
     And   I should see text "Products"
@@ -87,7 +87,7 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
     When  I click on "Go to dashboard"
     Then  I should be able to see in browser URL "Client Account"
 
-  @EcommUnvalidatedLoggedInClientPosJobResumeSearch
+  @EcommUnvalidatedLoggedInClientPosJobResumeSearch  @MobileChrome
   Scenario: as an unvalidated logged in client with E-commerce enabled verify gif that alternately displays 30-Day resume search and Post Your Job
     Given I navigate to page "Resources"
     And   I scroll down 0,600

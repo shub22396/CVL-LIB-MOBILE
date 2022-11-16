@@ -86,7 +86,8 @@ public class JobApplyPage extends Utility {
 
     public void selectVacancySpecificQuestion(String answer) {
         logger.info("selected the option from vacancy specific question " + answer);
-        selectByVisibleText(VacancySpecificQuestion, answer);
+//        selectByVisibleText(VacancySpecificQuestion, answer);
+        selectByVisibleTextFromDropDownUsingJS(VacancySpecificQuestion, answer);
     }
 
     public void verifyOneClickApplyText(String text) {
