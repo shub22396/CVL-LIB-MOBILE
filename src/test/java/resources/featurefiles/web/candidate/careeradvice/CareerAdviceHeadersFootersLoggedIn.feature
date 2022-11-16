@@ -2,7 +2,15 @@
 Feature: Candidate CareerAdvice CareerAdviceHeadersFootersLoggedIn
 
   Background: CareerAdvice login page
-    Given   I login as a candidate
+    Given  I am on home page
+    Then   I should see resume library logo
+    And    I click on Menu Bar
+    Then   I should see text "Login"
+    When   I click Login button
+    And    I fill in Email address
+    And    I fill in Password
+    And    I click Login as Jobseeker button
+    Then   I should be on "My Dashboard" page
 
   @CareerAdviceNavigateHeaderLoggedIn
   Scenario: Navigation header for logged in user

@@ -166,9 +166,14 @@ public class EcommerceClientPage extends Utility {
 
     public void tickSelectAllCheckboxForInviteToApply() {
         logger.info("click on element SelectAllCandidates");
-        List<WebElement> selectCheckBoxes = getThreadDriver().findElements(By.xpath("//*[starts-with(@class,'candidate-checkbox-label')]"));
-        clickOnElement(selectCheckBoxes.get(0));
-        waitFor(1);
+      //  List<WebElement> selectCheckBoxes = getThreadDriver().findElements(By.xpath("//*[starts-with(@class,'candidate-checkbox-label')]/span"));
+        WebElement selectCheckBoxes = getThreadDriver().findElement(By.xpath("//*[starts-with(@class,'candidate-checkbox-label')]/span"));
+        waitFor(2);
+        try {
+            clickOnElement(selectCheckBoxes);
+        }catch (Exception e){
+            clickOnElement(selectCheckBoxes);
+        }
     }
 
     public void verifyAllCheckBoxesTicked() {
