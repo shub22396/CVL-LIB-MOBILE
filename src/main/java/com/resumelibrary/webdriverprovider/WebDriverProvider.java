@@ -20,7 +20,7 @@ import java.util.Map;
 public class WebDriverProvider implements Constants {
     public String tunnelName=null;
     static{
-        new DriverController().tunnelName = PropertyFileReader.getInstance().getProperty("tunnelName");
+       new  WebDriverProvider().tunnelName = PropertyFileReader.getInstance().getProperty("tunnelName");
     }
 
     private static final Logger logger = LogManager.getLogger(WebDriverProvider.class);
