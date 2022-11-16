@@ -195,8 +195,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
             String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
-            String isRealDevice = WebURLHelper.getParameterFromEnvOrSysParam("ISREALDEVICE", PropertyFileReader.getInstance().getProperty("isRealDevice"));
-            logger.info("[--->isRealDevice:" + isRealDevice+"<---]");
+
             logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
             final String driverURL = "https://" + username + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub";
@@ -209,14 +208,8 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
             capabilities.setCapability("platformVersion", "11");
             capabilities.setCapability("platformName", "Android");
-            if(isRealDevice.equalsIgnoreCase("yes")) {
-                logger.info("[--->isRealDevice: i if " + isRealDevice+"<---]");
-                capabilities.setCapability("deviceName", "Galaxy M31");
-                capabilities.setCapability("isRealMobile", true);
-            }else {
-                capabilities.setCapability("deviceName", "Galaxy M30s");
-                logger.info("[--->isRealDevice: in else" + isRealDevice+"<---]");
-            }
+            capabilities.setCapability("deviceName", "Galaxy M31");
+            capabilities.setCapability("isRealMobile", true);
             capabilities.setCapability("console", true);
             capabilities.setCapability("network", false);
             capabilities.setCapability("visual", true);
