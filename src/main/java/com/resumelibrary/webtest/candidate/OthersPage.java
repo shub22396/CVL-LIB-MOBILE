@@ -82,7 +82,8 @@ public class OthersPage extends Utility {
 
     public void selectTheOptionFromRequest(String text) {
         logger.info("Selected  " + text + "  from dropdown ");
-        selectByVisibleText(RequestType, text);
+       // selectByVisibleText(RequestType, text);
+        selectByVisibleTextFromDropDownUsingJS(RequestType, text);
     }
 
     public void fillInEmailAddressWith(String text) {
