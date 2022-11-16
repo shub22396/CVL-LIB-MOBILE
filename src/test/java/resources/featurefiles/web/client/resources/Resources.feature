@@ -1,7 +1,7 @@
 @Resources @Regression @Web @Client5 @Traffic
 Feature: Client Resources Resources
 
-  @loadResources @ReleaseRegression2
+  @loadResources @ReleaseRegression2 @MobileChrome
   Scenario: Load the resources page
     Given  I navigate to page "Resources"
     Then   I should see resume Library Employers header logo
@@ -21,7 +21,8 @@ Feature: Client Resources Resources
     Then   I should see "Hiring Insights" link
     Then   I should see "Events" link
     Then   I should see "Video Guides" link
-    When   I mouse hover Resources Navigation menu
+    And    I click on Menu Bar
+    Then   I click on "Resources"
     Then   I click on link text "Demographics"
     Then   I should be able to see in browser URL "Hiring Demographics"
     When   I mouse hover Resources Navigation menu
@@ -42,7 +43,7 @@ Feature: Client Resources Resources
     And    I click on "Video Guides"
     Then   I should be able to see in browser URL "Hiring Video Guides"
 
-  @verifyCategories
+  @verifyCategories @MobileChrome
   Scenario: Verify the elements
     Given I navigate to page "Resources"
     Then  I should see text "Latest Articles"
@@ -52,7 +53,7 @@ Feature: Client Resources Resources
     And   I should see text "Making The Hire"
     And   I should see text "Workplace"
     When  I am on page "Resources Latest"
-    And   I click on "2"
+    And   I click on "Next"
     Then  I should see text H one tag "Latest"
     Then  I should see text "Categories"
     Then  I should see text "Latest Articles"
