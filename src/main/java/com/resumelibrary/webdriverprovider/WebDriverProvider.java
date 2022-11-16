@@ -1,30 +1,27 @@
 package com.resumelibrary.webdriverprovider;
 
 import com.resumelibrary.utilities.Constants;
-import com.resumelibrary.utilities.Constants;
 import com.resumelibrary.utilities.PropertyFileReader;
 import com.resumelibrary.utilities.WebURLHelper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.PageFactory;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class WebDriverProvider implements Constants {
+    public String tunnelName=null;
+    static{
+        new DriverController().tunnelName = PropertyFileReader.getInstance().getProperty("tunnelName");
+    }
 
     private static final Logger logger = LogManager.getLogger(WebDriverProvider.class);
       public static ThreadLocal<Map<String, Object>> threadLocalMap = new ThreadLocal<>();
