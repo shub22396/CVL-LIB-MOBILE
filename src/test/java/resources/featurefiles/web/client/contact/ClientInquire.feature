@@ -4,7 +4,7 @@ Feature: Client Contact ClientInquire
   Background: on Client Inquiry Form page
     Given I am on page "Client Contact"
 
-  @clientInquiryText
+  @clientInquiryText @MobileChrome
   Scenario: text shown on the client inquiry page.
     Then I should see text "Inquire now"
     And  I should see text "Our dedicated team is here to help answer your questions."
@@ -12,7 +12,7 @@ Feature: Client Contact ClientInquire
     And  I should see text "sales@resume-library.com"
     And  I should see text H two tag "Start Hiring with Resume-Library Today"
 
-  @clientInquiryFormValidation
+  @clientInquiryFormValidation @MobileChrome
   Scenario: Validation on Client Inquiry Form
     When I click on "Submit inquiry"
     Then I should see text "First name is required"
@@ -27,7 +27,7 @@ Feature: Client Contact ClientInquire
     When I enter phone number "aaaaa"
     Then I should see text "Please enter a valid Phone Number"
 
-  @clientInquiryFormSubmit @ReleaseRegression2
+  @clientInquiryFormSubmit @ReleaseRegression2 @MobileChrome
   Scenario: Submit Client Inquiry Form
     When I fill in Email address with random client email
     And  I enter first name "automation"
