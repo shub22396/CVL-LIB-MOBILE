@@ -1,4 +1,4 @@
-@InquireProducts @Regression @Web @Client4 @Recruiters
+@InquireProducts @Regression @Web @Client4 @Recruiters @MobileChrome
 Feature: Client Products InquireProducts
 
   Background: Login as a client
@@ -19,4 +19,4 @@ Feature: Client Products InquireProducts
     Then   I should be able to see in browser URL "Client Products Contact Credits"
     When   I click on "Inquire Now"
     Then   I should be able to see in browser URL "Client Contact"
-    And    I select the option "Resume Search" from inquiry type
+  #  And    I select the option "Resume Search" from inquiry type
