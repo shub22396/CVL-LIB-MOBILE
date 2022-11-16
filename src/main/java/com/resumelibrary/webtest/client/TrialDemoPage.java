@@ -20,6 +20,6 @@ public class TrialDemoPage extends Utility {
 
     public void selectFromApproxHires(String hires){
         logger.info("Selected approximate hires per year "+hires);
-        selectByValueFromDropDown(ApproxHires,hires);
+        selectByVisibleTextFromDropDown(ApproxHires,hires);
     }
 }

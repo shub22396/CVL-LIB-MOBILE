@@ -1,4 +1,4 @@
-@SitemapPage @Regression @Web @Misc @Traffic
+@SitemapPage @Regression @Web @Misc @Traffic @MobileChrome
 Feature: Misc Sitemap
 
   Scenario: Sitemap use links
