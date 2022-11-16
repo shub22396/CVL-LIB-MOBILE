@@ -4,7 +4,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
   Background: CareerAdvice login page
     Given   I login as a candidate
 
-  @loadCareerAdvice
+  @loadCareerAdvice @MobileChrome
   Scenario: Load Career Advice
     Given  I navigate to page "Career Advice"
     Then   I should see "Career Advice" on the page
@@ -14,7 +14,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
     And    I should see text H three tag "Jobs By Location"
     And    I should see text H three tag "Popular jobs"
 
-  @careerAdviceCategories
+  @careerAdviceCategories @MobileChrome
   Scenario: Career advice categories are shown
     Given  I navigate to page "Career Advice Getting Started"
     And    I should see text "At Work"
@@ -71,7 +71,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
 #    When   I click on Search Jobs link
 #    Then   I should be on page "/search-jobs"
 
-  @CareerAdviceNavigationLinks
+  @CareerAdviceNavigationLinks @MobileChrome
   Scenario:As a logged in user I see the career-advice drop navigation has links
     Given I navigate to page "Career Advice"
     Then  I should see text "Home"
@@ -125,7 +125,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
     And   I click on "COVID-19 Advice" career advice links
     Then  I should be on page "Career Advice Covid 19 Advice"
 
-  @CareerAdviceLoggedInScrollUpDown
+  @CareerAdviceLoggedInScrollUpDown @MobileChrome
   Scenario: As a logged in user on the Career Advice page I should be able to use scroll up button
     Given  I navigate to page "Career Advice"
     Then   I scroll down 0,5000
@@ -141,7 +141,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
     And    I should see text "Job Alerts"
     And    I should see text "Saved Jobs"
 
-  @CareerAdvice3AdvertsLoggedIn
+  @CareerAdvice3AdvertsLoggedIn @MobileChrome
   Scenario: As a logged in user I see the career-advice page has 3 adverts
     Given I navigate to page "Career Advice"
     Then  I should see RL Career Advice Dyn Banner
@@ -162,14 +162,14 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
     And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
     And   I click on "OK, Thanks"
 
-  @CareerAdviceSearchJobsNavigationBarLoggedIn #this scenario wont available in mobile view
-  Scenario: As a logged in user I see the career-advice page has search jobs navigation bar
-    Given I navigate to page "Career Advice"
-    And  I Click on Mobile Search
-    And   The search jobs navigation bar button has text "Find jobs"
-    And   I fill in search jobs nav bar keywords search with "Sales"
-    And   I fill in search jobs nav bar location search with "10001"
-    And   I select "60 Miles" from search distance
-    And   I click on search jobs
-    Then  I should be able to see in browser URL "/jobs/sales-in-10001?r=60"
-    And   I should see text H one tag "Sales jobs in 10001"
+#  @CareerAdviceSearchJobsNavigationBarLoggedIn #this scenario wont available in mobile view
+#  Scenario: As a logged in user I see the career-advice page has search jobs navigation bar
+#    Given I navigate to page "Career Advice"
+#    And  I Click on Mobile Search
+#    And   The search jobs navigation bar button has text "Find jobs"
+#    And   I fill in search jobs nav bar keywords search with "Sales"
+#    And   I fill in search jobs nav bar location search with "10001"
+#    And   I select "60 Miles" from search distance
+#    And   I click on search jobs
+#    Then  I should be able to see in browser URL "/jobs/sales-in-10001?r=60"
+#    And   I should see text H one tag "Sales jobs in 10001"
