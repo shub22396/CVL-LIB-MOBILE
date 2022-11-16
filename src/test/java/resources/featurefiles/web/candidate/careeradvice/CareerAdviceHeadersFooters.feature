@@ -1,7 +1,7 @@
 @CareerAdviceHeaderFooterLoggedOut @Regression @Web @Candidate1 @ReleaseRegression1 @Candidate
 Feature: Candidate CareerAdvice CareerAdviceHeadersFooters
 
-  @CareerAdviceNavigateHeader
+  @CareerAdviceNavigateHeader @MobileChrome
   Scenario: Navigation header for logged out user
     Given  I navigate to page "Career Advice"
     And   I click on mobile header button
@@ -20,25 +20,24 @@ Feature: Candidate CareerAdvice CareerAdviceHeadersFooters
     Then   I click on link text "Job Alerts"
     Then   I should be able to see in browser URL "Job Alerts"
     When   I navigate to page "Career Advice"
-    Then   I scroll down 0,5000
+#    Then   I scroll down 0,5000
     Then   I should be able to see in browser URL "Career Advice"
-    When   I navigate to page "Career Advice"
-    Then   I scroll down 0,5000
+#    Then   I scroll down 0,5000
     And   I click on mobile header button
     And    I click on link text "Saved Jobs"
     Then   I should be able to see in browser URL "Saved Jobs"
     When   I navigate to page "Career Advice"
-    Then   I scroll down 0,5000
+#    Then   I scroll down 0,5000
     And   I click on mobile header button
     And    I click on link text "Login"
     Then   I should be able to see in browser URL "Login"
     When   I navigate to page "Career Advice"
-    Then   I scroll down 0,5000
+#    Then   I scroll down 0,5000
     And   I click on mobile header button
     And    I click on link text "Hiring?"
     Then   I should be able to see in browser URL "Hiring"
 
-  @CareerAdviceNavigateFooterJobSeekers
+  @CareerAdviceNavigateFooterJobSeekers @MobileChrome
   Scenario: Navigation Footer JobSeekers Menu for logged out user
     Given  I navigate to page "Career Advice"
    # Then   I should see resume Library footer logo
@@ -56,17 +55,17 @@ Feature: Candidate CareerAdvice CareerAdviceHeadersFooters
     When   I navigate to page "Career Advice"
     And   I click on "Jobseekers"
     And    I click on "Search Jobs" in footer menu job seekers and verify url "Search Jobs"
-    When   I am on page "Career Advice"
+    When   I navigate to page "Career Advice"
     And    I click on "Free Resume Review" in footer menu job seekers and verify url "Resume Review"
-    When   I am on page "Career Advice"
+    When   I navigate to page "Career Advice"
     And   I click on "Jobseekers"
     And    I click on "Search Companies" in footer menu job seekers and verify url "Companies"
     And   I click on "Jobseekers"
-    When   I am on page "Career Advice"
+    When   I navigate to page "Career Advice"
     And   I click on "Jobseekers"
     And    I click on "Login" in footer menu job seekers and verify url "Login"
 
-  @CareerAdviceNavigateFooterHiring
+  @CareerAdviceNavigateFooterHiring @MobileChrome
   Scenario: Navigation Footer Hiring Menu for logged out user
     When   I am on page "/"
     Given  I navigate to page "Career Advice"
@@ -93,7 +92,7 @@ Feature: Candidate CareerAdvice CareerAdviceHeadersFooters
     And    I click on Hiring
     Then   I click on "Employer Login" in footer menu hiring and verify url "Hiring Login"
 
-  @CareerAdviceNavigateFooterRL
+  @CareerAdviceNavigateFooterRL @MobileChrome
   Scenario: Navigation Footer Resume-Library Menu for logged out user
     When   I navigate to page "Career Advice"
     Then   I should see text "Resume-Library"
@@ -117,7 +116,7 @@ Feature: Candidate CareerAdvice CareerAdviceHeadersFooters
     And I click on Resume Library
     And    I click on "Work For Us" in footer menu Resume-Library and verify url "/company/4394/resume-library-jobs"
 
-  @CareerAdviceLoggedOutScrollUpDown
+  @CareerAdviceLoggedOutScrollUpDown @MobileChrome
   Scenario: As a logged out user on the Career Advice page I should be able to use scroll up button
     Given  I navigate to page "Career Advice"
     Then   I scroll down 0,5000
