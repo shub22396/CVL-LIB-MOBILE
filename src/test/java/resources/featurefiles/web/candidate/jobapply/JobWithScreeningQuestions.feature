@@ -1,4 +1,4 @@
-@ScreeningQuestions  @Regression @Web @Candidate3 @ReleaseRegression1 @Candidate
+@ScreeningQuestions  @Regression @Web @Candidate3 @ReleaseRegression1 @Candidate  @MobileChrome
 Feature: Candidate JobApply JobWithScreeningQuestions
 
  Background: Post a job with additional questions

@@ -1,4 +1,4 @@
-@DoNotSellMyInfo @Regression @Web @Candidate4 @ReleaseRegression1 @Candidate
+@DoNotSellMyInfo @Regression @Web @Candidate4 @ReleaseRegression1 @Candidate   @MobileChrome
 Feature: Candidate Others DoNotSellMyInfo
 
    Scenario: Validate the Logged Out Do Not Sell My Info form and submit

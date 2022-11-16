@@ -1,11 +1,11 @@
 @SavedJobs @Regression @Web @Candidate5 @Candidate
 Feature: Candidate SavedJobs SavedJobs
 
-  @loggedOutUserSaveJobAndView
+  @loggedOutUserSaveJobAndView   @MobileChrome
   Scenario: As a logged out user save a job and view it
     Given I navigate to page "Jobs Sales"
     When  I click on save toggle one
-    Then  I should see text a tags "Saved Jobs (" and verify "Saved Jobs (1)"
+#    Then  I should see text a tags "Saved Jobs (" and verify "Saved Jobs (1)"
     When  I click on saved job button
     And   I should see text p tag "Displaying" and verify message "Displaying 1 to 1 of 1"
     And   I should see text "Job ID"
@@ -16,26 +16,30 @@ Feature: Candidate SavedJobs SavedJobs
     And   I switch tab
     And   I should be able to see in browser URL "Job View"
 
-  @loggedOutUserSaveJobAndDelete @ReleaseRegression1
+  @loggedOutUserSaveJobAndDelete @ReleaseRegression1    @MobileChrome
   Scenario: As a logged out user save a job and delete it
     Given I navigate to page "Jobs Sales"
     And   I click on save toggle one
     And   I click on saved job button
-    And   I click on Actions
-    And   I click on "Delete"
+#    And   I click on Actions
+     #    And   I click on "Delete"
+    And  I click delete button on saved jobs
     And   I should see text H one tag "My Saved Jobs"
 
-  @loggedOutUserSaveJobsTestHoverViewAllShowJobAndDelete
+  @loggedOutUserSaveJobsTestHoverViewAllShowJobAndDelete   @MobileChrome
   Scenario: As a logged out user save a job hover basket test show, view all and delete job
     Given  I navigate to page "Jobs Nonexternaltestjobs"
     When   I click on save toggle one
     And    I click on save toggle two
     And    I click on save toggle three
-    Then   I mouse hover Saved Jobs
-    And    I should see text "View all"
-    And    I should see text a tags "Saved Jobs (" and verify "Saved Jobs (3)"
+    And   I click on saved job button
+#    Then   I mouse hover Saved Jobs
+#    And    I should see text "View all"
+#    And    I should see text a tags "Saved Jobs (" and verify "Saved Jobs (3)"
+    And   I should see text p tag "Displaying" and verify message "Displaying 1 to 3 of 3"
     When   I click delete button on saved jobs
-    Then   I should see text a tags "Saved Jobs (" and verify "Saved Jobs (2)"
+#    Then   I should see text a tags "Saved Jobs (" and verify "Saved Jobs (2)"
+    And   I should see text p tag "Displaying" and verify message "Displaying 1 to 2 of 2"
 
   @loggedOutUserSaveJobAndRegister1 @ReleaseRegression1
   Scenario: As a logged out user save a job and register (via /candidate/registration page)
@@ -50,20 +54,20 @@ Feature: Candidate SavedJobs SavedJobs
     Then   I should see text "My Saved Jobs"
     And    I should see text p tag "Displaying" and verify message "Displaying 1 to 1 of 1"
 
-  @loggedOutUserSaveJobAndLogin1 @ReleaseRegression1
+  @loggedOutUserSaveJobAndLogin1 @ReleaseRegression1    @MobileChrome
   Scenario: As a logged out user save a job and login (via /login page)
     Given  I navigate to page "Jobs Sales"
     When   I click on save toggle one
-    And    I click Login button
+#    And    I click Login button
+    And I navigate to page "Login"
     Then   I should see text "You have saved jobs during your searches"
     And    I should see "To save these jobs to your account login below. Not registered?"
     Then   I login as a candidate
     And    I navigate to page "Candidate Saved Jobs"
     Then   I should see text "My Saved Jobs"
     And    I should see text p tag "Displaying" and verify message "Displaying 1 to "
-    And    I click on Actions
-    And    I click on "Delete"
-
+#    And    I click on Actions
+#    And    I click on "Delete"
   @loggedOutUserNoSavedJobsAndRegister
   Scenario: As a logged out user verify no saved jobs, register and verify no saved jobs message
     Given  I navigate to page "Saved Jobs"
