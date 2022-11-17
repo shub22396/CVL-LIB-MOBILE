@@ -60,7 +60,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.setCapability("LT:Options", ltOptions);
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
             threadLocalMap.set(threadMap);
-            caps.setCapability("tunnelName", "RLRegressionTunnel");
+            caps.setCapability("tunnelName", tunnelName);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -101,7 +101,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.setCapability("LT:Options", ltOptions);
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
             threadLocalMap.set(threadMap);
-            caps.setCapability("tunnelName", "RLRegressionTunnel");
+            caps.setCapability("tunnelName", tunnelName);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -186,7 +186,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         return null;
     }
 
-    void androidMobileWeb(Map threadMap,String testName) {
+    void androidRealMobileWeb(Map threadMap,String testName) {
         try {
             String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
             String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
@@ -219,10 +219,49 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
             capabilities.setCapability("autoGrantPermissions", true);
             capabilities.setCapability("autoAcceptAlerts", true);
-            capabilities.setCapability("tunnelName", "RLRegressionTunnel");
+            capabilities.setCapability("tunnelName", tunnelName);
 
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void androidMobileWeb(Map threadMap, String testName) {
+        try {
+            String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
+            String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
+            String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
+            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
+            String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
+
+            logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");
+            String project = "[" + jobBaseName + "-Build:" + buildId + "]";
+            final String driverURL = "https://" + username + ":" + accessKey + "@hub.lambdatest.com/wd/hub";
+            logger.info("[--->driverURL:" + driverURL+"<---]");
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("build","RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
+            capabilities.setCapability("name",testName);
+            capabilities.setCapability("project", project);
+            capabilities.setCapability("platformName", "android");
+            capabilities.setCapability("deviceName", "Google Pixel");
+            capabilities.setCapability("platformVersion", "8");
+            capabilities.setCapability("isRealMobile", false);
+            capabilities.setCapability("deviceOrientation", "PORTRAIT");
+            capabilities.setCapability("console",true);
+            capabilities.setCapability("network",false);
+            capabilities.setCapability("visual",true);
+            capabilities.setCapability("tunnel", true);
+            capabilities.setCapability("tunnelName", tunnelName);
+            capabilities.setCapability("acceptInsecureCerts",true);
+            capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
+            threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
+
+            threadLocalMap.set(threadMap);
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -260,7 +299,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Safari");
             capabilities.setCapability("autoGrantPermissions", true);
             capabilities.setCapability("autoAcceptAlerts", true);
-            capabilities.setCapability("tunnelName", "RLRegressionTunnel");
+            capabilities.setCapability("tunnelName", tunnelName);
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
         } catch (Exception e) {

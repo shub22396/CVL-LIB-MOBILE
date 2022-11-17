@@ -1,4 +1,4 @@
-@PartnersRegistration @Regression @Web @Partner @ReleaseRegression2 @Partnerships
+@PartnersRegistration @Regression @Web @Partner @ReleaseRegression2 @Partnerships @MobileChrome
 Feature: Partner PartnersRegistration
 
   Scenario: Partner Registration - Validate the form and submit

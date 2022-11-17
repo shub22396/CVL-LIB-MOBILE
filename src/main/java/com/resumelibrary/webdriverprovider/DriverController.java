@@ -3,30 +3,19 @@ package com.resumelibrary.webdriverprovider;
 import com.resumelibrary.utilities.Constants;
 import com.resumelibrary.utilities.PropertyFileReader;
 import com.resumelibrary.utilities.WebURLHelper;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.time.Duration;
-import java.util.HashMap;
 import java.util.Map;
 
 public class DriverController extends CloudDriverProvider implements Constants {
 
     private static final Logger logger = LogManager.getLogger(DriverController.class);
-
 
     public DriverController() {
         PageFactory.initElements(getThreadDriver(), this);
@@ -78,8 +67,15 @@ public class DriverController extends CloudDriverProvider implements Constants {
                 break;
             case "lambdaMobileWeb":
                 logger.info("[--->Using  lambdaMobileWeb<---]");
-
-                androidMobileWeb(threadMap,testName);
+                String isRealDevice = PropertyFileReader.getInstance().getProperty("isRealDevice");
+                String isRealDeviceVal = WebURLHelper.getParameterFromEnvOrSysParam("ISREALDEVICE", isRealDevice);
+                if(isRealDeviceVal.equalsIgnoreCase("yes")) {
+                    logger.info("[--->isRealDeviceVal:"+isRealDeviceVal+"<---]");
+                    androidRealMobileWeb(threadMap, testName);
+                }else{
+                    logger.info("[--->isRealDeviceVal:"+isRealDeviceVal+"<---]");
+                    androidMobileWeb(threadMap, testName);
+                }
                 break;
             case "lambdaIosMobileWeb":
                 logger.info("[--->Using  lambdaMobileWeb<---]");

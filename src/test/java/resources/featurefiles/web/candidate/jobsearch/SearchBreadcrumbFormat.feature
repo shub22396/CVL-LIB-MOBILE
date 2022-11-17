@@ -1,6 +1,6 @@
 # Tests coverage
     # 1. Confirm breadcrumb format for job search results
-@SearchJobBreadcrumbFormat @Regression @Web @Candidate3 @ReleaseRegression1 @Traffic
+@SearchJobBreadcrumbFormat @Regression @Web @Candidate3 @ReleaseRegression1 @Traffic @MobileChrome
 Feature: Candidate JobSearch SearchBreadcrumbFormat
 
   @SearchJobBreadcrumbFormatKeywordLocation @MobileChrome

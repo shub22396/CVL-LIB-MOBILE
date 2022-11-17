@@ -4,16 +4,16 @@ Feature: Client Contact ClientHelpCenterNavBar
   Background: Navigating to Client Help Center From Nav Bar
    Given I login as a client
 
-  @clientHelpText
+  @clientHelpText @MobileChrome
   Scenario: verify text in recruiters contact page
     Then I click on Menu Bar
     And  I click on "Contact Us"
     Then I should see text "Your Customer Success Executive"
-    And  I should see text "c.briggs@resume-library.com"
+    And  I should see text "n.church@resume-library.com"
     And  I should see text "1-857-239-0143"
     And  I should not see "centre"
 
-  @clientHelpCenter @ReleaseRegression2
+  @clientHelpCenter @ReleaseRegression2 @MobileChrome
   Scenario: verify text in help center
     Then I navigate to page "Client Help"
     Then I should be able to see in browser URL "Client Help"
@@ -57,7 +57,7 @@ Feature: Client Contact ClientHelpCenterNavBar
    Then  I should be able to see in browser URL "/client/contact"
     And  I should see text "Our dedicated team is here to help answer any questions, Contact us"
 
-  @clientContactFormTextForm
+  @clientContactFormTextForm @MobileChrome
   Scenario: verify text in client contact form1
     Then I navigate to page "Client Help"
     And  I click on "Account Options"
@@ -68,7 +68,7 @@ Feature: Client Contact ClientHelpCenterNavBar
     And  I should see text "Inquiry type"
     And  I should see text "Inquiry"
 
-  @clientContactFormValidationForm
+  @clientContactFormValidationForm @MobileChrome
   Scenario: Validation on client contact form
     Then I navigate to page "Client Help"
     And  I click on "Account Options"
@@ -78,11 +78,12 @@ Feature: Client Contact ClientHelpCenterNavBar
     And  I should see text "Message is required"
     And  I should not see text "phone number is required"
 
-  @clientContactFormSubmit @ReleaseRegression2
+  @clientContactFormSubmit @ReleaseRegression2 @MobileChrome
   Scenario: Submitting on client contact form
     Then I navigate to page "Client Help"
     And  I click on "Account Options"
     And  I click on link "Contact Us" account options menu
+    And  I wait for "1" seconds
     Then I select the option "Resume Search" from inquiry type
     Then I fill in inquiry messages text area with "inquiry message for form 1 "
     And  I wait for "1" seconds
