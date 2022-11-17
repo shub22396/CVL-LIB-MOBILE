@@ -18,6 +18,7 @@ public class URLConstants implements Constants {
     public final String CLIENT_HELP_VIDEOS_SEARCH_BUILDER = "/client/help/videos/search-builder";
     public final String CLIENT_HELP_VIDEOS_VIDEO_INTERVIEWS = "/client/help/videos/video-interviews";
     public final String CLIENT_JOBS_NEW_JOB_POSTED = "/client/jobs/new_job_posted/";
+    public final String CLIENT_JOBS_NEW_JOB_POSTED_1 = "/client/jobs?new_job_posted=1";
     public final String CLIENT_RESUME_SEARCH_RESULTS = "/client/resume-search/results";
     public final String CLIENT_RESUME_VIEW_CANDIDATE_APPLICATION = "/client/resume/view-candidate-application/";
     public final String CLIENT_RESUME_VIEW_CANDIDATE_PROFILE = "/client/resume/view_candidate_profile/";
