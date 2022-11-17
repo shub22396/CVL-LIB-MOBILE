@@ -4,7 +4,7 @@
 @CandidateRegistrationValidation @Regression @Web @Candidate5 @Candidate
 Feature: Candidate Registration UnsuccessfulRegistration
 
-  @candidateInvalidRegistrationValidationMessage
+  @candidateInvalidRegistrationValidationMessage     @MobileChrome
   Scenario: Unsuccessful candidate registration field validation
     Given I navigate to page "Candidate Registration"
     When  I click on register button
@@ -14,7 +14,8 @@ Feature: Candidate Registration UnsuccessfulRegistration
     And   I should see text "Last name is required"
     And   I should see text "Password is required"
     And   I should see text "Latest job title is required"
-    And   I should see text "Zip code is required"
+#    And   I should see text "Zip code is required"
+    And I should see text "City, state is required"
     And   I should see text "Resume is required"
 
   @candidateInvalidRegistration @ReleaseRegression1
@@ -45,7 +46,7 @@ Feature: Candidate Registration UnsuccessfulRegistration
     And   I upload resume "Test Cv"
     Then  I should see text "Send me my free professional resume review"
 
-  @verifyRegistrationTerms
+  @verifyRegistrationTerms     @MobileChrome
   Scenario: Verify that the privacy policy and terms and conditions links are displayed on registration
     Given I navigate to page "Candidate Registration"
     And   I click on privacy policy link
@@ -68,7 +69,7 @@ Feature: Candidate Registration UnsuccessfulRegistration
     And   I upload resume "Resume Oversized"
     Then  I should see text "This file is less than 1kb or bigger than 2mb"
 
-  @registrationValidationOfInvalidEmailAddressAndPassWord
+  @registrationValidationOfInvalidEmailAddressAndPassWord    @MobileChrome
   Scenario Outline: Validation of Email Address
     Given I navigate to page "Candidate Registration"
     When  I enter email address only "<Email>"

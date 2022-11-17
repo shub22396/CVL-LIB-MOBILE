@@ -206,7 +206,8 @@ public class RegistrationPage extends Utility {
 
     public void clickOnRegisterButton() {
         logger.info("Clicking on register button");
-        clickOnElement(RegisterButton);
+        //clickOnElement(RegisterButton);
+        clickOnElementWithJS(RegisterButton);
         waitFor(1);
     }
 
@@ -296,12 +297,14 @@ public class RegistrationPage extends Utility {
 
     public void clickOnPrivacyPolicyLink() {
         logger.info("Clicking on private policy link ");
-        clickOnElement(PrivacyPolicyLink);
+        //clickOnElement(PrivacyPolicyLink);
+        clickOnElementWithJS(PrivacyPolicyLink);
     }
 
     public void clickOnTermsConditionsLink() {
         logger.info("Clicking on terms conditions link ");
-        clickOnElement(TermsConditionsLink);
+        //clickOnElement(TermsConditionsLink);
+        clickOnElementWithJS(TermsConditionsLink);
     }
 
     public void clickOnSearchResultResumeReviewBanner() {
