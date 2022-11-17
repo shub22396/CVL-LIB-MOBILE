@@ -12,7 +12,7 @@ Feature: Candidate CareerAdvice CareerAdviceHeadersFootersLoggedIn
     And    I click Login as Jobseeker button
     Then   I should be on "My Dashboard" page
 
-  @CareerAdviceNavigateHeaderLoggedIn
+  @CareerAdviceNavigateHeaderLoggedIn @MobileChrome
   Scenario: Navigation header for logged in user
     Given  I navigate to page "Career Advice"
     Then   I should see resume Library header logo
@@ -53,7 +53,7 @@ Feature: Candidate CareerAdvice CareerAdviceHeadersFootersLoggedIn
     When   I click on link text "Career Advice"
 
 
-  @CareerAdviceNavFooterJobSeekersTools
+  @CareerAdviceNavFooterJobSeekersTools @MobileChrome
   Scenario: Navigation Footer JobSeekers Tools for logged in user
     And    I navigate to page "Career Advice"
     Then   I should see resume Library footer logo
@@ -71,7 +71,7 @@ Feature: Candidate CareerAdvice CareerAdviceHeadersFootersLoggedIn
     When   I click on link "FAQs" in "Jobseeker Tools" footer
     Then   I should be able to see in browser URL "Faq"
 
-  @CareerAdviceNavFooterAccountOptions
+  @CareerAdviceNavFooterAccountOptions @MobileChrome
   Scenario: Navigation Footer Account Options logged in user
     And    I navigate to page "Career Advice"
     Then   I should see resume Library footer logo
@@ -89,7 +89,7 @@ Feature: Candidate CareerAdvice CareerAdviceHeadersFootersLoggedIn
     And    I click on link "My Profile" account options menu
     Then   I should be able to see in browser URL "Candidate My Profile"
 
-  @CareerAdviceNavFooterAboutRL
+  @CareerAdviceNavFooterAboutRL @MobileChrome
   Scenario: Navigation Footer About RL Menu for logged in user
     And    I navigate to page "Career Advice"
     Then   I should see resume Library footer logo
