@@ -1,9 +1,6 @@
 package com.resumelibrary.webtest.candidate;
 
 import com.resumelibrary.utilities.Utility;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileCommand;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

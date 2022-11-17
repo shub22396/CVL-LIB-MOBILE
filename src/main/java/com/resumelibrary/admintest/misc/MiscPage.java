@@ -182,25 +182,25 @@ public class MiscPage extends Utility {
     public void selectOptionFromField(String option, String field) {
         switch (field) {
             case "Partner Type":
-                selectByVisibleText(PartnerType, option);
+                selectByVisibleTextFromDropDown(PartnerType, option);
                 break;
             case "State":
-                selectByVisibleText(State, option);
+                selectByVisibleTextFromDropDown(State, option);
                 break;
             case "Job Type":
-                selectByVisibleText(JobType, option);
+                selectByVisibleTextFromDropDown(JobType, option);
                 break;
             case "Salary Time Period":
-                selectByVisibleText(SalaryTimePeriod, option);
+                selectByVisibleTextFromDropDown(SalaryTimePeriod, option);
                 break;
             case "Status":
                 if (getBrowserName().contains("firefox") || getBrowserName().contains("remoteFirefoxBrowser")) {
                     waitFor(1);
                 }
-                selectByVisibleText(JobStatus, option);
+                selectByVisibleTextFromDropDown(JobStatus, option);
                 break;
             case "ATS Apply":
-                selectByVisibleText(ATSApply, option);
+                selectByVisibleTextFromDropDown(ATSApply, option);
                 break;
             case "Account Type":
                 selectByVisibleTextFromDropDown(AccountType, option);
@@ -209,10 +209,10 @@ public class MiscPage extends Utility {
                 if (getBrowserName().contains("firefox") || getBrowserName().contains("remoteFirefoxBrowser")) {
                     waitFor(1);
                 }
-                selectByVisibleText(Sector, option);
+                selectByVisibleTextFromDropDown(Sector, option);
                 break;
             case "Apply Type":
-                selectByVisibleText(applyType, option);
+                selectByVisibleTextFromDropDown(applyType, option);
                 break;
         }
     }
