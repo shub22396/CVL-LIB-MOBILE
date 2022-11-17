@@ -11,7 +11,7 @@ Feature: Client Products PurchaseProducts
   Background: Login as a client
     Given   I login as a client
 
-  @purchaseJobPostingCredits @ReleaseRegression2
+  @purchaseJobPostingCredits @ReleaseRegression2 @MobileChrome
   Scenario: Purchase Job posting credits
     When    I navigate to page "Client Products Jobs"
     And     I click Buy online button
@@ -34,7 +34,7 @@ Feature: Client Products PurchaseProducts
     And     I should see text "You're ready to start hiring with Resume-Library."
     And     I should see text p tag "Before you can use your products we may need to validate your account." and verify message "Before you can use your products we may need to validate your account. One of our team will do this right away, or you can call us on 1-857-239-0143."
 
-  @purchaseContactCredits @ReleaseRegression2
+  @purchaseContactCredits @ReleaseRegression2 @MobileChrome
   Scenario: Purchase Contact credits
     When    I navigate to page "Client Products Contact Credits"
     And     I click Buy online button
@@ -57,7 +57,7 @@ Feature: Client Products PurchaseProducts
     And     I should see text "You're ready to start hiring with Resume-Library."
     And     I should see text p tag "Before you can use your products we may need to validate your account." and verify message "Before you can use your products we may need to validate your account. One of our team will do this right away, or you can call us on 1-857-239-0143."
 
-  @declineTransaction @ReleaseRegression2
+  @declineTransaction @ReleaseRegression2 @MobileChrome
   Scenario: Verify decline transaction
     When    I navigate to page "Client Products Jobs"
     And     I click Buy online button
@@ -83,7 +83,7 @@ Feature: Client Products PurchaseProducts
     And     I should see text "Secure payments guaranteed by Paysafe"
     And     I should see text "Order Summary"
 
-  @saveAndDeleteCard @ReleaseRegression2
+  @saveAndDeleteCard @ReleaseRegression2 @MobileChrome
   Scenario: Save valid card and delete the card details
     When    I navigate to page "Client Products Contact Credits"
     And     I click Buy online button
@@ -124,7 +124,7 @@ Feature: Client Products PurchaseProducts
     When    I click View button to see invoice
     And     I should see download file "rl-user-manual"
 
-  @PurchaseHistoryPagination
+  @PurchaseHistoryPagination @MobileChrome
   Scenario:My Purchase History Page Pagination
     When  I go to page "Client Purchase History" and to get pagination purchase credits in the page "Client Products Contact Credits"
     And   I scroll down 0,2000
@@ -136,7 +136,7 @@ Feature: Client Products PurchaseProducts
     Then  I should be on page "Client Purchase History"
     And   I should not see "prev" link
 
-  @PurchaseProductsValidateCartCount
+  @PurchaseProductsValidateCartCount @MobileChrome
   Scenario: As a logged In user validating the Product menu headers and shopping cart count
     When   I click on link text "Resources"
     And    I click on Menu Bar
