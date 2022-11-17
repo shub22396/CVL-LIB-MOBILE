@@ -166,7 +166,7 @@ public class JobSearch extends Utility {
 
     @And("the job type field should contain {string}")
     public void theJobTypeFieldShouldContain(String text) {
-        Assert.assertEquals(new JobSearchPage().getJobTypeAttributeValue(), text);
+        Assert.assertTrue(new JobSearchPage().getJobTypeAttributeValue(text));
     }
 
     @And("the posted date field should contain {string}")
@@ -211,7 +211,7 @@ public class JobSearch extends Utility {
 
     @And("the posted date should be {string}")
     public void thePostedDateShouldBe(String postedDate) {
-        Assert.assertEquals(new JobSearchPage().getPostedInTheIsSelected(), postedDate);
+        Assert.assertTrue(new JobSearchPage().getPostedInTheIsSelected(postedDate));
     }
 
     @And("I select the option {string} from order by dropdown")
@@ -221,7 +221,7 @@ public class JobSearch extends Utility {
 
     @And("the sort by should be {string}")
     public void theSortByShouldBe(String sortBy) {
-        Assert.assertEquals(new JobSearchPage().getSortByIsSelected(), sortBy);
+        Assert.assertTrue(new JobSearchPage().getSortByIsSelected(sortBy));
     }
 
     @And("the job type should be {string}")
