@@ -1,7 +1,7 @@
 @ResumeReview @Regression @Web @Candidate5 @Candidate
 Feature: Candidate Registration ResumeReview
 
-  @resumeReviewValidation
+  @resumeReviewValidation @MobileChrome
   Scenario Outline: Validation on resume review page
     Given I navigate to page "Resume Review"
     When  I press login and review my resume button
@@ -129,7 +129,9 @@ Feature: Candidate Registration ResumeReview
   @resumeReviewJobSearchLoggedOut
   Scenario: Verify resume review from a logged out user job search
     Given I navigate to page "Jobs Sales In 10010"
-    And   I click on search results resume review banner
+    And I click on "Jobseekers"
+    And I click on "Free Resume Review"
+    #And   I click on search results resume review banner
     Then  I should be able to see in browser URL "Resume Review"
     And   I enter email address "test@gmail.com"
     And   I enter first name "automation "
