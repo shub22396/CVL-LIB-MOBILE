@@ -224,7 +224,7 @@ public class JobPostPage extends Utility {
 
     public List<String> getListOfPostedDates() {
         sortedList = getDataListForDate(PostedDates);
-        logger.info("Getting list of posted dates ");
+        logger.info("Getting list of posted dates " +sortedList);
         return sortedList;
     }
 
@@ -242,7 +242,7 @@ public class JobPostPage extends Utility {
 
     public List<String> getListOfExpiresDates() {
         sortedList = getDataList(ExpiresDates);
-        logger.info("Getting list of expires dates ");
+        logger.info("Getting list of expires dates "+sortedList);
         return sortedList;
     }
 
@@ -260,7 +260,7 @@ public class JobPostPage extends Utility {
 
     public void selectValueToSortOnClientJobsPage(String text) {
         logger.info("Select sort by from dropdown");
-       selectByVisibleTextFromDropDown(JobsMobileSortSelect,text);
+        selectByVisibleTextFromDropDown(JobsMobileSortSelect, text);
         waitFor(4);
     }
 }

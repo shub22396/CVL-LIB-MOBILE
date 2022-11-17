@@ -637,17 +637,9 @@ public abstract class Utility extends DriverController {
 
     /* selecting dropdown value by using visible text option and handling element click intercepted expection */
     public void selectByVisibleTextFromDropDown(WebElement element, String str) {
-        try {
-            waitUntilElementToBeClickable(element, 4);
-            clickOnElement(element);
-            clickOnElementUsingText(str);
-        } catch (ElementClickInterceptedException e) {
-            waitFor(1);
-            ((JavascriptExecutor) getThreadDriver()).executeScript("window.scrollBy(0,-350)", "");
-            waitUntilElementToBeClickable(element, 4);
-            clickOnElement(element);
-            clickOnElementUsingText(str);
-        }
+        waitUntilElementToBeClickable(element, 4);
+        clickOnElement(element);
+        getThreadDriver().findElement(By.xpath("//*[text()=\"" + str + "\"]")).click();
     }
 
     public void selectByVisibleTextFromDropDownUsingJS(WebElement element, String str) {
