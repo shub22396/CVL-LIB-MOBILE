@@ -220,7 +220,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
             capabilities.setCapability("autoGrantPermissions", true);
             capabilities.setCapability("autoAcceptAlerts", true);
-            capabilities.setCapability("tunnelName", tunnelName);
+            capabilities.setCapability("tunnelName", tunnelName+"-"+buildId);
 
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
@@ -256,7 +256,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("network",false);
             capabilities.setCapability("visual",true);
             capabilities.setCapability("tunnel", true);
-            capabilities.setCapability("tunnelName", tunnelName);
+            capabilities.setCapability("tunnelName", tunnelName+"-"+buildId);
             capabilities.setCapability("acceptInsecureCerts",true);
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
@@ -302,7 +302,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Safari");
             capabilities.setCapability("autoGrantPermissions", true);
             capabilities.setCapability("autoAcceptAlerts", true);
-            capabilities.setCapability("tunnelName", tunnelName);
+            capabilities.setCapability("tunnelName", tunnelName+"-"+buildId);
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
         } catch (Exception e) {

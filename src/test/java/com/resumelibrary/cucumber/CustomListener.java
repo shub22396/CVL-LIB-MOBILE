@@ -18,11 +18,13 @@ public class CustomListener extends Utility implements ITestListener, IExecution
     public void onExecutionStart() {
         tunnelObject=new ArrayList<Tunnel>();
         boolean flag=false;
+        String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
+        String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
         String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
         String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
         int noOfTunnels = Integer.parseInt(WebURLHelper.getParameterFromEnvOrSysParam("TUNNELS", PropertyFileReader.getInstance().getProperty("noOfTunnels")));
         String tunnelName =WebURLHelper.getParameterFromEnvOrSysParam("TUNNELNAME", PropertyFileReader.getInstance().getProperty("tunnelName"));
-        LOGGER.info("[--->tunnelName = " + tunnelName+"<---]");
+        LOGGER.info("[--->tunnelName = " + tunnelName+"-"+buildId+"<---]");
         for(int j=0;j<noOfTunnels;j++){
 
             HashMap<String, String> option = new HashMap<String, String>();
@@ -30,7 +32,7 @@ public class CustomListener extends Utility implements ITestListener, IExecution
             option.put("key", accessKey);
             option.put("load-balanced","true");
             option.put("mitm", "true");
-            option.put("tunnelName", tunnelName);
+            option.put("tunnelName", tunnelName+"-"+buildId);
             int i=0;
             do{
                   flag= startTunnel(option);
@@ -45,8 +47,7 @@ public class CustomListener extends Utility implements ITestListener, IExecution
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
-        String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
+
         ExcelUtil excelUtil = new ExcelUtil();
         excelUtil.createFailedExcel(buildId);
     }
