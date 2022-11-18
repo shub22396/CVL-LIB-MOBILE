@@ -28,7 +28,7 @@ Feature: Client NoEcommerceJourney UnValidatedProductsJourney
     And   I select Disable Ecomm "Yes"
     And   I click on update account
 
-  @NoEcomUnvalidatedClientPurchaseProducts
+  @NoEcomUnvalidatedClientPurchaseProducts @MobileChrome
   Scenario: As an unvalidated logged in client with E-commerce disabled I do not want to see products option
     When  I navigate to page "Client Account"
     And   I click on Menu Bar
@@ -48,7 +48,7 @@ Feature: Client NoEcommerceJourney UnValidatedProductsJourney
     When  I click on "Products"
     #Then  I should be able to see in browser URL "Hiring Products"
 
-  @NoEcommUnvalidatedClientVerifyEmployersLogo
+  @NoEcommUnvalidatedClientVerifyEmployersLogo @MobileChrome
   Scenario: as an unvalidated logged in client with E-commerce disabled verify employers logo
     When  I navigate to page "Client Account"
     When  I click on the RL Employers header logo

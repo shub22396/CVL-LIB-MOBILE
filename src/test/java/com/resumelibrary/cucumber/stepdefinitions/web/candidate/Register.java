@@ -168,34 +168,34 @@ public class Register extends Utility {
         Assert.assertEquals(new OthersPage().getTextFromErrorSalaryExpectation(), msg);
     }
 
-//    @And("I upload resume {string}")
-//    public void iUploadResume(String path) {
-//
-//        try {
-//            String projectPath = System.getProperty("user.dir");
-//            String resumePath=projectPath + "/src/test/java/resources/testfiles" + getURL(path);
-//                   System.out.println("resumePath======>"+resumePath);
-//
-//            resumePath="/SDCARD/Download/test123.pdf";
-//            waitFor(3);
-//            new RegistrationPage().selectFile();
-//            System.out.println("---After select file ---");
-//
-//        } catch (Exception e) {
-//            System.out.println("---in the exception ---");
-//            e.printStackTrace();
-//        }
-//    }
     @And("I upload resume {string}")
     public void iUploadResume(String path) {
+
         try {
             String projectPath = System.getProperty("user.dir");
+            String resumePath=projectPath + "/src/test/java/resources/testfiles" + getURL(path);
+                   System.out.println("resumePath======>"+resumePath);
 
-            new RegistrationPage().upLoadYourResume(projectPath + "/src/test/java/resources/testfiles/" + getURL(path));
+            resumePath="/SDCARD/Download/test123.pdf";
+            waitFor(3);
+            new RegistrationPage().selectFile();
+            System.out.println("---After select file ---");
+
         } catch (Exception e) {
-            e.getMessage();
+            System.out.println("---in the exception ---");
+            e.printStackTrace();
         }
     }
+//    @And("I upload resume {string}")
+//    public void iUploadResume(String path) {
+//        try {
+//            String projectPath = System.getProperty("user.dir");
+//
+//            new RegistrationPage().upLoadYourResume(projectPath + "/src/test/java/resources/testfiles/" + getURL(path));
+//        } catch (Exception e) {
+//            e.getMessage();
+//        }
+//    }
     @When("I should not see {string}")
     public void iShouldNotSee(String text) {
         Assert.assertFalse(isElementOrTextDisplayed(text));

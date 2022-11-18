@@ -21,6 +21,7 @@ public class CustomListener extends Utility implements ITestListener, IExecution
         String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
         String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
         int noOfTunnels = Integer.parseInt(WebURLHelper.getParameterFromEnvOrSysParam("TUNNELS", PropertyFileReader.getInstance().getProperty("noOfTunnels")));
+        String tunnelName =WebURLHelper.getParameterFromEnvOrSysParam("TUNNELNAME", PropertyFileReader.getInstance().getProperty("tunnelName"));
         for(int j=0;j<noOfTunnels;j++){
 
             HashMap<String, String> option = new HashMap<String, String>();
@@ -28,7 +29,7 @@ public class CustomListener extends Utility implements ITestListener, IExecution
             option.put("key", accessKey);
             option.put("load-balanced","true");
             option.put("mitm", "true");
-            option.put("tunnelName", "RLRegressionTunnel");
+            option.put("tunnelName", tunnelName);
             int i=0;
             do{
                   flag= startTunnel(option);

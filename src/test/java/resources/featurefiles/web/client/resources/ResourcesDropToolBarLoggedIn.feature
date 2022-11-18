@@ -4,7 +4,7 @@ Feature: Client Resources ResourcesDropToolBarLoggedIn
   Background: Navigating to Resources page
     Given I login as a client
 
-  @ResourcesDropToolNavigation
+  @ResourcesDropToolNavigation @MobileChrome
   Scenario: As a logged in user I see the resources page drop navigation has links
     Given  I navigate to page "Resources"
     Then   I should see text "Home"
@@ -15,8 +15,8 @@ Feature: Client Resources ResourcesDropToolBarLoggedIn
     Then   I should see text "Workplace"
     Then   I should see text "News"
     Then   I should see text "Events"
-    Then   I should see text "COVID-19 Advice"
-    When   I click on "Attracting Candidates"
+    When   I click on "View Categories"
+    And    I click on "Attracting Candidates"
     Then   I should be on page "Resources Attracting Candidates"
     Then   I should see text H one tag "Attracting Candidates"
     When   I move backward one page
@@ -44,6 +44,3 @@ Feature: Client Resources ResourcesDropToolBarLoggedIn
     Then   I should be on page "Resources Events"
     Then   I should see text H one tag "Resume-Library Events"
     When   I move backward one page
-    And    I click on "COVID-19 Advice"
-    Then   I should be on page "Resources Covid 19 Advice"
-    Then   I should see text H one tag "COVID-19 Advice"

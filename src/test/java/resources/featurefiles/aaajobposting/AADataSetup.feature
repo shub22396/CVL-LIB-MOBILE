@@ -1,26 +1,26 @@
-@DataSetupForAllTests @Regression @Web @Candidate1 @ReleaseRegression1 @Recruiters
+@DataSetupForAllTests @Regression @Web @Candidate1 @ReleaseRegression1 @Recruiters @MobileChrome
 Feature: Data setup for candidate tests
 
   @quickApplyJobPosting
   Scenario:  Posting a quick apply job
     Given I login as a client
-    When I navigate to page "Job Post"
-    And  I fill in title with "quick apply candidate job"
-    And  I select "California" from state dropdown
-    And  I enter city "90001"
-    And  I enter salary min "10000"
-    And  I enter salary max "30000"
-    Then I enter job description "Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job"
-    And  I click on quick apply toggle
-    Then I click on preview button
-    And  I click on post job button
-    And  I click on post job submit button
-    And  I am on page "Logout" and I should see browser URL "Hiring"
+    When  I navigate to page "Job Post"
+    And   I fill in title with "quick apply candidate job"
+    And   I select "California" from state dropdown
+    And   I enter city "90001"
+    And   I enter salary min "10000"
+    And   I enter salary max "30000"
+    Then  I enter job description "Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job"
+    And   I click on quick apply toggle
+    Then  I click on preview button
+    And   I click on post job button
+    And   I click on post job submit button
+    And   I am on page "Logout" and I should see browser URL "Hiring"
 
   @screeningQuestionJobPosting
   Scenario:  Posting a screening question job
     Given  I login as a client
-    When I navigate to page "Job Post"
+    When   I navigate to page "Job Post"
     And    I fill in title with "Screening Questions"
     And    I select "California" from state dropdown
     And    I enter city "90001"
@@ -36,7 +36,7 @@ Feature: Data setup for candidate tests
     And    I click on preview button
     And    I click on post job button
     And    I click on post job submit button
-    Then   I should be able to see in browser URL "Client Jobs New Job Posted"
+    Then   I should be able to see in browser URL "Client Jobs New Job Posted 1"
     And    I should see text p tag "Your job can now be seen in matching search results." and verify message "Job Posted Successfully! Your job can now be seen in matching search results."
     And    I should see text "Job Posted Successfully!"
     And    I am on page "Logout" and I should see browser URL "Hiring"
@@ -44,7 +44,7 @@ Feature: Data setup for candidate tests
   @featuredJobPosting
   Scenario: Posting a drummer job for featured banner
     Given I login as a client
-    When I navigate to page "Job Post"
+    When  I navigate to page "Job Post"
     And   I enter job title "Drummer"
     And   I select "California" from state dropdown
     And   I enter city "90001"
@@ -54,7 +54,7 @@ Feature: Data setup for candidate tests
     And   I click on preview button
     And   I click on post job button
     And   I click on post job submit button
-    Then  I should be able to see in browser URL "Client Jobs New Job Posted"
+    Then  I should be able to see in browser URL "Client Jobs New Job Posted 1"
     And   I should see text "Job Posted Successfully!"
     And   I logout the client
 
@@ -65,20 +65,20 @@ Feature: Data setup for candidate tests
   @1ClickApplyJobPosting
   Scenario: Posting a 1-click apply job
     Given I login as a client
-    When I navigate to page "Job Post"
-    And I fill in title with "1-Click Apply"
-    And I select "California" from state dropdown
-    And I enter city "90001"
-    And I enter salary min "10000"
-    And I enter salary max "30000"
-    Then I enter job description "Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job"
-    And I click on preview button
-    And I click on post job button
-    And I click on post job submit button
-    Then I should be able to see in browser URL "Client Jobs New Job Posted"
-    And I should see text "Job Posted Successfully!"
-    And I should see text p tag "Your job can now be seen in matching search results." and verify message "Job Posted Successfully! Your job can now be seen in matching search results."
-    And I am on page "Logout" and I should see browser URL "Hiring"
+    When  I navigate to page "Job Post"
+    And   I fill in title with "1-Click Apply"
+    And   I select "California" from state dropdown
+    And   I enter city "90001"
+    And   I enter salary min "10000"
+    And   I enter salary max "30000"
+    Then  I enter job description "Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job Project via Test 1 Project via Test 1 test job"
+    And   I click on preview button
+    And   I click on post job button
+    And   I click on post job submit button
+    Then  I should be able to see in browser URL "Client Jobs New Job Posted 1"
+    And   I should see text "Job Posted Successfully!"
+    And   I should see text p tag "Your job can now be seen in matching search results." and verify message "Job Posted Successfully! Your job can now be seen in matching search results."
+    And   I am on page "Logout" and I should see browser URL "Hiring"
 
   @deleteSavedSearch
   Scenario: Delete saved search
