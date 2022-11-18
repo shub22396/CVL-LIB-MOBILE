@@ -1,7 +1,7 @@
 @CandidateApplyLogin @Regression @Web @Candidate3 @Candidate
 Feature: Candidate JobApply JobApplyFromLogin
 
-  @quickApplyLogin @ReleaseRegression1
+  @quickApplyLogin @ReleaseRegression1   @MobileChrome
   Scenario:  Search for quick apply job and login
     Given I login as a client
     When I navigate to page "Job Post"
@@ -23,10 +23,10 @@ Feature: Candidate JobApply JobApplyFromLogin
     Then I should see text "This email already exists, please login"
     When I fill job apply password with "rltest01" on job apply
     And  I Click on Link Register & Quick Apply
-#    Then I should be able to see in browser URL "Job Apply"
-    Then I should be able to see in browser URL "Jobs"
+    Then I should be able to see in browser URL "Job Apply"
+#    Then I should be able to see in browser URL "Jobs"
 
-  @jobApplyLogin
+  @jobApplyLogin      @MobileChrome
   Scenario:  Search for job and verify login apply
     Given I navigate to page "Jobs Non External Test Jobs"
     When I click on non external job to apply
@@ -40,8 +40,8 @@ Feature: Candidate JobApply JobApplyFromLogin
     And  I fill in password with "rltest01"
     And  I click on "Login & apply"
    # And  I press and wait "login_now"
-#    Then I should be able to see in browser URL "Job Apply"
-  Then I should be able to see in browser URL "Jobs"
-     #    And  I should see text "Your resume"         //commenting due to no job match
-#    And  I should see text p tag "attached, you're ready to apply!" and verify message "test-cv.pdf " //commenting due to no job match
-#    And  I should see text "Your cover letter"   //commenting due to no job match
+   Then I should be able to see in browser URL "Job Apply"
+#   Then I should be able to see in browser URL "Jobs"
+     And  I should see text "Your resume"
+    And  I should see text p tag "attached, you're ready to apply!" and verify message "test-cv.pdf "
+    And  I should see text "Your cover letter"

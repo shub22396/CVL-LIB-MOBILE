@@ -82,13 +82,16 @@ Feature: Candidate SavedJobs SavedJobs
     Then   I should see text "My Saved Jobs"
     And    I should see "It can take a few moments for your saved jobs to appear – please check back shortly"
 
-  @loggedOutUserSaveJobAndRegister2
+  @loggedOutUserSaveJobAndRegister2   @MobileChrome
   Scenario: As a logged out user save a job and register (via Register & apply pop-up)
     Given  I navigate to page "Jobs Nonexternaltestjobs"
     When   I click on save toggle one
+    And    I click on mobile header button
     And    I click on saved job button
-    And    I click on Actions
-    Then   I click apply now job click event
+#    And    I click on Actions
+#    Then   I click apply now job click event
+    And I click on link text "Apply Now"
+#    And    I click on "Apply Now"
     And    I click on "Register & apply"
     And    I should be able to see in browser URL "Register Apply"
     And    I fill in "email" with random candidate email
@@ -97,18 +100,21 @@ Feature: Candidate SavedJobs SavedJobs
     And    I enter password "123456"
     And    I click on register button
     Then   I should be able to see in browser URL "Register Apply"
-    And    I should see text a tags "Saved Jobs (" and verify "Saved Jobs (1)"
-    When   I click on saved job button
+   #    And    I should see text a tags "Saved Jobs (" and verify "Saved Jobs (1)"
+#    When   I click on saved job button
+    And I navigate to page "Candidate Saved Jobs"
     Then   I should be able to see in browser URL "Candidate Saved Jobs"
     And    I should see text p tag "Displaying" and verify message "Displaying 1 to 1 of 1"
 
-  @loggedOutUserSaveJobAndLogin2
+  @loggedOutUserSaveJobAndLogin2    @MobileChrome
   Scenario: As a logged out user save a job and login (via Login & Apply pop-up)
     Given  I navigate to page "Jobs Nonexternaltestjobs"
     When   I click on save toggle one
+    And I click on mobile header button
     And    I click on saved job button
-    And    I click on Actions
-    And    I click apply now job click event
+#    And    I click on Actions
+#    And    I click apply now job click event
+    And    I click on "Apply Now"
     And    I click on "Login & apply"
     Then   I should be able to see in browser URL "Login Apply"
     And    I fill in Email address
@@ -117,5 +123,5 @@ Feature: Candidate SavedJobs SavedJobs
     And    I navigate to page "Candidate Saved Jobs"
     Then   I should see text "My Saved Jobs"
     And    I should see text p tag "Displaying" and verify message "Displaying 1 to"
-    And    I click on Actions
-    And    I click on "Delete"
+#    And    I click on Actions
+#    And    I click on "Delete"
