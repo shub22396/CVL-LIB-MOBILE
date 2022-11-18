@@ -1,4 +1,4 @@
-@Ads @Regression @Web @Misc @ReleaseRegression2 @Traffic
+@Ads @Regression @Web @Misc @ReleaseRegression2 @Traffic @MobileChrome
 Feature: Misc Ads
 
   Scenario: Verify ads.txt page

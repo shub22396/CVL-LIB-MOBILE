@@ -1,4 +1,4 @@
-@Robots @Regression @Web @Misc @Traffic
+@Robots @Regression @Web @Misc @Traffic @MobileChrome
 Feature: Misc Robots
 
   Scenario: Verify robots.txt page

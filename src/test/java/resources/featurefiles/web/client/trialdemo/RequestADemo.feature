@@ -5,7 +5,7 @@ Feature: Client TrailDemo RequestADemo
     Given  I navigate to page "Hiring Resume Search"
     When   I click on "Request a Demo"
 
-  @requestADemoValidation
+  @requestADemoValidation @MobileChrome
   Scenario: Validation on demo page
     Then  I should see text "Request a Demo"
     When  I click on Submit inquiry
@@ -24,7 +24,7 @@ Feature: Client TrailDemo RequestADemo
     Then  I click on Submit inquiry
     Then  I should see text "Please enter a valid US zip code"
 
-  @requestADemoSubmit @ReleaseRegression2
+  @requestADemoSubmit @ReleaseRegression2 @MobileChrome
   Scenario: Submit the demo form
     When  I enter email address "testers+client@resume-library.com"
     And   I enter name "automation demo"

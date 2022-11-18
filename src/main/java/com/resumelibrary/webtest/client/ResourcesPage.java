@@ -4,14 +4,10 @@ import com.resumelibrary.utilities.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import java.util.List;
 
 public class ResourcesPage extends Utility {
 
@@ -47,6 +43,8 @@ public class ResourcesPage extends Utility {
     WebElement TransparentButton;
     @FindBy(xpath = "//*[@id=\"header-text\"]")
     WebElement ContactUsHeaderText;
+    @FindBy(xpath = "//button[@class='mobile-footer-tab']")
+    WebElement ButtonMobileFooterTab;
 
     public void clickOnSearchOurCandidateTodayLink() {
         logger.info("Clicking on search our candidate today link");
@@ -147,5 +145,12 @@ public class ResourcesPage extends Utility {
         getThreadDriver().switchTo().frame("designstudio-iframe");
         logger.info("pop up is displayed with text :" + text + "text from element :  " + ContactUsHeaderText.getText());
         return ContactUsHeaderText.getText().equals(text);
+    }
+
+    public void iClickOnButtonInFooter(String text) {
+        String xpath= String.format("//button[contains(text(),'%s')]",text);
+        logger.info("Footer link xpath  is :" + xpath);
+        WebElement element=getThreadDriver().findElement(By.xpath(xpath));
+        clickOnElement(element);
     }
 }
