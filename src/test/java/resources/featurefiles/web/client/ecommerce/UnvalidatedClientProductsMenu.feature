@@ -13,7 +13,7 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
     And   I enter city "Boston"
     And   I enter state "Massachusetts"
     And   I enter zip code "02108"
-    And   I select "Staffing Agency" from recruiter type
+    And   I select "recruiter_type.1" from recruiter type
     When  I enter client email address "registration@resume-library.com"
     And   I click on Submit inquiry
     Then  I should be on page "Client Account"

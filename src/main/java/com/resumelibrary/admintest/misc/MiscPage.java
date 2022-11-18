@@ -328,7 +328,7 @@ public class MiscPage extends Utility {
     }
 
     public void clickActiveJobs() {
-        clickOnElement(activeJobs);
+        clickOnElementWithJS(activeJobs);
     }
 
     public void clickApplications() {

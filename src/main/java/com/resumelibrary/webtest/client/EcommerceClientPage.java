@@ -188,7 +188,7 @@ public class EcommerceClientPage extends Utility {
 
     public void selectOption(String optionText) {
         logger.info("Selected the option from dropdown : " + optionText);
-        selectByVisibleText(ResumeSearchMultiTrigger, optionText);
+        selectByVisibleTextFromDropDown(ResumeSearchMultiTrigger, optionText);
     }
 
     public void closeEmailVerificationRequiredPopup() {
@@ -268,7 +268,7 @@ public class EcommerceClientPage extends Utility {
 
     public void selectJobPostingCreditQuantity(String option) {
         logger.info("select the option text : " + option);
-        selectByVisibleText(SelectJobPostingCredit, option);
+        selectByVisibleTextFromDropDown(SelectJobPostingCredit, option);
     }
 
     public boolean verifyImage(String text) {

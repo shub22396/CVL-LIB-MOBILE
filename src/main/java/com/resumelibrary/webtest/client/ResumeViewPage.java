@@ -39,7 +39,7 @@ public class ResumeViewPage extends Utility {
     WebElement RequestResumeActionSelect;
     @FindBy(id = "request-resume-notify-email")
     WebElement RequestResumeNotifyEmail;
-    @FindBy(id = "per_page")
+    @FindBy(xpath = "//*[@id=\"per_page\"]")
     WebElement ResultsPerPage;
     @FindBy(id = "resume-critique-btn")
     WebElement FreeResumeReviewButton;
@@ -103,7 +103,6 @@ public class ResumeViewPage extends Utility {
     }
 
     public void findLockedCandidate() {
-        selectByVisibleTextFromDropDown(ResultsPerPage, "80");
         String xpath = "//*[starts-with(@id,'preview_locked_resume_')]";
         logger.info("finding the web element with xpath : " + xpath);
 
@@ -235,10 +234,10 @@ public class ResumeViewPage extends Utility {
 
     public void selectValueFromOrderByDropdownOnClientResumePage(String text) {
         logger.info("Select order by from dropdown" + text);
-       // selectByVisibleTextFromDropDown(MobileOrderBySortSelect, text);
+        // selectByVisibleTextFromDropDown(MobileOrderBySortSelect, text);
         WebElement orderBySelect = getThreadDriver().findElement(By.id("sd-mobile-sort-select"));
         orderBySelect.click();
-        WebElement jobIdAsc = getThreadDriver().findElement(By.xpath("//*[text()='"+text+"']"));
+        WebElement jobIdAsc = getThreadDriver().findElement(By.xpath("//*[text()='" + text + "']"));
         waitUntilElementIsLocated(jobIdAsc, 30);
         jobIdAsc.click();
         waitFor(4);

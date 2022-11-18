@@ -41,6 +41,8 @@ public class RegistrationPage extends Utility {
 
     public void selectRecruiterType(String type) {
         logger.info("Selected recruiter type " + type);
-        selectByVisibleTextFromDropDown(RecruiterType, type);
+        clickOnElement(RecruiterType);
+        clickOnId(type);
+     //   selectByVisibleTextFromDropDown(RecruiterType, type);
     }
 }
