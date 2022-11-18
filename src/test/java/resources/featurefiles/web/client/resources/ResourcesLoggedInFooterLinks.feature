@@ -4,7 +4,7 @@ Feature: Client Resources ResourcesLoggedInFooterLinks
   Background: Navigating to Resources page
     Given I login as a client
 
-  @ResourcesPageFooterLinks
+  @ResourcesPageFooterLinks @MobileChrome
   Scenario: Navigation Footer for logged In user on resources blog page
     When   I navigate to page "Resources"
     And    I should see text "Resume Search"
