@@ -34,7 +34,8 @@ public class CareerAdvicePage extends Utility {
     WebElement ResumeLibraryFooterLogo;
     @FindBy(xpath = "//a[@class='rl-logo-svg recruiters-nav-logo USA']")
     WebElement ResumeLibraryEmployersHeaderLogo;
-    @FindBy(id = "RL_Career_Advice_Dyn_Banner")
+   // @FindBy(id = "RL_Career_Advice_Dyn_Banner")
+    @FindBy(xpath="//*[@id='RL_Career_Advice_Dyn_Banner']")
     WebElement RLCareerAdviceDynBanner;
     @FindBy(id = "RL_Career_Advice_160x600")
     WebElement RLCareerAdvice160x600;
