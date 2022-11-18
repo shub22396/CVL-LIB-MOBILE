@@ -1,4 +1,4 @@
-@AdminAddJob @Regression @Admin @ReleaseRegression1 @Recruiters
+@AdminAddJob @Regression @Admin @ReleaseRegression1 @Recruiters @MobileChrome
 Feature: Add a job
 
 Background: Navigating to Add A Job page
@@ -22,7 +22,7 @@ Background: Navigating to Add A Job page
     Then    I should see text "The Apply Type field is required."
     And     I should see text "An Account Is required."
 
- @AdminAddJobCreate @MobileChrome
+ @AdminAddJobCreate
   Scenario: Create a job successfully
     Then    I fill in "Job Title"
     And     I fill in "Minimum Salary"
