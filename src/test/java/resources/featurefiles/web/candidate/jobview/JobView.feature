@@ -29,7 +29,7 @@ Feature: Candidate JobView JobView
     And   I Click on Job Title
     And   I switch to window 2
     Then  I should see text "Recently viewed jobs"
-    And   I wait for "1" seconds
+    When  I click on "Recently viewed jobs"
     And   I click on recent job title
     Then  I should be able to see in browser URL "Job View"
     And   I should see Save button

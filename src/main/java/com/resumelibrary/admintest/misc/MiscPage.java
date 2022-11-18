@@ -3,7 +3,6 @@ package com.resumelibrary.admintest.misc;
 import com.resumelibrary.utilities.AdminURLHelper;
 import com.resumelibrary.utilities.DataHelper;
 import com.resumelibrary.utilities.Utility;
-import net.bytebuddy.asm.Advice;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
@@ -197,7 +196,7 @@ public class MiscPage extends Utility {
                 if (getBrowserName().contains("firefox") || getBrowserName().contains("remoteFirefoxBrowser")) {
                     waitFor(1);
                 }
-                selectByVisibleText(JobStatus, option);
+                selectByVisibleTextFromDropDown(JobStatus, option);
                 break;
             case "ATS Apply":
                 selectByVisibleText(ATSApply, option);
@@ -209,7 +208,7 @@ public class MiscPage extends Utility {
                 if (getBrowserName().contains("firefox") || getBrowserName().contains("remoteFirefoxBrowser")) {
                     waitFor(1);
                 }
-                selectByVisibleText(Sector, option);
+                selectByVisibleTextFromDropDown(Sector, option);
                 break;
             case "Apply Type":
                 selectByVisibleText(applyType, option);

@@ -85,4 +85,9 @@ public class Resources extends Utility {
     public void iShouldSeePopupDisplayed(String text) {
         Assert.assertTrue(new ResourcesPage().contctUspopupDisplayed(text));
     }
+
+    @Then("I click on button {string} in footer")
+    public void iClickOnButtonInFooter(String text) {
+        new ResourcesPage().iClickOnButtonInFooter(text);
+    }
 }
