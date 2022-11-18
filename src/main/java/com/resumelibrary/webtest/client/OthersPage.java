@@ -76,7 +76,8 @@ public class OthersPage extends Utility {
     @FindBy(xpath = "//*[@id=\"player\"]/div[*]/div[*]/div[*]/button")
     //@FindBy(xpath = "//*[@aria-label='Pause']")
     WebElement VideoPauseButton;
-    @FindBy(css = "*[class^='Timecode_module_timecode_']")
+    //@FindBy(xpath = "//*[@id=\"player\"]/div[7]/div[7]/div[2]/div/div[1]/div/div[5]/div")
+    @FindBy(xpath = "//*[starts-with(@class,'Timecode_module_timecode_')]")
     WebElement DurationPlayedBtn;
 
     public void clickOnSavedAction1() {

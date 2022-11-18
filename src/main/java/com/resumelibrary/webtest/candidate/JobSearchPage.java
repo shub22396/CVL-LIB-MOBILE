@@ -218,12 +218,35 @@ public class JobSearchPage extends Utility {
 
     public void selectJobType(String jobType) {
         logger.info("select the option job type as  :" + jobType);
-        selectByValueFromDropDown(JobType, jobType);
+        WebElement orderBySelect = getThreadDriver().findElement(By.name("job_type"));
+        orderBySelect.click();
+        WebElement jobIdAsc = getThreadDriver().findElement(By.xpath("//*[text()='"+jobType+"']"));
+        waitUntilElementIsLocated(jobIdAsc, 30);
+        jobIdAsc.click();
+       // selectByValueFromDropDown(JobType, jobType);
     }
 
-    public String getJobTypeAttributeValue() {
+    public boolean getJobTypeAttributeValue(String jobType) {
         logger.info("Verifying job type value " + JobType);
-        return JobType.getAttribute("value");
+        waitUntilElementIsLocated(PostedDate,20);
+        int count=0;
+        List<WebElement> allOptions = getThreadDriver().findElements(By.xpath("//select[@name='job_type']//option"));
+        for(WebElement option : allOptions) {
+            logger.info(option.getText());
+            if (option.getText().equals(jobType)) {
+                count++;
+                break;
+            }
+        }
+        if(count==0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+        //return JobType.getAttribute("value");
     }
 
     public void selectPostedSince(String pd) {
@@ -355,15 +378,49 @@ public class JobSearchPage extends Utility {
         selectByVisibleTextFromDropDown(OrderBy, orderBy);
     }
 
-    public String getSortByIsSelected() {
+    public boolean getSortByIsSelected(String sortBy) {
         logger.info("Verifying sort by is selected");
-        return getFirstSelectedOption(SortBy);
+        int count=0;
+        List<WebElement> allOptions = getThreadDriver().findElements(By.xpath("//select[@name='results-order']//option"));
+        for(WebElement option : allOptions) {
+            logger.info(option.getText());
+            if (option.getText().equals(sortBy)) {
+               count++;
+               break;
+            }
+        }
+        if(count==0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+
     }
 
-    public String getPostedInTheIsSelected() {
+    public boolean getPostedInTheIsSelected(String postedDate) {
         logger.info("Verifying posted in the is selected");
         waitUntilElementIsLocated(PostedDate,20);
-        return getFirstSelectedOption(PostedDate);
+        int count=0;
+        List<WebElement> allOptions = getThreadDriver().findElements(By.xpath("//select[@name='pd']//option"));
+        for(WebElement option : allOptions) {
+            logger.info(option.getText());
+            if (option.getText().equals(postedDate)) {
+                count++;
+                break;
+            }
+        }
+        if(count==0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+        //return getFirstSelectedOption(PostedDate);
     }
 
     public String getJobTypeIsSelected() {
