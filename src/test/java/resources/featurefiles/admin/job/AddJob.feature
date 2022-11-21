@@ -1,4 +1,4 @@
-@AdminAddJob @Regression @Admin @ReleaseRegression1 @Recruiters
+@AdminAddJob @Regression @Admin @ReleaseRegression1 @Recruiters @MobileChrome
 Feature: Add a job
 
 Background: Navigating to Add A Job page

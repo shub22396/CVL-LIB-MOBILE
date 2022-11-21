@@ -639,7 +639,8 @@ public abstract class Utility extends DriverController {
     public void selectByVisibleTextFromDropDown(WebElement element, String str) {
         waitUntilElementToBeClickable(element, 4);
         clickOnElement(element);
-        getThreadDriver().findElement(By.xpath("//*[text()=\"" + str + "\"]")).click();
+        clickOnElementUsingText(str);
+      //  getThreadDriver().findElement(By.xpath("//*[text()=\"" + str + "\"]")).click();
     }
 
     public void selectByVisibleTextFromDropDownUsingJS(WebElement element, String str) {

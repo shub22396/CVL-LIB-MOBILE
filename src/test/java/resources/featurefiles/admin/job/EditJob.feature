@@ -1,4 +1,4 @@
-@editAdminJob   @Regression @Admin @ReleaseRegression1 @Recruiters
+@editAdminJob   @Regression @Admin @ReleaseRegression1 @Recruiters @MobileChrome
 Feature: Edit Admin job
 
   Background: Navigating to Add A Job page

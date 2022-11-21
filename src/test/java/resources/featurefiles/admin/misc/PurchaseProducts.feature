@@ -1,4 +1,4 @@
-@adminPurchaseProduct @Regression @Admin @ReleaseRegression1 @Recruiters
+@adminPurchaseProduct @Regression @Admin @ReleaseRegression1 @Recruiters @MobileChrome
 Feature: Purchase product via Admin
 
   Background: Login to admin
@@ -6,7 +6,7 @@ Feature: Purchase product via Admin
 
   @purchaseProductsForAccount
   Scenario: Purchasing products for an account
-    When   I navigate to page on admin "Account Purchase Products 1478"
+    When  I navigate to page on admin "Account Purchase Products 1478"
     And   I select option "Test Client Behat ( #11609560 )" from contact
     And   I select option "Cameron Briggs" from sales person
     And   I click on "Add a product"

@@ -1,4 +1,4 @@
-@AdminLogin @Regression @Admin @ReleaseRegression1 @Recruiters
+@AdminLogin @Regression @Admin @ReleaseRegression1 @Recruiters @MobileChrome
 Feature: Admin Login
 
   Scenario: Login into admin and verify some elements
