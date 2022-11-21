@@ -1,4 +1,4 @@
-@AdminJobPostingCredit @Regression @Admin @ReleaseRegression1 @Recruiters
+@AdminJobPostingCredit @Regression @Admin @ReleaseRegression1 @Recruiters @MobileChrome
 Feature: Admin Job PostJobWithOneCredit
 
   Background:
@@ -36,7 +36,7 @@ Feature: Admin Job PostJobWithOneCredit
     And   I click on "Update Balance"
     And   I should see element with text "Account Overview" to be "visible"
 
-  @JobPostWithOneCredit1
+  @JobPostWithOneCredit1 @MobileChrome
   Scenario: Job get posted successfully from admin and credit is used
     And   I click on Active Jobs
     And   I click on add jobs link
@@ -77,5 +77,6 @@ Feature: Admin Job PostJobWithOneCredit
     And   I select "automation client (1 credits)" users from list
     And   I click Add Job button
     Then  I should see text "Job successfully added"
+    And   I click on menu
     When  I search for "registration@resume-library.com" in the navigation bar on admin
     Then  I should see job credits deducted to "0"

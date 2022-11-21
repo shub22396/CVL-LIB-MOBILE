@@ -167,18 +167,14 @@ public class EcommerceClientPage extends Utility {
     public void tickSelectAllCheckboxForInviteToApply() {
         logger.info("click on element SelectAllCandidates");
       //  List<WebElement> selectCheckBoxes = getThreadDriver().findElements(By.xpath("//*[starts-with(@class,'candidate-checkbox-label')]/span"));
-        WebElement selectCheckBoxes = getThreadDriver().findElement(By.xpath("//*[starts-with(@class,'candidate-checkbox-label')]/span"));
+        WebElement selectCheckBoxes = getThreadDriver().findElement(By.xpath("//*[@id=\"main\"]/div/div[6]/div[1]/label/span"));
         waitFor(2);
-        try {
-            clickOnElement(selectCheckBoxes);
-        }catch (Exception e){
-            clickOnElement(selectCheckBoxes);
-        }
+        clickOnElementWithJS(selectCheckBoxes);
     }
 
     public void verifyAllCheckBoxesTicked() {
         logger.info("verify All Check Boxes Ticked");
-        List<WebElement> selectCheckBox = getThreadDriver().findElements(By.xpath("//*[starts-with(@class,'candidate-checkbox-label')]"));
+        List<WebElement> selectCheckBox = getThreadDriver().findElements(By.xpath("//*[@id=\"main\"]/div/div[*]/div[1]/label/span"));
         for (WebElement select : selectCheckBox) {
             if (select.isSelected()) {
                 logger.info(" selected the check box :" + select.getTagName());
@@ -315,7 +311,7 @@ public class EcommerceClientPage extends Utility {
         String xpath = "//*[@id=\"preview_locked_resume_" + number + "\"]";
         logger.info("finding the web element with xpath : " + xpath);
         WebElement lockedProfile = getThreadDriver().findElement(By.xpath(xpath));
-        clickOnElement(lockedProfile);
+        clickOnElementWithJS(lockedProfile);
         waitFor(1);
         switchWindowIndex(1);
         getThreadDriver().close();
