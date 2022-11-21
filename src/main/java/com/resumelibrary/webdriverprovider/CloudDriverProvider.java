@@ -3,13 +3,13 @@ package com.resumelibrary.webdriverprovider;
 import com.resumelibrary.utilities.Constants;
 import com.resumelibrary.utilities.PropertyFileReader;
 import com.resumelibrary.utilities.WebURLHelper;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -100,7 +100,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             ltOptions.put("network", false);
             ltOptions.put("tunnel", true);
             caps.setCapability("LT:Options", ltOptions);
-            threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
+            threadMap.put("webdriverObj", new AppiumDriver(new URL(driverURL), caps));
             threadLocalMap.set(threadMap);
             caps.setCapability("tunnelName", tunnelName);
 
@@ -187,15 +187,21 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         return null;
     }
 
-    void androidRealMobileWeb(Map threadMap,String testName) {
+    void androidRealMobileWeb2(Map threadMap,String testName) {
         try {
+            String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
+            String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
+
+            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
+            String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
+            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
+            String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
 
             logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
-            final String driverURL = "https://" + lamdaUserName + ":" + lambdaAccessKey + "@mobile-hub.lambdatest.com/wd/hub";
+            final String driverURL = "https://" + username + ":" + accessKey + "@mobile-hub.lambdatest.com/wd/hub";
             logger.info("[--->driverURL:" + driverURL+"<---]");
 
-            logger.info("[--->tunnelName = " + tunnelName+"<---]");
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("build","RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
             capabilities.setCapability("name",testName);
@@ -205,7 +211,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("isRealMobile", true);
             capabilities.setCapability("console", true);
-            capabilities.setCapability("network", true);
+            capabilities.setCapability("network", false);
             capabilities.setCapability("visual", true);
             capabilities.setCapability("devicelog", true);
             capabilities.setCapability("video", true);
@@ -214,9 +220,45 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
             capabilities.setCapability("autoGrantPermissions", true);
             capabilities.setCapability("autoAcceptAlerts", true);
-            capabilities.setCapability("tunnelName",tunnelName) ;
-
+            capabilities.setCapability("tunnelName", tunnelName);
+           // capabilities.setCapability("w3c",true);
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
+            threadLocalMap.set(threadMap);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    void androidRealMobileWeb(Map threadMap,String testName) {
+        try {
+            logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");
+            String project = "[" + jobBaseName + "-Build:" + buildId + "]";
+            final String driverURL = "https://" + lamdaUserName + ":" + lambdaAccessKey + "@mobile-hub.lambdatest.com/wd/hub";
+            logger.info("[--->driverURL:" + driverURL+"<---]");
+            System.out.println("in androidRealMobileWeb method");
+            logger.info("[--->tunnelName = " + tunnelName+"<---]");
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            Map<Object,Object> caps = new HashMap<>();
+            caps.put("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
+            caps.put("project", project);
+            caps.put("name",testName);
+            caps.put("platformName", "Android");
+            caps.put("deviceName", "Galaxy M31");
+            caps.put("platformVersion", "11");
+            caps.put("isRealMobile", true);
+            caps.put("console", true);
+            caps.put("visual", true);
+            caps.put("devicelog", true);
+            caps.put("video", true);
+            caps.put("tunnel", true);
+            caps.put(MobileCapabilityType.BROWSER_NAME, "Chrome");
+            caps.put("autoGrantPermissions", true);
+            caps.put("autoAcceptAlerts", true);
+            caps.put("tunnelName",tunnelName) ;
+            caps.put("network", false);
+            caps.put("w3c",true);
+            capabilities.setCapability("network", false);
+            capabilities.setCapability("lt:options", caps);
+            threadMap.put("webdriverObj", new AndroidDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
         } catch (Exception e) {
             e.printStackTrace();
@@ -224,11 +266,9 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
     }
     public void androidMobileWeb(Map threadMap, String testName) {
         try {
-
-
             logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
-            final String driverURL = "https://" + lamdaUserName + ":" + lambdaAccessKey + "@mobile-hub.lambdatest.com/wd/hub";
+            final String driverURL = "https://" + lamdaUserName + ":" + lambdaAccessKey + "@hub.lambdatest.com/wd/hub";
             logger.info("[--->driverURL:" + driverURL+"<---]");
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("build","RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
@@ -237,7 +277,6 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("platformName", "android");
             capabilities.setCapability("deviceName", "Google Pixel");
             capabilities.setCapability("platformVersion", "8");
-            capabilities.setCapability("isRealMobile", false);
             capabilities.setCapability("deviceOrientation", "PORTRAIT");
             capabilities.setCapability("console",true);
             capabilities.setCapability("network",false);
@@ -246,7 +285,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("tunnelName", tunnelName);
             capabilities.setCapability("acceptInsecureCerts",true);
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
-            threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
+              threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
 
             threadLocalMap.set(threadMap);
 
