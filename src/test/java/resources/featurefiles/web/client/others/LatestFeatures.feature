@@ -5,7 +5,7 @@ Feature: Client Others LatestFeatures
     Given  I login as a client
     Then   I navigate to page "Client Latest Features"
 
-  @verifyLatestFeaturesPage1 @ReleaseRegression2
+  @verifyLatestFeaturesPage1 @ReleaseRegression2 @MobileChrome
   Scenario: Verify post job in Latest Features page
     Then   I should be on page "Client Latest Features"
     And    I should see text "Latest Features"
@@ -21,7 +21,7 @@ Feature: Client Others LatestFeatures
     And    I should see text "Our Hiring Products"
 
 
-  @verifyLatestFeaturesPage2
+  @verifyLatestFeaturesPage2 @MobileChrome
   Scenario: Verify CCPA and ITA in Latest Features page
     Then   I should be on page "Client Latest Features"
     And    I click on id "search-builder-search-btn"
