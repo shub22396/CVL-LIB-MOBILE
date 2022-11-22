@@ -304,7 +304,26 @@ public class OthersPage extends Utility {
     public boolean verifyPdfFile(String text) {
         logger.info("context" + ((AndroidDriver) getThreadDriver()).context("NATIVE_APP"));
         ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
-        WebElement ele = getThreadDriver().findElement(By.xpath(("//*[contains(@text,\'" + text + "\')]")));
+        waitFor(3);
+        if(checkElementPresence("//*[@text='NOT NOW']")){
+            getThreadDriver().findElement(By.xpath(("//*[@text='NOT NOW']"))).click();
+        }
+        waitFor(3);
+        if(checkElementPresence("//*[@text='Allow']")){
+            getThreadDriver().findElement(By.xpath(("//*[@text='Allow']"))).click();
+        }
+        if(checkElementPresence("//*[@text='Download']")){
+            getThreadDriver().findElement(By.xpath(("//*[@text='Download']"))).click();
+        }
+        WebElement ele=null;
+        waitFor(3);
+        if(!checkElementPresence("//*[contains(@text,'rl-user-manual')]")) {
+            waitUntilElementIsLocated(getThreadDriver().findElement(By.xpath("//*[contains(@text,'rl-user-manual')]")),40);
+            ele = getThreadDriver().findElement(By.xpath(("//*[contains(@text,'rl-user-manual')]")));
+        }else{
+            ele = getThreadDriver().findElement(By.xpath(("//*[contains(@text,'rl-user-manual')]")));
+        }
+
         if (ele.isDisplayed()) {
             return true;
         }
