@@ -156,7 +156,7 @@ public class EcommerceClient extends Utility {
 
     @And("I should see option {string} selected for product quantity")
     public void iShouldSeeOptionSelectedForProductQuantity(String option) {
-        Assert.assertEquals(option, new EcommerceClientPage().verifyOptionSelected(option));
+        Assert.assertTrue(new EcommerceClientPage().verifyOptionSelected(option));
     }
 
     @And("I should see text {string} in Order Summary table")

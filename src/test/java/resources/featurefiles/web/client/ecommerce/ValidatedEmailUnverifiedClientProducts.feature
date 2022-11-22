@@ -55,6 +55,7 @@ Feature: Client Ecommerce ValidatedEmailUnverifiedClientProducts
   Scenario: as an validated unverified email account with ecommerce enabled verify products journey
     And   I navigate to page "Client Resume Search With Sales Keywords"
     And   I should be able to see in browser URL "Client Resume Search Results"
+    ##Fix me
     When  I find a locked candidate and click on unlock resume
     Then  I should see text "Email Verification Required"
     And   I should see text "An email has been sent to you to complete this. Please be sure to check your junk mail in case it has landed there!"

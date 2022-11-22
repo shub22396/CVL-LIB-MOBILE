@@ -24,6 +24,7 @@ Feature: Client Ecommerce ClientEcommerceJourneyResumeView
   Scenario: as an unvalidated logged in client I expect to see resume view options
     Then  I am on page "Client Resume Search With Keywords"
     And   I should be able to see in browser URL "Client Resume Search Results"
+    ###Fix Me (org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document)
     And   I find a locked candidate and click on unlock resume
     Then  I should see text "Account Authentication Required"
     And   I should see text "Before you can make any purchases, we need to validate your account."

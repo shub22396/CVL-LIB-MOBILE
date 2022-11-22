@@ -103,6 +103,7 @@ public class ResumeViewPage extends Utility {
     }
 
     public void findLockedCandidate() {
+        waitFor(2);
         String xpath = "//*[starts-with(@id,'preview_locked_resume_')]";
         logger.info("finding the web element with xpath : " + xpath);
 
