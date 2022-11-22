@@ -1,11 +1,11 @@
-@CreateAccount @Regression @Admin @ReleaseRegression1 @Recruiters
+@CreateAccount @Regression @Admin @ReleaseRegression1 @Recruiters @MobileChrome
 Feature: Create Account
 
   Background: Navigating to Create Account page
     Given I login as an admin user
     When  I navigate to page on admin "Account Add"
 
-  @createAccountValidation
+  @createAccountHappyFlow
   Scenario: Validations on create account page
     Then  I should see text "Create Account"
     And   I should see text "Company Details"
@@ -18,9 +18,6 @@ Feature: Create Account
     And   I should see text "Email is required"
     And   I should see text "At least 1 contact number is required"
     And   I should see text "Please, select one ATS at least"
-
-  @createAccountSuccess
-  Scenario: Create an account successfully
     When  I fill in "Company Name"
     And   I select the option "Active" from "Account Type" field
     And   I enter "Bullhorn" to ATS field
