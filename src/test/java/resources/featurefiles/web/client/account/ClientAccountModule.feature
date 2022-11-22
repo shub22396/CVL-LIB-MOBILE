@@ -176,11 +176,10 @@ Feature: Client Account ClientAccountModule
     When   I click on "Client Help Center"
     Then   I should be able to see in browser URL "Client Help"
     And    I should see text H one tag "Client Help Center"
-   ###TBC with Lamda team
-#    Given  I navigate to page "Client Account"
-#    Then   I click on "Download our user manual"
-#    And    I click on Download
-#    And    I should see download file "rl-user-manual"
+
+    Given  I navigate to page "Client Account"
+    Then   I click on "Download our user manual"
+    And    I should see download file "rl-user-manual"
 
   @clientAccountVerificationFaq3
   Scenario: Verify the faq module content on account page part 3
