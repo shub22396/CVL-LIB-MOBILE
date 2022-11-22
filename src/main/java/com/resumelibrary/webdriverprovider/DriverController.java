@@ -3,6 +3,7 @@ package com.resumelibrary.webdriverprovider;
 import com.resumelibrary.utilities.Constants;
 import com.resumelibrary.utilities.PropertyFileReader;
 import com.resumelibrary.utilities.WebURLHelper;
+import io.appium.java_client.AppiumDriver;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -103,7 +104,15 @@ public class DriverController extends CloudDriverProvider implements Constants {
         }
         return webdriverObj;
     }
+    public WebDriver getAppiumdDriver() {
+        WebDriver webdriverObj = null;
+        try {
+            webdriverObj = (AppiumDriver) ((Map) threadLocalMap.get()).get("webdriverObj");
+        } catch (Exception e) {
 
+        }
+        return webdriverObj;
+    }
     public String getRunnerName() {
         return (((Map) threadLocalMap.get()).get("runnerClass")).toString();
     }
