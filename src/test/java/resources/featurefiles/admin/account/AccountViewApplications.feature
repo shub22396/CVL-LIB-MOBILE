@@ -1,4 +1,4 @@
-@AccountViewApplications @Regression @Admin @Recruiters
+@AccountViewApplications @Regression @Admin @Recruiters @MobileChrome
 Feature: Account view applications page without Error
 
   @accountViewApplicationsOne

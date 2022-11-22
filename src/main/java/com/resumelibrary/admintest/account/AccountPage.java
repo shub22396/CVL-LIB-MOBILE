@@ -189,9 +189,9 @@ public class AccountPage extends Utility {
 
     public void selectAccountTypeRadioButtonAs(String radioButtonValue) {
         if (radioButtonValue.equals("Active")) {
-            clickOnElementUsingActions(ActiveAccountProperty);
+            clickOnElementUsingText("Active");
         } else if (radioButtonValue.equals("Inactive")) {
-            clickOnElementUsingActions(InActiveAccountProperty);
+            clickOnElementUsingText("Inactive");
         }
     }
 

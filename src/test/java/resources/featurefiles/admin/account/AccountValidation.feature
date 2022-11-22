@@ -1,4 +1,4 @@
-@AdminAccountValidation  @Regression @Admin @ReleaseRegression1 @Recruiters
+@AdminAccountValidation  @Regression @Admin @ReleaseRegression1 @Recruiters @MobileChrome
 Feature: Account Account validation
 
   Background: Navigating to Account list page
