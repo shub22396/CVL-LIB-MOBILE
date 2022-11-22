@@ -242,7 +242,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.put("project", project);
             caps.put("name",testName);
             caps.put("platformName", "Android");
-            caps.put("deviceName", "Galaxy M31");
+            caps.put("deviceName", "Galaxy S20+");
             caps.put("platformVersion", "11");
             caps.put("isRealMobile", true);
             caps.put("console", true);
