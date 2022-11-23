@@ -222,7 +222,6 @@ Feature: Client Ecommerce ValidatedEmailVerifiedClientProducts
   Scenario: As a logged in validated user on the ecommerce journey, who has not made a purchase, I see the 3-month Resume Search banners and see starter package prices.
     When  I navigate to page "Resources"
     And   I scroll down 0,600
-    ##Fix me
     And   I should see resources-3-month-banner "3-month Resume Search"
     Then  I click on resources-3-month-banner "3-month Resume Search"
     Then  I should be able to see in browser URL "Hiring Resume Search Pricing"
