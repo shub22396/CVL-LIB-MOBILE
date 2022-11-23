@@ -106,8 +106,8 @@ public class ResourcesPage extends Utility {
     }
 
     public void clickOnLinkInFooter(String link, String footer) {
-      //  String module = footer.replaceAll(" ", "-");
-       // logger.info("module  text :" + module);
+        //  String module = footer.replaceAll(" ", "-");
+        // logger.info("module  text :" + module);
         //String xpath="(//*[text()='"+link+"'])[2]";
         String xpath= "//*[text()='"+footer+"' and @class='mobile-hidden-footer']/..//a[text()='"+link+"']";
         logger.info("Footer link xpath  is :" + xpath);
@@ -129,7 +129,7 @@ public class ResourcesPage extends Utility {
 //                }
 //                break;
 //            }
-        }
+    }
 
     public void clickOnResumeSearchBuilderPopup() {
         logger.info("Clicking on PopupCloseResumeSearchBuilder9 ");

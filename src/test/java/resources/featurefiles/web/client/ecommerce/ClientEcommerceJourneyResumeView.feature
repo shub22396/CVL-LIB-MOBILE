@@ -13,7 +13,7 @@ Feature: Client Ecommerce ClientEcommerceJourneyResumeView
     And   I enter city "Boston"
     And   I enter state "Massachusetts"
     And   I enter zip code "02108"
-    And   I select "Staffing Agency" from recruiter type
+    And   I select "recruiter_type.1" from recruiter type
     When  I enter client email address "registration@resume-library.com"
     And   I click on Submit inquiry
     Then  I should be on page "Client Account"
@@ -22,7 +22,6 @@ Feature: Client Ecommerce ClientEcommerceJourneyResumeView
 
   @ClientEcomResumeViewAccountAuthentication @ReleaseRegression2
   Scenario: as an unvalidated logged in client I expect to see resume view options
-    Given I navigate to page "Client Account"
     Then  I am on page "Client Resume Search With Keywords"
     And   I should be able to see in browser URL "Client Resume Search Results"
     And   I find a locked candidate and click on unlock resume
@@ -71,7 +70,6 @@ Feature: Client Ecommerce ClientEcommerceJourneyResumeView
 
   @EcommUnvalidatedClientInviteToApply2
   Scenario: as an unvalidated logged in client with E-commerce enabled verify resume search select all checkbox invite to apply
-    Given I navigate to page "Client Account"
     Given I navigate to page "Client Resume Search With Keywords"
     And   I should be able to see in browser URL "Client Resume Search Results"
     And   I wait for "2" seconds
