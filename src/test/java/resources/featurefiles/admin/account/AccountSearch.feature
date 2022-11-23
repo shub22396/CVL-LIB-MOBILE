@@ -1,4 +1,4 @@
-@AccountSearch @Regression @Admin @ReleaseRegression1 @Recruiters
+@AccountSearch @Regression @Admin @ReleaseRegression1 @Recruiters @MobileChrome
 Feature: Account Search
 
   Scenario: Search for an account using account number
