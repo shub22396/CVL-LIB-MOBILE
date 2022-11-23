@@ -130,6 +130,19 @@ public class RegistrationPage extends Utility {
         waitFor(2);
 
     }
+//    public void upLoadYourResume(String resumePath) {
+////        String browser = System.getProperty("browserName");
+////        logger.info("browserName = " + browser);
+////        waitFor(2);
+////        WebElement uploadElement = getThreadDriver().findElement(By.id("resume1"));
+////        if (browser.contains("remote") || browser.contains("lambda") || browser.contains("browserStack") || browser.contains("android")) {
+////            ((RemoteWebElement) uploadElement).setFileDetector(new LocalFileDetector());
+////        }
+//        WebElement uploadElement = getThreadDriver().findElement(By.id("resume1"));
+//        uploadElement.sendKeys(resumePath);
+//        waitFor(2);
+//
+//    }
 
     public void selectFile(){
         try {
@@ -137,48 +150,40 @@ public class RegistrationPage extends Utility {
             System.out.println("context-->" + ((AndroidDriver) getThreadDriver()).getContext());
             ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
             try {
-                if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Upload your resume']")))) {
+                if (checkElementPresence("//*[@text='Upload your resume']")) {
                     getThreadDriver().findElement(By.xpath("//*[@text='Upload your resume']")).click();
                 }
             } catch (Exception ex) {
-                if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Upload resumeOptional']")))) {
+                if (checkElementPresence("//*[@text='Upload resumeOptional']")) {
                     getThreadDriver().findElement(By.xpath("//*[@text='Upload resumeOptional']")).click();
                 }
             }
             waitFor(1);
-            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='from this computer']")))) {
+            if (checkElementPresence("//*[@text='from this computer']")) {
                 getThreadDriver().findElement(By.xpath("//*[@text='from this computer']")).click();
             }
             waitFor(1);
-            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='While using the app']")))) {
+            if (checkElementPresence("//*[@text='While using the app']")) {
                 getThreadDriver().findElement(By.xpath("//*[@text='While using the app']")).click();
             }
             waitFor(1);
-            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Files']")))) {
+            if (checkElementPresence("//*[@text='Files']")){
                 getThreadDriver().findElement(By.xpath("//*[@text='Files']")).click();
             }
-            waitFor(2);
-            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='While using the app']")))) {
-                getThreadDriver().findElement(By.xpath("//*[@text='While using the app']")).click();
-            }
 
-
-            waitFor(2);
-            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Files']")))) {
-                getThreadDriver().findElement(By.xpath("//*[@text='Files']")).click();
-            }
            waitFor(2);
-            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@content-desc='Show roots']"))) && !isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Test123.pdf']")))) {
+            if (checkElementPresence("//*[@content-desc='Show roots']")) {
                getThreadDriver().findElement(By.xpath("//*[@content-desc='Show roots']")).click();
+
+
+          }
             waitFor(2);
-            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Downloads']")))) {
+            if (checkElementPresence("//*[@text='Downloads']")) {
                 getThreadDriver().findElement(By.xpath("//*[@text='Downloads']")).click();
             }
-          }
-
             waitFor(2);
-            if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@text='Test123.pdf']")))) {
-                getThreadDriver().findElement(By.xpath("//*[@text='Test123.pdf']")).click();
+            if (checkElementPresence("//*[@text='test-cv.pdf']")){
+                getThreadDriver().findElement(By.xpath("//*[@text='test-cv.pdf']")).click();
             }
             waitFor(2);
             //  ((AndroidDriver)getThreadDriver()).context("WEBVIEW_com.dayizhihui.dayishi.hpv");
