@@ -17,8 +17,14 @@ public class ResourcesPage extends Utility {
     }
     private static final Logger logger = LogManager.getLogger(ResourcesPage.class);
 
-    @FindBy(xpath = "//a[contains(text(),'Resume Search')]")
-    WebElement ResumeSearch;
+    @FindBy(xpath = "//*[@class=\"jobs-sub\"]/li/*[contains(text(), 'Manage Jobs')]")
+    WebElement ManageJobs;
+    @FindBy(xpath = "//*[@class=\"alerts-sub\"]/li/*[contains(text(), 'Resume Alerts')]")
+    WebElement ResumeAlerts;
+
+    @FindBy(xpath = "//*[@class=\"alerts-sub\"]/li/*[contains(text(), 'Create New Alert')]")
+    WebElement CreateNewAlert;
+
     @FindBy(xpath = "//*[@id=\"resume-search\"]/dialog[10]/div/button")
     WebElement PopupCloseResumeSearchBuilder;
     @FindBy(xpath = "//*[@id=\"resume-search\"]/dialog[9]/div/button")
@@ -152,5 +158,20 @@ public class ResourcesPage extends Utility {
         logger.info("Footer link xpath  is :" + xpath);
         WebElement element=getThreadDriver().findElement(By.xpath(xpath));
         clickOnElement(element);
+    }
+
+    public void clickOnManageJobs() {
+        logger.info("click on  the ManageJobs ");
+        clickOnElement(ManageJobs);
+    }
+    public void clickOnResumeAlerts() {
+        logger.info("click on  the ResumeAlerts ");
+        clickOnElement(ResumeAlerts);
+    }
+
+
+    public void clickOnCreateNewAlert() {
+        logger.info("click on  the CreateNewAlert ");
+        clickOnElement(CreateNewAlert);
     }
 }
