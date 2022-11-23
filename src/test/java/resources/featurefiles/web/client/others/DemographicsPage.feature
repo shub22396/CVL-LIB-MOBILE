@@ -5,7 +5,7 @@ Feature: Client Others DemographicsPage
     Given  I login as a client
     Then   I navigate to page "Hiring Demographics"
 
-  @pageVerify
+  @pageVerify @MobileChrome
   Scenario: Verify text and elements on Demographics Page
     #FIXME Then  I should see "Demographics"
     Then  I should see text "Our Resume Database"
@@ -14,7 +14,7 @@ Feature: Client Others DemographicsPage
     Then  I should see text "Sector Breakdown"
     And   I should see text "Explore candidates from every sector across the U.S."
 
-  @verifySector @ReleaseRegression2
+  @verifySector @ReleaseRegression2 @MobileChrome
   Scenario: Verify results by changing sector and location
     And   I should see element with text "Explore candidates from every sector across the U.S." to be "visible"
     And   I scroll down to element "Choose sector"
@@ -27,7 +27,7 @@ Feature: Client Others DemographicsPage
     And   I switch tab
     Then  I should be able to see in browser URL "Client Resume View Candidate Profile" or I should see "Client Resume Search"
 
-  @verifyViewAllMatches
+  @verifyViewAllMatches @MobileChrome
   Scenario: Verify View All Matches
     When  I select the option "Sales" from "Sector" field
     And   I select the option "Massachusetts" from "Status" field

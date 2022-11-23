@@ -90,4 +90,18 @@ public class Resources extends Utility {
     public void iClickOnButtonInFooter(String text) {
         new ResourcesPage().iClickOnButtonInFooter(text);
     }
+
+    @When("I click on Manage Jobs")
+    public void iClickOnManageJobs() {
+        new ResourcesPage().clickOnManageJobs();
+    }
+    @When("I click on Resume Alerts")
+    public void iClickOnResumeAlerts() {
+        new ResourcesPage().clickOnResumeAlerts();
+    }
+    @When("I click on Create New Alert")
+    public void iClickOnCreateNewAlert() {
+        new ResourcesPage().clickOnCreateNewAlert();
+    }
+
 }
