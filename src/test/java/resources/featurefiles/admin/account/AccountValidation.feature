@@ -14,7 +14,7 @@ Feature: Account Account validation
     And    I enter state "California"
     And    I enter zip code "10001, NY"
     And    I enter phone number "012345678945"
-    And    I select "Staffing Agency" from recruiter type
+    And    I select "recruiter_type.1" from recruiter type
     Then   I click on Submit inquiry
     And    I should be on page "Client Account"
     And    I login as an admin user
