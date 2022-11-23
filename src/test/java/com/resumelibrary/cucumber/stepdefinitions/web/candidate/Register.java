@@ -7,10 +7,15 @@ import com.resumelibrary.utilities.WebURLHelper;
 import com.resumelibrary.webtest.candidate.OthersPage;
 import com.resumelibrary.webtest.candidate.RegistrationPage;
 import com.resumelibrary.webtest.client.ClientPage;
+import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 
 public class Register extends Utility {
     public  String emailAddress = null;
@@ -175,9 +180,12 @@ public class Register extends Utility {
             String projectPath = System.getProperty("user.dir");
             String resumePath=projectPath + "/src/test/java/resources/testfiles" + getURL(path);
                    System.out.println("resumePath======>"+resumePath);
-
-            resumePath="/SDCARD/Download/test123.pdf";
             waitFor(3);
+            // Java
+            ((AndroidDriver) getThreadDriver()).pushFile("/sdcard/Download/test-cv.pdf", new File(resumePath));
+            waitFor(3);
+            byte[] fileBase64=  ((AndroidDriver) getThreadDriver()).pullFile("/sdcard/Download/test-cv.pdf");
+            System.out.println("fileBase64 ===>"+fileBase64);
             new RegistrationPage().selectFile();
             System.out.println("---After select file ---");
 
