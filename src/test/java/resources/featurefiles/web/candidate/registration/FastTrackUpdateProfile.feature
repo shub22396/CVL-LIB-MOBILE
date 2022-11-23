@@ -3,9 +3,11 @@ Feature: Candidate Registration FastTrackUpdateProfile
 
   Background: Register as a candidate using fast track form
     Given I navigate to page "Jobs Sales In Houston"
-    When  I click on link Get the latest Jobs with Job Alert
-    And   I fill search results job alerts email with random email id
-    And   I click on Create Job Alert move to page "Candidate My Dashboard"
+#    When  I click on link Get the latest Jobs with Job Alert
+#    And   I fill search results job alerts email with random email id
+    And   I enter email random address to get latest job alerts
+    And   I press and wait "create_alert_1"
+    And   I navigate to page "Candidate My Dashboard"
 
   @fastTrackUpdateProfileToResumeUpload
   Scenario: Fast track update profile to Resume Upload
