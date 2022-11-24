@@ -1127,20 +1127,11 @@ public abstract class Utility extends DriverController {
     public boolean checkElementPresence(String xpath) {
         logger.info("[--->check the element presence" + "<---]");
         boolean elementPresence = false;
-        int i=0;
-        while(i<2) {
+
             if (getThreadDriver().findElements(By.xpath(xpath)).size() > 0) {
                 elementPresence = true;
-                i=3;
-            }else{
-                i++;
-                try {
-                    Thread.sleep(5000l);
-                } catch (InterruptedException e) {
 
-                }
             }
-        }
         logger.info("[---> element presence for the xpath:" + xpath+"::elementPresence:"+elementPresence+"<---]");
         return elementPresence;
     }
