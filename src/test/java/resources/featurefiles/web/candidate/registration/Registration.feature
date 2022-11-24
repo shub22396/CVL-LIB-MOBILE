@@ -4,9 +4,10 @@ Feature: Candidate Registration Registration
   @candidateValidRegistration @ReleaseRegression1
   Scenario Outline: Register a new candidate with all valid details
     Given I am on home page
-    And I click on mobile header button
-    When  I click on Register button
-    Then  I should be on page "Candidate Registration"
+#    And I click on mobile header button
+#    When  I click on Register button
+   # Then  I should be on page "Candidate Registration"
+    And I navigate to page "Candidate Registration"
     When  I enter email address "<Email>"
     And   I enter first name "<FirstName>"
     And   I enter last name "<LastName>"
@@ -16,7 +17,7 @@ Feature: Candidate Registration Registration
     And   I upload resume "<Resume>"
     And I wait for "4" seconds
     And   I click on register button
-    Then  I should be on page "Candidate Registration"
+  #  Then  I should be on page "Candidate Registration"
     When  I enter phone number "<Phone>"
     And   I enter desired job title "<DesiredJobTitle>"
     And   I select job type "<JobType>"
@@ -31,12 +32,13 @@ Feature: Candidate Registration Registration
       | Email          | FirstName | LastName | Password | Resume  | JobTitle     | ZipCode   | Phone        | DesiredJobTitle | JobType  | SalMin | SalMax | Keyword                 | Msg                                                    | Msg1                                   |
       | test@gmail.com | Bob       | Russel   | 123456   | Test Cv | Test Analyst | 50001, IA | 012345678912 | QA Analyst      | Contract | 60,000 | 70,000 | Automation Test Analyst | Success! Your resume has been added to Resume-Library! | Increase your chances of getting hired |
 
-  @CandidateInvalidRegistration1
+  @CandidateInvalidRegistration1 @MObileChrome
   Scenario Outline: Register page 1 field validation
     Given I am on home page
-    And  I click on mobile header button
-    When  I click on Register button
-    Then  I should be on page "Candidate Registration"
+#    And  I click on mobile header button
+#    When  I click on Register button
+  #  Then  I should be on page "Candidate Registration"
+    And I navigate to page "Candidate Registration"
     When  I enter email address "<Email>"
     And   I enter first name "<FirstName>"
     And   I enter last name "<LastName>"
@@ -54,12 +56,13 @@ Feature: Candidate Registration Registration
       | Email | FirstName | LastName | Password | JobTitle | ZipCode | Msg                                | Msg1                   | Msg2                  | Msg3                 | Msg4                         |  Msg5                         |
       |       |           |          |          |          | 50001, IA  | Please enter a valid email address | First name is required | Last name is required | Password is required | Latest job title is required | Resume is required         |
 
-  @CandidateInvalidRegistration2
+  @CandidateInvalidRegistration2 @MObileChrome
   Scenario Outline: Register page 2 field validation
     Given I am on home page
-    And  I click on mobile header button
-    When  I click on Register button
-    Then  I should be on page "Candidate Registration"
+#    And  I click on mobile header button
+#    When  I click on Register button
+  #  Then  I should be on page "Candidate Registration"
+    And I navigate to page "Candidate Registration"
     When  I enter email address "<Email>"
     And   I enter first name "<FirstName>"
     And   I enter last name "<LastName>"
@@ -69,7 +72,7 @@ Feature: Candidate Registration Registration
     And   I upload resume "<Resume>"
     And   I uncheck the label Claim my free professional Resume Review
     And   I click on register button
-    Then  I should be on page "Candidate Registration Confirm"
+  #  Then  I should be on page "Candidate Registration Confirm"
     And   I enter phone number "<Phone>"
     When  I enter desired job title "<DesiredJobTitle>"
     And   I select job type "<JobType>"
@@ -86,7 +89,7 @@ Feature: Candidate Registration Registration
       | Email          | FirstName | LastName | Password | JobTitle     | ZipCode   | Resume  | Phone | DesiredJobTitle | JobType  | SalMin | SalMax | SalMin1 | SalMax1       | SalMin2       | SalMax2 | SalMin3 | SalMax3       | Msg                                                                        | Msg1                              | Msg2                           | Msg3                           |
       | test@gmail.com | Bob       | Russel   | 123456   | Test Analyst | 50001, IA | Test cv | 0123  | Test Analyst    | Contract | 30,000 | 20,000 | 0       | Please select | Please select | 70,000  | 50,000  | Please select | Oops that salary range is invalid. We've adjusted it to 20k - 30k for you. | Please enter a valid phone number | Please select a desired salary | Please select a desired salary |
 
-  @nonUSCandidateRegistration
+  @nonUSCandidateRegistration @MObileChrome
   Scenario Outline: Register as a non-US candidate and verify the display of cannot apply job banner
     Given I navigate to page "Candidate Registration For Country Code GB"
     And   I should see text "You appear to be registering from the UK"
@@ -106,7 +109,7 @@ Feature: Candidate Registration Registration
     And   I enter zip code "<ZipCode>"
     And   I upload resume "<Resume>"
     And   I click on register button
-    Then  I should be on page "Candidate Registration Confirm"
+   # Then  I should be on page "Candidate Registration Confirm"
     When  I enter phone number "<Phone>"
     And   I enter desired job title "<DesiredJobTitle>"
 

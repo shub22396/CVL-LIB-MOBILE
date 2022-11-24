@@ -328,7 +328,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         }
     }
 
-    void androidMobileWeb2(Map threadMap) {
+    void localMobileWeb(Map threadMap) {
         try {
             String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
             String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
@@ -341,8 +341,8 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("appium-version", "1.22.3");
             capabilities.setCapability("platformName", "Android");
-            capabilities.setCapability("deviceName", "Nexus 5 API 33");
-            capabilities.setCapability("udid", "emulator-5554");
+            capabilities.setCapability("deviceName", "Pixel 3 API 30");
+            capabilities.setCapability("udid", "e17a52c7b7d83");
             // capabilities.setCapability("appPackage", "com.example.myapplication");
             //capabilities.setCapability("appActivity", "MainActivity");
             // capabilities.setCapability("appPackage", "com.demo.test.demo");
@@ -354,7 +354,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.android.chrome");
             // capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "org.chromium.my_webview_shell");
             //    capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.google.android.apps.chrome.Main");
-            capabilities.setCapability("chromedriverExecutableDir", "/home/lpottumuthu/Downloads/Chrome-Driver");
+            capabilities.setCapability("chromedriverExecutableDir", "/home/sguduru/Downloads/Chrome-Driver");
             capabilities.setCapability("autoGrantPermissions", "true");
             capabilities.setJavascriptEnabled(true);
             threadMap.put("webdriverObj", new AndroidDriver(new URL(driverURL), capabilities));
