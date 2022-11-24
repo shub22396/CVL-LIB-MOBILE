@@ -1,4 +1,4 @@
-@NoEcomValidatedClientProducts @Regression @Web @Client1 @Recruiters
+@NoEcomValidatedClientProducts @Regression @Web @Client1 @Recruiters  @MobileChrome
 Feature: Client Ecommerce ValidatedEmailUnverifiedClientProducts
 
   Background:
@@ -87,12 +87,6 @@ Feature: Client Ecommerce ValidatedEmailUnverifiedClientProducts
     Then  I close email verification required unlock popup
 
     When  I click on "Email Resume" on view resume page
-    Then  I should see text "Email Verification Required"
-    And   I should see text "An email has been sent to you to complete this. Please be sure to check your junk mail in case it has landed there!"
-    And   I should see text p tag "If you need assistance, please call us on " and verify message "If you need assistance, please call us on 1-857-239-0143"
-    Then  I close email verification required unlock popup
-
-    When  I click on "Request Resume to be Updated" on view resume page
     Then  I should see text "Email Verification Required"
     And   I should see text "An email has been sent to you to complete this. Please be sure to check your junk mail in case it has landed there!"
     And   I should see text p tag "If you need assistance, please call us on " and verify message "If you need assistance, please call us on 1-857-239-0143"
