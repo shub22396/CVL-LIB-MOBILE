@@ -25,18 +25,18 @@ Feature: Candidate mydashboard MyDashboard
     And   I should be able to see in browser URL "/jobs/nonexternaltestjob-in-90189?r=51"
     And   I should see text H one tag "Nonexternaltestjob jobs in 90189"
 
-  @verifyBannersAndLinks #Penidng due to upload resume issue
+  @verifyBannersAndLinks @MobileChrome
   Scenario: Verify Job matches, Recently applied & Banner
     When  I navigate to page "Candidate My Profile"
     And   I upload resume "Test CV"
     Then  I navigate to page "Candidate My Dashboard"
-   # When  I click on resume review side banner
     When  I click on "FREE Resume Review"
     Then  I should see text H three tag "Your resume has been sent for review"
     When  I click "OK, Thanks" button
     Then  I should see text H one tag "My Dashboard"
-    When  I click on search on go banner
-    Then  I should be on page "/search-jobs-on-the-go"
+#    When  I click on search on go banner    #--->Not available in mobile view <----#
+#    Then  I should be on page "/search-jobs-on-the-go"
+    And I click on mobile header button
     Then  I click on modify profile link
     And   I upload resume "Test CV"
     Then  I should be on page "Candidate My Profile"
