@@ -68,29 +68,29 @@ Feature: Candidate Registration ResumeReview
     And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
     And   I click on "OK, Thanks"
 
-  @resumeReviewJobAlerts  ## Mobile view free resume review button not displaying on candidate Job Alerts page
-  Scenario: Verify resume review banner on Job Alerts page
-    Given I navigate to page "Candidate Registration"
-    When  I register as a new candidate
-    And   I click on complete button
-    And   I reload the page
-    And    I navigate to page "Candidate Job Alerts"
-    And   I click on FREE Resume Review
-    Then  I should see text H three tag "Your resume has been sent for review"
-    And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
-    And   I click on "OK, Thanks"
+#  @resumeReviewJobAlerts  ## Mobile view free resume review button not displaying on candidate Job Alerts page
+#  Scenario: Verify resume review banner on Job Alerts page
+#    Given I navigate to page "Candidate Registration"
+#    When  I register as a new candidate
+#    And   I click on complete button
+#    And   I reload the page
+#    And    I navigate to page "Candidate Job Alerts"
+#    And   I click on FREE Resume Review
+#    Then  I should see text H three tag "Your resume has been sent for review"
+#    And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
+#    And   I click on "OK, Thanks"
 
-  @resumeReviewSavedJobs  ## Mobile view free resume review button not displaying on candidate saved jobs pae
-  Scenario: Verify resume review banner on Saved Jobs page
-    Given I navigate to page "Candidate Registration"
-    When  I register as a new candidate
-    And   I click on complete button
-    And   I reload the page
-    And   I navigate to page "Candidate Saved Jobs"
-    And   I click on FREE Resume Review
-    Then  I should see text H three tag "Your resume has been sent for review"
-    And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
-    And   I click on "OK, Thanks"
+#  @resumeReviewSavedJobs  ## Mobile view free resume review button not displaying on candidate saved jobs pae
+#  Scenario: Verify resume review banner on Saved Jobs page
+#    Given I navigate to page "Candidate Registration"
+#    When  I register as a new candidate
+#    And   I click on complete button
+#    And   I reload the page
+#    And   I navigate to page "Candidate Saved Jobs"
+#    And   I click on FREE Resume Review
+#    Then  I should see text H three tag "Your resume has been sent for review"
+#    And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
+#    And   I click on "OK, Thanks"
 
   @resumeReviewMySettings @MobileChrome
   Scenario: Verify resume review banner on My Settings page
@@ -128,30 +128,30 @@ Feature: Candidate Registration ResumeReview
     And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
     And   I click on "OK, Thanks"
 
-  @resumeReviewJobSearchLoggedOut ## Mobile view resume review banner not displaying on Jobs Sales pae
-  Scenario: Verify resume review from a logged out user job search
-    Given I navigate to page "Jobs Sales In 10010"
-    And   I click on search results resume review banner
-    Then  I should be able to see in browser URL "Resume Review"
-    And   I enter email address "test@gmail.com"
-    And   I enter first name "automation "
-    And   I enter last name "candidate"
-    And   I upload resume "Test Cv"
-    Then  I press login and review my resume button
-    And   I should be on page "Candidate Resume Review Success"
+#  @resumeReviewJobSearchLoggedOut ## Mobile view resume review banner not displaying on Jobs Sales pae
+#  Scenario: Verify resume review from a logged out user job search
+#    Given I navigate to page "Jobs Sales In 10010"
+#    And   I click on search results resume review banner
+#    Then  I should be able to see in browser URL "Resume Review"
+#    And   I enter email address "test@gmail.com"
+#    And   I enter first name "automation "
+#    And   I enter last name "candidate"
+#    And   I upload resume "Test Cv"
+#    Then  I press login and review my resume button
+#    And   I should be on page "Candidate Resume Review Success"
+#
 
-
-  @resumeReviewJobSearchLoggedIn @ReleaseRegression1 ## Mobile view resume review banner not displaying on Jobs Sales pae
-  Scenario: Verify resume review from a logged in user job search
-    Given I navigate to page "Candidate Registration"
-    When  I register as a new candidate
-    And   I click on complete button
-    And   I reload the page
-    And   I navigate to page "Jobs Sales In 10010"
-    And   I click on search results resume review banner
-    Then  I should see text H three tag "Your resume has been sent for review"
-    And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
-    And   I click on "OK, Thanks"
+#  @resumeReviewJobSearchLoggedIn @ReleaseRegression1 ## Mobile view resume review banner not displaying on Jobs Sales pae
+#  Scenario: Verify resume review from a logged in user job search
+#    Given I navigate to page "Candidate Registration"
+#    When  I register as a new candidate
+#    And   I click on complete button
+#    And   I reload the page
+#    And   I navigate to page "Jobs Sales In 10010"
+#    And   I click on search results resume review banner
+#    Then  I should see text H three tag "Your resume has been sent for review"
+#    And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
+#    And   I click on "OK, Thanks"
 
   @resumeReviewJobView @MobileChrome
   Scenario: Verify resume review from a Job View page
