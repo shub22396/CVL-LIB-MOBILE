@@ -301,7 +301,9 @@ public class RegistrationPage extends Utility {
 
     public void selectCountryFromDropdown(String country) {
         logger.info("Selected country from dropdown" + country);
-        selectByVisibleTextFromDropDown(CountryDropdown, country);
+        //  selectByVisibleTextFromDropDown(CountryDropdown, country);
+        clickOnElement(CountryDropdown);
+        clickOnElementUsingText(country);
     }
 
     public void enterCity(String city) {
