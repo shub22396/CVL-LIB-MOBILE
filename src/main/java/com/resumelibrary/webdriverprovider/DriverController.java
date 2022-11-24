@@ -4,6 +4,7 @@ import com.resumelibrary.utilities.Constants;
 import com.resumelibrary.utilities.PropertyFileReader;
 import com.resumelibrary.utilities.WebURLHelper;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -83,6 +84,11 @@ public class DriverController extends CloudDriverProvider implements Constants {
 
                 iosMobileWeb(threadMap,testName);
                 break;
+            case "localMobileWeb":
+                logger.info("[--->Using  localMobileWeb<---]");
+
+                localMobileWeb(threadMap);
+                break;
         }
         manageBrowser();
     }
@@ -98,7 +104,7 @@ public class DriverController extends CloudDriverProvider implements Constants {
     public WebDriver getThreadDriver() {
         WebDriver webdriverObj = null;
         try {
-            webdriverObj = (RemoteWebDriver) ((Map) threadLocalMap.get()).get("webdriverObj");
+            webdriverObj = (AndroidDriver) ((Map) threadLocalMap.get()).get("webdriverObj");
         } catch (Exception e) {
 
         }

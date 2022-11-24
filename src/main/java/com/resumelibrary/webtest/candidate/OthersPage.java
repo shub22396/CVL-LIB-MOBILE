@@ -64,6 +64,9 @@ public class OthersPage extends Utility {
     WebElement JobTitleAppliedLink;
     @FindBy(xpath = "//*[@id=\"alert_form_active_1\"]/div[1]/div[2]/label")
     WebElement KeywordsJobTitle;
+    @FindBy(id = "signup-get-review-btn")
+    WebElement resumeReviewElem;
+
     public void clickSendRequestButton() {
         logger.info("Clicking on send request button ");
         clickOnElement(SendRequestButton);
@@ -253,4 +256,9 @@ public class OthersPage extends Utility {
         logger.info("element text  : " + KeywordsJobTitle.getText() );
         return KeywordsJobTitle.getText();
     }
+
+   public void SubmitResumeReview(){
+       logger.info("clicked on resume review");
+       resumeReviewElem.click();
+   }
 }
