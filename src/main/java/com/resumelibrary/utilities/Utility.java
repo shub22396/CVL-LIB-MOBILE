@@ -52,7 +52,7 @@ public abstract class Utility extends DriverController {
     public Utility() {
         PageFactory.initElements(getThreadDriver(), this);
     }
-
+    public static List<String> deviceList = new ArrayList<String>();
     private static final Logger logger = LogManager.getLogger(Utility.class);
 
     /* Load the project URL and reload the page if its 502 bad gateway */

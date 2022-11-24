@@ -38,6 +38,7 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
     PropertyFileReader propertyFileReader;
 
     static boolean alreadyFileCreated=false;
+    String deviceName="";
 
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(CustomFormatter.class);
 
@@ -68,8 +69,12 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
                 tagNames = propertyFileReader.getTagNamesFromProperties();
                 threadMapObj = new HashMap<>();
                 threadMapObj.put("runnerClass", System.getProperty("runnerClass"));
+                deviceName=deviceList.remove(0);
+                System.out.println("deviceName====&&&888888(((((%%%%%===>"+deviceName);
+              //  threadMapObj.put("ThreadDevice", deviceName);
+
                 threadMapObj.put("skipTest", isSkipTest(event.getTestCase().getTags().toString(), tagNames));
-                getDriver(System.getProperty("browserName"), System.getProperty("machineName"), threadMapObj, event.getTestCase().getName());
+                getDriver(System.getProperty("browserName"), System.getProperty("machineName"), threadMapObj, event.getTestCase().getName(),deviceName);
                 LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "driver created successfully for:" + event.getTestCase().getName() + ANSI_RESET + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
 
             } catch (Exception e) {
@@ -93,7 +98,7 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
         try {
             System.out.println("[Test Case]:[" + event.getTestCase().getName() + "]::[Status][" + event.getResult().getStatus() + "]");
             LOGGER.info("[--->in scenarioFinishedHandler<---]");
-
+            deviceList.add(deviceName);
             scenarioStepResultList = scenarioStepResultsMap.get(event.getTestCase().getName());
             String createDocs = PropertyFileReader.getInstance().getProperty("createDocs");
             String resultText = "";

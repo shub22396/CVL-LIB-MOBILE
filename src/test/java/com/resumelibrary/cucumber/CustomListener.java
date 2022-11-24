@@ -16,6 +16,14 @@ public class CustomListener extends Utility implements ITestListener, IExecution
 
     @Override
     public void onExecutionStart() {
+        Map<String,String> deviceNames=new HashMap<>();
+        deviceNames.put("device-1","Galaxy S20+@11");
+        deviceNames.put("device-2","Galaxy S10+@11");
+        deviceNames.put("device-3","Galaxy S20+@10");
+        deviceNames.put("device-4","Galaxy Note10+@11");
+        deviceNames.put("device-5","Galaxy S10@11");
+        deviceNames.put("device-6","Galaxy Note20@11");
+
         tunnelObject=new ArrayList<Tunnel>();
         boolean flag=false;
         String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
@@ -25,25 +33,28 @@ public class CustomListener extends Utility implements ITestListener, IExecution
         String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
         String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
 
-        int noOfTunnels = Integer.parseInt(WebURLHelper.getParameterFromEnvOrSysParam("TUNNELS", PropertyFileReader.getInstance().getProperty("noOfTunnels")));
+       // int noOfTunnels = Integer.parseInt(WebURLHelper.getParameterFromEnvOrSysParam("TUNNELS", PropertyFileReader.getInstance().getProperty("noOfTunnels")));
+        int threadCount = Integer.parseInt(System.getProperty("ThreadCount"));
         String tunnelName =WebURLHelper.getParameterFromEnvOrSysParam("TUNNELNAME", PropertyFileReader.getInstance().getProperty("tunnelName"));
         LOGGER.info("[--->tunnelName = " + tunnelName+buildId+"<---]");
-        for(int j=0;j<noOfTunnels;j++){
-
+        String tunnelName2="";
+        for(int j=0;j<threadCount;j++){
+            tunnelName2=tunnelName+buildId+"-"+(j+1);
             HashMap<String, String> option = new HashMap<String, String>();
             option.put("user", lamdaUserName);
             option.put("key", lambdaAccessKey);
             option.put("load-balanced","true");
             option.put("mitm", "true");
             option.put("sharedTunnel", "true");
-            option.put("tunnelName", tunnelName+buildId);
+            option.put("tunnelName", tunnelName2);
+            deviceList.add(tunnelName2+"#"+deviceNames.get("device-"+(j+1)));
             int i=0;
             do{
                   flag= startTunnel(option);
                 i++;
             }while(!flag && i<2);
         }
-
+    System.out.println("deviceList===>"+deviceList);
 
         ASCIIArtGenerator artGen = new ASCIIArtGenerator();
         try {
