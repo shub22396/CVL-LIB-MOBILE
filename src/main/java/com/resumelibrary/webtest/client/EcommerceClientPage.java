@@ -71,8 +71,10 @@ public class EcommerceClientPage extends Utility {
     WebElement ContactCreditsNewBalance;
     @FindBy(xpath = "//*[@class='unlock-popup-option option--regular']/a")
     WebElement BuyNow3MonthsAccess;
+    @FindBy(xpath = "//select[@name='job-posting-credit']//option")
+    List<WebElement> SelectJobPostingCreditList;
     @FindBy(xpath = "//select[@name='job-posting-credit']")
-    WebElement SelectJobPostingCredit;
+  WebElement SelectJobPostingCredit;
     @FindBy(xpath = "//img[@src='/images/resources-blog-new-customer-offer.png']")
     WebElement Image3MonthResumeSearch;
     @FindBy(xpath = "//img[@src='/images/resources-blog-search-resumes.gif']")
@@ -251,9 +253,26 @@ public class EcommerceClientPage extends Utility {
         return getTextFromElementUsingXpath(price, xpath);
     }
 
-    public String verifyOptionSelected(String option) {
-        return getFirstSelectedOption(SelectJobPostingCredit);
-    }
+    public boolean verifyOptionSelected(String options) {
+        logger.info("Verifying sort by is selected");
+            int count=0;
+            for(WebElement option : SelectJobPostingCreditList) {
+                logger.info(option.getText());
+                if (option.getText().equals(options)) {
+                    count++;
+                    break;
+                }
+            }
+            if(count==0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
 
     public String verifyTextInOrderSummaryTable(String text) {
         logger.info("find the text : " + text);
@@ -264,7 +283,7 @@ public class EcommerceClientPage extends Utility {
 
     public void selectJobPostingCreditQuantity(String option) {
         logger.info("select the option text : " + option);
-        selectByVisibleText(SelectJobPostingCredit, option);
+        selectByVisibleTextFromDropDown(SelectJobPostingCredit, option);
     }
 
     public boolean verifyImage(String text) {
@@ -275,7 +294,7 @@ public class EcommerceClientPage extends Utility {
 
     public void clickOnElement(String text) {
         logger.info("click on the image with text " + text + "is displayed");
-        clickOnElement(Image3MonthResumeSearch);
+        clickOnElementWithJS(Image3MonthResumeSearch);
     }
 
     public boolean verifyImageIsDisplayed(String text) {

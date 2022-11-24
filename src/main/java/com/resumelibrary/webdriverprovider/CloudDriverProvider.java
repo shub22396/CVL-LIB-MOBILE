@@ -253,7 +253,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.put(MobileCapabilityType.BROWSER_NAME, "Chrome");
             caps.put("autoGrantPermissions", true);
             caps.put("autoAcceptAlerts", true);
-            caps.put("tunnelName","SharedTunnel") ;
+            caps.put("tunnelName",tunnelName) ;
             caps.put("network", false);
             caps.put("w3c",true);
             capabilities.setCapability("network", false);

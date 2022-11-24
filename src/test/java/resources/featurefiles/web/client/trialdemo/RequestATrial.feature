@@ -31,7 +31,7 @@ Background: Navigating to Request a Trial page
     And   I enter phone number "123456789"
     And   I enter client company name "resume-library"
     And   I enter zip code "10001"
-    And   I select "Staffing Agency (1-5 employees)" from recruiter type
+    And   I select "recruiter_type.1" from recruiter type
     And   I select "1-10" from approx hires
     Then  I click on Submit inquiry
     Then  I should see text "Thanks for requesting a trial."

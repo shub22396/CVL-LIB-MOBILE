@@ -1,4 +1,4 @@
-@AccountView @Regression @Admin @ReleaseRegression1 @Recruiters
+@AccountView @Regression @Admin @ReleaseRegression1 @Recruiters @MobileChrome
 Feature: Account View Error
 
   @accountViewOne

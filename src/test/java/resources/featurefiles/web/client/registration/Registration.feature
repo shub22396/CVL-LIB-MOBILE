@@ -23,4 +23,4 @@ Feature: Client Registration Registration
 
     Examples:
       | Email                           | FirstName  | LastName | Password | Address    | CompanyName    | City   | Phone        | State         | Zipcode | Type            |
-      | registration@resume-library.com | automation | client   | 123456   | 1st street | resume-library | Boston | 012345678912 | Massachusetts | 02108   | Staffing Agency |
+      | registration@resume-library.com | automation | client   | 123456   | 1st street | resume-library | Boston | 012345678912 | Massachusetts | 02108   | recruiter_type.1 |
