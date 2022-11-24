@@ -106,7 +106,10 @@ public class Others extends Utility {
     public void iNavigateToPage(String url) {
         getDriverWithUrl(WebURLHelper.getWebUrl(), getURL(url));
         webDriverWaitContainsUrl(getURL(url));
+
     }
+
+
 
     @Given("I browse the url {string}")
     public void iBrowseTheUrl(String url) {
@@ -394,6 +397,11 @@ public class Others extends Utility {
     public void iScrollDown(int y, int x) {
         scrollDown(y, x);
     }
+    @And("I scroll down in mobile$")
+    public void iScrollDownMobile() {
+        swipeScreen(Direction.DOWN);
+    }
+
 
     @And("I scroll up (\\d+),(\\d+)$")
     public void iScrollUp(int y, int x) {
@@ -444,5 +452,10 @@ public class Others extends Utility {
     @Then("I should see text Keywords job title {string}")
     public void iShouldSeeTextKeywordsJobTitle(String textToBeVerified) {
         Assert.assertEquals(textToBeVerified, new OthersPage().iShouldSeeTextKeywordsJobTitle());
+    }
+
+    @Given("I submit Review my resume")
+    public void iSubmitResumeReview() {
+        new OthersPage().SubmitResumeReview();
     }
 }

@@ -46,7 +46,7 @@ public class RegistrationPage extends Utility {
     WebElement DesiredJobTitle;
     @FindBy(id = "salary_expectation_from")
     WebElement SalaryFromDropdown;
-    @FindBy(id = "salary_expectation_to")
+    @FindBy(name = "salary_expectation[1]")
     WebElement SalaryToDropdown;
     @FindBy(id = "add-job-title-link")
     WebElement AddJobTitleLink;
@@ -99,6 +99,7 @@ public class RegistrationPage extends Utility {
         logger.info("Entered last name" + lastName);
         LastNameField.clear();
         LastNameField.sendKeys(lastName);
+        LastNameField.sendKeys(Keys.ESCAPE);
     }
 
     public void enterPassword(String password) {
@@ -158,11 +159,13 @@ public class RegistrationPage extends Utility {
                     getThreadDriver().findElement(By.xpath("//*[@text='Upload resumeOptional']")).click();
                 }
             }
-            waitFor(1);
-            if (checkElementPresence("//*[@text='from this computer']")) {
-                getThreadDriver().findElement(By.xpath("//*[@text='from this computer']")).click();
+            ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
+            if (checkElementPresence("//*[text()='from this computer']")) {
+                getThreadDriver().findElement(By.xpath("//*[text()='from this computer']")).click();
             }
+            ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
             waitFor(1);
+
             if (checkElementPresence("//*[@text='While using the app']")) {
                 getThreadDriver().findElement(By.xpath("//*[@text='While using the app']")).click();
             }
@@ -177,6 +180,7 @@ public class RegistrationPage extends Utility {
 
 
           }
+
             waitFor(2);
             if (checkElementPresence("//*[@text='Downloads']")) {
                 getThreadDriver().findElement(By.xpath("//*[@text='Downloads']")).click();
@@ -185,6 +189,7 @@ public class RegistrationPage extends Utility {
             if (checkElementPresence("//*[@text='test-cv.pdf']")){
                 getThreadDriver().findElement(By.xpath("//*[@text='test-cv.pdf']")).click();
             }
+
             waitFor(2);
             //  ((AndroidDriver)getThreadDriver()).context("WEBVIEW_com.dayizhihui.dayishi.hpv");
             ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
@@ -237,9 +242,20 @@ public class RegistrationPage extends Utility {
     }
 
     public void selectDesiredSalaryMinAndMax(String salMin, String salMax) {
-        logger.info("Entered salary from and salary to" + salMax + salMax);
-        selectByVisibleTextFromDropDown(SalaryFromDropdown, salMin);
-        selectByVisibleTextFromDropDown(SalaryToDropdown, salMax);
+        logger.info("Entered salary from and salary to" + salMin + salMax);
+      //  clickOnElement(SalaryFromDropdown);
+        SalaryFromDropdown.click();
+        clickOnElementUsingText(salMin);
+        waitFor(3);
+        getThreadDriver().findElement(By.xpath("//select[@id='salary_expectation_from']/option[text()='"+salMin+"']")).click();
+        waitFor(3);
+        SalaryToDropdown.click();
+       // clickOnElement(SalaryToDropdown);
+        getThreadDriver().findElement(By.xpath("//select[@id='salary_expectation_to']/option[text()='"+salMax+"']")).click();
+      //  clickOnElementUsingText(salMax);
+        waitFor(3);
+      //  selectByVisibleTextFromDropDown(SalaryFromDropdown, salMin);
+       // selectByVisibleTextFromDropDown(SalaryToDropdown, salMax);
     }
 
     public void clickOnAddJobTitleLink() {
@@ -272,7 +288,9 @@ public class RegistrationPage extends Utility {
 
     public void selectCountryFromDropdown(String country) {
         logger.info("Selected country from dropdown" + country);
-        selectByVisibleTextFromDropDown(CountryDropdown, country);
+      //  selectByVisibleTextFromDropDown(CountryDropdown, country);
+        clickOnElement(CountryDropdown);
+        clickOnElementUsingText(country);
     }
 
     public void enterCity(String city) {

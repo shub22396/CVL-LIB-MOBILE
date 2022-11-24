@@ -148,7 +148,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
    # And   I should see RL Career Advice 160x600
     And   I should see blog-fb-banner
 
-  @CareerAdviceResumeReviewLoggedIn  #need to fix upload in android
+  @CareerAdviceResumeReviewLoggedIn  @MobileChrome
   Scenario:As a logged in user who has uploaded a resume but not had it reviewed
     When  I navigate to page "Candidate My Profile"
     And   I upload resume "Test Cv"

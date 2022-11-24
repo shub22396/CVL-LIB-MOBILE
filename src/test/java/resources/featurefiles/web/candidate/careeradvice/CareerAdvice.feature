@@ -51,7 +51,7 @@ Feature: Candidate CareerAdvice CareerAdvice
     Then   I should be on page "/saved-jobs"
     And    I should see text H one tag "My Saved Jobs"
 
-  @CareerAdviceHiddenProfile #upload resume has to fix
+  @CareerAdviceHiddenProfile @MobileChrome
   Scenario: As a logged in user who has hidden their profile
     Given  I navigate to page "Candidate Registration"
     When   I register as a new candidate resume check

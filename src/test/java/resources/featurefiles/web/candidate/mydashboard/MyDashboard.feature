@@ -25,7 +25,7 @@ Feature: Candidate mydashboard MyDashboard
     And   I should be able to see in browser URL "/jobs/nonexternaltestjob-in-90189?r=51"
     And   I should see text H one tag "Nonexternaltestjob jobs in 90189"
 
-  @verifyBannersAndLinks
+  @verifyBannersAndLinks @MobileChrome
   Scenario: Verify Job matches, Recently applied & Banner
     When  I navigate to page "Candidate My Profile"
     And   I upload resume "Test CV"
