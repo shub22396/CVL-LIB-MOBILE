@@ -11,7 +11,7 @@ Feature: Candidate JobApply FromCompanyProfile
     Then I should see text "Not registered?"
 
   #Scenario: Registers a new candidate to the site, navigates to a company profile and applies for the first job
-  @jobApplyCompanyProfileNewCandidate #need to fix Candidate Registration
+  @jobApplyCompanyProfileNewCandidate    @MobileChrome    #need to fix Candidate Registration
   Scenario: Job apply from company profile page after registering
     Given I navigate to page "Candidate Registration"
     Then I register as a new candidate resume check

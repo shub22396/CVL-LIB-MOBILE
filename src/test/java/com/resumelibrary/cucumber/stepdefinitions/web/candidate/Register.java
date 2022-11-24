@@ -182,9 +182,11 @@ public class Register extends Utility {
                    System.out.println("resumePath======>"+resumePath);
             waitFor(3);
             // Java
-            ((AndroidDriver) getThreadDriver()).pushFile("/sdcard/Download/test-cv.pdf", new File(resumePath));
+            //((AndroidDriver) getThreadDriver()).pushFile("/sdcard/Download/test-cv.pdf", new File(resumePath));
+          ((AndroidDriver) getThreadDriver()).pushFile("/sdcard/Download/"+getURL(path), new File(resumePath));
             waitFor(3);
-            byte[] fileBase64=  ((AndroidDriver) getThreadDriver()).pullFile("/sdcard/Download/test-cv.pdf");
+           // byte[] fileBase64=  ((AndroidDriver) getThreadDriver()).pullFile("/sdcard/Download/test-cv.pdf");
+           byte[] fileBase64=  ((AndroidDriver) getThreadDriver()).pullFile("/sdcard/Download/"+getURL(path));
             System.out.println("fileBase64 ===>"+fileBase64);
             new RegistrationPage().selectFile();
             System.out.println("---After select file ---");

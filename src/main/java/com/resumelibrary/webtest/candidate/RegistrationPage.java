@@ -38,7 +38,8 @@ public class RegistrationPage extends Utility {
     WebElement LatestJobTitleField;
     @FindBy(id = "zip_code_ux")
     WebElement ZipCodeField;
-    @FindBy(id = "register_now_button")
+    //@FindBy(id = "register_now_button")
+    @FindBy(xpath = "//*[@id='register_now_button']")
     WebElement RegisterButton;
     @FindBy(id = "phone")
     WebElement PhoneNumberField;
@@ -184,6 +185,18 @@ public class RegistrationPage extends Utility {
             waitFor(2);
             if (checkElementPresence("//*[@text='test-cv.pdf']")){
                 getThreadDriver().findElement(By.xpath("//*[@text='test-cv.pdf']")).click();
+            }
+            waitFor(2);
+            if (checkElementPresence("//*[@text='resume-oversized.odt']")){
+                getThreadDriver().findElement(By.xpath("//*[@text='resume-oversized.odt']")).click();
+            }
+            waitFor(2);
+            if (checkElementPresence("//*[@text='resume-undersized.txt']")){
+                getThreadDriver().findElement(By.xpath("//*[@text='resume-undersized.txt']")).click();
+            }
+            waitFor(2);
+            if (checkElementPresence("//*[@text='project_structure.jpg']")){
+                getThreadDriver().findElement(By.xpath("//*[@text='project_structure.jpg']")).click();
             }
             waitFor(2);
             //  ((AndroidDriver)getThreadDriver()).context("WEBVIEW_com.dayizhihui.dayishi.hpv");

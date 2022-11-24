@@ -139,8 +139,8 @@ public class URLConstants implements Constants {
     public final String CLIENT_HELP_VIDEOS_SCREENING_QUESTIONS = "/client/help/videos/screening-questions";
     public final String CLIENT_COMPANY_PROFILE = "/client/company/profile";
     public final String HIRING_REQUEST_A_TRIAL = "/hiring/request-a-trial";
-    public final String RESUME_OVERSIZED = "resume-oversized.odt";
-    public final String RESUME_UNDERSIZED_TEXT_FILE = "resume-undersized.txt";
+    public final String RESUME_OVERSIZED = "/resume-oversized.odt";
+    public final String RESUME_UNDERSIZED_TEXT_FILE = "/resume-undersized.txt";
     public final String HIRING_RESUME_SEARCH_PRICING = "/hiring/resume-search/pricing";
     public final String HIRING_RESUME_SEARCH_TEST_SEARCH = "/hiring/resume-search/test-search";
     public final String PARTNER_INTEGRATIONS_ZOHO = "/partner/integrations/zoho";
@@ -228,7 +228,8 @@ public class URLConstants implements Constants {
     public final String CANDIDATE_ACCOUNT = "/candidate/account";
     public final String CANDIDATE_MY_PROFILE = "/candidate/my-profile";
     public final String CANDIDATE_MY_DASHBOARD = "/candidate/my-dashboard";
-    public final String CANDIDATE_REGISTRATION = "/candidate/registration";
+//    public final String CANDIDATE_REGISTRATION = "/candidate/registration";
+    public final String CANDIDATE_REGISTRATION = "/candidate/registration?country_id=US";
     public final String CANDIDATE_MYAPPLICATIONS = "/candidate/myapplications";
     public final String JOBS_NON_EXTERNAL_TEST_JOBS = "/jobs/nonexternaltestjob?pd=1";
     public final String CANDIDATE_SETTINGS = "/candidate/settings";
@@ -333,7 +334,7 @@ public class URLConstants implements Constants {
     public final String RESOURCES_INTERVIEWING_TIPS = "/resources/interviewing-tips";
     public final String CLIENT_RESUME_VIEW_CANDIDATE_APPLICATIONS = "/client/resume/view-candidate-application/";
     public final String CANDIDATE_APPLICATIONS = "/candidate/applications";
-    public final String PROJECT_STRUCTURE_IMAGE = "project_structure.jpg";
+    public final String PROJECT_STRUCTURE_IMAGE = "/project_structure.jpg";
     public final String INDEX_HTML = "Index.html";
     public final String CLIENT_RESUME_SEARCH_UPDATE = "/client/resume-search/update";
     public final String JOBS_ADD = "/jobs/add";
