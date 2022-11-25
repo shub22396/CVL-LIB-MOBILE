@@ -147,7 +147,7 @@ public class RegistrationPage extends Utility {
 
             System.out.println("context-->" + ((AndroidDriver) getThreadDriver()).getContext());
 
-            if (checkElementPresence("(//*[@name='email'])[2]/../..//*[text()='Upload resume']")) {
+            if (checkElementPresence("(//*[@name='email'])/../..//*[text()='Upload resume']")) {
                 getThreadDriver().findElement(By.xpath("(//*[@name='email'])[2]/../..//*[text()='Upload resume']")).click();
             }
             ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
@@ -194,6 +194,7 @@ public class RegistrationPage extends Utility {
             ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
         }
     }
+
     public void clickOnResumeCheckbox() {
         try {
             waitUntilElementIsLocated(ResumeCheckCheckbox, 10);
