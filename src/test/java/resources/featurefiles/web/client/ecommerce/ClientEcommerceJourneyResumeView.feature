@@ -1,4 +1,4 @@
-@ClientEcommerceResumeView @Regression @Web @Client1 @Recruiters
+@ClientEcommerceResumeView @Regression @Web @Client1 @Recruiters @MobileChrome
 Feature: Client Ecommerce ClientEcommerceJourneyResumeView
 
   Background: Register a new client with all details
@@ -43,19 +43,19 @@ Feature: Client Ecommerce ClientEcommerceJourneyResumeView
     And   I should see text p tag "Please call our team on " and verify message "Please call our team on 1-857-239-0143 and this will be validated instantly."
     Then  I close account authentication for unlock resume
 
-    When  I click on "Download Resume"
+    When  I click on "Download Resume" with JS
     Then  I should see text "Account Authentication Required"
     And   I should see text "Before you can make any purchases, we need to validate your account."
     And   I should see text p tag "Please call our team on " and verify message "Please call our team on 1-857-239-0143 and this will be validated instantly."
     Then  I close account authentication for unlock resume
 
-    When  I click on "Video Interview"
+    When  I click on "Video Interview" with JS
     Then  I should see text "Account Authentication Required"
     And   I should see text "Before you can make any purchases, we need to validate your account."
     And   I should see text p tag "Please call our team on " and verify message "Please call our team on 1-857-239-0143 and this will be validated instantly."
     Then  I close account authentication for unlock resume
 
-    When  I click on "Email Resume"
+    When  I click on "Email Resume" with JS
     Then  I should see text "Account Authentication Required"
     And   I should see text "Before you can make any purchases, we need to validate your account."
     And   I should see text p tag "Please call our team on " and verify message "Please call our team on 1-857-239-0143 and this will be validated instantly."

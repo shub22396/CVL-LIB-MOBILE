@@ -1,4 +1,4 @@
-@EcommerceUnvalidatedClientProductsJourney @Regression @Web @Client1 @Recruiters
+@EcommerceUnvalidatedClientProductsJourney @Regression @Web @Client1 @Recruiters  @MobileChrome
 Feature: Client Ecommerce UnvalidatedClientProductsMenu
 
   Background: Register a new client with all details
@@ -20,7 +20,7 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
     And   I should see text "Welcome to Resume-Library!"
     And   I should see text "Before you can make any purchases we need to validate your account. Please call our team on 1-857-239-0143 to validate your account instantly."
 
-  @EcommerceProductsContactCredits @MobileChrome
+  @EcommerceProductsContactCredits
   Scenario: as an unvalidated logged in client I expect to see Contact credit products that I can purchase
     Given I navigate to page "Client Account"
     And   I should see text "Products"
@@ -53,7 +53,7 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
     When  I click on "Go to dashboard"
     Then  I should be able to see in browser URL "Client Account"
 
-  @EcommerceProductsJobPostings  @MobileChrome
+  @EcommerceProductsJobPostings
   Scenario: as an unvalidated logged in client I expect to see job posting products that I can purchase
     Given I navigate to page "Client Account"
     And   I should see text "Products"
@@ -87,7 +87,7 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
     When  I click on "Go to dashboard"
     Then  I should be able to see in browser URL "Client Account"
 
-  @EcommUnvalidatedLoggedInClientPosJobResumeSearch  @MobileChrome
+  @EcommUnvalidatedLoggedInClientPosJobResumeSearch
   Scenario: as an unvalidated logged in client with E-commerce enabled verify gif that alternately displays 30-Day resume search and Post Your Job
     Given I navigate to page "Resources"
     And   I scroll down 0,600
@@ -106,22 +106,32 @@ Feature: Client Ecommerce UnvalidatedClientProductsMenu
     And   I should be able to see in browser URL "Client Resume Search Results"
     And   I should see text on test search page "You have 10 resume views remaining | To view more resumes, we need to validate your account first. Please call us on 1-857-239-0143 and a member of our team can arrange this for you."
     When  I click on preview resume "1"
+    And   I reload the page
     Then  I should see text on test search page "You have 9 resume views remaining | To view more resumes, we need to validate your account first. Please call us on 1-857-239-0143 and a member of our team can arrange this for you."
     When  I click on preview resume "2"
+    And   I reload the page
     Then  I should see text on test search page "You have 8 resume views remaining | To view more resumes, we need to validate your account first. Please call us on 1-857-239-0143 and a member of our team can arrange this for you."
     When  I click on preview resume "3"
+    And   I reload the page
     Then  I should see text on test search page "You have 7 resume views remaining | To view more resumes, we need to validate your account first. Please call us on 1-857-239-0143 and a member of our team can arrange this for you."
     When  I click on preview resume "4"
+    And   I reload the page
     Then  I should see text on test search page "You have 6 resume views remaining | To view more resumes, we need to validate your account first. Please call us on 1-857-239-0143 and a member of our team can arrange this for you."
     When  I click on preview resume "5"
+    And   I reload the page
     Then  I should see text on test search page "You have 5 resume views remaining | To view more resumes, we need to validate your account first. Please call us on 1-857-239-0143 and a member of our team can arrange this for you."
     When  I click on preview resume "6"
+    And   I reload the page
     Then  I should see text on test search page "You have 4 resume views remaining | To view more resumes, we need to validate your account first. Please call us on 1-857-239-0143 and a member of our team can arrange this for you."
     When  I click on preview resume "7"
+    And   I reload the page
     Then  I should see text on test search page "You have 3 resume views remaining | To view more resumes, we need to validate your account first. Please call us on 1-857-239-0143 and a member of our team can arrange this for you."
     When  I click on preview resume "8"
+    And   I reload the page
     Then  I should see text on test search page "You have 2 resume views remaining | To view more resumes, we need to validate your account first. Please call us on 1-857-239-0143 and a member of our team can arrange this for you."
     When  I click on preview resume "9"
+    And   I reload the page
     Then  I should see text on test search page "You have 1 resume views remaining | To view more resumes, we need to validate your account first. Please call us on 1-857-239-0143 and a member of our team can arrange this for you."
     When  I click on preview resume "10"
+    And   I reload the page
     Then  I should see text on test search page "You have used all your resume views | To view more resumes, we need to validate your account first. Please call us on 1-857-239-0143 and a member of our team can arrange this for you."
