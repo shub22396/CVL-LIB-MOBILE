@@ -6,7 +6,7 @@ Feature: Candidate ModifyProfile UpdateResume
 #    And   I register as a new candidate
 #    When I navigate to page "Candidate My Profile"
 
-  @modifyProfileChangeResume
+  @modifyProfileChangeResume  @MobileChrome
   Scenario: Modify profile change resume
     Given I login as a candidate
     And I navigate to page "Candidate My Profile"

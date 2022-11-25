@@ -35,7 +35,8 @@ public class RegistrationPage extends Utility {
     WebElement LatestJobTitleField;
     @FindBy(id = "zip_code_ux")
     WebElement ZipCodeField;
-    @FindBy(id = "register_now_button")
+    //@FindBy(id = "register_now_button")
+    @FindBy(xpath = "//*[@id='register_now_button']")
     WebElement RegisterButton;
     @FindBy(id = "phone")
     WebElement PhoneNumberField;
@@ -181,10 +182,13 @@ public class RegistrationPage extends Utility {
             if (checkElementPresence("//*[@text='Downloads']")) {
                 getThreadDriver().findElement(By.xpath("//*[@text='Downloads']")).click();
             }
+
+
             waitFor(2);
             if (checkElementPresence("//*[@text='test-cv.pdf']")){
                 getThreadDriver().findElement(By.xpath("//*[@text='test-cv.pdf']")).click();
             }
+
 
             waitFor(2);
             //  ((AndroidDriver)getThreadDriver()).context("WEBVIEW_com.dayizhihui.dayishi.hpv");
@@ -339,4 +343,77 @@ public class RegistrationPage extends Utility {
         clickOnElement(CompanySearchResumeReviewBanner);
     }
 
+    public void SelectDifferentFormatFiles() {
+        try {
+
+            System.out.println("context-->" + ((AndroidDriver) getThreadDriver()).getContext());
+            ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
+            try {
+                if (checkElementPresence("//*[@text='Upload your resume']")) {
+                    getThreadDriver().findElement(By.xpath("//*[@text='Upload your resume']")).click();
+                }
+            } catch (Exception ex) {
+                if (checkElementPresence("//*[@text='Upload resumeOptional']")) {
+                    getThreadDriver().findElement(By.xpath("//*[@text='Upload resumeOptional']")).click();
+                }
+            }
+            ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
+            if (checkElementPresence("//*[text()='from this computer']")) {
+                getThreadDriver().findElement(By.xpath("//*[text()='from this computer']")).click();
+            }
+            ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
+            waitFor(1);
+
+            if (checkElementPresence("//*[@text='While using the app']")) {
+                getThreadDriver().findElement(By.xpath("//*[@text='While using the app']")).click();
+            }
+            waitFor(1);
+            if (checkElementPresence("//*[@text='Files']")){
+                getThreadDriver().findElement(By.xpath("//*[@text='Files']")).click();
+            }
+
+            waitFor(2);
+            if (checkElementPresence("//*[@content-desc='Show roots']")) {
+                getThreadDriver().findElement(By.xpath("//*[@content-desc='Show roots']")).click();
+            }
+            waitFor(2);
+            if (checkElementPresence("//*[@text='Downloads']")) {
+                getThreadDriver().findElement(By.xpath("//*[@text='Downloads']")).click();
+            }
+
+//            waitFor(2);
+//            if (checkElementPresence("//*[@text='"+path+"']")) {
+//                getThreadDriver().findElement(By.xpath("//*[@text='"+path+"']")).click();
+//            }
+
+            waitFor(2);
+            if (checkElementPresence("//*[@text='test-cv.pdf']")){
+                getThreadDriver().findElement(By.xpath("//*[@text='test-cv.pdf']")).click();
+            }
+
+            waitFor(2);
+            if (checkElementPresence("//*[@text='resume-oversized.odt']")){
+                getThreadDriver().findElement(By.xpath("//*[@text='resume-oversized.odt']")).click();
+            }
+            waitFor(2);
+            if (checkElementPresence("//*[@text='resume-undersized.txt']")){
+                getThreadDriver().findElement(By.xpath("//*[@text='resume-undersized.txt']")).click();
+            }
+            waitFor(2);
+            if (checkElementPresence("//*[@text='project_structure.jpg']")){
+                getThreadDriver().findElement(By.xpath("//*[@text='project_structure.jpg']")).click();
+            }
+            waitFor(2);
+            if (checkElementPresence("//*[@text='Index.html']")){
+                getThreadDriver().findElement(By.xpath("//*[@text='Index.html']")).click();
+            }
+            waitFor(2);
+            //  ((AndroidDriver)getThreadDriver()).context("WEBVIEW_com.dayizhihui.dayishi.hpv");
+            ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
+
+        }catch (Exception e){
+            ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
+        }
+
+    }
 }
