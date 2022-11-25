@@ -41,11 +41,13 @@ Feature: Candidate SavedJobs SavedJobs
 #    Then   I should see text a tags "Saved Jobs (" and verify "Saved Jobs (2)"
     And   I should see text p tag "Displaying" and verify message "Displaying 1 to 2 of 2"
 
-  @loggedOutUserSaveJobAndRegister1 @ReleaseRegression1
+  @loggedOutUserSaveJobAndRegister1 @ReleaseRegression1    @MobileChrome
   Scenario: As a logged out user save a job and register (via /candidate/registration page)
     Given  I navigate to page "Jobs Sales"
     When   I click on save toggle one
-    And    I click on Register button
+#    And    I click on Register button
+    And I click on mobile header button
+    When  I click on Register button
     And    I should be on page "Candidate Registration"
     Then   I should see text "You have saved jobs during your searches"
     And    I should see "Register below and these jobs will be saved into your account."
@@ -68,7 +70,7 @@ Feature: Candidate SavedJobs SavedJobs
     And    I should see text p tag "Displaying" and verify message "Displaying 1 to "
 #    And    I click on Actions
 #    And    I click on "Delete"
-  @loggedOutUserNoSavedJobsAndRegister
+  @loggedOutUserNoSavedJobsAndRegister     @MobileChrome
   Scenario: As a logged out user verify no saved jobs, register and verify no saved jobs message
     Given  I navigate to page "Saved Jobs"
     Then   I should see text H one tag "My Saved Jobs"
@@ -76,7 +78,9 @@ Feature: Candidate SavedJobs SavedJobs
     When   I click on "Search jobs now"
     Then   I should be on page "Search Jobs"
     And    I should see text "Advanced Job Search"
-    And    I click on Register button
+#    And    I click on Register button
+    And I click on mobile header button
+    When  I click on Register button
     When   I register as a new candidate resume check
     And    I navigate to page "Candidate Saved Jobs"
     Then   I should see text "My Saved Jobs"
