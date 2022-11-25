@@ -230,12 +230,8 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
     }
     void androidRealMobileWeb(Map threadMap,String testName,String deviceName) {
         try {
-           // String threadDeviceDetails=getThreadDevice();
-            String threadTunnelName=deviceName.split("#")[0];
-            String threadDeviceName=deviceName.split("#")[1].split("@")[0];
-            String threadDeviceVersion=deviceName.split("#")[1].split("@")[1];
-            System.out.println("threadTunnelName:"+threadTunnelName);
-            System.out.println("threadDeviceVersion:"+threadDeviceName);
+            String threadDeviceName=deviceName.split("@")[0];
+            String threadDeviceVersion=deviceName.split("@")[1];
             System.out.println("threadTunnelName:"+threadDeviceVersion);
             logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
@@ -249,9 +245,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.put("project", project);
             caps.put("name",testName);
             caps.put("platformName", "Android");
-           // caps.put("deviceName", "Galaxy S20+");
             caps.put("deviceName", threadDeviceName);
-           // caps.put("platformVersion", "11");
             caps.put("platformVersion", threadDeviceVersion);
             caps.put("isRealMobile", true);
             caps.put("console", true);
@@ -262,8 +256,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.put(MobileCapabilityType.BROWSER_NAME, "Chrome");
             caps.put("autoGrantPermissions", true);
             caps.put("autoAcceptAlerts", true);
-            //caps.put("tunnelName",tunnelName) ;
-            caps.put("tunnelName",threadTunnelName);
+            caps.put("tunnelName",tunnelName) ;
             caps.put("network", false);
             caps.put("w3c",true);
             capabilities.setCapability("network", false);
