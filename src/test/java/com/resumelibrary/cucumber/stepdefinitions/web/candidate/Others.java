@@ -270,7 +270,6 @@ public class Others extends Utility {
 
     @And("I click on {string} with native")
     public void iClickOnwithNative(String text) {
-
         clickOnElementUsingTextwithNAtive(text);
     }
 

@@ -1,4 +1,4 @@
-@NoEcomUnvalidatedLoggedInManageJobsJourney @Regression @Web @Client3 @Recruiters
+@NoEcomUnvalidatedLoggedInManageJobsJourney @Regression @Web @Client3 @Recruiters @MobileChrome
 Feature: Client NoEcommerceJourney UnValidatedLoggedInManageJobs
 
   Background:
