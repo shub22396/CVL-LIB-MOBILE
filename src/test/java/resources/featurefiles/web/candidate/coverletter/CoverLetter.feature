@@ -42,7 +42,7 @@ Feature: Candidate CoverLetter CoverLetter
     Then   I click on save changes button
     And    I should see text "Cover letter saved successfully"
 
-  @jobApplyAddCoverLetter @ReleaseRegression1 #need fix Candidate Registration
+  @jobApplyAddCoverLetter @ReleaseRegression1  @MobileChrome  #need fix Candidate Registration
   Scenario: Add cover letter when applying for email type job
     Given  I navigate to page "Candidate Registration"
     And    I register as a new candidate resume check

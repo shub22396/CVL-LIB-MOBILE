@@ -8,7 +8,7 @@ Feature: Candidate JobApply FromSearchResults
     Then    I should see "Apply for"
 
   #Scenario: Apply for job after registering a new candidate profile
-  @jobApplySearchResultsRegister @ReleaseRegression1 # need fix Candidate Registration
+  @jobApplySearchResultsRegister @ReleaseRegression1  @MobileChrome  # need fix Candidate Registration
   Scenario: Job apply after registering a new candidate
     Given   I navigate to page "Candidate Registration"
     When    I register as a new candidate resume check
