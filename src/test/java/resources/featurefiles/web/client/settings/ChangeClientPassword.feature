@@ -1,7 +1,7 @@
 @ClientChangePassword @Regression @Web @Client6 @ReleaseRegression2 @Traffic
 Feature: Client Settings ChangeClientPassword
 
-  @resetClientPassword
+  @resetClientPassword @MobileChrome
   Scenario: Reset client password
     Given I login as a client
     When  I click on "Account Options"
