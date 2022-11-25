@@ -1,4 +1,4 @@
-@NoEcomValidatedClientProductsPurchase @Regression @Web @Client1 @Recruiters
+@NoEcomValidatedClientProductsPurchase @Regression @Web @Client1 @Recruiters  @MobileChrome
 Feature: Client Ecommerce ValidatedEmailVerifiedClientProducts
 
   Background:
@@ -224,7 +224,7 @@ Feature: Client Ecommerce ValidatedEmailVerifiedClientProducts
     And   I scroll down 0,600
     And   I should see resources-3-month-banner "3-month Resume Search"
     Then  I click on resources-3-month-banner "3-month Resume Search"
-    Then  I should be able to see in browser URL "Hiring Resume Search Pricing"
+    Then  I should be able to see in browser URL "Client Products Contact Credits"
     And   I should see text H two tag "30-day Resume Search"
     And   I should see text H two tag "Starter Package"
 
@@ -242,7 +242,7 @@ Feature: Client Ecommerce ValidatedEmailVerifiedClientProducts
     And   I scroll down 0,600
     And   I should see resources-3-month-banner "3-month Resume Search"
     Then  I click on resources-3-month-banner "3-month Resume Search"
-    Then  I should be able to see in browser URL "Hiring Resume Search Pricing"
+    Then  I should be able to see in browser URL "Client Products Contact Credits"
     And   I should see text H two tag "Greater Hiring Needs?"
 
   @ValidatedClientYetToPurchaseRemove30daysResumeSearch

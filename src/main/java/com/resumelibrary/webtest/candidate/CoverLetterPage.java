@@ -94,7 +94,8 @@ public class CoverLetterPage extends Utility {
 //        ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].scrollIntoView(true);", getThreadDriver().findElement(By.xpath("//*[text()='Save changes']")));
 //        waitFor(2);
 //       ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].click();", getThreadDriver().findElement(By.xpath("//*[text()='Save changes']")));
-        ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].click();", getThreadDriver().findElement(By.xpath("//*[@id='main']/div/div[2]/div/div/section[1]/div/form/div/input")));
+        //((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].click();", getThreadDriver().findElement(By.xpath("//*[@id='main']/div/div[2]/div/div/section[1]/div/form/div/input")));
+        ((JavascriptExecutor) getThreadDriver()).executeScript("arguments[0].click();", getThreadDriver().findElement(By.xpath("//*[@id='cand-modify-form']/div[8]/button")));
        //       getElementByText("Save changes").submit();
       //  getElementByText("Save changes").sendKeys(Keys.ENTER);
         //clickOnElement(SaveChangesButton);

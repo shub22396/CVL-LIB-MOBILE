@@ -113,12 +113,12 @@ public class EcommerceClientPage extends Utility {
 
     public void clickOnMainNumberViewContactDetails() {
         logger.info("click on element MainNumberViewContactDetails");
-        clickOnElement(MainNumberViewContactDetails);
+        clickOnElementWithJS(MainNumberViewContactDetails);
     }
 
     public void clickOnMainEmailAddressViewContactDetails() {
         logger.info("click on element EmailAddressViewContactDetails");
-        clickOnElement(EmailAddressViewContactDetails);
+        clickOnElementWithJS(EmailAddressViewContactDetails);
     }
 
     public void closePurchaseProductPopupForUnlockResume() {
