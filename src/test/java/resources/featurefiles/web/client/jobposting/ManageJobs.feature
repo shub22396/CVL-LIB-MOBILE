@@ -152,7 +152,7 @@ Feature: Client JobPosting ManageJobs
     Then  I should see expires dates in desc order
     When  I select "Sort by Expiry ASC" on client jobs page
     Then  I should see expires dates in asc order
-###Asc order TB fix
+
   @manageInActiveJobsSortingByPosted
   Scenario: Sorting Inactive jobs by Posted dates
     Given I login as testers client
@@ -160,7 +160,7 @@ Feature: Client JobPosting ManageJobs
     When  I select "Sort by Date Posted DESC" on client jobs page
     Then  I should see posted dates in desc order
     When  I select "Sort by Date Posted ASC" on client jobs page
-   # Then  I should see posted dates in asc order
+    Then  I should see posted dates in asc order
 
   @manageInActiveJobsSortingByExpires
   Scenario: Sorting Inactive jobs by Expires dates
