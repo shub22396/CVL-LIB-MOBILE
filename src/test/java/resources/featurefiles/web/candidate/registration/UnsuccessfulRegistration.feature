@@ -34,7 +34,7 @@ Feature: Candidate Registration UnsuccessfulRegistration
     And   I should see text "Please enter a valid last name that does not contain numbers"
     And   I should see text "Your password must be at least 6 characters long"
     And   I should see text "Please enter a valid US zip code"
-    And   I should see text "We can only accept .doc .docx .pdf .txt .odt .wps .html .htm files"
+#    And   I should see text "We can only accept .doc .docx .pdf .txt .odt .wps .html .htm files"  #text not available in mobile view
     Examples:
       | Email | FirstName | LastName | Password | JobTitle     | ZipCode   | Resume            |
       | test  | Test123   | Test123  | test     | Test Analyst | 123456789 | Project Structure Image|
@@ -60,13 +60,15 @@ Feature: Candidate Registration UnsuccessfulRegistration
   @registrationValidationResumeUndersize     @MobileChrome
   Scenario: Verify resume is large enough on resume upload
     Given I navigate to page "Candidate Registration"
-    And   I upload resume "Resume Undersized Text File"
+#   And   I upload resume "Resume Undersized Text File"
+    And   I upload different format resumes "Resume Undersized Text File"
     Then  I should see text "This file is less than 1kb or bigger than 2mb"
 
   @registrationValidationResumeOversize    @MobileChrome
   Scenario: Verify resume is small enough on resume upload
     Given I navigate to page "Candidate Registration"
-    And   I upload resume "Resume Oversized"
+#    And   I upload resume "Resume Oversized"
+    And   I upload different format resumes "Resume Oversized"
     Then  I should see text "This file is less than 1kb or bigger than 2mb"
 
   @registrationValidationOfInvalidEmailAddressAndPassWord    @MobileChrome

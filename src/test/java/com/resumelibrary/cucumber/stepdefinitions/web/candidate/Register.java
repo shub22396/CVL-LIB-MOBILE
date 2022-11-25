@@ -18,7 +18,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 
 public class Register extends Utility {
-    public  String emailAddress = null;
+    public String emailAddress = null;
     public static String clientEmailAddress, clientEmailAddress1, clientEmailAddress2,
             clientEmailAddress3, clientEmailAddress4, clientEmailAddress5 = null;
 
@@ -178,16 +178,14 @@ public class Register extends Utility {
 
         try {
             String projectPath = System.getProperty("user.dir");
-            String resumePath=projectPath + "/src/test/java/resources/testfiles" + getURL(path);
-                   System.out.println("resumePath======>"+resumePath);
+            String resumePath = projectPath + "/src/test/java/resources/testfiles/test-cv.pdf";
+            System.out.println("resumePath======>" + resumePath);
             waitFor(3);
             // Java
-            //((AndroidDriver) getThreadDriver()).pushFile("/sdcard/Download/test-cv.pdf", new File(resumePath));
-          ((AndroidDriver) getThreadDriver()).pushFile("/sdcard/Download/"+getURL(path), new File(resumePath));
+            ((AndroidDriver) getThreadDriver()).pushFile("/sdcard/Download/test-cv.pdf", new File(resumePath));
             waitFor(3);
-           // byte[] fileBase64=  ((AndroidDriver) getThreadDriver()).pullFile("/sdcard/Download/test-cv.pdf");
-           byte[] fileBase64=  ((AndroidDriver) getThreadDriver()).pullFile("/sdcard/Download/"+getURL(path));
-            System.out.println("fileBase64 ===>"+fileBase64);
+            byte[] fileBase64 = ((AndroidDriver) getThreadDriver()).pullFile("/sdcard/Download/test-cv.pdf");
+            System.out.println("fileBase64 ===>" + fileBase64);
             new RegistrationPage().selectFile();
             System.out.println("---After select file ---");
 
@@ -196,17 +194,8 @@ public class Register extends Utility {
             e.printStackTrace();
         }
     }
-//    @And("I upload resume {string}")
-//    public void iUploadResume(String path) {
-//        try {
-//            String projectPath = System.getProperty("user.dir");
-//
-//            new RegistrationPage().upLoadYourResume(projectPath + "/src/test/java/resources/testfiles/" + getURL(path));
-//        } catch (Exception e) {
-//            e.getMessage();
-//        }
-//    }
-    @When("I should not see {string}")
+
+       @When("I should not see {string}")
     public void iShouldNotSee(String text) {
         Assert.assertFalse(isElementOrTextDisplayed(text));
     }
@@ -289,4 +278,29 @@ public class Register extends Utility {
     public void iEnterCandidateEmailAddress(String email) {
         new RegistrationPage().enterEmailAddress(email);
     }
+
+    @And("I upload different format resumes {string}")
+    public void iUploadDifferentFormatResumes(String path) {
+
+        try {
+            String projectPath = System.getProperty("user.dir");
+            String resumePath = projectPath + "/src/test/java/resources/testfiles/" + getURL(path);
+            System.out.println("resumePath======>" + resumePath);
+            waitFor(3);
+            // Java
+            //((AndroidDriver) getThreadDriver()).pushFile("/sdcard/Download/test-cv.pdf", new File(resumePath));
+            ((AndroidDriver) getThreadDriver()).pushFile("/sdcard/Download/" + getURL(path), new File(resumePath));
+            waitFor(3);
+            // byte[] fileBase64=  ((AndroidDriver) getThreadDriver()).pullFile("/sdcard/Download/test-cv.pdf");
+            byte[] fileBase64 = ((AndroidDriver) getThreadDriver()).pullFile("/sdcard/Download/" + getURL(path));
+            System.out.println("fileBase64 ===>" + fileBase64);
+            new RegistrationPage().SelectDifferentFormatFiles();
+            System.out.println("---After select file ---");
+
+        } catch (Exception e) {
+            System.out.println("---in the exception ---");
+            e.printStackTrace();
+        }
+    }
 }
+
