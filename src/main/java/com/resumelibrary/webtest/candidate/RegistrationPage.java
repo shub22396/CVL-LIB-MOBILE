@@ -5,7 +5,6 @@ import io.appium.java_client.android.AndroidDriver;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -14,8 +13,6 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 public class RegistrationPage extends Utility {
@@ -145,19 +142,18 @@ public class RegistrationPage extends Utility {
 //
 //    }
 
-    public void selectFile(){
+    public void selectFile() {
         try {
 
             System.out.println("context-->" + ((AndroidDriver) getThreadDriver()).getContext());
+
+            if (checkElementPresence("(//*[@name='email'])[2]/../..//*[text()='Upload resume']")) {
+                getThreadDriver().findElement(By.xpath("(//*[@name='email'])[2]/../..//*[text()='Upload resume']")).click();
+            }
             ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
-            try {
-                if (checkElementPresence("//*[@text='Upload your resume']")) {
-                    getThreadDriver().findElement(By.xpath("//*[@text='Upload your resume']")).click();
-                }
-            } catch (Exception ex) {
-                if (checkElementPresence("//*[@text='Upload resumeOptional']")) {
-                    getThreadDriver().findElement(By.xpath("//*[@text='Upload resumeOptional']")).click();
-                }
+
+            if (checkElementPresence("//*[@text='Upload your resume']")) {
+                getThreadDriver().findElement(By.xpath("//*[@text='Upload your resume']")).click();
             }
             ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
             if (checkElementPresence("//*[text()='from this computer']")) {
@@ -243,19 +239,19 @@ public class RegistrationPage extends Utility {
 
     public void selectDesiredSalaryMinAndMax(String salMin, String salMax) {
         logger.info("Entered salary from and salary to" + salMin + salMax);
-      //  clickOnElement(SalaryFromDropdown);
+        //  clickOnElement(SalaryFromDropdown);
         SalaryFromDropdown.click();
         clickOnElementUsingText(salMin);
         waitFor(3);
-        getThreadDriver().findElement(By.xpath("//select[@id='salary_expectation_from']/option[text()='"+salMin+"']")).click();
+        getThreadDriver().findElement(By.xpath("//select[@id='salary_expectation_from']/option[text()='" + salMin + "']")).click();
         waitFor(3);
         SalaryToDropdown.click();
-       // clickOnElement(SalaryToDropdown);
-        getThreadDriver().findElement(By.xpath("//select[@id='salary_expectation_to']/option[text()='"+salMax+"']")).click();
-      //  clickOnElementUsingText(salMax);
+        // clickOnElement(SalaryToDropdown);
+        getThreadDriver().findElement(By.xpath("//select[@id='salary_expectation_to']/option[text()='" + salMax + "']")).click();
+        //  clickOnElementUsingText(salMax);
         waitFor(3);
-      //  selectByVisibleTextFromDropDown(SalaryFromDropdown, salMin);
-       // selectByVisibleTextFromDropDown(SalaryToDropdown, salMax);
+        //  selectByVisibleTextFromDropDown(SalaryFromDropdown, salMin);
+        // selectByVisibleTextFromDropDown(SalaryToDropdown, salMax);
     }
 
     public void clickOnAddJobTitleLink() {
@@ -267,7 +263,7 @@ public class RegistrationPage extends Utility {
         logger.info("Entered add job title");
         JobTitleField.sendKeys(jobTitle);
         DesiredJobTitle.sendKeys(Keys.TAB);
-      }
+    }
 
     public void clickOnCompleteButton() {
         logger.info("Clicking on complete button");
@@ -288,7 +284,7 @@ public class RegistrationPage extends Utility {
 
     public void selectCountryFromDropdown(String country) {
         logger.info("Selected country from dropdown" + country);
-      //  selectByVisibleTextFromDropDown(CountryDropdown, country);
+        //  selectByVisibleTextFromDropDown(CountryDropdown, country);
         clickOnElement(CountryDropdown);
         clickOnElementUsingText(country);
     }
