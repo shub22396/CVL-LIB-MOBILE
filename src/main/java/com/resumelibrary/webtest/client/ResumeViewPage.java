@@ -94,7 +94,7 @@ public class ResumeViewPage extends Utility {
         if (textOnThePage.isEmpty()) {
             if (UnlockResume.isDisplayed()) {
                 logger.info("found element with text Unlock Resume to click");
-                clickOnElement(UnlockResume);
+                clickOnElementWithJS(UnlockResume);
                 waitFor(1);
             }
         } else {
@@ -111,7 +111,7 @@ public class ResumeViewPage extends Utility {
         logger.info("Number of elements : " + lockedProfile.size());
         for (WebElement contact : lockedProfile) {
             waitFor(1);
-            clickOnElement(contact);
+            clickOnElementWithJS(contact);
             switchTab();
             try {
                 WebElement unlockResume = getThreadDriver().findElement(By.xpath("//*[@id=\"unlock-resume\"]"));
