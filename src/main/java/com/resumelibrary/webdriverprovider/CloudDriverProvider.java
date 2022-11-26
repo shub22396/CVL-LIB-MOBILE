@@ -260,6 +260,8 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.put("network", false);
             caps.put("w3c",true);
             capabilities.setCapability("network", false);
+            capabilities.setCapability("newCommandTimeout", 180);
+            capabilities.setCapability("eventTimings", true);
             capabilities.setCapability("lt:options", caps);
             threadMap.put("webdriverObj", new AndroidDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
