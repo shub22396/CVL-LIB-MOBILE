@@ -13,10 +13,12 @@ import java.util.List;
 import java.util.Map;
 
 public class Hooks extends Utility {
-
-    List<String> tagNames;
-    Map<String,Object> threadMapObj;
-    PropertyFileReader propertyFileReader;
+    String GREEN_BACKGROUND = "\033[42m";
+    String BLACK_BACKGROUND_BRIGHT = "\033[0;100m";
+    String RED_BOLD_BRIGHT = "\033[1;91m";
+    String ANSI_RESET = "\u001B[0m";
+    String GREEN_BOLD_BRIGHT = "\033[1;92m";
+    String WHITE_BOLD_BRIGHT = "\033[1;97m";
     private static final Logger logger = LogManager.getLogger(Hooks.class);
     private static final String TEST_STATUS_SCRIPT = "browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"%s\", \"name\": \"%s\"}}";
 
@@ -26,14 +28,14 @@ public class Hooks extends Utility {
 
     @After
     public void tearDown(Scenario scenario) throws IOException {
-        boolean status = true;
+
         if (scenario.getSourceTagNames().contains("@skip_hooks")) {
             logger.info("[--->In Hooks, cucumber after tearDown method, driver not initialized so don't need to quit driver ----> " + scenario.getSourceTagNames()+"<---]");
         }else {
             logger.info("[--->In Hooks, cucumber after tearDown method ---> "+"<---]");
             if (scenario.isFailed()) {
                 scenario.log("[--->--------------------------------------------"+"<---]");;
-             //   scenario.log("[--->CURRENT URL IS ----> " + getPresentURL()+"<---]");;
+                scenario.log("[--->CURRENT URL IS ----> " + getPresentURL()+"<---]");;
                 scenario.log("[--->BROWSER NAME   ----> " + getBrowserName()+"<---]");
                 scenario.log("[--->CURRENT TAG IS : " + scenario.getSourceTagNames()+"<---]");
                 scenario.log("[--->--------------------------------------------"+"<---]");;
@@ -44,15 +46,5 @@ public class Hooks extends Utility {
                 }
             }
         }
-
             }
-
-    public void logBrowserStackError(boolean status, String scenarioName) {
-        JavascriptExecutor jse = (JavascriptExecutor) getThreadDriver();
-        if (status) {
-            jse.executeScript(String.format(TEST_STATUS_SCRIPT, "PASSED", scenarioName));
-        } else {
-            jse.executeScript(String.format(TEST_STATUS_SCRIPT, "FAILED", scenarioName));
-        }
-    }
 }

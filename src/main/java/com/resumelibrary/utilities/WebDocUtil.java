@@ -27,11 +27,9 @@ public class WebDocUtil {
         System.out.println("createdocument.docx written successully");
     }
 
-    public void writeFailedScenarioInDoc(List<ScenarioStepResults> resultLis, String testName) {
+    public void writeFailedScenarioInDoc(List<ScenarioStepResults> resultLis, String testName,String buildId) {
         if (failureDocs <= 20) {
             XWPFDocument document = new XWPFDocument();
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId ");
-            String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
             try {
 
                 FileOutputStream out = new FileOutputStream(new File("FailedScenarioDoc_" + buildId + "/" + testName + ".docx"));
