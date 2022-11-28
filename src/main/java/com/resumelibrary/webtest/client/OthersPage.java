@@ -204,7 +204,9 @@ public class OthersPage extends Utility {
 
     public void selectMaxSalary(String salTo) {
         logger.info("select the option Max salary :" + salTo);
-        selectByValueFromDropDown(SalaryTo, salTo);
+        //selectByValueFromDropDown(SalaryTo, salTo);
+        JavascriptExecutor jse = (JavascriptExecutor) getThreadDriver();
+        jse.executeScript("arguments[0].value="+salTo, SalaryTo);
     }
 
     public void clickOnMoreSearchOptions() {
