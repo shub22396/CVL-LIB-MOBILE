@@ -1,4 +1,4 @@
-@CandidateLogout @Regression @Web @Candidate4 @ReleaseRegression1 @Candidate @MobileChrome
+@CandidateLogout @Regression @Web @Candidate4 @ReleaseRegression1 @Candidate
 Feature: Candidate Logout Logout
 
   Scenario: Logout and verify elements
