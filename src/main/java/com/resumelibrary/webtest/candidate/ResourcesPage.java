@@ -43,11 +43,11 @@ public class ResourcesPage extends Utility {
         waitFor(2);
         if ("Resume Search".equals(text)) {
             logger.info("clicking on Resume Search image");
-            clickOnElement(ImageResumeSearch);
+            clickOnElementWithJS(ImageResumeSearch);
         } else if ("Post A Job".equals(text)) {
             logger.info("clicking on Post A job now image");
             waitUntilElementIsLocated(ImagePostAJob,30);
-            clickOnElement(ImagePostAJob);
+            clickOnElementWithJS(ImagePostAJob);
         }
     }
 

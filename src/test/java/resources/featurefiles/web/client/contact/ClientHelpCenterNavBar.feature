@@ -84,7 +84,7 @@ Feature: Client Contact ClientHelpCenterNavBar
     And  I click on "Account Options"
     And  I click on link "Contact Us" account options menu
     And  I wait for "1" seconds
-    Then I select the option "Resume Search" from inquiry type
+    Then I select the option value "resumesearch" from inquiry type
     Then I fill in inquiry messages text area with "inquiry message for form 1 "
     And  I wait for "1" seconds
     Then I click on id "register_now"

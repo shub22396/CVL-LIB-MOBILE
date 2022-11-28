@@ -90,4 +90,10 @@ public class ClientPage extends Utility {
         logger.info("click on Download --> ");
         clickOnElement(Download);
     }
+
+    public void selectTheOptionValueFromInquiryType(String optionValue) {
+        waitUntilElementToBeClickable(InquiryType, 4);
+        clickOnElement(InquiryType);
+        clickOnAttributeValueOnInputTag(optionValue);
+    }
 }
