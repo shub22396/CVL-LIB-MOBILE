@@ -1,7 +1,7 @@
 package com.resumelibrary.utilities;
 
+import com.google.common.collect.ImmutableList;
 import com.resumelibrary.webdriverprovider.DriverController;
-import com.resumelibrary.webdriverprovider.WebDriverProvider;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -15,9 +15,18 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.Pause;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.PointerInput.Kind;
+import org.openqa.selenium.interactions.PointerInput.MouseButton;
+import org.openqa.selenium.interactions.PointerInput.Origin;
+import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
@@ -31,19 +40,6 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
 import java.util.stream.Collectors;
-
-import org.openqa.selenium.Point;
-import org.openqa.selenium.Rectangle;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Pause;
-import org.openqa.selenium.interactions.PointerInput;
-import org.openqa.selenium.interactions.PointerInput.Kind;
-import org.openqa.selenium.interactions.PointerInput.MouseButton;
-import org.openqa.selenium.interactions.PointerInput.Origin;
-import org.openqa.selenium.interactions.Sequence;
-
-import io.appium.java_client.AppiumDriver;
-import com.google.common.collect.ImmutableList;
 
 public abstract class Utility extends DriverController {
     public static VerticalScenarioCountPojo verticalScenarioCountPojo = new VerticalScenarioCountPojo();
@@ -645,6 +641,13 @@ public abstract class Utility extends DriverController {
         clickOnElement(element);
         clickOnElementUsingText(str);
       //  getThreadDriver().findElement(By.xpath("//*[text()=\"" + str + "\"]")).click();
+    }
+
+    public void selectByVisibleTextFromDropDownWithJS(WebElement element, String str) {
+        waitUntilElementToBeClickable(element, 4);
+        clickOnElementWithJS(element);
+        clickOnElementUsingTextWithJS(str);
+        //  getThreadDriver().findElement(By.xpath("//*[text()=\"" + str + "\"]")).click();
     }
 
     public void selectByVisibleTextFromDropDownUsingJS(WebElement element, String str) {

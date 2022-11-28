@@ -48,7 +48,7 @@ public class ClientPage extends Utility {
     }
 
     public void selectInquiryType(String inquiryType) {
-        selectByVisibleTextFromDropDown(InquiryType, inquiryType);
+        selectByVisibleTextFromDropDownWithJS(InquiryType, inquiryType);
     }
 
     public void enterMessage(String value) {
