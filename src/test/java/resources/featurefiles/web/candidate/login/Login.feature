@@ -1,7 +1,7 @@
 @CandidateLogin @Regression @Web @Candidate4 @Candidate
 Feature: Candidate Login Login
 
-  @loginAsExistingCandidate @login @ReleaseRegression1 @MobileChrome
+  @loginAsExistingCandidate @login @ReleaseRegression1
   Scenario: Login in as an existing Candidate
     Given  I am on home page
    Then   I should see resume library logo
@@ -14,8 +14,7 @@ Feature: Candidate Login Login
     Then   I should be on "My Dashboard" page
     And    I should see text "Hi Resume-Library"
     And    I should see text "Recently Applied"
-
-  @loginPageErrorMessage @MobileChrome
+@MobileChrome
   Scenario: Verify error message on login page
     Given  I am on home page
     Then   I should see resume library logo
@@ -26,7 +25,7 @@ Feature: Candidate Login Login
     Then   I should see text "Email is required"
    And    I should see text "Password is required"
 
-  @loginPageResetPassword @ReleaseRegression1 @MobileChrome
+  @loginPageResetPassword @ReleaseRegression1
   Scenario: Reset candidate password
     Given  I am on home page
 
@@ -40,7 +39,7 @@ Feature: Candidate Login Login
     And    I click Reset Password button
     And    I should see a text message "We've sent your password reset link to testers+candidate@resume-library.com."
 
-  @toggleEmployerLoginIcon @MobileChrome
+  @toggleEmployerLoginIcon
   Scenario: toggle the employer login icon
     Given  I navigate to page "Login"
     And    I click on recruiter login icon
@@ -48,7 +47,7 @@ Feature: Candidate Login Login
     And    I should see login as employer button
     And    I should see text "Create an employer account"
 
-  @resumeReviewLogin @MobileChrome
+  @resumeReviewLogin
   Scenario: Login as existing candidate on free resume review page
     Given  I navigate to page "Resume Review"
     Then   I fill in Email address

@@ -1,7 +1,7 @@
 @CandidateApplyLogin @Regression @Web @Candidate3 @Candidate
 Feature: Candidate JobApply JobApplyFromLogin
 
-  @quickApplyLogin @ReleaseRegression1   @MobileChrome
+  @quickApplyLogin @ReleaseRegression1
   Scenario:  Search for quick apply job and login
     Given I login as a client
     When I navigate to page "Job Post"
@@ -26,7 +26,7 @@ Feature: Candidate JobApply JobApplyFromLogin
     Then I should be able to see in browser URL "Job Apply"
 #    Then I should be able to see in browser URL "Jobs"
 
-  @jobApplyLogin      @MobileChrome
+  @jobApplyLogin
   Scenario:  Search for job and verify login apply
     Given I navigate to page "Jobs Non External Test Jobs"
     When I click on non external job to apply

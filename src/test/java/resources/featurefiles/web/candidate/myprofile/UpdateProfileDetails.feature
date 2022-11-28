@@ -102,42 +102,42 @@ Feature: Candidate ModifyProfile UpdateProfileDetails
     #And   I click on "Save changes"
     And   I click on Save changes button
     Then  I should see text "Your details have been successfully updated"
-
-  @modifyProfileSetPassword #need to check weather its possble throuh mobile
-  Scenario: Modify profile set password
-    Given I navigate to page "Jobs Sales In Houston"
-    When  I click on link Get the latest Jobs with Job Alert
-    And   I fill search results job alerts email with random email id
-    And   I click on Create Job Alert move to page "Candidate My Profile"
-    Then  I should see text "Create a Password"
-    And   I should see text "Ready to create your password?"
-    And   I should see text "My account password"
-    And   I click on Set Password button
-    Then  I should see text "New password is required"
-    When  I fill in password with "test"
-    Then  I should see text "Your password must be at least 6 characters long"
-    When  I fill in password with "maxlenth32maxlenth32maxlenth32-33"
-    Then  I should see text "Your password can be a maximum of 32 characters long"
-    When  I fill in password with "      "
-    Then  I should see text "Your password can not contain spaces"
-    When  I fill in password with "test01"
-    And   I click on Set Password button
-    #Then  I should see text p tag "The password for" and verify message "The password for has been successfully created!"
-
-  @modifyProfileUploadResume #need to check weather its possble throuh mobile
-  Scenario: Modify profile upload resume
-    Given I navigate to page "Jobs Sales In Houston"
-    When  I click on link Get the latest Jobs with Job Alert
-    And   I fill search results job alerts email with random email id
-    And   I click on Create Job Alert
-    And   I should see "To make your job search a little easier we've set up a Job Alert for you. We've also created a Resume-Library profile for you"
-    And   I navigate to page "Candidate My Profile"
-    Then  I should see text "Resume not uploaded"
-    And   I should see text "We can accept the following file types:"
-    And   I should see text "doc, docx, pdf, txt, odt, wps, html, htm that are no larger than 2 MB"
-    And   I upload resume "Test Cv"
-    Then  I should be able to see in browser URL "Candidate My Profile"
-    Then  I should see text "Your resume is currently processing, you will be able to apply for jobs in just a few moments."
+#
+#  @modifyProfileSetPassword #need to check weather its possble throuh mobile
+#  Scenario: Modify profile set password
+#    Given I navigate to page "Jobs Sales In Houston"
+#    When  I click on link Get the latest Jobs with Job Alert
+#    And   I fill search results job alerts email with random email id
+#    And   I click on Create Job Alert move to page "Candidate My Profile"
+#    Then  I should see text "Create a Password"
+#    And   I should see text "Ready to create your password?"
+#    And   I should see text "My account password"
+#    And   I click on Set Password button
+#    Then  I should see text "New password is required"
+#    When  I fill in password with "test"
+#    Then  I should see text "Your password must be at least 6 characters long"
+#    When  I fill in password with "maxlenth32maxlenth32maxlenth32-33"
+#    Then  I should see text "Your password can be a maximum of 32 characters long"
+#    When  I fill in password with "      "
+#    Then  I should see text "Your password can not contain spaces"
+#    When  I fill in password with "test01"
+#    And   I click on Set Password button
+#    #Then  I should see text p tag "The password for" and verify message "The password for has been successfully created!"
+#
+#  @modifyProfileUploadResume #need to check weather its possble throuh mobile
+#  Scenario: Modify profile upload resume
+#    Given I navigate to page "Jobs Sales In Houston"
+#    When  I click on link Get the latest Jobs with Job Alert
+#    And   I fill search results job alerts email with random email id
+#    And   I click on Create Job Alert
+#    And   I should see "To make your job search a little easier we've set up a Job Alert for you. We've also created a Resume-Library profile for you"
+#    And   I navigate to page "Candidate My Profile"
+#    Then  I should see text "Resume not uploaded"
+#    And   I should see text "We can accept the following file types:"
+#    And   I should see text "doc, docx, pdf, txt, odt, wps, html, htm that are no larger than 2 MB"
+#    And   I upload resume "Test Cv"
+#    Then  I should be able to see in browser URL "Candidate My Profile"
+#    Then  I should see text "Your resume is currently processing, you will be able to apply for jobs in just a few moments."
 
  @MyProfileUploadResumeValidation
   Scenario: Validation of Resume Upload with different files
