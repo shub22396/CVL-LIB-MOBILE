@@ -1,7 +1,7 @@
 @SavedJobs @Regression @Web @Candidate5 @Candidate
 Feature: Candidate SavedJobs SavedJobs
 
-  @loggedOutUserSaveJobAndView   @MobileChrome
+  @loggedOutUserSaveJobAndView
   Scenario: As a logged out user save a job and view it
     Given I navigate to page "Jobs Sales"
     When  I click on save toggle one
@@ -16,7 +16,7 @@ Feature: Candidate SavedJobs SavedJobs
     And   I switch tab
     And   I should be able to see in browser URL "Job View"
 
-  @loggedOutUserSaveJobAndDelete @ReleaseRegression1    @MobileChrome
+  @loggedOutUserSaveJobAndDelete @ReleaseRegression1
   Scenario: As a logged out user save a job and delete it
     Given I navigate to page "Jobs Sales"
     And   I click on save toggle one
@@ -26,7 +26,7 @@ Feature: Candidate SavedJobs SavedJobs
     And  I click delete button on saved jobs
     And   I should see text H one tag "My Saved Jobs"
 
-  @loggedOutUserSaveJobsTestHoverViewAllShowJobAndDelete   @MobileChrome
+  @loggedOutUserSaveJobsTestHoverViewAllShowJobAndDelete
   Scenario: As a logged out user save a job hover basket test show, view all and delete job
     Given  I navigate to page "Jobs Nonexternaltestjobs"
     When   I click on save toggle one
@@ -45,7 +45,9 @@ Feature: Candidate SavedJobs SavedJobs
   Scenario: As a logged out user save a job and register (via /candidate/registration page)
     Given  I navigate to page "Jobs Sales"
     When   I click on save toggle one
-    And    I click on Register button
+#    And    I click on Register button
+    And I click on mobile header button
+    When  I click on Register button
     And    I should be on page "Candidate Registration"
     Then   I should see text "You have saved jobs during your searches"
     And    I should see "Register below and these jobs will be saved into your account."
@@ -54,7 +56,7 @@ Feature: Candidate SavedJobs SavedJobs
     Then   I should see text "My Saved Jobs"
     And    I should see text p tag "Displaying" and verify message "Displaying 1 to 1 of 1"
 
-  @loggedOutUserSaveJobAndLogin1 @ReleaseRegression1    @MobileChrome
+  @loggedOutUserSaveJobAndLogin1 @ReleaseRegression1
   Scenario: As a logged out user save a job and login (via /login page)
     Given  I navigate to page "Jobs Sales"
     When   I click on save toggle one
@@ -76,13 +78,15 @@ Feature: Candidate SavedJobs SavedJobs
     When   I click on "Search jobs now"
     Then   I should be on page "Search Jobs"
     And    I should see text "Advanced Job Search"
-    And    I click on Register button
+#    And    I click on Register button
+    And I click on mobile header button
+    When  I click on Register button
     When   I register as a new candidate resume check
     And    I navigate to page "Candidate Saved Jobs"
     Then   I should see text "My Saved Jobs"
     And    I should see "It can take a few moments for your saved jobs to appear – please check back shortly"
 
-  @loggedOutUserSaveJobAndRegister2   @MobileChrome
+  @loggedOutUserSaveJobAndRegister2
   Scenario: As a logged out user save a job and register (via Register & apply pop-up)
     Given  I navigate to page "Jobs Nonexternaltestjobs"
     When   I click on save toggle one
@@ -106,7 +110,7 @@ Feature: Candidate SavedJobs SavedJobs
     Then   I should be able to see in browser URL "Candidate Saved Jobs"
     And    I should see text p tag "Displaying" and verify message "Displaying 1 to 1 of 1"
 
-  @loggedOutUserSaveJobAndLogin2    @MobileChrome
+  @loggedOutUserSaveJobAndLogin2
   Scenario: As a logged out user save a job and login (via Login & Apply pop-up)
     Given  I navigate to page "Jobs Nonexternaltestjobs"
     When   I click on save toggle one

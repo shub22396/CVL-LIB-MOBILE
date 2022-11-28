@@ -1,7 +1,7 @@
 @ResumeReview @Regression @Web @Candidate5 @Candidate
 Feature: Candidate Registration ResumeReview
 
-  @resumeReviewValidation @MobileChrome
+  @resumeReviewValidation
   Scenario Outline: Validation on resume review page
     Given I navigate to page "Resume Review"
     When  I press login and review my resume button
@@ -38,7 +38,7 @@ Feature: Candidate Registration ResumeReview
       | Email          | FirstName | LastName | Resume  |
       | test@yahoo.com | Bob       | Russel   | Test Cv |
 
-  @resumeReviewLoggedIn @MobileChrome
+  @resumeReviewLoggedIn
   Scenario: Verify resume review banner for a logged in/newly registered candidate
     Given I navigate to page "Candidate Registration"
     When  I register as a new candidate
@@ -49,7 +49,7 @@ Feature: Candidate Registration ResumeReview
     And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
     And   I click on "OK, Thanks"
 
-  @resumeReviewJobApply @MobileChrome
+  @resumeReviewJobApply
   Scenario: Verify Resume Review from Job Apply
     Given I navigate to page "Candidate Registration"
     When  I register as a new candidate
@@ -92,7 +92,7 @@ Feature: Candidate Registration ResumeReview
 #    And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
 #    And   I click on "OK, Thanks"
 
-  @resumeReviewMySettings @MobileChrome
+  @resumeReviewMySettings
   Scenario: Verify resume review banner on My Settings page
     Given I navigate to page "Candidate Registration"
     When  I register as a new candidate
@@ -104,7 +104,7 @@ Feature: Candidate Registration ResumeReview
     And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
     And   I click on "OK, Thanks"
 
-  @resumeReviewCoverLetter @MobileChrome
+  @resumeReviewCoverLetter
   Scenario: Verify resume review banner on Modify Cover Letter page
     Given I navigate to page "Candidate Registration"
     When  I register as a new candidate
@@ -116,7 +116,7 @@ Feature: Candidate Registration ResumeReview
     And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
     And   I click on "OK, Thanks"
 
-  @resumeReviewEmailPreferences @MobileChrome
+  @resumeReviewEmailPreferences
   Scenario: Verify resume review banner on My Email Preferences page
     Given I navigate to page "Candidate Registration"
     When  I register as a new candidate
@@ -153,7 +153,7 @@ Feature: Candidate Registration ResumeReview
 #    And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
 #    And   I click on "OK, Thanks"
 
-  @resumeReviewJobView @MobileChrome
+  @resumeReviewJobView
   Scenario: Verify resume review from a Job View page
     Given I navigate to page "Candidate Registration"
     When  I register as a new candidate
@@ -168,7 +168,7 @@ Feature: Candidate Registration ResumeReview
     And   I should see "You will receive an email from our partner within a few days with a link to your personalized review"
     And   I click on "OK, Thanks"
 
-  @resumeReviewCompanyProfilePage @MobileChrome
+  @resumeReviewCompanyProfilePage
   Scenario: Verify resume review from a company profile page
     Given I navigate to page "Candidate Registration"
     When  I register as a new candidate

@@ -1,14 +1,14 @@
 @JobApplySearchResults @Regression @Web @Candidate3 @Candidate
 Feature: Candidate JobApply FromSearchResults
 
-  @jobApplySearchResultsLoggedOut  @MobileChrome
+  @jobApplySearchResultsLoggedOut
   Scenario: Job apply popup as logged out
     Given   I navigate to page "Jobs Non External Test Jobs"
     When    I click on apply now
     Then    I should see "Apply for"
 
   #Scenario: Apply for job after registering a new candidate profile
-  @jobApplySearchResultsRegister @ReleaseRegression1 # need fix Candidate Registration
+  @jobApplySearchResultsRegister @ReleaseRegression1    # need fix Candidate Registration
   Scenario: Job apply after registering a new candidate
     Given   I navigate to page "Candidate Registration"
     When    I register as a new candidate resume check
@@ -23,7 +23,7 @@ Feature: Candidate JobApply FromSearchResults
     And     I reload the page
     And     I should see text "Application sent - the employer will be in touch if you are successful"
 
-  @jobApplySearchResultsLoggedIn  @MobileChrome
+  @jobApplySearchResultsLoggedIn
   Scenario: Job apply from search results page after logging into an account
     Given   I login as a candidate
     And     I navigate to page "Jobs Non External Test Jobs"

@@ -39,6 +39,7 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
 
     static boolean alreadyFileCreated=false;
 
+
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(CustomFormatter.class);
 
     /*
@@ -48,7 +49,7 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
 
     @Override
     public void setEventPublisher(EventPublisher publisher) {
-        LOGGER.info("[--->in setEventPublisher<---]");
+        LOGGER.info("[--->in setEventPublisher<---]"+Thread.currentThread().getName());
         publisher.registerHandlerFor(TestCaseStarted.class, this::scenarioStartedHandler);
         publisher.registerHandlerFor(TestCaseFinished.class, this::scenarioFinishedHandler);
         publisher.registerHandlerFor(TestStepStarted.class, this::stepStartedHandler);
@@ -68,8 +69,9 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
                 tagNames = propertyFileReader.getTagNamesFromProperties();
                 threadMapObj = new HashMap<>();
                 threadMapObj.put("runnerClass", System.getProperty("runnerClass"));
+                System.out.println("deviceName and thread name"+deviceNames.get(Thread.currentThread().getName())+" and "+Thread.currentThread().getName());
                 threadMapObj.put("skipTest", isSkipTest(event.getTestCase().getTags().toString(), tagNames));
-                getDriver(System.getProperty("browserName"), System.getProperty("machineName"), threadMapObj, event.getTestCase().getName());
+                getDriver(System.getProperty("browserName"), System.getProperty("machineName"), threadMapObj, event.getTestCase().getName(),deviceNames.get(Thread.currentThread().getName()));
                 LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "driver created successfully for:" + event.getTestCase().getName() + ANSI_RESET + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
 
             } catch (Exception e) {
@@ -142,7 +144,7 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
                     if (createDocs.equalsIgnoreCase("yes")) {
                         WebDocUtil webDocUtil = new WebDocUtil();
                         webDocUtil.createFolder(buildId);
-                        webDocUtil.writeFailedScenarioInDoc(scenarioStepResultList, event.getTestCase().getName());
+                        webDocUtil.writeFailedScenarioInDoc(scenarioStepResultList, event.getTestCase().getName(),buildId);
                     }
                if(System.getProperty("browserName").contains("lambda")) {
                    ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=failed");
@@ -152,10 +154,12 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
                     scenarioRetryMap.put(event.getTestCase().getName(), retryCount + 1);
                 if(System.getProperty("browserName").contains("lambda")) {
                     ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-name=(Failed at attempt:-"+(retryCount+1)+")"+event.getTestCase().getName());
-                   // ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=cancelled");
                }
                 }
             } else if (result.getStatus().equals(Status.PASSED)) {
+                if(System.getProperty("browserName").contains("lambda")) {
+                    ((JavascriptExecutor) getThreadDriver()).executeScript("lambda-status=passed");
+                }
                 resultText = BLACK_BACKGROUND_BRIGHT + GREEN_BOLD_BRIGHT + "PASSED" + ANSI_RESET;
                 LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
                 LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "     scenario " + resultText + "   :  " + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + event.getTestCase().getName() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
@@ -171,19 +175,21 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
                 setPassedCountSummary(event.getTestCase().getTags().toString());
             }
             if (getThreadDriver() != null) {
-                LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
-                LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + " browser closed for scenario : " + event.getTestCase().getName() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
 
                 getThreadDriver().quit();
                 LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
+                LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + " browser closed for scenario (Place --1) : " + event.getTestCase().getName() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
+
+                LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
             }
         }catch (Exception e){
-
-            getThreadDriver().quit();
-            LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
-            LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + " browser closed for scenario with error message: " + event.getTestCase().getName() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
-            LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "error message is: " + e.getMessage() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
-            LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
+            if (getThreadDriver() != null) {
+                getThreadDriver().quit();
+            }
+                LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
+                LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + " browser closed for scenario with error message (Place --2) : " + event.getTestCase().getName() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
+                LOGGER.info(RED_BOLD_BRIGHT + "[--->" + GREEN_BACKGROUND + WHITE_BOLD_BRIGHT + "error message is: " + e.getMessage() + ANSI_RESET + RED_BOLD_BRIGHT + "<---]" + ANSI_RESET);
+                LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
 
         }
     }
@@ -203,7 +209,7 @@ public class CustomFormatter extends Utility implements ConcurrentEventListener 
     after completing each step for TestStepFinished we are collecting the scenario details, and step details and the status information into a a map object.
      */
     private void stepFinishedHandler(TestStepFinished event) {
-        LOGGER.info("[--->in stepFinishedHandler<---]");
+        LOGGER.info("[--->in stepFinishedHandler<---]"+Thread.currentThread().getName());
         ScenarioStepResults scenarioStepResults = new ScenarioStepResults();
         String stepResult = "";
         String stepDocResult = "";

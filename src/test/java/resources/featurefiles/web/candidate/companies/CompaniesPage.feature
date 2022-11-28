@@ -1,4 +1,4 @@
-@CompaniesPage @Regression @Web @Candidate2 @ReleaseRegression1 @Recruiters @MobileChrome
+@CompaniesPage @Regression @Web @Candidate2 @ReleaseRegression1 @Recruiters
 Feature: Candidate Companies CompaniesPage
 
   @companySearch
