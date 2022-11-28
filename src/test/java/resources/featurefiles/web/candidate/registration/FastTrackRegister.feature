@@ -49,7 +49,7 @@ Feature: Candidate Registration FastTrackRegister
     Then I should see text "Password is required"
     And  I should not see "Resume is required" text
 
-  @fastTrackFromCompanyProfile @ReleaseRegression1
+  @fastTrackFromCompanyProfile @ReleaseRegression1 @MobileChrome
   Scenario: Register as a new candidate from company profile
     When I am on page "/company/1478/acme-company-no-1728-jobs"
     And  I click on Apply now Link
