@@ -53,7 +53,7 @@ Feature: Client Contact ClientHelpCenterNavBar
     And  I click on "Download User Manual"
     And  I wait for "1" seconds
     Then I click on "Download" with native
-    Then I should be able to see in browser URL "Downloads Rl User Manual Pdf"
+    #Then I should be able to see in browser URL "Downloads Rl User Manual Pdf"
 
 
 
