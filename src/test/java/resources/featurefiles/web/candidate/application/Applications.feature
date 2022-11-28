@@ -1,7 +1,7 @@
 @CandidateApplications @Regression @Web @Candidate1 @Candidate
 Feature: Candidate Application Applications
 
-  @candidateWithNoApplication @MobileChrome
+  @candidateWithNoApplication
   Scenario: Candidate with no application
     Given  I navigate to page "Candidate Registration"
     And    I register as a new candidate resume check
@@ -9,7 +9,7 @@ Feature: Candidate Application Applications
     And    I should see text H one tag "My Applications"
     And    I should see text "It can take a few moments for your job applications to appear – please check back shortly"
 
-  @candidateWithApplicationViewApplication @ReleaseRegression1 @MobileChrome
+  @candidateWithApplicationViewApplication @ReleaseRegression1
   Scenario: Candidate with application view application
     Given  I navigate to page "Candidate Registration"
     And    I register as a new candidate resume check
@@ -26,7 +26,7 @@ Feature: Candidate Application Applications
     And    I click on View button
     Then   I should see text "The Vacancy you Applied for"
 
-  @candidateWithOneApplicationViewJob @MobileChrome
+  @candidateWithOneApplicationViewJob
   Scenario: Candidate with one application view job
     Given  I navigate to page "Candidate Registration"
     And    I register as a new candidate resume check

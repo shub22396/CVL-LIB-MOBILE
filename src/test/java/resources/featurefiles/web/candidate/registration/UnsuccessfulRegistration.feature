@@ -4,7 +4,7 @@
 @CandidateRegistrationValidation @Regression @Web @Candidate5 @Candidate
 Feature: Candidate Registration UnsuccessfulRegistration
 
-  @candidateInvalidRegistrationValidationMessage     @MobileChrome
+  @candidateInvalidRegistrationValidationMessage
   Scenario: Unsuccessful candidate registration field validation
     Given I navigate to page "Candidate Registration"
     When  I click on register button
@@ -18,7 +18,7 @@ Feature: Candidate Registration UnsuccessfulRegistration
     And I should see text "City, state is required"
     And   I should see text "Resume is required"
 
-  @candidateInvalidRegistration @ReleaseRegression1    @MobileChrome
+  @candidateInvalidRegistration @ReleaseRegression1
   Scenario Outline: Unsuccessful candidate registration
     Given I navigate to page "Candidate Registration"
     When  I enter email address "<Email>"
@@ -39,14 +39,14 @@ Feature: Candidate Registration UnsuccessfulRegistration
       | Email | FirstName | LastName | Password | JobTitle     | ZipCode   | Resume            |
       | test  | Test123   | Test123  | test     | Test Analyst | 123456789 | Project Structure Image|
 
-  @resumeReviewValidationOnRegistration      @MobileChrome
+  @resumeReviewValidationOnRegistration
   Scenario: Verify resume review is displayed on registration after a upload
     Given I navigate to page "Candidate Registration"
     When  I should not see "Send me my free professional resume review" text
     And   I upload resume "Test Cv"
     Then  I should see text "Send me my free professional resume review"
 
-  @verifyRegistrationTerms     @MobileChrome
+  @verifyRegistrationTerms
   Scenario: Verify that the privacy policy and terms and conditions links are displayed on registration
     Given I navigate to page "Candidate Registration"
     And   I click on privacy policy link
@@ -57,21 +57,21 @@ Feature: Candidate Registration UnsuccessfulRegistration
     Then  I should be able to see in browser URL "Terms"
     And   I should see text "Resume-Library Terms & Conditions"
 
-  @registrationValidationResumeUndersize     @MobileChrome
+  @registrationValidationResumeUndersize
   Scenario: Verify resume is large enough on resume upload
     Given I navigate to page "Candidate Registration"
 #   And   I upload resume "Resume Undersized Text File"
     And   I upload different format resumes "Resume Undersized Text File"
     Then  I should see text "This file is less than 1kb or bigger than 2mb"
 
-  @registrationValidationResumeOversize    @MobileChrome
+  @registrationValidationResumeOversize
   Scenario: Verify resume is small enough on resume upload
     Given I navigate to page "Candidate Registration"
 #    And   I upload resume "Resume Oversized"
     And   I upload different format resumes "Resume Oversized"
     Then  I should see text "This file is less than 1kb or bigger than 2mb"
 
-  @registrationValidationOfInvalidEmailAddressAndPassWord    @MobileChrome
+  @registrationValidationOfInvalidEmailAddressAndPassWord
   Scenario Outline: Validation of Email Address
     Given I navigate to page "Candidate Registration"
     When  I enter email address only "<Email>"
