@@ -121,7 +121,7 @@ public class ProductsPage extends Utility {
 
     public void clickViewButtonToSeeInvoice() {
         logger.info("Click view button to see invoice");
-        clickOnElement(ViewInvoiceBtn);
+        clickOnElementWithJS(ViewInvoiceBtn);
     }
 
     public void clickPayNowButton() {
