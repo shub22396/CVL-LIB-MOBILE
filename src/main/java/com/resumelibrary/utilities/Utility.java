@@ -48,7 +48,7 @@ public abstract class Utility extends DriverController {
     public Utility() {
         PageFactory.initElements(getThreadDriver(), this);
     }
-
+  public  static Map<String,String> deviceNames=new HashMap<>();
     private static final Logger logger = LogManager.getLogger(Utility.class);
 
     /* Load the project URL and reload the page if its 502 bad gateway */
@@ -212,7 +212,7 @@ public abstract class Utility extends DriverController {
 
     /* Returning the current page url */
     public String getPresentURL() {
-        return ((RemoteWebDriver) getThreadDriver()).getCurrentUrl();
+        return ((AndroidDriver) getThreadDriver()).getCurrentUrl();
     }
 
     /* Returning the current browser name and version */
