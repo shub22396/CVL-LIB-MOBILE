@@ -1,7 +1,7 @@
 @HideExpiredApplications @Regression @Web @Candidate1 @Candidate
 Feature: Candidate Application HideExpiredApplications
 
-  @hideExpiredApplication @ReleaseRegression1 @MobileChrome
+  @hideExpiredApplication @ReleaseRegression1
   Scenario: Test 'Hide Expired Applications' checkbox
     Given  I login as a candidate
     When  I navigate to page "Candidate Myapplications"

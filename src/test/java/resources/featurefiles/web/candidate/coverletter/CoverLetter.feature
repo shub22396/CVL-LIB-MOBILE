@@ -1,7 +1,7 @@
 @CoverLetter @Regression @Web @Candidate2 @Candidate
 Feature: Candidate CoverLetter CoverLetter
 
-  @verifyCoverLetterPage @MobileChrome
+  @verifyCoverLetterPage
   Scenario: Verify some elements
     Given  I login as a candidate
     When   I navigate to page "Candidate Cover Letter"
@@ -31,7 +31,7 @@ Feature: Candidate CoverLetter CoverLetter
     Then   I click on edit profile link
     And    I should be on page "Candidate My Profile"
 
-  @updateCoverLetter @ReleaseRegression1 @MobileChrome
+  @updateCoverLetter @ReleaseRegression1
   Scenario: Update cover letter and verify success message
     Given  I login as a candidate
     When   I navigate to page "Candidate Cover Letter"
@@ -42,7 +42,7 @@ Feature: Candidate CoverLetter CoverLetter
     Then   I click on save changes button
     And    I should see text "Cover letter saved successfully"
 
-  @jobApplyAddCoverLetter @ReleaseRegression1  @MobileChrome  #need fix Candidate Registration
+  @jobApplyAddCoverLetter @ReleaseRegression1
   Scenario: Add cover letter when applying for email type job
     Given  I navigate to page "Candidate Registration"
     And    I register as a new candidate resume check

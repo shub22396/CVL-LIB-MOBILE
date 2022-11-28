@@ -4,7 +4,7 @@ Feature: Candidate Home Home
   Background: Navigate to  page
     Given  I am on page "/"
 
-  @jobSearchFromHomePage @MobileChrome
+  @jobSearchFromHomePage
   Scenario Outline: Verify Home Page
     Then  I should not see search jobs navigation bar button
     And   I should see text H one tag "Find a job"
@@ -22,7 +22,7 @@ Feature: Candidate Home Home
       | Title | Location | Distance | Distance1 |   Title1 |
       | Sales | 10001    | 20 Miles |   20      |   sales  |
 
-  @homePageRecentSearches @MobileChrome
+  @homePageRecentSearches
   Scenario: Search for a job and verify that recent searches are displayed on home page
     When  I navigate to page "Jobs Sales"
     #Then  I am on page "/"
@@ -38,7 +38,7 @@ Feature: Candidate Home Home
     Then  I click on "See more job matches"
     And   I should be able to see in browser URL "Jobs Sales"
 
-  @homeClearRecentSearches @MobileChrome
+  @homeClearRecentSearches
   Scenario: Search for a job and verify clear recent searches
     When  I navigate to page "Jobs Sales"
     #Then  I am on page "/"
@@ -51,7 +51,7 @@ Feature: Candidate Home Home
     And   I confirm browser popup
     Then  I should not see "Recent Searches"
 
-  @homePageOtherLinksPart1 @MobileChrome
+  @homePageOtherLinksPart1
   Scenario: Validate other links on home page part1
     And   I should see text "Upload your Resume"
     And   I should see text "Employers"
@@ -90,7 +90,7 @@ Feature: Candidate Home Home
     When  I click on "Employers"
     Then  I should be able to see in browser URL "/hiring"
 
-  @homePageOtherLinksPart2 @MobileChrome
+  @homePageOtherLinksPart2
   Scenario: Validate other links and buttons on home page part2
     And   I should see text H two tag "Featured Companies"
     And   I click on "View all companies"
@@ -117,7 +117,7 @@ Feature: Candidate Home Home
     Then  I should be on page "Career Advice"
     And   I should see text H one tag "Career Advice"
 
-  @homePageOtherLinksPart3 @MobileChrome
+  @homePageOtherLinksPart3
   Scenario: Validate other links and buttons on home page part3
     And   I should see text H two tag "Register your Resume"
     And   I should see text H two tag "Job Alerts"
@@ -152,11 +152,11 @@ Feature: Candidate Home Home
     And   I should see text H one tag "Search and Apply to Jobs On-the-Go!"
     And   I should see text p tag "Stay on top of the freshest job opportunities in your industry with " and verify message "Stay on top of the freshest job opportunities in your industry with Resume-Library's Job Search App - available free on mobile and tablet devices."
 
-  @homePageResumeLibraryLogo @homePage @MobileChrome
+  @homePageResumeLibraryLogo @homePage
   Scenario: Validate resume library logo on home page
     Then  I should see resume library logo
 
-  @homePageDropdowns @MobileChrome
+  @homePageDropdowns
   Scenario Outline: Validate the link Text under Jobs by Industry, Jobs by State, Jobs by City and Popular Jobs tabs on HomePage
     And   I should see text "Jobs by Industry"
     And   I click on "Jobs by Industry"
@@ -171,7 +171,7 @@ Feature: Candidate Home Home
       |   JobsByIndustry     | JobsByState  | JobsByCity | PopularJobs              |
       |   Manufacturing      | South Dakota | Denver, CO | Administrative Assistant |
 
-  @homePageHeaderAndDropdownLinksAndProfileIcon @MobileChrome
+  @homePageHeaderAndDropdownLinksAndProfileIcon
   Scenario: Home Page Header Links and Candidate Dropdown links and also Profile Icon navigations
     Given I login as a candidate
     And   I click on mobile header button

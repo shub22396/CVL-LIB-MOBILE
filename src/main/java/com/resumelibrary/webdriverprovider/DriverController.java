@@ -24,7 +24,7 @@ public class DriverController extends CloudDriverProvider implements Constants {
         PropertyConfigurator.configure(System.getProperty("user.dir") + LOG_PROPERTY_FILE_PATH);
     }
 
-    public void getDriver(String browserName, String machineName, Map threadMap, String testName) {
+    public void getDriver(String browserName, String machineName, Map threadMap, String testName,String deviceName) {
 
         switch (browserName) {
             case "chrome":
@@ -73,7 +73,7 @@ public class DriverController extends CloudDriverProvider implements Constants {
                 String isRealDeviceVal = WebURLHelper.getParameterFromEnvOrSysParam("ISREALDEVICE", isRealDevice);
                 if(isRealDeviceVal.equalsIgnoreCase("yes")) {
                     logger.info("[--->isRealDeviceVal:"+isRealDeviceVal+"<---]");
-                    androidRealMobileWeb(threadMap, testName);
+                    androidRealMobileWeb(threadMap, testName,deviceName);
                 }else{
                     logger.info("[--->isRealDeviceVal:"+isRealDeviceVal+"<---]");
                     androidMobileWeb(threadMap, testName);
@@ -138,4 +138,5 @@ public class DriverController extends CloudDriverProvider implements Constants {
     public String getConstantsURL(String URL) {
         return null;
     }
+
 }

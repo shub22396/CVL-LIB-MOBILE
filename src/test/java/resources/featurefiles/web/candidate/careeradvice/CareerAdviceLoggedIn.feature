@@ -4,7 +4,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
   Background: CareerAdvice login page
     Given   I login as a candidate
 
-  @loadCareerAdvice @MobileChrome
+  @loadCareerAdvice
   Scenario: Load Career Advice
     Given  I navigate to page "Career Advice"
     Then   I should see "Career Advice" on the page
@@ -14,7 +14,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
     And    I should see text H three tag "Jobs By Location"
     And    I should see text H three tag "Popular jobs"
 
-  @careerAdviceCategories @MobileChrome
+  @careerAdviceCategories
   Scenario: Career advice categories are shown
     Given  I navigate to page "Career Advice Getting Started"
     And    I should see text "At Work"
@@ -71,7 +71,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
 #    When   I click on Search Jobs link
 #    Then   I should be on page "/search-jobs"
 
-  @CareerAdviceNavigationLinks @MobileChrome
+  @CareerAdviceNavigationLinks
   Scenario:As a logged in user I see the career-advice drop navigation has links
     Given I navigate to page "Career Advice"
     Then  I should see text "Home"
@@ -125,7 +125,7 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
     And   I click on "COVID-19 Advice" career advice links
     Then  I should be on page "Career Advice Covid 19 Advice"
 
-  @CareerAdviceLoggedInScrollUpDown @MobileChrome
+  @CareerAdviceLoggedInScrollUpDown
   Scenario: As a logged in user on the Career Advice page I should be able to use scroll up button
     Given  I navigate to page "Career Advice"
     Then   I scroll down 0,5000
@@ -141,14 +141,14 @@ Feature: Candidate CareerAdvice CareerAdviceLoggedIn
     And    I should see text "Job Alerts"
     And    I should see text "Saved Jobs"
 
-  @CareerAdvice3AdvertsLoggedIn @MobileChrome
+  @CareerAdvice3AdvertsLoggedIn
   Scenario: As a logged in user I see the career-advice page has 3 adverts
     Given I navigate to page "Career Advice"
     Then  I should see RL Career Advice Dyn Banner
    # And   I should see RL Career Advice 160x600
     And   I should see blog-fb-banner
 
-  @CareerAdviceResumeReviewLoggedIn  @MobileChrome
+  @CareerAdviceResumeReviewLoggedIn
   Scenario:As a logged in user who has uploaded a resume but not had it reviewed
     When  I navigate to page "Candidate My Profile"
     And   I upload resume "Test Cv"

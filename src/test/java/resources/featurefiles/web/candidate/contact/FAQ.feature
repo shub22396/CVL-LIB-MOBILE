@@ -1,7 +1,7 @@
 @CandidateFAQ @Regression @Web @Candidate2 @Candidate
 Feature: Candidate Contact FAQ
 
-  @candidateDeleteAccountFAQ @MobileChrome
+  @candidateDeleteAccountFAQ
   Scenario Outline: As a candidate I search for a frequently asked question to find out how to delete my account.
     Given I navigate to page "Faq"
     And   I should see text H one tag "How Can We Help You?"
