@@ -150,18 +150,18 @@ public class JobSearch extends Utility {
     }
 
     @And("the distance field should contain {string}")
-    public void theDistanceFieldShouldContain(String text) {
-        Assert.assertEquals(new JobSearchPage().getDistanceAttributeValue(), text);
+    public void theDistanceFieldShouldContain(String distance) {
+        Assert.assertTrue(new JobSearchPage().getDistanceAttributeValue(distance));
     }
 
     @And("the salary min field should contain {string}")
-    public void theSalaryMinFieldShouldContain(String text) {
-        Assert.assertEquals(new JobSearchPage().getSalaryMinAttributeValue(), text);
+    public void theSalaryMinFieldShouldContain(String salMin) {
+        Assert.assertTrue(new JobSearchPage().getSalaryMinAttributeValue(salMin));
     }
 
     @And("the salary max field should contain {string}")
-    public void theSalaryMaxFieldShouldContain(String text) {
-        Assert.assertEquals(new JobSearchPage().getSalaryMaxAttributeValue(), text);
+    public void theSalaryMaxFieldShouldContain(String salMax) {
+        Assert.assertTrue(new JobSearchPage().getSalaryMaxAttributeValue(salMax));
     }
 
     @And("the job type field should contain {string}")
