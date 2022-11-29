@@ -25,7 +25,7 @@ Feature: Candidate JobSearch SearchJobsLoggedOut
     And   I fill in search title field with "sales"
     And   I fill in search location with "New York City, NY"
     When  I click on Find Jobs search button
-    Then  I should be able to see in browser URL "Jobs Sales In New York City Ny Pd 15 Annual Salary From 50000 Annual Salary To 70000 Job Type Permanent"
+    Then  I should be able to see in browser URL "Jobs Sales In New York City Ny R 15 Annual Salary From 50000 Annual Salary To 70000 Job Type Permanent"
     And   I should see text H one tag "Sales jobs"
    # And   I should see text "Nearby Towns"
 
