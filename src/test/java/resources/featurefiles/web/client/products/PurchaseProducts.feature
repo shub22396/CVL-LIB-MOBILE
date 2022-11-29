@@ -114,9 +114,6 @@ Feature: Client Products PurchaseProducts
   Scenario: Verify Purchase History
     When    I navigate to page "Client Purchase History"
     Then    I should see text "Purchase History"
-    When    I click on "Purchase History"
-    Then    I should be able to see in browser URL "Client Purchase History"
-    Then    I should see text "Purchase History"
     And     I should see text p tag "Bank transfers and failed transactions will not be displayed" and verify message "Bank transfers and failed transactions will not be displayed. For more information or help with your purchase history please contact your Client Response Coordinator."
     And     I should see text "Date"
     And     I should see text "Invoice No"
@@ -125,8 +122,8 @@ Feature: Client Products PurchaseProducts
     And     I should see text "Price"
     And     I should see text "Actions"
     When    I click View button to see invoice
-    And     I switch tab
-    Then    the url should match "Client Purchase History View"
+    Then    I should see download file "Resume-Library Invoice"
+#    Then    the url should match "Client Purchase History View"
 
   @PurchaseHistoryPagination
   Scenario:My Purchase History Page Pagination
