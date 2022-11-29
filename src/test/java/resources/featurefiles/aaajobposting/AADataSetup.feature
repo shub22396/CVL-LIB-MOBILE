@@ -36,7 +36,7 @@ Feature: Data setup for candidate tests
     And    I click on preview button
     And    I click on post job button
     And    I click on post job submit button
-    Then   I should be able to see in browser URL "Client Jobs New Job Posted 1"
+    Then   I should be able to see in browser URL "Client Jobs New Job Posted"
     And    I should see text p tag "Your job can now be seen in matching search results." and verify message "Job Posted Successfully! Your job can now be seen in matching search results."
     And    I should see text "Job Posted Successfully!"
     And    I am on page "Logout" and I should see browser URL "Hiring"
@@ -54,7 +54,7 @@ Feature: Data setup for candidate tests
     And   I click on preview button
     And   I click on post job button
     And   I click on post job submit button
-    Then  I should be able to see in browser URL "Client Jobs New Job Posted 1"
+    Then  I should be able to see in browser URL "Client Jobs New Job Posted"
     And   I should see text "Job Posted Successfully!"
     And   I logout the client
 
@@ -75,7 +75,7 @@ Feature: Data setup for candidate tests
     And   I click on preview button
     And   I click on post job button
     And   I click on post job submit button
-    Then  I should be able to see in browser URL "Client Jobs New Job Posted 1"
+    Then  I should be able to see in browser URL "Client Jobs New Job Posted"
     And   I should see text "Job Posted Successfully!"
     And   I should see text p tag "Your job can now be seen in matching search results." and verify message "Job Posted Successfully! Your job can now be seen in matching search results."
     And   I am on page "Logout" and I should see browser URL "Hiring"

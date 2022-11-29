@@ -102,12 +102,31 @@ public class JobSearchPage extends Utility {
 
     public void selectDistance(String distance) {
         logger.info("Select the radius from dropdown is : " + distance);
+        waitUntilElementToBeClickable(Radius,20);
         selectByValueFromDropDown(Radius, distance);
     }
 
-    public String getDistanceAttributeValue() {
+    public boolean getDistanceAttributeValue(String distance) {
         logger.info("Verifying distance value " + SearchResultDistance);
-        return SearchResultDistance.getAttribute("value");
+        waitUntilElementIsLocated(SearchResultDistance,20);
+        int count=0;
+        List<WebElement> allOptions = getThreadDriver().findElements(By.xpath("//select[@id='header_radius']//option"));
+        for(WebElement option : allOptions) {
+            logger.info(option.getAttribute("value"));
+            if (option.getAttribute("value").equals(distance)) {
+                count++;
+                break;
+            }
+        }
+        if(count==0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+        //return SearchResultDistance.getAttribute("value");
     }
 
     public void clickButtonSearchJobs() {
@@ -201,19 +220,56 @@ public class JobSearchPage extends Utility {
         selectByValueFromDropDown(SalaryMin, salMin);
     }
 
-    public String getSalaryMinAttributeValue() {
+    public boolean getSalaryMinAttributeValue(String salMin) {
         logger.info("Verifying salary min value " + SalaryMin);
-        return SalaryMin.getAttribute("value");
+//        waitUntilElementIsLocated(SalaryMin, 30);
+//        return SalaryMin.getAttribute("value");
+        int count=0;
+        List<WebElement> allOptions = getThreadDriver().findElements(By.xpath("//select[@name='annual_salary_from']//option"));
+        for(WebElement option : allOptions) {
+            logger.info(option.getAttribute("value"));
+            if (option.getAttribute("value").equals(salMin)) {
+                count++;
+                break;
+            }
+        }
+        if(count==0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     public void selectMaxSalary(String salMax) {
         logger.info("select the option max salary :" + salMax);
-        selectByValueFromDropDown(SalaryMax, salMax);
+        //selectByValueFromDropDown(SalaryMax, salMax);
+        JavascriptExecutor jse = (JavascriptExecutor) getThreadDriver();
+        jse.executeScript("arguments[0].value="+salMax, SalaryMax);
     }
 
-    public String getSalaryMaxAttributeValue() {
+    public boolean getSalaryMaxAttributeValue(String salMax) {
         logger.info("Verifying salary max value " + SalaryMax);
-        return SalaryMax.getAttribute("value");
+      //  return SalaryMax.getAttribute("value");
+        int count=0;
+        List<WebElement> allOptions = getThreadDriver().findElements(By.xpath("//select[@name='annual_salary_to']//option"));
+        for(WebElement option : allOptions) {
+            logger.info(option.getAttribute("value"));
+            if (option.getAttribute("value").equals(salMax)) {
+                count++;
+                break;
+            }
+        }
+        if(count==0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     public void selectJobType(String jobType) {

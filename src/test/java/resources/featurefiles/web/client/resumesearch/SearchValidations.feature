@@ -51,8 +51,8 @@ Feature: Client ResumeSearch SearchValidations
     And   I click on Search Resumes
     Then  I should see "No Search Criteria"
     And   I click on "Close"
-    And   I select the option "100" from dropdown with id "distance"
     And   I enter search builder keywords text area with "sales"
+    And   I select the option "100" from dropdown with id "distance"
     And   I click on Search Resumes
     Then  I should see text "No location selected - a distance is not valid"
     And   I click on "Close"

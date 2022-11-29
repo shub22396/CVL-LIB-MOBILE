@@ -3,6 +3,7 @@ package com.resumelibrary.webtest.candidate;
 import com.resumelibrary.utilities.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -19,7 +20,7 @@ public class HomePage extends Utility {
     WebElement MoreSearchOptionsLink;
     @FindBy(id = "annual_salary_from")
     WebElement SalaryMinHomePage;
-    @FindBy(id = "annual_salary_to")
+    @FindBy(name = "annual_salary_to")
     WebElement SalaryMaxHomePage;
     @FindBy(id = "job_type")
     WebElement JobTypeDropdownHomePage;
@@ -71,11 +72,15 @@ public class HomePage extends Utility {
     public void selectSalaryMinFromDropdown(String salMin) {
         logger.info("Selected salary min from dropdown " + salMin);
         selectByValueFromDropDown(SalaryMinHomePage, salMin);
+
     }
 
     public void selectSalaryMaxFromDropdown(String salMax) {
         logger.info("Selected salary max from dropdown " + salMax);
-        selectByValueFromDropDown(SalaryMaxHomePage, salMax);
+        waitUntilElementToBeClickable(SalaryMaxHomePage,20);
+       // selectByValueFromDropDown(SalaryMaxHomePage, salMax);
+        JavascriptExecutor jse = (JavascriptExecutor) getThreadDriver();
+        jse.executeScript("arguments[0].value="+salMax, SalaryMaxHomePage);
     }
 
     public void selectJobTypeFromDropdown(String jobType) {
