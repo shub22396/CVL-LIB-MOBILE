@@ -1,4 +1,4 @@
-@RecentlyAppliedTab @Regression @Web @Candidate4 @Candidate
+@RecentlyAppliedTab @Regression @Web  @Candidate
 Feature: Candidate Account RecentlyApplied
 
   Background: Login as a new candidate

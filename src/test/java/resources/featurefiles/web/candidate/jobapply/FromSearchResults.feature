@@ -1,4 +1,4 @@
-@JobApplySearchResults @Regression @Web @Candidate3 @Candidate
+@JobApplySearchResults @Regression @Web  @Candidate
 Feature: Candidate JobApply FromSearchResults
 
   @jobApplySearchResultsLoggedOut

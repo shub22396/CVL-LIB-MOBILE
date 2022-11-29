@@ -1,4 +1,4 @@
-@RequestADemo @Regression @Web @Client6 @Traffic
+@RequestADemo @Regression @Web  @Traffic
 Feature: Client TrailDemo RequestADemo
 
   Background: Navigating to Request a Demo page

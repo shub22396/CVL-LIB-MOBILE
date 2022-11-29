@@ -1,4 +1,4 @@
-@EcommerceUnvalidatedClientProductsJourney @Regression @Web @Client1 @Recruiters  @MobileChrome
+@EcommerceUnvalidatedClientProductsJourney @Regression @Web  @Recruiters  @MobileChrome
 Feature: Client Ecommerce UnvalidatedClientProductsMenu
 
   Background: Register a new client with all details

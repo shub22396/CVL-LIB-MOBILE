@@ -1,4 +1,4 @@
-@HomePage @Regression @Web @Candidate2 @ReleaseRegression1 @Candidate
+@HomePage @Regression @Web  @ReleaseRegression1 @Candidate
 Feature: Candidate Home Home
 
   Background: Navigate to  page

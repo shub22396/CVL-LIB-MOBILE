@@ -1,4 +1,4 @@
-@AccountSavedResumes @Regression @Web @Client6 @Search @MobileChrome
+@AccountSavedResumes @Regression @Web  @Search @MobileChrome
 Feature: Client SavedResumes AccountSavedResumes
 
   Background: on Account Saved Resumes page

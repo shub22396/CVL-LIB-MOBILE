@@ -1,4 +1,4 @@
-@ClientRegistration @Regression @Web @Client4 @ReleaseRegression2 @Recruiters @MobileChrome
+@ClientRegistration @Regression @Web  @ReleaseRegression2 @Recruiters @MobileChrome
 Feature: Client Registration Registration
 
   @clientValidRegistration

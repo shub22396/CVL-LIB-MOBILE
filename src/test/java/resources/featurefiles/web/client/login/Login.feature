@@ -1,4 +1,4 @@
-@ClientLogin @Regression @Web @Client2 @Recruiters @MobileChrome
+@ClientLogin @Regression @Web  @Recruiters @MobileChrome
 Feature: Client Login Login
 
   @clientSuccessfulLogin @ReleaseRegression2

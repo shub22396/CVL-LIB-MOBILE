@@ -1,4 +1,4 @@
-@CandidateContact @Regression @Web @Candidate2 @Candidate
+@CandidateContact @Regression @Web  @Candidate
 Feature: Candidate Contact Contact
 
   Background: Candidate Contact page

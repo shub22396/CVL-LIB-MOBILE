@@ -1,4 +1,4 @@
-@JobViewBreadcrumb  @Regression @Web @Candidate3 @Traffic
+@JobViewBreadcrumb  @Regression @Web  @Traffic
 Feature: Candidate JobView JobViewBreadcrumbFormat
 
   @jobViewBreadcrumbFormat @ReleaseRegression1 @MobileChrome

@@ -1,4 +1,4 @@
-@ClientUnsuccessfulRegistration @Regression @Web @Client4 @Recruiters @MobileChrome
+@ClientUnsuccessfulRegistration @Regression @Web  @Recruiters @MobileChrome
 Feature: Client Registration UnsuccessfulRegistration
 
   @clientRegistrationValidation

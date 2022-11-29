@@ -1,4 +1,4 @@
-@ClientHelpVacancyEnhancement @Regression @Web @Client2 @Recruiters @MobileChrome
+@ClientHelpVacancyEnhancement @Regression @Web  @Recruiters @MobileChrome
 Feature: Client JobPosting VacancyEnhancements
 
   Background: Client Help Vacancy Enhancement

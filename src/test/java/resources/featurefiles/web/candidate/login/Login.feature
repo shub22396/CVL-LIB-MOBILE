@@ -1,4 +1,4 @@
-@CandidateLogin @Regression @Web @Candidate4 @Candidate
+@CandidateLogin @Regression @Web  @Candidate
 Feature: Candidate Login Login
 
   @loginAsExistingCandidate @login @ReleaseRegression1

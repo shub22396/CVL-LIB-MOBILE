@@ -1,4 +1,4 @@
-@JobView  @Regression @Web @Candidate3 @Traffic
+@JobView  @Regression @Web  @Traffic
 Feature: Candidate JobView JobView
 
   @jobViewSuccess @ReleaseRegression1 @MobileChrome

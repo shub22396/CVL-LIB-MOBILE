@@ -1,4 +1,4 @@
-@ClientAccountPage  @Regression @Web @Client1 @Recruiters @MobileChrome
+@ClientAccountPage  @Regression @Web  @Recruiters @MobileChrome
 Feature: Client Account ClientAccountModule
 
   Background: Client Account page Login

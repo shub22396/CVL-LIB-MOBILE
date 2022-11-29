@@ -1,4 +1,4 @@
-@RegisterAndApply  @Regression @Web @Candidate5 @Traffic
+@RegisterAndApply  @Regression @Web  @Traffic
 Feature: Candidate Registration RegisterApply
 
   @candidateRegisterApply @ReleaseRegression1 @MobileChrome

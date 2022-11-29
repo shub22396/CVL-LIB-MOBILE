@@ -1,4 +1,4 @@
-@MyUnlockedResumes @Regression @Web @Client4 @Recruiters @MobileChrome
+@MyUnlockedResumes @Regression @Web  @Recruiters @MobileChrome
 Feature: Client Others MyUnlockedResumes
 
   @myUnlockResumesAssertAndActions

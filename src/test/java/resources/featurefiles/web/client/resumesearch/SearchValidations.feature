@@ -2,7 +2,7 @@
   #1. Resume search builder form validation
   #2. Resume search basic form validation (default tab)
 
-@ResumeSearchForm @Regression @Web @Client5 @Search @MobileChrome
+@ResumeSearchForm @Regression @Web  @Search @MobileChrome
 Feature: Client ResumeSearch SearchValidations
 
   Background: On resume search page

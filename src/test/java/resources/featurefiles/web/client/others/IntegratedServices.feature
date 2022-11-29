@@ -1,4 +1,4 @@
-@IntegratedServices @Regression @Web @Client4 @Recruiters @MobileChrome
+@IntegratedServices @Regression @Web  @Recruiters @MobileChrome
 Feature: Client Others IntegratedServices
 
   Background: Navigating to Integrated Services page
