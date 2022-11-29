@@ -4,7 +4,7 @@ Feature: Candidate Registration QuickApply
   Background: Posting a quick apply job and then apply for that job as a candidate
     Given I login as a client
     When  I navigate to page "Job Post"
-    And   I enter job title "quick apply candidate job"
+      And   I enter job title "quick apply candidate job"
     And   I select "California" from state dropdown
     And   I enter city "90001"
     And   I enter salary min "10000"
@@ -17,7 +17,7 @@ Feature: Candidate Registration QuickApply
     And   I logout the client
     Then  I navigate to page "Jobs One Click Apply Candidate Job"
 
-  @quickApplyFromSearchResults @ReleaseRegression1
+  @quickApplyFromSearchResults @ReleaseRegression1 @MobileChrome
   Scenario Outline: Validate and quick apply from search results
     And   I click on apply now
     Then  I should see "Register & Quick Apply"
@@ -41,7 +41,7 @@ Feature: Candidate Registration QuickApply
       | FirstName  | LastName | Password |
       | Automation | Tester   | rltest01 |
 
-  @quickApplyFromJobView
+  @quickApplyFromJobView @MobileChrome
   Scenario Outline: Quick apply registration from job view
     And   I click on title of the job
     And   I switch tab
