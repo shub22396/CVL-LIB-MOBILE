@@ -33,7 +33,7 @@ Feature: Candidate JobAlert CreateJobAlert
     Then  I should see text "Create New Job Alert"
     And   I should see text "We've created a job alert based on your profile so you receive the latest matching jobs direct to your inbox." on the page
 
-  @newUserCreateAlertTwo
+  @newUserCreateAlertTwo @MobileChrome
   Scenario: New user create alert on /job-alerts page and update cover letter
     Given I navigate to page "Job Alerts"
     And   I fill the fields keywords with "Test Analyst" and location with "Texas City, TX"
@@ -50,7 +50,7 @@ Feature: Candidate JobAlert CreateJobAlert
     And   I click on save changes button
     And   I should see text "Cover letter saved successfully" on the page
 
-  @existingUserCreateAlert @ReleaseRegression1
+  @existingUserCreateAlert @ReleaseRegression1 @MobileChrome
   Scenario: Existing user create alert
     Given I navigate to page "Candidate Registration"
     And   I register as a new candidate
@@ -108,7 +108,7 @@ Feature: Candidate JobAlert CreateJobAlert
     And   I should see text p tag "To make your job search a little easier we've set up a Job Alert for you. We've also created a Resume-Library profile for you - " and verify message "To make your job search a little easier we've set up a Job Alert for you. We've also created a Resume-Library profile for you - complete your profile and be seen by top recruiters today!"
     And   I should see text "My Dashboard"
 
-  @jobAlertApplicationSuccess @ReleaseRegression1
+  @jobAlertApplicationSuccess @ReleaseRegression1 @MobileChrome
   Scenario: Add a job alert from application success page
     Given I navigate to page "Candidate Registration"
     And   I register as a new candidate
@@ -146,7 +146,7 @@ Feature: Candidate JobAlert CreateJobAlert
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert
 
-  @jobAlertLoginTwo
+  @jobAlertLoginTwo @MobileChrome
   Scenario: Job search (keyword+loc) and login as existing user via 'Get the latest Jobs with Job Alerts' icon (delete alert after creation)
     Given I navigate to page "Jobs Sales In Houston"
     And   I fill in jbe email one with "testers+candidate@resume-library.com"

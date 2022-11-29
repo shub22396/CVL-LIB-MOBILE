@@ -6,7 +6,7 @@
 @ModifyJobAlert @Regression @Web @Candidate2 @Traffic
 Feature: Candidate JobAlert ModifyJobAlert
 
-  @existingUserRunSearch @ReleaseRegression1
+  @existingUserRunSearch @ReleaseRegression1 @MobileChrome
   Scenario: Existing user run search
     Given I navigate to page "Candidate Registration"
     And   I register as a new candidate
@@ -24,7 +24,7 @@ Feature: Candidate JobAlert ModifyJobAlert
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert
 
-  @existingUserEditAlert @ReleaseRegression1
+  @existingUserEditAlert @ReleaseRegression1 @MobileChrome
   Scenario: Existing user Edit alert
     Given I navigate to page "Candidate Registration"
     And   I register as a new candidate
@@ -43,7 +43,7 @@ Feature: Candidate JobAlert ModifyJobAlert
     Then  I should see text "Are you sure you want to delete this Job Alert?" on alert popup
     And   I click on Yes, delete this alert
 
-  @existingUserSnoozeAlert @ReleaseRegression1
+  @existingUserSnoozeAlert @ReleaseRegression1 @MobileChrome
   Scenario: Existing user snooze alert
     Given I navigate to page "Candidate Registration"
     And   I register as a new candidate
@@ -64,7 +64,7 @@ Feature: Candidate JobAlert ModifyJobAlert
     And   I click on Yes, delete this alert
     And   I should see text "Job Alerts"
 
-  @JobAlertsMatchingJobs @ReleaseRegression1
+  @JobAlertsMatchingJobs @ReleaseRegression1 @MobileChrome
   Scenario: Edit Job Alert and Check for Matching Jobs
     Given I navigate to page "Candidate Registration"
     And   I register as a new candidate

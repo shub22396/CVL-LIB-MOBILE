@@ -13,6 +13,7 @@ Feature: Candidate CareerAdvice CareerAdviceHeadersFootersLoggedIn
     Then   I should be on "My Dashboard" page
 
   @CareerAdviceNavigateHeaderLoggedIn
+  Scenario: Navigation header for logged in user
     Given  I navigate to page "Career Advice"
     Then   I should see resume Library header logo
     When   I click on the logged in RL header logo
