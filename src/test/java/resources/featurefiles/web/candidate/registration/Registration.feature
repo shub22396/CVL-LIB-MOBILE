@@ -4,10 +4,8 @@ Feature: Candidate Registration Registration
   @candidateValidRegistration @ReleaseRegression1
   Scenario Outline: Register a new candidate with all valid details
     Given I am on home page
-#    And I click on mobile header button
-#    When  I click on Register button
-   # Then  I should be on page "Candidate Registration"
     And I navigate to page "Candidate Registration"
+   Then  I should be on page "Candidate Registration Page"
     When  I enter email address "<Email>"
     And   I enter first name "<FirstName>"
     And   I enter last name "<LastName>"
@@ -17,7 +15,7 @@ Feature: Candidate Registration Registration
     And   I upload resume "<Resume>"
     And I wait for "4" seconds
     And   I click on register button
-  #  Then  I should be on page "Candidate Registration"
+    Then  I should be on page "Candidate Registration Page"
     When  I enter phone number "<Phone>"
     And   I enter desired job title "<DesiredJobTitle>"
     And   I select job type "<JobType>"
@@ -35,10 +33,8 @@ Feature: Candidate Registration Registration
   @CandidateInvalidRegistration1
   Scenario Outline: Register page 1 field validation
     Given I am on home page
-#    And  I click on mobile header button
-#    When  I click on Register button
-  #  Then  I should be on page "Candidate Registration"
     And I navigate to page "Candidate Registration"
+    Then  I should be on page "Candidate Registration Page"
     When  I enter email address "<Email>"
     And   I enter first name "<FirstName>"
     And   I enter last name "<LastName>"
@@ -59,10 +55,8 @@ Feature: Candidate Registration Registration
   @CandidateInvalidRegistration2
   Scenario Outline: Register page 2 field validation
     Given I am on home page
-#    And  I click on mobile header button
-#    When  I click on Register button
-  #  Then  I should be on page "Candidate Registration"
     And I navigate to page "Candidate Registration"
+    Then  I should be on page "Candidate Registration Page"
     When  I enter email address "<Email>"
     And   I enter first name "<FirstName>"
     And   I enter last name "<LastName>"

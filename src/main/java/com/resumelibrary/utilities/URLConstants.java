@@ -229,6 +229,7 @@ public class URLConstants implements Constants {
     public final String CANDIDATE_MY_PROFILE = "/candidate/my-profile";
     public final String CANDIDATE_MY_DASHBOARD = "/candidate/my-dashboard";
     public final String CANDIDATE_REGISTRATION = "/candidate/registration?country_id=US";
+    public final String CANDIDATE_REGISTRATION_PAGE = "/candidate/registration";
     public final String CANDIDATE_MYAPPLICATIONS = "/candidate/myapplications";
     public final String JOBS_NON_EXTERNAL_TEST_JOBS = "/jobs/nonexternaltestjob?pd=1";
     public final String CANDIDATE_SETTINGS = "/candidate/settings";
