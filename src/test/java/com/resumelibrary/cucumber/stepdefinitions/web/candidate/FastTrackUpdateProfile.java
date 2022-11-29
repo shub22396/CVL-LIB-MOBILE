@@ -83,7 +83,10 @@ public class FastTrackUpdateProfile extends Utility {
     public void iSelectTheOptionFromEligibilityStatus(String eligibilityStatus) {
         new FastTrackUpdateProfilePage().selectEligibilityStatus(eligibilityStatus);
     }
-
+    @When("I click {string} from eligibility status")
+    public void iclickTheOptionFromEligibilityStatus(String eligibilityStatus) {
+        new FastTrackUpdateProfilePage().clickEligibilityStatus(eligibilityStatus);
+    }
     @When("I fill in skills input with {string}")
     public void iFillTextFieldWhereIdIsWithAttributeValue(String value) {
         new FastTrackUpdateProfilePage().enterSkills(value);

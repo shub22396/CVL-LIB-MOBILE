@@ -4,6 +4,7 @@ import com.resumelibrary.utilities.Utility;
 import com.resumelibrary.utilities.WebURLHelper;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -145,7 +146,15 @@ public class FastTrackUpdateProfilePage extends Utility {
 
     public void selectEligibilityStatus(String eligibilityStatus) {
         logger.info("selected eligibility Status  : " + eligibilityStatus);
-        selectByVisibleText(EligibilityStatus, eligibilityStatus);
+        //selectByVisibleText(EligibilityStatus, eligibilityStatus);
+        EligibilityStatus.click();
+        clickOnElementUsingText(eligibilityStatus);
+    }
+    public void clickEligibilityStatus(String eligibilityStatus) {
+        logger.info("selected eligibility Status  : " + eligibilityStatus);
+       waitFor(2);
+        getThreadDriver().findElement(By.xpath("//*[@id='eligibility_status_radio_1_btn']")).click();
+
     }
 
     public void enterFirstName(String firstName) {

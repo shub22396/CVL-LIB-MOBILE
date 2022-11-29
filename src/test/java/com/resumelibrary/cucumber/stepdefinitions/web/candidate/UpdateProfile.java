@@ -10,10 +10,18 @@ import io.cucumber.java.en.When;
 
 public class UpdateProfile extends Utility {
 
+
+    @And("I click on close button in my skills and languages")
+    public void iClickOnClose() {
+        //Disabled this line because after entering text, we are already pressing the button somehow
+        new UpdateProfilePage().ClickOnClose();
+        waitFor(2);
+    }
+
     @And("I click on Save Changes Button on Update Profile Page")
     public void iClickOnSaveChangesButtonOnUpdateProfilePage() {
         //Disabled this line because after entering text, we are already pressing the button somehow
-        new UpdateProfilePage().SaveChangesButton();
+        new UpdateProfilePage().clickOnSaveChanges();
         waitFor(2);
     }
 

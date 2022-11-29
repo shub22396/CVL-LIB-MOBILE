@@ -81,7 +81,7 @@ Feature: Candidate JobAlert CreateJobAlert
     And   I should see text H one tag "Resume-Library Terms & Conditions"
     Then  I navigate to page "Job Alerts"
     And   I click on "Register now"
-    Then  I should be able to see in browser URL "Candidate Registration"
+    Then  I should be able to see in browser URL "Candidate Registration Page"
     And   I should see text H one tag "Upload Resume &"
     Then  I navigate to page "Job Alerts"
     And   I click on "Learn more"

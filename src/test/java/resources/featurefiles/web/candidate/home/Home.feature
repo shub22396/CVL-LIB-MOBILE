@@ -123,7 +123,7 @@ Feature: Candidate Home Home
     And   I should see text H two tag "Job Alerts"
     And   I should see text p tag "in minutes and let the jobs find you. With companies headhunting talent across 50 different industries, get noticed and get hired, fast!" and verify message "Upload your resume in minutes and let the jobs find you. With companies headhunting talent across 50 different industries, get noticed and get hired, fast!"
     And   I click on link text "Register Now"
-    Then  I should be on page "Candidate Registration"
+    Then  I should be on page "Candidate Registration Page"
     And   I should see text h one tags "Upload Resume & " and verify message "Upload Resume & Register Today"
     Then  I move backward one page
     And   I should see text p tag "Receive the latest" and verify message "Receive the latest jobs straight to your inbox with Job Alerts. They take seconds to set up and you can apply instantly to the best job matches!"

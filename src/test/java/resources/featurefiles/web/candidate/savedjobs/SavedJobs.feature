@@ -48,7 +48,7 @@ Feature: Candidate SavedJobs SavedJobs
 #    And    I click on Register button
     And I click on mobile header button
     When  I click on Register button
-    And    I should be on page "Candidate Registration"
+    And    I should be on page "Candidate Registration Page"
     Then   I should see text "You have saved jobs during your searches"
     And    I should see "Register below and these jobs will be saved into your account."
     Then   I register as a new candidate resume check

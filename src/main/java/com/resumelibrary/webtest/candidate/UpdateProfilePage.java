@@ -27,6 +27,8 @@ public class UpdateProfilePage extends Utility {
 //    @FindBy(xpath = "//*[@id=\"cand-modify-form\"]/div[8]/button")
     @FindBy(xpath ="//*[@id='cand-modify-form']/div[8]/button" )
     WebElement SaveChangesButton;
+    @FindBy(xpath ="//*[text()='Main Skills and Languages']/..//button" )
+    WebElement ClosesButton;
     @FindBy(id = "phone")
     WebElement PhoneNumber;
     @FindBy(id = "latest_job_title")
@@ -83,7 +85,14 @@ public class UpdateProfilePage extends Utility {
 
     public void SaveChangesButton() {
         logger.info("Click on Save Changes Button  " );
-        clickOnElement(SaveChangesButton);
+      //  clickOnElement(SaveChangesButton);
+        SaveChangesButton.click();
+        waitFor(2);
+    }
+    public void ClickOnClose() {
+        logger.info("Click on Close Button  " );
+
+        ClosesButton.click();
         waitFor(2);
     }
 
@@ -112,8 +121,8 @@ public class UpdateProfilePage extends Utility {
        // System.out.println("page source ------->"+((AndroidDriver) getThreadDriver()).getPageSource());
 
         ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
-        if (isElementDisplay(getThreadDriver().findElement(By.xpath("//*[@class='btn']")))) {
-            getThreadDriver().findElement(By.xpath("//*[@class='btn']")).click();
+        if (checkElementPresence("//*[@text='Save changes']")) {
+            getThreadDriver().findElement(By.xpath("//*[@text='Save changes']")).click();
         }
 
         ((AndroidDriver) getThreadDriver()).context("CHROMIUM");
@@ -209,10 +218,21 @@ public class UpdateProfilePage extends Utility {
 
     public void selectTheFieldDesiredSalaryFromWithOnModifyProfilePage(String desiredSalaryFrom) {
         selectByVisibleTextFromDropDown(DesiredSalaryFrom,desiredSalaryFrom);
+
+                DesiredSalaryFrom.click();
+
+               waitFor(3);
+              getThreadDriver().findElement(By.xpath("//select[@id='salary_expectation_from']/option[text()='"+desiredSalaryFrom+"']")).click();
+               waitFor(3);
+
     }
 
     public void selectTheFieldDesiredSalaryToWithOnModifyProfilePage(String desiredSalaryTo) {
-        selectByVisibleTextFromDropDown(DesiredSalaryTo,desiredSalaryTo);
+        DesiredSalaryTo.click();
+         waitFor(3);
+        getThreadDriver().findElement(By.xpath("//select[@id='salary_expectation_to']/option[text()='"+desiredSalaryTo+"']")).click();
+        waitFor(3);
+
     }
 
     public void selectTheFieldAuthorizationToWorkInTheUSWithOnModifyProfilePage(String authorizationToWorkInTheUS) {

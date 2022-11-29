@@ -51,7 +51,7 @@ Feature: Candidate CareerAdvice CareerAdviceHeadersFooters
     And    I should see hyperlink "Login"
     When   I navigate to page "Career Advice"
     And   I click on "Jobseekers"
-    Then   I click on "Register" in footer menu job seekers and verify url "Candidate Registration"
+    Then   I click on "Register" in footer menu job seekers and verify url "Candidate Registration Page"
     When   I navigate to page "Career Advice"
     And   I click on "Jobseekers"
     And    I click on "Search Jobs" in footer menu job seekers and verify url "Search Jobs"

@@ -7,8 +7,7 @@ Feature: Candidate ModifyProfile UpdateProfileDetails
    And   I register as a new candidate
     When  I navigate to page "Candidate My Profile"
     And   I click on "Job Requirements" edit button
-    #When  I select the option "I am authorized to work in this country for any employer" from eligibility status
-   # When  I click on "I am authorized to work in this country for any employer"
+    And   I click "I am authorized to work in this country for any employer" from eligibility status
     And   I click on "Personal Information" edit button
     And   I fill in the first name with "Resume-Library123" on modify profile page
     And   I should see text "Please enter a valid first name that does not contain numbers"
@@ -29,7 +28,6 @@ Feature: Candidate ModifyProfile UpdateProfileDetails
     And   I scroll down 0,1700
     And   I select the field desired salary from with "<Desired salary From>" on modify profile page
     And   I select the field desired salary to with "<Desired salary To>" on modify profile page
-  # And   I select the field authorization to work in the U.S with "<Authorization to work in the U.S.>" on modify profile page
     And   I select the field authorization to work in the U.S with "<Authorization to work in the U.S.>" on modify profile page for mobile
     And   I select the field willing to relocate with "<Willing to relocate>" on modify profile page
     And   I select the field drivers license with "<Drivers license>" on modify profile page
@@ -37,7 +35,7 @@ Feature: Candidate ModifyProfile UpdateProfileDetails
     And   I scroll down 0,1700
     And   I click on "Main Skills and Languages" edit button
     When  I fill in skills input with "first" on modify profile page
-    And   I click on Save Changes Button on Update Profile Page
+    And   I click on Save Changes Button on Modify Profile Page
 #    Then  I should be able to see in browser URL "Candidate My Profile"
     And   I should see text "Your details have been successfully updated"
     Then  Compare the "First name:" label Text With "<First Name>"
@@ -63,10 +61,10 @@ Feature: Candidate ModifyProfile UpdateProfileDetails
    Then  I register as a new candidate resume check
     And   I navigate to page "Candidate My Profile"
    And   I click on "Job Requirements" edit button
-  #  And   I select the option "I am authorized to work in this country for any employer" from eligibility status
-    #And   I click on Save Changes Button on Update Profile Page
+    And   I scroll down 0,600
+    And   I click "I am authorized to work in this country for any employer" from eligibility status
    And   I enter desired job title "NonExternalTestJob123" on modify profile page
-  And   I click on "Save changes" with JS
+    And   I click on Save Changes Button on Update Profile Page
     When  I navigate to page "Candidate My Profile"
     And   I click on "Main Skills and Languages" edit button
     When  I fill in skills input with "-" on modify profile page
@@ -94,13 +92,12 @@ Feature: Candidate ModifyProfile UpdateProfileDetails
    Then  I should see text "You may only have a maximum of 14 key skills"
     When  I reload the page
     And   I click on "Job Requirements" edit button
-#    And   I select the option "I am authorized to work in this country for any employer" from eligibility status
+   And   I click "I am authorized to work in this country for any employer" from eligibility status
    And   I click on "Main Skills and Languages" edit button
     When  I fill in skills input with "Sales" on modify profile page
     When  I fill in skills input with "Manager" on modify profile page
-   # And   I click on Save Changes Button on Modify Profile Page
-    #And   I click on "Save changes"
-    And   I click on Save changes button
+    And I click on close button in my skills and languages
+    And   I click on Save Changes Button on Update Profile Page
     Then  I should see text "Your details have been successfully updated"
 #
 #  @modifyProfileSetPassword #need to check weather its possble throuh mobile
