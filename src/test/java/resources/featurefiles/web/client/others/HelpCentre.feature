@@ -1,4 +1,4 @@
-@ClientHelpCentre @Regression @Web @Client3 @ReleaseRegression2 @Recruiters @MobileChrome
+@ClientHelpCentre @Regression @Web  @ReleaseRegression2 @Recruiters @MobileChrome
 Feature: Client Others HelpCentre
 
   Background: Client Login

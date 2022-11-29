@@ -1,4 +1,4 @@
-@CareerAdviceHeaderFooterLoggedIn @Regression @Web @Candidate1 @Candidate
+@CareerAdviceHeaderFooterLoggedIn @Regression @Web  @Candidate
 Feature: Candidate CareerAdvice CareerAdviceHeadersFootersLoggedIn
 
   Background: CareerAdvice login page

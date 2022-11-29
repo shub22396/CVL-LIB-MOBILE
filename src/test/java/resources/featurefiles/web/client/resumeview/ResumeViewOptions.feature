@@ -3,7 +3,7 @@
 #2. Other options (Download, Interview, Email, Update, Print, Report)
 # More Info: search and view candidate then unlock the candidate. Once unlocked, add tests for above mentioned 4 options by clicking those options and complete each journey
 
-@ResumeViewOptions @Regression @Web @Client6 @ReleaseRegression @Search @MobileChrome
+@ResumeViewOptions @Regression @Web  @ReleaseRegression @Search @MobileChrome
 Feature: Client ResumeView ResumeViewOptions
 
   Background: Resume Search

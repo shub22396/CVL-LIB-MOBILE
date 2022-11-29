@@ -1,4 +1,4 @@
-@ManageUsers @Regression @Web @Client2 @ReleaseRegression2 @Recruiters @MobileChrome
+@ManageUsers @Regression @Web  @ReleaseRegression2 @Recruiters @MobileChrome
 Feature: Client ManageUsers ManageUsers
 
   Background: Navigating to Manage User page

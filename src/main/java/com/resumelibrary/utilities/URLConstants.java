@@ -18,7 +18,6 @@ public class URLConstants implements Constants {
     public final String CLIENT_HELP_VIDEOS_SEARCH_BUILDER = "/client/help/videos/search-builder";
     public final String CLIENT_HELP_VIDEOS_VIDEO_INTERVIEWS = "/client/help/videos/video-interviews";
     public final String CLIENT_JOBS_NEW_JOB_POSTED = "/client/jobs/new_job_posted/";
-    public final String CLIENT_JOBS_NEW_JOB_POSTED_1 = "/client/jobs?new_job_posted=1";
     public final String CLIENT_RESUME_SEARCH_RESULTS = "/client/resume-search/results";
     public final String CLIENT_RESUME_VIEW_CANDIDATE_APPLICATION = "/client/resume/view-candidate-application/";
     public final String CLIENT_RESUME_VIEW_CANDIDATE_PROFILE = "/client/resume/view_candidate_profile/";
@@ -275,10 +274,10 @@ public class URLConstants implements Constants {
     public final String JOB_VIEW_12572172 = "/job/view/12572172";
     public final String JOB_VIEW_SALES_LEAD_FOR_37890455 = "/job/view/37890455/sales-lead";
     public final String JOB_VIEW_FOR_24146400 = "/job/view/24146400";
-    public final String JOBS_SALES_IN_BROOKLYN_NY_R_250_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_100000 = "/jobs/sales-in-brooklyn-ny?r=250&annual_salary_from=50000&annual_salary_to=100000";
-    public final String JOBS_SALES_IN_BROOKLYN_NY_R_250_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_100000_PAGE_NUMBER_2 = "/jobs/sales-in-brooklyn-ny?r=250&annual_salary_from=50000&annual_salary_to=100000&page_number=2";
-    public final String JOBS_SALES_IN_BROOKLYN_NY_R_250_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_100000_PAGE_NUMBER_3 = "/jobs/sales-in-brooklyn-ny?r=250&annual_salary_from=50000&annual_salary_to=100000&page_number=3";
-    public final String JOBS_SALES_IN_NEW_YORK_CITY_NY_PD_15_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_70000_JOB_TYPE_PERMANENT = "/jobs/sales-in-new-york-city-ny?pd=15&annual_salary_from=50000&annual_salary_to=70000&job_type=Permanent";
+    public final String JOBS_SALES_IN_BROOKLYN_NY_R_30_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_100000 = "/jobs/sales-in-brooklyn-ny?r=30&annual_salary_from=50000&annual_salary_to=100000";
+    public final String JOBS_SALES_IN_BROOKLYN_NY_R_30_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_100000_PAGE_NUMBER_2 = "/jobs/sales-in-brooklyn-ny?r=30&annual_salary_from=50000&annual_salary_to=100000&page_number=2";
+    public final String JOBS_SALES_IN_BROOKLYN_NY_R_30_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_100000_PAGE_NUMBER_3 = "/jobs/sales-in-brooklyn-ny?r=30&annual_salary_from=50000&annual_salary_to=100000&page_number=3";
+    public final String JOBS_SALES_IN_NEW_YORK_CITY_NY_R_15_ANNUAL_SALARY_FROM_50000_ANNUAL_SALARY_TO_70000_JOB_TYPE_PERMANENT = "/jobs/sales-in-new-york-city-ny?r=15&annual_salary_from=50000&annual_salary_to=70000&job_type=Permanent";
     public final String JOBS_WEB_JOB_IN_90001_PD_1_PAGE_NUMBER_2_PN_20 = "/jobs/web-job-in-90001?pd=1&page_number=2&pn=20";
     public final String JOBS_WEB_JOB_IN_90001_PD_1 = "/jobs/web-job-in-90001?pd=1";
     public final String JOBS_SALES_IN_BROOKLYN_NY_PAGE_NUMBER_2 = "/jobs/sales-in-brooklyn-ny?page_number=2";

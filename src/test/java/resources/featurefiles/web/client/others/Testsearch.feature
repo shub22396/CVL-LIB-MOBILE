@@ -1,4 +1,4 @@
-@TestSearch @Regression @Web @Client4 @Traffic
+@TestSearch @Regression @Web  @Traffic
 Feature: Client Others TestSearch
 
   Background: Test search form validation, registration

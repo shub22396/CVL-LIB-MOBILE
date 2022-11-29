@@ -1,4 +1,4 @@
-@ResumeAlertSent @Regression @Web @Client5 @Recruiters @MobileChrome
+@ResumeAlertSent @Regression @Web  @Recruiters @MobileChrome
 Feature: Client ResumeAlert ResumeAlertsSent
 
   Background:

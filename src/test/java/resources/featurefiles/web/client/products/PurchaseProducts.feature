@@ -5,7 +5,7 @@
     # 4. Testing decline transaction by invalid cvc
     # 5. Saving and deleting card details
 
-@PurchaseProducts @Regression @Web @Client4 @Recruiters @MobileChrome
+@PurchaseProducts @Regression @Web  @Recruiters @MobileChrome
 Feature: Client Products PurchaseProducts
 
   Background: Login as a client
@@ -122,7 +122,8 @@ Feature: Client Products PurchaseProducts
     And     I should see text "Price"
     And     I should see text "Actions"
     When    I click View button to see invoice
-    And     I should see download file "rl-user-manual"
+    Then    I should see download file "Resume-Library Invoice"
+#    Then    the url should match "Client Purchase History View"
 
   @PurchaseHistoryPagination
   Scenario:My Purchase History Page Pagination

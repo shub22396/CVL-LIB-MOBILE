@@ -5,6 +5,7 @@ import com.resumelibrary.utilities.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -85,7 +86,10 @@ public class ManageUsersPage extends Utility {
 
     public void selectToClient(String toValue) {
         logger.info("select value to client : " + toValue);
-        selectByValueFromDropDown(ToClient, toValue);
+        waitUntilElementToBeClickable(ToClient,30);
+      //  selectByVisibleTextFromDropDown(ToClient, toValue);
+        JavascriptExecutor jse = (JavascriptExecutor) getThreadDriver();
+        jse.executeScript("arguments[0].value="+toValue, ToClient);
     }
 
     public void enterAmount(String amount) {

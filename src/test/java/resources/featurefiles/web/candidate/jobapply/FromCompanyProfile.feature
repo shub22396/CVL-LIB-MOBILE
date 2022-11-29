@@ -1,4 +1,4 @@
-@JobApplyCompanyProfile @Regression @Web @Candidate3 @Candidate
+@JobApplyCompanyProfile @Regression @Web  @Candidate
 Feature: Candidate JobApply FromCompanyProfile
 
   #Scenario: A user navigates to a company profile while not logged into an account. The user clicks to apply for the

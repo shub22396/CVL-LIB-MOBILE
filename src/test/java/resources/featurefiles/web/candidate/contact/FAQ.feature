@@ -1,4 +1,4 @@
-@CandidateFAQ @Regression @Web @Candidate2 @Candidate
+@CandidateFAQ @Regression @Web  @Candidate
 Feature: Candidate Contact FAQ
 
   @candidateDeleteAccountFAQ

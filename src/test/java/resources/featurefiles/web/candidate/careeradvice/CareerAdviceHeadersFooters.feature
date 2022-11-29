@@ -1,4 +1,4 @@
-@CareerAdviceHeaderFooterLoggedOut @Regression @Web @Candidate1 @ReleaseRegression1 @Candidate
+@CareerAdviceHeaderFooterLoggedOut @Regression @Web  @ReleaseRegression1 @Candidate
 Feature: Candidate CareerAdvice CareerAdviceHeadersFooters
 
   @CareerAdviceNavigateHeader
@@ -51,7 +51,7 @@ Feature: Candidate CareerAdvice CareerAdviceHeadersFooters
     And    I should see hyperlink "Login"
     When   I navigate to page "Career Advice"
     And   I click on "Jobseekers"
-    Then   I click on "Register" in footer menu job seekers and verify url "Candidate Registration"
+    Then   I click on "Register" in footer menu job seekers and verify url "Candidate Registration Page"
     When   I navigate to page "Career Advice"
     And   I click on "Jobseekers"
     And    I click on "Search Jobs" in footer menu job seekers and verify url "Search Jobs"

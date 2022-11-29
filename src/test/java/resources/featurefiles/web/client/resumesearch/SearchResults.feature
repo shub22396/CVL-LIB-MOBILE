@@ -2,7 +2,7 @@
   #1. Resume search with returned resumes shows expected buttons (basic tab)
   #2. Resume search with Zero resumes shows expected buttons (basic tab)
 
-@ResumeSearchResults @Regression @Web @Client5 @Search @MobileChrome
+@ResumeSearchResults @Regression @Web  @Search @MobileChrome
 Feature: Client ResumeSearch SearchResults
 
   Background: On resume search page

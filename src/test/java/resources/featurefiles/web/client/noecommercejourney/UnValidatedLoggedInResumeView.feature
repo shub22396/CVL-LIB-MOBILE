@@ -1,4 +1,4 @@
-@NoEcommerceUnvalidatedLoggedInClient @Regression @Web @Client3 @ReleaseRegression2 @Recruiters @MobileChrome
+@NoEcommerceUnvalidatedLoggedInClient @Regression @Web  @ReleaseRegression2 @Recruiters @MobileChrome
 Feature: Client NoEcommerceJourney UnValidatedLoggedInResumeView
 
   Background:

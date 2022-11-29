@@ -1,4 +1,4 @@
-@NoEcomValidatedClientProductsPurchase @Regression @Web @Client1 @Recruiters  @MobileChrome
+@NoEcomValidatedClientProductsPurchase @Regression @Web  @Recruiters  @MobileChrome
 Feature: Client Ecommerce ValidatedEmailVerifiedClientProducts
 
   Background:

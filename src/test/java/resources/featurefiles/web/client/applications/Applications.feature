@@ -1,4 +1,4 @@
-@ClientApplications @Regression @Web @Client1 @Recruiters  @MobileChrome
+@ClientApplications @Regression @Web  @Recruiters  @MobileChrome
 Feature: Client Applications Applications
 
   @contentVerification

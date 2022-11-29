@@ -1,4 +1,4 @@
-@ManageJobs @Regression @Web @Client2 @Recruiters @MobileChrome
+@ManageJobs @Regression @Web  @Recruiters @MobileChrome
 Feature: Client JobPosting ManageJobs
 
   @jobListings @ReleaseRegression2

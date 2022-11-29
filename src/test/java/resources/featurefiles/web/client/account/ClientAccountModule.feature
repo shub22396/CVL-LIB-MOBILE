@@ -1,4 +1,4 @@
-@ClientAccountPage  @Regression @Web @Client1 @Recruiters @MobileChrome
+@ClientAccountPage  @Regression @Web  @Recruiters @MobileChrome
 Feature: Client Account ClientAccountModule
 
   Background: Client Account page Login
@@ -6,7 +6,6 @@ Feature: Client Account ClientAccountModule
 
   @clientAccountVerificationResumeSearch @ReleaseRegression2
   Scenario: Verify the resume search module content on account page
-    When   I navigate to page "Client Account"
     Then   I should see text "Unlocks Remaining" in "Resume Search" module
     And    I should see text "Search Resumes" in "Resume Search" module
     And    I should see text "Recent Searches" in "Resume Search" module
@@ -52,7 +51,6 @@ Feature: Client Account ClientAccountModule
 
   @clientAccountVerificationJobPostings @ReleaseRegression2
   Scenario: Verify the job Postings module content on account page
-    When    I navigate to page "Client Account"
     Then   I should see text H two tag "Job Postings"
     And    I should see text "Remaining" in "Job Postings" module
     And    I should see text "Post a Job" in "Job Postings" module
@@ -72,10 +70,9 @@ Feature: Client Account ClientAccountModule
 
   @clientAccountVerificationCompanyProfile
   Scenario: Verify the company profile module content on account page
-    Given  I navigate to page "Client Account"
     Then   I should see text H two tag "Company Profile"
     And    I should see text "View Company Profile" in "Company Profile" module
-    And    I should see text p tag "Complete" and verify message "% Complete"
+   # And    I should see text p tag "Complete" and verify message "% Complete"
     When   I click on "View Company Profile" in "Company Profile" module
     Then   I should be able to see in browser URL "Company"
     And    I should see text "Search Companies"
@@ -87,7 +84,6 @@ Feature: Client Account ClientAccountModule
 
   @clientAccountVerificationPopularProducts1
   Scenario: Verify the 'Featured Job Posting' in popular products module content on account page part 1
-    Given  I navigate to page "Client Account"
     Then   I should see text p tag "Live for 30 Days" and verify message "LIVE FOR 30 DAYS"
     And    I should see text "1-10 Jobs" on the page source
     And    I should see text "3 Months" on the page source
@@ -104,7 +100,6 @@ Feature: Client Account ClientAccountModule
 
   @clientAccountVerificationPopularProducts2
   Scenario: Verify the 'Featured Job Posting' in popular products module content on account page part 2
-    Given  I navigate to page "Client Account"
     Then   I should see text p tag "Choose the Duration" and verify message "CHOOSE THE DURATION"
     And    I should see text "Featured Job Posting" for plan "10+ Jobs" in "Popular Products" module
     And    I should see text "Complete control of your budgets" for plan "10+ Jobs" in "Popular Products" module
@@ -118,7 +113,6 @@ Feature: Client Account ClientAccountModule
 
   @clientAccountVerificationPopularProducts3
   Scenario: Verify the 'Featured Job Posting' in popular products module content on account page part 3
-    Given  I navigate to page "Client Account"
     And    I should see text "Resume Search" for plan "3 Months" in "Popular Products" module
     And    I should see text "Unlimited Resume Search and Views" for plan "3 Months" in "Popular Products" module
     And    I should see text "Access for your entire team" for plan "3 Months" in "Popular Products" module
@@ -131,7 +125,6 @@ Feature: Client Account ClientAccountModule
 
   @clientAccountVerificationFaq1
   Scenario: Verify the faq module content on account page part 1
-    Given  I navigate to page "Client Account"
     Then   I scroll down 1000,1000
     Then   I should see text "How can I edit my account details?"
     And    I should see text "How long will it take to validate my account?"
@@ -157,7 +150,6 @@ Feature: Client Account ClientAccountModule
 
   @clientAccountVerificationFaq2
   Scenario: Verify the faq module content on account page part 2
-    Given  I navigate to page "Client Account"
     When   I click on "How do I create a Resume Alert?"
     Then   I should be able to see in browser URL "Faq Recruiter Resume Search"
     And    I should see text "Log in to Resume-Library to view the 'Resume Alerts' menu. Click this, enter your criteria to the form and save your alert."
@@ -183,7 +175,6 @@ Feature: Client Account ClientAccountModule
 
   @clientAccountVerificationFaq3
   Scenario: Verify the faq module content on account page part 3
-    Given  I navigate to page "Client Account"
     And    I click on "Resume Alert Tips"
     Then   I should be able to see in browser URL "Client Help Alert Tips"
     And    I should see text H one tag "Resume Alert Tips"
@@ -205,7 +196,6 @@ Feature: Client Account ClientAccountModule
 
   @clientAccountVerificationVideoGuides
   Scenario: Verify the Video Guides Features module content on account page
-    Given  I navigate to page "Client Account"
     Then   I should see text "Video Guides" in "Video Guides" module
     And    I should see text "View Video Guides" in "Video Guides" module
     When   I click on "View Video Guides"
@@ -214,7 +204,6 @@ Feature: Client Account ClientAccountModule
 
   @clientAccountVerificationHiringInsights
   Scenario: Verify the hiring insights module content on account page
-    Given  I navigate to page "Client Account"
     Then   I should see text "Hiring Insights" in "Hiring Insights" module
     And    I should see text "Our employer blog, packed with useful articles on hiring advice, workplace insights, and job market reports." in "Hiring Insights" module
     And    I should see text "Go to Hiring Insights" in "Hiring Insights" module

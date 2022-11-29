@@ -1,4 +1,4 @@
-@ClientEmailPreferences @Regression @Web @Client6 @ReleaseRegression2 @Traffic
+@ClientEmailPreferences @Regression @Web  @ReleaseRegression2 @Traffic
 Feature: Client Settings ClientEmailPreferences
 
   Background: Navigating to Client Email Preferences

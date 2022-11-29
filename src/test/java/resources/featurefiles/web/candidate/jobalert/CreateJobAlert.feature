@@ -11,7 +11,7 @@
   # 10. Job search (keyword+loc) and login as existing user via 'Create Job Alert' banner (delete alert after creation)
   # 11. Job view and login as existing user on job-alerts banner (delete alert after creation)
 
-@CreateJobAlert @Regression @Web @Candidate2 @Traffic
+@CreateJobAlert @Regression @Web  @Traffic
 Feature: Candidate JobAlert CreateJobAlert
 
   @newUserCreateAlert @ReleaseRegression1 @MobileChrome
@@ -81,7 +81,7 @@ Feature: Candidate JobAlert CreateJobAlert
     And   I should see text H one tag "Resume-Library Terms & Conditions"
     Then  I navigate to page "Job Alerts"
     And   I click on "Register now"
-    Then  I should be able to see in browser URL "Candidate Registration"
+    Then  I should be able to see in browser URL "Candidate Registration Page"
     And   I should see text H one tag "Upload Resume &"
     Then  I navigate to page "Job Alerts"
     And   I click on "Learn more"

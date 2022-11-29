@@ -2,7 +2,7 @@
     # 1. Advanced Search job page with keyword and location, then asserting URL
     # 2. Advanced Search job page with all filters, then asserting URL
 
-@SearchJobLoggedIn @Regression @Web @Candidate3 @Search @MobileChrome
+@SearchJobLoggedIn @Regression @Web  @Search @MobileChrome
 Feature: Candidate JobSearch SearchJobsLoggedIn
 
   Background: On search page with keyword sales
@@ -29,18 +29,18 @@ Feature: Candidate JobSearch SearchJobsLoggedIn
     And   I select the option "30" from Posted Since
     And   I fill in search title field with "Sales"
     When  I click on Find Jobs search button
-    Then  I should be able to see in browser URL "Jobs Sales In Brooklyn Ny R 250 Annual Salary From 50000 Annual Salary To 100000"
+    Then  I should be able to see in browser URL "Jobs Sales In Brooklyn Ny R 30 Annual Salary From 50000 Annual Salary To 100000"
     And   I should see text H one tag "Sales jobs"
     And   I should see text "Nearby Towns"
     And   I scroll down to element "Next"
     Then  I click on link text "Next"
-    Then  I should be able to see in browser URL "Jobs Sales In Brooklyn Ny R 250 Annual Salary From 50000 Annual Salary To 100000 Page Number 2"
+    Then  I should be able to see in browser URL "Jobs Sales In Brooklyn Ny R 30 Annual Salary From 50000 Annual Salary To 100000 Page Number 2"
     And   I scroll down to element "Next"
     Then  I click on link text "Next"
-    Then  I should be able to see in browser URL "Jobs Sales In Brooklyn Ny R 250 Annual Salary From 50000 Annual Salary To 100000 Page Number 3"
+    Then  I should be able to see in browser URL "Jobs Sales In Brooklyn Ny R 30 Annual Salary From 50000 Annual Salary To 100000 Page Number 3"
     And   I should see text "Prev"
     Then  I click on hyper link "Prev"
-    Then  I should be able to see in browser URL "Jobs Sales In Brooklyn Ny R 250 Annual Salary From 50000 Annual Salary To 100000"
+    Then  I should be able to see in browser URL "Jobs Sales In Brooklyn Ny R 30 Annual Salary From 50000 Annual Salary To 100000"
 
   @searchPartnerJobLoggedInWhenLessRLJobs @ReleaseRegression1
   Scenario: Search job page logged in, displaying partner jobs when < 20 RL jobs

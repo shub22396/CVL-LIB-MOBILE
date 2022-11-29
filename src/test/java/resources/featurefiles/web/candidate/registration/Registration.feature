@@ -1,4 +1,4 @@
-@CandidateRegistration  @Regression @Web @Candidate5 @Candidate
+@CandidateRegistration  @Regression @Web  @Candidate
 Feature: Candidate Registration Registration
 
   @candidateValidRegistration @ReleaseRegression1
