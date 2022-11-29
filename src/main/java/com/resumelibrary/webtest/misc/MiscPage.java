@@ -219,7 +219,8 @@ public class MiscPage extends Utility {
                 acceptFacebookCookiePopUp();
                 break;
             case "Twitter":
-                clickOnElement(TwitterIcon);
+//                clickOnElement(TwitterIcon);
+                clickOnElementWithJS(TwitterIcon);
                 switchTab();
                 break;
             case "Instagram":
@@ -227,11 +228,13 @@ public class MiscPage extends Utility {
                 switchTab();
                 break;
             case "Google Play":
-                clickOnElement(GooglePlayIcon);
+//                clickOnElement(GooglePlayIcon);
+                clickOnElementWithJS(GooglePlayIcon);
                 switchTab();
                 break;
             case "App Store":
-                clickOnElement(AppStoreIcon);
+               // clickOnElement(AppStoreIcon);
+                clickOnElementWithJS(AppStoreIcon);
                 switchTab();
                 break;
             case "Linkedin":
@@ -239,7 +242,8 @@ public class MiscPage extends Utility {
                 switchTab();
                 break;
             case "YouTube":
-                clickOnElement(YouTubeIcon);
+                //clickOnElement(YouTubeIcon);
+                clickOnElementWithJS(YouTubeIcon);
                 switchTab();
                 break;
         }

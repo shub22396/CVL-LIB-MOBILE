@@ -14,7 +14,7 @@ Feature: Candidate Login Login
     Then   I should be on "My Dashboard" page
     And    I should see text "Hi Resume-Library"
     And    I should see text "Recently Applied"
-@MobileChrome
+  @loginPageErrorMessage
   Scenario: Verify error message on login page
     Given  I am on home page
     Then   I should see resume library logo
