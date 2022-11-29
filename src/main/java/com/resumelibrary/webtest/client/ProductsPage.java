@@ -43,7 +43,7 @@ public class ProductsPage extends Utility {
     WebElement PayNowBtn;
     @FindBy(xpath = "//*[@id=\"save_card_label\"]")
     WebElement SaveThisCardCheckBox;
-    @FindBy(xpath = "//a[@class='btn-sm border-btn view-btn']")
+    @FindBy(xpath = "//*[@id='main']/div[1]/section//tr/td[6]/a")
     WebElement ViewInvoiceBtn;
     @FindBy(id = "card-number-iframe")
     WebElement CardNumberIframe;

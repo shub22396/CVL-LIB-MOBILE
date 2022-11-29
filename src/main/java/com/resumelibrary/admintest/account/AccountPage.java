@@ -5,6 +5,7 @@ import com.resumelibrary.utilities.DataHelper;
 import com.resumelibrary.utilities.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -142,7 +143,7 @@ public class AccountPage extends Utility {
 
     public void clickOnUpdateAccount() {
         logger.info("Clicking on update account");
-        clickOnElement(UpdateAccount);
+        clickOnElementWithJS(UpdateAccount);
     }
 
     public void clickOnValidateAccountButton1() {
@@ -157,7 +158,7 @@ public class AccountPage extends Utility {
 
     public void clickOnDeactivateClient() {
         logger.info("Clicking on deactivate client");
-        clickOnElement(DeactivateClient);
+        clickOnElementWithJS(DeactivateClient);
     }
 
     public void selectDeactivateReasonFromDropdown(String reason) {
@@ -189,9 +190,9 @@ public class AccountPage extends Utility {
 
     public void selectAccountTypeRadioButtonAs(String radioButtonValue) {
         if (radioButtonValue.equals("Active")) {
-            clickOnElementUsingText("Active");
+            clickOnElementWithJS(ActiveAccountProperty);
         } else if (radioButtonValue.equals("Inactive")) {
-            clickOnElementUsingText("Inactive");
+            clickOnElementWithJS(InActiveAccountProperty);
         }
     }
 
@@ -258,6 +259,7 @@ public class AccountPage extends Utility {
         }
         clickOnElement(ActionBtn);
     }
+
     public void clickOnMenu() {
         logger.info("Clicking on menu ");
         clickOnElementWithJS(MobileMenuTrigger);

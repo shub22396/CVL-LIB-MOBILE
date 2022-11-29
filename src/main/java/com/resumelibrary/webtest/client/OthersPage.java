@@ -307,25 +307,34 @@ public class OthersPage extends Utility {
         logger.info("context" + ((AndroidDriver) getThreadDriver()).context("NATIVE_APP"));
         ((AndroidDriver) getThreadDriver()).context("NATIVE_APP");
         waitFor(3);
-        if(checkElementPresence("//*[@text='NOT NOW']")){
+        if (checkElementPresence("//*[@text='NOT NOW']")) {
             getThreadDriver().findElement(By.xpath(("//*[@text='NOT NOW']"))).click();
         }
         waitFor(3);
-        if(checkElementPresence("//*[@text='Allow']")){
+        if (checkElementPresence("//*[@text='Allow']")) {
             getThreadDriver().findElement(By.xpath(("//*[@text='Allow']"))).click();
         }
-        if(checkElementPresence("//*[@text='Download']")){
+        if (checkElementPresence("//*[@text='Download']")) {
             getThreadDriver().findElement(By.xpath(("//*[@text='Download']"))).click();
         }
-        WebElement ele=null;
+        WebElement ele = null;
         waitFor(3);
-        if(!checkElementPresence("//*[contains(@text,'rl-user-manual')]")) {
-            waitUntilElementIsLocated(getThreadDriver().findElement(By.xpath("//*[contains(@text,'rl-user-manual')]")),40);
-            ele = getThreadDriver().findElement(By.xpath(("//*[contains(@text,'rl-user-manual')]")));
-        }else{
-            ele = getThreadDriver().findElement(By.xpath(("//*[contains(@text,'rl-user-manual')]")));
+        if (text.equalsIgnoreCase("Resume-Library Invoice")) {
+            if (!checkElementPresence("//*[contains(@text,'Resume-Library Invoice')]")) {
+                waitUntilElementIsLocated(getThreadDriver().findElement(By.xpath("//*[contains(@text,'Resume-Library Invoice')]")), 40);
+                ele = getThreadDriver().findElement(By.xpath(("//*[contains(@text,'Resume-Library Invoice')]")));
+            } else {
+                ele = getThreadDriver().findElement(By.xpath(("//*[contains(@text,'Resume-Library Invoice')]")));
+            }
         }
-
+        if (text.equalsIgnoreCase(" if (text.equalsIgnoreCase(\"Resume-Library Invoice\")){")) {
+            if (!checkElementPresence("//*[contains(@text,' if (text.equalsIgnoreCase(\"Resume-Library Invoice\")){')]")) {
+                waitUntilElementIsLocated(getThreadDriver().findElement(By.xpath("//*[contains(@text,'rl-user-manual')]")), 40);
+                ele = getThreadDriver().findElement(By.xpath(("//*[contains(@text,'rl-user-manual')]")));
+            } else {
+                ele = getThreadDriver().findElement(By.xpath(("//*[contains(@text,'rl-user-manual')]")));
+            }
+        }
         if (ele.isDisplayed()) {
             return true;
         }
