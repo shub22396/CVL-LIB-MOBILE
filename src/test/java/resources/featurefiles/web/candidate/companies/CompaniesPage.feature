@@ -1,4 +1,4 @@
-@CompaniesPage @Regression @Web @Candidate2 @ReleaseRegression1 @Recruiters
+@CompaniesPage @Regression @Web  @ReleaseRegression1 @Recruiters
 Feature: Candidate Companies CompaniesPage
 
   @companySearch

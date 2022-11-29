@@ -1,4 +1,4 @@
-@JobSearchViewOptions @Regression @Web @Candidate4 @Search
+@JobSearchViewOptions @Regression @Web  @Search
 Feature: Candidate JobView JobViewSearch
 
   @candidateJobViewOptions @ReleaseRegression1 #failing in desktop as well

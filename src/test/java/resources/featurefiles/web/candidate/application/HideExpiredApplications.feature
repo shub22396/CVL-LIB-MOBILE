@@ -1,4 +1,4 @@
-@HideExpiredApplications @Regression @Web @Candidate1 @Candidate
+@HideExpiredApplications @Regression @Web  @Candidate
 Feature: Candidate Application HideExpiredApplications
 
   @hideExpiredApplication @ReleaseRegression1

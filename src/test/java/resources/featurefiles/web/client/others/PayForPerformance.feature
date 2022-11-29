@@ -1,4 +1,4 @@
-@PayForPerformance @Regression @Web @Client4 @Traffic
+@PayForPerformance @Regression @Web  @Traffic
 Feature: Client Others PayForPerformance
 
   @payForPerformanceAssertAndActions

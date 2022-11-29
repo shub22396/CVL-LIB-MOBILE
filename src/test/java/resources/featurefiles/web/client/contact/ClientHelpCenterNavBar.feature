@@ -1,4 +1,4 @@
-@ClientHelpCenterNavBar @Regression @Web @Client1 @Traffic
+@ClientHelpCenterNavBar @Regression @Web  @Traffic
 Feature: Client Contact ClientHelpCenterNavBar
 
   Background: Navigating to Client Help Center From Nav Bar

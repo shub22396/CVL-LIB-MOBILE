@@ -1,4 +1,4 @@
-@CareerAdvice @Regression @Web @Candidate1 @Candidate
+@CareerAdvice @Regression @Web  @Candidate
 Feature: Candidate CareerAdvice CareerAdvice
 
   @loadCareerAdvice @ReleaseRegression1

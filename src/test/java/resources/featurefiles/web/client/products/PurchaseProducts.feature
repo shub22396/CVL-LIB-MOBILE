@@ -5,7 +5,7 @@
     # 4. Testing decline transaction by invalid cvc
     # 5. Saving and deleting card details
 
-@PurchaseProducts @Regression @Web @Client4 @Recruiters @MobileChrome
+@PurchaseProducts @Regression @Web  @Recruiters @MobileChrome
 Feature: Client Products PurchaseProducts
 
   Background: Login as a client

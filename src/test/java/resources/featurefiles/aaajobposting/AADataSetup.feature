@@ -1,4 +1,4 @@
-@DataSetupForAllTests @Regression @Web @Candidate1 @ReleaseRegression1 @Recruiters @MobileChrome
+@DataSetupForAllTests @Regression @Web @ReleaseRegression1 @Recruiters @MobileChrome
 Feature: Data setup for candidate tests
 
   @quickApplyJobPosting

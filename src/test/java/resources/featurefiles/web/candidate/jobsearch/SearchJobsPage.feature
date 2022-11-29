@@ -1,4 +1,4 @@
-@SearchJobsPage @Regression @Web @Candidate3 @Search @MobileChrome
+@SearchJobsPage @Regression @Web  @Search @MobileChrome
 Feature: Candidate JobSearch SearchJobsPage
 
   Background: On Search Jobs page

@@ -1,4 +1,4 @@
-@Resources @Regression @Web @Client5 @Traffic
+@Resources @Regression @Web  @Traffic
 Feature: Client Resources Resources
 
   @loadResources @ReleaseRegression2 @MobileChrome

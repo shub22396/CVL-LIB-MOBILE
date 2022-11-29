@@ -1,4 +1,4 @@
-@InquireProducts @Regression @Web @Client4 @Recruiters @MobileChrome
+@InquireProducts @Regression @Web  @Recruiters @MobileChrome
 Feature: Client Products InquireProducts
 
   Background: Login as a client

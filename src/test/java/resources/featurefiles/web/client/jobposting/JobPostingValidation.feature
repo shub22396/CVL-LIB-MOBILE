@@ -2,7 +2,7 @@
 # 1. Verify empty field validation messages seen on the job posting page
 # 2. Verify input validation messages seen on the job posting page
 
-@JobPostingValidation @Regression @Web @Client2 @ReleaseRegression2 @Recruiters @MobileChrome
+@JobPostingValidation @Regression @Web  @ReleaseRegression2 @Recruiters @MobileChrome
 Feature: Client JobPosting JobPostingValidation
 
   Background: Client Login
