@@ -51,7 +51,6 @@ Feature: Misc FooterLinks
     Then    I should be on "About Us" page
     And     I should see text "How does Resume-Library work?"
     And     I should see text "Our CEO: Lee Biggins"
-
   Scenario: Footer link meet the team
     And     I click "Resume-Library" in the footer
     Then    I should see text "Meet the Team"
@@ -60,7 +59,6 @@ Feature: Misc FooterLinks
     And     I should see text "Meet the Resume-Library Team"
     #And     I should see text "About Resume-Library"
     And     I should see text "The Whole Resume-Library Team"
-
   Scenario: Footer link work for us
     And     I click "Resume-Library" in the footer
     Then    I should see text "Work For Us"
@@ -69,16 +67,14 @@ Feature: Misc FooterLinks
     And     I should see text h two tag "Find a job at " and verify message "Find a job at Resume-Library"
     And     I should see text h two tag "About " and verify message "About Resume-Library"
     And     I should see text "Why join Resume-Library?"
-
     @footerLinkFacebook @ReleaseRegression2
   Scenario: Footer link facebook
     When    I click "Facebook" icon in the footer
     Then    I should be on "Facebook" page
-  #  And     I should see text "Resume-Library"
-
+    And     I should see text "Resume-Library"
   Scenario: Footer link twitter
     When    I click "Twitter" icon in the footer
-    Then    I should be on "Twitter" page
+    Then    I should be on "twitter" page
     And     I should see text "Resume-Library"
 
   Scenario: Footer link instagram
@@ -95,10 +91,9 @@ Feature: Misc FooterLinks
 
   Scenario: Footer link app store
     When    I click "App Store" icon in the footer
-    Then    I should be on "App Store" page
+    Then    I should be on "app store" page
     #And     I should see text H one tag "Resume-Library"
     #And     I should see text "Resume Library Ltd"
-
   Scenario: Footer link linkedin
     When   I click "Linkedin" icon in the footer
     Then   I should be on "Linkedin" page

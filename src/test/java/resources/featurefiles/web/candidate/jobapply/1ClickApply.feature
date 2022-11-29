@@ -15,14 +15,14 @@ Feature: Candidate JobApply 1ClickApply
 #    When  I navigate to page "Candidate Myapplications"
 #    And   I should see text "1-Click Apply"
 
-#  @jobSearch1ClickApply @ReleaseRegression1  @MobileChrome   #need to fix Candidate Registration #this scenario wont available in mobile view
-#  Scenario: 1-click apply on job search page
-#    Given I navigate to page "Candidate Registration"
-#    Then  I register as a new candidate resume check
-#    When  I navigate to page "Jobs One Click Apply"
-#    And   I should see text "1-Click apply"
-#    And   I click on "1-Click apply"
-#    And   I should see text "Applied"
-#    And   I should see text "View Application"
-#    When  I navigate to page "Candidate Myapplications"
-#    And   I should see text "Click Apply"
+  @jobSearch1ClickApply @ReleaseRegression1
+  Scenario: 1-click apply on job search page
+    Given I navigate to page "Candidate Registration"
+    Then  I register as a new candidate resume check
+    When  I navigate to page "Jobs One Click Apply"
+    And   I should see text "1-Click apply"
+    And   I click on "1-Click apply"
+    And   I should see text "Applied"
+    And   I should see text "View Application"
+    When  I navigate to page "Candidate Myapplications"
+    And   I should see text "Click Apply"
