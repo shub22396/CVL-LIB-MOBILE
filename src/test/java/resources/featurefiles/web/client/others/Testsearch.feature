@@ -40,7 +40,7 @@ Feature: Client Others TestSearch
     Then I should see text "Sales"
     And  I should see text "Displaying 1 to "
 
-  @newTestSearchRegistration
+  @newTestSearchRegistration  @MobileChrome
  Scenario: New test search user registration
     When I enter email address with random client email
     And  I enter basic search keywords with "sales"
@@ -49,9 +49,8 @@ Feature: Client Others TestSearch
     And  I enter phone number "123456789"
     Then I click on Search Resumes button
     And  I should be on page "Client Resume Search Results"
-    And  I find a locked candidate and verify text "Unlock Resume"
+    And  I find a locked candidate and click on unlock resume
     Then I should be able to see in browser URL "Client Resume View Candidate Profile Search"
-    And  I click on "Unlock Resume"
     And  I should see text "Unlock this Resume"
     And  I should see "Single Unlock"
     And  I should see text "View the full resume"
@@ -83,7 +82,7 @@ Feature: Client Others TestSearch
     And  I should see text "Welcome to Resume-Library!"
     And  I should see "Before you can make any purchases we need to validate your account. Please call our team on 1-857-239-0143 to validate your account instantly."
 
-  @testSearchValidation
+  @testSearchValidation @MobileChrome
   Scenario: Test search validation
     When I click on Search Resumes button
     Then I should see "Please enter some search criteria"
