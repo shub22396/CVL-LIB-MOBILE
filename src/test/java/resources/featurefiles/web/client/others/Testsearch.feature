@@ -6,8 +6,7 @@ Feature: Client Others TestSearch
     When I click on "Try for Yourself"
     Then I should be able to see in browser URL "Hiring Resume Search Test Search"
 
-  @newTestSearch @ReleaseRegression2
-    # FIXME failing test case
+  @newTestSearch @ReleaseRegression2 @MobileChrome
   Scenario: New test search user journey
     Then I should see text "Millions of candidates."
     And  I should see text "Hundreds of sources."
@@ -17,19 +16,17 @@ Feature: Client Others TestSearch
     And  I should see text "Millions of U.S. candidates on demand"
     When I enter email address with random client email
     And  I enter basic search keywords with "sales"
-   # And  I enter location with "10001"
     And  I enter name field with "automation Testsearch"
     And  I enter client company name "resume-library"
     And  I enter phone number "123456789"
     Then I click on Search Resumes button
-    #Then I should see text on test search page "You have 10 resume views remaining | To view an unlimited number of resumes for free, call us on 1-800-672-6706 Start hiring"
     And  I should see text "Search Millions of Resumes"
     And  I should see text "Preview Resume"
     And  I should see text "Create Alert"
     And  I should see text "Create Resume Alert"
     And  I should see text "Get candidates matching this search sent straight to your inbox"
-    Then I scroll up 0,500
-    And  I click on "Search Builder"
+    Then I scroll up 0,10
+    And  I click on "Search Builder" with JS
     Then I enter search builder keywords text area with "Tester"
     And  I enter location with "10011"
     And  I click on More Search Options
@@ -40,7 +37,7 @@ Feature: Client Others TestSearch
     Then I should see text "Sales"
     And  I should see text "Displaying 1 to "
 
-  @newTestSearchRegistration
+  @newTestSearchRegistration  @MobileChrome
  Scenario: New test search user registration
     When I enter email address with random client email
     And  I enter basic search keywords with "sales"
@@ -49,9 +46,8 @@ Feature: Client Others TestSearch
     And  I enter phone number "123456789"
     Then I click on Search Resumes button
     And  I should be on page "Client Resume Search Results"
-    And  I find a locked candidate and verify text "Unlock Resume"
+    And  I find a locked candidate and click on unlock resume
     Then I should be able to see in browser URL "Client Resume View Candidate Profile Search"
-    And  I click on "Unlock Resume"
     And  I should see text "Unlock this Resume"
     And  I should see "Single Unlock"
     And  I should see text "View the full resume"
@@ -83,7 +79,7 @@ Feature: Client Others TestSearch
     And  I should see text "Welcome to Resume-Library!"
     And  I should see "Before you can make any purchases we need to validate your account. Please call our team on 1-857-239-0143 to validate your account instantly."
 
-  @testSearchValidation
+  @testSearchValidation @MobileChrome
   Scenario: Test search validation
     When I click on Search Resumes button
     Then I should see "Please enter some search criteria"
