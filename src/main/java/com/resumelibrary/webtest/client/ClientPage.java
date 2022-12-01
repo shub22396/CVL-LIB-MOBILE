@@ -48,7 +48,7 @@ public class ClientPage extends Utility {
     }
 
     public void selectInquiryType(String inquiryType) {
-        selectByVisibleTextFromDropDown(InquiryType, inquiryType);
+        selectByVisibleTextFromDropDownWithJS(InquiryType, inquiryType);
     }
 
     public void enterMessage(String value) {
@@ -89,5 +89,11 @@ public class ClientPage extends Utility {
     public void clickOnDownload() {
         logger.info("click on Download --> ");
         clickOnElement(Download);
+    }
+
+    public void selectTheOptionValueFromInquiryType(String optionValue) {
+        waitUntilElementToBeClickable(InquiryType, 4);
+        clickOnElement(InquiryType);
+        clickOnAttributeValueOnInputTag(optionValue);
     }
 }

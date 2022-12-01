@@ -64,4 +64,10 @@ public class Client extends Utility {
     public void iClickOnDownload() {
         new ClientPage().clickOnDownload();
     }
+
+    @Then("I select the option value {string} from inquiry type")
+    public void iSelectTheOptionValueFromInquiryType(String optionValue) {
+        new ClientPage().selectTheOptionValueFromInquiryType(optionValue);
+
+    }
 }

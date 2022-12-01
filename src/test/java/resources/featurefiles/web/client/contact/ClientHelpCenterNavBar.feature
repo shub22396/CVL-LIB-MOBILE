@@ -45,17 +45,17 @@ Feature: Client Contact ClientHelpCenterNavBar
     Then I should be able to see in browser URL "Client Help Alert Tips"
     And  I should see text "Modify, Delete or Reactivate a Resume Alert"
     And  I move backward one page
-    And  I click on "Download User Manual"
-    And  I wait for "1" seconds
-    Then I click on "Download" with native
-    Then I switch to window 1
-    Then I should be able to see in browser URL "Downloads Rl User Manual Pdf"
-    Then I switch to window 0
-    And  I move backward one page
     And  I click on "Account Options"
     And  I click on link "Contact Us" account options menu
    Then  I should be able to see in browser URL "/client/contact"
     And  I should see text "Our dedicated team is here to help answer any questions, Contact us"
+    And  I move backward one page
+    And  I click on "Download User Manual"
+    And  I wait for "1" seconds
+    Then I click on "Download" with native
+    #Then I should be able to see in browser URL "Downloads Rl User Manual Pdf"
+
+
 
   @clientContactFormTextForm @MobileChrome
   Scenario: verify text in client contact form1
@@ -84,7 +84,7 @@ Feature: Client Contact ClientHelpCenterNavBar
     And  I click on "Account Options"
     And  I click on link "Contact Us" account options menu
     And  I wait for "1" seconds
-    Then I select the option "Resume Search" from inquiry type
+    Then I select the option value "resumesearch" from inquiry type
     Then I fill in inquiry messages text area with "inquiry message for form 1 "
     And  I wait for "1" seconds
     Then I click on id "register_now"
