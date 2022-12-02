@@ -136,7 +136,12 @@ public abstract class Utility extends DriverController {
 
     /* Adding cookie along with key and value */
     public void setCookie(String key, String value) {
-        getThreadDriver().manage().addCookie(new Cookie(key, value));
+        try {
+            getThreadDriver().manage().addCookie(new Cookie(key, value));
+        }catch (Exception e){
+            logger.info("[--->got exception in setCookie  : "+e.getMessage()+"<---]");
+            e.printStackTrace();
+        }
     }
 
     /* Reloading the url if we get the 502 error  and wait for actual and wait for actual and expected url matches*/
@@ -164,8 +169,14 @@ public abstract class Utility extends DriverController {
 
     /* Explicit wait for a specified amount of time and until the specified Web Element is clickable */
     public void waitUntilElementToBeClickable(WebElement element, int timeOut) {
-        WebDriverWait wait = new WebDriverWait(getThreadDriver(), Duration.ofSeconds(timeOut));
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+        try {
+            WebDriverWait wait = new WebDriverWait(getThreadDriver(), Duration.ofSeconds(timeOut));
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+        }catch (WebDriverException e){
+            if(getThreadDriver()!=null){
+                getThreadDriver().quit();
+            }
+        }
     }
 
     /* Explicit wait for a specified amount of time and until the specified Element(xpath/id/name/linkname etc..) is clickable */
@@ -637,11 +648,15 @@ public abstract class Utility extends DriverController {
 
     /* selecting dropdown value by using visible text option and handling element click intercepted expection */
     public void selectByVisibleTextFromDropDown(WebElement element, String str) {
+        Select selectEleme=new Select(element);
         waitUntilElementToBeClickable(element, 4);
         clickOnElement(element);
-        clickOnElementUsingText(str);
-      //  getThreadDriver().findElement(By.xpath("//*[text()=\"" + str + "\"]")).click();
-    }
+        if("Sort by Date Posted ASC".equalsIgnoreCase(str)) {
+            getDriverWithUrl(WebURLHelper.getWebUrl(),getURL("Sort by Date Posted ASC"));
+                 }else{
+            clickOnElementUsingText(str);
+        }
+      }
 
     public void selectByVisibleTextFromDropDownWithJS(WebElement element, String str) {
         waitUntilElementToBeClickable(element, 4);
