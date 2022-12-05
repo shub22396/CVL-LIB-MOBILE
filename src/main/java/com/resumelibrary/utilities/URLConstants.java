@@ -10,6 +10,8 @@ public class URLConstants implements Constants {
 
     private static final Logger logger = LogManager.getLogger(URLConstants.class);
     // ================> Client Constants Started <=========================
+
+    public final String SORT_BY_DATE_POSTED_ASC="/client/jobs/inactive?sort=posted+ASC";
     public final String CLIENT_ACCOUNT_USERS_ADD = "/client/account/users/add";
     public final String CLIENT_ACCOUNT_USERS_EDIT = "/client/account/users/edit/";
     public final String CLIENT_CONTACT = "/client/contact";

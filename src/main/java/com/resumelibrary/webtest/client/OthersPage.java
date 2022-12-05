@@ -73,8 +73,8 @@ public class OthersPage extends Utility {
     //  @FindBy(xpath = "//*[@id=\"player\"]/div[*]/div[*]/div[*]/button")
     @FindBy(xpath = "//*[@aria-label='Play']")
     WebElement VideoPlayButton;
-    @FindBy(xpath = "//*[@id=\"player\"]/div[*]/div[*]/div[*]/button")
-    //@FindBy(xpath = "//*[@aria-label='Pause']")
+    //@FindBy(xpath = "//*[@id='player']")
+    @FindBy(xpath = "//*[@aria-label='Pause']")
     WebElement VideoPauseButton;
     //@FindBy(xpath = "//*[@id=\"player\"]/div[7]/div[7]/div[2]/div/div[1]/div/div[5]/div")
     @FindBy(xpath = "//*[starts-with(@class,'Timecode_module_timecode_')]")
@@ -283,14 +283,17 @@ public class OthersPage extends Utility {
         }
         waitFor(1);
         clickOnElementWithJS(VideoPlayButton);
+        //getThreadDriver().switchTo().defaultContent();
     }
 
     public void clickOnVideoPauseButton(String iframe) {
         String iframeId = "iframe-" + iframe;
         logger.info("moving to iframe " + iframeId);
         waitFor(2);
-        VideoPauseButton.click();
+        DurationPlayedBtn.click();
     }
+
+
 
     public String getTheDurationVideoPlayed() {
         String DurationPlayedText = DurationPlayedBtn.getText();
