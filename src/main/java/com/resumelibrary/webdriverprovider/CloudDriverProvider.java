@@ -9,11 +9,14 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.http.ClientConfig;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -262,8 +265,11 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.put("newCommandTimeout", 180);
             caps.put("eventTimings", true);
             capabilities.setCapability("lt:options", caps);
-            threadMap.put("webdriverObj", new AndroidDriver(new URL(driverURL), capabilities));
+            ClientConfig config = ClientConfig.defaultConfig().connectionTimeout(Duration.ofMinutes(20)).readTimeout(Duration.ofMinutes(20));
+            WebDriver testDriver = RemoteWebDriver.builder().oneOf(capabilities).address(driverURL).config(config).build();
+            threadMap.put("webdriverObj", testDriver);
             threadLocalMap.set(threadMap);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -289,8 +295,9 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("tunnelName", tunnelName);
             capabilities.setCapability("acceptInsecureCerts",true);
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
-              threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
-
+            ClientConfig config = ClientConfig.defaultConfig().connectionTimeout(Duration.ofMinutes(20)).readTimeout(Duration.ofMinutes(20));
+            WebDriver testDriver = RemoteWebDriver.builder().oneOf(capabilities).address(driverURL).config(config).build();
+            threadMap.put("webdriverObj", testDriver);
             threadLocalMap.set(threadMap);
 
 
