@@ -109,80 +109,6 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         }
     }
 
-    void remoteBrowserStackChrome(Map threadMap, String testName) {
-        try {
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
-            String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
-            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
-            String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
-
-            logger.info("[--->jenkinsBuildNumber = " + buildId + "<---]");
-            String project = "[" + jobBaseName + "-Build:" + buildId + "]";
-
-            String username = PropertyFileReader.getInstance().getProperty("browserStackUsername");
-            String accessKey = PropertyFileReader.getInstance().getProperty("browserStackAccessKey");
-            final String driverURL = "https://" + username + ":" + accessKey + "@hub-scale.browserstack.com/wd/hub";
-
-            DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("browserName", "Chrome");
-            caps.setCapability("browserVersion", "100.0");
-
-            HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
-            browserstackOptions.put("os", "Windows");
-            browserstackOptions.put("osVersion", "10");
-
-            //for Chrome + Mac
-            //browserstackOptions.put("os", "OS X");
-            //browserstackOptions.put("osVersion", "Big Sur");
-
-            browserStackCommonCapblts(threadMap, project, driverURL, caps, browserstackOptions);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    void browserStackCommonCapblts(Map threadMap, String buildId, String driverURL, DesiredCapabilities caps, HashMap<String, Object> browserstackOptions) throws MalformedURLException {
-
-        browserstackOptions.put("debug", "true");  // for enabling visual logs
-        browserstackOptions.put("consoleLogs", "info");  // to enable console logs at the info level. You can also use other log levels here
-        browserstackOptions.put("networkLogs", "false");  // to enable network logs to be logged
-        browserstackOptions.put("video", "true");
-        browserstackOptions.put("projectName", "rl-selenium-tests");
-        //browserstackOptions.put("seleniumVersion", "4.1.2");
-        browserstackOptions.put("autoWait", "0");
-        browserstackOptions.put("local", "false");
-        browserstackOptions.put("buildName", buildId);
-        caps.setCapability("bstack:options", browserstackOptions);
-        threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
-        threadLocalMap.set(threadMap);
-    }
-
-    void remoteBrowserStackFireFox(Map threadMap, String testName) {
-        try {
-            String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
-            String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
-            String jobnameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
-            String jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobnameFromConfig);
-            logger.info("[--->jenkinsBuildNumber : " + buildId + "<---]");
-            String project = "[" + jobBaseName + "-Build:" + buildId + "]";
-            String username = PropertyFileReader.getInstance().getProperty("browserStackUsername");
-            String accessKey = PropertyFileReader.getInstance().getProperty("browserStackAccessKey");
-            final String driverURL = "https://" + username + ":" + accessKey + "@hub-scale.browserstack.com/wd/hub";
-            DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("browserName", "Firefox");
-            caps.setCapability("browserVersion", "100.0");
-            HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
-            browserstackOptions.put("os", "Windows");
-            browserstackOptions.put("osVersion", "10");
-            //for Firefox + Mac
-            //browserstackOptions.put("os", "OS X");
-            //browserstackOptions.put("osVersion", "Big Sur");
-            browserStackCommonCapblts(threadMap, project, driverURL, caps, browserstackOptions);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public String getConstantsURL(String URL) {
         return null;
     }
@@ -228,7 +154,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             e.printStackTrace();
         }
     }
-    void androidRealMobileWeb(Map threadMap,String testName,String deviceName) {
+    void androidChromeRealMobileWeb(Map threadMap, String testName, String deviceName) {
         try {
             String threadDeviceName=deviceName.split("@")[0];
             String threadDeviceVersion=deviceName.split("@")[1];
@@ -268,7 +194,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             e.printStackTrace();
         }
     }
-    public void androidMobileWeb(Map threadMap, String testName) {
+    public void androidChromeMobileWeb(Map threadMap, String testName) {
         try {
             logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
@@ -299,7 +225,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         }
     }
 
-    void iosMobileWeb(Map threadMap,String testName) {
+    void iOSSafariRealMobileWeb(Map threadMap, String testName) {
         try {
 
             logger.info("[--->jenkinsBuildNumber = " + buildId+"<---]");

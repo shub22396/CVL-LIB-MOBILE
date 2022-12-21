@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
@@ -27,66 +26,24 @@ public class DriverController extends CloudDriverProvider implements Constants {
     public void getDriver(String browserName, String machineName, Map threadMap, String testName,String deviceName) {
 
         switch (browserName) {
-            case "chrome":
-                logger.info("[--->Using chrome browser<---]");
-                chromeBrowser(threadMap);
-                break;
-            case "chromeHeadless":
-                logger.info("[--->Using chrome Head less browser<---]");
-                headLessChromeBrowser(threadMap);
-                break;
-            case "firefoxHeadless":
-                logger.info("[--->Using firefox Head less browser<---]");
-                headLessFirefoxBrowser(threadMap);
-                break;
-            case "firefox":
-                logger.info("[--->Using firefox browser<---]");
-                firefoxBrowser(threadMap);
-                break;
-            case "remoteChromeBrowser":
-                logger.info("[--->Using remote chrome browser<---]");
-                remoteChromeBrowser(machineName, threadMap);
-                break;
-            case "remoteFirefoxBrowser":
-                logger.info("[--->Using remote firefox browser<---]");
-                remoteFirefoxBrowser(machineName, threadMap);
-                break;
-            case "lambdaTestChrome":
-                logger.info("[--->Using lambdatest cloud chrome browser<---]");
-                remoteLambdaTestinChrome(threadMap, testName);
-                break;
-            case "lambdaTestFirefox":
-                logger.info("[--->Using lambdatest cloud firefox browser<---]");
-                remoteLambdaTestinFirefox(threadMap, testName);
-                break;
-            case "browserStackChrome":
-                logger.info("[--->Using browser stack cloud chrome browsers<---]");
-                remoteBrowserStackChrome(threadMap, testName);
-                break;
-            case "browserStackFireFox":
-                logger.info("[--->Using browser stack cloud firefox browsers<---]");
-                remoteBrowserStackFireFox(threadMap, testName);
-                break;
-            case "lambdaMobileWeb":
+            case "lambdaAndroidChromeMobileWeb":
                 logger.info("[--->Using  lambdaMobileWeb<---]");
                 String isRealDevice = PropertyFileReader.getInstance().getProperty("isRealDevice");
                 String isRealDeviceVal = WebURLHelper.getParameterFromEnvOrSysParam("ISREALDEVICE", isRealDevice);
                 if(isRealDeviceVal.equalsIgnoreCase("yes")) {
                     logger.info("[--->isRealDeviceVal:"+isRealDeviceVal+"<---]");
-                    androidRealMobileWeb(threadMap, testName,deviceName);
+                    androidChromeRealMobileWeb(threadMap, testName,deviceName);
                 }else{
                     logger.info("[--->isRealDeviceVal:"+isRealDeviceVal+"<---]");
-                    androidMobileWeb(threadMap, testName);
+                    androidChromeMobileWeb(threadMap, testName);
                 }
                 break;
-            case "lambdaIosMobileWeb":
+            case "lambdaSafariMobileWeb":
                 logger.info("[--->Using  lambdaMobileWeb<---]");
-
-                iosMobileWeb(threadMap,testName);
+                iOSSafariRealMobileWeb(threadMap,testName);
                 break;
             case "localMobileWeb":
                 logger.info("[--->Using  localMobileWeb<---]");
-
                 localMobileWeb(threadMap);
                 break;
         }
