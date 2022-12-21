@@ -8,12 +8,9 @@
     </listeners>
     <test name="Test1">
         <parameter name="machine" value="Local"/>
-        <parameter name="browser" value="lambdaMobileWeb"/>
-        <!-- <parameter name="browser" value="chrome"/>-->
-        <!-- <parameter name="browser" value="lambdaIosMobileWeb"/>-->
-        <!-- <parameter name="browser" value="remoteChromeBrowser"/>-->
-        <!-- <parameter name="browser" value="remoteFirefoxBrowser"/>-->
-        <!-- <parameter name="browser" value="firefox"/>-->
+        <parameter name="browser" value="lambdaAndroidChromeMobileWeb"/>
+        <!-- <parameter name="browser" value="lambdaAndroidFirefoxMobileWeb"/>-->
+        <!-- <parameter name="browser" value="lambdaSafariMobileWeb"/>-->
         <classes>
             <class name="com.resumelibrary.cucumber.CucumberTestRunner"/>
         </classes>
