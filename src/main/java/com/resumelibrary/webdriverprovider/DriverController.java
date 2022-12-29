@@ -9,6 +9,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
@@ -61,7 +62,7 @@ public class DriverController extends CloudDriverProvider implements Constants {
     public WebDriver getThreadDriver() {
         WebDriver webdriverObj = null;
         try {
-            webdriverObj = (AndroidDriver) ((Map) threadLocalMap.get()).get("webdriverObj");
+            webdriverObj = (RemoteWebDriver) ((Map) threadLocalMap.get()).get("webdriverObj");
         } catch (Exception e) {
 
         }
