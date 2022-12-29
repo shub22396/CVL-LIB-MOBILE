@@ -7,9 +7,9 @@
         <listener class-name="com.resumelibrary.cucumber.CustomListener"/>
     </listeners>
 
-    <test name="Chrome Test1">
+    <test name="Firefox Test1">
         <parameter name="machine" value="STAGING_MACHINE_1"/>
-        <parameter name="browser" value="lambdaMobileWeb"/>
+        <parameter name="browser" value="lambdaAndroidFirefoxMobileWeb"/>
         <classes>
             <class name="com.resumelibrary.cucumber.CucumberTestRunner"/>
         </classes>
