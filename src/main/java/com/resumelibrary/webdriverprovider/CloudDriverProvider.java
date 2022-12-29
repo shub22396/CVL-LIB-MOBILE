@@ -221,6 +221,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("autoGrantPermissions", true);
             capabilities.setCapability("autoAcceptAlerts", true);
             capabilities.setCapability("tunnelName", tunnelName);
+            capabilities.setCapability("idleTimeout","1800");
            // capabilities.setCapability("w3c",true);
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
@@ -261,6 +262,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.put("w3c",true);
             caps.put("newCommandTimeout", 180);
             caps.put("eventTimings", true);
+            caps.put("idleTimeout","1800");
             capabilities.setCapability("lt:options", caps);
             threadMap.put("webdriverObj", new AndroidDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
@@ -289,6 +291,8 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("tunnelName", tunnelName);
             capabilities.setCapability("acceptInsecureCerts",true);
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
+            capabilities.setCapability("idleTimeout","1800");
+
               threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
 
             threadLocalMap.set(threadMap);
@@ -325,6 +329,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("autoGrantPermissions", true);
             capabilities.setCapability("autoAcceptAlerts", true);
             capabilities.setCapability("tunnelName", tunnelName);
+            capabilities.setCapability("idleTimeout","1800");
             threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
         } catch (Exception e) {
