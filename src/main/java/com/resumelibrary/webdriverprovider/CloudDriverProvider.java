@@ -194,12 +194,12 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.put("eventTimings", true);
             caps.put("idleTimeout", "1800");
             capabilities.setCapability("lt:options", caps);
-            /*threadMap.put("webdriverObj", new AndroidDriver(new URL(driverURL), capabilities));
-            threadLocalMap.set(threadMap);*/
-            ClientConfig config = ClientConfig.defaultConfig().connectionTimeout(Duration.ofMinutes(20)).readTimeout(Duration.ofMinutes(20));
+            threadMap.put("webdriverObj", new AndroidDriver(new URL(driverURL), capabilities));
+            threadLocalMap.set(threadMap);
+            /*ClientConfig config = ClientConfig.defaultConfig().connectionTimeout(Duration.ofMinutes(20)).readTimeout(Duration.ofMinutes(20));
             WebDriver testDriver =  RemoteWebDriver.builder().oneOf(capabilities).address(driverURL).config(config).build();
             threadMap.put("webdriverObj", testDriver);
-            threadLocalMap.set(threadMap);
+            threadLocalMap.set(threadMap);*/
         } catch (Exception e) {
             e.printStackTrace();
         }

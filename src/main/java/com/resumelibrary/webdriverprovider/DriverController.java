@@ -62,7 +62,8 @@ public class DriverController extends CloudDriverProvider implements Constants {
     public WebDriver getThreadDriver() {
         WebDriver webdriverObj = null;
         try {
-            webdriverObj = (RemoteWebDriver) ((Map) threadLocalMap.get()).get("webdriverObj");
+            webdriverObj = (AndroidDriver) ((Map) threadLocalMap.get()).get("webdriverObj");
+           // webdriverObj = (RemoteWebDriver) ((Map) threadLocalMap.get()).get("webdriverObj");
         } catch (Exception e) {
 
         }
