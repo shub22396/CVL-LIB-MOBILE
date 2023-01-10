@@ -36,7 +36,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         String buildIdFromConfig = WebURLHelper.getParameterFromEnvOrSysParam("user.name", "unknown_user");
         buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
         String jobNameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
-        jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobNameFromConfig) + buildIdFromConfig;
+        jobBaseName = WebURLHelper.getParameterFromEnvOrSysParam("JOB_BASE_NAME", jobNameFromConfig);
         tunnelName = WebURLHelper.getParameterFromEnvOrSysParam("TUNNELNAME", PropertyFileReader.getInstance().getProperty("tunnelName") + buildId);
     }
 
