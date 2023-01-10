@@ -31,7 +31,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
     public CloudDriverProvider() {
         PropertyConfigurator.configure(System.getProperty("user.dir") + LOG_PROPERTY_FILE_PATH);
-        lambdaUsername = WebURLHelper.getParameterFromEnvOrSysParam("lambdaUserName", "username");
+        lambdaUsername = WebURLHelper.getParameterFromEnvOrSysParam("lambdaUsername", "username");
         lambdaAccessKey = WebURLHelper.getParameterFromEnvOrSysParam("lambdaAccessKey", "accessKey");
         String buildIdFromConfig = WebURLHelper.getParameterFromEnvOrSysParam("user.name", "unknown_user");
         buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
