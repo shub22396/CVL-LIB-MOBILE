@@ -47,6 +47,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
             final String driverURL = "https://" + lambdaUsername + ":" + lambdaAccessKey + "@hub.lambdatest.com/wd/hub";
             logger.info("[--->driverURL:" + driverURL + "<---]");
+            logger.info("[--->tunnelName = " + tunnelName + "<---]");
 
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("browserName", "Chrome");
@@ -81,6 +82,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
             final String driverURL = "https://" + lambdaUsername + ":" + lambdaAccessKey + "@hub.lambdatest.com/wd/hub";
             logger.info("[--->driverURL:" + driverURL + "<---]");
+            logger.info("[--->tunnelName = " + tunnelName + "<---]");
 
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("browserName", "Firefox");
@@ -164,6 +166,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
             final String driverURL = "https://" + lambdaUsername + ":" + lambdaAccessKey + "@hub.lambdatest.com/wd/hub";
             logger.info("[--->driverURL:" + driverURL + "<---]");
+            logger.info("[--->tunnelName = " + tunnelName + "<---]");
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
             capabilities.setCapability("name", testName);
@@ -200,6 +203,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
             final String driverURL = "https://" + lambdaUsername + ":" + lambdaAccessKey + "@mobile-hub.lambdatest.com/wd/hub";
             logger.info("[--->driverURL:" + driverURL + "<---]");
+            logger.info("[--->tunnelName = " + tunnelName + "<---]");
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
@@ -240,6 +244,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
             final String driverURL = "http://127.0.0.1:4723/wd/hub";
             logger.info("[--->driverURL:" + driverURL + "<---]");
+            logger.info("[--->tunnelName = " + tunnelName + "<---]");
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("appium-version", "1.22.3");
             capabilities.setCapability("platformName", "Android");
