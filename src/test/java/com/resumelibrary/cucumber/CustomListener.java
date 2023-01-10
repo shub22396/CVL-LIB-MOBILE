@@ -1,9 +1,11 @@
 package com.resumelibrary.cucumber;
 
-import com.resumelibrary.utilities.*;
-import org.testng.*;
-
 import com.lambdatest.tunnel.Tunnel;
+import com.resumelibrary.utilities.*;
+import org.testng.IExecutionListener;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,51 +14,48 @@ import java.util.Map;
 
 public class CustomListener extends Utility implements ITestListener, IExecutionListener {
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(CustomListener.class);
-    List<Tunnel>  tunnelObject=null;
+    List<Tunnel> tunnelObject = null;
     String GREEN_BACKGROUND = "\033[42m";
     String BLACK_BACKGROUND_BRIGHT = "\033[0;100m";
     String RED_BOLD_BRIGHT = "\033[1;91m";
     String ANSI_RESET = "\u001B[0m";
     String GREEN_BOLD_BRIGHT = "\033[1;92m";
     String WHITE_BOLD_BRIGHT = "\033[1;97m";
+
     @Override
     public void onExecutionStart() {
-        deviceNames.put("TestNG-PoolService-2","Galaxy S10+@11");
-        deviceNames.put("TestNG-PoolService-1","Galaxy Note20@11");
-        deviceNames.put("TestNG-PoolService-0","Galaxy S20+@11");
-        deviceNames.put("TestNG-PoolService-3","Galaxy Note10+@11");
-        deviceNames.put("TestNG-PoolService-4","Galaxy S10@11");
-        deviceNames.put("TestNG-PoolService-5","Galaxy S20+@11");
-        tunnelObject=new ArrayList<Tunnel>();
-        boolean flag=false;
-        String username = PropertyFileReader.getInstance().getProperty("lambdaUsername");
-        String  lamdaUserName= WebURLHelper.getParameterFromEnvOrSysParam("lamdaUserName", username);
-        String accessKey = PropertyFileReader.getInstance().getProperty("lambdaAccessKey");
-        String    lambdaAccessKey=  WebURLHelper.getParameterFromEnvOrSysParam("lambdaAccessKey", accessKey);
-        String buildIdFromConfig = PropertyFileReader.getInstance().getProperty("lambdaBuildId");
+        deviceNames.put("TestNG-PoolService-2", "Galaxy S10+@11");
+        deviceNames.put("TestNG-PoolService-1", "Galaxy Note20@11");
+        deviceNames.put("TestNG-PoolService-0", "Galaxy S20+@11");
+        deviceNames.put("TestNG-PoolService-3", "Galaxy Note10+@11");
+        deviceNames.put("TestNG-PoolService-4", "Galaxy S10@11");
+        deviceNames.put("TestNG-PoolService-5", "Galaxy S20+@11");
+        tunnelObject = new ArrayList<Tunnel>();
+        boolean flag = false;
+        String lambdaUsername = WebURLHelper.getParameterFromEnvOrSysParam("lambdaUsername", "username");
+        String lambdaAccessKey = WebURLHelper.getParameterFromEnvOrSysParam("lambdaAccessKey", "accessKey");
+        String buildIdFromConfig = WebURLHelper.getParameterFromEnvOrSysParam("user.name", "unknown_user");
         String buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
 
         int noOfTunnels = Integer.parseInt(WebURLHelper.getParameterFromEnvOrSysParam("TUNNELS", PropertyFileReader.getInstance().getProperty("noOfTunnels")));
-        //int threadCount = Integer.parseInt(System.getProperty("ThreadCount"));
-        String tunnelName =WebURLHelper.getParameterFromEnvOrSysParam("TUNNELNAME", PropertyFileReader.getInstance().getProperty("tunnelName"));
-        LOGGER.info("[--->tunnelName = " + tunnelName+buildId+"<---]");
+        String tunnelName = WebURLHelper.getParameterFromEnvOrSysParam("TUNNELNAME", PropertyFileReader.getInstance().getProperty("tunnelName"));
+        LOGGER.info("[--->tunnelName = " + tunnelName + buildId + "<---]");
 
-        for(int j=0;j<noOfTunnels;j++){
+        for (int j = 0; j < noOfTunnels; j++) {
 
             HashMap<String, String> option = new HashMap<String, String>();
-            option.put("user", lamdaUserName);
+            option.put("user", lambdaUsername);
             option.put("key", lambdaAccessKey);
-            option.put("load-balanced","true");
+            option.put("load-balanced", "true");
             option.put("mitm", "true");
             option.put("sharedTunnel", "true");
-            option.put("tunnelName", tunnelName+buildId);
-            int i=0;
-            do{
-                  flag= startTunnel(option);
+            option.put("tunnelName", tunnelName + buildId);
+            int i = 0;
+            do {
+                flag = startTunnel(option);
                 i++;
-            }while(!flag && i<2);
+            } while (!flag && i < 2);
         }
-
 
         ASCIIArtGenerator artGen = new ASCIIArtGenerator();
         try {
@@ -72,13 +71,13 @@ public class CustomListener extends Utility implements ITestListener, IExecution
     @Override
     public void onExecutionFinish() {
         try {
-            for(int i=0;i<tunnelObject.size();i++){
-                    tunnelObject.get(i).stopTunnel();
+            for (Tunnel tunnel : tunnelObject) {
+                tunnel.stopTunnel();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        ExcelUtil excelUtil=new ExcelUtil();
+        ExcelUtil excelUtil = new ExcelUtil();
         excelUtil.createSummarySheet(verticalScenarioCountPojo);
         ASCIIArtGenerator artGen = new ASCIIArtGenerator();
         try {
@@ -96,7 +95,8 @@ public class CustomListener extends Utility implements ITestListener, IExecution
             getThreadDriver().quit();
             LOGGER.info("|----------------------------------------------------------------------------------------------------------------------------------|");
         }
-   }
+    }
+
     @Override
     public void onStart(ITestContext context) {
     }
@@ -107,15 +107,15 @@ public class CustomListener extends Utility implements ITestListener, IExecution
 
     @Override
     public void onTestFailure(ITestResult arg0) {
-   }
+    }
 
- @Override
+    @Override
     public void onTestSkipped(ITestResult arg0) {
-     }
+    }
 
     @Override
     public void onTestStart(ITestResult arg0) {
-   }
+    }
 
     @Override
     public void onTestSuccess(ITestResult arg0) {
@@ -123,17 +123,17 @@ public class CustomListener extends Utility implements ITestListener, IExecution
 
     public synchronized boolean startTunnel(Map options) {
         boolean flag = false;
-        try{
-            for(int i = 0; i < 5; ++i) {
+        try {
+            for (int i = 0; i < 5; ++i) {
                 Thread.sleep(1000L);
             }
-            Tunnel t=new Tunnel();
-                flag = t.start(options);
-            if(flag) {
+            Tunnel t = new Tunnel();
+            flag = t.start(options);
+            if (flag) {
                 tunnelObject.add(t);
             }
-        }catch (Exception e){
-            flag=false;
+        } catch (Exception e) {
+            flag = false;
 
         }
         return flag;
