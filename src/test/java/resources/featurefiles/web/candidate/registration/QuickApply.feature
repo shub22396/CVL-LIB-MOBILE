@@ -1,4 +1,4 @@
-@QuickApply @Regression @Web  @Traffic
+@QuickApply @Regression @Web @Traffic
 Feature: Candidate Registration QuickApply
 
   Background: Posting a quick apply job and then apply for that job as a candidate

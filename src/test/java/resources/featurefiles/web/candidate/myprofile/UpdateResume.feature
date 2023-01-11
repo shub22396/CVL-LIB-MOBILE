@@ -1,4 +1,4 @@
-@ModifyResumeUpdate @Regression @Web  @ReleaseRegression1 @Candidate
+@ModifyResumeUpdate @Regression @Web @ReleaseRegression1 @Candidate
 Feature: Candidate ModifyProfile UpdateResume
 
 #  Background: On modify profile page

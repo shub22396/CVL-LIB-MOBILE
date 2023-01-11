@@ -1,4 +1,4 @@
-@ClientHelpResumeSearch @Regression @Web  @Recruiters
+@ClientHelpResumeSearch @Regression @Web @Recruiters
 Feature: Client JobPosting ClientHelpResumeSearch
 
   @ClientHelpResumeSearchTips @ReleaseRegression2

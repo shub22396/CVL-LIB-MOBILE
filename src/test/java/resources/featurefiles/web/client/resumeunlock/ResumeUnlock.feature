@@ -1,4 +1,4 @@
-@ResumeUnlock @Regression @Web  @Search @MobileChrome
+@ResumeUnlock @Regression @Web @Search @MobileChrome
 Feature: Client ResumeUnlock ResumeUnlock
 
   @unlockWithCredits @ReleaseRegression2

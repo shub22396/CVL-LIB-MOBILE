@@ -1,4 +1,4 @@
-@HiringPage @Regression @Web  @Traffic
+@HiringPage @Regression @Web @Traffic
 Feature: Client Others HiringPage
 
   Background:

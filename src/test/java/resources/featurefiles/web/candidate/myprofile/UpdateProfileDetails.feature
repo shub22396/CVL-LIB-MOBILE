@@ -1,4 +1,4 @@
-@ModifyProfileUpdate @Regression @Web  @Candidate
+@ModifyProfileUpdate @Regression @Web @Candidate
 Feature: Candidate ModifyProfile UpdateProfileDetails
 
   @modifyProfileDetailsUpdate @ReleaseRegression1

@@ -1,7 +1,7 @@
 # Test Coverage:
 # 1. Checking field validation for email, first name, last name, password, job title, zip code and resume upload
 # 2. Checking field validation messages when the field conditions are not met or invalid information is entered
-@CandidateRegistrationValidation @Regression @Web  @Candidate
+@CandidateRegistrationValidation @Regression @Web @Candidate
 Feature: Candidate Registration UnsuccessfulRegistration
 
   @candidateInvalidRegistrationValidationMessage

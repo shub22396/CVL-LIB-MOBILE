@@ -1,4 +1,4 @@
-@DemographicsPage @Regression @Web  @Traffic
+@DemographicsPage @Regression @Web @Traffic
 Feature: Client Others DemographicsPage
 
   Background: on Demographics page

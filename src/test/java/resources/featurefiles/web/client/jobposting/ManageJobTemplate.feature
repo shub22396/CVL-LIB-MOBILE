@@ -1,7 +1,7 @@
 # Test Coverage
 # 1. Verify that create, view, edit, Post job and delete job template https://cv-library.atlassian.net/browse/XT-1379
 
-@ManageJobTemplate @Regression @Web  @ReleaseRegression2 @Recruiters @MobileChrome
+@ManageJobTemplate @Regression @Web @ReleaseRegression2 @Recruiters @MobileChrome
 Feature: Client JobPosting ManageJobTemplate
 
   @EditJobTemplate

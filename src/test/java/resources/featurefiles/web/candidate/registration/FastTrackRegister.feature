@@ -1,4 +1,4 @@
-@FastTrackRegistration  @Regression @Web  @Traffic
+@FastTrackRegistration @Regression @Web @Traffic
 Feature: Candidate Registration FastTrackRegister
 
   Background: Register as a candidate using fast track form

@@ -1,4 +1,4 @@
-@CandidateApplications @Regression @Web  @Candidate
+@CandidateApplications @Regression @Web @Candidate
 Feature: Candidate Application Applications
 
   @candidateWithNoApplication

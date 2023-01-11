@@ -1,4 +1,4 @@
-@ClientHelpResumeAlert @Regression @Web  @Recruiters @MobileChrome
+@ClientHelpResumeAlert @Regression @Web @Recruiters @MobileChrome
 Feature: Client JobPosting ClientHelpResumeAlert
 
   @ClientHelpResumeAlertTips

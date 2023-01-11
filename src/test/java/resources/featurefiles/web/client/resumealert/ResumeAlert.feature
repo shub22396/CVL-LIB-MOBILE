@@ -8,7 +8,7 @@
 #    Adhoc selenium testing may add alerts so can't guarantee the first alert is
 #    always going to be active
 
-@ResumeAlert @Regression @Web  @Recruiters @MobileChrome
+@ResumeAlert @Regression @Web @Recruiters @MobileChrome
 Feature: Client ResumeAlert ResumeAlert
 
   Background: Resume alert test

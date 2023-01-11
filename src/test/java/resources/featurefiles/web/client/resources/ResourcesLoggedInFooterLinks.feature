@@ -1,4 +1,4 @@
-@ResourcesPageFooterLinks  @Regression @Web  @ReleaseRegression2 @Traffic
+@ResourcesPageFooterLinks  @Regression @Web @ReleaseRegression2 @Traffic
 Feature: Client Resources ResourcesLoggedInFooterLinks
 
   Background: Navigating to Resources page

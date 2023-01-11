@@ -1,4 +1,4 @@
-@ClientEcommerceResumeView @Regression @Web  @Recruiters @MobileChrome
+@ClientEcommerceResumeView @Regression @Web @Recruiters @MobileChrome
 Feature: Client Ecommerce ClientEcommerceJourneyResumeView
 
   Background: Register a new client with all details

@@ -17,7 +17,6 @@ Feature: Candidate Home Home
     #And   the title field should contain "<Title1>"
     #And   the location field should contain "<Location>"
     #And   the distance field should contain "<Distance1>"
-
     Examples:
       | Title | Location | Distance | Distance1 |   Title1 |
       | Sales | 10001    | 20 Miles |   20      |   sales  |
@@ -193,7 +192,6 @@ Feature: Candidate Home Home
     When  I click on "Job Alerts" Header Link
     Then  I should be on page "Candidate Job Alerts"
     And   I should see text H one tag "Job Alerts"
-
 
     And   I click on mobile header button
     When  I click on "My Settings" Header Link

@@ -1,4 +1,4 @@
-@ResourcesPageDropToolNavigation  @Regression @Web  @Traffic
+@ResourcesPageDropToolNavigation @Regression @Web @Traffic
 Feature: Client Resources ResourcesDropToolBarLoggedIn
 
   Background: Navigating to Resources page

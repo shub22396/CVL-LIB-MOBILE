@@ -1,4 +1,4 @@
-@SearchJobsPage @Regression @Web  @Search @MobileChrome
+@SearchJobsPage @Regression @Web @Search @MobileChrome
 Feature: Candidate JobSearch SearchJobsPage
 
   Background: On Search Jobs page
@@ -69,5 +69,3 @@ Feature: Candidate JobSearch SearchJobsPage
     And I verify that http code is 200 and not 301
     And I should be able to see in browser URL "Jobs In New York City NY"
     And I should see text "Jobs in New York City, NY"
-
-

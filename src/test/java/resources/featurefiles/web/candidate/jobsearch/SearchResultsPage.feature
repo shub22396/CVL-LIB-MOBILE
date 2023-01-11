@@ -3,7 +3,7 @@
             # Elements are: Jobs by category, Jobs by location, more and fewer button
     # 2. Displaying page, upload resume banner, location and job type field on Job card
 
-@JobSearchResults @Regression @Web  @Search @MobileChrome
+@JobSearchResults @Regression @Web @Search @MobileChrome
 Feature: Candidate JobSearch SearchResultsPage
 
   @searchResultsPageModules
@@ -13,7 +13,6 @@ Feature: Candidate JobSearch SearchResultsPage
     And   I should see text "Alabama" on the page source
     And   I should see text "Jobs By Category"
     And   I should see text "Sales Account Manager"
-
 
   @searchResultsPageElements @ReleaseRegression1
   Scenario: Search results page filters
@@ -260,6 +259,3 @@ Feature: Candidate JobSearch SearchResultsPage
     Then  I navigate to page "Jobs Xxyy"
     And   I should see caution message h3 tag "Sorry, no jobs match your search criteria"
     And   I should see caution message p tag "Below are some recommended jobs based on your recent searches"
-
-
-

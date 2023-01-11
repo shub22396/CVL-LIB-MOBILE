@@ -1,4 +1,4 @@
-@CandidateEmailPreferences @Regression @Web  @Traffic
+@CandidateEmailPreferences @Regression @Web @Traffic
 Feature: Candidate Settings EmailPreferences
 
   @emailPreferences @ReleaseRegression1 @MobileChrome

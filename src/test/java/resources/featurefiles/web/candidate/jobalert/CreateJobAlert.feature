@@ -11,7 +11,7 @@
   # 10. Job search (keyword+loc) and login as existing user via 'Create Job Alert' banner (delete alert after creation)
   # 11. Job view and login as existing user on job-alerts banner (delete alert after creation)
 
-@CreateJobAlert @Regression @Web  @Traffic
+@CreateJobAlert @Regression @Web @Traffic
 Feature: Candidate JobAlert CreateJobAlert
 
   @newUserCreateAlert @ReleaseRegression1 @MobileChrome

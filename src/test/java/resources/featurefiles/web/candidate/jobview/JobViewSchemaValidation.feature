@@ -1,4 +1,4 @@
-@JobViewSchemaValidation @Regression @Web  @Traffic @MobileChrome
+@JobViewSchemaValidation @Regression @Web @Traffic @MobileChrome
 Feature: Candidate JobView JobViewSchemaValidation
 # dev team code refactoring done , here the validation is to check the jobPostingSchema https://cv-library.atlassian.net/browse/XT-1263
 

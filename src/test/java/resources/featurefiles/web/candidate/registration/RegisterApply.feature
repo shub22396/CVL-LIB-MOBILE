@@ -1,4 +1,4 @@
-@RegisterAndApply  @Regression @Web  @Traffic
+@RegisterAndApply @Regression @Web @Traffic
 Feature: Candidate Registration RegisterApply
 
   @candidateRegisterApply @ReleaseRegression1 @MobileChrome
@@ -22,7 +22,6 @@ Feature: Candidate Registration RegisterApply
     And   I should be able to see in browser URL "Job Apply"
     And   I should see text "Application Sent - the employer will be in touch if you are successful."
     And   I should see text "Increase your chances of getting hired"
-
     Examples:
       | Email                                        | FirstName | LastName | Password | Resume  | JobTitle     | ZipCode | Phone        |
       | automation-register-apply@resume-library.com | Bob       | Russel   | 123456   | Test Cv | Test Analyst | 50001   | 012345678912 |

@@ -1,4 +1,4 @@
-@LatestFeatures @Regression @Web  @Traffic
+@LatestFeatures @Regression @Web @Traffic
 Feature: Client Others LatestFeatures
 
   Background: Verify page elements in Latest Features page
