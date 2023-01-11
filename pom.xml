@@ -31,9 +31,9 @@
     <dependency>
       <groupId>com.github.lambdatest</groupId>
       <artifactId>lambdatest-tunnel-binary</artifactId>
-      <version>1.0.10</version>
+      <version>1.0.15</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>

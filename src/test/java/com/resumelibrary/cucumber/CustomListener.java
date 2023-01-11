@@ -47,8 +47,9 @@ public class CustomListener extends Utility implements ITestListener, IExecution
             option.put("user", lambdaUsername);
             option.put("key", lambdaAccessKey);
             option.put("load-balanced", "true");
-            option.put("mitm", "true");
+            //option.put("mitm", "true");
             option.put("sharedTunnel", "true");
+            option.put("usePrivateIp","true");
             option.put("tunnelName", tunnelName + buildId);
             int i = 0;
             do {
