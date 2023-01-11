@@ -1,4 +1,4 @@
-@MyDashboard @Regression @Web  @Candidate
+@MyDashboard @Regression @Web @Candidate
 Feature: Candidate mydashboard MyDashboard
 
   Background: Login and my dashboard page

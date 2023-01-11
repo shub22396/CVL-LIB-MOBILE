@@ -3,7 +3,6 @@ package com.resumelibrary.webdriverprovider;
 import com.resumelibrary.utilities.Constants;
 import com.resumelibrary.utilities.PropertyFileReader;
 import com.resumelibrary.utilities.WebURLHelper;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.apache.log4j.LogManager;
@@ -41,70 +40,78 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         tunnelName = tunnelName2 + buildId;
     }
 
-    void remoteLambdaTestinChrome(Map threadMap, String testName) {
+    void androidFirefoxRealMobileWeb(Map threadMap, String testName, String deviceName) {
         try {
+            String threadDeviceName = deviceName.split("@")[0];
+            String threadDeviceVersion = deviceName.split("@")[1];
+            System.out.println("threadTunnelName:" + threadDeviceVersion);
+            logger.info("[--->jenkinsBuildNumber = " + buildId + "<---]");
+            String project = "[" + jobBaseName + "-Build:" + buildId + "]";
+            final String driverURL = "https://" + lambdaUsername + ":" + lambdaAccessKey + "@mobile-hub.lambdatest.com/wd/hub";
+            logger.info("[--->driverURL:" + driverURL + "<---]");
+            System.out.println("in androidRealMobileWeb method");
+            logger.info("[--->tunnelName = " + tunnelName + "<---]");
 
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            Map<Object, Object> caps = new HashMap<>();
+            caps.put("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
+            caps.put("project", project);
+            caps.put("name", testName);
+            caps.put("platformName", "Android");
+            caps.put("deviceName", threadDeviceName);
+            caps.put("platformVersion", threadDeviceVersion);
+            caps.put("isRealMobile", true);
+            caps.put("console", true);
+            caps.put("visual", true);
+            caps.put("devicelog", true);
+            caps.put("video", true);
+            caps.put("tunnel", true);
+            caps.put(MobileCapabilityType.BROWSER_NAME, "Firefox");
+            caps.put("autoGrantPermissions", true);
+            caps.put("autoAcceptAlerts", true);
+            caps.put("tunnelName", tunnelName);
+            caps.put("network", false);
+            caps.put("w3c", true);
+            caps.put("eventTimings", true);
+            caps.put("idleTimeout", "1800");
+            capabilities.setCapability("lt:options", caps);
+
+            threadMap.put("webdriverObj", new AndroidDriver(new URL(driverURL), capabilities));
+            threadLocalMap.set(threadMap);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    void androidFirefoxMobileWeb(Map threadMap, String testName) {
+        try {
             logger.info("[--->jenkinsBuildNumber = " + buildId + "<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
             final String driverURL = "https://" + lambdaUsername + ":" + lambdaAccessKey + "@hub.lambdatest.com/wd/hub";
             logger.info("[--->driverURL:" + driverURL + "<---]");
             logger.info("[--->tunnelName = " + tunnelName + "<---]");
 
-            DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("browserName", "Chrome");
-            caps.setCapability("browserVersion", "100.0");
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
+            capabilities.setCapability("name", testName);
+            capabilities.setCapability("project", project);
+            capabilities.setCapability("platformName", "android");
+            capabilities.setCapability("deviceName", "Google Pixel");
+            capabilities.setCapability("platformVersion", "8");
+            capabilities.setCapability("deviceOrientation", "PORTRAIT");
+            capabilities.setCapability("console", true);
+            capabilities.setCapability("network", false);
+            capabilities.setCapability("visual", true);
+            capabilities.setCapability("tunnel", true);
+            capabilities.setCapability("tunnelName", tunnelName);
+            capabilities.setCapability("acceptInsecureCerts", true);
+            capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Firefox");
+            capabilities.setCapability("idleTimeout", "1800");
 
-            HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-            ltOptions.put("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
-            ltOptions.put("project", project);
-            ltOptions.put("name", testName);
-            ltOptions.put("console", "info");
-            ltOptions.put("visual", true);
-            ltOptions.put("platformName", "Windows 10");
-            ltOptions.put("selenium_version", "4.1.2");
-            ltOptions.put("driver_version", "100.0");
-            ltOptions.put("resolution", "1920x1080");
-            ltOptions.put("network", false);
-            ltOptions.put("tunnel", true);
-            caps.setCapability("LT:Options", ltOptions);
-            threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), caps));
+            ClientConfig config = ClientConfig.defaultConfig().connectionTimeout(Duration.ofMinutes(20)).readTimeout(Duration.ofMinutes(20));
+            WebDriver testDriver = RemoteWebDriver.builder().oneOf(capabilities).address(driverURL).config(config).build();
+            threadMap.put("webdriverObj", testDriver);
             threadLocalMap.set(threadMap);
-            caps.setCapability("tunnelName", tunnelName);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    void remoteLambdaTestinFirefox(Map threadMap, String testName) {
-        try {
-
-            System.out.println("jenkinsBuildNumber = " + buildId);
-            String project = "[" + jobBaseName + "-Build:" + buildId + "]";
-            final String driverURL = "https://" + lambdaUsername + ":" + lambdaAccessKey + "@hub.lambdatest.com/wd/hub";
-            logger.info("[--->driverURL:" + driverURL + "<---]");
-            logger.info("[--->tunnelName = " + tunnelName + "<---]");
-
-            DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("browserName", "Firefox");
-            caps.setCapability("browserVersion", "100.0");
-
-            HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-            ltOptions.put("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
-            ltOptions.put("project", project);
-            ltOptions.put("name", testName);
-            ltOptions.put("console", "info");
-            ltOptions.put("visual", true);
-            ltOptions.put("platformName", "Windows 10");
-            ltOptions.put("selenium_version", "4.1.2");
-            ltOptions.put("driver_version", "v0.31.0");
-            ltOptions.put("resolution", "1920x1080");
-            ltOptions.put("network", false);
-            ltOptions.put("tunnel", true);
-            caps.setCapability("LT:Options", ltOptions);
-            threadMap.put("webdriverObj", new AppiumDriver(new URL(driverURL), caps));
-            threadLocalMap.set(threadMap);
-            caps.setCapability("tunnelName", tunnelName);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -126,6 +133,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             logger.info("[--->driverURL:" + driverURL + "<---]");
             System.out.println("in androidRealMobileWeb method");
             logger.info("[--->tunnelName = " + tunnelName + "<---]");
+
             DesiredCapabilities capabilities = new DesiredCapabilities();
             Map<Object, Object> caps = new HashMap<>();
             caps.put("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
@@ -150,12 +158,9 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.put("eventTimings", true);
             caps.put("idleTimeout", "1800");
             capabilities.setCapability("lt:options", caps);
+
             threadMap.put("webdriverObj", new AndroidDriver(new URL(driverURL), capabilities));
             threadLocalMap.set(threadMap);
-            /*ClientConfig config = ClientConfig.defaultConfig().connectionTimeout(Duration.ofMinutes(20)).readTimeout(Duration.ofMinutes(20));
-            WebDriver testDriver =  RemoteWebDriver.builder().oneOf(capabilities).address(driverURL).config(config).build();
-            threadMap.put("webdriverObj", testDriver);
-            threadLocalMap.set(threadMap);*/
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -168,6 +173,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             final String driverURL = "https://" + lambdaUsername + ":" + lambdaAccessKey + "@hub.lambdatest.com/wd/hub";
             logger.info("[--->driverURL:" + driverURL + "<---]");
             logger.info("[--->tunnelName = " + tunnelName + "<---]");
+
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
             capabilities.setCapability("name", testName);
@@ -183,15 +189,12 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("tunnelName", tunnelName);
             capabilities.setCapability("acceptInsecureCerts", true);
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
-
             capabilities.setCapability("idleTimeout", "1800");
-           /* threadMap.put("webdriverObj", new RemoteWebDriver(new URL(driverURL), capabilities));
-            threadLocalMap.set(threadMap);*/
+
             ClientConfig config = ClientConfig.defaultConfig().connectionTimeout(Duration.ofMinutes(20)).readTimeout(Duration.ofMinutes(20));
             WebDriver testDriver = RemoteWebDriver.builder().oneOf(capabilities).address(driverURL).config(config).build();
             threadMap.put("webdriverObj", testDriver);
             threadLocalMap.set(threadMap);
-
         } catch (Exception e) {
             e.printStackTrace();
         }

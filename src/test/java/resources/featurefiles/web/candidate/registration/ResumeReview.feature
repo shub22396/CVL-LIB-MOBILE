@@ -1,4 +1,4 @@
-@ResumeReview @Regression @Web  @Candidate
+@ResumeReview @Regression @Web @Candidate
 Feature: Candidate Registration ResumeReview
 
   @resumeReviewValidation

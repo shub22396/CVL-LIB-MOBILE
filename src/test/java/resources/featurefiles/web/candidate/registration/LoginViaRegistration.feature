@@ -1,4 +1,4 @@
-  @LoginViaRegistration @Regression @Web  @Traffic
+  @LoginViaRegistration @Regression @Web @Traffic
   Feature: Candidate Registration LoginViaRegistration
 
     @registerApplyLogin @MobileChrome

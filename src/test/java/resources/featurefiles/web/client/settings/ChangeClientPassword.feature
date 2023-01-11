@@ -1,4 +1,4 @@
-@ClientChangePassword @Regression @Web  @ReleaseRegression2 @Traffic
+@ClientChangePassword @Regression @Web @ReleaseRegression2 @Traffic
 Feature: Client Settings ChangeClientPassword
 
   @resetClientPassword @MobileChrome

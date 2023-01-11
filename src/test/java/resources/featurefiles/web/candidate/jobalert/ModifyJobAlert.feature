@@ -3,7 +3,7 @@
   # 2. Existing user Edit alert
   # 3. Existing user delete alert
 
-@ModifyJobAlert @Regression @Web  @Traffic
+@ModifyJobAlert @Regression @Web @Traffic
 Feature: Candidate JobAlert ModifyJobAlert
 
   @existingUserRunSearch @ReleaseRegression1 @MobileChrome

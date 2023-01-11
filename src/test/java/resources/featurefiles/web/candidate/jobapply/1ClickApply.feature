@@ -1,4 +1,4 @@
-@1ClickApply @Regression @Web  @Candidate
+@1ClickApply @Regression @Web @Candidate
 Feature: Candidate JobApply 1ClickApply
 
 #  @jobView1ClickApply   #this scenario wont available in mobile view   #need to fix Candidate Registration

@@ -1,4 +1,4 @@
-@ResumeSearchBasic @Regression @Web  @Search @MobileChrome
+@ResumeSearchBasic @Regression @Web @Search @MobileChrome
 Feature: Client ResumeSearch Basic
 
   Background: On basic resume search page

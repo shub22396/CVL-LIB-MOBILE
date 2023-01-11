@@ -1,4 +1,4 @@
-@NoEcomUnvalidatedClientPurchase @Regression @Web  @Recruiters @MobileChrome
+@NoEcomUnvalidatedClientPurchase @Regression @Web @Recruiters @MobileChrome
 Feature: Client NoEcommerceJourney UnValidatedProductsJourney
 
   Background:

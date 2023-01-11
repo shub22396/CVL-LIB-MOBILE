@@ -1,4 +1,4 @@
-@FastTrackUpdateProfile @Regression @Web  @Candidate
+@FastTrackUpdateProfile @Regression @Web @Candidate
 Feature: Candidate Registration FastTrackUpdateProfile
 
   Background: Register as a candidate using fast track form

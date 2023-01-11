@@ -1,4 +1,4 @@
-@CareerAdviceHeaderFooterLoggedOut @Regression @Web  @ReleaseRegression1 @Candidate
+@CareerAdviceHeaderFooterLoggedOut @Regression @Web @ReleaseRegression1 @Candidate
 Feature: Candidate CareerAdvice CareerAdviceHeadersFooters
 
   @CareerAdviceNavigateHeader

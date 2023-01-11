@@ -1,4 +1,4 @@
-@RequestATrial @Regression @Web  @Traffic
+@RequestATrial @Regression @Web @Traffic
 Feature: Client TrailDemo RequestATrial
 
 Background: Navigating to Request a Trial page

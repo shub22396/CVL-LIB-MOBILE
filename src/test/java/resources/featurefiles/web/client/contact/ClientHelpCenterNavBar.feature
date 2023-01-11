@@ -1,4 +1,4 @@
-@ClientHelpCenterNavBar @Regression @Web  @Traffic
+@ClientHelpCenterNavBar @Regression @Web @Traffic
 Feature: Client Contact ClientHelpCenterNavBar
 
   Background: Navigating to Client Help Center From Nav Bar
@@ -54,8 +54,6 @@ Feature: Client Contact ClientHelpCenterNavBar
     And  I wait for "1" seconds
     Then I click on "Download" with native
     #Then I should be able to see in browser URL "Downloads Rl User Manual Pdf"
-
-
 
   @clientContactFormTextForm @MobileChrome
   Scenario: verify text in client contact form1

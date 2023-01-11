@@ -1,4 +1,4 @@
-@ResumeAlertValidation @Regression @Web  @Recruiters  @MobileChrome
+@ResumeAlertValidation @Regression @Web @Recruiters @MobileChrome
 Feature: Client ResumeAlert ResumeAlertValidation
 
   @resumeAlertFieldValidation
@@ -31,4 +31,3 @@ Feature: Client ResumeAlert ResumeAlertValidation
     When  I click on prev page link
     Then  I should be on page "Client Resume Alerts 1"
     And   I should not see "Prev" link
-

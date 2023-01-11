@@ -1,4 +1,4 @@
-@ClientInquiryForm @Regression @Web  @Traffic
+@ClientInquiryForm @Regression @Web @Traffic
 Feature: Client Contact ClientInquire
 
   Background: on Client Inquiry Form page

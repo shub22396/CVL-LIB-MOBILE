@@ -1,4 +1,4 @@
-@CoverLetter @Regression @Web  @Candidate
+@CoverLetter @Regression @Web @Candidate
 Feature: Candidate CoverLetter CoverLetter
 
   @verifyCoverLetterPage

@@ -1,4 +1,4 @@
-@ResourcesPageLoggedInClient @Regression @Web  @Traffic
+@ResourcesPageLoggedInClient @Regression @Web @Traffic
 Feature: Client Resources ResourcesLoggedIn
 
   Background: Login as a client to verify resources page

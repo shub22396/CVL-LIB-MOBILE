@@ -1,4 +1,4 @@
-@ResumeSearchBuilder @Regression @Web  @Search @MobileChrome
+@ResumeSearchBuilder @Regression @Web @Search @MobileChrome
 Feature: Client ResumeSearch SearchBuilder
 
   Background: On Search builder resume search page

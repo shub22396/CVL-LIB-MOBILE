@@ -1,4 +1,4 @@
-@CandidateSettings @Regression @Web  @ReleaseRegression1 @Traffic
+@CandidateSettings @Regression @Web @ReleaseRegression1 @Traffic
 Feature: Candidate Settings Settings
 
   Background: Register a new candidate with all details

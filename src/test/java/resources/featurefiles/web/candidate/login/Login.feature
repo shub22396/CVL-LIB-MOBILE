@@ -1,4 +1,4 @@
-@CandidateLogin @Regression @Web  @Candidate
+@CandidateLogin @Regression @Web @Candidate
 Feature: Candidate Login Login
 
   @loginAsExistingCandidate @login @ReleaseRegression1
@@ -14,6 +14,7 @@ Feature: Candidate Login Login
     Then   I should be on "My Dashboard" page
     And    I should see text "Hi Resume-Library"
     And    I should see text "Recently Applied"
+
   @loginPageErrorMessage
   Scenario: Verify error message on login page
     Given  I am on home page
@@ -28,9 +29,7 @@ Feature: Candidate Login Login
   @loginPageResetPassword @ReleaseRegression1
   Scenario: Reset candidate password
     Given  I am on home page
-
     Then   I should see resume library logo
-
     And    I click on Menu Bar
     When   I click Login button
     And    I click Forgot password?

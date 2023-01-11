@@ -1,4 +1,4 @@
-@BrowseJobsByLocation @Regression @Web  @ReleaseRegression1 @Traffic
+@BrowseJobsByLocation @Regression @Web @ReleaseRegression1 @Traffic
 Feature: Candidate JobSearch BrowseJobsByLocation
 
   @browseJobs @MobileChrome

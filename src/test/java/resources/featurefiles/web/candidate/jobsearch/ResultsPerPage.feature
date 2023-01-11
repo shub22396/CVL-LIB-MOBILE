@@ -1,4 +1,4 @@
-@ResultsPerPage @Regression @Web  @Search @MobileChrome
+@ResultsPerPage @Regression @Web @Search @MobileChrome
 Feature: Candidate JobSearch ResultsPerPage
 
   @verifyResultsPerPage @ReleaseRegression1
@@ -25,7 +25,6 @@ Feature: Candidate JobSearch ResultsPerPage
     And   I click on "Prev" pagination
     Then  I should see text p tag "Displaying " and verify message "Displaying 1 to 20 of "
     And   I should be able to see in browser URL "Jobs Sales"
-
 
   @searchResultsPageNavigationButtonsPPParam
   Scenario: Search results page modules

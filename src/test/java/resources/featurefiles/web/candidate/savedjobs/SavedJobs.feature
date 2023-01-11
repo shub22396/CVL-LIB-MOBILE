@@ -1,4 +1,4 @@
-@SavedJobs @Regression @Web  @Candidate
+@SavedJobs @Regression @Web @Candidate
 Feature: Candidate SavedJobs SavedJobs
 
   @loggedOutUserSaveJobAndView
