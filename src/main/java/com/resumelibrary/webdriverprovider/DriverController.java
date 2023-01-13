@@ -74,11 +74,6 @@ public class DriverController extends CloudDriverProvider implements Constants {
         try {
             webdriverObj = (AndroidDriver) ((Map) threadLocalMap.get()).get("webdriverObj");
             // webdriverObj = (RemoteWebDriver) ((Map) threadLocalMap.get()).get("webdriverObj");
-            System.out.println("driver info " + webdriverObj);
-            System.out.println("script timeout:- " + webdriverObj.manage().timeouts().getScriptTimeout());
-            System.out.println("implicit wait timeout:- " + webdriverObj.manage().timeouts().getImplicitWaitTimeout());
-            System.out.println("Page load timeout:- " +webdriverObj.manage().timeouts().getPageLoadTimeout());
-
         } catch (Exception e) {
 
         }
