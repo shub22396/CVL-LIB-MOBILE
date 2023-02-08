@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-        monochrome = true,
+        monochrome = false,
         plugin = {"pretty", "summary", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "com.resumelibrary.cucumber.CustomFormatter"},
         features = {"."},
         tags = "@Regression"

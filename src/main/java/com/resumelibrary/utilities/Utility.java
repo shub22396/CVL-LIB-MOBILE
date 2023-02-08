@@ -223,7 +223,7 @@ public abstract class Utility extends DriverController {
 
     /* Returning the current page url */
     public String getPresentURL() {
-        return ((AndroidDriver) getThreadDriver()).getCurrentUrl();
+        return getThreadDriver().getCurrentUrl();
     }
 
     /* Returning the current browser name and version */

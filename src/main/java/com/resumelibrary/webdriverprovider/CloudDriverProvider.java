@@ -30,8 +30,8 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
     public CloudDriverProvider() {
         PropertyConfigurator.configure(System.getProperty("user.dir") + LOG_PROPERTY_FILE_PATH);
-        lambdaUsername = WebURLHelper.getParameterFromEnvOrSysParam("lambdaUsername", "username");
-        lambdaAccessKey = WebURLHelper.getParameterFromEnvOrSysParam("lambdaAccessKey", "accessKey");
+        lambdaUsername = "shubhamr";
+        lambdaAccessKey = "";
         String buildIdFromConfig = WebURLHelper.getParameterFromEnvOrSysParam("user.name", "unknown_user");
         buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
         String jobNameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
@@ -47,14 +47,14 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             System.out.println("threadTunnelName:" + threadDeviceVersion);
             logger.info("[--->jenkinsBuildNumber = " + buildId + "<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
-            final String driverURL = "https://" + lambdaUsername + ":" + lambdaAccessKey + "@mobile-hub.lambdatest.com/wd/hub";
+            final String driverURL = "http://" + lambdaUsername + ":" + lambdaAccessKey + "@localhost:9688/wd/hub";
             logger.info("[--->driverURL:" + driverURL + "<---]");
             System.out.println("in androidRealMobileWeb method");
             logger.info("[--->tunnelName = " + tunnelName + "<---]");
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             Map<Object, Object> caps = new HashMap<>();
-            caps.put("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
+            caps.put("build", "A");
             caps.put("project", project);
             caps.put("name", testName);
             caps.put("platformName", "Android");
@@ -69,7 +69,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.put(MobileCapabilityType.BROWSER_NAME, "Firefox");
             caps.put("autoGrantPermissions", true);
             caps.put("autoAcceptAlerts", true);
-            caps.put("tunnelName", tunnelName);
+            caps.put("tunnelName","RL-Anantha");
             caps.put("network", false);
             caps.put("w3c", true);
             caps.put("eventTimings", true);
@@ -87,12 +87,12 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         try {
             logger.info("[--->jenkinsBuildNumber = " + buildId + "<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
-            final String driverURL = "https://" + lambdaUsername + ":" + lambdaAccessKey + "@hub.lambdatest.com/wd/hub";
+            final String driverURL = "http://" + lambdaUsername + ":" + lambdaAccessKey + "@localhost:9688/wd/hub";
             logger.info("[--->driverURL:" + driverURL + "<---]");
             logger.info("[--->tunnelName = " + tunnelName + "<---]");
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
+            capabilities.setCapability("build", "B");
             capabilities.setCapability("name", testName);
             capabilities.setCapability("project", project);
             capabilities.setCapability("platformName", "android");
@@ -103,7 +103,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("network", false);
             capabilities.setCapability("visual", true);
             capabilities.setCapability("tunnel", true);
-            capabilities.setCapability("tunnelName", tunnelName);
+            capabilities.setCapability("tunnelName","RL-Anantha");
             capabilities.setCapability("acceptInsecureCerts", true);
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Firefox");
             capabilities.setCapability("idleTimeout", "1800");
@@ -129,14 +129,14 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             System.out.println("threadTunnelName:" + threadDeviceVersion);
             logger.info("[--->jenkinsBuildNumber = " + buildId + "<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
-            final String driverURL = "https://" + lambdaUsername + ":" + lambdaAccessKey + "@mobile-hub.lambdatest.com/wd/hub";
+            final String driverURL = "http://" + lambdaUsername + ":" + lambdaAccessKey + "@mobile-hub.lambdatest.com/wd/hub";
             logger.info("[--->driverURL:" + driverURL + "<---]");
             System.out.println("in androidRealMobileWeb method");
             logger.info("[--->tunnelName = " + tunnelName + "<---]");
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             Map<Object, Object> caps = new HashMap<>();
-            caps.put("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
+            caps.put("build", "C2");
             caps.put("project", project);
             caps.put("name", testName);
             caps.put("platformName", "Android");
@@ -151,7 +151,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.put(MobileCapabilityType.BROWSER_NAME, "Chrome");
             caps.put("autoGrantPermissions", true);
             caps.put("autoAcceptAlerts", true);
-            caps.put("tunnelName", tunnelName);
+            caps.put("tunnelName", "RL-Shubham");
             caps.put("network", false);
             caps.put("w3c", true);
             //   caps.put("newCommandTimeout", 180);
@@ -170,12 +170,12 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
         try {
             logger.info("[--->jenkinsBuildNumber = " + buildId + "<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
-            final String driverURL = "https://" + lambdaUsername + ":" + lambdaAccessKey + "@hub.lambdatest.com/wd/hub";
+            final String driverURL = "http://" + lambdaUsername + ":" + lambdaAccessKey + "@localhost:9688/wd/hub";
             logger.info("[--->driverURL:" + driverURL + "<---]");
             logger.info("[--->tunnelName = " + tunnelName + "<---]");
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
+            capabilities.setCapability("build", "D");
             capabilities.setCapability("name", testName);
             capabilities.setCapability("project", project);
             capabilities.setCapability("platformName", "android");
@@ -186,7 +186,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability("network", false);
             capabilities.setCapability("visual", true);
             capabilities.setCapability("tunnel", true);
-            capabilities.setCapability("tunnelName", tunnelName);
+            capabilities.setCapability("tunnelName", "RL-Anantha");
             capabilities.setCapability("acceptInsecureCerts", true);
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
             capabilities.setCapability("idleTimeout", "1800");
@@ -205,12 +205,12 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
             logger.info("[--->jenkinsBuildNumber = " + buildId + "<---]");
             String project = "[" + jobBaseName + "-Build:" + buildId + "]";
-            final String driverURL = "https://" + lambdaUsername + ":" + lambdaAccessKey + "@mobile-hub.lambdatest.com/wd/hub";
+            final String driverURL = "http://" + lambdaUsername + ":" + lambdaAccessKey + "@localhost:9688/wd/hub";
             logger.info("[--->driverURL:" + driverURL + "<---]");
             logger.info("[--->tunnelName = " + tunnelName + "<---]");
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("build", "RL Regression[" + jobBaseName + "-Build:" + buildId + "]");
+            capabilities.setCapability("build", "E");
             capabilities.setCapability("name", testName);
             capabilities.setCapability("project", project);
             capabilities.setCapability("platformName", "ios");
@@ -226,7 +226,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Safari");
             capabilities.setCapability("autoGrantPermissions", true);
             capabilities.setCapability("autoAcceptAlerts", true);
-            capabilities.setCapability("tunnelName", tunnelName);
+            capabilities.setCapability("tunnelName", "RL-Anantha");
             capabilities.setCapability("idleTimeout", "1800");
 
             ClientConfig config = ClientConfig.defaultConfig().connectionTimeout(Duration.ofMinutes(20)).readTimeout(Duration.ofMinutes(20));

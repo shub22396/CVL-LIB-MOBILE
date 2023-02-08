@@ -14,4 +14,4 @@
 #fi
 
 #mvn clean test
-mvn clean install -Dsurefire.suiteXmlFiles=LocalTestng.xml -DTag1="@$1" -DThreadCount="1"
+mvn clean install -Dsurefire.suiteXmlFiles=LocalTestng.xml -DTag1="@$1" -DThreadCount="6"
