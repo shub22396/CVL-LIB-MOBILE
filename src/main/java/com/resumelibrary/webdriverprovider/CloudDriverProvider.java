@@ -136,7 +136,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             Map<Object, Object> caps = new HashMap<>();
-            caps.put("build", "C3-DATE");
+            caps.put("build", "C3-DATE-jenkins-2");
             caps.put("project", project);
             caps.put("name", testName);
             caps.put("platformName", "Android");
