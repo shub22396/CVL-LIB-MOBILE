@@ -136,7 +136,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             Map<Object, Object> caps = new HashMap<>();
-            caps.put("build", "C3-DATE-jenkins-2");
+            caps.put("build", "Jenkins-CVlIBRARY-MOBILE-BUILD");
             caps.put("project", project);
             caps.put("name", testName);
             caps.put("platformName", "Android");
@@ -151,7 +151,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.put(MobileCapabilityType.BROWSER_NAME, "Chrome");
             caps.put("autoGrantPermissions", true);
             caps.put("autoAcceptAlerts", true);
-            caps.put("tunnelName", "RL-Shubham");
+           //caps.put("tunnelName", "RL-Shubham");
             caps.put("network", false);
             caps.put("w3c", true);
             //   caps.put("newCommandTimeout", 180);
