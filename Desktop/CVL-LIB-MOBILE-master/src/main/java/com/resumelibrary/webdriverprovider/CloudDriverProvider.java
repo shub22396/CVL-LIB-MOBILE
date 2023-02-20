@@ -31,7 +31,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
     public CloudDriverProvider() {
         PropertyConfigurator.configure(System.getProperty("user.dir") + LOG_PROPERTY_FILE_PATH);
         lambdaUsername = "shubhamr";
-        lambdaAccessKey = "";
+        lambdaAccessKey = System.getProperty("userkey");;
         String buildIdFromConfig = WebURLHelper.getParameterFromEnvOrSysParam("user.name", "unknown_user");
         buildId = WebURLHelper.getParameterFromEnvOrSysParam("BUILD_NUMBER", buildIdFromConfig);
         String jobNameFromConfig = PropertyFileReader.getInstance().getProperty("jobName");
@@ -136,7 +136,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             Map<Object, Object> caps = new HashMap<>();
-            caps.put("build", "Local-20-Feb-2023");
+            caps.put("build", "Updated-jenkins-20-Feb-2023");
             caps.put("project", project);
             caps.put("name", testName);
             caps.put("platformName", "Android");
@@ -151,7 +151,7 @@ public class CloudDriverProvider extends WebDriverProvider implements Constants 
             caps.put(MobileCapabilityType.BROWSER_NAME, "Chrome");
             caps.put("autoGrantPermissions", true);
             caps.put("autoAcceptAlerts", true);
-           caps.put("tunnelName", "3b7e7c80-9c0a-4411-a2d9-f5ea0a874239");
+          // caps.put("tunnelName", "3b7e7c80-9c0a-4411-a2d9-f5ea0a874239");
             caps.put("network", false);
             caps.put("w3c", true);
             //   caps.put("newCommandTimeout", 180);
